@@ -152,3 +152,73 @@ seeding-competent" and "never tested" are currently indistinguishable.
     scripts/gatekeeper_density.py  reproduces the table above
     reports/PDFs_to_obtain.md      ranked by what changes if you read each one
     research_notes/                the six literature sweeps behind all of this
+
+## The validation set can reach usable size — with a trap in the obvious route
+
+A 146-row inventory across about 45 proteins now exists at
+`research_notes/Mental illness aggregation structures/aggregation_region_ground_truth_inventory.md`.
+Roughly **20 rows are circular** and roughly **40 are independent, across about
+25 proteins** — five times the current table. The power problem is solvable.
+
+**But the circular rows cluster in exactly the famous short-segment literature a
+benchmark would reach for first**: p53 251-257, the hnRNPA1/A2 hexapeptides,
+TDP-43's zippers, four SOD1 segments, alphaB-crystallin 90-100, the crystallised
+Abeta hexapeptides, ataxin-3 73-96. **p53 has no predictor-free row at all.**
+Neither does ataxin-3 73-96, whose downstream literature inherits from one paper
+that opens "we first resorted to in silico predictions."
+
+The independent rows sit in a different evidence class entirely: unbiased
+truncation walks, limited proteolysis of real fibrils, exon-boundary fragment
+series, patient-derived cleavage products, cryo-EM of ex vivo material.
+
+**Do not bulk-import from CPAD.** The CANYA paper states verbatim that "several
+of these methods (including TANGO, CamSol, and Aggrescan) were directly trained
+on sequences within CPAD", violating out-of-sample evaluation on those datasets.
+Importing rows from it without per-row provenance checks reproduces exactly the
+violation that paper names. The same paper reports that on WALTZ-DB hexapeptides
+"no method significantly outperformed hydrophobicity" — which is worth knowing
+before treating any of them as a serious baseline.
+
+**And the provenance column cannot be grepped.** Circularity is protein-specific,
+not lab- or journal-specific: the same laboratory in the same era produced rows
+of opposite status, and so did two segments of one protein. Four rows would be
+wrongly flagged by keyword search, because a post-hoc remark about a predictor,
+or the use of a disorder or helix-propensity tool, is not prediction-guided
+discovery. Every row has to be read.
+
+### Construct dependence is general, not a quirk of our two proteins
+
+At least **15 rows independently record it**. A bacterial curli subunit is
+defective in vivo yet polymerises with wild-type kinetics in vitro; a fungal
+prion domain propagates in every transformant when GFP-tagged and in none of 24
+untagged; gelsolin's short fragments fibrillise while its 68 kDa fragment cannot
+even be seeded; one SOD1 proline gives opposite answers in vitro and in cells.
+
+So the methodological claim survives in its narrow form and is reportable: **a
+necessity result is a property of its construct**, which means one region can be
+correctly reported as both critical and dispensable, and a benchmark treating
+such rows as one fixed label scores against a moving target.
+
+### Frame traps are worse than assumed
+
+Beyond the TRIOBP-1 59-residue offset: **hnRNPA1's two frames differ by an
+internal alternative exon**, so a commonly cited range exists only in the
+minor-isoform frame and converting it by a constant offset produces a sequence
+that does not occur. Tau's canonical accession is 758-residue big tau while the
+whole literature uses the 441-residue frame. Huntingtin's frame shifts with the
+repeat length.
+
+### Two published predictor negatives worth citing
+
+Amyloid predictors "were all unsuccessful in determining the beta-core interface
+of DISC1". And the full-length hnRNPA1 cryo-EM core "does not encompass the most
+aggregation-prone segments of the protein" — a second case of the same shape.
+
+### What that inventory is not
+
+Its author read only the TRIOBP-1 rows and the contamination material itself;
+the other rows came from four parallel delegated searches with their labels
+reproduced as reported, and four rows are flagged as retrieved-but-not-verbatim-
+checked. One delegate caught its own summariser **inventing two residue ranges**
+and corrected them before tabling; that check was not run on those four. Nothing
+migrates into `data/regions.json` without being read first.

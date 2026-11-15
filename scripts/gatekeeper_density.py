@@ -20,8 +20,11 @@ is about flanking context, not core chemistry.
 
     python3 scripts/gatekeeper_density.py
 
-Sequences for the two psychiatric regions are an unverified UniProt mapping and
-are labelled as such. The zipper peptides are the segments whose crystals this
+PROVENANCE. The TRIOBP-1 25-mer is DERIVED, not transcribed: its source paper
+prints it only in Figure 12B. It was reconstructed from UniProt Q9H2D6 and
+passes three consistency checks (composition, coiled-coil heptads at the stated
+flanks, and frame-offset agreement), but the headline separation below depends
+on it, so verify it against Figure 12B before publishing anything from this. The zipper peptides are the segments whose crystals this
 author has computed interaction energies for.
 """
 GATEKEEPERS = 'P' + 'DEKR'          # proline, plus the charged residues

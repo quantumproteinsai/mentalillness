@@ -13,25 +13,33 @@
  },
  "regions": [
   {
-   "protein": "TRIOBP-1", "residues": "324-348", "frame": "652-residue",
+   "protein": "TRIOBP-1",
+   "residues": "324-348",
+   "frame": "652-residue",
    "sequence_unverified": "PLRENKRVPLTALLNQSRGERRGPP",
    "evidence": "truncation series in SH-SY5Y cells, insolubility fractionation, blinded counts",
    "construct": "truncated construct already lacking both the optional N-terminus and the PH domain, so the central linker was the only aggregation route left",
    "found_by": "experimental scanning; the authors state explicitly it was NOT predicted",
    "source": "Bradshaw et al. 2017",
    "note": "USE THIS AS THE GROUND TRUTH for TRIOBP-1 -- the whole 25-residue linker -- with 324-328 and 333-340 recorded below as assay-specific sub-annotations rather than competing boundary claims.",
-   "verified_against_publisher_pdf": false
+   "verified_against_publisher_pdf": false,
+   "sequence_provenance": "DERIVED, NOT READ. The source paper prints this sequence only in Figure 12B. It was reconstructed from the C-terminal 652 residues of UniProt Q9H2D6 and passes three independent consistency checks: the proline and charge composition matches the paper's description, genuine coiled-coil heptads appear at the stated CC1/CC2 flanks, and the 593-frame offset reproduces the identical string. VERIFY AGAINST FIGURE 12B before any published use -- the gatekeeper result depends on it."
   },
   {
-   "protein": "TRIOBP-1", "residues": "324-328", "frame": "652-residue",
+   "protein": "TRIOBP-1",
+   "residues": "324-328",
+   "frame": "652-residue",
    "evidence": "N-terminal deletions identified these as essential",
-   "construct": "as above", "found_by": "experimental, truncating from the N-terminal end",
+   "construct": "as above",
+   "found_by": "experimental, truncating from the N-terminal end",
    "source": "Bradshaw et al. 2017",
    "note": "sub-annotation, not an independent region",
    "verified_against_publisher_pdf": false
   },
   {
-   "protein": "TRIOBP-1", "residues": "333-340", "frame": "652-residue",
+   "protein": "TRIOBP-1",
+   "residues": "333-340",
+   "frame": "652-residue",
    "sequence_unverified": "LTALLNQS",
    "evidence": "fragments starting at 324 or 333 aggregated, at 349 did not; 341 and 343 partial",
    "construct": "C-terminal fragments",
@@ -41,7 +49,9 @@
    "verified_against_publisher_pdf": false
   },
   {
-   "protein": "TRIOBP-1", "residues": "1-59", "frame": "652-residue",
+   "protein": "TRIOBP-1",
+   "residues": "1-59",
+   "frame": "652-residue",
    "evidence": "deletion reduced aggregation; deleting 1-59 together with 333-340 nearly abolished it",
    "construct": "FULL-LENGTH protein, where a second aggregation route survives",
    "found_by": "tested after an unexpected result, not from prediction",
@@ -50,7 +60,9 @@
    "verified_against_publisher_pdf": false
   },
   {
-   "protein": "TRIOBP-1", "residues": "60-189", "frame": "652-residue",
+   "protein": "TRIOBP-1",
+   "residues": "60-189",
+   "frame": "652-residue",
    "evidence": "stable dimer by size-exclusion chromatography and circular dichroism",
    "construct": "isolated PH domain",
    "found_by": "earlier bioinformatics pointed here; the deletion work did NOT support it",
@@ -59,7 +71,8 @@
    "verified_against_publisher_pdf": false
   },
   {
-   "protein": "DISC1", "residues": "691-836",
+   "protein": "DISC1",
+   "residues": "691-836",
    "evidence": "ITC, DLS, CD, negative-stain EM, solid-state NMR on recombinant protein",
    "construct": "isolated C-region, E. coli, tagged, up to 400 uM, sonicated, two weeks",
    "found_by": "boundaries from ESPRIT, an experimental screen",
@@ -68,7 +81,8 @@
    "verified_against_publisher_pdf": false
   },
   {
-   "protein": "DISC1", "residues": "716-761",
+   "protein": "DISC1",
+   "residues": "716-761",
    "sequence_unverified": "VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH",
    "evidence": "solid-state NMR beta-strand chemical shifts, EM morphology",
    "construct": "as above",
@@ -79,15 +93,18 @@
    "verified_against_publisher_pdf": false
   },
   {
-   "protein": "DISC1", "residues": "717-737, 739-761",
+   "protein": "DISC1",
+   "residues": "717-737, 739-761",
    "evidence": "sequence repeat, consistent with ssNMR shifts",
-   "construct": "as above", "found_by": "RADAR",
+   "construct": "as above",
+   "found_by": "RADAR",
    "source": "Cukkemane et al. 2021",
    "note": "the restraint segments used to build the model above; not independent of it",
    "verified_against_publisher_pdf": false
   },
   {
-   "protein": "DISC1", "residues": "748-769",
+   "protein": "DISC1",
+   "residues": "748-769",
    "evidence": "the delta-22 splice deletion, named for its 22 residues",
    "construct": "splice variant",
    "found_by": "variant, not prediction",
@@ -96,7 +113,8 @@
    "verified_against_publisher_pdf": false
   },
   {
-   "protein": "DISC1", "residues": "384-415",
+   "protein": "DISC1",
+   "residues": "384-415",
    "evidence": "truncation and deletion in cells; no single D, I, S or C region aggregates alone",
    "construct": "full-length and domain constructs",
    "found_by": "experimental; no aggregation predictor involved",
@@ -109,5 +127,9 @@
   "DISC1 L607F": "DO NOT ADD. It appears in neither Cukkemane paper. The 2025 paper discusses L807-FS, a frameshift downstream of residue 807 -- a different residue and a different lesion. L607F's characterised phenotype is disrupted nuclear targeting and reduced ATF4 interaction, with no aggregation structure behind it.",
   "DISC1 S704C": "Not an aggregation region. Measured from PDB 9RUX coordinates: its mouse equivalent is buried behind 96 heavy-atom neighbours with no cysteine sulfur within 11.76 A in any of four chains. A folding and packing variant."
  },
- "_the_target_count": "The plan sets a floor of roughly fifteen well-evidenced rows before proceeding. This file holds ten, of which several are sub-annotations or circular. Widening to every protein with fragment-level aggregation mapping -- not only the psychiatric ones -- is the outstanding task."
+ "_the_target_count": "The plan sets a floor of roughly fifteen well-evidenced rows before proceeding. This file holds ten, of which several are sub-annotations or circular. Widening to every protein with fragment-level aggregation mapping -- not only the psychiatric ones -- is the outstanding task.",
+ "_the_inventory": "A 146-row inventory across ~45 proteins now exists at research_notes/Mental illness aggregation structures/aggregation_region_ground_truth_inventory.md. About 20 rows are circular and about 40 are independent across ~25 proteins -- roughly five times this file. That answers the statistical-power problem. Rows must be read and verified before migrating them here.",
+ "_CPAD_CONTAMINATION_WARNING": "DO NOT BULK-IMPORT FROM CPAD. The CANYA paper (Thompson 2025, Sci Adv, PMC12042874) states verbatim that \"several of these methods (including TANGO, CamSol, and Aggrescan) were directly trained on sequences within CPAD\", which violates out-of-sample evaluation on those datasets. Drawing rows from CPAD without per-row provenance checks reproduces exactly the violation that paper names. The same paper reports that on WALTZ-DB hexapeptides \"no method significantly outperformed hydrophobicity\".",
+ "_circularity_cannot_be_grepped": "The predictor-provenance column cannot be filled by keyword search. Circularity is PROTEIN-specific, not lab- or journal-specific: the same laboratory in the same era produced rows of opposite status, and so did two segments of one protein. Four rows would be wrongly flagged by a grep, because a post-hoc remark about a predictor, or the use of a disorder or helix-propensity tool, is not prediction-guided discovery. Each row has to be read.",
+ "_frame_traps_are_worse_than_assumed": "Beyond the TRIOBP-1 59-residue offset: hnRNPA1's two frames differ by an INTERNAL ALTERNATIVE EXON, so one commonly cited range exists only in the minor-isoform frame and converting it by a constant offset yields a sequence that does not occur. Tau's canonical accession is 758-residue big tau while the entire literature uses the 441-residue frame. Huntingtin's frame shifts with the repeat length."
 }

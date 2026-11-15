@@ -75,9 +75,63 @@ census of over forty prediction tools covering all five target proteins contains
 no PLM predictor anywhere in its tool list. Both tools needed are installable,
 maintained and sequence-only.
 
-Of the four tools that failed in 2017: **TANGO and AGGRESCAN are live,
-FoldAmyloid is unreachable and ProA returns 404.** Half the legacy baseline is
-itself now a finding.
+Of the four tools that failed in 2017: **TANGO and AGGRESCAN are live, the
+FoldAmyloid server is unreachable and ProA returns 404.**
+
+**But a dead server is not a dead method, and the two must not be stated as
+one.** The FoldAmyloid primary paper was read in full on 15 Nov 2026
+(Garbuzynskiy, Lobanov & Galzitskaya, *Bioinformatics* 26:326-332, 2010,
+doi:10.1093/bioinformatics/btp691), and the method is **completely specified**:
+three 20-value amino-acid scales — expected packing density, and
+backbone-backbone hydrogen-bond probability assigned to donors and to acceptors
+— a **5-residue sliding window**, a region called amyloidogenic when **five or
+more consecutive residues** exceed the cutoff, cutoffs of 21.4 contacts/residue,
+0.697 donor, 0.671 acceptor, 0.090 twice-hybrid and 0.062 triple-hybrid, and
+hybrid scales built by z-normalising each scale to mean 0 and sd 1 and averaging
+with equal weights.
+
+The **only** missing piece is the 20 numeric values per scale: Figure 1 plots
+them as bar charts, and the text refers the contact scale to Galzitskaya et al.
+2006a. **Galzitskaya et al. 2006b, *PLoS Comput Biol* 2:e177, is open access**
+and is the stated source of both the 3769-structure database and the
+packing-density calculation. One fetch stands between this project and a
+reimplementable FoldAmyloid, so the legacy baseline is **three of four runnable,
+not two**, with the server's death a separate and still-publishable finding.
+
+The server check has also been redone properly: the paper publishes
+`http://antares.protres.ru/fold-amyloid/`, **not** the `bioinfo.protres.ru` host
+this project tested. Both return 000 over http and https, as does the
+`amyloid_base.html` dataset page. Dead or blocked from this host remains
+undecided, so "down on 2026-11-15" stays the defensible claim.
+
+**And a FoldAmyloid negative is worth very little even when it runs.** Three
+things, all `[READ]` from the paper:
+
+- **It misses VQIVYK.** "In the case of unstructured tau-protein, **only contact
+  scale** finds the experimentally detected region (306-311)" — two of three
+  scales miss the canonical steric zipper. The abstract's "10 out of 11" is
+  reached twice by different routes: the packing-density scale gets 10/11
+  missing a myoglobin fragment, and the **acceptor scale, its best performer on
+  peptides, gets 10/11 by missing tau PHF6**. No single scale reaches 11.
+- **Its decision unit is five residues**, which is primary-source support for
+  the section below rather than an inference from it.
+- **Its taxonomy has no category for these regions.** The paper names type I
+  (hydrophobic) and type II (Gln/Asn-rich, GNNQQNY), states that "most methods
+  of prediction of amyloidogenic fragments are designed for searching for the
+  regions of type I", and that "our database contains **no** amyloidogenic
+  peptides of the second type". A proline- and charge-rich region is neither.
+
+**Its benchmark is also contaminated, and its published head-to-head is one
+standard error wide.** The 407-peptide set (144 amyloidogenic, 263 not) is
+merged from Fernandez-Escamilla 2004 — TANGO's own paper — and Thompson 2006,
+the 3D-profile paper; cutoff and window were **optimised on it**, so the
+headline 80%/72% is in-sample. Table 2's 179 peptides are "in fact a third of
+our database", a subset of that same tuning set, while TANGO's row comes from a
+set derived from TANGO's own paper and PASTA's row from PASTA's own paper. The
+table spans 0.73-0.79 sensitivity and 0.73-0.79 specificity; at n <= 179 the
+binomial standard error on any one value is about +/-0.04 to 0.06, so **no
+method in it is distinguishable from another** — the CANYA conclusion already
+recorded below, now reachable from a 2010 primary source.
 
 One outstanding risk to this, and only one: a 2025 PhD thesis from the
 experimental group, two PDF versions online, unopened. If it contains modern
@@ -99,16 +153,44 @@ Then the inversion, which is the paper's spine. Proline and flanking charge are
 Run `scripts/gatekeeper_density.py`:
 
     crystallised steric zippers:  0.0% to 16.7%   (n = 7)
-    psychiatric regions:         48.0% to 50.0%   (n = 2)
+    psychiatric regions:                48.0%     (n = 1)
 
-By the field's own published rules both mapped regions should be aggregation
-*suppressors*. Experiment says they are the aggregation-critical regions.
+**Corrected 15 Nov 2026, from n = 2 to n = 1.** The second row was DISC1
+716-761, which `data/regions.json` flags in capitals as "THIS IS A DOCKING
+RESTRAINT, NOT A MEASUREMENT" and whose `found_by` reads "RADAR sequence-repeat
+search" — **found by a sequence search**, which is exactly what the `found_by`
+column exists to catch. Scoring it put a predicted region inside a table about
+predictor failure. The clean DISC1 row, **384-415** ("experimental; no
+aggregation predictor involved"), is the one the N = 2 argument below rests on,
+and it carries **no sequence in `regions.json`** — supplying it from UniProt
+Q9NRI5 restores the second row honestly.
 
-**And one cheap computation decides which paper this is.** The narrowed 8-mer
-`LTALLNQS` sits inside the 25-residue region and is itself **0% gatekeeper** —
-indistinguishable from VQIVYK or GNNQQNY. Score it in isolation: positive means
-the failure is about flanking context, negative means intrinsic core chemistry.
-Different papers. Compute before framing.
+The cause was structural: the script **hardcoded sequences that duplicate
+`regions.json`, and the two had drifted**. It now reads them from the
+validation set and hard-fails on a mismatch, and names every excluded row with
+its reason. The N = 2 claim below is unaffected — it is about two
+experimentally mapped linkers, not about this table.
+
+By the field's own published rules the mapped region should be an aggregation
+*suppressor*. Experiment says it is the aggregation-critical one.
+
+**The separation is partly a window-length artefact, and that sharpens the
+paper rather than weakening it.** The table compares **selected** 6-11 residue
+cores against an **unselected** 25-residue region — a minimum against a mean.
+Matched to the 5-6 residue window a predictor actually scores, TRIOBP-1 324-348
+contains **7 of 20 hexapeptide windows at or below the worst crystallised
+zipper**, with a minimum of **0.0%** at `LTALLN`. So "a negative call is
+uninformative by construction" is too strong: a window-scanning predictor had a
+0%-gatekeeper hexapeptide sitting inside the region and **missed the region
+anyway**. That is a harder failure, and it does not depend on the whole-region
+density at all.
+
+**And one cheap computation still decides which paper this is.** The narrowed
+8-mer `LTALLNQS` sits inside the 25-residue region and is itself **0%
+gatekeeper** — indistinguishable from VQIVYK or GNNQQNY. Score it in isolation:
+positive means the failure is about flanking context, negative means intrinsic
+core chemistry. Different papers. Compute before framing — and **after** the
+pre-registration, since scoring it is a predictor run.
 
 ## N = 2, not N = 1
 

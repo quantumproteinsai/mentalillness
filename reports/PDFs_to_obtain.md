@@ -58,6 +58,33 @@ Ranked by what changes if you read it.
 8. **The *Cells* (2023) co-aggregation review** — never read.
    Cited into the DISC1/CRMP1/TRIOBP-1 co-aggregation claim.
 
+9. **Galzitskaya OV, Garbuzynskiy SO, Lobanov MY (2006b), "Prediction of amyloidogenic
+   and disordered regions in protein chains", *PLoS Comput Biol* 2(12):e177** —
+   **OPEN ACCESS, so this is a fetch rather than a paywall.** Added 15 Nov 2026.
+
+   **What it buys: the twenty numbers that make FoldAmyloid runnable again.** The
+   FoldAmyloid primary paper (Garbuzynskiy et al. 2010, *Bioinformatics* 26:326-332)
+   has been read in full and specifies the entire method — three scales, 5-residue
+   window, call on 5 consecutive residues above cutoff, cutoffs 21.4 / 0.697 / 0.671 /
+   0.090 / 0.062, hybrids by z-normalise-then-average. **The one thing it does not
+   print is the 20 per-residue values for each scale**: Figure 1(a-e) plots them as bar
+   charts only, and the text refers the contact scale to "our previous work
+   (Galzitskaya et al., 2006a)". 2006b is the companion that documents the
+   3769-structure database (<25% identity, SCOP a/b/c/d) and the packing-density
+   definition (non-hydrogen atoms within 8 A, neighbours excluded).
+
+   **Why it matters to the argument, not just the tooling.** The FoldAmyloid server is
+   dead at the URL the paper itself publishes (`antares.protres.ru/fold-amyloid/`, 000
+   over http and https, re-checked 15 Nov 2026). Without the scale values the legacy
+   baseline is two of Bradshaw 2017's four tools; with them it is **three of four**, and
+   a reviewer loses the objection that the 2017 comparison cannot be reproduced.
+
+   **Check on arrival:** that 2006b actually prints the numeric scales rather than
+   plotting them too. If it does not, the next target is Galzitskaya et al. 2006a,
+   *J Bioinf Comp Biol* 4:373-388, which the 2010 paper names as the source. If
+   neither prints them, say so and stop — a reimplementation from digitised bar charts
+   is not a reproduction of FoldAmyloid and must not be labelled as one.
+
 ## Not a paywall — a search limit worth closing
 
 9. A proper **forward-citation sweep** of the AggreProt (2024) and AggrescanAI (2026)

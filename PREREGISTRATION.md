@@ -2,8 +2,15 @@
 
 **STATUS: DRAFT, 15 Nov 2026. NOT YET IN FORCE.** Written by Claude, for the author to
 amend, reject or ratify. Nothing in this document binds anything until §12 is signed and
-the freeze commit exists. Decision points the author must settle are marked
-**[AUTHOR DECISION]**.
+the freeze commit exists.
+
+**All three open decision points were resolved on 15 Nov 2026 by Claude, on the author's
+instruction**, and each is marked **RESOLVED** at the point of use with the reasoning
+attached: the combination statistic (§3.1), the handling of a FoldAmyloid
+reimplementation that fails its own checks (§5.1), and the entry rule for modern
+predictors (§5.2). **The author should read those three and overturn any of them — they
+are judgement calls delegated, not facts established**, and a pre-registration is worth
+nothing if its author has not actually agreed with it.
 
 Read `STATE.md` first. This document assumes it.
 
@@ -75,10 +82,21 @@ This transformation is the reason for the whole construction: it makes a 25-resi
 region in a 652-residue protein and a 32-residue region in an 854-residue protein
 directly comparable, with no tuning.
 
-**Combination across rows:** Fisher's method, **χ² = −2 Σ ln(v_i)** on 2n degrees of
-freedom, one-sided. **[AUTHOR DECISION]** Fisher weights small *v* heavily and is the
-conventional choice; Stouffer's Z weights rows equally. Fisher is pre-registered unless
-the author substitutes Stouffer here, in writing, before the freeze.
+**Combination across rows — RESOLVED 15 Nov 2026, by Claude on the author's instruction.**
+
+**Primary: Stouffer's Z**, equal weights, one-sided.
+**Secondary, always reported alongside: Fisher's method**, χ² = −2 Σ ln(v_i) on 2n df.
+
+Fisher is the conventional choice and is more powerful when one row is recovered
+spectacularly and the rest are not. **That is exactly this project's recurring failure
+mode** — on 15 Nov 2026 a two-protein gatekeeper claim turned out to rest on one protein
+plus an excluded row (§9), and H1 is a claim about predictors *in general*, not about
+there existing one region somewhere that a predictor finds. Stouffer weights rows
+equally and cannot be carried by a single outlier, so it is primary.
+
+Both are reported in every case, because a referee will expect Fisher and because a
+disagreement between them **is itself informative**: Stouffer null with Fisher
+significant means one row is doing all the work, and the paper must say which row.
 
 ### 3.2 The legacy-versus-modern comparison
 
@@ -117,16 +135,42 @@ not report those as findings.
 **The FoldAmyloid reimplementation is itself a pre-registered object.** It must reproduce
 the paper's own published checks before it may score our rows: the reported 80%/72%
 sensitivity/specificity on its 407-peptide set, and the protein-level result that **only
-the contact scale finds tau 306-311**. If it cannot reproduce those, it is not
-FoldAmyloid and must be reported as "FoldAmyloid, reimplemented, unvalidated" or dropped.
-**[AUTHOR DECISION]** Which of those two.
+the contact scale finds tau 306-311**. **RESOLVED 15 Nov 2026, by Claude on the author's instruction — and the answer is
+neither of the two options originally offered.** If the reimplementation fails those
+checks it is **excluded from the confirmatory legacy arm**, so that a bug in our code can
+never masquerade as a 2010 tool's failure and contaminate the legacy-versus-modern
+comparison. It is **reported in full anyway**, as a methods result, with the discrepancy
+quantified against the paper's published figures.
+
+Dropping it silently would hide a result; labelling it "FoldAmyloid" while unvalidated
+would attribute our bug to Garbuzynskiy. The legacy arm then has **two live tools plus
+one that could not be reconstructed**, which is a weaker comparison and must be stated as
+one. That the method is fully specified in print and still could not be reproduced would
+be the sharpest reproducibility finding available to this paper.
 
 ### 5.2 Modern generation
 
 **AggreProt** (2024, installable Python) and **AggrescanAI** (2026, Colab + pretrained
 weights), both sequence-only. Versions and commit hashes recorded in the freeze commit.
-**[AUTHOR DECISION]** Whether to add further PLM-era tools. Adding tools after unblinding
-is forbidden; adding them before the freeze is free.
+
+**RESOLVED 15 Nov 2026, by Claude on the author's instruction — as a rule rather than a
+list**, so that the answer does not change every time a tool appears:
+
+> **A predictor enters the confirmatory modern arm only if it is version-pinnable and
+> runs locally.** Everything else is exploratory, reported separately, and excluded from
+> the multiplicity correction.
+
+That criterion is not invented here — it is this project's own finding, recorded in
+`prior_computation_and_framing.md`: *"a web form is not a reproducible tool — it cannot
+be version-pinned, and three of the services checked today were down or gone."* A
+benchmark whose baseline evaporates between submission and review is not a benchmark, and
+half the 2017 legacy set has already evaporated.
+
+By that rule AggreProt and AggrescanAI are in, and the remaining eleven-plus PLM-era
+tools from the September 2026 census are exploratory unless they ship installable
+weights. **Any tool meeting the rule may be added freely before the freeze and none
+after.** The novelty claim — that no PLM predictor has ever been run on DISC1 or
+TRIOBP-1 — is unaffected either way, since it concerns the class, not our coverage of it.
 
 ### 5.3 Window size and score normalisation
 
@@ -287,7 +331,9 @@ Stated so it cannot be quietly avoided:
 
 1. Clear §6.3: read Figure 12B, confirm the DISC1 range.
 2. Read the 2025 thesis (§11).
-3. Settle every **[AUTHOR DECISION]**.
+3. ~~Settle every **[AUTHOR DECISION]**.~~ **Done 15 Nov 2026** (§3.1, §5.1, §5.2),
+   delegated to Claude. **The author must still read and ratify or overturn those three**
+   — delegation is not agreement, and §13 is the place it becomes binding.
 4. Record predictor versions, commit hashes and web-form settings.
 5. Commit this file with the SHA-256 of `data/regions.json` recorded in the commit
    message. **That commit is the freeze.**

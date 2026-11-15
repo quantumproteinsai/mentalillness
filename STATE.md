@@ -153,17 +153,51 @@ Then the inversion, which is the paper's spine. Proline and flanking charge are
 Run `scripts/gatekeeper_density.py`:
 
     crystallised steric zippers:  0.0% to 16.7%   (n = 7)
-    psychiatric regions:                48.0%     (n = 1)
+    psychiatric regions:         18.8% to 48.0%   (n = 2)
 
-**Corrected 15 Nov 2026, from n = 2 to n = 1.** The second row was DISC1
+> ### THE SEPARATION DOES NOT GENERALISE, and this is the paper's spine
+>
+> **Established 15 Nov 2026, once the clean DISC1 row was given its sequence from
+> UniProt Q9NRI5 (854 aa, SV=3, retrieved from the REST API rather than transcribed).**
+>
+>     TRIOBP-1 324-348   48.0%   gatekeeper-rich, as claimed
+>     DISC1    384-415   18.8%   +2.1 points above the WORST zipper (16.7%)
+>
+> DISC1 384-415 is `EQEKISLHFQLPSRQPALSSFLGHLAAQVQAA` — 2 prolines and 4 charges in 32
+> residues. Against the worst crystallised zipper at 16.7%, that is **not a separation**.
+> **18 of its 27 hexapeptide windows sit at or below the worst zipper**, minimum 0.0% at
+> `ISLHFQ`.
+>
+> The published-looking "48.0% to 50.0% (n = 2)" was **TRIOBP-1 plus DISC1 716-761**, and
+> 716-761 is the docking-restraint row whose `found_by` reads "RADAR sequence-repeat
+> search" — found *by* a sequence search, which is precisely what that column exists to
+> exclude. Swapping in the clean row **does not restore the headline. It breaks it.**
+>
+> **What survives, and it is narrower than the draft assumes:**
+> - **n = 1 on the gatekeeper paradox.** One experimentally mapped region is half
+>   proline and charge and is nonetheless aggregation-critical. That is a striking single
+>   case, not a pattern across two proteins.
+> - **n = 2 on the prediction failure**, which is untouched: both regions were found by
+>   truncation, neither by prediction, and the predictors missed both.
+>
+> **These are two different claims with two different n, and the draft currently states
+> them as one number.** The gatekeeper inversion cannot carry a paper about two proteins
+> on one protein's worth of evidence. Either widen the validation set until the paradox
+> has a second independent case, or demote it from the spine to a single striking
+> observation and let the prediction failure carry the paper.
+
+**Superseded note, kept for the record — corrected 15 Nov 2026 from n = 2 to n = 1,
+then restored to a true n = 2 above.** The excluded row was DISC1
 716-761, which `data/regions.json` flags in capitals as "THIS IS A DOCKING
 RESTRAINT, NOT A MEASUREMENT" and whose `found_by` reads "RADAR sequence-repeat
 search" — **found by a sequence search**, which is exactly what the `found_by`
 column exists to catch. Scoring it put a predicted region inside a table about
 predictor failure. The clean DISC1 row, **384-415** ("experimental; no
 aggregation predictor involved"), is the one the N = 2 argument below rests on,
-and it carries **no sequence in `regions.json`** — supplying it from UniProt
-Q9NRI5 restores the second row honestly.
+and it then carried **no sequence in `regions.json`** — which is why the table
+briefly reported n = 1. **That sequence has since been supplied from UniProt
+Q9NRI5 and the restored row broke the headline rather than restoring it**, as
+the banner above records.
 
 The cause was structural: the script **hardcoded sequences that duplicate
 `regions.json`, and the two had drifted**. It now reads them from the
@@ -171,8 +205,9 @@ validation set and hard-fails on a mismatch, and names every excluded row with
 its reason. The N = 2 claim below is unaffected — it is about two
 experimentally mapped linkers, not about this table.
 
-By the field's own published rules the mapped region should be an aggregation
-*suppressor*. Experiment says it is the aggregation-critical one.
+By the field's own published rules **TRIOBP-1 324-348** should be an aggregation
+*suppressor*. Experiment says it is the aggregation-critical one. **That holds
+for TRIOBP-1 and not for DISC1 384-415** — see the banner above.
 
 **The separation is partly a window-length artefact, and that sharpens the
 paper rather than weakening it.** The table compares **selected** 6-11 residue

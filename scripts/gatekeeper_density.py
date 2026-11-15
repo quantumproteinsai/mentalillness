@@ -68,6 +68,11 @@ INCLUDE = {
     ('TRIOBP-1', '333-340'): (
         'the test', 'the narrowed 8-mer, found by experimental truncation. '
         'Sits INSIDE 324-348 and is itself 0% gatekeeper.'),
+    ('DISC1', '384-415'): (
+        'region', 'found_by: experimental, no aggregation predictor involved. '
+        'Sequence retrieved from UniProt Q9NRI5 (854 aa, SV=3) on 15 Nov 2026, '
+        'not transcribed by hand. This is the row STATE.md\'s N=2 argument '
+        'actually rests on, and it is NOT gatekeeper-rich -- see the banner.'),
 }
 
 # Named, with the reason, so the exclusion is auditable rather than invisible.
@@ -77,12 +82,28 @@ EXCLUDE = {
         'search", i.e. found BY a sequence search; and regions.json carries '
         'CAUTION_2026_11_15: "THIS IS A DOCKING RESTRAINT, NOT A MEASUREMENT". '
         'Scoring it put a predicted region in a table about predictor failure.',
-    ('DISC1', '384-415'):
-        'WANTED BUT UNAVAILABLE. This is the clean DISC1 row -- "experimental; '
-        'no aggregation predictor involved" -- and the one STATE.md names in '
-        'the N=2 argument. regions.json carries NO SEQUENCE for it. Supply the '
-        'sequence from UniProt Q9NRI5 (854 aa, canonical) and it belongs here.',
 }
+
+# What the restored n=2 actually shows. Printed as a banner because it is the
+# opposite of what the table was built to show.
+BANNER = """
+THE SEPARATION DOES NOT GENERALISE. Restored to an honest n = 2 on
+15 Nov 2026, the two experimentally mapped psychiatric regions disagree:
+
+    TRIOBP-1 324-348    48.0%   gatekeeper-rich, as claimed
+    DISC1    384-415    18.8%   +2.1 points above the WORST zipper (16.7%)
+
+The reported "48.0% to 50.0% (n = 2)" was TRIOBP-1 plus DISC1 716-761, and
+716-761 is the docking-restraint row found by a RADAR sequence search --
+exactly what the found_by column exists to exclude. Swapping in the clean
+DISC1 row does not restore the headline, it breaks it. One region is
+gatekeeper-rich; the other is indistinguishable from a steric zipper.
+
+What survives is narrower and still worth having: a 25-residue region that
+is half proline and charge was mapped experimentally as aggregation-
+critical, and the predictors missed it. That is n = 1 on the paradox, and
+n = 2 on the prediction failure. Do not state them as one number.
+"""
 
 ZIPPERS = [                         # deposited crystals, not validation rows
     ('tau PHF6 (2ON9)',      'VQIVYK'),
@@ -118,9 +139,17 @@ def load_psychiatric():
         if not seq:
             sys.exit(f'{key} carries no sequence in regions.json')
         unverified = not row.get('verified_against_publisher_pdf', False)
+        prov = row.get('sequence_provenance', '')
         out.append(dict(name=f'{key[0]} {key[1]}', seq=seq, kind=kind,
                         reason=reason, unverified=unverified,
-                        derived='sequence_provenance' in row))
+                        # A sequence pulled from UniProt is not in the same
+                        # provenance class as one reconstructed from a figure.
+                        # Both leave the RANGE unverified; only one leaves the
+                        # LETTERS unverified.
+                        source=('UniProt; range unverified'
+                                if prov.startswith('RETRIEVED FROM UNIPROT')
+                                else 'DERIVED, unverified' if prov
+                                else 'unverified')))
     out.sort(key=lambda r: (r['kind'] != 'region', r['name']))
     return out, by_key
 
@@ -134,9 +163,7 @@ def main():
     for r in psy:
         n, L, pct = density(r['seq'])
         p = r['seq'].count('P')
-        prov = 'DERIVED, unverified' if r['derived'] else (
-            'unverified' if r['unverified'] else 'verified')
-        print(f'{r["name"]:26s} {L:4d} {p:4d} {n - p:5d} {pct:12.1f}%  {prov}')
+        print(f'{r["name"]:26s} {L:4d} {p:4d} {n - p:5d} {pct:12.1f}%  {r["source"]}')
     for name, seq in ZIPPERS:
         n, L, pct = density(seq)
         print(f'{name:26s} {L:4d} {seq.count("P"):4d} {n - seq.count("P"):5d} '
@@ -154,6 +181,8 @@ def main():
     if len(reg) < 2:
         print()
         print('  *** n = 1. The second psychiatric region is EXCLUDED, not absent. ***')
+    else:
+        print(BANNER.rstrip())
 
     print('\nEXCLUDED ROWS, named so the exclusion is auditable')
     print('-' * 86)

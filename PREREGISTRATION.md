@@ -321,16 +321,25 @@ Stated so it cannot be quietly avoided:
 - Tier B recovery rates for legacy and modern are **indistinguishable within their CIs**
   → there is no generational effect, and the paper is about hexapeptide training, not
   about progress.
-- The 2025 PhD thesis from the experimental group contains modern predictor runs → the
-  novelty claim changes. **This is a Tier 0 obtain-list item and must be read before the
-  freeze.**
+- ~~The 2025 PhD thesis from the experimental group contains modern predictor runs → the
+  novelty claim changes.~~ **DISCHARGED 15 Nov 2026.** Samardžija's thesis was supplied by
+  the author and **read in full**: it contains no aggregation predictor runs of any kind,
+  of either generation. Its methods chapter has no bioinformatics section, and its only
+  sequence-analysis tool is ProSite, used to draw domain cartoons. The novelty claim is
+  unchanged. See `STATE.md` and `reports/PDFs_to_obtain.md` item 1.
 
 ---
 
 ## 12. Freeze protocol
 
-1. Clear §6.3: read Figure 12B, confirm the DISC1 range.
-2. Read the 2025 thesis (§11).
+1. Clear §6.3: read Figure 12B, confirm the DISC1 range. **Two additions from the
+   thesis, 15 Nov 2026:** (a) settle the TRIOBP-1 minimal region against Zaharija 2022 —
+   the thesis says **7 aa**, `regions.json` says **333-340, an 8-mer**, and one is wrong;
+   (b) read Zaharija & Bradshaw 2024 (*Prog Neuropsychopharmacol Biol Psychiatry*
+   130:110923), which maps DISC1 aggregation to a central region and may supersede or
+   source the unverified 384-415 range. Both move Tier A boundaries.
+2. ~~Read the 2025 thesis (§11).~~ **Done 15 Nov 2026 — read in full, condition
+   discharged, novelty claim unchanged.**
 3. ~~Settle every **[AUTHOR DECISION]**.~~ **Done 15 Nov 2026** (§3.1, §5.1, §5.2),
    delegated to Claude. **The author must still read and ratify or overturn those three**
    — delegation is not agreement, and §13 is the place it becomes binding.

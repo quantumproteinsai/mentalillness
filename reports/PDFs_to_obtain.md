@@ -7,42 +7,25 @@ Ranked by what changes if you read it.
 
 ## Tier 0 — these decide whether the project is viable
 
-1. **Samardžija B (2025), PhD thesis, University of Rijeka, Faculty of Biotechnology and
-   Drug Development (Fakultet biotehnologije i razvoja lijekova).**
-   **This is the single outstanding risk to the whole premise**: the literature search
-   found no protein-language-model predictor ever run on DISC1 or TRIOBP-1, but a thesis
-   from the experimental group is exactly where such runs would sit unindexed. Samardžija
-   is first author of *Cells* 12(14):1848 (2023) and *Sci Rep* (2026), and a co-author
-   with Korth and Bradshaw — i.e. a doctoral student in the group that did the TRIOBP-1
-   truncation work.
+1. ~~**Samardžija B (2025), PhD thesis, University of Rijeka.**~~
+   **RESOLVED 15 Nov 2026 — READ IN FULL. The gap holds; this item is closed.**
+   The author supplied the PDF after both recorded URLs returned **HTTP 404** and
+   `repository.biotech.uniri.hr` returned **HTTP 418** to scripted requests (an explicit
+   anti-automation response, not worked around). *Obtained by asking, not by retrieval.*
 
-   ~~Two PDF versions are online and neither was opened. Two downloads away.~~
-   **FALSE AS OF 15 Nov 2026 — BOTH RECORDED URLS ARE DEAD.** Checked directly:
-   - `biotech.uniri.hr/wp-content/uploads/2025/04/Bobana-Samardzija-PhD-thesis-2025.pdf`
-     → **HTTP 404**
-   - `biotech.uniri.hr/wp-content/uploads/2025/05/Bobana-Samardzija-PhD-thesis-2025-version-2.pdf`
-     → **HTTP 404**
+   "Aggregation, parallel aggregation and co-aggregation of proteins in chronic mental
+   illnesses", 274 pp, mentor Nicholas J. Bradshaw, defended 5 June 2025.
 
-   The faculty site itself is alive (HTTP 200) and returns its Croatian 404 page,
-   *"Tražena stranica ne postoji!"*, so this is **removal, not an outage**. The thesis was
-   taken down from that path at some point after the sweep recorded the links.
+   **It contains no aggregation predictor runs of any kind.** §3.1-3.19 has no
+   bioinformatics section; all named software is instrumentation or statistics (ImageLab,
+   CellSens, ImageJ/Fiji, JASP, Prism, MassHunter, FlyTracker/MATLAB, a Python SIN script,
+   BioRender) plus **ProSite, used only to draw the domain cartoons in Figures 2 and 3**.
+   TANGO, AGGRESCAN, FoldAmyloid, ProA, WALTZ, PASTA, AmylPred2, AggreProt and AggrescanAI
+   are absent, as is any PLM and AlphaFold. The single "in silico" phrase concerns *CRMP1*
+   variants and cites Ravindran et al. 2022, not work done here.
 
-   **Routes still open, none of them automatable from here:**
-   - `repository.biotech.uniri.hr` — alive, but returns **HTTP 418** to scripted requests.
-     That is an explicit anti-automation response and was **not worked around**. It should
-     work from a browser.
-   - `dr.nsk.hr` — the Croatian national dissertation repository. Alive; the query form
-     used here surfaced nothing, but it is the canonical home for a Croatian PhD thesis
-     and deserves a manual search.
-   - **Ask the group.** `STATE.md` already identifies a cheap, decisive wet-lab question
-     to put to the experimental group (non-reducing vs reducing SDS-PAGE on the
-     three-cysteine DISC1 construct). A request for the thesis costs nothing alongside it
-     and is the most likely route to succeed.
-
-   **Methodological note, the second instance in one day.** FoldAmyloid's server and this
-   thesis were both recorded as available by a literature sweep and are both now gone.
-   **Availability recorded at sweep time is not availability now**, and any claim of the
-   form "two downloads away" has a shelf life. Re-check before relying on one.
+   **`PREREGISTRATION.md` §11's fourth falsification condition is discharged.** Full
+   assessment, including the three things the thesis *does* change, in `STATE.md`.
 
 2. **Nucifora et al.**, *American Journal of Psychiatry* (2019) — **full text and the
    mass-spectrometry protein list.**
@@ -67,6 +50,26 @@ Ranked by what changes if you read it.
    The 324–348 ground truth and the proline/charge "turn and interaction surface"
    hypothesis both come from here. Your own plan already lists it for Week 1; it is still
    unread by any automated route, and the mechanistic half of the paper rests on it.
+
+4a. **Zaharija B & Bradshaw NJ (2024)**, "Aggregation of Disrupted in Schizophrenia 1
+   arises from a central region of the protein", *Prog Neuropsychopharmacol Biol
+   Psychiatry* **130**:110923. **Added 15 Nov 2026 from the thesis reference list
+   (ref. 502); we did not have it.**
+
+   **Potentially a better-sourced Tier A DISC1 row than 384-415.** It is experimental
+   region-mapping of DISC1 aggregation by the same group, and the thesis uses its
+   Flag-DISC1 **257-655** construct, described there as "D and I domain only". Our current
+   DISC1 Tier A row, 384-415, sits inside that span and has an **unverified range** — this
+   paper may be where the boundaries actually come from, or may supersede them.
+   **Check `found_by` carefully:** a region found by an aggregation predictor is circular
+   for this benchmark no matter how good the paper is.
+
+4b. **Zaharija et al. (2022)**, *Int. J. Mol. Sci.* **23**:11048 — **re-read for the
+   TRIOBP-1 minimal region length. A one-residue discrepancy inside the group's own
+   work.** The 2025 thesis states (p.48) that the critical 25-mer was "later shortened to
+   the **7 aa** domain"; `data/regions.json` carries **333-340, which is 8 residues**,
+   sourced to this paper, on which the thesis author is a co-author. One of the two is
+   wrong. **This moves a Tier A boundary and must be settled before the freeze.**
 
 5. **Narayanan et al. (2011)**, *JBC*, PMC3243500. Europe PMC returned HTTP 500.
    Needed to close one specific question: whether **any** DISC1 study used a reducing

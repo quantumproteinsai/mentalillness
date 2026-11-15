@@ -133,23 +133,65 @@ binomial standard error on any one value is about +/-0.04 to 0.06, so **no
 method in it is distinguishable from another** — the CANYA conclusion already
 recorded below, now reachable from a 2010 primary source.
 
-One outstanding risk to this, and only one: **Samardžija's 2025 PhD thesis**
-from the experimental group — University of Rijeka, Faculty of Biotechnology and
-Drug Development. If it contains modern predictor runs the novelty claim
-changes.
+### The Tier 0 risk to this is CLOSED. The gap holds. [READ, 15 Nov 2026]
 
-**It is no longer "two downloads away", checked 15 Nov 2026.** Both URLs the
-sweep recorded return **HTTP 404**, while the faculty site itself is alive and
-serving its Croatian 404 page — so the thesis was **removed**, not merely
-offline. The institutional repository returns **HTTP 418** to scripted requests,
-an explicit anti-automation response that was not worked around. Remaining
-routes are a browser against `repository.biotech.uniri.hr` or `dr.nsk.hr`, or
-simply asking the group — which pairs naturally with the cheap wet-lab question
-recorded further down. See `reports/PDFs_to_obtain.md` item 1.
+**Samardžija B (2025), "Aggregation, parallel aggregation and co-aggregation of
+proteins in chronic mental illnesses", PhD thesis, University of Rijeka, Faculty
+of Biotechnology and Drug Development. Mentor: Nicholas J. Bradshaw. Defended
+5 June 2025.** 274 pp. Supplied by the author on 15 Nov 2026 and **read in full**
+after both recorded URLs 404'd and the institutional repository returned 418.
 
-**And note the pattern: this is the second recorded-as-available source to have
-vanished in a single day**, the first being FoldAmyloid's server. Availability
-recorded at sweep time is not availability now.
+**It contains no aggregation predictor runs of any kind.** The methods chapter
+(§3.1-3.19) has no bioinformatics section. Every named piece of software is
+instrumentation or statistics: ImageLab, CellSens, ImageJ/Fiji, JASP, Prism,
+MassHunter, FlyTracker/MATLAB, a Python script for social-interaction networks,
+BioRender, and ProSite — the last used only to draw domain cartoons (Figures 2
+and 3), not to score anything. **TANGO, AGGRESCAN, FoldAmyloid, ProA, WALTZ,
+PASTA, AmylPred2, AggreProt and AggrescanAI appear nowhere, nor does any
+protein language model, nor AlphaFold.** The thesis's only "in silico" phrase is
+about *CRMP1* missense variants and is a citation to Ravindran et al. 2022, not
+work done here.
+
+So the claim stands as written: **no aggregation predictor, of any generation,
+has been run on DISC1 or TRIOBP-1 by the group that mapped their
+aggregation-critical regions.** The project's novelty does not change, and
+`PREREGISTRATION.md` §11's fourth falsification condition is discharged.
+
+**Three things the thesis changes anyway** (none of them the predictor question):
+
+1. **A numbering discrepancy inside the group's own work.** p.48 states the
+   TRIOBP-1 critical 25-mer was "later shortened to the **7 aa** domain". Our
+   `data/regions.json` carries **333-340, an 8-mer**, sourced to Zaharija 2022 —
+   on which this thesis's author is a co-author. 333-340 inclusive is 8
+   residues, so one of the two is wrong by one. **Resolve against Zaharija 2022
+   before the freeze**; it moves a Tier A boundary.
+2. **A DISC1 aggregation-region paper we did not have.** Reference 502: Zaharija
+   B & Bradshaw NJ (2024), "Aggregation of Disrupted in Schizophrenia 1 arises
+   from a central region of the protein", *Prog Neuropsychopharmacol Biol
+   Psychiatry* **130**:110923. The thesis uses a Flag-DISC1 **257-655** construct
+   ("D and I domain only") from it. This is experimental region-mapping of DISC1
+   aggregation by the same group — **a candidate Tier A row, and possibly a
+   better-sourced one than 384-415, whose range is still unverified.** Added to
+   the obtain list.
+3. **The disease contrast is weaker than the field's earlier papers implied, and
+   the thesis says so itself.** Aggregation of DISC1, CRMP1 and TRIOBP-1 is
+   present in controls, is region-specific, and the **highest DISC1 aggregation
+   signal of any group was in controls** (lateral orbitofrontal gyrus). The
+   author states plainly that earlier studies pooled all CMI patients against
+   controls and that the phenomenon is a subset, not a diagnosis marker. **This
+   does not touch our benchmark** — we score predictors against *fragment-level
+   mapped regions*, not against disease association — but it is a reason never
+   to describe these as "the schizophrenia aggregates" in print.
+
+**What the thesis does NOT give us:** no new fragment-level mapped region, no
+TRIOBP-1 25-mer sequence, and no DISC1 384-415. It confirms only the frames —
+TRIOBP-1 "593 or 652 aa" (p.47) and DISC1 854 aa (p.38). The §6.3 blockers
+survive it untouched.
+
+**The pattern recorded earlier still stands:** both URLs the sweep logged are
+dead and the repository blocks scripts, so this was obtained by asking the
+author, not by retrieval. Availability recorded at sweep time is not
+availability now — FoldAmyloid's server was the same day's other instance.
 
 ## Why the predictors fail — documented, not assumed
 

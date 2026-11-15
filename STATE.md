@@ -226,6 +226,34 @@ psychiatric brain homogenate**, though FRET-biosensor and RT-QuIC are routine in
 tau and alpha-synuclein. There is no published negative either, so "not
 seeding-competent" and "never tested" are currently indistinguishable.
 
+**That gap is wider than "routine", confirmed 15 Nov 2026.** These assays are
+clinical-grade in the neurodegeneration field: CSF **seed amplification assays**
+run on a longitudinal AD cohort to measure alpha-synuclein co-pathology
+(Franzmeier 2025), alpha-synuclein **RT-QuIC** deployed as a differential
+diagnostic across parkinsonisms (Quadalti 2021), and **Tau biosensor seeding
+assays** run on brain extracts, where depleting TDP-43 from the extract measurably
+reduced Tau seeding capacity (Tome 2023). All three `[READ]` as cited in
+[Basha et al., *Ageing Res. Rev.* 118:103148 (2026)](https://doi.org/10.1016/j.arr.2026.103148).
+The technique is not merely available; it is a working clinical instrument that
+has never been pointed at a psychiatric diagnosis.
+
+**A positioning point from the same read.** That review surveys protein
+co-aggregation across Tau, alpha-synuclein, Abeta, TDP-43, huntingtin, p53, IAPP,
+apoE and TFEB over 300-plus references, and **cites no psychiatric co-aggregation
+work at all.** The DISC1/TRIOBP-1 literature is invisible to the field that owns
+the concept — which is an argument for publishing into that field rather than
+only into the psychiatric one.
+
+**And a vocabulary trap recorded in `data/regions.json`.** "Co-aggregation" names
+three unrelated phenomena: protein hetero-aggregation (our sense), **familial or
+epidemiological** co-aggregation of diagnoses in pedigrees, and **bacterial**
+cell-cell adhesion in biofilms. The middle one is the dangerous one here —
+Liu et al., *Clin. Epidemiol.* 10:631-641 (2018) is titled "Familial aggregation
+of Parkinson's disease and coaggregation with neuropsychiatric diseases" and
+reports raised **schizophrenia** risk in first-degree relatives of PD patients, so
+any query pairing the word with schizophrenia returns population genetics rather
+than protein chemistry. This repository is currently clean of both foreign senses.
+
 ## Files here
 
     data/regions.json              the validation set, with construct context and

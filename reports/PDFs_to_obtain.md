@@ -57,6 +57,33 @@ Ranked by what changes if you read it.
 
 8. **The *Cells* (2023) co-aggregation review** — never read.
    Cited into the DISC1/CRMP1/TRIOBP-1 co-aggregation claim.
+   **STILL OPEN, and do not confuse it with Basha et al. 2026.** A different
+   co-aggregation review — [*Ageing Res. Rev.* 118:103148
+   (2026)](https://doi.org/10.1016/j.arr.2026.103148) — was read in full on 15 Nov 2026.
+   It covers Tau, α-syn, Aβ and TDP-43 only, **pre-empts nothing**, and **does not cite
+   the *Cells* 2023 review or any psychiatric co-aggregation work**. Full assessment in
+   `data/references_to_check.json`, key `basha2026`.
+
+8a. **Bondarev SA, Antonets KS, Kajava AV, Nizhnikov AA, Zhouravleva GA (2018)**,
+   "Protein co-aggregation related to amyloids: methods of investigation, diversity, and
+   classification", *Int. J. Mol. Sci.* **19**:2292, doi:10.3390/ijms19082292.
+   Added 15 Nov 2026 from Basha et al.'s reference list. **Open access (MDPI), so this is
+   a fetch rather than a paywall.** It classifies co-aggregation into **titration,
+   sequestration, axial and lateral** modes, each with different functional consequences
+   and different intervention strategies. **Our DISC1 × CRMP1 and DISC1 × TRIOBP-1
+   results do not say which mode they are**, and the tag-orientation dependence of the
+   TRIOBP-1 × CRMP1 result is exactly what a sequestration-versus-direct-binding
+   distinction would have to settle. Obtain before the co-aggregation claim is written up.
+
+8b. **Two experimental co-aggregation interfaces worth a row each**, both from Basha
+   et al.'s citations and both **not** simulation-derived — unlike nearly everything else
+   in that review, which is MD or REMD and therefore circular under `found_by`:
+   - **Sun C, et al. (2025)**, *J. Biol. Chem.* **301**:108351 — cryo-EM of an α-synuclein
+     polymorph ("strain B") that promotes Tau aggregation via a critical C-terminal
+     segment **D105–E115**.
+   - **Yin H, et al. (2025)**, *Cell Death Discov.* **11**:76 — PS1/γ-secretase cleaves
+     TDP-43 at residue **315**, upregulating APP and increasing Aβ production.
+   Check the construct and the frame before either is considered for `data/regions.json`.
 
 9. **Galzitskaya OV, Garbuzynskiy SO, Lobanov MY (2006b), "Prediction of amyloidogenic
    and disordered regions in protein chains", *PLoS Comput Biol* 2(12):e177** —

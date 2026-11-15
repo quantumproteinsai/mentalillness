@@ -1,0 +1,154 @@
+# In silico aggregation in mental illness — state as of 15 Nov 2026
+
+Everything here was established by reading sources or parsing deposited files,
+not by summarising abstracts. Where a claim rests on a snippet or a secondary
+citation it says so. Papers nobody could open are listed in
+`reports/PDFs_to_obtain.md`, ranked by what changes if you read them.
+
+## The one-line position
+
+The structural route is closed, the predictor route is open, and the reason the
+predictors fail is now documented well enough to be the paper rather than the
+result.
+
+## What is closed, and how firmly
+
+**No psychiatric aggregation system is structurally tractable.** Not "not yet
+determined" — enumerated and absent.
+
+- All **51** entities annotated as steric zippers in the PDB were listed by
+  sequence: Sup35, PrP, Abeta, insulin, RNase A, IAPP, tau, TDP-43,
+  beta-2-microglobulin, SOD1, curlin, PSM-alpha, Als5, porin. **Not one is a
+  psychiatric protein.**
+- Aggregate coordinates for the five candidates: **0 of 5.** TRIOBP, dysbindin
+  and NPAS3 return nothing at all; CRMP1 has only its native fold; DISC1 has
+  four entries, none an aggregate.
+- The entire DISC1 structural corpus — 4 PDB entries, 1 EMDB map, 1 BMRB entry —
+  carries **75 helix records and zero strand records**, confirmed by parsing the
+  files rather than trusting annotations.
+- **No patient-tissue structure exists for any psychiatric diagnosis**, by cryo-EM,
+  ssNMR, microED or X-ray.
+
+So no interaction energy across a sheet-against-sheet contact can be computed
+for any of these proteins. The quantum-chemistry capability this author has does
+not reach this disease area, and saying so precisely is worth more than saying
+it vaguely.
+
+## Three corrections to carry
+
+**The DISC1 positive control does not exist as described.** Cukkemane 2021
+deposited **nothing** — no coordinates, no chemical shifts, no EM map, no
+accession, and the paper has no data-availability section. The EM was
+negative-stain TEM at 120 kV with no resolution reported. The model is a
+MODELLER protomer built with **antiparallel beta-strand restraints imposed as
+input**, then docked into that envelope. The 2025 follow-up states verbatim
+"No data was used for the research described in the article."
+
+Consequence: the 716-761 beta-core is a *docking restraint*, not a measurement.
+A prediction and a model that agree are not a confirmed prediction. The planned
+positive/negative control pairing between DISC1 and TRIOBP-1 does not hold —
+there may be two negative controls, which changes the benchmark design before
+the pre-registration is written rather than after.
+
+**The flagship tissue citation is the wrong paper.** PMC10378145 was recorded in
+this project as "insoluble proteins in schizophrenia brain tissue". Its 33
+donors are 15 suicide, 11 control, 4 depression and 3 Alzheimer — **zero
+schizophrenia cases**. Western blot only, no fold changes, no p-values, no FDR;
+positives called at 1.5x the cohort mean. On its own counts, 9/15 against 5/11:
+**Fisher exact p = 0.69, odds ratio 1.7 (95% CI 0.4 to 7.8)**. It establishes no
+case-control difference. The actual flagship is Nucifora 2019, whose MS is
+published at pathway level only and whose full text nobody could open.
+
+**The strongest result in this literature publishes no statistic for it.**
+TRIOBP-1 insoluble in 12/25 schizophrenia, 15/25 depression, 2/50 controls,
+called significant with no p-value for the headline comparison. Computed from
+those counts: **p = 1.2e-05, OR 18.0** and **p = 1.4e-07, OR 28.6**. Strong — and
+the counts are second-hand, and the same paper prints an impossible p-value of
+"3.7 x 10^4". Verify before use.
+
+## What is open, and it is the project
+
+**No protein-language-model predictor has ever been run on DISC1 or TRIOBP-1.**
+Not AggreProt (2024), not AggrescanAI (2026), not any of thirteen others. The
+decisive evidence is structural rather than keyword-based: a September 2026
+census of over forty prediction tools covering all five target proteins contains
+no PLM predictor anywhere in its tool list. Both tools needed are installable,
+maintained and sequence-only.
+
+Of the four tools that failed in 2017: **TANGO and AGGRESCAN are live,
+FoldAmyloid is unreachable and ProA returns 404.** Half the legacy baseline is
+itself now a finding.
+
+One outstanding risk to this, and only one: a 2025 PhD thesis from the
+experimental group, two PDF versions online, unopened. If it contains modern
+predictor runs the novelty claim changes. See `reports/PDFs_to_obtain.md`.
+
+## Why the predictors fail — documented, not assumed
+
+From the predictors' own method papers: Waltz is a position-specific matrix
+built by exploring **hexapeptide** space; the 3D-profile method threads
+six-residue windows onto templates generated from one crystal structure;
+AGGRESCAN is a 20-value composition scale with no context term; TANGO was
+validated on peptides with fully buried beta-cores. **A negative call on a
+25-residue proline- and charge-rich turn is uninformative by construction.**
+Peptide-to-protein performance is reported to fall from about 0.87 to 0.62
+AuROCC, and the common benchmark set is not out-of-sample for several tools.
+
+Then the inversion, which is the paper's spine. Proline and flanking charge are
+**gatekeepers** — what the field deliberately engineers in to kill cross-beta.
+Run `scripts/gatekeeper_density.py`:
+
+    crystallised steric zippers:  0.0% to 16.7%   (n = 7)
+    psychiatric regions:         48.0% to 50.0%   (n = 2)
+
+By the field's own published rules both mapped regions should be aggregation
+*suppressors*. Experiment says they are the aggregation-critical regions.
+
+**And one cheap computation decides which paper this is.** The narrowed 8-mer
+`LTALLNQS` sits inside the 25-residue region and is itself **0% gatekeeper** —
+indistinguishable from VQIVYK or GNNQQNY. Score it in isolation: positive means
+the failure is about flanking context, negative means intrinsic core chemistry.
+Different papers. Compute before framing.
+
+## N = 2, not N = 1
+
+TRIOBP-1 **324-348** is a 25-residue linker between the first two coiled coils.
+DISC1 **384-415** is a ~32-residue linker C-terminal of the D region, outside all
+four structured domains. Both found by truncation, neither by prediction. Two
+coiled-coil scaffold proteins, two inter-domain linkers, two prediction failures.
+
+Caveat that must travel with it: both come from the same laboratory, so this is
+a second case rather than independent replication.
+
+**"Register frustration" has no prior art as a phrase** — available to introduce,
+citing the de novo coiled coil with a solved structure that converts to amyloid,
+and the Q/N-rich work where aggregation tracks coiled-coil propensity. Claim the
+determinant, not the sign: two papers disagree on whether stable coiled-coil
+formation promotes or inhibits aggregation.
+
+## The thing that is cheap and nobody has done
+
+The DISC1 fibril construct contains three free cysteines (C698, C762, C782), and
+across the 2021, 2025 and 2026 papers there is **zero mention of DTT, TCEP,
+mercaptoethanol, reducing conditions, disulfide or redox**. Those fibrils were
+grown from a three-cysteine construct in air with the thiol state uncontrolled
+and unreported. Non-reducing against reducing SDS-PAGE would settle it in an
+afternoon.
+
+That is a wet-lab question, not a computation — and it is the kind of specific,
+cheap, decisive question worth putting to an experimental group, which the plan
+identifies as the way to approach one.
+
+Related and equally unexplored: **no seeding assay has ever been run on
+psychiatric brain homogenate**, though FRET-biosensor and RT-QuIC are routine in
+tau and alpha-synuclein. There is no published negative either, so "not
+seeding-competent" and "never tested" are currently indistinguishable.
+
+## Files here
+
+    data/regions.json              the validation set, with construct context and
+                                   a circularity column; 10 rows against a floor of 15
+    data/references_to_check.json  sources nobody has opened; a lead is not a fact
+    scripts/gatekeeper_density.py  reproduces the table above
+    reports/PDFs_to_obtain.md      ranked by what changes if you read each one
+    research_notes/                the six literature sweeps behind all of this

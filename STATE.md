@@ -133,9 +133,23 @@ binomial standard error on any one value is about +/-0.04 to 0.06, so **no
 method in it is distinguishable from another** — the CANYA conclusion already
 recorded below, now reachable from a 2010 primary source.
 
-One outstanding risk to this, and only one: a 2025 PhD thesis from the
-experimental group, two PDF versions online, unopened. If it contains modern
-predictor runs the novelty claim changes. See `reports/PDFs_to_obtain.md`.
+One outstanding risk to this, and only one: **Samardžija's 2025 PhD thesis**
+from the experimental group — University of Rijeka, Faculty of Biotechnology and
+Drug Development. If it contains modern predictor runs the novelty claim
+changes.
+
+**It is no longer "two downloads away", checked 15 Nov 2026.** Both URLs the
+sweep recorded return **HTTP 404**, while the faculty site itself is alive and
+serving its Croatian 404 page — so the thesis was **removed**, not merely
+offline. The institutional repository returns **HTTP 418** to scripted requests,
+an explicit anti-automation response that was not worked around. Remaining
+routes are a browser against `repository.biotech.uniri.hr` or `dr.nsk.hr`, or
+simply asking the group — which pairs naturally with the cheap wet-lab question
+recorded further down. See `reports/PDFs_to_obtain.md` item 1.
+
+**And note the pattern: this is the second recorded-as-available source to have
+vanished in a single day**, the first being FoldAmyloid's server. Availability
+recorded at sweep time is not availability now.
 
 ## Why the predictors fail — documented, not assumed
 

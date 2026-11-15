@@ -7,12 +7,42 @@ Ranked by what changes if you read it.
 
 ## Tier 0 — these decide whether the project is viable
 
-1. **Samardžija (2025), PhD thesis, University of Rijeka (biotechnology).**
-   Two PDF versions are online and neither was opened. **This is the single
-   outstanding risk to the whole premise**: the literature search found no
-   protein-language-model predictor ever run on DISC1 or TRIOBP-1, but a thesis
-   from the experimental group is exactly where such runs would sit unindexed.
-   Two downloads away, and it either confirms the gap or closes the project.
+1. **Samardžija B (2025), PhD thesis, University of Rijeka, Faculty of Biotechnology and
+   Drug Development (Fakultet biotehnologije i razvoja lijekova).**
+   **This is the single outstanding risk to the whole premise**: the literature search
+   found no protein-language-model predictor ever run on DISC1 or TRIOBP-1, but a thesis
+   from the experimental group is exactly where such runs would sit unindexed. Samardžija
+   is first author of *Cells* 12(14):1848 (2023) and *Sci Rep* (2026), and a co-author
+   with Korth and Bradshaw — i.e. a doctoral student in the group that did the TRIOBP-1
+   truncation work.
+
+   ~~Two PDF versions are online and neither was opened. Two downloads away.~~
+   **FALSE AS OF 15 Nov 2026 — BOTH RECORDED URLS ARE DEAD.** Checked directly:
+   - `biotech.uniri.hr/wp-content/uploads/2025/04/Bobana-Samardzija-PhD-thesis-2025.pdf`
+     → **HTTP 404**
+   - `biotech.uniri.hr/wp-content/uploads/2025/05/Bobana-Samardzija-PhD-thesis-2025-version-2.pdf`
+     → **HTTP 404**
+
+   The faculty site itself is alive (HTTP 200) and returns its Croatian 404 page,
+   *"Tražena stranica ne postoji!"*, so this is **removal, not an outage**. The thesis was
+   taken down from that path at some point after the sweep recorded the links.
+
+   **Routes still open, none of them automatable from here:**
+   - `repository.biotech.uniri.hr` — alive, but returns **HTTP 418** to scripted requests.
+     That is an explicit anti-automation response and was **not worked around**. It should
+     work from a browser.
+   - `dr.nsk.hr` — the Croatian national dissertation repository. Alive; the query form
+     used here surfaced nothing, but it is the canonical home for a Croatian PhD thesis
+     and deserves a manual search.
+   - **Ask the group.** `STATE.md` already identifies a cheap, decisive wet-lab question
+     to put to the experimental group (non-reducing vs reducing SDS-PAGE on the
+     three-cysteine DISC1 construct). A request for the thesis costs nothing alongside it
+     and is the most likely route to succeed.
+
+   **Methodological note, the second instance in one day.** FoldAmyloid's server and this
+   thesis were both recorded as available by a literature sweep and are both now gone.
+   **Availability recorded at sweep time is not availability now**, and any claim of the
+   form "two downloads away" has a shelf life. Re-check before relying on one.
 
 2. **Nucifora et al.**, *American Journal of Psychiatry* (2019) — **full text and the
    mass-spectrometry protein list.**

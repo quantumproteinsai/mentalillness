@@ -1,0 +1,121 @@
+{
+  "_WHAT_THIS_FILE_IS": "STAGING ONLY. Candidate rows for data/regions.json, surfaced 16 Nov 2026 by web search while widening the validation set beyond the psychiatric proteins (the outstanding task named in CLAUDE.md). NOTHING HERE IS VERIFIED. Every entry is SNIPPET grade: search-engine summary of an abstract, never a publisher PDF anyone opened. No row moves into regions.json until someone reads the paper and sets verified_against_publisher_pdf. Keeping them here rather than in regions.json is deliberate: regions.json is the asset intended for publication with its own DOI, and must not carry unread rows.",
+
+  "_THE_PREMISE_AUDIT_THAT_CAME_FIRST": {
+    "question": "CLAUDE.md says to widen to 'every protein with fragment-level aggregation mapping'. Before listing candidates: what actually qualifies?",
+    "finding": "THE CLEAN CLASS IS MUCH NARROWER THAN THE LITERATURE LOOKS, AND THE SEARCH SURFACE IS DOMINATED BY PREDICTION-GUIDED REGIONS. Of eight candidate regions surfaced in the first sweep, THREE were found by an aggregation predictor and then validated experimentally. Those are circular for a predictor benchmark no matter how good the experiments are -- scoring a predictor against a region that predictor's ancestors chose is not a test. This is the found_by column doing its job at the survey stage rather than after the compute.",
+    "operational_criterion": "A row qualifies as CLEAN only if the region was localised by truncation, deletion, substitution or an unbiased screen, WITH NO PREDICTOR IN THE DISCOVERY PATH. Prediction used AFTER mapping, as a post-hoc mechanistic check, does not contaminate the row -- that is the DISC1 384-415 situation, re-checked 16 Nov 2026 and still clean.",
+    "consequence_for_the_floor": "The floor of 15 rows may be reachable, but not from a casual sweep. Expect to discard roughly a third of what the literature offers. If the clean class turns out to be too small, THAT IS THE FINDING and must be reported, not worked around -- CLAUDE.md rule 3."
+  },
+
+  "candidates_CLEAN": [
+    {
+      "protein": "Apolipoprotein A-I",
+      "residues": "14-22",
+      "evidence": "Thioflavin T and AFM: deleting 14-22 COMPLETELY inhibits fibril formation. CD shows the random-coil to beta-sheet transition occurs in every deletion variant EXCEPT delta-14-22.",
+      "construct": "CRITICAL CAVEAT: the apoA-I 1-83/G26R fragment -- an N-terminal fragment carrying a disease mutation, NOT full-length wild-type protein. A region necessary in this construct may be dispensable in another. Exactly the moving-target problem the construct column exists for.",
+      "found_by": "deletion series (delta-14-22, delta-32-40, delta-50-58). No predictor in the discovery path on present evidence. VERIFY: read the methods for any prediction step before accepting.",
+      "source": "Mizuguchi et al. (2019), J. Biol. Chem. 294(36). doi:10.1074/jbc.RA119.008000. PMC6737231.",
+      "provenance": "SNIPPET. Search summary of the abstract. Not read.",
+      "verified_against_publisher_pdf": false,
+      "why_it_is_a_good_candidate": "It comes with its own internal negative controls (below) and a clean necessity result, which is the same logical shape as DISC1 384-415.",
+      "open_question": "A 2023 Sci Rep follow-up from the same group reportedly says residues 53-58 entropically drive nucleation, while delta-50-58 still formed fibrils here. Not necessarily contradictory -- driving nucleation and being required are different claims -- but check before using either."
+    },
+    {
+      "protein": "Apolipoprotein A-I",
+      "residues": "32-40",
+      "evidence": "deletion variant STILL forms fibrils, though with much slower nucleation and growth",
+      "construct": "as above, apoA-I 1-83/G26R",
+      "found_by": "deletion series",
+      "source": "Mizuguchi et al. (2019), J. Biol. Chem. 294(36)",
+      "provenance": "SNIPPET",
+      "verified_against_publisher_pdf": false,
+      "row_type": "NEGATIVE CONTROL -- a region whose removal does NOT abolish aggregation. A benchmark needs its false positives; this is the same role the TRIOBP-1 60-189 PH-domain row plays."
+    },
+    {
+      "protein": "Apolipoprotein A-I",
+      "residues": "50-58",
+      "evidence": "deletion variant STILL forms fibrils, with slower nucleation and growth",
+      "construct": "as above, apoA-I 1-83/G26R",
+      "found_by": "deletion series",
+      "source": "Mizuguchi et al. (2019), J. Biol. Chem. 294(36)",
+      "provenance": "SNIPPET",
+      "verified_against_publisher_pdf": false,
+      "row_type": "NEGATIVE CONTROL. See the 53-58 open question on the 14-22 row."
+    },
+    {
+      "protein": "TDP-43",
+      "residues": "342-366",
+      "evidence": "reported as the minimal region of a C-terminal structural determinant that triggers loss of TDP-43 function",
+      "construct": "UNKNOWN -- must be read. Budini and colleagues.",
+      "found_by": "deletion mapping, apparently. MUST VERIFY no predictor in the path: the TDP-43 C-terminal region is Q/N-rich and prion-like, and that compositional reasoning is itself a sequence heuristic. Borderline until read.",
+      "source": "Budini et al. See PMC3293573 / PMC4262490 from the sweep.",
+      "provenance": "SNIPPET",
+      "verified_against_publisher_pdf": false
+    },
+    {
+      "protein": "TDP-43",
+      "residues": "339-369",
+      "evidence": "tandem repeats of this Q/N region fused to EGFP drive aggregate formation",
+      "construct": "TANDEM REPEATS fused to EGFP -- an artificial multimerised construct, NOT the native sequence context. Sufficiency in a tandem-repeat fusion is a weaker claim than sufficiency in the protein.",
+      "found_by": "Q/N compositional selection -- PROBABLY CONTAMINATED. Choosing a region because it is Q/N-rich is a sequence heuristic of the same family the predictors use.",
+      "source": "Budini et al.",
+      "provenance": "SNIPPET",
+      "verified_against_publisher_pdf": false,
+      "recommendation": "Likely belongs in candidates_CIRCULAR. Read before deciding."
+    },
+    {
+      "protein": "TDP-43",
+      "residues": "RRM2, truncated",
+      "evidence": "the TRUNCATED RRM2, but not the intact RRM2, forms proteinaceous aggregates and cytoplasmic inclusions in neuronal cells",
+      "construct": "THE WHOLE POINT OF THIS ROW. Truncated versus intact RRM2 behave oppositely in the same cells. If any row in this project demonstrates why the construct column is non-negotiable, it is this one.",
+      "found_by": "truncation",
+      "source": "JBC 2013, Yuan group (hyuan.imb.sinica.edu.tw).",
+      "provenance": "SNIPPET",
+      "verified_against_publisher_pdf": false,
+      "blocker": "No residue range recovered from the sweep. Unusable until the boundaries are read."
+    },
+    {
+      "protein": "IAPP",
+      "residues": "multiple single/double/triple mutations",
+      "evidence": "random mutagenesis library fused to EGFP; screen identified 22 single, 4 double and 2 triple mutations less amyloidogenic than wild-type human IAPP",
+      "construct": "EGFP fusion, random library",
+      "found_by": "UNBIASED SCREEN -- methodologically the cleanest discovery path in this whole sweep. No predictor, no motif reasoning.",
+      "source": "Biochemistry, doi:10.1021/bi100337p",
+      "provenance": "SNIPPET",
+      "verified_against_publisher_pdf": false,
+      "blocker": "Gives MUTATIONS, not a contiguous region. May not convert into a regions.json row at all. Worth reading anyway: a clean unbiased map of which residues matter is a different and possibly better validation target than a region."
+    }
+  ],
+
+  "candidates_CIRCULAR_DO_NOT_ADD": [
+    {
+      "protein": "alpha-synuclein",
+      "residues": "2-7",
+      "why_excluded": "FOUND BY PREDICTION. The authors state that bioinformatic analyses in their previous study identified residues 2-7 as having high aggregation propensity; the deletion work came after. Strong experiments -- deleting 2-7 slows lipid-independent assembly, ablates lipid-dependent amyloid formation in vitro, and prevents aggregation and toxicity in vivo -- but the region was chosen by a predictor.",
+      "source": "PNAS 2024",
+      "provenance": "SNIPPET"
+    },
+    {
+      "protein": "IAPP",
+      "residues": "8-16",
+      "why_excluded": "FOUND BY PREDICTION, EXPLICITLY. Picked out by AmylPred and AmylPred2, then validated with synthetic peptides. Scoring AmylPred-family tools against an AmylPred-derived region would be circular in the most direct way available.",
+      "source": "Louros et al., Biopolymers 2015",
+      "provenance": "SNIPPET"
+    },
+    {
+      "protein": "HET-s",
+      "residues": "218-289",
+      "why_excluded": "PARTLY CONTAMINATED. Limited proteolysis placed the fibril core, but the core strands were then matched to predicted aggregation peaks. Discovery path is mixed; treat as circular until read.",
+      "source": "from the sweep, unattributed",
+      "provenance": "SNIPPET"
+    }
+  ],
+
+  "_NEXT_STEPS": [
+    "1. These are leads, not rows. The only way any of them enters regions.json is a publisher PDF someone opens.",
+    "2. Highest value to read first: Mizuguchi 2019 (JBC 294:36) -- it alone could yield one positive and two negative-control rows, and PMC6737231 suggests it is open access.",
+    "3. The TDP-43 cluster needs residue ranges before it is worth anything.",
+    "4. Re-run the sweep with different phrasing before concluding anything about the size of the clean class. One sweep is not a census, and the first query of this session was refused by the search backend, so coverage is incomplete."
+  ]
+}

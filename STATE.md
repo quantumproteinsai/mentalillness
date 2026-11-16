@@ -349,8 +349,9 @@ the literature, not a run of bad luck:
 | von Bergen 2000 (PNAS) | Discussion (v): "the corresponding **hexapeptides** in R1 (`244QTAPVPM250`)" | that sequence is **SEVEN** residues, 244-250 | **7**. Verified against P10636-8: 244-250 is `QTAPVPM`. The R4 partner `337VEVKSE342` really is six, so only the R1 label is wrong |
 | Sharma 2023 (JMB) | Methods: "**seven** different computational programs" | then lists **eight** (ZipperDB, LARKSdb, Waltz, Aggrescan, FoldAmyloid, PASTA 2.0, TANGO 2.2, Amylpred 2) | **seven** — LARKSdb never reappears in Results or Fig. 4 |
 | Sharma 2023 (JMB) | truncated construct "residues **Met286**-Phe320" | 286 is **Ser**; cannot contain Asp262; cannot cover a 251-295 core | **Met186** — the unique Met satisfying all three constraints; a digit transposition |
+| Richards 2023 (preprint) | Suppl. Table 1: "Ramachandran favoured (%) **5.26**" with outliers **0** | and "Favored rotamers (%) **94.74**" | labels **swapped**. 18/19 = 94.74%, 1/19 = 5.26%; favoured 5.26% with zero outliers is arithmetically impossible |
 
-**Thirteen, across nine papers and SEVEN independent groups** (updated 16 Nov 2026: the
+**Fourteen, across ten papers and EIGHT independent groups** (updated 16 Nov 2026: the
 Mizuguchi slip found by reading the apoA-I primary, the Seuma slip reported by the
 unbiased-screen audit). None of them changed a row, because each was caught by
 arithmetic, by a figure, or — in the Seuma and Giasson cases — by knowing the
@@ -1456,6 +1457,68 @@ and a tool that cannot score most of a region's windows is reported
 **INAPPLICABLE to that row, not failed on it.** Scoring a tool as having missed a
 region it could never evaluate would be the mirror image of the circularity this
 project exists to avoid.
+
+### The LECT2 blocker is NOT cleared — and a candidate answer to the headline question [16 Nov 2026]
+
+**The document supplied as "the LECT2 published paper" is the bioRxiv preprint
+again** — v1, posted 11 February 2023, *"not certified by peer review"* on every
+page. **It is not PMC9934627.** The row stays `preprint` and **not citable**, and
+the freeze blocker stands. Recorded plainly so nobody later believes the
+published version was checked.
+
+**Two things from reading it in full anyway.**
+
+**ZipperDB hitting the core is worth much less than I recorded.** Figure S1A's
+criterion is segments scoring **< −23.0 kcal/mol**, and the panel shows them
+scattered across the whole 133-residue sequence — the Discussion concedes *"a
+significant fraction of the LECT2 sequence is predicted to be amyloidogenic."*
+**A tool that predicts most of a protein cannot be credited with predicting the
+part that mattered.** Same failure mode hnRNPA1 quantified at 85 false positives.
+
+**Fourteenth inconsistency**, in the table a referee would use to judge the
+model: Supplementary Table 1 prints *Ramachandran favoured 5.26%* with *outliers
+0%*. With 21 residues modelled, 19 have φ/ψ, and 18/19 = 94.74%, 1/19 = 5.26% —
+**the labels are swapped**, since favoured 5.26% with zero outliers is
+arithmetically impossible.
+
+### A candidate answer to the second half of `CLAUDE.md`'s question — and it is a HYPOTHESIS
+
+The headline question asks what structural feature the predictors *are all
+missing*. **That half has had no candidate since the compositional answer was
+retired on 16 Nov.** Here is one, and it comes from the papers rather than from
+us:
+
+> **Native structural context decides which predicted APRs can actually engage,
+> and a sequence-only predictor cannot see it.**
+
+**LECT2**, unprompted: *"much of the protein's globular fold is stabilized by
+three disulfide bonds … **these bonds would likely prevent many of the predicted
+amyloidogenic regions from assembling into fibrils.** However, the core segment
+identified here is **not involved in any of the native disulfide bonds**."* The
+core is not the best-predicted segment — it is the predicted segment that is
+structurally **free**.
+
+**hnRNPA1**, the same thing from the other side: the predictors *"consistently
+identify segments within the two RRMs"* — inside **folded domains** — while the
+core forms in the LCD.
+
+**Why it is worth more than the compositional claim:** it is **not pre-empted**
+by Murray, Seuma or Mandelkow, none of whom address sequestration; it is
+*mechanistic* rather than descriptive; and it explains the **false-positive**
+pattern, not just the miss.
+
+**And the honest difficulty, stated now rather than after work is spent:** the
+test needs a native structure or confident burial annotation per row. LECT2 has
+PDB 5B0H and published per-residue solvent accessibility; hnRNPA1 has defined
+RRMs; **FUS-LC is wholly disordered so the hypothesis makes no prediction
+there**; and **DISC1 and TRIOBP-1 have no experimental structure at all.** **It
+cannot be tested on the two rows this project exists for.**
+
+**It must not become the new spine.** The gatekeeper claim became one on n = 1
+and was retired four days later. This is a hypothesis drawn from two Discussion
+sections with no measurement behind it. If it enters `PREREGISTRATION.md` it
+enters as a pre-specified **secondary** analysis with its own falsification
+condition — and only if the author decides it earns the space.
 
 ### What that inventory is not
 

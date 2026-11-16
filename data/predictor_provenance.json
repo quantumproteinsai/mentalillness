@@ -90,5 +90,57 @@
         "Maximum sequence length is 20000 aa (string found in the binary). DISC1 at 854 and TRIOBP-1 at 652 are far inside it; no chunking needed, so no window-boundary artefact from chunking."
       ]
     }
-  ]
+  ],
+  "_MODERN_ARM_STATUS_2026-11-16": {
+    "_see": "reports/modern_arm_local_runnability_2026-11-16.md",
+    "_rule": "PREREGISTRATION 5.2 admits a modern predictor only if it is version-pinnable AND runs locally. Tested by fetching the repositories, not by reading catalogue entries.",
+    "AggreProt": {
+      "verdict": "NOT ADMISSIBLE TODAY -- cannot be run locally.",
+      "why": "The README instructs \"unzip nnap-data.zip\" and never says where nnap-data.zip comes from. It is not in the GitHub repository (11 .py files, setup.py, LICENSE, README, .internal_commit.txt) and cannot be in the Zenodo v1.0 archive, which is 22.9 kB in total. Without it there are no model weights and no Atomic.csv.",
+      "paper_data_availability_verbatim": "\"Aggreprot is freely available and accessible at https://loschmidt.chemi.muni.cz/aggreprot/.\" -- a SERVER availability statement. The paper has no code-availability and no model-availability statement. [READ, NAR 2024 52:W159-W169, version of record]",
+      "guessed_weight_urls_all_returned_200_text_html": "Three guessed URLs for nnap-data.zip returned HTTP 200, 0 bytes, text/html -- the SPA catch-all, not a file. THIRD independent instance in this project of \"a status code is not reachability\".",
+      "licence_CONFLICT_THREE_SOURCES": {
+        "repository LICENSE": "CC BY-NC-SA 4.0",
+        "Zenodo record": "CC BY 4.0",
+        "bio.tools entry": "Proprietary",
+        "which_governs": "The repository LICENSE governs the code. NC and ShareAlike are not formalities here and need a deliberate decision before publication."
+      },
+      "how_to_unblock": "Email the corresponding authors (addresses printed in the paper) for nnap-data.zip and its checksum. Until then record as UNAVAILABLE, not as a failure -- the same treatment ProA receives.",
+      "pins_if_it_becomes_available": {
+        "github": "https://github.com/loschmidt/aggreprot-predictor",
+        "internal_commit_txt": "63d074c315610bbd4a9f694145d66bbbeb0ba6ca",
+        "zenodo": "10.5281/zenodo.19002542 (v1.0, published 2026-03-13)",
+        "zenodo_zip_md5": "00656d4a86afa19676950e913d1730d1",
+        "documented_invocation": "aggreprot-predictor predict-sequential-batch --out-dir out sequences.fa"
+      },
+      "RELEVANT_TO_H4": "AggreProt is explicitly a WINDOW SCANNER: sequences are \"fragmented into overlapping hexapeptides using a six-amino-acid windows shifted one amino acid at a time\", scored by an ensemble of five DNNs, then \"aggregated (averaged) per residue by a sliding window procedure\". [READ, p. W161] That is exactly the architecture H4 is about."
+    },
+    "AggrescanAI": {
+      "verdict": "ADMISSIBLE on local execution, BUT NOT PINNED AS DISTRIBUTED.",
+      "repo": "https://gitlab.com/bioinformatics-fil/aggrescanai, public, project 70582841, created 2025-06-06, last activity 2026-02-23, 51 commits, 0 TAGS.",
+      "whole_repo_is_three_files": "README.md, aggrescanai.ipynb, docs/aggrescanai_logo.png.",
+      "notebook_sha256": "1e1e4bc0433eb718673af34e9ce99d6771cd699840b44c40dd240836d494e7d6",
+      "runs_locally_because": "Read cell by cell: apart from #@param form annotations, which are COMMENTS and inert outside Colab, it is ordinary Python (requests, pandas, torch, transformers, tensorflow.keras, numpy, plotly). Nothing is Colab-specific. Porting is mechanical.",
+      "NOT_REPRODUCIBLE_AS_WRITTEN": "Weights are fetched from huggingface.co/alvaro-2/aggrescanai/resolve/MAIN -- a moving branch head -- and ProtT5 via from_pretrained() with NO revision= argument. Both resolve to whatever is current on the day of the run. A silent upstream update would change our numbers with nothing in the output to show it. This is TANGO's missing version again, and worse: downloaded bytes cannot change under us, a branch head can.",
+      "pins_recorded_today": {
+        "hf_model_repo": "alvaro-2/aggrescanai",
+        "hf_revision": "7aba68e65d620aa55b10f9550005efff3f3240e7",
+        "hf_lastModified": "2025-05-27T19:31:05.000Z",
+        "hf_model_card": "NONE. No licence, no config.",
+        "protT5": "Rostlab/prot_t5_xl_half_uniref50-enc -- REVISION NOT YET PINNED. Resolve and record it before any run."
+      },
+      "FREE_PARAMETERS_THAT_MUST_BE_PREREGISTERED": {
+        "window_size": "Smoothing is a user slider, default 7, range 1-25, and changing it changes the profile. RECOMMENDATION: report the RAW column `aggrescanai_score`, which is unsmoothed, and fix the threshold instead -- the parameter then does not exist.",
+        "edge_artefact": "The smoother is np.convolve(..., mode=\"same\"), which ZERO-PADS at the termini. The first and last window_size//2 residues are biased downward by construction, not by biology -- 3 residues at each end at the default. A second reason to prefer the raw column."
+      },
+      "CIRCULARITY_QUESTION_OPEN": {
+        "observation": "The weight files are named cpad_hotidp90_model_cv_1..5.h5.",
+        "why_it_matters": "data/regions.json _CPAD_CONTAMINATION_WARNING records that CANYA (Thompson 2025) found TANGO, CamSol and Aggrescan were trained on sequences within CPAD. If AggrescanAI is CPAD-trained too, the contamination extends from the legacy arm into the MODERN arm -- the arm this project exists to test.",
+        "EVIDENCE_GRADE": "INFERENCE FROM A FILENAME. Not READ, not a snippet of any paper. MUST NOT be written into regions.json or the pre-registration until the Methods of Navarro et al. 2026, J Mol Biol, DOI 10.1016/j.jmb.2026.169643 are opened. PDF NOT YET OBTAINED.",
+        "also_note": "The notebook downloads ONLY the five homology_models. The 33 balanced_models/ in the same HF repo are unused by the published notebook, so \"AggrescanAI\" means the CPAD-named ensemble specifically."
+      }
+    },
+    "CONSEQUENCE_FOR_5.2_AUTHORS_CALL": "As of today the modern arm is ONE tool, not two. A single-tool modern arm weakens a headline question that is about a GENERATION of predictors. Options, to be registered before scoring: wait for the AggreProt weights, widen the arm to another version-pinnable local tool, or register explicitly that the modern arm is one tool and say so in the title.",
+    "NOTHING_WAS_RUN": "Executing either tool on a dataset protein before the freeze would breach the pre-registration. Note that AggrescanAI's own example sequence is UniProt P37840, alpha-synuclein, WHICH IS A ROW IN data/regions.json -- so even its demo cannot serve as a smoke test. Use an unrelated sequence."
+  }
 }

@@ -525,6 +525,44 @@ after unblinding is an exploratory analysis and is reported as one.
 **`scripts/prescreen.py`-style gate:** no manuscript may cite a row whose
 `verified_against_publisher_pdf` is false.
 
+### 12.1 OPEN DECISIONS BLOCKING THE FREEZE — tracked list, 16 Nov 2026
+
+Maintained here so nothing reaches the freeze unnoticed. **None of these may be
+settled by Claude**; items 1 and 2 are the author's by §13, items 3 and 4 are
+consequences that need a decision rather than a judgement.
+
+**1. Ratify or overturn the three delegated decisions** (§3.1, §5.1, §5.2).
+Outstanding since 15 Nov. *Delegation is not agreement.* **This is step 3 above
+and it has not moved.**
+
+**2. Where does ANuPP go?** *(new, 16 Nov)* ANuPP (2021) sits in **neither** arm:
+§5.1 freezes the legacy arm as TANGO, AGGRESCAN, FoldAmyloid, ProA; §5.2 freezes
+the modern arm as AggreProt and AggrescanAI under the version-pinnable-and-local
+rule. **But ANuPP has already succeeded on one of our rows** — Zaharija 2025
+§4.3.5 names AA 387-395 and AA 400-415 inside DISC1 384-415. A tool with a
+published hit on a validation row cannot be left unmentioned. **Options:** put it
+in the legacy arm (it is a server, not version-pinnable — this strains §5.2's own
+rule); put it in the modern arm (2021, but not a PLM); or name a third
+"intermediate generation" category and report it separately.
+**The conflict of interest must be stated in print whichever way it goes:
+ANuPP succeeding is inconvenient for a project about predictor failure.**
+
+**3. The publisher-PDF gate now blocks two discordant rows.** *(new, 16 Nov)* The
+gate above says no manuscript may cite a row whose
+`verified_against_publisher_pdf` is false. **FUS 39-95 is currently `false`** —
+read via PMC5650524, publisher PDF not opened. The discordant stratum is the
+primary analysis, and **one of its four rows is uncitable under our own rule.**
+Either obtain the *Cell* PDF, or amend the gate to accept a publisher-hosted
+open-access full text as equivalent — *which is a real question, not a
+formality, since PMC author manuscripts can differ from the version of record.*
+**Do not quietly ignore the gate.**
+
+**4. The tau PHF6 role conflict.** *(carried)* `VQIVYK` is both a
+deposited-crystal comparator (2ON9) in `scripts/gatekeeper_density.py` and the
+H4 control-arm validation row. **It may serve in one role per published table,
+and the role must be stated.** The script flags it `[ROLE CONFLICT]`; it does not
+decide it.
+
 ---
 
 ## 13. Signature

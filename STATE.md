@@ -347,8 +347,11 @@ the literature, not a run of bad luck:
 | Giasson 2001 (JBC) | peptide `VTGVTAVAQKT**V**` (title, abstract, Results, Discussion) | Methods: `VTGVTAVAQKT**A**` | **V** — P37840 position 82 is Val. **A SEQUENCE slip, not a numbering slip, and it sits in the description of the peptide carrying the whole sufficiency claim** |
 | von Bergen 2000 (PNAS) | Abstract: scan of "the **full** τ sequence" | Fig. 4: "the region of τ from **L253 ... to D348**" (96 aa of 441) | **L253-D348**. A SCOPE claim, not a number — it decides whether the row is an unbiased scan of a PROTEIN or of a PRE-SELECTED DOMAIN |
 | von Bergen 2000 (PNAS) | Discussion (v): "the corresponding **hexapeptides** in R1 (`244QTAPVPM250`)" | that sequence is **SEVEN** residues, 244-250 | **7**. Verified against P10636-8: 244-250 is `QTAPVPM`. The R4 partner `337VEVKSE342` really is six, so only the R1 label is wrong |
+| Sharma 2023 (JMB) | Methods: "**seven** different computational programs" | then lists **eight** (ZipperDB, LARKSdb, Waltz, Aggrescan, FoldAmyloid, PASTA 2.0, TANGO 2.2, Amylpred 2) | **seven** — LARKSdb never reappears in Results or Fig. 4 |
+| Sharma 2023 (JMB) | truncated construct "residues **Met286**-Phe320" | 286 is **Ser**; cannot contain Asp262; cannot cover a 251-295 core | **Met186** — the unique Met satisfying all three constraints; a digit transposition |
+| Sharma 2023 (JMB) | "the predictions ... **did match well** the experimentally verified β-sheet structure" | introduced as "**Related conclusions**" to a failure | **did NOT match well** — a dropped negation that inverts the meaning of three citations |
 
-**Eleven, across eight papers and SIX independent groups** (updated 16 Nov 2026: the
+**Fourteen, across nine papers and SEVEN independent groups** (updated 16 Nov 2026: the
 Mizuguchi slip found by reading the apoA-I primary, the Seuma slip reported by the
 unbiased-screen audit). None of them changed a row, because each was caught by
 arithmetic, by a figure, or — in the Seuma and Giasson cases — by knowing the

@@ -1,6 +1,12 @@
 # Draft email: request for the AggreProt model files
 
-**Status: NOT SENT.** Drafted 16 Nov 2026. Sending is the author's action.
+**Status: SENT, 16 Nov 2026**, by the author, with the first author copied.
+Awaiting reply. The text below is the record of what was asked.
+
+**Clock starts now.** If nothing arrives, this is not a dead end: see *When a
+reply arrives* at the foot of this file. AggreProt is recorded as UNAVAILABLE,
+which is a reportable finding about the tool's reproducibility, not a gap in
+our work. Do not let a silent inbox hold up the freeze.
 
 **To:** `davidbednar1208@gmail.com`, `jan.martinovic@vsb.cz`
 *(both printed as corresponding authors in Planas-Iglesias et al., NAR 2024,

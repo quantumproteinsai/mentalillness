@@ -105,7 +105,7 @@
         "bio.tools entry": "Proprietary",
         "which_governs": "The repository LICENSE governs the code. NC and ShareAlike are not formalities here and need a deliberate decision before publication."
       },
-      "how_to_unblock": "Email the corresponding authors (addresses printed in the paper) for nnap-data.zip and its checksum. Until then record as UNAVAILABLE, not as a failure -- the same treatment ProA receives.",
+      "how_to_unblock": "REQUEST SENT 16 Nov 2026 to the corresponding authors printed in the paper, with the first author copied, asking for nnap-data.zip and its checksum, for which of the three conflicting licence statements governs, and for the web server's default parameters. Text of record: correspondence/2026-11-16_aggreprot_weights_request.md. AWAITING REPLY. UNTIL IT ARRIVES NOTHING CHANGES: AggreProt stays UNAVAILABLE, not failing -- the same treatment ProA receives -- and section 5.2 is satisfied by AggrescanAI alone. A pending email is not a reason to delay the freeze; if the archive arrives afterwards it is recorded as a new predictor admitted after the freeze, with the date, which is honest and costs nothing.",
       "pins_if_it_becomes_available": {
         "github": "https://github.com/loschmidt/aggreprot-predictor",
         "internal_commit_txt": "63d074c315610bbd4a9f694145d66bbbeb0ba6ca",

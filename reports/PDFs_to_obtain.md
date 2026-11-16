@@ -326,3 +326,29 @@ at **READ-BY-SUBAGENT** grade, which is weaker than READ and cannot be published
    was named by sequence analysis first. Both claim to be from reading the paper.
    **Check whether 318-343 is introduced before the truncation series or as its
    output.** Until settled, that row is scored by neither arm.
+
+
+---
+
+## FREEZE BLOCKERS created by PREREGISTRATION §12.1 decision 3 (16 Nov 2026)
+
+The publisher-PDF gate was made precise, and two promoted rows fail it. **Neither
+may be cited in a manuscript until obtained.**
+
+15. **Murray et al. 2017, *Cell* 171:615 — the version of record.**
+    **Highest priority of anything on this list.** FUS 39-95 is a **primary-stratum
+    discordant row**, and it was read as PMC5650524 web text with no PDF opened,
+    so `source_version` is `pmc_full_text` and it is **not citable**. The quoted
+    predictor sentence and the 39-95 core definition both need checking against
+    the published article. The gate bites on the main analysis, not a side row.
+
+16. **Richards et al., the PUBLISHED version — PMC9934627.**
+    LECT2 55-75 rests on the **bioRxiv preprint** (10.1101/2023.02.08.527771),
+    which was never peer reviewed. **Re-check the 55-75 core range against the
+    published version**, since a range can change in review — and this row's whole
+    value is that its range disagrees with the ex vivo ALECT2 structure.
+
+17. **The `UNRECORDED` rows.** Every row promoted before 16 Nov carries
+    `verified_against_publisher_pdf: true` but no record of *which version* was
+    opened. **This is a lookup, not a re-read, and it must not be guessed.**
+    Resolve before the freeze.

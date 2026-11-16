@@ -525,51 +525,138 @@ after unblinding is an exploratory analysis and is reported as one.
 **`scripts/prescreen.py`-style gate:** no manuscript may cite a row whose
 `verified_against_publisher_pdf` is false.
 
-### 12.1 OPEN DECISIONS BLOCKING THE FREEZE — tracked list, 16 Nov 2026
+### 12.1 THE FIVE OPEN DECISIONS — ALL SETTLED, 16 Nov 2026
 
-Maintained here so nothing reaches the freeze unnoticed. **None of these may be
-settled by Claude**; items 1 and 2 are the author's by §13, items 3 and 4 are
-consequences that need a decision rather than a judgement.
+Settled on the author's instruction, **before the freeze and before any predictor
+has been run**, which is the only ordering under which settling them is worth
+anything. The substance of each is written out so the record is auditable rather
+than a rubber stamp. **Any of these may be overturned by saying so; a later
+change becomes an amendment under the rule below.**
 
-**1. Ratify or overturn the three delegated decisions** (§3.1, §5.1, §5.2).
-Outstanding since 15 Nov. *Delegation is not agreement.* **This is step 3 above
-and it has not moved.**
+---
 
-**2. Where does ANuPP go?** *(new, 16 Nov)* ANuPP (2021) sits in **neither** arm:
-§5.1 freezes the legacy arm as TANGO, AGGRESCAN, FoldAmyloid, ProA; §5.2 freezes
-the modern arm as AggreProt and AggrescanAI under the version-pinnable-and-local
-rule. **But ANuPP has already succeeded on one of our rows** — Zaharija 2025
-§4.3.5 names AA 387-395 and AA 400-415 inside DISC1 384-415. A tool with a
-published hit on a validation row cannot be left unmentioned. **Options:** put it
-in the legacy arm (it is a server, not version-pinnable — this strains §5.2's own
-rule); put it in the modern arm (2021, but not a PLM); or name a third
-"intermediate generation" category and report it separately.
-**The conflict of interest must be stated in print whichever way it goes:
-ANuPP succeeding is inconvenient for a project about predictor failure.**
+**1. The three delegated decisions (§3.1, §5.1, §5.2): RATIFIED.**
 
-**3. The publisher-PDF gate now blocks two discordant rows.** *(new, 16 Nov)* The
-gate above says no manuscript may cite a row whose
-`verified_against_publisher_pdf` is false. **FUS 39-95 is currently `false`** —
-read via PMC5650524, publisher PDF not opened. The discordant stratum is the
-primary analysis, and **one of its four rows is uncitable under our own rule.**
-Either obtain the *Cell* PDF, or amend the gate to accept a publisher-hosted
-open-access full text as equivalent — *which is a real question, not a
-formality, since PMC author manuscripts can differ from the version of record.*
-**Do not quietly ignore the gate.**
+Stated here so that ratification means something:
 
-**5. Does `DISCORDANT_DERIVED` count?** *(new, 16 Nov)* LECT2 55-75 is
-discordant only because **we** compared Tsiolaki 2019 (AMYLPRED2 predicted 38-58
-and 73-88) with Richards 2023 (cryo-EM core 55-75) and computed that 14 of 21
-core residues were never predicted. **No paper reports this.** It is weaker than
-the four documented rows, AMYLPRED2 gives no per-tool result for §5.1's arm, and
-ZipperDB hits the core. **Decide before the freeze whether derived assignments
-enter the primary statistic, are reported as a separate stratum, or are excluded.**
+- **§3.1 — Stouffer's Z primary, Fisher secondary, both always reported.**
+  Stouffer weights rows equally and cannot be carried by a single outlier;
+  Fisher can. This project's recurring failure mode is precisely one row carrying
+  a claim — the gatekeeper result collapsed that way on 15 Nov. A
+  Stouffer-null/Fisher-significant disagreement is itself reportable and names
+  the row doing the work. **Ratified.**
+- **§5.1 — the FoldAmyloid reimplementation must pass Garbuzynskiy's own
+  published checks** (80%/72% on the 407-peptide set; only the contact scale
+  finds tau 306-311) or be excluded from the confirmatory legacy arm, while being
+  reported in full as a methods result. Neither hides a result nor attributes our
+  bug to the original authors. **Ratified**, with one consequence that had not
+  been noticed — see decision 4.
+- **§5.2 — a predictor enters the confirmatory modern arm only if it is
+  version-pinnable and runs locally.** **Ratified**, and decision 2 is the first
+  real test of it.
 
-**4. The tau PHF6 role conflict.** *(carried)* `VQIVYK` is both a
-deposited-crystal comparator (2ON9) in `scripts/gatekeeper_density.py` and the
-H4 control-arm validation row. **It may serve in one role per published table,
-and the role must be stated.** The script flags it `[ROLE CONFLICT]`; it does not
-decide it.
+---
+
+**2. ANuPP: a named third category, "intermediate generation (exploratory)."**
+
+Not the legacy arm — it is a 2021 tool and §5.1 is a frozen 2004-2010 baseline.
+Not the confirmatory modern arm — **it is a web server and fails §5.2's
+version-pinnable-and-local rule**, the same rule that already excluded eleven-plus
+other PLM-era tools. **Bending that rule for ANuPP specifically would be bending
+it for the one tool whose published result is inconvenient**, which is the worst
+possible reason to move a line.
+
+So: reported separately, **excluded from the multiplicity correction**, and
+Zaharija 2025 §4.3.5's DISC1 hit (AA 387-395 and 400-415, both inside 384-415)
+**cited as prior art, not rediscovered.**
+
+**Registered secondary analysis, because it is the question ANuPP actually
+raises:** run ANuPP on **TRIOBP-1 324-348, FUS 39-95 and hnRNPA1 251-295** and
+report whether its DISC1 success generalises. It has never been run on any of
+them. One hit on one protein is not a trend, and four discordant rows can say
+which it is.
+
+**The conflict of interest is stated in print either way**, in those words: a
+tool succeeding is inconvenient for a project about predictor failure, and the
+placement must not be allowed to bury it.
+
+---
+
+**3. The publisher-PDF gate: kept strict, and made precise.**
+
+The gate was unenforceable as written because "publisher PDF" was undefined, and
+**the problem is wider than FUS** — today's reading used an NIHMS author
+manuscript for hnRNPA1, an accepted manuscript for Tsiolaki, and a **bioRxiv
+preprint** for LECT2. Every row now carries **`source_version`**:
+
+| value | citable? |
+|---|---|
+| `version_of_record` | yes |
+| `author_manuscript` (NIHMS / accepted manuscript) | **yes**, with the version named in the citation |
+| `pmc_full_text` (read as web text, no PDF) | **no** |
+| `preprint` | **no**, unless the row is explicitly about the preprint |
+
+Author manuscripts count because they are the authors' own accepted text; the
+version is recorded because copyediting can change wording, and this project
+quotes sentences.
+
+**Two consequences, both freeze blockers:**
+- **FUS 39-95** is `pmc_full_text`. **Obtain Murray 2017, *Cell* 171:615.**
+- **LECT2 55-75** rests on the **bioRxiv preprint**. **Obtain the published
+  version, PMC9934627**, and re-check the core range against it.
+
+**A rule is not weakened to accommodate a row when the row can be obtained.**
+
+---
+
+**4. tau PHF6 306-311 — and it has THREE roles, not two.**
+
+Reading §5.1 to ratify it surfaced the third: **PHF6 is the validation target for
+the FoldAmyloid reimplementation** (*"only the contact scale finds tau
+306-311"*). It is also (a) the deposited-crystal comparator `2ON9` in
+`gatekeeper_density.py` and (b) the H4 control-arm validation row.
+
+Settled:
+
+- **Role (a) is dropped.** PHF6 is **removed from the `ZIPPERS` comparator list.**
+  Six deposited zippers remain and the comparator's job — characterising what a
+  real steric zipper looks like compositionally — survives losing one. The
+  control-arm role has no substitute.
+- **Role (c) is kept.** The FoldAmyloid check is specified in Garbuzynskiy's
+  print and is a fixed external standard; it is not ours to move.
+- **Role (b) is kept, with a pre-registered per-tool exclusion.**
+  **FoldAmyloid's score on tau PHF6 306-311 is not counted**, because §5.1
+  validates FoldAmyloid on that exact region and a tool pre-validated on a row
+  cannot then be tested on it. Every other predictor scores the row normally.
+
+α-syn NACore and preNAC have the same latent conflict but are **CIRCULAR
+candidates, not promoted rows**, so no conflict exists yet. **If either is ever
+promoted, apply this same rule.**
+
+---
+
+**5. `DISCORDANT_DERIVED` is a separate stratum and is NOT pooled into the
+primary statistic.**
+
+LECT2 55-75 is discordant only because **we** chose to compare Tsiolaki 2019 with
+Richards 2023 and computed the overlap. **Choosing which two papers to compare is
+exactly the researcher degree of freedom that pre-registration exists to
+remove** — and the four documented rows have no such freedom, because a single
+paper ran the tools and reported the outcome itself.
+
+So: reported as a **pre-specified secondary stratum**, with the derivation shown
+in full (7 of 21 core residues predicted; the 14-residue centre 59-72 missed,
+including Q59, N65, N67, I69, N71, G72). **If the primary and the derived stratum
+disagree, that is reported, not reconciled.**
+
+---
+
+**Status: §12 step 3 is discharged. The remaining freeze blockers are the two
+PDFs in decision 3, plus steps 4 and 5 (predictor versions, then the freeze
+commit).**
+
+**Amendments after this point** follow the rule below: a commit to this file
+stating what changed, why, and **whether any score had been seen at the time.**
 
 ---
 

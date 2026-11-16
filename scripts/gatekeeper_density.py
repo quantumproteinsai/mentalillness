@@ -69,14 +69,20 @@ window AND THE PREDICTORS FIND IT; TRIOBP-1 324-348 is the same architecture
 AND THEY MISSED IT. The window-matched control below is the evidence for H4,
 and it is now the point of this script rather than a caveat to it.
 
-THE ROLE CONFLICT THIS CREATES, WHICH IS NOT YET RESOLVED.
-tau PHF6 VQIVYK is flagged [ROLE CONFLICT] in ZIPPERS because it is now BOTH:
-  (a) a deposited-crystal comparator here (PDB 2ON9), and
-  (b) the REQUIRED control-arm validation row for H4 (PREREGISTRATION.md 9.1).
-IT MAY SERVE IN ONLY ONE ROLE PER PUBLISHED TABLE, AND THE ROLE MUST BE STATED.
-A table that silently uses it as both puts the same hexapeptide on both sides of
-its own comparison. The author decides which role it keeps where; this script
-does not decide it, it only refuses to hide it.
+THE ROLE CONFLICT IS RESOLVED (PREREGISTRATION.md 12.1, decision 4, 16 Nov 2026).
+tau PHF6 VQIVYK turned out to carry THREE roles, not two:
+  (a) a deposited-crystal comparator here (PDB 2ON9),
+  (b) the REQUIRED control-arm validation row for H4, and
+  (c) the validation target for the FoldAmyloid reimplementation, since 5.1
+      requires it to reproduce "only the contact scale finds tau 306-311".
+RESOLUTION: (a) IS DROPPED -- PHF6 is removed from ZIPPERS below. (c) is kept,
+because it is Garbuzynskiy's published check and not ours to move. (b) is kept
+WITH A PRE-REGISTERED PER-TOOL EXCLUSION: FoldAmyloid's score on tau PHF6 is not
+counted, because a tool validated on a row cannot then be tested on it. Every
+other predictor scores the row normally.
+Alpha-syn NACore and preNAC have the same latent conflict but are CIRCULAR
+candidates rather than promoted rows, so it does not bite yet. If either is ever
+promoted, apply the same rule.
 """
 import json
 import sys
@@ -147,10 +153,15 @@ do not state the composition as new.
 """
 
 ZIPPERS = [                         # deposited crystals, not validation rows
-    # ROLE CONFLICT, OPENED 16 Nov 2026 -- READ THE DOCSTRING BEFORE PUBLISHING
-    # ANY TABLE CONTAINING THIS ROW. VQIVYK is now BOTH a deposited-crystal
-    # comparator here AND the required control-arm validation row for H4.
-    ('tau PHF6 (2ON9) [ROLE CONFLICT]', 'VQIVYK'),
+    # tau PHF6 (2ON9), VQIVYK, WAS HERE AND WAS REMOVED 16 Nov 2026 BY
+    # PREREGISTRATION.md 12.1 DECISION 4. It turned out to carry THREE roles:
+    # this comparator, the H4 control-arm validation row, and the validation
+    # target for the FoldAmyloid reimplementation (5.1, "only the contact scale
+    # finds tau 306-311"). The comparator was the one that could be given up --
+    # six deposited zippers remain and they still characterise what a real
+    # steric zipper looks like, whereas the control arm has no substitute.
+    # THE HEADLINE RANGE IS UNCHANGED: SOD1 30-35 is also 16.7%, so the zipper
+    # band stays 0.0% to 16.7% and only n drops from 7 to 6.
     ('a-syn NACore (4RIL)',  'GAVVTGVTAVA'),
     # 4ZNN is deposited as GVVHGVTTVA, which is the A53T DISEASE MUTANT, not
     # wild type: UniProt P37840 residues 47-56 are GVVHGVATVA (Ala at 53).

@@ -1355,6 +1355,57 @@ leads today and found exactly two papers that ran predictors post hoc and
 published the failure. **The supply of documented discordant rows is thin, and
 that is now a measured statement rather than an impression.**
 
+### All five open decisions settled [16 Nov 2026]
+
+Settled **before the freeze and before any predictor has run**, which is the only
+ordering under which settling them is worth anything. Full text in
+`PREREGISTRATION.md` §12.1.
+
+**1. The three delegated decisions: RATIFIED** (§3.1 Stouffer primary / Fisher
+secondary; §5.1 the FoldAmyloid reimplementation must pass Garbuzynskiy's own
+checks or be excluded-but-reported; §5.2 version-pinnable-and-local for the
+modern arm). Each is written out in §12.1 so ratification means something rather
+than being a rubber stamp. **§12 step 3 is discharged.**
+
+**2. ANuPP → a named third category, "intermediate generation (exploratory)."**
+Not legacy (2021, and §5.1 is a frozen 2004-2010 baseline); not confirmatory
+modern (**it is a web server and fails §5.2's rule** — the same rule that already
+excluded eleven-plus PLM-era tools). **Bending that rule for ANuPP specifically
+would be bending it for the one tool whose published result is inconvenient.**
+Reported separately, out of the multiplicity correction, with Zaharija 2025 cited
+as prior art. **Registered secondary analysis:** run ANuPP on TRIOBP-1 324-348,
+FUS 39-95 and hnRNPA1 251-295 — it has never been run on any of them, and that is
+the question it actually raises.
+
+**3. The publisher-PDF gate: kept strict, made precise** — and the problem was
+wider than FUS. One day's reading used a version of record, an NIHMS author
+manuscript, an accepted manuscript and a **bioRxiv preprint**, and recorded all
+four identically. Every row now carries **`source_version`**; author manuscripts
+are citable with the version named, `pmc_full_text` and `preprint` are not.
+**Two freeze blockers fall out: Murray 2017 *Cell* (FUS 39-95 is a
+primary-stratum row and currently uncitable) and the published LECT2 paper.** A
+rule is not weakened to accommodate a row when the row can be obtained.
+
+**4. tau PHF6 — and ratifying §5.1 surfaced a THIRD role.** Beyond the crystal
+comparator and the H4 control row, **PHF6 is the validation target for the
+FoldAmyloid reimplementation** (*"only the contact scale finds tau 306-311"*).
+Resolution: the **comparator is dropped** — PHF6 removed from `ZIPPERS`, and *the
+headline band is unchanged at 0.0–16.7% because SOD1 30-35 is also 16.7%*, only
+n falls 7→6. The FoldAmyloid check is kept (it is Garbuzynskiy's, not ours to
+move). The control row is kept **with a pre-registered per-tool exclusion:
+FoldAmyloid's score on PHF6 is not counted**, because a tool validated on a row
+cannot then be tested on it.
+
+**5. `DISCORDANT_DERIVED` is a separate stratum, not pooled.** Choosing which two
+papers to compare is exactly the researcher degree of freedom pre-registration
+exists to remove, and the four documented rows carry no such freedom. Reported
+with the derivation shown; **if primary and derived disagree, that is reported,
+not reconciled.**
+
+**Remaining freeze blockers: the two PDFs, the ten `UNRECORDED` source versions,
+then steps 4–5 (predictor versions, freeze commit).** No predictor may run until
+then.
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

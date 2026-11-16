@@ -29,7 +29,9 @@
       "circularity_status": "CLEAN",
       "circularity_basis": "Found by experimental truncation scanning. The source paper states explicitly that it was NOT predicted. No predictor in the discovery path.",
       "stratum": "DISCORDANT",
-      "stratum_basis": "DOCUMENTED IN PRINT. Bradshaw 2017 states the region was NOT predicted, and the published predictor negatives are cited evidence in CLAUDE.md. Experiment and prediction disagree. THIS IS ONE OF THE TWO ROWS THAT CARRY THE PRIMARY STATISTIC."
+      "stratum_basis": "DOCUMENTED IN PRINT. Bradshaw 2017 states the region was NOT predicted, and the published predictor negatives are cited evidence in CLAUDE.md. Experiment and prediction disagree. THIS IS ONE OF THE TWO ROWS THAT CARRY THE PRIMARY STATISTIC.",
+      "source_version": "UNRECORDED",
+      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
     },
     {
       "protein": "TRIOBP-1",
@@ -45,7 +47,9 @@
       "circularity_status": "CLEAN",
       "circularity_basis": "Sub-annotation of the clean 324-348 row, from the same truncation series. Not to be scored as an independent region -- see note.",
       "stratum": "PENDING",
-      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
+      "source_version": "UNRECORDED",
+      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
     },
     {
       "protein": "TRIOBP-1",
@@ -63,7 +67,9 @@
       "circularity_status": "CLEAN",
       "circularity_basis": "Found by experimental narrowing, truncating from the C-terminal end. No predictor.",
       "stratum": "PENDING",
-      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
+      "source_version": "UNRECORDED",
+      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
     },
     {
       "protein": "TRIOBP-1",
@@ -79,7 +85,9 @@
       "circularity_status": "CLEAN",
       "circularity_basis": "Tested after an unexpected result, not nominated by prediction.",
       "stratum": "PENDING",
-      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
+      "source_version": "UNRECORDED",
+      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
     },
     {
       "protein": "TRIOBP-1",
@@ -94,7 +102,9 @@
       "circularity_status": "CIRCULAR",
       "circularity_basis": "PREDICTION-NOMINATED. regions.json already records that 'earlier bioinformatics pointed here; the deletion work did NOT support it'. The region entered the literature because a predictor named it. KEEPING IT LABELLED IS THE POINT: it is a prediction-nominated region that experiment REFUTED, which makes it the most informative false positive in the set.",
       "stratum": "PENDING",
-      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
+      "source_version": "UNRECORDED",
+      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
     },
     {
       "protein": "DISC1",
@@ -108,7 +118,9 @@
       "circularity_status": "CLEAN",
       "circularity_basis": "Boundaries from ESPRIT, which is an EXPERIMENTAL solubility screen over a random truncation library, not an aggregation predictor. Borderline but clean: no sequence-based aggregation propensity was consulted to choose it.",
       "stratum": "PENDING",
-      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
+      "source_version": "UNRECORDED",
+      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
     },
     {
       "protein": "DISC1",
@@ -124,7 +136,9 @@
       "circularity_status": "CIRCULAR",
       "circularity_basis": "Found by a RADAR sequence-repeat search -- a sequence method. Already flagged in found_by. Compounded by CAUTION_2026_11_15: it is a docking restraint, not a measurement.",
       "stratum": "PENDING",
-      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
+      "source_version": "UNRECORDED",
+      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
     },
     {
       "protein": "DISC1",
@@ -138,7 +152,9 @@
       "circularity_status": "CIRCULAR",
       "circularity_basis": "The restraint segments used to build the 716-761 model; not independent of it, and RADAR-derived.",
       "stratum": "PENDING",
-      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
+      "source_version": "UNRECORDED",
+      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
     },
     {
       "protein": "DISC1",
@@ -152,7 +168,9 @@
       "circularity_status": "CLEAN",
       "circularity_basis": "A splice variant boundary (the delta-22 deletion), defined by biology rather than by any sequence analysis.",
       "stratum": "PENDING",
-      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
+      "source_version": "UNRECORDED",
+      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
     },
     {
       "protein": "DISC1",
@@ -175,7 +193,9 @@
       "stratum": "DISCORDANT",
       "stratum_basis": "RESOLVED 16 Nov 2026 FROM THE LITERATURE, NO RUN OF OURS REQUIRED, and it resolves cleanly because the registered legacy arm is narrower than the thesis's tool list. Zaharija 2025 section 4.3.5 ran five predictors on full-length DISC1 and FOUR OF FIVE gave \"aggregation/amyloid formation hotspots dispersed throughout the entirety of the protein sequence\" -- they did NOT single out the linker. Those four include every tool in PREREGISTRATION 5.1: TANGO (2004), AGGRESCAN (2007) and FoldAmyloid (2010). AGAINST THE REGISTERED LEGACY ARM THIS ROW IS UNAMBIGUOUSLY DISCORDANT.",
       "THE_ANUPP_EXCEPTION_AND_WHY_IT_IS_NOT_A_PROBLEM_FOR_THE_STRATUM": "ONE OF THE FIVE DID FIND IT. ANuPP (2021) named AA 387-395 and AA 400-415 as having the highest nucleation capacity. VERIFIED 16 Nov 2026: both lie entirely inside 384-415, so this is a precise hit and not a vague overlap. ANuPP is NOT in the frozen legacy arm (PREREGISTRATION 5.1 = TANGO, AGGRESCAN, FoldAmyloid, ProA), so it does not muddy this row's stratum. BUT IT IS IMPORTANT FOR A DIFFERENT REASON -- see _ANUPP_IS_PRIOR_ART_ON_H1 at the top level of this file. It must be cited, not rediscovered.",
-      "frame_verified": "CLOSED 16 Nov 2026, a task that had been outstanding since the thesis was read. The thesis input was full-length human L-variant DISC1 as RefSeq NP_061132.2, NOT UniProt Q9NRI5, and the register flagged \"VERIFY THE FRAMES MATCH\". THEY ARE BYTE-IDENTICAL: both 854 aa, sequences equal on direct comparison. So the thesis's residue numbers transfer to our frame with no offset, and CLAUDE.md's DISC1 numbering trap does not bite here."
+      "frame_verified": "CLOSED 16 Nov 2026, a task that had been outstanding since the thesis was read. The thesis input was full-length human L-variant DISC1 as RefSeq NP_061132.2, NOT UniProt Q9NRI5, and the register flagged \"VERIFY THE FRAMES MATCH\". THEY ARE BYTE-IDENTICAL: both 854 aa, sequences equal on direct comparison. So the thesis's residue numbers transfer to our frame with no offset, and CLAUDE.md's DISC1 numbering trap does not bite here.",
+      "source_version": "UNRECORDED",
+      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
     },
     {
       "protein": "tau",
@@ -194,7 +214,9 @@
       "circularity_status": "CLEAN",
       "circularity_basis": "Unbiased scan; the probe PHF43 came from GluC limited proteolysis, not from a prediction. Prediction is present in the paper but ONLY POST HOC -- Discussion (v) cites Street & Mayo 1999 for beta-propensity. That is the permitted direction. NOTE FOR HONESTY: an audit subagent reported 'no algorithm named anywhere in the paper'; that is FALSE, and we state the post-hoc position ourselves rather than let a reviewer find it.",
       "stratum": "CONCORDANT",
-      "stratum_basis": "DOCUMENTED, not predicted by us. Discussion (v): PHF6 and PHF6* 'are the only two spots in the tau sequence where a beta conformation is strongly predicted'. The predictors FIND this region, which is exactly why it serves as the positive control and NOT as a test of H1/H4."
+      "stratum_basis": "DOCUMENTED, not predicted by us. Discussion (v): PHF6 and PHF6* 'are the only two spots in the tau sequence where a beta conformation is strongly predicted'. The predictors FIND this region, which is exactly why it serves as the positive control and NOT as a test of H1/H4.",
+      "source_version": "version_of_record",
+      "source_version_note": "von Bergen 2000 PNAS 97:5129, publisher PDF supplied by the author; Figures 1 and 4 additionally read as images from PMC25793."
     },
     {
       "protein": "tau",
@@ -213,7 +235,9 @@
       "circularity_status": "CLEAN",
       "circularity_basis": "Same clean scan as PHF6. CORRECTION RECORDED: this row was briefly demoted on 16 Nov on the reasoning that PHF6* sits in R2 and R2 is deleted from the probe, so it must have been named by analogy. That was WRONG -- it confused the probe with the membrane. The membrane spans 253-354 and contains R2; the probe need not.",
       "stratum": "CONCORDANT",
-      "stratum_basis": "Same documented sentence as PHF6: 'the only two spots in the tau sequence where a beta conformation is strongly predicted'."
+      "stratum_basis": "Same documented sentence as PHF6: 'the only two spots in the tau sequence where a beta conformation is strongly predicted'.",
+      "source_version": "version_of_record",
+      "source_version_note": "Same source and PDF as tau 306-311."
     },
     {
       "protein": "alpha-synuclein",
@@ -232,7 +256,9 @@
       "circularity_status": "CLEAN",
       "circularity_basis": "Discovery path is a natural deletion in a close paralogue plus limited proteolysis. No algorithm, and none of the relevant tools existed in 2001.",
       "stratum": "CONCORDANT",
-      "stratum_basis": "DOCUMENTED by overlap: 71-82 shares eight residues with NACore 68-78, which was selected by ZipperDB. A region a predictor picked is one the predictors find."
+      "stratum_basis": "DOCUMENTED by overlap: 71-82 shares eight residues with NACore 68-78, which was selected by ZipperDB. A region a predictor picked is one the predictors find.",
+      "source_version": "version_of_record",
+      "source_version_note": "Giasson 2001 JBC 276:2380, publisher PDF supplied by the author."
     },
     {
       "protein": "FUS",
@@ -259,7 +285,9 @@
         "the_pairing": "FUS 39-95 and tau PHF6 306-311 have essentially the SAME compositional profile (low gatekeeper, zipper-grade windows) and OPPOSITE prediction outcomes: tau is FOUND, FUS is MISSED. That is a far tighter control pair than tau versus TRIOBP-1, because it holds composition almost constant. H4 was promoted on the tau/TRIOBP-1 contrast; THIS PAIR IS THE BETTER TEST OF IT.",
         "the_three_row_structure": "tau PHF6 16.7% gatekeeper, is a zipper, FOUND. FUS 39-95 3.5%, 52/52 windows zipper-grade, MISSED. TRIOBP-1 324-348 48.0%, 7/20 windows zipper-grade, MISSED. Composition does not order these outcomes -- which is Murray's own point, now doing work FOR the project rather than against it.",
         "honest_limit": "n is still small and FUS is one protein. This strengthens H4; it does not by itself make a rate estimate. See PREREGISTRATION.md 7."
-      }
+      },
+      "source_version": "pmc_full_text",
+      "source_version_note": "NOT CITABLE under 12.1 decision 3. Murray 2017 Cell 171:615 was read as PMC5650524 web text; no PDF was opened. FREEZE BLOCKER -- obtain the Cell PDF. This is a PRIMARY-STRATUM row, so the gate bites on the main analysis."
     },
     {
       "protein": "hnRNPA1",
@@ -285,7 +313,9 @@
       "H4_ARCHITECTURE": "COMPUTED 16 Nov 2026: 11.1% proline-plus-charge, and 34 of 40 6-residue windows sit at or below the worst deposited zipper (16.7%). LIKE FUS 39-95 AND UNLIKE TRIOBP-1 324-348, THIS IS A GATEKEEPER-POOR REGION THAT THE LEGACY ARM STILL MISSED -- a second instance where the compositional excuse is unavailable. It is also a LARKS/low-complexity Gly-Tyr-Asn core rather than a classic hydrophobic zipper, which is a candidate MECHANISM for the failure and is worth stating as a hypothesis, not a result.",
       "THE_FAILURE_IS_A_FALSE_POSITIVE_NOT_ONLY_A_MISS": "THE FULL TEXT IS STRONGER THAN THE ABSTRACT AND THIS CHANGES HOW THE ROW SHOULD BE USED. The predictors did not merely fail to flag the core -- THEY CONFIDENTLY FLAGGED THE WRONG REGION. Results: \"Analysis of the hnRNPA1 sequence with these methods CONSISTENTLY IDENTIFIES SEGMENTS WITHIN THE TWO RRMs, but not within the cross-beta sheet forming sequence elements, as particularly aggregation-prone.\" Conclusion: the RRM domains \"do not contribute to the formation of the core of full-length hnRNPA1 fibrils, ALTHOUGH THEY EXHIBIT THE HIGHEST INTRINSIC AMYLOIDOGENIC POTENTIAL of the fibril protein sequence.\" A false-negative on the true region PLUS a confident false-positive elsewhere is a harder failure than a miss, and it is the shape H4 should be tested against. The paper's own verdict: \"it is currently difficult, if not impossible, to correctly anticipate which sequence segments will form the fibril cross-beta structure.\"",
       "CONSTRUCT_INDEPENDENCE_WHICH_IS_THE_OPPOSITE_OF_OUR_USUAL_FINDING": "WORTH RECORDING BECAUSE IT CUTS AGAINST THE PROJECT'S OWN construct WARNING. The full-length fibril core is \"essentially indistinguishable\" from the core formed by an N-terminally truncated construct lacking both RRMs, RMSD 0.688 A, DESPITE different constructs AND different buffers and temperatures. The authors contrast this with alpha-synuclein, TDP-43 and Abeta, \"where even slight change in the conditions of fibril formation or in the length of the protein construct resulted in clearly different fibril morphologies\". So construct dependence is real but NOT universal, and this row is a counter-example to be reported honestly alongside the TRIOBP-1 324-328 and TDP-43 RRM2 rows where construct decides everything.",
-      "NUMBERING_ERROR_IN_THE_SOURCE_PAPER": "THE PAPER NAMES THE TRUNCATED COMPARISON CONSTRUCT AS \"residues Met286-Phe320\" AND THAT CANNOT BE RIGHT, ON THREE INDEPENDENT GROUNDS. (1) VERIFIED: residue 286 of P09651-2 is SERINE, not methionine. (2) The same sentence discusses the Asp262Val and Asp262Asn variants OF THAT CONSTRUCT -- a construct beginning at 286 cannot contain residue 262. (3) The paper compares its 45-residue core (251-295) with that construct's core and finds them indistinguishable at RMSD 0.688 A -- impossible for a 35-residue construct overlapping the core by only 10 residues. THE INTENDED VALUE IS ALMOST CERTAINLY Met186, a digit transposition: Met186 is the UNIQUE methionine in the 320-residue frame that satisfies every constraint the paper itself states -- it contains Asp262, it spans 251-295, and Met186-Phe320 (135 residues) is an N-terminal truncation that \"lacked the two RRM domains\", exactly as the paper describes ref 18. DOES NOT AFFECT OUR ROW: the core range 251-295 is independently verified. Recorded because anyone citing the comparison construct would otherwise propagate the error."
+      "NUMBERING_ERROR_IN_THE_SOURCE_PAPER": "THE PAPER NAMES THE TRUNCATED COMPARISON CONSTRUCT AS \"residues Met286-Phe320\" AND THAT CANNOT BE RIGHT, ON THREE INDEPENDENT GROUNDS. (1) VERIFIED: residue 286 of P09651-2 is SERINE, not methionine. (2) The same sentence discusses the Asp262Val and Asp262Asn variants OF THAT CONSTRUCT -- a construct beginning at 286 cannot contain residue 262. (3) The paper compares its 45-residue core (251-295) with that construct's core and finds them indistinguishable at RMSD 0.688 A -- impossible for a 35-residue construct overlapping the core by only 10 residues. THE INTENDED VALUE IS ALMOST CERTAINLY Met186, a digit transposition: Met186 is the UNIQUE methionine in the 320-residue frame that satisfies every constraint the paper itself states -- it contains Asp262, it spans 251-295, and Met186-Phe320 (135 residues) is an N-terminal truncation that \"lacked the two RRM domains\", exactly as the paper describes ref 18. DOES NOT AFFECT OUR ROW: the core range 251-295 is independently verified. Recorded because anyone citing the comparison construct would otherwise propagate the error.",
+      "source_version": "author_manuscript",
+      "source_version_note": "Sharma 2023 J Mol Biol 435:168211, NIHMS1922724 AUTHOR MANUSCRIPT supplied by the author -- NOT the version of record. Citable under 12.1 decision 3 provided the version is named. Copyediting could alter wording, and this project quotes sentences from it."
     },
     {
       "protein": "serum amyloid A (hSAA1.1)",
@@ -307,7 +337,9 @@
       "stratum": "PENDING",
       "stratum_basis": "CANNOT BE ASSIGNED FROM THIS PAPER, AND THIS CORRECTS AN EARLIER NOTE OF OURS. LIBERTA 2019 RUNS NO AGGREGATION PREDICTOR AT ALL. The software named in Methods is structural and imaging only -- IMOD, MOTIONCOR2, Gctf, RELION, Coot, PHENIX, Molprobity, EMRinger, DSSP, STRIDE, Chimera, PDBePISA, Fiji, FREALIGN. ZipperDB, TANGO, AGGRESCAN, FoldAmyloid, PASTA, WALTZ, AmylPred and Zyggregator are ABSENT. Assignment therefore requires our own legacy run, after which this row moves out of PENDING. See the correction block below.",
       "ALLELIC_TRAP_DO_NOT_PULL_THIS_SEQUENCE_FROM_UNIPROT": "CHECKED 16 Nov 2026 AND IT BITES INSIDE THE REGION. The mature chain of UniProt P0DJI8 (SAA1, 104 aa after the 18-residue signal peptide) differs from the hSAA1.1 sequence printed in Figure 4a at THREE positions: residue 52 (UniProt Ala, paper Val), residue 57 (UniProt Val, paper Ala) and residue 59 (UniProt Thr, paper Ser). These are the known SAA1 allelic variants -- SAA1.1 / SAA1.3 / SAA1.5 differ at exactly these sites. ONE OF THEM, RESIDUE 52, FALLS INSIDE THE ORDERED CORE 2-55. So the core sequence is allele-dependent, and taking it from the UniProt canonical entry would silently give the WRONG residue at position 52. The paper studies hSAA1.1 specifically. ALWAYS NAME THE ALLELE WITH THIS ROW. This is a new member of the frame-trap family in _frame_traps_are_worse_than_assumed: not an isoform or a numbering offset, but an ALLELE.",
-      "DIRECTLY_RELEVANT_TO_THE_RETIRED_H3": "COMPUTED: the ordered core 2-55 is 27.8% proline-plus-charge -- HIGHER than DISC1 384-415 (18.8%) and far above every deposited zipper (max 16.7%). AND IT IS AN EX VIVO HUMAN DISEASE FIBRIL. Moreover the paper shows charge is not merely tolerated but STRUCTURAL: 'the mutual charge compensation of six buried ionic residues (Asp15, Arg18, Asp30, Lys33, Glu8, and Arg46) that form a network of salt bridges in the murine fibril', with six more internal ionic residues in the human fibril defining a water-filled cavity. THIS IS DIRECT STRUCTURAL EVIDENCE THAT GATEKEEPER RESIDUES ARE NOT EXCLUDED FROM AMYLOID CORES -- they sit buried, charge-compensated, in real disease material. It further weakens any claim that a gatekeeper-rich region is paradoxical (H3 is already retired, PREREGISTRATION 9.1), and it is better evidence for that than anything this project would have generated. Cite it."
+      "DIRECTLY_RELEVANT_TO_THE_RETIRED_H3": "COMPUTED: the ordered core 2-55 is 27.8% proline-plus-charge -- HIGHER than DISC1 384-415 (18.8%) and far above every deposited zipper (max 16.7%). AND IT IS AN EX VIVO HUMAN DISEASE FIBRIL. Moreover the paper shows charge is not merely tolerated but STRUCTURAL: 'the mutual charge compensation of six buried ionic residues (Asp15, Arg18, Asp30, Lys33, Glu8, and Arg46) that form a network of salt bridges in the murine fibril', with six more internal ionic residues in the human fibril defining a water-filled cavity. THIS IS DIRECT STRUCTURAL EVIDENCE THAT GATEKEEPER RESIDUES ARE NOT EXCLUDED FROM AMYLOID CORES -- they sit buried, charge-compensated, in real disease material. It further weakens any claim that a gatekeeper-rich region is paradoxical (H3 is already retired, PREREGISTRATION 9.1), and it is better evidence for that than anything this project would have generated. Cite it.",
+      "source_version": "version_of_record",
+      "source_version_note": "Liberta 2019 Nat Commun 10:1104, publisher PDF (open access, CC BY) supplied by the author."
     },
     {
       "protein": "LECT2",
@@ -330,7 +362,9 @@
       "stratum_basis": "UPGRADED FROM PENDING, 16 Nov 2026, BUT ON A DERIVED COMPARISON RATHER THAN A PUBLISHED ONE -- READ THE CAVEAT. Tsiolaki et al. 2019 (J Struct Biol 207:260) ran AMYLPRED2, an 11-method consensus, over the whole LECT2 sequence BEFORE any structure existed, and nominated two aggregation-prone regions: 38-58 and 73-88. The cryo-EM core determined four years later is 55-75. COMPUTED OVERLAP: only 7 of the 21 core residues were predicted, and those seven are the two ENDS (55-58 and 73-75). THE ENTIRE 14-RESIDUE CENTRE, 59-72 (QEKPYQNKNAINNG), WAS NOT PREDICTED. AND THE MISSED STRETCH IS THE STRUCTURALLY IMPORTANT ONE. Richards 2023 names the residues that hold the core together: the polar ladders Q59, N65, N67 and N71, the central I69 that \"anchors the very center of the fibril core\", and the G58/G72 pair. Of these, Q59, N65, N67, I69, N71 and G72 are ALL in the missed stretch. The predictor found the hydrophobic flanks and missed the polar machinery.",
       "THE_EX_VIVO_CONFLICT_THAT_LIMITS_THIS_ROW": "A COMPANION CRYO-EM STUDY OF PATIENT MATERIAL REPORTS A COMPLETELY DIFFERENT CORE. 'Structural polymorphism of ex-vivo ALECT2 amyloid fibrils' (PMC13247027), from the kidney of a patient homozygous for I40V, reports that ALL 133 RESIDUES of mature LECT2 are incorporated into the fibril structure. This recombinant structure gives a 21-residue core; the patient structure gives a whole-protein core. The authors of the recombinant work flagged the risk themselves: 'It remains to be seen whether recombinant LECT2 amyloid fibrils exactly match those present in the kidneys of ALECT2 patients.' THEY DO NOT APPEAR TO. This row therefore records a RECOMBINANT core that may be an in vitro artefact, and it must never be described as the ALECT2 disease core. It is the sharpest construct-dependence case in the whole set -- sharper than TRIOBP-1 324-328 or TDP-43 RRM2 -- because the disagreement is 21 residues versus 133.",
       "a_near_miss_worth_chasing": "Reference 20, Tsiolaki PL et al. (2019) J Struct Biol 207:260, 'Delving into the amyloidogenic core of human leukocyte chemotactic factor 2', is described here as having 'identified the regions immediately preceding and following it as possible amyloidogenic segments'. A prediction-driven paper that bracketed the true core without hitting it is exactly the shape of a documented discordant assignment. OPEN IT AND CHECK WHICH TOOLS IT USED -- it is the best remaining lead from this branch.",
-      "WHY_THIS_ASSIGNMENT_IS_WEAKER_THAN_FUS_OR_hnRNPA1": "THE COMPARISON IS MINE, NOT THE LITERATURE'S, AND THAT MUST BE STATED WHEREVER IT IS USED. For FUS 39-95 and hnRNPA1 251-295 the SOURCE PAPER ITSELF runs the predictors and reports the failure, naming the tools. Here, two different papers four years apart are compared by us: Tsiolaki 2019 claims SUCCESS, not failure, and never saw the cryo-EM structure. TWO FURTHER LIMITS. (1) AMYLPRED2 IS A CONSENSUS of 11 methods; TANGO and AGGRESCAN are among its components, but PER-TOOL output is not published, so this does NOT give a per-tool assignment for the frozen legacy arm of PREREGISTRATION 5.1. (2) ZipperDB, run post hoc by Richards 2023, DOES hit the core -- so the row remains one where some tools succeed. HENCE THE SEPARATE STRATUM VALUE. It must not be pooled with the documented discordant rows without the author deciding to, and that decision is registered as open."
+      "WHY_THIS_ASSIGNMENT_IS_WEAKER_THAN_FUS_OR_hnRNPA1": "THE COMPARISON IS MINE, NOT THE LITERATURE'S, AND THAT MUST BE STATED WHEREVER IT IS USED. For FUS 39-95 and hnRNPA1 251-295 the SOURCE PAPER ITSELF runs the predictors and reports the failure, naming the tools. Here, two different papers four years apart are compared by us: Tsiolaki 2019 claims SUCCESS, not failure, and never saw the cryo-EM structure. TWO FURTHER LIMITS. (1) AMYLPRED2 IS A CONSENSUS of 11 methods; TANGO and AGGRESCAN are among its components, but PER-TOOL output is not published, so this does NOT give a per-tool assignment for the frozen legacy arm of PREREGISTRATION 5.1. (2) ZipperDB, run post hoc by Richards 2023, DOES hit the core -- so the row remains one where some tools succeed. HENCE THE SEPARATE STRATUM VALUE. It must not be pooled with the documented discordant rows without the author deciding to, and that decision is registered as open.",
+      "source_version": "preprint",
+      "source_version_note": "NOT CITABLE under 12.1 decision 3. The source read in full is the bioRxiv PREPRINT 10.1101/2023.02.08.527771, which was never peer reviewed. FREEZE BLOCKER -- obtain the published version, PMC9934627, and RE-CHECK the 55-75 core range against it, since a preprint range can change in review."
     }
   ],
   "_rows_deliberately_excluded": {
@@ -390,5 +424,17 @@
     "the_general_rule_this_sets": "ANY FIBRIL WHOSE ORDERED CORE IS THE WHOLE PROTEIN IS UNINFORMATIVE FOR THIS BENCHMARK AND MUST BE EXCLUDED WITH THIS REASON STATED. That is a premise audit in CLAUDE.md rule 3's sense -- the proposed comparison is impossible, and saying so IS the finding. Record such structures in the dataset if wanted, but never in the scored set.",
     "it_also_undercuts_the_companion_row": "The same paper is the source of the ex vivo conflict recorded on LECT2 55-75. Both facts come from patient material and both weaken the recombinant row.",
     "provenance": "PMC13247027 read by the main session via WebFetch, 16 Nov 2026; publisher PDF not opened. The 133-residue claim and the four-tool list are quoted from that read."
+  },
+  "_SCHEMA_SOURCE_VERSION": {
+    "added": "16 Nov 2026, required by PREREGISTRATION.md 12.1 decision 3.",
+    "why": "The publisher-PDF gate was unenforceable because 'publisher PDF' was undefined. In one day's reading this project used a version of record, an NIHMS author manuscript, an accepted manuscript and a bioRxiv preprint, and recorded all four identically as verified_against_publisher_pdf = true. That flattened a real difference.",
+    "values": {
+      "version_of_record": "The published article. CITABLE.",
+      "author_manuscript": "NIHMS or accepted manuscript -- the authors' own accepted text. CITABLE, but the version must be named in the citation, because copyediting can alter wording and this project quotes sentences.",
+      "pmc_full_text": "Read as web text with no PDF opened. NOT CITABLE.",
+      "preprint": "Not peer reviewed. NOT CITABLE unless the row is explicitly about the preprint.",
+      "UNRECORDED": "Predates the rule. Must be resolved before the freeze; it is a lookup, not a re-read."
+    },
+    "the_two_freeze_blockers_this_created": "FUS 39-95 (pmc_full_text, and it is a PRIMARY-STRATUM row) needs Murray 2017 Cell 171:615. LECT2 55-75 (preprint) needs PMC9934627, with the core range re-checked against it. A RULE IS NOT WEAKENED TO ACCOMMODATE A ROW WHEN THE ROW CAN BE OBTAINED."
   }
 }

@@ -1,7 +1,7 @@
 {
   "_dataset": {
     "title": "Experimentally mapped aggregation-critical protein regions, with circularity and prediction-concordance labels",
-    "version": "1.0.0-draft",
+    "version": "1.0.0",
     "n_regions": 17,
     "generated_by": "scripts/build_release.py, from data/regions.json",
     "READ_THIS_FIRST": "release/DATA_DESCRIPTOR.md",

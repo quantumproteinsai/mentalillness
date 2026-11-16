@@ -46,12 +46,14 @@ material.
 
 ## STILL OPEN
 
-### 3. Version number
+### ~~3. Version number~~ — DROPPED 16 Nov 2026
 
-Still `1.0.0-draft`, set in `scripts/build_release.py` (one constant, `VERSION`).
+`VERSION` in `scripts/build_release.py` is now `1.0.0`. The release was rebuilt,
+the `-draft` artefacts deleted, and `CITATION.cff`, `.zenodo.json` and the
+descriptor all follow it.
 
-**Do not deposit while the string says draft.** Drop the suffix, re-run the
-build, and the filenames and metadata follow.
+**What this means:** the files are deposit-ready. Nothing in the repository
+deposits them.
 
 ### 5. What the release claims
 

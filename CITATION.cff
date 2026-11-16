@@ -8,7 +8,7 @@ abstract: >-
   the construct that established it, whether a predictor was in its discovery
   path (circularity), and whether experiment and prediction agree (stratum).
 type: dataset
-version: 1.0.0-draft
+version: 1.0.0
 authors:
   - family-names: "Mercier des Rochettes"
     given-names: "Bertrand"
@@ -30,5 +30,6 @@ keywords:
 # reuse but detach the rows from the reasoning that justifies them.
 license: CC-BY-4.0
 repository-code: "https://github.com/quantumproteinsai/mentalillness"
-# doi: # assigned by Zenodo on deposit
-# date-released: # on deposit
+date-released: 2026-11-16
+# doi: # ASSIGNED BY ZENODO ON DEPOSIT -- add it here, in
+# .zenodo.json, and in release/DATA_DESCRIPTOR.md's Citation section.

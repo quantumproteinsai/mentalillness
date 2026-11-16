@@ -2,7 +2,7 @@
 
 **with circularity and prediction-concordance labels**
 
-Version 1.0.0-draft · 17 regions across 8 proteins
+Version 1.0.0 · 17 regions across 8 proteins
 
 ---
 
@@ -185,8 +185,8 @@ The `frame` field records the frame and, where available, the accession. **Where
 
 | file | |
 |---|---|
-| `aggregation_regions_v1.0.0-draft.json` | **authoritative.** Full records, schema documentation, per-row `notes` |
-| `aggregation_regions_v1.0.0-draft.csv` | core columns only, for quick inspection |
+| `aggregation_regions_v1.0.0.json` | **authoritative.** Full records, schema documentation, per-row `notes` |
+| `aggregation_regions_v1.0.0.csv` | core columns only, for quick inspection |
 
 **The CSV cannot represent the `notes` object**, and 12 of 17 rows carry one.
 Those notes often hold the row's most important caveat — an ex vivo structure
@@ -212,8 +212,11 @@ working file is never edited by it.
 
 ## Citation
 
-Not yet deposited; no DOI assigned. **Do not cite this version as archival.**
-See `CITATION.cff` for the intended citation once deposited.
+Version **1.0.0**, released 16 November 2026. See `CITATION.cff`.
+
+**The DOI is assigned by Zenodo at deposit and is not in these files yet.** Once
+it exists it belongs in three places: `CITATION.cff`, `.zenodo.json`, and this
+section. Until then, cite the version and the repository, not a DOI.
 
 ## Licence
 

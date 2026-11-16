@@ -557,6 +557,14 @@ open-access full text as equivalent — *which is a real question, not a
 formality, since PMC author manuscripts can differ from the version of record.*
 **Do not quietly ignore the gate.**
 
+**5. Does `DISCORDANT_DERIVED` count?** *(new, 16 Nov)* LECT2 55-75 is
+discordant only because **we** compared Tsiolaki 2019 (AMYLPRED2 predicted 38-58
+and 73-88) with Richards 2023 (cryo-EM core 55-75) and computed that 14 of 21
+core residues were never predicted. **No paper reports this.** It is weaker than
+the four documented rows, AMYLPRED2 gives no per-tool result for §5.1's arm, and
+ZipperDB hits the core. **Decide before the freeze whether derived assignments
+enter the primary statistic, are reported as a separate stratum, or are excluded.**
+
 **4. The tau PHF6 role conflict.** *(carried)* `VQIVYK` is both a
 deposited-crystal comparator (2ON9) in `scripts/gatekeeper_density.py` and the
 H4 control-arm validation row. **It may serve in one role per published table,

@@ -1303,6 +1303,58 @@ and following"* the true core. A prediction-driven paper that **bracketed the
 core without hitting it** is exactly the shape of a documented discordant
 assignment.
 
+### I called the Tsiolaki lead wrong — and the error was in the shape, not a fact [16 Nov 2026]
+
+I flagged Tsiolaki 2019 as *"the best remaining discordant lead"* because it had
+**bracketed the true LECT2 core without hitting it.** The observation was right.
+**The inference was wrong.**
+
+Methods: *"Aggregation-prone hot-spots … were identified with the aid of
+AMYLPRED"*, and *"**Peptide design was based on the predicted** aggregation-prone
+core of LECT2."* **Every tested peptide was nominated by an algorithm.** This is
+a **CIRCULAR** paper in the same class as Mizuguchi 2019 apoA-I — not a
+documented discordant assignment.
+
+**The distinction worth keeping: a paper that *used* predictors and a paper that
+*tested* predictors are different things, and only the second yields a stratum
+assignment.** A prediction-driven paper that misses is circular with wrong
+predictions; the discordance only becomes visible when someone compares it with
+the later structure, and nobody published that comparison.
+
+### But computing that comparison myself gives a real result
+
+AMYLPRED2 — an 11-method consensus, **run before any structure existed** —
+nominated **38-58** and **73-88**. The cryo-EM core is **55-75**.
+
+| | |
+|---|---|
+| core residues predicted | **7 of 21** — and they are the two *ends*, 55-58 and 73-75 |
+| core residues missed | **14** — the entire centre, 59-72 (`QEKPYQNKNAINNG`) |
+
+**And the missed stretch is the structurally important one.** Richards 2023 names
+what holds the core together: polar ladders **Q59, N65, N67, N71**, the central
+**I69** that *"anchors the very center of the fibril core"*, and the **G58/G72**
+pair. Of those, **Q59, N65, N67, I69, N71 and G72 are all in the missed
+stretch.** The predictor found the hydrophobic flanks and missed the polar
+machinery entirely.
+
+### Registered honestly as a weaker class: `DISCORDANT_DERIVED`
+
+**This assignment is mine, not the literature's**, and that is a real difference
+from FUS 39-95 and hnRNPA1 251-295, where the source paper itself ran the tools
+and reported the failure. Tsiolaki 2019 claims *success* and never saw the
+structure. Two further limits: AMYLPRED2 is a **consensus**, so there is no
+per-tool result for the frozen legacy arm; and **ZipperDB does hit the core**, so
+this is again a row where some tools succeed.
+
+So it gets its own stratum value and **is not pooled into the primary statistic
+unless the author ratifies it** — added to the §12.1 open-decisions list.
+
+**Count: four documented discordant rows, one derived.** The sweep chased six
+leads today and found exactly two papers that ran predictors post hoc and
+published the failure. **The supply of documented discordant rows is thin, and
+that is now a measured statement rather than an impression.**
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

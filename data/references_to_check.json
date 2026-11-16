@@ -205,5 +205,21 @@
       "DeltaK280 and P301L are two FTDP-17 mutations that strongly enhance the rate of PHF aggregation by increasing the propensity for beta-structure"
     ],
     "COMPUTED_FROM_P10636_8": "whole tau441 = 35.6% proline+charge; repeat domain 244-368 = 29.6%; PHF6 306-311 = 16.7%; PHF6* 275-280 = 16.7%."
+  },
+  "bradshawkorth2018": {
+    "citation": "Bradshaw NJ & Korth C (2018). Protein misassembly and aggregation as potential convergence points for non-genetic causes of chronic mental illness. Mol Psychiatry 24:936-951. doi:10.1038/s41380-018-0133-2.",
+    "provenance": "READ IN FULL, 16 Nov 2026, publisher PDF supplied by the author. Springer Nature.",
+    "read_in_full": true,
+    "verified_against_publisher_pdf": true,
+    "IT_IS_A_REVIEW": "A Perspective, not a primary. CLAUDE.md forbids taking residue numbers from a review, so nothing here promotes a row. Its two arithmetic claims were checked anyway and both hold: TRIOBP-1 324-348 is 25 residues, matching 'just 25 amino acids'; NPAS3 211-331 is 121, matching 'a 121-amino acid-long central region'.",
+    "WHAT_IT_IS_ACTUALLY_FOR": "IT PINS THE CITATION OF THE NEVER-OPENED PRIMARY. Two rows in regions.json name 'Bradshaw et al. 2017' as their source and carry source_version = source_not_opened, with no fuller citation anywhere in the project. Reference 110 of this review gives it exactly.",
+    "THE_2017_PRIMARY": "Bradshaw NJ, Yerabham ASK, Marreiros R, Zhang T, Nagel-Steger L, Korth C (2017). An UNPREDICTED aggregation-critical region of the actin-polymerizing protein TRIOBP-1/Tara, determined by elucidation of its domain structure. J Biol Chem 292:9583-9598. NOTE THE TITLE: the word 'unpredicted' is in it. The predictor-failure claim that this whole project treats as cited evidence is the TITLE of the paper nobody here has opened.",
+    "what_it_corroborates_at_review_grade": "Table 2 gives the TRIOBP aggregation-critical domain as '324-348 [110]', attributing it to that 2017 JBC paper, and the text restates it as 'mapped to just 25 amino acids' on 'a loop between two predicted coiled coils'. Consistent with our row's range and with its attribution. REVIEW GRADE ONLY -- it does not substitute for opening the primary.",
+    "THE_THIOFLAVIN_T_TRAIL_IS_CORRECTED_AGAIN": "reports/PDFs_to_obtain.md says the ThT claim 'now rests on Korth 2012 alone'. THIS REVIEW POINTS SOMEWHERE ELSE ENTIRELY: 'aggregates of DISC1 (but not yet the other proteins) have been tested with dyes associated with classic amyloid-based aggregation (thioflavin T and thioflavin S), yielding POTENTIALLY CONTRADICTORY RESULTS IN DIFFERENT EXPRESSION SYSTEMS [62, 82]', where 62 = Tanaka 2017 (J Clin Invest 127:1438) and 82 = Trossbach 2016 (Mol Psychiatry 21:1561). Korth 2012 is reference 9 of this review and is cited for 'DISC1opathies', NOT for ThT. SECOND INDEPENDENT POINTER AWAY FROM KORTH 2012 -- Cukkemane 2021 also sourced the ThT-positive claim to Tanaka 2017. The honest statement is that the ThT evidence is CONTRADICTORY BETWEEN EXPRESSION SYSTEMS and traces to Tanaka 2017 and Trossbach 2016.",
+    "two_review_grade_leads_not_promoted": {
+      "NPAS3_211-331": "Table 2 gives an aggregation-critical region of 211-331 for NPAS3 V304I, citing Nucifora 2016 (Mol Neuropsychiatry 2:133). 121 residues, verified. NPAS3 is on the project's psychiatric candidate list. A POSSIBLE ROW, but the primary must be opened first and the region is very broad -- 121 residues is a domain, not a motif.",
+      "CRMP1_1-127_IS_NOT_A_MAPPED_REGION": "Table 2 gives '1-127*' for CRMP1lv, and the asterisk is defined as 'Implied as only region unique to the long variant, lv'. THE PAPER STATES IT IS AN INFERENCE FROM ISOFORM DIFFERENCE, NOT A MAPPING. It must never be entered as an experimentally mapped region. A good example of why the table footnote matters as much as the table."
+    },
+    "a_statement_worth_keeping": "'While visible deposits of aggregated protein have not yet been detected in CMI patients, we propose the existence of more subtle protein misassembly in these conditions.' The authors are explicit that the visible-deposit evidence is absent. Consistent with Cukkemane 2021's 'DISC1 amyloid has not been reported either in human post-mortem brains or in animal models'."
   }
 }

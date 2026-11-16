@@ -1695,6 +1695,56 @@ half to neither Leliveld nor Korth but to **Tanaka 2017** (*J Clin Invest*
 plateau after 8 h at 37 °C. Also worth keeping: *"DISC1 amyloid has not been
 reported either in human post-mortem brains or in animal models."*
 
+### The 2017 citation is pinned, and its title is our premise [16 Nov 2026]
+
+Bradshaw & Korth 2018 (*Mol Psychiatry* 24:936) is a **Perspective, not a
+primary**, so by `CLAUDE.md` nothing in it promotes a row. Its two arithmetic
+claims were checked anyway and both hold — TRIOBP-1 324-348 is 25 residues
+("just 25 amino acids"), NPAS3 211-331 is 121 ("a 121-amino acid-long central
+region").
+
+**What it is actually for: reference 110 pins the citation of the only
+never-opened primary left.**
+
+> Bradshaw NJ, Yerabham ASK, Marreiros R, Zhang T, Nagel-Steger L, Korth C
+> (2017). **"An *unpredicted* aggregation-critical region** of the
+> actin-polymerizing protein TRIOBP-1/Tara, determined by elucidation of its
+> domain structure." *J Biol Chem* **292:9583-9598**.
+
+Until now the project recorded it only as "Bradshaw et al. 2017", with no volume
+or page anywhere. **And note the title: the word *unpredicted* is in it.** The
+predictor-failure premise this whole project treats as cited evidence is the
+title of the paper nobody here has opened.
+
+The review corroborates our row at review grade — Table 2 gives "324-348 [110]"
+and the text calls it "a loop between two predicted coiled coils" — but
+corroboration is not substitution.
+
+### The thioflavin T trail is corrected a second time
+
+The obtain list says the ThT claim "now rests on **Korth 2012** alone." This
+review points somewhere else entirely:
+
+> "aggregates of DISC1 … have been tested with dyes associated with classic
+> amyloid-based aggregation (thioflavin T and thioflavin S), yielding
+> **potentially contradictory results in different expression systems** [62, 82]"
+
+Reference 62 is **Tanaka 2017** (*J Clin Invest* 127:1438) and 82 is **Trossbach
+2016** (*Mol Psychiatry* 21:1561). **Korth 2012 is reference 9 here and is cited
+for "DISC1opathies", not for ThT.** That is the **second independent pointer away
+from Korth 2012** — Cukkemane 2021 also sourced the ThT-positive claim to Tanaka
+2017. **The honest statement is that the ThT evidence is contradictory between
+expression systems and traces to Tanaka 2017 and Trossbach 2016.**
+
+### Two review-grade leads, neither promoted
+
+**NPAS3 211-331** (Nucifora 2016) is a possible row — NPAS3 is on the project's
+psychiatric list — but 121 residues is a domain, not a motif, and the primary is
+unopened. **CRMP1 "1-127"** must **never** become a row: the table's own asterisk
+reads *"Implied as only region unique to the long variant"* — an inference from
+isoform difference, not a mapping. A good reminder that the footnote matters as
+much as the table.
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

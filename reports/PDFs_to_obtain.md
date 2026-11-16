@@ -376,7 +376,21 @@ may be cited in a manuscript until obtained.**
     once: whether the published version writes Δ384-414 or Δ384-415, and whether the row
     may be cited at all.**
 
-19. **Bradshaw et al. 2017 and Cukkemane et al. 2021 — the two never-opened primaries.**
+19. ~~**Bradshaw et al. 2017 and Cukkemane et al. 2021 — the two never-opened primaries.**~~
+    **CUKKEMANE 2021 OBTAINED AND READ 16 Nov 2026** (*Transl Psychiatry* 11:639), closing four
+    rows. **BRADSHAW 2017 REMAINS THE ONLY NEVER-OPENED PRIMARY, and the exact citation is now
+    pinned** — it was previously recorded only as "Bradshaw et al. 2017":
+
+    > **Bradshaw NJ, Yerabham ASK, Marreiros R, Zhang T, Nagel-Steger L, Korth C (2017).
+    > "An *unpredicted* aggregation-critical region of the actin-polymerizing protein
+    > TRIOBP-1/Tara, determined by elucidation of its domain structure."
+    > *J Biol Chem* 292:9583-9598.**
+
+    Source of reference 110 in Bradshaw & Korth 2018, read 16 Nov 2026. **Note the title: the
+    word "unpredicted" is in it.** The predictor-failure premise this project treats as cited
+    evidence is the title of the paper nobody here has opened. Two rows name it as `source`
+    (TRIOBP-1 324-328 and 60-189), and the headline row TRIOBP-1 324-348 names it too while
+    actually resting on Zaharija 2022. **Original entry follows for the record.**
     Six rows name them as `source` and neither has a register entry. They are already
     gated out, so this is **lower priority than item 18** — but `TRIOBP-1 324-348`, the
     project's headline row, names Bradshaw 2017 as its source while actually resting on

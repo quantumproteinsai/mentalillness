@@ -117,13 +117,16 @@
       "found_by": "boundaries from ESPRIT, an experimental screen",
       "source": "Cukkemane et al. 2021",
       "note": "The paper's own framing is that it does not establish whether DISC1 aggregates in vivo. Contains three free cysteines (C698, C762, C782) and no study reports a reducing agent.",
-      "verified_against_publisher_pdf": false,
+      "verified_against_publisher_pdf": true,
       "circularity_status": "CLEAN",
       "circularity_basis": "Boundaries from ESPRIT, which is an EXPERIMENTAL solubility screen over a random truncation library, not an aggregation predictor. Borderline but clean: no sequence-based aggregation propensity was consulted to choose it.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "source_not_opened",
-      "source_version_note": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED. source is Cukkemane et al. 2021, and the reference register contains NO entry for it -- it appears only inside an \"entries\" list as a claim_as_cited, i.e. a tracked claim rather than a paper anyone read. NOT CITABLE, and verified_against_publisher_pdf is already false."
+      "source_version": "version_of_record",
+      "source_version_note": "Cukkemane A, Becker N, Zielinski M, Frieg B, Lakomek N-A, Heise H, Schroder GF, Willbold D, Weiergraber OH (2021) Translational Psychiatry 11:639, doi:10.1038/s41398-021-01765-1. PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author. Springer Nature, OPEN ACCESS CC BY, so the publisher PDF IS the version of record. CITABLE. THIS CLOSES FOUR source_not_opened ROWS AT ONCE -- the primary that four DISC1 rows name had never been opened by anyone here until now.",
+      "verified_against": "Cukkemane et al. 2021, Transl Psychiatry 11:639 -- publisher PDF read in full, 16 Nov 2026.",
+      "range_provenance": "READ. Methodology: \"The human DISC1 C-region (residues 691-836) was expressed alternatively as N-terminal His6- or MBP-His6-fusion construct.\" It is one of the four ESPRIT-derived regions: \"four putative domains that were mnemonically named D, I, S and C and comprise residues 257-383, 539-655, 635-738, and 691-836\". NOTE WHAT THIS ROW IS: 691-836 is the CONSTRUCT STUDIED, not a mapped aggregation-critical region. The paper narrows the beta-core inside it to 716-761. Do not treat the construct boundary as a region boundary.",
+      "SIXTEENTH_INCONSISTENCY": "The paper states \"the entire C-region comprising 160 amino acid residues has been intractable for structural characterization\". COMPUTED: 836 - 691 + 1 = 146, NOT 160. The 146 figure is the right one: the paper gives the His6-tagged monomer a calculated mass of 19.4 kDa, which fits ~146 residues plus tag and not 160. Does not affect the row, whose boundaries are stated identically in the Methodology and in the ESPRIT list."
     },
     {
       "protein": "DISC1",
@@ -135,13 +138,17 @@
       "source": "Cukkemane et al. 2021",
       "CAUTION_2026_11_15": "THIS IS A DOCKING RESTRAINT, NOT A MEASUREMENT. Nothing was deposited -- no coordinates, no chemical shifts, no EM map, no accession, and the paper has no data-availability section. The EM was negative-stain TEM at 120 kV with no resolution reported, and the model is a MODELLER protomer built with ANTIPARALLEL BETA-STRAND RESTRAINTS IMPOSED AS INPUT (segments 716-737 and 739-761) then docked into that envelope. Re-modelling it would re-assert the input, not confirm the topology. The paper also states its own boundary two ways, 716-761 and 717-761. The 2025 follow-up states verbatim 'No data was used for the research described in the article'.",
       "found_by_note": "RADAR is a sequence method, so this row is partly circular for a sequence-predictor benchmark and must be analysed separately.",
-      "verified_against_publisher_pdf": false,
+      "verified_against_publisher_pdf": true,
       "circularity_status": "CIRCULAR",
       "circularity_basis": "Found by a RADAR sequence-repeat search -- a sequence method. Already flagged in found_by. Compounded by CAUTION_2026_11_15: it is a docking restraint, not a measurement.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "source_not_opened",
-      "source_version_note": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED. source is Cukkemane et al. 2021, and the reference register contains NO entry for it -- it appears only inside an \"entries\" list as a claim_as_cited, i.e. a tracked claim rather than a paper anyone read. NOT CITABLE, and verified_against_publisher_pdf is already false."
+      "source_version": "version_of_record",
+      "source_version_note": "Cukkemane A, Becker N, Zielinski M, Frieg B, Lakomek N-A, Heise H, Schroder GF, Willbold D, Weiergraber OH (2021) Translational Psychiatry 11:639, doi:10.1038/s41398-021-01765-1. PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author. Springer Nature, OPEN ACCESS CC BY, so the publisher PDF IS the version of record. CITABLE. THIS CLOSES FOUR source_not_opened ROWS AT ONCE -- the primary that four DISC1 rows name had never been opened by anyone here until now.",
+      "verified_against": "Cukkemane et al. 2021, Transl Psychiatry 11:639 -- publisher PDF read in full, 16 Nov 2026.",
+      "OUR_CAUTION_IS_NOW_CONFIRMED_AT_SOURCE": "THE ROW ALREADY CARRIED, IN CAPITALS, \"THIS IS A DOCKING RESTRAINT, NOT A MEASUREMENT\". THAT WAS WRITTEN WITHOUT HAVING READ THE PAPER, AND THE PAPER CONFIRMS IT VERBATIM. Structural models section: \"The proposed beta-structure was INTRODUCED INTO THE MODEL using MODELLER 9.23 AFTER ADDING RESTRAINTS defining antiparallel beta-strands in segments 716-737 and 739-761, respectively, via the model-addrsr.py script.\" The beta-strands were IMPOSED as restraints and then docked with CLUSPRO; they were not observed. The ssNMR evidence is chemical shifts \"reminiscent of residues in beta-strands\" for Ala, Gly, Leu, Pro, Ser, Thr and Val -- composition-level, not site-resolved. The paper itself concedes \"the ultimate proof is still lacking\" and \"Due to the unavailability of a high-resolution 3D structure of the DISC1 C-region beta-core, we are rather limited\".",
+      "CIRCULARITY_CONFIRMED_AT_SOURCE": "found_by already read \"RADAR sequence-repeat search\" and the paper states it outright: \"A manual search, however, for (pseudo)repeats using the program RADAR [63] identified one such long tandem motif covering residues 717-737 and 739-761.\" The region was found BY a sequence search. The CIRCULAR label stands, now verified rather than inferred.",
+      "SEVENTEENTH_INCONSISTENCY": "THE PAPER GIVES TWO DIFFERENT START RESIDUES FOR THE SAME MOTIF. Abstract and Results: the beta-core is \"residues 716-761\". Methods restraints: \"segments 716-737 and 739-761\". Discussion, reporting what RADAR actually returned: \"covering residues 717-737 and 739-761\". SO THE RADAR OUTPUT STARTS AT 717 AND EVERYTHING ELSE STARTS AT 716. One of them is wrong and the paper does not say which. Our row records 716-761 from the abstract; if the RADAR motif is the real object then the row is 717-761. UNRESOLVED, and it does not matter much because the row is CIRCULAR and excluded from the primary analysis -- but it must not be quoted as though the paper were consistent."
     },
     {
       "protein": "DISC1",
@@ -151,13 +158,14 @@
       "found_by": "RADAR",
       "source": "Cukkemane et al. 2021",
       "note": "the restraint segments used to build the model above; not independent of it",
-      "verified_against_publisher_pdf": false,
+      "verified_against_publisher_pdf": true,
       "circularity_status": "CIRCULAR",
       "circularity_basis": "The restraint segments used to build the 716-761 model; not independent of it, and RADAR-derived.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "source_not_opened",
-      "source_version_note": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED. source is Cukkemane et al. 2021, and the reference register contains NO entry for it -- it appears only inside an \"entries\" list as a claim_as_cited, i.e. a tracked claim rather than a paper anyone read. NOT CITABLE, and verified_against_publisher_pdf is already false."
+      "source_version": "version_of_record",
+      "source_version_note": "Cukkemane A, Becker N, Zielinski M, Frieg B, Lakomek N-A, Heise H, Schroder GF, Willbold D, Weiergraber OH (2021) Translational Psychiatry 11:639, doi:10.1038/s41398-021-01765-1. PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author. Springer Nature, OPEN ACCESS CC BY, so the publisher PDF IS the version of record. CITABLE. THIS CLOSES FOUR source_not_opened ROWS AT ONCE -- the primary that four DISC1 rows name had never been opened by anyone here until now.",
+      "verified_against": "Cukkemane et al. 2021, Transl Psychiatry 11:639 -- publisher PDF read in full, 16 Nov 2026."
     },
     {
       "protein": "DISC1",
@@ -167,13 +175,15 @@
       "found_by": "variant, not prediction",
       "source": "Cukkemane et al. 2021, Discussion",
       "note": "Overlaps the reported core at 748-761 (fourteen residues); 762-769 falls outside it. So it removes PART of the core, not all of it, and the Abstract's wording is imprecise. The authors report delta-22 point mutants T754S and P758R abolishing binding to Dixdc1, LIS1 and PCM1, so this segment carries a protein-interaction surface as well as fibril propensity.",
-      "verified_against_publisher_pdf": false,
+      "verified_against_publisher_pdf": true,
       "circularity_status": "CLEAN",
       "circularity_basis": "A splice variant boundary (the delta-22 deletion), defined by biology rather than by any sequence analysis.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "source_not_opened",
-      "source_version_note": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED. source is Cukkemane et al. 2021, and the reference register contains NO entry for it -- it appears only inside an \"entries\" list as a claim_as_cited, i.e. a tracked claim rather than a paper anyone read. NOT CITABLE, and verified_against_publisher_pdf is already false."
+      "source_version": "version_of_record",
+      "source_version_note": "Cukkemane A, Becker N, Zielinski M, Frieg B, Lakomek N-A, Heise H, Schroder GF, Willbold D, Weiergraber OH (2021) Translational Psychiatry 11:639, doi:10.1038/s41398-021-01765-1. PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author. Springer Nature, OPEN ACCESS CC BY, so the publisher PDF IS the version of record. CITABLE. THIS CLOSES FOUR source_not_opened ROWS AT ONCE -- the primary that four DISC1 rows name had never been opened by anyone here until now.",
+      "verified_against": "Cukkemane et al. 2021, Transl Psychiatry 11:639 -- publisher PDF read in full, 16 Nov 2026.",
+      "range_provenance": "READ. Discussion: \"The absence of residues 748-769 as a result of alternative splicing leads to a variant that is referred to as DISC1-Delta22aa and displays a marked decrease in binding to NDEL1.\" VERIFIED: 769 - 748 + 1 = 22, matching the Delta22 name exactly. This is a SPLICE VARIANT boundary, not an aggregation mapping -- the paper uses it to argue that the region promotes oligomerisation, which is a different claim."
     },
     {
       "protein": "DISC1",
@@ -482,5 +492,12 @@
     "why_this_is_worth_more_than_the_compositional_claim": "IT IS NOT PRE-EMPTED. Murray 2017, Seuma 2021 and Mandelkow 2007 between them retired the compositional strand. None of them addresses structural sequestration. It is also MECHANISTIC rather than descriptive, it explains a FALSE-POSITIVE pattern rather than only a miss, and it predicts something checkable.",
     "how_it_could_be_tested_cheaply_and_the_honest_difficulty": "The testable form is: across the discordant rows, do the predictors' top-ranked segments fall preferentially in regions that are structurally constrained in the native state (disulfide-bonded, buried, or inside a folded domain), while the true core falls in an unconstrained region? That needs a native structure or a confident disorder/burial annotation per row. WE HAVE IT FOR SOME ROWS AND NOT OTHERS -- LECT2 has PDB 5B0H and a published per-residue solvent accessibility (Figure S8B), hnRNPA1 has defined RRMs, FUS-LC is wholly disordered so the hypothesis makes NO prediction there, and DISC1 and TRIOBP-1 have no experimental structure at all. SO IT CANNOT BE TESTED ON THE ROWS THE PROJECT EXISTS FOR, WHICH IS A SERIOUS LIMIT AND MUST BE STATED BEFORE ANYONE INVESTS IN IT.",
     "what_must_NOT_happen": "This must not be adopted as the project's new headline the way the gatekeeper claim was. The gatekeeper claim became a spine on n=1 and had to be retired four days later. THIS IS A HYPOTHESIS WITH NO MEASUREMENT BEHIND IT, FROM TWO PAPERS' DISCUSSION SECTIONS. If it enters PREREGISTRATION it enters as a pre-specified secondary analysis with its own falsification condition, AFTER the author decides it is worth the space."
-  }
+  },
+  "_THE_DOCUMENTED_PREDICTOR_FAILURE_IN_CUKKEMANE_2021": {
+    "the_quote": "Discussion: \"While a few of these features have been incorporated in amyloid prediction softwares, THESE PROGRAMS WERE ALL UNSUCCESSFUL IN DETERMINING THE BETA-CORE INTERFACE OF DISC1. A manual search, however, for (pseudo)repeats using the program RADAR identified one such long tandem motif covering residues 717-737 and 739-761.\"",
+    "status": "NOW READ AT SOURCE, 16 Nov 2026. STATE.md already carried this sentence as one of 'two published predictor negatives worth citing', but second-hand. It is confirmed verbatim.",
+    "WHY_IT_CANNOT_GIVE_A_STRATUM_ASSIGNMENT": "NO TOOLS ARE NAMED. 'These programs' refers back to 'amyloid prediction softwares' in the abstract sense, with no list, no settings, no figure and no supplementary panel. Compare Murray 2017, which names five tools and publishes every parameter, and Sharma 2023, which names seven and quantifies the false positives. THIS ONE IS AN ASSERTION, NOT A RESULT, and it cannot be used to assign DISCORDANT to any row under PREREGISTRATION 5.1. Cite it as corroborating context and nothing more.",
+    "and_the_region_it_points_at_is_circular_anyway": "The sentence contrasts the failed predictors with RADAR, which succeeded -- but RADAR is a repeat-finder, and the region it found is the CIRCULAR 716-761 row. So the paper's own narrative is: sequence tools failed, a different sequence tool succeeded, and the result is a region selected by that tool. That is not a predictor benchmark; it is the circularity this project exists to label."
+  },
+  "_WHERE_THE_THIOFLAVIN_T_POSITIVE_CLAIM_ACTUALLY_COMES_FROM": "RELEVANT TO THE OBTAIN LIST, WHICH SAYS THE ThT CLAIM \"NOW RESTS ON KORTH 2012 ALONE\". That concerns the NEGATIVE half -- brain-derived aggregates not stimulating ThT. CUKKEMANE 2021 SUPPLIES A SOURCE FOR THE POSITIVE HALF, AND IT IS NEITHER LELIVELD NOR KORTH: \"one report has described ThT-positive [52] full-length recombinant human DISC1 fibrils\", where reference 52 is Tanaka M, Ishizuka K, Nekooki-Machida Y et al. (2017) J Clin Invest 127:1438-50. ALSO: Cukkemane 2021 RUNS ITS OWN ThT ASSAY on the C-region (Methods \"Thioflavin-T (ThT) fluorescence assay\"; Fig 3C), and it is positive -- signal rises to a plateau after 8 h at 37 C. So ThT-positive recombinant DISC1 fibrils are directly measured here, not only cited. AND A STATEMENT WORTH KEEPING: \"to this end, DISC1 amyloid has not been reported either in human post-mortem brains or in animal models\"."
 }

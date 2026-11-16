@@ -351,8 +351,10 @@ the literature, not a run of bad luck:
 | Sharma 2023 (JMB) | truncated construct "residues **Met286**-Phe320" | 286 is **Ser**; cannot contain Asp262; cannot cover a 251-295 core | **Met186** — the unique Met satisfying all three constraints; a digit transposition |
 | Richards 2023 — **preprint AND version of record** | Table 1: "Ramachandran favoured (%) **5.26**" with outliers **0** | and "Favored rotamers (%) **94.74**" | labels **swapped**. 18/19 = 94.74%, 1/19 = 5.26%; favoured 5.26% with zero outliers is impossible. **It survived peer review at *Structure*** |
 | Richards 2023 — version of record | Intro: "have been identified **and assemble into** amyloid-forming LECT2 peptides **assemble into** amyloid-like fibrils" | preprint: "have been identified, and **PREDICTED** amyloid-forming LECT2 peptides assemble into..." | the **preprint**. Copyediting garbled the verb and **dropped "predicted"** — the word that flags ref 20 as circular |
+| Cukkemane 2021 | "the entire C-region comprising **160** amino acid residues" | its own boundaries, 691-836, give **146** | **146**. The 19.4 kDa tagged mass fits 146 + tag, not 160 |
+| Cukkemane 2021 | Abstract + Methods restraints: β-core starts at **716** | Discussion, reporting the RADAR output: **717**-737 | **unresolved** — the paper does not say which. Row is CIRCULAR so it does not reach the primary |
 
-**Fifteen, across ten papers and EIGHT independent groups** (updated 16 Nov 2026: the
+**Seventeen, across eleven papers and NINE independent groups** (updated 16 Nov 2026: the
 Mizuguchi slip found by reading the apoA-I primary, the Seuma slip reported by the
 unbiased-screen audit). None of them changed a row, because each was caught by
 arithmetic, by a figure, or — in the Seuma and Giasson cases — by knowing the
@@ -1637,6 +1639,61 @@ difference between the row being citable and not.
 `verified_against_publisher_pdf: true` — defensible for what was opened, since
 bioRxiv serves a real PDF, but misleading under §12.1. **Where the boolean and
 `source_version` disagree, `source_version` governs.**
+
+### Cukkemane 2021 read: four rows closed, and a caution we wrote blind is confirmed [16 Nov 2026]
+
+The *Translational Psychiatry* PDF closes **four** `source_not_opened` rows at
+once — DISC1 691-836, 716-761, 717-737/739-761 and 748-769 all name this paper,
+and none of us had opened it. Springer Nature, open access CC BY, so the PDF **is**
+the version of record. Only **two** `source_not_opened` rows remain, both
+Bradshaw 2017.
+
+**The best outcome is that our own blind caution turns out to be exactly right.**
+`regions.json` already carried, in capitals, *"THIS IS A DOCKING RESTRAINT, NOT A
+MEASUREMENT"* on the 716-761 row — written without having read the paper. The
+paper confirms it almost word for word:
+
+> "The proposed β-structure was **introduced into the model** using MODELLER 9.23
+> **after adding restraints** defining antiparallel β-strands in segments 716-737
+> and 739-761"
+
+The β-strands were **imposed and then docked**, not observed. The ssNMR evidence
+is chemical shifts *"reminiscent of residues in β-strands"* for Ala, Gly, Leu,
+Pro, Ser, Thr and Val — composition-level, not site-resolved — and the authors
+concede *"the ultimate proof is still lacking."* **The circularity is confirmed at
+source too:** *"A manual search … using the program RADAR identified one such long
+tandem motif."*
+
+### The predictor negative is real but weaker than it reads
+
+`STATE.md` carried this second-hand as one of "two published predictor negatives
+worth citing". Verbatim at source:
+
+> "these programs were all unsuccessful in determining the β-core interface of
+> DISC1"
+
+**But no tools are named.** No list, no settings, no figure, no supplementary
+panel. Compare Murray 2017, which names five and publishes every parameter, or
+Sharma 2023, which names seven and quantifies 85 false positives. **This is an
+assertion, not a result, and it cannot assign DISCORDANT to anything under
+§5.1.** Cite it as corroborating context only.
+
+And the paper's own narrative undercuts it: sequence tools failed, a *different*
+sequence tool (RADAR) succeeded, and the region it found is the **CIRCULAR**
+716-761 row. That is not a predictor benchmark; it is the circularity this
+project exists to label.
+
+**Two new inconsistencies**, tally **17**: the C-region is called *"160 amino acid
+residues"* when 691-836 is **146** (the 19.4 kDa tagged mass fits 146); and the
+β-core starts at **716** in the abstract and Methods but **717** in the Discussion
+where the RADAR output is reported.
+
+**One thing for the obtain list.** The ThT item says the claim "rests on Korth
+2012 alone" — that is the *negative* half. Cukkemane 2021 sources the **positive**
+half to neither Leliveld nor Korth but to **Tanaka 2017** (*J Clin Invest*
+127:1438), and it **runs its own ThT assay** on the C-region (Fig 3C), positive,
+plateau after 8 h at 37 °C. Also worth keeping: *"DISC1 amyloid has not been
+reported either in human post-mortem brains or in animal models."*
 
 ### What that inventory is not
 

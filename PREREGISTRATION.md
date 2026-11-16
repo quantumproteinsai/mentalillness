@@ -142,7 +142,7 @@ not report those as findings.
 
 | tool | status **16 Nov 2026**, content-verified | how it will be run |
 |---|---|---|
-| **TANGO** (Fernandez-Escamilla 2004, *Nat Biotechnol* 22:1302) | **DOWN.** `tango.crg.es` returns **HTTP 200 with a body reading "ERROR 404 … maintenance"**. It has **one** host; `switchlab.org/software` confirms it. **Do not confuse with the unrelated image-analysis TANGO at `biophysique.mnhn.fr/tango`** — see the acronym-collision note in the reachability report | **cannot be run today.** Recheck before the freeze |
+| **TANGO** (Fernandez-Escamilla 2004, *Nat Biotechnol* 22:1302) | **LIVE at `https://tango.crg.es/`** — **the protocol matters**: `http://` serves a CRG "ERROR 404 … maintenance" page, `https://` serves the real site (`<title>Homepage \| Tango</title>`). **Do not confuse with the unrelated image-analysis TANGO at `biophysique.mnhn.fr/tango`** | web, **HTTPS**, settings recorded verbatim |
 | **AGGRESCAN** | **LIVE**, redirects to `andromeda.uab.cat/bioinf/aggrescan/` | web, settings recorded verbatim |
 | **FoldAmyloid** | **server dead**, both hosts return 000 | **reimplemented** from Garbuzynskiy 2010 + the scales in Galzitskaya 2006b |
 | **ProA** | **DEAD.** `abl.ku.edu/ProA/` now returns **HTTP 200 by silently redirecting to the lab homepage** `mgm.ku.edu` | **cannot be run. Recorded as unavailable, not as a failure.** |
@@ -155,7 +155,7 @@ serves a 404 page under a 200 status; ProA redirects to a generic lab homepage.
 server from a tombstone.** Any future availability check in this project must
 verify content, not status, and must record the final URL after redirects.
 
-**So one of the four legacy tools is usable right now.** That is worse than §5.1
+**So two of the four legacy tools are usable right now** (TANGO and AGGRESCAN). That is worse than §5.1
 assumed on 15 Nov, and it is the strongest possible restatement of this section's
 own rule that *a web form is not a reproducible tool*.
 

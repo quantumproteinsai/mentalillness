@@ -144,3 +144,52 @@ Two tools called TANGO, both in bioinformatics, both with papers in
 *Bioinformatics*-family journals, published nine years apart. **A reader or a
 tool-chain can cite the wrong one.** Any mention of TANGO in this project's
 outputs must carry the Fernandez-Escamilla 2004 citation, not the bare name.
+
+---
+
+## SECOND CORRECTION: TANGO is LIVE. The protocol matters.
+
+**`https://tango.crg.es/` serves the real TANGO site** — `<title>Homepage |
+Tango</title>`, a Drupal installation on the lab's own FoldX theme, 21,690 bytes.
+
+**`http://tango.crg.es/` serves CRG's "ERROR 404 … maintenance" page instead.**
+Same hostname, two different sites, no redirect between them. My sweep tested
+`http://` because that is the URL recorded in §5.1, in Bradshaw 2014 and on
+`switchlab.org/software` — and so I reported a live tool as down.
+
+**Corrected status of the §5.1 legacy arm: TWO of four are usable.**
+
+| tool | verdict |
+|---|---|
+| **TANGO** | **LIVE** at `https://tango.crg.es/` |
+| **AGGRESCAN** | **LIVE** at `andromeda.uab.cat/bioinf/aggrescan/` |
+| FoldAmyloid | DEAD — both hosts, **both protocols**, 000 |
+| ProA | DEAD — redirects to a lab homepage on http, 000 on https |
+
+**Every other tool was re-tested over HTTPS and nothing else changed:** WALTZ,
+MetAmyl and SolubiS remain 502 (the shared KU Leuven outage), ZipperDB and
+FoldAmyloid remain 000.
+
+### The third form of the same lesson
+
+This report now contains three versions of one mistake, each caught only after
+being made:
+
+1. **A status code is not reachability.** TANGO and ProA both returned 200 while
+   serving a maintenance page and a homepage.
+2. **An unreachable host cannot be identified, only named.** I called
+   `tango.mnhn.fr` "a real TANGO host" having seen a 530 and no content — and it
+   was a different tool entirely.
+3. **`http` and `https` can serve different sites at one hostname.** Checking the
+   protocol recorded in the literature is not the same as checking the tool.
+
+**The general rule: fetch the body, over both protocols, and confirm the tool
+names itself.** Anything less reports infrastructure, not availability.
+
+### Consequence for the freeze
+
+**§5.1 is corrected to show TANGO LIVE.** §5.1a — citing published legacy runs
+rather than re-executing them — **still stands on its own merits**, and is now
+the stronger choice rather than the forced one: the published runs were done on
+contemporaneous servers by the groups that mapped the regions. With TANGO and
+AGGRESCAN live, our own runs can corroborate those two arms directly.

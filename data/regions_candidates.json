@@ -1,5 +1,6 @@
 {
   "_WHAT_THIS_FILE_IS": "STAGING ONLY. Candidate rows for data/regions.json, surfaced 16 Nov 2026 by web search while widening the validation set beyond the psychiatric proteins (the outstanding task named in CLAUDE.md). NOTHING HERE IS VERIFIED. Every entry is SNIPPET grade: search-engine summary of an abstract, never a publisher PDF anyone opened. No row moves into regions.json until someone reads the paper and sets verified_against_publisher_pdf. Keeping them here rather than in regions.json is deliberate: regions.json is the asset intended for publication with its own DOI, and must not carry unread rows.",
+  "_SCHEMA_CHANGE_16_NOV_2026": "KEEP CIRCULAR ROWS, LABELLED -- author decision, applied to regions.json and mirrored here. The two lists candidates_CLEAN and candidates_CIRCULAR_DO_NOT_ADD are merged into ONE list whose members each carry circularity_status. Nothing is deleted. A candidate found to be circular is still a candidate: it enters the published set labelled, is excluded from the primary statistic, and is reported as its own stratum. See _SCHEMA_CIRCULARITY in data/regions.json for the governing definitions.",
   "_THE_PREMISE_AUDIT_THAT_CAME_FIRST": {
     "question": "CLAUDE.md says to widen to 'every protein with fragment-level aggregation mapping'. Before listing candidates: what actually qualifies?",
     "finding": "THE CLEAN CLASS IS MUCH NARROWER THAN THE LITERATURE LOOKS, AND THE SEARCH SURFACE IS DOMINATED BY PREDICTION-GUIDED REGIONS. Of eight candidate regions surfaced in the first sweep, THREE were found by an aggregation predictor and then validated experimentally. Those are circular for a predictor benchmark no matter how good the experiments are -- scoring a predictor against a region that predictor's ancestors chose is not a test. This is the found_by column doing its job at the survey stage rather than after the compute.",
@@ -7,7 +8,7 @@
     "consequence_for_the_floor": "The floor of 15 rows may be reachable, but not from a casual sweep. Expect to discard roughly a third of what the literature offers. If the clean class turns out to be too small, THAT IS THE FINDING and must be reported, not worked around -- CLAUDE.md rule 3.",
     "UPDATE_16_NOV_2026_AFTER_READING_ONE_PAPER": "READING FLIPPED THE BEST LEAD FROM CLEAN TO CIRCULAR. At SNIPPET level the apoA-I series looked like the cleanest candidate in the sweep: 'using a series of deletion variants' reads as unbiased mapping. The full text shows all four variants were designed to delete segments that AmylPred2 and Zyggregator had ranked, with the prediction tracks plotted in Figure 1B. CONTAMINATION RATE: 3 of 10 at snippet level, 6 of 10 after reading ONE of the ten. IMPLICATION FOR THE WHOLE SWEEP: snippet-level found_by assessment is not merely unverified, it is BIASED TOWARDS FALSE CLEAN, because abstracts describe the assay and bury the construct design. No candidate may be counted toward the floor of 15 on snippet evidence. AND A STRUCTURAL WARNING ABOUT THE FIELD: when a predicted segment gets deleted and the deletion works, that is published as experimental mapping. The literature therefore contains many 'experimentally mapped' regions whose boundaries came from a predictor. DISC1 384-415 and TRIOBP-1 324-348 are unusual precisely because truncation came first and prediction after."
   },
-  "candidates_CLEAN": [
+  "candidates": [
     {
       "protein": "TDP-43",
       "residues": "342-366",
@@ -16,7 +17,9 @@
       "found_by": "deletion mapping, apparently. MUST VERIFY no predictor in the path: the TDP-43 C-terminal region is Q/N-rich and prion-like, and that compositional reasoning is itself a sequence heuristic. Borderline until read.",
       "source": "Budini et al. See PMC3293573 / PMC4262490 from the sweep.",
       "provenance": "SNIPPET",
-      "verified_against_publisher_pdf": false
+      "verified_against_publisher_pdf": false,
+      "circularity_status": "UNDECIDABLE",
+      "circularity_basis": "Snippet-level assessment suggested no predictor in the discovery path, but see the premise audit: SNIPPET-LEVEL ASSESSMENT IS BIASED TOWARDS FALSE CLEAN. Not CLEAN until the full text is read."
     },
     {
       "protein": "TDP-43",
@@ -27,7 +30,9 @@
       "source": "Budini et al.",
       "provenance": "SNIPPET",
       "verified_against_publisher_pdf": false,
-      "recommendation": "Likely belongs in candidates_CIRCULAR. Read before deciding."
+      "recommendation": "Likely belongs in candidates_CIRCULAR. Read before deciding.",
+      "circularity_status": "UNDECIDABLE",
+      "circularity_basis": "Snippet-level assessment suggested no predictor in the discovery path, but see the premise audit: SNIPPET-LEVEL ASSESSMENT IS BIASED TOWARDS FALSE CLEAN. Not CLEAN until the full text is read."
     },
     {
       "protein": "TDP-43",
@@ -38,7 +43,9 @@
       "source": "JBC 2013, Yuan group (hyuan.imb.sinica.edu.tw).",
       "provenance": "SNIPPET",
       "verified_against_publisher_pdf": false,
-      "blocker": "No residue range recovered from the sweep. Unusable until the boundaries are read."
+      "blocker": "No residue range recovered from the sweep. Unusable until the boundaries are read.",
+      "circularity_status": "UNDECIDABLE",
+      "circularity_basis": "Snippet-level assessment suggested no predictor in the discovery path, but see the premise audit: SNIPPET-LEVEL ASSESSMENT IS BIASED TOWARDS FALSE CLEAN. Not CLEAN until the full text is read."
     },
     {
       "protein": "IAPP",
@@ -49,14 +56,14 @@
       "source": "Biochemistry, doi:10.1021/bi100337p",
       "provenance": "SNIPPET",
       "verified_against_publisher_pdf": false,
-      "blocker": "Gives MUTATIONS, not a contiguous region. May not convert into a regions.json row at all. Worth reading anyway: a clean unbiased map of which residues matter is a different and possibly better validation target than a region."
-    }
-  ],
-  "candidates_CIRCULAR_DO_NOT_ADD": [
+      "blocker": "Gives MUTATIONS, not a contiguous region. May not convert into a regions.json row at all. Worth reading anyway: a clean unbiased map of which residues matter is a different and possibly better validation target than a region.",
+      "circularity_status": "UNDECIDABLE",
+      "circularity_basis": "Snippet-level assessment suggested no predictor in the discovery path, but see the premise audit: SNIPPET-LEVEL ASSESSMENT IS BIASED TOWARDS FALSE CLEAN. Not CLEAN until the full text is read."
+    },
     {
       "protein": "Apolipoprotein A-I",
       "residues": "14-22, 32-40, 50-58, 68-76 -- THE ENTIRE DELETION SERIES",
-      "why_excluded": "FOUND BY PREDICTION. THE WHOLE SERIES WAS DESIGNED TO DELETE PREDICTED SEGMENTS. Verdict reversed on reading the paper; the abstract concealed it.",
+      "why_excluded": "[field name retained for history; this row is NO LONGER EXCLUDED, it is KEPT AND LABELLED] FOUND BY PREDICTION. THE WHOLE SERIES WAS DESIGNED TO DELETE PREDICTED SEGMENTS. Verdict reversed on reading the paper; the abstract concealed it.",
       "the_quotes_that_decide_it": [
         "Introduction, p.13515: 'Sequence-based analyses of N-terminal residues 1-100 in apoA-I PREDICT that there are two major aggregation-prone segments (residues 14-22 and 50-58) together with a minor segment (residues 69-72) in which the rank order of aggregation propensity is residues 14-22 > residues 50-58 > residues 69-72.'",
         "Results, p.13516: 'The deletion variants, delta-14-22, delta-50-58, and delta-68-76, lack the highly amyloidogenic segments of residues 14-22, 50-58, and 69-72, respectively (10), whereas the delta-32-40 variant lacks the PUTATIVE LOOP REGION between two beta-strands from residues 14-31 to 41-58 (23).'",
@@ -68,34 +75,43 @@
       "what_the_paper_does_establish_well": "READ IN FULL, and it is good work. 14-22 is NECESSARY: no ThT increase, no random-coil to beta transition by CD, no fibrils by AFM or TEM, only small spherical aggregates, and reduced cytotoxicity in HEK293. 32-40 and 50-58 are NOT necessary but slow nucleation and growth. 50-58 entropically drives nucleation (delta-S* for nucleation flips from +55 to -281 J/mol/K). 68-76 INHIBITS fibril growth enthalpically. Construct throughout: apoA-I 1-83/G26R, a disease-variant N-terminal fragment expressed in E. coli as a thioredoxin fusion leaving two extra residues (Gly-Ser) at the N terminus -- not full-length wild type.",
       "source": "Mizuguchi C et al. (2019) J. Biol. Chem. 294(36):13515-13524. doi:10.1074/jbc.RA119.008000. Published under exclusive license by ASBMB.",
       "provenance": "READ IN FULL, 16 Nov 2026, publisher PDF supplied by the author.",
-      "incidental_numbering_slip": "p.13521 twice writes 'delta-68-78' where Table 1, the Results and the Methods all say delta-68-76. Seventh residue-number slip found by reading primaries, and THE FIRST FROM OUTSIDE THE BRADSHAW GROUP -- the pattern is not one lab's habit."
+      "incidental_numbering_slip": "p.13521 twice writes 'delta-68-78' where Table 1, the Results and the Methods all say delta-68-76. Seventh residue-number slip found by reading primaries, and THE FIRST FROM OUTSIDE THE BRADSHAW GROUP -- the pattern is not one lab's habit.",
+      "circularity_status": "CIRCULAR",
+      "circularity_basis": "FOUND BY PREDICTION. THE WHOLE SERIES WAS DESIGNED TO DELETE PREDICTED SEGMENTS. Verdict reversed on reading the paper; the abstract concealed it."
     },
     {
       "protein": "alpha-synuclein",
       "residues": "2-7",
-      "why_excluded": "FOUND BY PREDICTION. The authors state that bioinformatic analyses in their previous study identified residues 2-7 as having high aggregation propensity; the deletion work came after. Strong experiments -- deleting 2-7 slows lipid-independent assembly, ablates lipid-dependent amyloid formation in vitro, and prevents aggregation and toxicity in vivo -- but the region was chosen by a predictor.",
+      "why_excluded": "[field name retained for history; this row is NO LONGER EXCLUDED, it is KEPT AND LABELLED] FOUND BY PREDICTION. The authors state that bioinformatic analyses in their previous study identified residues 2-7 as having high aggregation propensity; the deletion work came after. Strong experiments -- deleting 2-7 slows lipid-independent assembly, ablates lipid-dependent amyloid formation in vitro, and prevents aggregation and toxicity in vivo -- but the region was chosen by a predictor.",
       "source": "PNAS 2024",
-      "provenance": "SNIPPET"
+      "provenance": "SNIPPET",
+      "circularity_status": "CIRCULAR",
+      "circularity_basis": "FOUND BY PREDICTION. The authors state that bioinformatic analyses in their previous study identified residues 2-7 as having high aggregation propensity; the deletion work came after. Strong experiments -- deleting 2-7 slows lipid-independent assembly, ablates lipid-dependent amyloid formation in vitro, and prevents aggregation and toxicity in vivo -- but the region was chosen by a predictor."
     },
     {
       "protein": "IAPP",
       "residues": "8-16",
-      "why_excluded": "FOUND BY PREDICTION, EXPLICITLY. Picked out by AmylPred and AmylPred2, then validated with synthetic peptides. Scoring AmylPred-family tools against an AmylPred-derived region would be circular in the most direct way available.",
+      "why_excluded": "[field name retained for history; this row is NO LONGER EXCLUDED, it is KEPT AND LABELLED] FOUND BY PREDICTION, EXPLICITLY. Picked out by AmylPred and AmylPred2, then validated with synthetic peptides. Scoring AmylPred-family tools against an AmylPred-derived region would be circular in the most direct way available.",
       "source": "Louros et al., Biopolymers 2015",
-      "provenance": "SNIPPET"
+      "provenance": "SNIPPET",
+      "circularity_status": "CIRCULAR",
+      "circularity_basis": "FOUND BY PREDICTION, EXPLICITLY. Picked out by AmylPred and AmylPred2, then validated with synthetic peptides. Scoring AmylPred-family tools against an AmylPred-derived region would be circular in the most direct way available."
     },
     {
       "protein": "HET-s",
       "residues": "218-289",
-      "why_excluded": "PARTLY CONTAMINATED. Limited proteolysis placed the fibril core, but the core strands were then matched to predicted aggregation peaks. Discovery path is mixed; treat as circular until read.",
+      "why_excluded": "[field name retained for history; this row is NO LONGER EXCLUDED, it is KEPT AND LABELLED] PARTLY CONTAMINATED. Limited proteolysis placed the fibril core, but the core strands were then matched to predicted aggregation peaks. Discovery path is mixed; treat as circular until read.",
       "source": "from the sweep, unattributed",
-      "provenance": "SNIPPET"
+      "provenance": "SNIPPET",
+      "circularity_status": "CIRCULAR",
+      "circularity_basis": "PARTLY CONTAMINATED. Limited proteolysis placed the fibril core, but the core strands were then matched to predicted aggregation peaks. Discovery path is mixed; treat as circular until read."
     }
   ],
   "_NEXT_STEPS": [
-    "1. These are leads, not rows. The only way any of them enters regions.json is a publisher PDF someone opens.",
+    "1. These are leads, not rows. The only way any of them enters regions.json is a publisher PDF someone opens -- INCLUDING the circular ones, which now enter labelled rather than being dropped.",
     "2. Highest value to read first: Mizuguchi 2019 (JBC 294:36) -- it alone could yield one positive and two negative-control rows, and PMC6737231 suggests it is open access.",
     "3. The TDP-43 cluster needs residue ranges before it is worth anything.",
     "4. Re-run the sweep with different phrasing before concluding anything about the size of the clean class. One sweep is not a census, and the first query of this session was refused by the search backend, so coverage is incomplete."
-  ]
+  ],
+  "_AUDIT_IN_FLIGHT": "16 Nov 2026: three parallel audits launched on TDP-43/FUS, alpha-synuclein/tau, and the unbiased-screen method class. Each was briefed with the Mizuguchi 2019 worked example -- abstract reads clean, Figure 1B shows AmylPred2 and Zyggregator -- and told to check Introduction, Methods and the first figure before calling anything CLEAN. Results not yet in; this file does not reflect them."
 }

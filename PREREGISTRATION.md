@@ -262,10 +262,32 @@ reconstruction.** Figure 12B of Bradshaw 2017 is no longer required for the lett
 
 ### 6.4 Exclusions fixed now
 
-- **DISC1 716-761 is excluded** from every analysis in this document. Its `found_by` is
-  "RADAR sequence-repeat search" — found *by* a sequence search — and `regions.json`
-  records it as a **docking restraint, not a measurement**. Including a predicted region
-  in a benchmark about prediction failure is the error this project exists to avoid.
+- ~~**DISC1 716-761 is excluded** from every analysis in this document.~~ **REVISED 16 Nov
+  2026 by author decision: CIRCULAR ROWS ARE KEPT AND LABELLED, NOT DROPPED.** Every row in
+  `regions.json` now carries `circularity_status` (CLEAN / CIRCULAR / UNDECIDABLE) and a
+  written `circularity_basis`. The set stands at **7 CLEAN and 3 CIRCULAR**.
+
+  **CIRCULAR rows are excluded from the primary statistic and reported as their own
+  stratum.** They are never silently pooled. The reasoning for keeping them: a benchmark
+  that ships its contaminated rows with the contamination documented is more useful to
+  other groups than one that silently excludes them, and it lets a reader check our
+  circularity calls rather than trust them. DISC1 716-761 keeps its own further caution —
+  RADAR-derived *and* a docking restraint rather than a measurement.
+
+  **TRIOBP-1 60-189 is the row that justifies the policy.** It is CIRCULAR — prediction
+  nominated it — and the deletion work then **refuted** it. A prediction-nominated region
+  that experiment overturned is the most informative false positive in the set, and
+  dropping it would have thrown away the clearest evidence the project has.
+
+  **Two rules now fixed.** (i) *Prediction used AFTER mapping does not contaminate* — a
+  post-hoc run on an already-mapped region is a mechanistic check, not a selection step;
+  this is what keeps DISC1 384-415 CLEAN despite Zaharija 2025 running five predictors on
+  DISC1. (ii) *Circularity is tool-specific* — a region AmylPred2 nominated is circular for
+  AmylPred2 and any consensus containing it, but a tool that did not exist then is tested
+  fairly. CIRCULAR rows may therefore serve as **labelled positive controls for the modern
+  arm only**, with the selection bias stated: a region legacy tools ranked top is
+  predictable by construction and cannot test whether modern tools recover what legacy
+  *missed*.
 - **No bulk import from CPAD.** TANGO, CamSol and AGGRESCAN were trained on sequences
   within it; importing without per-row provenance checks reproduces the out-of-sample
   violation that the CANYA paper names.

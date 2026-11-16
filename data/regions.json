@@ -25,7 +25,9 @@
       "sequence_provenance": "READ, 16 Nov 2026, NO LONGER DERIVED. Figure 1B of Zaharija 2022 prints the stretch ELEKL|PLRENKRVPLTALLNQSRGERRGPP|SDGHE under a 324-348 numbering row, the coloured segment flanked by five residues either side. It reproduces the previously DERIVED string byte-for-byte. Two independent alignment checks pass: 333-340 = LTALLNQS carries zero charges and the paper calls it 'the uncharged region', and 341-345 = RGERR, which the paper calls 'the cluster of charged amino acids beginning at AA 341'. The 48.0% gatekeeper figure no longer rests on a reconstruction. Figure 12B of Bradshaw 2017 is no longer needed for the letters; it is still wanted for the mechanistic half of that paper.",
       "sequence": "PLRENKRVPLTALLNQSRGERRGPP",
       "verified_against": "Zaharija et al. 2022, Int. J. Mol. Sci. 23:11048 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author.",
-      "range_provenance": "READ. Zaharija 2022 §2.2 p.6: 'a 25 amino acid stretch from AA 324-348 is required for aggregation', in the 652-aa frame fixed on p.2."
+      "range_provenance": "READ. Zaharija 2022 §2.2 p.6: 'a 25 amino acid stretch from AA 324-348 is required for aggregation', in the 652-aa frame fixed on p.2.",
+      "circularity_status": "CLEAN",
+      "circularity_basis": "Found by experimental truncation scanning. The source paper states explicitly that it was NOT predicted. No predictor in the discovery path."
     },
     {
       "protein": "TRIOBP-1",
@@ -37,7 +39,9 @@
       "source": "Bradshaw et al. 2017",
       "note": "sub-annotation, not an independent region. CONSTRUCT-SPECIFIC AND IN TENSION WITH THE 2022 DATA: the Figure 6B legend of Zaharija 2022 restates 324-328 as essential, citing Bradshaw 2017, but that paper's own Figure 3D shows TRIOBP-1 333-652 aggregating indistinguishably from 324-652, and its text concludes 'the first cluster of charged amino acids is not required for aggregation'. Necessary in the 324-vs-349 truncation comparison, dispensable in the 333-652 construct. This is exactly what the construct column exists to carry. DO NOT score this row as an independent region.",
       "verified_against_publisher_pdf": false,
-      "verified_against": "restatement READ in Zaharija 2022 Figure 6B legend; the primary, Bradshaw 2017, remains unread."
+      "verified_against": "restatement READ in Zaharija 2022 Figure 6B legend; the primary, Bradshaw 2017, remains unread.",
+      "circularity_status": "CLEAN",
+      "circularity_basis": "Sub-annotation of the clean 324-348 row, from the same truncation series. Not to be scored as an independent region -- see note."
     },
     {
       "protein": "TRIOBP-1",
@@ -51,7 +55,9 @@
       "verified_against_publisher_pdf": true,
       "sequence": "LTALLNQS",
       "verified_against": "Zaharija et al. 2022, Int. J. Mol. Sci. 23:11048 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author.",
-      "sequence_provenance": "READ, 16 Nov 2026. Derived from the Figure 1B stretch above, which is itself now read rather than reconstructed. LENGTH SETTLED AT 8: the 2022 paper states 'just 8 amino acids (333-340 of the 652 amino acid-long TRIOBP-1)' in its abstract, 'just 8 amino acids (AA 333-340)' in its discussion p.13, and 'narrow the critical region to AA 333-340' in the Figure 6D legend. The 2025 thesis's 'later shortened to the 7 aa domain' (p.48) is a slip by one. regions.json was right."
+      "sequence_provenance": "READ, 16 Nov 2026. Derived from the Figure 1B stretch above, which is itself now read rather than reconstructed. LENGTH SETTLED AT 8: the 2022 paper states 'just 8 amino acids (333-340 of the 652 amino acid-long TRIOBP-1)' in its abstract, 'just 8 amino acids (AA 333-340)' in its discussion p.13, and 'narrow the critical region to AA 333-340' in the Figure 6D legend. The 2025 thesis's 'later shortened to the 7 aa domain' (p.48) is a slip by one. regions.json was right.",
+      "circularity_status": "CLEAN",
+      "circularity_basis": "Found by experimental narrowing, truncating from the C-terminal end. No predictor."
     },
     {
       "protein": "TRIOBP-1",
@@ -63,7 +69,9 @@
       "source": "IJMS 2022",
       "note": "this row and 324-348 look contradictory and are not: two putative aggregation domains, removing either alone leaves some aggregation, removing both abolishes it.",
       "verified_against_publisher_pdf": true,
-      "verified_against": "Zaharija et al. 2022, Int. J. Mol. Sci. 23:11048 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author."
+      "verified_against": "Zaharija et al. 2022, Int. J. Mol. Sci. 23:11048 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author.",
+      "circularity_status": "CLEAN",
+      "circularity_basis": "Tested after an unexpected result, not nominated by prediction."
     },
     {
       "protein": "TRIOBP-1",
@@ -74,7 +82,9 @@
       "found_by": "earlier bioinformatics pointed here; the deletion work did NOT support it",
       "source": "Bradshaw et al. 2017",
       "note": "NEGATIVE-CONTROL ROW: prediction pointed here and experiment did not confirm it. Keep it; a benchmark needs its false positives.",
-      "verified_against_publisher_pdf": false
+      "verified_against_publisher_pdf": false,
+      "circularity_status": "CIRCULAR",
+      "circularity_basis": "PREDICTION-NOMINATED. regions.json already records that 'earlier bioinformatics pointed here; the deletion work did NOT support it'. The region entered the literature because a predictor named it. KEEPING IT LABELLED IS THE POINT: it is a prediction-nominated region that experiment REFUTED, which makes it the most informative false positive in the set."
     },
     {
       "protein": "DISC1",
@@ -84,7 +94,9 @@
       "found_by": "boundaries from ESPRIT, an experimental screen",
       "source": "Cukkemane et al. 2021",
       "note": "The paper's own framing is that it does not establish whether DISC1 aggregates in vivo. Contains three free cysteines (C698, C762, C782) and no study reports a reducing agent.",
-      "verified_against_publisher_pdf": false
+      "verified_against_publisher_pdf": false,
+      "circularity_status": "CLEAN",
+      "circularity_basis": "Boundaries from ESPRIT, which is an EXPERIMENTAL solubility screen over a random truncation library, not an aggregation predictor. Borderline but clean: no sequence-based aggregation propensity was consulted to choose it."
     },
     {
       "protein": "DISC1",
@@ -96,7 +108,9 @@
       "source": "Cukkemane et al. 2021",
       "CAUTION_2026_11_15": "THIS IS A DOCKING RESTRAINT, NOT A MEASUREMENT. Nothing was deposited -- no coordinates, no chemical shifts, no EM map, no accession, and the paper has no data-availability section. The EM was negative-stain TEM at 120 kV with no resolution reported, and the model is a MODELLER protomer built with ANTIPARALLEL BETA-STRAND RESTRAINTS IMPOSED AS INPUT (segments 716-737 and 739-761) then docked into that envelope. Re-modelling it would re-assert the input, not confirm the topology. The paper also states its own boundary two ways, 716-761 and 717-761. The 2025 follow-up states verbatim 'No data was used for the research described in the article'.",
       "found_by_note": "RADAR is a sequence method, so this row is partly circular for a sequence-predictor benchmark and must be analysed separately.",
-      "verified_against_publisher_pdf": false
+      "verified_against_publisher_pdf": false,
+      "circularity_status": "CIRCULAR",
+      "circularity_basis": "Found by a RADAR sequence-repeat search -- a sequence method. Already flagged in found_by. Compounded by CAUTION_2026_11_15: it is a docking restraint, not a measurement."
     },
     {
       "protein": "DISC1",
@@ -106,7 +120,9 @@
       "found_by": "RADAR",
       "source": "Cukkemane et al. 2021",
       "note": "the restraint segments used to build the model above; not independent of it",
-      "verified_against_publisher_pdf": false
+      "verified_against_publisher_pdf": false,
+      "circularity_status": "CIRCULAR",
+      "circularity_basis": "The restraint segments used to build the 716-761 model; not independent of it, and RADAR-derived."
     },
     {
       "protein": "DISC1",
@@ -116,7 +132,9 @@
       "found_by": "variant, not prediction",
       "source": "Cukkemane et al. 2021, Discussion",
       "note": "Overlaps the reported core at 748-761 (fourteen residues); 762-769 falls outside it. So it removes PART of the core, not all of it, and the Abstract's wording is imprecise. The authors report delta-22 point mutants T754S and P758R abolishing binding to Dixdc1, LIS1 and PCM1, so this segment carries a protein-interaction surface as well as fibril propensity.",
-      "verified_against_publisher_pdf": false
+      "verified_against_publisher_pdf": false,
+      "circularity_status": "CLEAN",
+      "circularity_basis": "A splice variant boundary (the delta-22 deletion), defined by biology rather than by any sequence analysis."
     },
     {
       "protein": "DISC1",
@@ -133,7 +151,9 @@
       "GATEKEEPER_RESULT_2026_11_15": "18.8% gatekeeper (2 Pro + 4 charged of 32). THIS BREAKS THE HEADLINE. The worst crystallised steric zipper is 16.7% (tau VQIVYK and SOD1 30-35), so this region is +2.1 points above it -- indistinguishable. 18 of its 27 hexapeptide windows are at or below the worst zipper, minimum 0.0% at ISLHFQ. The reported 'psychiatric regions 48.0% to 50.0% (n=2)' was carried by TRIOBP-1 324-348 at 48.0% plus DISC1 716-761 at 50.0% -- and 716-761 is the docking-restraint row found by a RADAR sequence search, which the found_by column exists to exclude. With the honest DISC1 row the separation does not generalise: ONE region is gatekeeper-rich, the other is not.",
       "verified_against": "Zaharija & Bradshaw, bioRxiv 2023.08.03.551216v1 (read in full) PLUS Zaharija B (2025) PhD thesis, University of Rijeka (READ IN FULL 16 Nov 2026, key zaharija2025thesis). RANGE SETTLED AT 384-415: the thesis's Table 11 names the actual plasmids 'DISC1 (delta-384-415)', 'DISC1 (1-655 delta-384-415)' and 'DISC1 (1-836 delta-384-415)', and both §4.3.4 and Conclusion 3.1 give AA 384-415 and 'the 32 AA'. The preprint's delta-384-414 was a typo. One stray slip remains in the thesis itself: Figure 48's caption says 'AA 383-415'.",
       "range_provenance": "READ, 16 Nov 2026. Discussion: 'AA 384-415, immediately C-terminal of the D region'. Three internal checks agree: D region ends at 383; 1-383 does not aggregate while 1-415 does (Fig 5B,C); and 383+32=415 matches 'these 32 amino acids were deleted', which matches the 32-residue UniProt string already stored. ONE-RESIDUE SLIP IN THE SOURCE, DOES NOT AFFECT US: the p.9 body text writes the deletion constructs as delta-384-414 three times (31 residues) while Figure 5A and panels D-F label them delta-384-415 and the same sentence says 32. 384-415 is right.",
-      "domain_frame_from_source": "ESPRIT regions, Yerabham 2017 via this paper's Fig 1/Results: D 257-383, I 539-655, S 635-738, C 691-836. I/S overlap at 635-655 and S/C at 691-738. Second slip: Results prints 'AA 539-738' for BOTH I+S and S+C; S+C is 635-836 per Fig 3A and the Discussion."
+      "domain_frame_from_source": "ESPRIT regions, Yerabham 2017 via this paper's Fig 1/Results: D 257-383, I 539-655, S 635-738, C 691-836. I/S overlap at 635-655 and S/C at 691-738. Second slip: Results prints 'AA 539-738' for BOTH I+S and S+C; S+C is 635-836 per Fig 3A and the Discussion.",
+      "circularity_status": "CLEAN",
+      "circularity_basis": "Found by truncation and deletion in cells. Re-checked 16 Nov 2026 against Zaharija's 2025 thesis, which DOES run five aggregation predictors on DISC1 -- but only AFTER the region was mapped, as a post-hoc mechanistic check. Prediction after mapping does not contaminate."
     }
   ],
   "_rows_deliberately_excluded": {
@@ -145,5 +165,12 @@
   "_CPAD_CONTAMINATION_WARNING": "DO NOT BULK-IMPORT FROM CPAD. The CANYA paper (Thompson 2025, Sci Adv, PMC12042874) states verbatim that \"several of these methods (including TANGO, CamSol, and Aggrescan) were directly trained on sequences within CPAD\", which violates out-of-sample evaluation on those datasets. Drawing rows from CPAD without per-row provenance checks reproduces exactly the violation that paper names. The same paper reports that on WALTZ-DB hexapeptides \"no method significantly outperformed hydrophobicity\".",
   "_circularity_cannot_be_grepped": "The predictor-provenance column cannot be filled by keyword search. Circularity is PROTEIN-specific, not lab- or journal-specific: the same laboratory in the same era produced rows of opposite status, and so did two segments of one protein. Four rows would be wrongly flagged by a grep, because a post-hoc remark about a predictor, or the use of a disorder or helix-propensity tool, is not prediction-guided discovery. Each row has to be read.",
   "_frame_traps_are_worse_than_assumed": "Beyond the TRIOBP-1 59-residue offset: hnRNPA1's two frames differ by an INTERNAL ALTERNATIVE EXON, so one commonly cited range exists only in the minor-isoform frame and converting it by a constant offset yields a sequence that does not occur. Tau's canonical accession is 758-residue big tau while the entire literature uses the 441-residue frame. Huntingtin's frame shifts with the repeat length.",
-  "_COAGGREGATION_IS_THREE_DIFFERENT_PHENOMENA": "ADDED 15 Nov 2026. The word 'co-aggregation' names at least THREE unrelated things, and all three surface in searches this project runs. (1) PROTEIN hetero-aggregation -- two misfolded proteins forming mixed oligomers or fibrils. This is the only sense this project means. (2) EPIDEMIOLOGICAL / FAMILIAL co-aggregation -- diagnoses clustering in families. Liu F-C et al., Clin Epidemiol 10:631-641 (2018) is titled 'Familial aggregation of Parkinson's disease and COAGGREGATION WITH NEUROPSYCHIATRIC DISEASES' and reports raised SCHIZOPHRENIA risk in first-degree relatives of PD patients. Any query pairing 'coaggregation' with 'schizophrenia' will return this literature, which is population genetics and says nothing about protein structure. See also Feldman et al., Eur J Epidemiol 29:49-56 (2014), 'modest familial co-aggregation between dementia and parkinsonism'. (3) BACTERIAL coaggregation -- specific adhesion between genetically distinct bacterial cells in biofilms, mediated by lectin-saccharide interactions. Nothing to do with amyloid. As of 15 Nov 2026 this repository is clean of senses (2) and (3); keep it that way, and label the sense whenever the word is used."
+  "_COAGGREGATION_IS_THREE_DIFFERENT_PHENOMENA": "ADDED 15 Nov 2026. The word 'co-aggregation' names at least THREE unrelated things, and all three surface in searches this project runs. (1) PROTEIN hetero-aggregation -- two misfolded proteins forming mixed oligomers or fibrils. This is the only sense this project means. (2) EPIDEMIOLOGICAL / FAMILIAL co-aggregation -- diagnoses clustering in families. Liu F-C et al., Clin Epidemiol 10:631-641 (2018) is titled 'Familial aggregation of Parkinson's disease and COAGGREGATION WITH NEUROPSYCHIATRIC DISEASES' and reports raised SCHIZOPHRENIA risk in first-degree relatives of PD patients. Any query pairing 'coaggregation' with 'schizophrenia' will return this literature, which is population genetics and says nothing about protein structure. See also Feldman et al., Eur J Epidemiol 29:49-56 (2014), 'modest familial co-aggregation between dementia and parkinsonism'. (3) BACTERIAL coaggregation -- specific adhesion between genetically distinct bacterial cells in biofilms, mediated by lectin-saccharide interactions. Nothing to do with amyloid. As of 15 Nov 2026 this repository is clean of senses (2) and (3); keep it that way, and label the sense whenever the word is used.",
+  "_SCHEMA_CIRCULARITY": {
+    "added": "16 Nov 2026, by author decision: KEEP CIRCULAR ROWS, LABELLED, rather than dropping them. A benchmark that ships its contaminated rows with the contamination documented is more useful to other people than one that silently excludes them -- and the exclusions turned out to be the best-evidenced part of the work.",
+    "circularity_status": "CLEAN | CIRCULAR | UNDECIDABLE. CLEAN: the region was localised by truncation, deletion, substitution or an unbiased screen with NO aggregation predictor and no sequence/compositional heuristic in the DISCOVERY path. CIRCULAR: a predictor or sequence heuristic nominated the region and experiment then tested it. UNDECIDABLE: discovery path not recoverable from sources read.",
+    "the_rule_that_makes_this_workable": "PREDICTION USED AFTER MAPPING DOES NOT CONTAMINATE. A post-hoc predictor run on an already-mapped region is a mechanistic check, not a selection step. This is what keeps DISC1 384-415 clean despite Zaharija 2025 running five predictors on DISC1.",
+    "circularity_is_TOOL_SPECIFIC": "A region nominated by AmylPred2 is circular for AmylPred2 and for any consensus containing it, but a tool that did not exist at the time is being tested fairly on it. Circular rows may therefore serve as LABELLED POSITIVE CONTROLS for the modern arm -- with the selection bias stated, since a region legacy tools ranked top is predictable by construction and cannot test whether modern tools recover what legacy MISSED.",
+    "how_these_rows_are_analysed": "Separately, always, per CLAUDE.md. CIRCULAR rows are excluded from the primary statistic and reported as their own stratum. They are never silently pooled with CLEAN rows."
+  }
 }

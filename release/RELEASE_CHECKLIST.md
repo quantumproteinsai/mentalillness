@@ -69,21 +69,56 @@ the benchmark, that honesty is what makes it citable.
 
 ## Deposit procedure
 
-**Nothing in this repository deposits anything.** Depositing is outward-facing
-and effectively irreversible: a Zenodo DOI is permanent, and a published record
-can be superseded but not withdrawn cleanly.
+**Nothing in this repository deposits anything**, and nothing in it can.
+Depositing is outward-facing and effectively irreversible: a Zenodo DOI is
+permanent, and a published record can be superseded but not withdrawn cleanly.
+**The deposit is the author's own action, from the author's own account.**
 
-When you are ready:
+### Steps 1-4 are DONE as of 16 Nov 2026
 
-1. `python3 scripts/validate_regions.py` — **must exit 0**
-2. Drop `-draft` from `VERSION` in `scripts/build_release.py`
-3. `python3 scripts/build_release.py`
-4. Commit, tag (e.g. `v1.0.0`), push the tag
-5. Either link the GitHub repository to Zenodo and publish a release — Zenodo
-   picks up `.zenodo.json` — or upload `release/` manually and paste the metadata
-6. Add the returned DOI to `CITATION.cff` and `.zenodo.json`, and to the
-   descriptor's Citation section, which currently says **"Not yet deposited; no
-   DOI assigned. Do not cite this version as archival."**
+Validator passes, `VERSION` is `1.0.0`, the release is rebuilt, and the commit
+is tagged `v1.0.0` and pushed. What remains is on Zenodo and GitHub, not here.
+
+### What remains
+
+**Chosen route: link the GitHub repository to Zenodo.**
+
+1. The repository must be **public** — Zenodo's GitHub page lists public
+   repositories only.
+2. zenodo.org -> GitHub -> authorise -> toggle the repository **On**. Use
+   **Sync now** if it is not listed.
+3. **Zenodo only archives releases created AFTER the toggle is on.** The
+   `v1.0.0` tag already exists, so publish a GitHub *Release* from that existing
+   tag once the toggle is on. No re-tagging is needed.
+4. Zenodo reads `.zenodo.json` and mints the DOI.
+5. Check the published record: title, sole creator with ORCID, licence CC BY
+   4.0. **Metadata can be edited after publication; the files cannot.**
+
+### KNOW WHAT THIS ROUTE DEPOSITS
+
+**The GitHub integration archives the WHOLE REPOSITORY, not just `release/`.**
+Zenodo has no ignore mechanism for it. So the DOI covers `research_notes/` --
+which `CLAUDE.md` describes as machine-generated and unverified, under a
+standing rule never to cite across that line -- along with `CLAUDE.md`,
+`STATE.md` and `correspondence/`.
+
+That is defensible, and publishing the pre-registration alongside the data is
+arguably a virtue. **It should be a decision, not an inheritance.** The manual
+upload route deposits exactly the four files in `release/` and nothing else.
+
+### Two DOIs, and they are not interchangeable
+
+Zenodo mints a **concept DOI** that always resolves to the latest version, and a
+**version DOI** for 1.0.0 specifically. **Put the VERSION DOI in the files.** The
+concept DOI is for readers who want whatever is current, which is not what a
+citation of this analysis means.
+
+### After the DOI lands, it goes in three places
+
+`CITATION.cff`, `.zenodo.json`, and the Citation section of
+`release/DATA_DESCRIPTOR.md`, which currently tells readers to cite the version
+and the repository **because no DOI exists yet**. That sentence stops being true
+the moment one does.
 
 ## Before each rebuild
 

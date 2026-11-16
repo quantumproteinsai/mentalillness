@@ -724,6 +724,67 @@ but narrow — `bioinfo.protres.ru` was a *legitimate* FoldAmyloid host, not a
 mistake, and was working as recently as 2017. **It does not revive the tool.**
 The §5.2 rule stands: a web form is not a reproducible tool.
 
+### Giasson 2001 is CLEAN, and each clean row makes the inversion lonelier [ABSTRACT READ, 16 Nov 2026]
+
+The audit left α-synuclein 71-82 UNDECIDABLE behind Cloudflare and warned the
+whole α-synuclein branch might yield **no clean row at all** — 5 of the other 6
+regions are CIRCULAR. **Settled from the structured abstract, read in full via
+efetch.** The paper states its own discovery path:
+
+> "1) human beta-synuclein is highly homologous to alpha-synuclein but **lacks
+> these 12 residues**, and it does not assemble into filaments in vitro ... 3)
+> this stretch ... **is resistant to proteolytic digestion** in alpha-synuclein
+> filaments; and 4) **synthetic peptides** corresponding to this 12-amino acid
+> stretch self-polymerize"
+
+Comparative homology against a paralogue that naturally lacks exactly those 12
+residues, corroborated by limited proteolysis. **No predictor, and in 2001 none
+of the tools under test existed.** `VTGVTAVAQKTV` verified residue-for-residue
+against UniProt P37840 — the paper's numbering is right, so no ninth slip.
+It is also the only candidate in the file shown **necessary *and* sufficient**,
+with sufficiency in an isolated peptide.
+
+**Full text still not obtained, and that is reproducible:** jbc.org 403 on
+fulltext, legacy and PDF routes; Europe PMC `isOpenAccess=N`, no PMCID; OpenAlex
+advertises `hybrid` but its `oa_url` is just the DOI, resolving to a
+Cloudflare-gated Elsevier page.
+
+**Two caveats that matter more than the row.**
+
+1. **It is a region the predictors DO find.** 71-82 overlaps NACore 68-78 by
+   eight residues, and NACore was later picked by ZipperDB. Clean by `found_by`,
+   but it cannot test the central hypothesis — its honest role is a labelled
+   **true positive**, good for the dataset, neutral for the headline.
+2. **It does not support the gatekeeper inversion — it dilutes it.** Computed
+   from the verified sequence: **8.3%** proline-plus-charge (one lysine), *below*
+   the worst deposited zipper at 16.7%.
+
+**The trend is now the finding, and it is going the wrong way for the
+headline:**
+
+| region | gatekeeper % | behaves as the field's rules predict? |
+|---|---|---|
+| TRIOBP-1 324-348 | **48.0%** | **no — the inversion** |
+| DISC1 384-415 | 18.8% | yes |
+| α-syn 71-82 | 8.3% | yes |
+| α-syn NAC 61-95 | 8.6% | yes |
+
+**Every clean row added so far has made the inversion lonelier rather than
+better supported.** It stands at n = 1 against three. Combined with Murray 2017
+pre-empting the generic compositional move and Seuma 2021 pre-empting the
+gatekeeper concept, **the compositional strand of this project is now its
+weakest, not its strongest.** Report the trend; do not wait for a fourth row to
+rescue it.
+
+### One comparator was an unlabelled disease mutant
+
+`4ZNN` is deposited as `GVVHGVTTVA`, which is **A53T**, not wild type — UniProt
+P37840 47-56 is `GVVHGVATVA`. Checked against the RCSB FASTA. The hardcoded
+string was *right about the crystal*; the **label** implied wild type. Relabelled
+`a-syn preNAC A53T (4ZNN)`. **Ala→Thr changes no gatekeeper count, so this moves
+no number** (0.0% either way) — fixed anyway, because an unlabelled mutant in a
+table intended for publication is a defect even when numerically inert.
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

@@ -111,7 +111,14 @@ n = 2 on the prediction failure. Do not state them as one number.
 ZIPPERS = [                         # deposited crystals, not validation rows
     ('tau PHF6 (2ON9)',      'VQIVYK'),
     ('a-syn NACore (4RIL)',  'GAVVTGVTAVA'),
-    ('a-syn preNAC (4ZNN)',  'GVVHGVTTVA'),
+    # 4ZNN is deposited as GVVHGVTTVA, which is the A53T DISEASE MUTANT, not
+    # wild type: UniProt P37840 residues 47-56 are GVVHGVATVA (Ala at 53).
+    # Checked against the RCSB FASTA on 16 Nov 2026 -- the hardcoded string is
+    # RIGHT about the crystal, and the label was wrong to imply wild type.
+    # Ala->Thr does not change the gatekeeper count, so THIS MOVES NO NUMBER
+    # (0.0% either way); it is a labelling fix, recorded because an unlabelled
+    # mutant comparator in a published table is a defect even when it is numerically inert.
+    ('a-syn preNAC A53T (4ZNN)', 'GVVHGVTTVA'),
     ('SOD1 30-35 (5WMJ)',    'KVWGSI'),
     ('SOD1 147-153 (4NIP)',  'GVIGIAQ'),
     ('IAPP 31-37 (3FTK)',    'NVGSNTY'),

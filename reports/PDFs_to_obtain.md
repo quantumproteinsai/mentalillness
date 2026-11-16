@@ -282,6 +282,12 @@ Ordered by how much each one decides. Every row these would promote is currently
 at **READ-BY-SUBAGENT** grade, which is weaker than READ and cannot be published.
 
 10. **Giasson et al. 2001, *J. Biol. Chem.* 276:2380** — α-synuclein 71-82.
+   **PARTLY RESOLVED 16 Nov 2026 WITHOUT THE PDF.** The structured abstract,
+   read in full via efetch, states the discovery path outright and the row is
+   **CLEAN**; the sequence is verified against UniProt. The branch is not empty.
+   Downgraded from highest priority: the full text is now needed only to trace
+   whether anything narrowed *within* the hydrophobic domain beyond the
+   β-synuclein alignment. All free routes are 403/closed — see STATE.md.
    **The highest-value request in the α-synuclein branch, because it decides the
    whole branch.** Five of the six other α-synuclein regions assessed are
    CIRCULAR (2-7, P1 36-42, P2 45-57 from a Zyggregator/CamSol pass; NACore

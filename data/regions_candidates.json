@@ -292,16 +292,23 @@
     },
     {
       "protein": "alpha-synuclein",
-      "residues": "71-82",
+      "residues": "71-82 (VTGVTAVAQKTV)",
       "frame": "UniProt P37840, 140 aa",
-      "evidence": "reported minimal region required for aggregation",
-      "construct": "UNKNOWN -- primary not opened",
-      "found_by": "UNDETERMINED",
-      "source": "Giasson et al. 2001, J Biol Chem 276:2380",
-      "provenance": "EMPTY. Agent reports the full text is behind Cloudflare and could not be opened.",
+      "evidence": "NECESSARY AND SUFFICIENT for fibrillization, by four independent lines stated in the abstract: (1) human beta-synuclein is highly homologous but LACKS THESE 12 RESIDUES and does not assemble -- a NATURAL NEGATIVE; (2) introducing a single charged residue slows polymerization and a deletion abrogates assembly; (3) the stretch is PROTEASE-RESISTANT in filaments, i.e. it forms the core; (4) synthetic 12-mers self-polymerize AND seed full-length alpha-synuclein.",
+      "construct": "Multiple: full-length human alpha-synuclein with substitutions and an internal deletion; human beta-synuclein as the natural comparator; isolated synthetic 12-mer peptide. Sufficiency is shown in the PEPTIDE, necessity in the FULL-LENGTH protein -- both, which is rare among the rows in this file.",
+      "found_by": "COMPARATIVE HOMOLOGY PLUS LIMITED PROTEOLYSIS. NO AGGREGATION PREDICTOR. The 12 residues were picked out because a close paralogue naturally lacks exactly them, and the boundary was corroborated by protease resistance, which does not presuppose a region. Dated 2001, so it predates TANGO (2004), AGGRESCAN (2007), FoldAmyloid (2010) and ZipperDB entirely.",
+      "source": "Giasson BI, Murray IV, Trojanowski JQ, Lee VM (2001) J Biol Chem 276(4):2380-6, doi:10.1074/jbc.M008919200, PMID 11060312",
+      "provenance": "STRUCTURED ABSTRACT READ IN FULL by the main session via NCBI efetch, 16 Nov 2026 -- not a search-engine snippet, the whole abstract, and it happens to state the discovery path explicitly. FULL TEXT NOT OBTAINED: jbc.org returns 403 on the fulltext, legacy and PDF routes; Europe PMC isOpenAccess=N, inEPMC=N, hasPDF=N, no PMCID; OpenAlex advertises oa_status \"hybrid\" but its oa_url is merely the DOI, which resolves to a Cloudflare-gated Elsevier landing page. A REPRODUCIBLE NEGATIVE, consistent with the audit subagent's Cloudflare report.",
       "verified_against_publisher_pdf": false,
-      "circularity_status": "UNDECIDABLE",
-      "circularity_basis": "Cannot be assessed without the paper. THE AGENT CALLS THIS THE HIGHEST-VALUE PDF REQUEST IN THE ALPHA-SYNUCLEIN BRANCH: it decides whether alpha-synuclein contributes ANY clean row at all, since 5 of the other 6 assessed regions are circular."
+      "circularity_status": "CLEAN",
+      "circularity_basis": "CLEAN, and it REVERSES the audit's fear that the alpha-synuclein branch might yield nothing. The discovery path is a natural deletion in a paralogue plus protease resistance -- no algorithm, and no algorithm of the relevant kind existed in 2001. This is the same experimental logic as the natural-negative argument in inventory row C1 (C. elegans TDP-1) and it is strong.",
+      "sequence": "VTGVTAVAQKTV",
+      "sequence_provenance": "VERIFIED AGAINST UniProt P37840 (140 aa) BY THE MAIN SESSION, 16 Nov 2026. The abstract prints \"(71)VTGVTAVAQKTV(82)\"; UniProt residues 71-82 are VTGVTAVAQKTV. EXACT MATCH. The paper's own numbering is therefore correct -- no ninth slip here.",
+      "TWO_CAVEATS_THAT_LIMIT_WHAT_IT_CAN_TEST": [
+        "IT IS A REGION THE PREDICTORS DO FIND. 71-82 overlaps NACore 68-78 by eight residues, and NACore was later selected by ZipperDB (see the NACore row above). So this row is CLEAN BY FOUND_BY but is not a test of the central hypothesis: it cannot show that predictors miss experimentally mapped regions, because this is a region they hit. Its correct role is a LABELLED TRUE-POSITIVE / POSITIVE CONTROL -- valuable for the dataset, neutral for the headline.",
+        "IT DOES NOT SUPPORT THE GATEKEEPER INVERSION. Computed by the main session from the verified sequence: 71-82 is 8.3% proline-plus-charge (one lysine, K80), BELOW the worst deposited zipper in scripts/gatekeeper_density.py (16.7%). It is a conventional hydrophobic zipper. The inversion therefore stands at n=1 (TRIOBP-1 324-348, 48.0%) against THREE regions that behave as the field's rules predict: DISC1 384-415 at 18.8%, alpha-syn 71-82 at 8.3%, and the NAC domain 61-95 at 8.6%. Each clean row added so far has made the inversion lonelier, not better supported. That is the honest trend and it should be reported as such."
+      ],
+      "the_one_thing_the_full_text_must_still_settle": "Whether any sequence-based propensity analysis was used to NARROW within the hydrophobic NAC domain beyond the beta-synuclein alignment. The phrase \"the middle of the hydrophobic domain\" is almost certainly not contamination -- the NAC domain was defined experimentally from Alzheimer plaque material in 1993, not predicted -- but the precise 71/82 boundaries should be traced in the Results before this row is promoted."
     },
     {
       "protein": "IAPP",
@@ -380,5 +387,6 @@
     ],
     "what_it_DOES_pre_empt": "The generic compositional move. This project cannot present 'and composition does not explain why the predictors missed it' as a new insight -- that is in print, in Cell, with numbers, since 2017. Only the inversion is left, and by this project's OWN accounting the inversion is n=1: scripts/gatekeeper_density.py prints THE SEPARATION DOES NOT GENERALISE, because DISC1 384-415 came in at 18.8%, just 2.1 points above the worst deposited zipper. So the surviving novel claim rests on a single region.",
     "action_required_before_freeze": "The author must decide whether an n=1 inversion, with the generic version pre-empted, is a headline or a discussion paragraph. This is a framing decision, not a data problem, and it belongs to the author, not to Claude."
-  }
+  },
+  "_ALPHA_SYNUCLEIN_BRANCH_RESOLVED_16_NOV_2026": "THE BRANCH IS NOT EMPTY. The audit assessed 6 alpha-synuclein regions and found 5 CIRCULAR, leaving 71-82 UNDECIDABLE behind Cloudflare and warning that alpha-synuclein might contribute no clean row at all. The full structured abstract, read directly, settles it: 71-82 is CLEAN, by comparative homology plus limited proteolysis, in 2001, before any predictor under test existed. It is also the only row in this file shown NECESSARY AND SUFFICIENT with sufficiency demonstrated in an isolated synthetic peptide. BUT read its two caveats: it is a region the predictors DO find, and at 8.3% gatekeeper density it makes the inversion claim lonelier."
 }

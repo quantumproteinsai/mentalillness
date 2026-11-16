@@ -1204,6 +1204,61 @@ is *ex vivo* human and mouse material and the concordant stratum is the pipeline
 positive control. But that is snippet-grade, and our own premise audit records
 that snippet assessment is biased. **Nothing moves until a primary is opened.**
 
+### Liberta 2019 read in full: both my readings were wrong, and the truth is simpler [16 Nov 2026]
+
+I guessed twice about this paper and was wrong twice. **It runs no aggregation
+predictor at all.** The software in its Methods is structural and imaging only —
+IMOD, MOTIONCOR2, Gctf, RELION, Coot, PHENIX, Molprobity, EMRinger, DSSP,
+STRIDE, Chimera, PDBePISA, Fiji, FREALIGN. ZipperDB, TANGO, AGGRESCAN,
+FoldAmyloid, PASTA, WALTZ, AmylPred and Zyggregator are **absent**.
+
+So it is **neither concordant nor discordant**, and my snippet-based guess that
+it might be concordant was meaningless. The phrase I had been reading is *"the
+N-terminal ~21 residues … **the most hydrophobic and amyloidogenic segment** of
+the protein sequence"* — and the three references attached to it are
+**experimental** (CD spectroscopy of murine SAA; *"The N-terminal segment of
+protein AA determines its fibrillogenic property"*; a C-terminal truncation
+study). **"Amyloidogenic" there means experimentally amyloidogenic.**
+
+**Two lessons, and the first is the one that generalises.**
+
+1. **"Amyloidogenic" in this literature is ambiguous between *measured* and
+   *predicted*, and that distinction is the entire basis of the `stratum`
+   column.** Read the citation, never the adjective.
+2. **Both of my readings of the Sharma sentence were wrong.** It is not a dropped
+   negation, *and* it is not supported as written — because the paper it cites
+   contains no predictions to match or mismatch. **The citation is simply loose.**
+
+**New sweep rule, recorded in `regions.json`:** before assigning a stratum from a
+paper, check that the paper *ran a predictor*. Two of Sharma's three leads appear
+not to. A cryo-EM structure paper is a source of CLEAN rows by default and of
+STRATUM assignments only when it happens to include a post-hoc comparison —
+the exception, not the rule.
+
+### The row itself is the best evidence class in the set
+
+`regions.json` is **16 rows**. hSAA1.1 **2-55** enters CLEAN, stratum PENDING —
+and it is the only row that is **not recombinant**: fibrils extracted from the
+kidney of a deceased AA amyloidosis patient, cryo-EM at 2.7 Å, >98% one
+morphology, the deposited protein itself a natural proteolytic fragment.
+
+**An allelic trap, and it bites inside the region.** The mature chain of UniProt
+P0DJI8 differs from the hSAA1.1 sequence printed in Figure 4a at residues **52,
+57 and 59** — the known SAA1.1/1.3/1.5 allelic sites — and **residue 52 falls
+inside the ordered core 2-55.** Pulling this sequence from the canonical UniProt
+entry would silently give the wrong residue. **Always name the allele.** This is
+a new member of the frame-trap family: not an isoform, not an offset, an
+**allele**.
+
+**And it speaks to the retired H3 better than anything we could have produced.**
+The core is **27.8%** proline-plus-charge — higher than DISC1 384-415, far above
+every deposited zipper — *in ex vivo human disease material*. The paper shows
+charge is not merely tolerated but structural: *"the mutual charge compensation
+of six buried ionic residues … that form a network of salt bridges"*, with six
+more in the human fibril defining a water-filled cavity. **Gatekeeper residues
+are not excluded from amyloid cores; they sit buried and charge-compensated in
+real disease fibrils.** Cite it.
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

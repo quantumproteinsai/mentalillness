@@ -14,7 +14,8 @@ authors:
     given-names: "Bertrand"
     orcid: "https://orcid.org/0000-0002-1145-1881"
     email: "contact@quantum-proteins.ai"
-# TODO AUTHOR: co-authors, if any. Left as a question rather than an assumption.
+# Co-authors: NONE. Settled by the author 16 Nov 2026, asked and answered rather
+# than assumed. Sole authorship is deliberate, not an oversight.
 keywords:
   - protein aggregation
   - amyloid
@@ -22,7 +23,7 @@ keywords:
   - aggregation prediction
   - circularity
   - curated dataset
-# RECOMMENDED, NOT DECIDED BY YOU YET -- change this one line if you disagree.
+# DECIDED by the author, 16 Nov 2026. Full legal code is in LICENSE.
 # CC-BY-4.0 over CC0 because the value of this dataset is curatorial: the
 # provenance, the circularity calls and the stratum labels are the work, and
 # attribution is what makes a reader go back and check them. CC0 would maximise

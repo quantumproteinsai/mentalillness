@@ -7,16 +7,17 @@ decisions that are **yours**, not defaults to be inherited.
 
 ## SETTLED
 
-### ~~2. Authorship~~ — done
+### ~~2. Authorship~~ — done, and now complete
 
-`CITATION.cff` and `.zenodo.json` now carry:
+`CITATION.cff` and `.zenodo.json` carry:
 
 - Bertrand Mercier des Rochettes
 - ORCID `0000-0002-1145-1881`
 - `contact@quantum-proteins.ai`
 
-**One question left open deliberately:** whether anyone else merits authorship on
-the dataset. It is marked `TODO AUTHOR` rather than assumed to be no.
+**Co-authors: none.** Settled by the author on 16 Nov 2026. It was asked and
+answered rather than assumed, and the file now says so, so a later reader does
+not mistake sole authorship for an unfinished field.
 
 ### ~~4. Where to deposit~~ — Zenodo
 
@@ -24,23 +25,26 @@ the dataset. It is marked `TODO AUTHOR` rather than assumed to be no.
 by linking a GitHub release; if you upload manually, it is still the record of
 what the metadata should say.
 
+### ~~1. Licence~~ — DECIDED 16 Nov 2026: CC BY 4.0
+
+`LICENSE` now holds the **full, unmodified legal code**, fetched from
+creativecommons.org — a licence is never paraphrased. `CITATION.cff` and
+`.zenodo.json` already matched and were left alone.
+
+The reasoning, recorded so it can be argued with later: the value of this
+dataset is **curatorial**. The provenance, the circularity calls and the stratum
+labels are the work. CC BY keeps attribution attached, which is what makes a
+reader go back and check the reasoning. CC0 would maximise reuse but detach the
+rows from the justification that makes them trustworthy.
+
+**One limit is now stated in the descriptor**: several rows quote sentences from
+papers under other licences, some closed — Navarro 2026 is Elsevier and reserves
+text-and-data-mining rights. CC BY 4.0 covers *our curation*, not the quoted
+material.
+
 ---
 
 ## STILL OPEN
-
-### 1. Licence — *recommended, not confirmed*
-
-I set **CC-BY-4.0** in `CITATION.cff` and `.zenodo.json`. **Change one line in
-each if you disagree.**
-
-The reasoning, so you can argue with it: the value of this dataset is
-**curatorial**. The provenance, the circularity calls and the stratum labels are
-the work. CC BY keeps attribution attached, which is what makes a reader go back
-and check the reasoning. CC0 would maximise reuse but detach the rows from the
-justification that makes them trustworthy.
-
-**No `LICENSE` file has been added** — I did not want to make a recommendation
-look like a decision. Add one when you have confirmed the choice.
 
 ### 3. Version number
 

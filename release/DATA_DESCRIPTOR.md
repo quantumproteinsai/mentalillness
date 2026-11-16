@@ -217,7 +217,17 @@ See `CITATION.cff` for the intended citation once deposited.
 
 ## Licence
 
-Not yet chosen — see the release checklist. Note that several rows quote
-sentences from papers under varying licences; quotation for scholarly purposes
-is normal practice, but the licence choice should be made deliberately rather
-than inherited by default.
+**CC BY 4.0.** Full legal code in `LICENSE`; `CITATION.cff` and `.zenodo.json`
+carry the same.
+
+CC BY rather than CC0 because the value here is **curatorial**. The provenance,
+the circularity calls and the stratum labels are the work, and attribution is
+what lets a reader trace a row back to the sentence that justifies it. CC0 would
+maximise reuse but detach the rows from that reasoning.
+
+**What the licence does not cover.** Several rows quote sentences from papers
+published under varying licences, some of them closed — Navarro 2026 is Elsevier
+and reserves text-and-data-mining rights. Those quotations are made for
+scholarly purposes and remain the property of their publishers. **CC BY 4.0
+applies to this dataset's curation — the row structure, the labels, the bases
+and the notes — not to the quoted material it cites.**

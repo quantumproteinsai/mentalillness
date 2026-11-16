@@ -1592,6 +1592,52 @@ published version **adds** AFM confirming the left-handed twist (Figure S11) and
 a domain-swapping model through loop 2 (Figure S10) — neither affects the core
 range.
 
+### The ten `UNRECORDED` rows are resolved — and the headline row's primary was never opened [16 Nov 2026]
+
+By lookup, as the rule requires: each row's `verified_against` field read, then
+each named source checked against the register for an entry recording that
+anyone opened it. Full table in `PREREGISTRATION.md` §12.2. **Three**
+`version_of_record`, **six** `source_not_opened`, **one** `preprint`.
+
+**A fifth schema value was needed, and that is the finding.** My original four
+values all presumed the source *had* been read in some version. **Six rows do not
+satisfy that presumption.** Neither **Bradshaw 2017** nor **Cukkemane 2021** has a
+register entry — Bradshaw appears only as a citation *inside* papers that were
+read, Cukkemane only as a `claim_as_cited` in an entries list. All six already
+carried `verified_against_publisher_pdf: false`, so nothing changes status; what
+changes is that the reason is now written down.
+
+**And a detail worth saying out loud: `TRIOBP-1 324-348` names Bradshaw 2017 as
+its `source`, and Bradshaw 2017 has never been opened.** The row is real and
+well-supported — but by **Zaharija 2022**, read in full, which is where the
+sequence, the range and the figure all come from. **The project's headline row
+rests on a restatement, not on the paper its source field names.** That is fine
+provided we say so; it is not fine if a reader assumes the 2017 primary was
+checked. Noted on all three Zaharija-backed rows.
+
+### The one that is a freeze blocker
+
+**`DISC1 384-415` is `preprint`, and it is a primary-stratum DISCORDANT row** —
+one of the two the project was founded on. Its range rests on the **bioRxiv
+preprint plus the 2025 thesis**. The version of record — Zaharija & Bradshaw
+(2024) *Prog Neuropsychopharmacol Biol Psychiatry* 130:110923 — **has not been
+obtained**; the register records *"FULL TEXT NOT OBTAINED — Elsevier/Ovid
+paywall."*
+
+**Under §12.1 decision 3 a preprint is not citable. So the primary analysis
+would currently be computed on a stratum one of whose four members cannot be
+printed** — exactly the position FUS 39-95 was in this morning before the *Cell*
+PDF arrived.
+
+This does not add a blocker; it **sharpens the one already in §12 step 1**, which
+framed that paper as a re-check of Δ384-414 vs Δ384-415. It is now also the
+difference between the row being citable and not.
+
+**Flag conflict, and the rule.** That row carries
+`verified_against_publisher_pdf: true` — defensible for what was opened, since
+bioRxiv serves a real PDF, but misleading under §12.1. **Where the boolean and
+`source_version` disagree, `source_version` governs.**
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

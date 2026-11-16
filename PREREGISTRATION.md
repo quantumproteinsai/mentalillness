@@ -683,9 +683,51 @@ disagree, that is reported, not reconciled.**
 
 ---
 
-**Status: §12 step 3 is discharged. The remaining freeze blockers are the two
-PDFs in decision 3, plus steps 4 and 5 (predictor versions, then the freeze
-commit).**
+### 12.2 THE TEN `UNRECORDED` ROWS — RESOLVED, 16 Nov 2026
+
+By lookup, not guesswork: each row's `verified_against` field was read, and each
+named source was then checked against `data/references_to_check.json` for an
+entry recording that it was actually opened.
+
+| rows | source | `source_version` | citable? |
+|---|---|---|---|
+| TRIOBP-1 324-348, 333-340, 1-59 | Zaharija 2022, *IJMS* 23:11048 | `version_of_record` | **yes** — MDPI CC BY, the publisher PDF *is* the VOR |
+| TRIOBP-1 324-328, 60-189 | Bradshaw 2017 | **`source_not_opened`** | no |
+| DISC1 691-836, 716-761, 717-737/739-761, 748-769 | Cukkemane 2021 | **`source_not_opened`** | no |
+| DISC1 **384-415** | Zaharija & Bradshaw **bioRxiv** 2023 + 2025 thesis | **`preprint`** | **no — see below** |
+
+**A fifth schema value was needed.** The original four presumed the source *had*
+been read in some version. **Six rows do not satisfy that presumption:** neither
+Bradshaw 2017 nor Cukkemane 2021 has a register entry. Bradshaw 2017 appears only
+as a citation inside papers that *were* read; Cukkemane 2021 appears only as a
+`claim_as_cited` in an entries list. **All six already carry
+`verified_against_publisher_pdf: false`**, so the §12 gate already excluded them
+— this records *why*, and changes no status.
+
+**DISC1 384-415 is the one that matters, and it is a freeze blocker.** It is a
+**primary-stratum DISCORDANT row** — one of the two the project was founded on —
+and its range rests on a **preprint plus a thesis**. The version of record,
+Zaharija & Bradshaw (2024) *Prog Neuropsychopharmacol Biol Psychiatry* 130:110923
+(PMID 38135095), **has not been obtained**: register key `zaharija2024` records
+`read_in_full: false`, *"FULL TEXT NOT OBTAINED — Elsevier/Ovid paywall."*
+
+**This sharpens step 1 rather than adding a new item.** Step 1 already listed that
+paper as the one remaining thing, framed as *"does the published version write
+Δ384-414 or Δ384-415?"* **It is now more than a re-check: until that paper is
+obtained, the row cannot be cited at all**, and the primary analysis would be
+computed on a stratum one of whose four members is unprintable.
+
+**Flag conflict, and the rule for it.** DISC1 384-415 carries
+`verified_against_publisher_pdf: true`, which is defensible for what was opened —
+bioRxiv serves a real PDF — but misleading under §12.1. **Where the boolean flag
+and `source_version` disagree, `source_version` governs.** It is the stricter and
+more informative column.
+
+---
+
+**Status: §12 step 3 is discharged and the `UNRECORDED` rows are resolved. One
+freeze blocker remains — Zaharija & Bradshaw 2024 — plus steps 4 and 5 (predictor
+versions, then the freeze commit).**
 
 **Amendments after this point** follow the rule below: a commit to this file
 stating what changed, why, and **whether any score had been seen at the time.**

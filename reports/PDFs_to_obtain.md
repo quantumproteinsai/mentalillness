@@ -360,7 +360,28 @@ may be cited in a manuscript until obtained.**
     published version**, since a range can change in review — and this row's whole
     value is that its range disagrees with the ex vivo ALECT2 structure.
 
-17. **The `UNRECORDED` rows.** Every row promoted before 16 Nov carries
+17. ~~**The `UNRECORDED` rows.**~~ **RESOLVED 16 Nov 2026 by lookup** — see
+    PREREGISTRATION §12.2. Three are `version_of_record` (Zaharija 2022), six are
+    **`source_not_opened`** (Bradshaw 2017 and Cukkemane 2021 have never been opened by
+    anyone here), and one is **`preprint`**. That last one is item 18. Original entry
+    follows for the record.**
+
+18. **Zaharija & Bradshaw (2024), *Prog Neuropsychopharmacol Biol Psychiatry*
+    130:110923, PMID 38135095 — THE LAST FREEZE BLOCKER, and it is now bigger than it
+    looked.** `DISC1 384-415` is a **primary-stratum DISCORDANT row**, one of the two
+    the project was founded on, and its range currently rests on the **bioRxiv preprint**
+    plus the 2025 thesis. Under §12.1 decision 3 a preprint is **not citable**, so the
+    primary analysis would be computed on a stratum one of whose four members cannot be
+    printed. Full text not obtained — Elsevier/Ovid paywall. **Needed for two things at
+    once: whether the published version writes Δ384-414 or Δ384-415, and whether the row
+    may be cited at all.**
+
+19. **Bradshaw et al. 2017 and Cukkemane et al. 2021 — the two never-opened primaries.**
+    Six rows name them as `source` and neither has a register entry. They are already
+    gated out, so this is **lower priority than item 18** — but `TRIOBP-1 324-348`, the
+    project's headline row, names Bradshaw 2017 as its source while actually resting on
+    Zaharija 2022. **The headline row's own primary has never been read.** Worth closing
+    before publication even though nothing currently depends on it. Every row promoted before 16 Nov carries
     `verified_against_publisher_pdf: true` but no record of *which version* was
     opened. **This is a lookup, not a re-read, and it must not be guessed.**
     Resolve before the freeze.

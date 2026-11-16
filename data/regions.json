@@ -30,8 +30,9 @@
       "circularity_basis": "Found by experimental truncation scanning. The source paper states explicitly that it was NOT predicted. No predictor in the discovery path.",
       "stratum": "DISCORDANT",
       "stratum_basis": "DOCUMENTED IN PRINT. Bradshaw 2017 states the region was NOT predicted, and the published predictor negatives are cited evidence in CLAUDE.md. Experiment and prediction disagree. THIS IS ONE OF THE TWO ROWS THAT CARRY THE PRIMARY STATISTIC.",
-      "source_version": "UNRECORDED",
-      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
+      "source_version": "version_of_record",
+      "source_version_note": "Zaharija B et al. (2022) Int J Mol Sci 23:11048 -- PUBLISHER PDF READ IN FULL 16 Nov 2026, supplied by the author. MDPI, open access CC BY, so the publisher PDF IS the version of record: there is no author-manuscript/VOR distinction for this journal. CITABLE.",
+      "note_on_the_source_field": "READ THE source AND verified_against FIELDS TOGETHER. The source field names Bradshaw et al. 2017 (or \"IJMS 2022\"), but the document actually opened is Zaharija 2022. THIS ROW IS SUPPORTED BY ZAHARIJA 2022, NOT BY BRADSHAW 2017, which has never been read. Cite accordingly, and do not let the source field imply a primary nobody opened."
     },
     {
       "protein": "TRIOBP-1",
@@ -48,8 +49,8 @@
       "circularity_basis": "Sub-annotation of the clean 324-348 row, from the same truncation series. Not to be scored as an independent region -- see note.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "UNRECORDED",
-      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
+      "source_version": "source_not_opened",
+      "source_version_note": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED. source is Bradshaw et al. 2017, and the reference register contains NO entry for it -- it appears only as a citation inside other papers that were read. NOT CITABLE, and verified_against_publisher_pdf is already false, so the PREREGISTRATION 12 gate already excludes it; source_version now records WHY."
     },
     {
       "protein": "TRIOBP-1",
@@ -68,8 +69,9 @@
       "circularity_basis": "Found by experimental narrowing, truncating from the C-terminal end. No predictor.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "UNRECORDED",
-      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
+      "source_version": "version_of_record",
+      "source_version_note": "Zaharija B et al. (2022) Int J Mol Sci 23:11048 -- PUBLISHER PDF READ IN FULL 16 Nov 2026, supplied by the author. MDPI, open access CC BY, so the publisher PDF IS the version of record: there is no author-manuscript/VOR distinction for this journal. CITABLE.",
+      "note_on_the_source_field": "READ THE source AND verified_against FIELDS TOGETHER. The source field names Bradshaw et al. 2017 (or \"IJMS 2022\"), but the document actually opened is Zaharija 2022. THIS ROW IS SUPPORTED BY ZAHARIJA 2022, NOT BY BRADSHAW 2017, which has never been read. Cite accordingly, and do not let the source field imply a primary nobody opened."
     },
     {
       "protein": "TRIOBP-1",
@@ -86,8 +88,9 @@
       "circularity_basis": "Tested after an unexpected result, not nominated by prediction.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "UNRECORDED",
-      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
+      "source_version": "version_of_record",
+      "source_version_note": "Zaharija B et al. (2022) Int J Mol Sci 23:11048 -- PUBLISHER PDF READ IN FULL 16 Nov 2026, supplied by the author. MDPI, open access CC BY, so the publisher PDF IS the version of record: there is no author-manuscript/VOR distinction for this journal. CITABLE.",
+      "note_on_the_source_field": "READ THE source AND verified_against FIELDS TOGETHER. The source field names Bradshaw et al. 2017 (or \"IJMS 2022\"), but the document actually opened is Zaharija 2022. THIS ROW IS SUPPORTED BY ZAHARIJA 2022, NOT BY BRADSHAW 2017, which has never been read. Cite accordingly, and do not let the source field imply a primary nobody opened."
     },
     {
       "protein": "TRIOBP-1",
@@ -103,8 +106,8 @@
       "circularity_basis": "PREDICTION-NOMINATED. regions.json already records that 'earlier bioinformatics pointed here; the deletion work did NOT support it'. The region entered the literature because a predictor named it. KEEPING IT LABELLED IS THE POINT: it is a prediction-nominated region that experiment REFUTED, which makes it the most informative false positive in the set.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "UNRECORDED",
-      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
+      "source_version": "source_not_opened",
+      "source_version_note": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED. source is Bradshaw et al. 2017, and the reference register contains NO entry for it -- it appears only as a citation inside other papers that were read. NOT CITABLE, and verified_against_publisher_pdf is already false, so the PREREGISTRATION 12 gate already excludes it; source_version now records WHY."
     },
     {
       "protein": "DISC1",
@@ -119,8 +122,8 @@
       "circularity_basis": "Boundaries from ESPRIT, which is an EXPERIMENTAL solubility screen over a random truncation library, not an aggregation predictor. Borderline but clean: no sequence-based aggregation propensity was consulted to choose it.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "UNRECORDED",
-      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
+      "source_version": "source_not_opened",
+      "source_version_note": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED. source is Cukkemane et al. 2021, and the reference register contains NO entry for it -- it appears only inside an \"entries\" list as a claim_as_cited, i.e. a tracked claim rather than a paper anyone read. NOT CITABLE, and verified_against_publisher_pdf is already false."
     },
     {
       "protein": "DISC1",
@@ -137,8 +140,8 @@
       "circularity_basis": "Found by a RADAR sequence-repeat search -- a sequence method. Already flagged in found_by. Compounded by CAUTION_2026_11_15: it is a docking restraint, not a measurement.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "UNRECORDED",
-      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
+      "source_version": "source_not_opened",
+      "source_version_note": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED. source is Cukkemane et al. 2021, and the reference register contains NO entry for it -- it appears only inside an \"entries\" list as a claim_as_cited, i.e. a tracked claim rather than a paper anyone read. NOT CITABLE, and verified_against_publisher_pdf is already false."
     },
     {
       "protein": "DISC1",
@@ -153,8 +156,8 @@
       "circularity_basis": "The restraint segments used to build the 716-761 model; not independent of it, and RADAR-derived.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "UNRECORDED",
-      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
+      "source_version": "source_not_opened",
+      "source_version_note": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED. source is Cukkemane et al. 2021, and the reference register contains NO entry for it -- it appears only inside an \"entries\" list as a claim_as_cited, i.e. a tracked claim rather than a paper anyone read. NOT CITABLE, and verified_against_publisher_pdf is already false."
     },
     {
       "protein": "DISC1",
@@ -169,8 +172,8 @@
       "circularity_basis": "A splice variant boundary (the delta-22 deletion), defined by biology rather than by any sequence analysis.",
       "stratum": "PENDING",
       "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here.",
-      "source_version": "UNRECORDED",
-      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
+      "source_version": "source_not_opened",
+      "source_version_note": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED. source is Cukkemane et al. 2021, and the reference register contains NO entry for it -- it appears only inside an \"entries\" list as a claim_as_cited, i.e. a tracked claim rather than a paper anyone read. NOT CITABLE, and verified_against_publisher_pdf is already false."
     },
     {
       "protein": "DISC1",
@@ -194,8 +197,8 @@
       "stratum_basis": "RESOLVED 16 Nov 2026 FROM THE LITERATURE, NO RUN OF OURS REQUIRED, and it resolves cleanly because the registered legacy arm is narrower than the thesis's tool list. Zaharija 2025 section 4.3.5 ran five predictors on full-length DISC1 and FOUR OF FIVE gave \"aggregation/amyloid formation hotspots dispersed throughout the entirety of the protein sequence\" -- they did NOT single out the linker. Those four include every tool in PREREGISTRATION 5.1: TANGO (2004), AGGRESCAN (2007) and FoldAmyloid (2010). AGAINST THE REGISTERED LEGACY ARM THIS ROW IS UNAMBIGUOUSLY DISCORDANT.",
       "THE_ANUPP_EXCEPTION_AND_WHY_IT_IS_NOT_A_PROBLEM_FOR_THE_STRATUM": "ONE OF THE FIVE DID FIND IT. ANuPP (2021) named AA 387-395 and AA 400-415 as having the highest nucleation capacity. VERIFIED 16 Nov 2026: both lie entirely inside 384-415, so this is a precise hit and not a vague overlap. ANuPP is NOT in the frozen legacy arm (PREREGISTRATION 5.1 = TANGO, AGGRESCAN, FoldAmyloid, ProA), so it does not muddy this row's stratum. BUT IT IS IMPORTANT FOR A DIFFERENT REASON -- see _ANUPP_IS_PRIOR_ART_ON_H1 at the top level of this file. It must be cited, not rediscovered.",
       "frame_verified": "CLOSED 16 Nov 2026, a task that had been outstanding since the thesis was read. The thesis input was full-length human L-variant DISC1 as RefSeq NP_061132.2, NOT UniProt Q9NRI5, and the register flagged \"VERIFY THE FRAMES MATCH\". THEY ARE BYTE-IDENTICAL: both 854 aa, sequences equal on direct comparison. So the thesis's residue numbers transfer to our frame with no offset, and CLAUDE.md's DISC1 numbering trap does not bite here.",
-      "source_version": "UNRECORDED",
-      "source_version_note": "NOT YET DETERMINED. This row predates PREREGISTRATION.md 12.1 decision 3 (16 Nov 2026), which requires every row to record which version of its source was read. verified_against_publisher_pdf is already set on this row, but WHICH publisher version was opened is not recorded. DETERMINE BEFORE THE FREEZE -- it is a lookup, not a re-read, and it must not be guessed."
+      "source_version": "preprint",
+      "source_version_note": "NOT CITABLE, AND THIS IS THE SERIOUS ONE. The range was read from Zaharija & Bradshaw, bioRxiv 2023.08.03.551216v1 -- A PREPRINT -- corroborated by the Zaharija 2025 PhD thesis, which is also not a peer-reviewed article. THE VERSION OF RECORD, Zaharija & Bradshaw (2024) Prog Neuropsychopharmacol Biol Psychiatry 130:110923, HAS NOT BEEN OBTAINED: register key zaharija2024 records read_in_full false, \"ABSTRACT READ ... FULL TEXT NOT OBTAINED -- Elsevier/Ovid paywall\". NOTE THE FLAG CONFLICT: this row carries verified_against_publisher_pdf = true, which is defensible for what was opened (bioRxiv serves a real PDF) but is MISLEADING under 12.1. WHERE THE TWO DISAGREE, source_version GOVERNS -- it is the stricter and more informative column."
     },
     {
       "protein": "tau",
@@ -457,9 +460,18 @@
       "author_manuscript": "NIHMS or accepted manuscript -- the authors' own accepted text. CITABLE, but the version must be named in the citation, because copyediting can alter wording and this project quotes sentences.",
       "pmc_full_text": "Read as web text with no PDF opened. NOT CITABLE.",
       "preprint": "Not peer reviewed. NOT CITABLE unless the row is explicitly about the preprint.",
-      "UNRECORDED": "Predates the rule. Must be resolved before the freeze; it is a lookup, not a re-read."
+      "UNRECORDED": "Predates the rule. Must be resolved before the freeze; it is a lookup, not a re-read.",
+      "source_not_opened": "THE ROW'S OWN PRIMARY HAS NEVER BEEN OPENED by anyone on this project -- the row rests on restatements in other papers, or on nothing. NOT CITABLE. Added 16 Nov 2026 when resolving the UNRECORDED rows, because the original four values all presumed the source HAD been read in some version, and six rows turned out not to satisfy that presumption."
     },
-    "the_two_freeze_blockers_this_created": "BOTH CLEARED 16 Nov 2026. FUS 39-95 now version_of_record (Murray 2017, Cell, read in full). LECT2 55-75 now author_manuscript (Richards 2023, Structure 31:1386, PMC11456264, read), with the 55-75 range confirmed unchanged through peer review. A LESSON FROM THE SECOND ONE: A PMC IDENTIFIER DOES NOT MEAN A PUBLISHED VERSION. PMC hosts bioRxiv preprints under the NIH preprint pilot, and PMC9934627 is one of them. When naming a target on the obtain list, name the JOURNAL AND DOI, not a PMC id, and check the PMC record for a preprint banner before treating it as the version of record. REMAINING under this schema: the ten UNRECORDED rows."
+    "the_two_freeze_blockers_this_created": "BOTH CLEARED 16 Nov 2026. FUS 39-95 now version_of_record (Murray 2017, Cell, read in full). LECT2 55-75 now author_manuscript (Richards 2023, Structure 31:1386, PMC11456264, read), with the 55-75 range confirmed unchanged through peer review. A LESSON FROM THE SECOND ONE: A PMC IDENTIFIER DOES NOT MEAN A PUBLISHED VERSION. PMC hosts bioRxiv preprints under the NIH preprint pilot, and PMC9934627 is one of them. When naming a target on the obtain list, name the JOURNAL AND DOI, not a PMC id, and check the PMC record for a preprint banner before treating it as the version of record. REMAINING under this schema: the ten UNRECORDED rows.",
+    "THE_TEN_UNRECORDED_ROWS_RESOLVED_16_NOV_2026": {
+      "method": "LOOKUP, NOT GUESSWORK, as 12.1 decision 3 requires. Each row's verified_against field was read, and each named source was then looked up in data/references_to_check.json to see whether an entry exists recording that it was opened.",
+      "version_of_record_3_rows": "TRIOBP-1 324-348, 333-340 and 1-59 all rest on Zaharija 2022 (IJMS 23:11048), publisher PDF read in full. MDPI is fully open access, so the publisher PDF IS the version of record. CITABLE.",
+      "source_not_opened_6_rows": "TRIOBP-1 324-328 and 60-189 (Bradshaw 2017) and DISC1 691-836, 716-761, 717-737/739-761 and 748-769 (Cukkemane 2021). NEITHER PRIMARY HAS AN ENTRY IN THE REGISTER. Bradshaw 2017 appears only as a citation inside papers that were read; Cukkemane 2021 appears only as a claim_as_cited in an entries list. All six already carry verified_against_publisher_pdf = false, so the 12 gate already excluded them -- this makes the reason explicit rather than changing their status.",
+      "preprint_1_row_AND_IT_IS_A_PRIMARY_STRATUM_ROW": "DISC1 384-415. See its own note. THE DISCORDANT STRATUM HAS FOUR ROWS AND ONE OF THEM IS CURRENTLY UNCITABLE -- exactly the position FUS 39-95 was in before the Cell PDF arrived.",
+      "what_this_changes_about_the_set": "NOTHING ABOUT THE SCIENCE, EVERYTHING ABOUT WHAT MAY BE PRINTED. Six rows were already gated out by the boolean flag. The new information is that DISC1 384-415, which the project treats as one of its two founding rows and which sits in the primary analysis stratum, rests on a preprint plus a thesis while its version of record sits behind an Elsevier paywall.",
+      "the_blocker_this_sharpens": "PREREGISTRATION 12 step 1 already listed Zaharija & Bradshaw 2024 (Prog Neuropsychopharmacol Biol Psychiatry 130:110923, PMID 38135095) as the one remaining item, framed as 'check whether the published version writes delta-384-414 or delta-384-415'. IT IS NOW MORE THAN A RE-CHECK: until that paper is obtained, the row cannot be cited at all."
+    }
   },
   "_A_CANDIDATE_ANSWER_TO_CLAUDE_MDs_HEADLINE_QUESTION": {
     "status": "HYPOTHESIS, NOT A RESULT. It is two papers' interpretation plus our synthesis, and it is recorded as something to TEST, not something established. It has not been measured by anyone here.",

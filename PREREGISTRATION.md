@@ -140,12 +140,52 @@ not report those as findings.
 
 ### 5.1 Legacy generation (the 2017 baseline)
 
-| tool | status 15 Nov 2026 | how it will be run |
+| tool | status **16 Nov 2026**, content-verified | how it will be run |
 |---|---|---|
-| **TANGO** | live, `tango.crg.es` | web, settings recorded verbatim |
-| **AGGRESCAN** | live, `andromeda.uab.cat/bioinf/aggrescan/` | web, settings recorded verbatim |
-| **FoldAmyloid** | **server dead**, method fully specified | **reimplemented** from Garbuzynskiy 2010 + the scales in Galzitskaya 2006b |
-| **ProA** | **dead, HTTP 404, no replacement** | **cannot be run. Recorded as unavailable, not as a failure.** |
+| **TANGO** | **DOWN.** `tango.crg.es` returns **HTTP 200 with a body reading "ERROR 404 … temporarily unavailable while we carry out maintenance"** | **cannot be run today.** Recheck before the freeze; maintenance may end |
+| **AGGRESCAN** | **LIVE**, redirects to `andromeda.uab.cat/bioinf/aggrescan/` | web, settings recorded verbatim |
+| **FoldAmyloid** | **server dead**, both hosts return 000 | **reimplemented** from Garbuzynskiy 2010 + the scales in Galzitskaya 2006b |
+| **ProA** | **DEAD.** `abl.ku.edu/ProA/` now returns **HTTP 200 by silently redirecting to the lab homepage** `mgm.ku.edu` | **cannot be run. Recorded as unavailable, not as a failure.** |
+
+**STATUS-CODE CHECKING IS NOT ENOUGH, AND THREE OF THESE FOUR PROVE IT.** A
+naive `curl -o /dev/null -w '%{http_code}'` sweep on 16 Nov 2026 returned **200
+for TANGO and 200 for ProA**, and would have recorded both as available. TANGO
+serves a 404 page under a 200 status; ProA redirects to a generic lab homepage.
+**Only fetching the body and looking for the tool's own name distinguishes a live
+server from a tombstone.** Any future availability check in this project must
+verify content, not status, and must record the final URL after redirects.
+
+**So one of the four legacy tools is usable right now.** That is worse than §5.1
+assumed on 15 Nov, and it is the strongest possible restatement of this section's
+own rule that *a web form is not a reproducible tool*.
+
+#### 5.1a The legacy arm does not need to be re-run — REGISTERED 16 Nov 2026
+
+**The collapse of the legacy servers turns out not to block the benchmark, because
+every discordant row already carries a PUBLISHED legacy run, with the tools
+named:**
+
+| row | published legacy run | tools named |
+|---|---|---|
+| TRIOBP-1 324-348 | Bradshaw 2014, *PLoS ONE* 9:e111196 | AGGRESCAN, FoldAmyloid, ProA, TANGO — **all four**, with thresholds and URLs |
+| FUS 39-95 | Murray 2017, *Cell* 171:615 | eight tools, every parameter published |
+| hnRNPA1 251-295 | Sharma 2023, *JMB* 435:168211 | seven tools, false positives quantified |
+| DISC1 384-415 | Zaharija 2025 thesis §4.3.5 | five tools |
+
+**Registered consequence:** the legacy arm for the discordant stratum is taken
+from the **published** runs, cited, not re-executed. Our own runs are attempted
+where a server is live, and reported as **corroboration** where they agree and as
+a **discrepancy** where they do not.
+
+**This is not a convenience.** It is more defensible than re-running: the
+published runs were done on the contemporaneous servers by the groups that
+mapped the regions, which is the comparison the project's premise actually rests
+on. Re-running a 2026 server and calling it "the 2004-2010 generation" would be
+the weaker claim.
+
+**What still must run is the MODERN arm** (§5.2), which is the untested part and
+the whole point. Its version-pinnable-and-local rule now looks like the single
+most load-bearing decision in this document.
 
 **The FoldAmyloid reimplementation is itself a pre-registered object.** It must reproduce
 the paper's own published checks before it may score our rows: the reported 80%/72%

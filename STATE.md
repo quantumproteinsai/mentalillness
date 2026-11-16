@@ -1877,6 +1877,61 @@ domain**. In all three the tools flag something **structurally sequestered** and
 miss what is free to engage. Still a hypothesis from three Discussion sections,
 and still silent on FUS-LC, which is wholly disordered.
 
+### Samardzija 2026, and the 2024 paper is genuinely unobtainable [READ, 16 Nov 2026]
+
+*Sci Rep* 16:8240, published 11 Feb 2026 — the newest output of the group that
+mapped both founding regions. **No predictor runs and no new mapped regions**, so
+it adds no row. Three things it does give:
+
+**1. The §5.2 novelty claim survives another check.** Named software is
+**ImageLab only**. No TANGO, AGGRESCAN, FoldAmyloid, ProA, WALTZ, PASTA,
+AmylPred2, ZipperDB, AggreProt, AggrescanAI or any PLM. The gap holds in the
+group's most recent paper.
+
+**2. The controls caveat is now peer-reviewed**, not thesis-only: *"Five of the
+eight controls also showed some protein insolubility"*, and flatly, **"the mere
+presence of insoluble protein cannot be used for diagnostic reference."** Cite
+this rather than the thesis.
+
+**3. It corroborates DISC1 384-415 from a third document.** Methods: *"amino
+acids 257-655 of human DISC1, representing the D and I domains, **as well as the
+aggregation prone-region between them** [44]"* — and **reference 44 is Zaharija &
+Bradshaw 2024**, the unobtainable version of record. Verified: with D at 257-383
+and I at 539-655, our row lies strictly between them and inside the 257-655
+construct. Both checks pass.
+
+*(A caveat on the premise, not on our rows: the paper's actual finding is that
+insolubility is heterogeneous across brain regions and even between hemispheres.
+That bears on the post-mortem evidence motivating the field, not on fragment-level
+mapping in cells. No statistics were performed; the 1.5-fold threshold is
+explicitly exploratory.)*
+
+### The 2024 paper cannot be obtained, and that changes a rule
+
+Checked directly, and the author reports the same. **OpenAlex gives
+`oa_status: green` with exactly one open location — the bioRxiv preprint already
+in hand — and no PMCID.** Europe PMC: `pmcid None, isOpenAccess N, inEPMC N,
+hasPDF N`. No author manuscript, no repository copy.
+
+§12.1 decision 3 said *"a rule is not weakened to accommodate a row when the row
+**can** be obtained."* **This row cannot** — and it is a primary-stratum row.
+Leaving it uncitable would be the rule defeating its own purpose. So a **narrow,
+dated amendment**, with all three conditions required:
+
+> a preprint may be cited only when **(i)** the version of record is
+> **demonstrably unobtainable**, as a documented negative; **(ii)** the claim is
+> **corroborated by an independent document read in full**; and **(iii)** the
+> citation **names the preprint** and states the VOR was not consulted.
+
+**All three hold here**, with (ii) met twice — the 2025 thesis Table 11 plasmid
+names, and now Samardzija 2026.
+
+**This buys citability, not certainty.** It does **not** settle Δ384-414 versus
+Δ384-415; that still rests on the thesis plasmid names, and **the published
+boundaries remain unchecked.** The exception is deliberately hard to reuse, and
+**overturn it if you would rather carry the row as uncitable** — that is
+defensible, and costs one row out of the primary stratum.
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

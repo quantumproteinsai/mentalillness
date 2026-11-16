@@ -639,6 +639,44 @@ quotes sentences.
 
 **A rule is not weakened to accommodate a row when the row can be obtained.**
 
+#### AMENDMENT, 16 Nov 2026: the case where the row *cannot* be obtained
+
+The clause above was written for rows whose version of record is merely
+*unfetched*. **DISC1 384-415 is the other case, and it is a primary-stratum row.**
+
+**The negative is documented, not assumed.** For `10.1016/j.pnpbp.2023.110923`,
+OpenAlex reports `oa_status: green` with **exactly one** open location — the
+bioRxiv preprint already in hand — and **no PMCID**; Europe PMC returns
+`pmcid: None, isOpenAccess: N, inEPMC: N, hasPDF: N`. No author manuscript, no
+repository copy. The author reports the same.
+
+**Leaving a founding row uncitable on that basis would be a rule defeating its own
+purpose.** So, narrowly:
+
+> **A preprint may be cited when, and only when, all three hold:**
+> **(i)** the version of record is **demonstrably unobtainable** — a documented
+> negative, never an unmade attempt;
+> **(ii)** the specific claim is **corroborated by at least one independent
+> document that was read in full**; and
+> **(iii)** the citation **names the preprint** as the source read and **states
+> that the version of record was not consulted.**
+
+**DISC1 384-415 satisfies all three**: (ii) is met twice over, by the Zaharija
+2025 thesis (Table 11 names the plasmids `DISC1 (Δ384-415)`, `DISC1 (1-655
+Δ384-415)`, `DISC1 (1-836 Δ384-415)`) and by Samardžija 2026, which cites the
+2024 paper for *"the aggregation prone-region between"* D and I inside a 257-655
+construct — both verified arithmetically against our row.
+
+**This buys citability, not certainty.** It does **not** settle Δ384-414 versus
+Δ384-415; that rests on the thesis plasmid names, and **the published boundaries
+remain unchecked.** Say so in print.
+
+**The exception is deliberately hard to reuse.** Condition (i) requires evidence
+of unobtainability, and condition (ii) requires a document someone actually
+opened. **Overturn this amendment if you would rather carry the row as
+uncitable** — that is a defensible position and the cost is one row out of the
+primary stratum.
+
 ---
 
 **4. tau PHF6 306-311 — and it has THREE roles, not two.**

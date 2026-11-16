@@ -342,9 +342,15 @@ the literature, not a run of bad luck:
 | Zaharija & Bradshaw 2023 | "AA 539-738" for I+S | same string for S+C | S+C = **635-836** |
 | Leliveld 2009 | "668-**747**" (Abstract, Discussion) | "668 and **748**" (Discussion) | **668-747** (2 of 3) |
 | Leliveld 2009 | S704 throughout | "DISC1-S**707**Δ22" (p.7) | **S704** |
+| Mizuguchi 2019 (JBC) | Δ**68-76** (Table 1, Results, Methods) | "Δ**68-78**" ×2 (p.13521) | **68-76** | 
+| Seuma 2021 (eLife) | gatekeepers "...E11, **D22**, L17, A42" (Discussion) | "...L17, **E22**, A42" (Methods) | **E22** — Aβ22 is Glu; the Dutch mutation is E22Q |
 
-**Six, across four papers and two independent groups.** None of them changed a
-row, because each was caught by arithmetic or by a figure. **Verify every
+**Eight, across six papers and FOUR independent groups** (updated 16 Nov 2026: the
+Mizuguchi slip found by reading the apoA-I primary, the Seuma slip reported by the
+unbiased-screen audit). None of them changed a row, because each was caught by
+arithmetic, by a figure, or — in the Seuma case — by knowing the residue identity.
+**The pattern is now clearly a property of the field and not of one lab:** the first
+six were Bradshaw/Korth-adjacent, the last two are from two unrelated groups. **Verify every
 residue number in this literature against the figure or the arithmetic,
 including numbers in the paper a row is sourced to, and including the abstract.**
 
@@ -657,6 +663,66 @@ repeat length.
 Amyloid predictors "were all unsuccessful in determining the beta-core interface
 of DISC1". And the full-length hnRNPA1 cryo-EM core "does not encompass the most
 aggregation-prone segments of the protein" — a second case of the same shape.
+
+### Murray 2017 publishes both halves of this project's shape, for FUS [READ, 16 Nov 2026]
+
+**Surfaced by the TDP-43/FUS audit and then verified directly** (WebFetch of
+PMC5650524, not left at agent grade). Murray et al. 2017, *Cell* 171:615,
+Discussion, "What determines the fibril core?":
+
+> "Aggrescan, FISH, FoldAmyloid, MetAmyl, and PASTA 2.0 predict a low propensity
+> for amyloid formation across the FUS-LC"
+
+ZipperDB, Zyggregator and WALTZ "predict that certain short segments of FUS-LC
+may form amyloidlike structures" but "with no consensus on the identities of
+these segments." The experimentally determined core is **39-95**. And the
+compositional argument is pre-empted in the same section:
+
+> "The amino acid composition of residues 39-95 (21.1% Gly, 31.6% Ser, 17.5%
+> Gln, 14.0% Tyr, and 10.5% Thr)" ... "is not very different from that of
+> residues 1-214"
+
+**So eight named predictors failing on an experimentally mapped core, AND
+"composition does not explain it", are both in print in *Cell* since 2017.**
+
+**What this does not touch.** The §5.2 novelty claim is **intact**: Murray 2017
+is a 2017 paper on FUS, runs no PLM-era tool, and touches neither DISC1 nor
+TRIOBP-1. The legacy-failure premise is **strengthened, not damaged** —
+`CLAUDE.md` already declares that premise cited evidence rather than a result to
+establish, and this is a third independent instance of it.
+
+**What it does cost us.** The generic compositional move is gone. This project
+cannot present *"and composition does not explain why the predictors missed it"*
+as a new insight. What survives is the **inversion**, which is a different and
+stronger claim: TRIOBP-1 324-348 is **48.0% proline-plus-charge**, i.e. built
+from the residues the field deliberately engineers *in* to *suppress*
+aggregation, and was mapped as aggregation-critical anyway. Murray says
+composition is *uninformative*; we would be saying composition points the
+*wrong way*.
+
+**And the inversion is n = 1 by our own accounting.**
+`scripts/gatekeeper_density.py` prints `THE SEPARATION DOES NOT GENERALISE`
+because DISC1 384-415 came in at **18.8%**, 2.1 points above the worst deposited
+zipper. So the one surviving novel compositional claim rests on a single region.
+**This is a framing decision for the author, not a data problem:** is an n = 1
+inversion with the generic version pre-empted a headline, or a discussion
+paragraph? Claude should not decide it.
+
+**Third prior-art hit, same audit round.** Seuma 2021 (*eLife* 10:e63364)
+measures **"seven gatekeeper residues (D1, E3, D7, E11, L17, E22, A42)"** in
+Aβ42 where mutations *increase* nucleation — charged residues acting as measured
+aggregation suppressors. **The gatekeeper concept itself is prior art since
+2021.** Cite it; do not re-introduce it.
+
+### The FoldAmyloid host question, narrowed not solved
+
+The audit noted that Murray 2017 ran FoldAmyloid successfully at
+`bioinfo.protres.ru`, which bears on line 102 of this file naming
+`antares.protres.ru` as the paper's host and `bioinfo` as the "wrong" one.
+**Checked directly, 16 Nov 2026: both return 000.** So the correction is real
+but narrow — `bioinfo.protres.ru` was a *legitimate* FoldAmyloid host, not a
+mistake, and was working as recently as 2017. **It does not revive the tool.**
+The §5.2 rule stands: a web form is not a reproducible tool.
 
 ### What that inventory is not
 

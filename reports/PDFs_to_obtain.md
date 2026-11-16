@@ -7,11 +7,25 @@ Ranked by what changes if you read it.
 
 ## Tier 0 — these decide whether the project is viable
 
-0. **Zaharija B (2025), PhD thesis, University of Rijeka** — "Karakterizacija agregacije
-   DISC1 proteina u neuropsihijatrijskim poremećajima", mentor N.J. Bradshaw, co-mentor
-   R. Andretić Waldowski. **FOUND 16 Nov 2026 BY ACCIDENT, while hunting the 2024 full
-   text. The project did not know it existed.** [SNIPPET — not read; everything here is
-   search-engine summary, not quoted.]
+0. ~~**Zaharija B (2025), PhD thesis, University of Rijeka.**~~ **READ IN FULL 16 Nov
+   2026 — obtained from the uniri repository by the author. THE SINGLE MOST CONSEQUENTIAL
+   DOCUMENT READ ON THIS PROJECT, AND IT WAS FOUND BY ACCIDENT.** Defended 23 June 2025,
+   245 pp, 48 figures, 392 references. urn:nbn:hr:193:978729.
+
+   **It falsifies the broad novelty claim and clears the last freeze blocker.** §4.3.5 runs
+   **five aggregation predictors on full-length DISC1** — TANGO, AGGRESCAN, FoldAmyloid,
+   MetAmyl and ANuPP, six algorithms, with a per-residue consensus. The narrow claim in
+   `PREREGISTRATION.md` §5.2 (*no **PLM** predictor*) survives untouched; the broad version
+   in `STATE.md` did not and is struck. Four of five tools gave hotspots dispersed across
+   the whole sequence; only ANuPP named the linker. **Their result supports H1 — but it is
+   theirs, and must be cited rather than rediscovered.** Full assessment in
+   `data/references_to_check.json`, key `zaharija2025thesis`.
+
+   ~~Routes, neither automatable.~~ **The route that worked was asking.** The faculty PDF
+   404s and `repository.biotech.uniri.hr` returns 418 to scripts; the author retrieved it
+   by hand. *Fifth document in two days obtained by asking rather than by retrieval.*
+
+   ~~Previously, when this entry was a lead:~~ [SNIPPET — superseded by the full read.]
 
    **It is wanted for two unrelated reasons, and it is the best remaining route to
    both.**

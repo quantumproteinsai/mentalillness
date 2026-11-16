@@ -152,10 +152,60 @@ protein language model, nor AlphaFold.** The thesis's only "in silico" phrase is
 about *CRMP1* missense variants and is a citation to Ravindran et al. 2022, not
 work done here.
 
-So the claim stands as written: **no aggregation predictor, of any generation,
+~~So the claim stands as written: no aggregation predictor, of any generation,
 has been run on DISC1 or TRIOBP-1 by the group that mapped their
-aggregation-critical regions.** The project's novelty does not change, and
-`PREREGISTRATION.md` §11's fourth falsification condition is discharged.
+aggregation-critical regions.~~
+
+### FALSIFIED 16 Nov 2026. That claim was wrong, and the wrong thesis was read. [READ]
+
+**Samardžija's thesis contains no predictor runs. ZAHARIJA'S DOES.** Her 2025
+thesis — the one found by accident the same day, then supplied from the uniri
+repository — contains **§4.3.5, "Assessing the aggregating potential of the
+linker region using online prediction tools"**, Figures 40 and 41, and Table 5,
+which lists the servers with URLs. **The group that mapped DISC1's
+aggregation-critical region ran five aggregation predictors on it.**
+
+| tool | year | status for this project |
+|---|---|---|
+| TANGO | 2004 | legacy baseline — **already run on DISC1** |
+| AGGRESCAN | 2007 | legacy baseline — **already run on DISC1** |
+| FoldAmyloid | 2010 | legacy baseline — **already run on DISC1** |
+| MetAmyl | 2013 | not previously in our set — **already run** |
+| ANuPP | 2021 | not previously in our set — **already run** |
+
+Run on full-length DISC1 (**NP_061132.2**, not UniProt Q9NRI5 — check the frames
+match), at default parameters, with **a per-residue consensus computed across
+all six algorithms** (Figure 41B). That is, in outline, the retrospective
+legacy arm of this project, already executed and already in a thesis.
+
+**What this kills.** The sentence above, in that form. Any plan to run TANGO,
+AGGRESCAN, FoldAmyloid, MetAmyl or ANuPP on DISC1 and present the result as new
+is now reproducing published work. **Rule 2's cousin: check the prior art before
+spending, and this time the prior art was inside a document the obtain list had
+already flagged.**
+
+**What survives, and it is the actual question.** `PREREGISTRATION.md` §5.2
+states the novelty claim narrowly — *"no **PLM** predictor has ever been run on
+DISC1 or TRIOBP-1"* — and **that is still true.** No protein language model, no
+AggreProt (2024), no AggrescanAI (2026) appears anywhere in the thesis. The
+project's question as CLAUDE.md states it — *do **modern** predictors recover
+what the 2004-2010 generation missed* — is untouched. The pre-registration was
+written more carefully than this file was.
+
+**And their own result is evidence for the premise, not against it.** Zaharija
+reports that four of the five tools returned "aggregation/amyloid formation
+hotspots dispersed throughout the entirety of the protein sequence" — i.e. they
+did **not** single out the linker. Only ANuPP did, calling AA **387-395** and
+**400-415** the highest-nucleation segments. So the legacy generation missed it
+and one 2021 tool found it, reported by the group itself. That is a sharper and
+better-sourced starting point than the one we had — but it is **theirs**, and
+must be cited, not rediscovered.
+
+**Caveat on scope.** This is the *thesis*. Whether §4.3.5 also appears in the
+published Zaharija & Bradshaw 2024 is unknown — the preprint (read in full) does
+**not** contain it, so it was added later or is thesis-only. Either way the runs
+exist. **TRIOBP-1 may still be clean:** nothing here shows predictors run on it,
+and Zaharija 2022 (read in full) reports none.
 
 **Three things the thesis changes anyway** (none of them the predictor question):
 

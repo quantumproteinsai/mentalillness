@@ -361,12 +361,30 @@ Stated so it cannot be quietly avoided:
 - Tier B recovery rates for legacy and modern are **indistinguishable within their CIs**
   → there is no generational effect, and the paper is about hexapeptide training, not
   about progress.
-- ~~The 2025 PhD thesis from the experimental group contains modern predictor runs → the
-  novelty claim changes.~~ **DISCHARGED 15 Nov 2026.** Samardžija's thesis was supplied by
-  the author and **read in full**: it contains no aggregation predictor runs of any kind,
-  of either generation. Its methods chapter has no bioinformatics section, and its only
-  sequence-analysis tool is ProSite, used to draw domain cartoons. The novelty claim is
-  unchanged. See `STATE.md` and `reports/PDFs_to_obtain.md` item 1.
+- **The 2025 PhD thesis from the experimental group contains modern predictor runs → the
+  novelty claim changes.** ~~DISCHARGED 15 Nov 2026 against Samardžija's thesis.~~
+  **RE-OPENED AND PARTLY TRIGGERED, 16 Nov 2026 — THERE WERE TWO 2025 THESES.**
+
+  Samardžija's contains no predictor runs. **Zaharija's (read in full, 16 Nov 2026) runs
+  five**, in §4.3.5 on full-length DISC1 (NP_061132.2): **TANGO, AGGRESCAN, FoldAmyloid,
+  MetAmyl and ANuPP**, six algorithms, default parameters, with a per-residue consensus.
+
+  **The condition is triggered for the legacy arm and NOT for the modern arm.** No PLM, no
+  AggreProt, no AggrescanAI appears. §5.2's claim — *"no PLM predictor has ever been run
+  on DISC1 or TRIOBP-1"* — is **intact**, and it is the claim this document rests on. What
+  changes:
+
+  1. **The retrospective legacy comparison on DISC1 is pre-empted.** Running TANGO,
+     AGGRESCAN, FoldAmyloid, MetAmyl or ANuPP on DISC1 and reporting it as new would
+     reproduce a published thesis. Cite Zaharija 2025 for it instead.
+  2. **Their result strengthens H1 rather than weakening it.** Four of five tools gave
+     hotspots "dispersed throughout the entirety of the protein sequence"; only ANuPP
+     named the linker (AA 387-395, 400-415). Legacy missed it; one 2021 tool found it.
+  3. **TRIOBP-1 is still clean** on present evidence, so the legacy arm survives there.
+
+  **Before the freeze:** restate §5.2's novelty sentence in the abstract and §1 so it says
+  *PLM-era* explicitly, and add Zaharija 2025 §4.3.5 as cited prior art for the legacy
+  DISC1 scores. See `STATE.md` and `reports/PDFs_to_obtain.md` item 0.
 
 ---
 

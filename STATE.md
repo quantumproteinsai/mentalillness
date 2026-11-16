@@ -1079,6 +1079,54 @@ Discordant stratum now: **TRIOBP-1 324-348**, **FUS 39-95**, and **DISC1 384-415
 assignment is recoverable from the literature rather than needing our own run;
 **read it out before the freeze, do not assume it**).
 
+### DISC1 384-415 resolves to DISCORDANT — and ANuPP is prior art on H1 [16 Nov 2026]
+
+Resolved from the literature, no run of ours needed. Zaharija 2025 §4.3.5 ran five
+predictors on full-length DISC1; **four of five gave hotspots "dispersed
+throughout the entirety of the protein sequence"** and did not single out the
+linker. Those four include **every tool in the frozen legacy arm** — TANGO,
+AGGRESCAN, FoldAmyloid. So against §5.1 the row is unambiguously **DISCORDANT**.
+The discordant stratum is now **three**: TRIOBP-1 324-348, FUS 39-95, DISC1
+384-415.
+
+**A frame task closed on the way.** The thesis used RefSeq **NP_061132.2**, not
+UniProt Q9NRI5, and the register had flagged *"VERIFY THE FRAMES MATCH."* **They
+are byte-identical — both 854 aa, sequences equal on direct comparison.** The
+thesis's numbers transfer with no offset.
+
+### But one of the five found it, and that is the uncomfortable part
+
+**ANuPP (2021) named AA 387-395 and AA 400-415 as highest nucleation capacity.
+Verified: both lie entirely inside 384-415** — a precise hit, not a vague
+overlap.
+
+ANuPP is not in the frozen legacy arm, so it does not muddy the stratum. **It
+does something more awkward.** `CLAUDE.md`'s headline question is whether *modern*
+predictors recover what the 2004-2010 generation missed. **For DISC1 a partial
+answer is already in print, and it is yes** — published by the group that mapped
+the region.
+
+This is **not** a pre-emption of §5.2, which claims only that no **PLM** has been
+run on DISC1 or TRIOBP-1; ANuPP is not a PLM and that claim survives. But the
+project can no longer present *"a newer tool finds what the old ones missed"* as
+its own discovery for DISC1. **Cite it as the starting point and position against
+it.**
+
+**Three questions it leaves open, and they are better than the one it closes:**
+
+1. Does the **PLM** generation recover it? Nobody has tested this.
+2. **Does ANuPP's success generalise?** It has **never been run on TRIOBP-1** —
+   the thesis contains no TRIOBP-1 predictor runs at all — nor on FUS 39-95. One
+   hit on one protein is not a trend.
+3. **ANuPP currently has no home in the pre-registration.** §5.1 freezes the
+   legacy arm without it; §5.2 freezes the modern arm as AggreProt and
+   AggrescanAI. A 2021 tool that has already succeeded on one of our rows belongs
+   explicitly in one arm or a named third category.
+
+**That third point needs the author, and it carries a conflict of interest worth
+naming out loud:** ANuPP succeeding is inconvenient for a project about predictor
+failure. **Whichever way it is placed, say so in print.**
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

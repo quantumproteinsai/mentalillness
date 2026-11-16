@@ -106,6 +106,18 @@ That is defensible, and publishing the pre-registration alongside the data is
 arguably a virtue. **It should be a decision, not an inheritance.** The manual
 upload route deposits exactly the four files in `release/` and nothing else.
 
+### DO NOT PUT A DOI BACK INTO `.zenodo.json`
+
+It was added there on 16 Nov 2026 and **removed the same day**. `.zenodo.json`
+is read by the GitHub integration at *every* release, so it is a persistent
+template; a DOI identifies *one version*. A version DOI left in that file means
+a later v1.1.0 deposit carries v1.0.0's DOI, or is refused a new one — a fault
+that surfaces months later, when the reason is forgotten.
+
+**The DOI lives in `CITATION.cff`, in `release/DATA_DESCRIPTOR.md`, and in the
+`notes` string.** Those describe one version. The rest of `.zenodo.json` does
+not.
+
 ### Two DOIs, and they are not interchangeable
 
 Zenodo mints a **concept DOI** that always resolves to the latest version, and a

@@ -848,6 +848,33 @@ assert.
 6-residue *measurement* or an inference from a coarser grid. **Figures 1 and 4
 remain outstanding**; the text is READ, the figures are not.
 
+### RATIFIED BY THE AUTHOR, 16 Nov 2026: the reframing is adopted
+
+The recommendation below was put to the author and **accepted**. It is applied, not
+pending. What changed in `PREREGISTRATION.md`, all as dated amendments rather than
+silent edits:
+
+- **H3 retired as a novelty claim** (§9.1). Gatekeeper composition becomes context with
+  four citations. No sentence may imply it is new.
+- **H4 promoted** (§2) and it is now the claim the project rests on: *a window-scanning
+  predictor fails on a region containing a zipper-grade window it was built to detect,
+  in a case structurally identical to one where it succeeds.*
+- **Tau PHF6 306-311 is a REQUIRED control arm**, not an optional widening row. If it
+  cannot be promoted, **H4 is withdrawn rather than reported without its control.**
+- **The power calculation is stratified** (§7 amendment). The floor of 15 is restated as
+  a floor on the *dataset*, not on the *test*; the primary statistic is computed on the
+  **discordant stratum** and the concordant stratum becomes a pipeline positive control.
+  If the discordant stratum cannot grow past n = 2, the quantitative claim is withdrawn
+  and the project reports a case study plus a dataset — **pre-registered as an outcome,
+  not a failure.**
+- **`gatekeeper_density.py` rewritten at the top and the bottom** to say what the table
+  is now for, and the tau PHF6 row flagged `[ROLE CONFLICT]`.
+
+**The one thing deliberately left unresolved:** which role tau PHF6 keeps in which
+table. It cannot be a deposited-crystal comparator and a validation control row in the
+same comparison without putting the same hexapeptide on both sides. The script now
+refuses to hide this; it does not decide it.
+
 ### Tau already is the gatekeeper paradox, in print since 2007, with its resolution [READ, 16 Nov 2026]
 
 Mandelkow, von Bergen, Biernat & Mandelkow, *Brain Pathol* 2007;17:83-90, supplied

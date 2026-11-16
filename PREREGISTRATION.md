@@ -36,9 +36,24 @@ a positive control on our pipeline, not a finding.
 - **H2 (secondary).** Any failure is a *flanking-context* effect rather than core
   chemistry — i.e. the narrowed core scores positive in isolation and negative in
   context.
-- **H3 (secondary, demoted).** Aggregation-critical psychiatric regions are
-  gatekeeper-rich relative to crystallised steric zippers. **This is now n = 1 and is no
-  longer a primary claim** — see §9.
+- **H3 (secondary, RETIRED AS A NOVELTY CLAIM 16 Nov 2026).** Aggregation-critical
+  psychiatric regions are gatekeeper-rich relative to crystallised steric zippers.
+  Demoted to n = 1 on 15 Nov; **retired as a claim of novelty on 16 Nov**, because the
+  paradox is published for tau and resolved there — see §9.1. It is retained as
+  **descriptive context with citations**, and may not be presented as a finding.
+- **H4 (PROMOTED 16 Nov 2026 — the claim this project now rests on).** A window-scanning
+  predictor fails to rank a mapped region **even when that region contains a
+  zipper-grade, low-gatekeeper window that the predictor is built to detect** — in a case
+  structurally identical to one where the same predictors succeed.
+  - **Positive control, built in: tau.** Global 35.6% gatekeeper, local PHF6 16.7%,
+    and the predictors *find* it.
+  - **Test case: TRIOBP-1 324-348.** 48.0% gatekeeper, contains a **0%** hexapeptide,
+    and the predictors *missed* it.
+  - **H0 for H4.** The failure tracks window-level composition — i.e. predictors miss
+    regions whose best window is not zipper-grade, and the TRIOBP-1 case is not
+    distinguishable from that.
+  - **This is a claim about prediction, not about composition**, which is why tau
+    pre-empts H3 without touching H4.
 
 ---
 
@@ -318,6 +333,37 @@ reconstruction.** Figure 12B of Bradshaw 2017 is no longer required for the lett
 design needs, and it is confirmed independently by both calculations.** Tier B is not
 optional; without it there is no quantitative claim.
 
+### AMENDMENT, 16 Nov 2026: 15 rows of dataset is not 15 rows of power
+
+Reading three clean rows in full on one day exposed a defect in the calculation above.
+It treats every added row as contributing power. **It does not.**
+
+α-syn 71-82, tau PHF6 306-311 and tau PHF6* 275-280 are all clean by `found_by` — and
+all three are **regions the predictors find**. That is not an accident of our sweep. A
+region gets mapped cleanly and early precisely when it is a classic short hydrophobic or
+β-prone motif, which is what the predictors were built to detect. **The literature is
+therefore enriched for true positives, and widening the set mostly adds them.**
+
+**A true positive cannot discriminate modern from legacy predictors, because both hit
+it.** Power lives only in the **discordant stratum** — rows where experiment and
+prediction disagree — which currently holds the two rows we started with.
+
+**Registered now, before any predictor runs:**
+
+- The primary statistic is computed on the **discordant stratum**.
+- The **concordant (true-positive) stratum** is reported separately, and its role is a
+  **pipeline positive control**: it shows the predictors ran and scored sanely. It is
+  never pooled into the primary.
+- **Every row carries a `stratum` label assigned before scoring**, derived from the
+  published predictor results where they exist, and otherwise from the legacy arm's own
+  output — which means the assignment for new rows is made *after* the legacy run and
+  *before* the modern run, and that ordering is part of the freeze.
+- **The floor of 15 is restated as a floor on the DATASET, not on the test.** The dataset
+  is the publishable asset either way (`CLAUDE.md`). **If the discordant stratum cannot
+  be grown beyond n = 2, the quantitative claim is withdrawn and the project reports a
+  case study plus a dataset — and says so plainly.** That is a pre-registered outcome,
+  not a failure.
+
 ---
 
 ## 8. Rows found by prediction
@@ -346,6 +392,42 @@ separation does not generalise.** H3 is therefore **n = 1**, pre-registered as a
 What is untouched is the **prediction failure at n = 2**: both regions were found by
 truncation, neither by prediction, and the predictors missed both. These are two claims
 with two different n and must never be written as one number.
+
+### 9.1 AMENDMENT, 16 Nov 2026: H3 is not merely weak, it is pre-empted
+
+**Author's decision, taken on the evidence below.** Recorded here rather than applied
+silently, because a pre-registration that edits its own hypotheses without a dated
+record is worthless.
+
+Four independent pre-emptions, all READ:
+
+1. **Mandelkow 2007** (*Brain Pathol* 17:83-90) states the paradox for tau and resolves
+   it. Tau is "unusually rich in polar and charged amino acids"; this "renders its
+   abnormal aggregation ... even more enigmatic". Computed from P10636-8: **whole tau441
+   is 35.6% proline-plus-charge and it aggregates.** The resolution is given in the same
+   paragraph — "the aggregation of tau is based on **short hexapeptide motifs**" — and
+   PHF6 is **16.7%** against the repeat domain's 29.6%. Globally gatekeeper-rich,
+   locally zipper-grade. **That is our paradox and our window-matched control, published
+   in 2007.**
+2. **Murray 2017** (*Cell* 171:615): composition does not discriminate the FUS core.
+3. **Seuma 2021** (*eLife* 10:e63364): "seven gatekeeper residues" measured in Aβ42.
+   **The gatekeeper concept itself is prior art.**
+4. **The concept is also better supported than we need.** ΔK280 deletes a lysine, P301L
+   removes a proline, and both *accelerate* PHF aggregation — the converse of Giasson's
+   A76E, where adding charge slowed assembly. Graded suppression, both directions,
+   measured.
+
+**Consequence.** H3 may appear in the paper only as cited context, with all four
+references. **No sentence may imply the gatekeeper observation is new.** The inversion
+(48.0% at TRIOBP-1) may be reported as a descriptive extreme, n = 1, nothing more.
+
+**What this buys.** H4, which tau does *not* pre-empt, because tau is the case where the
+predictors **succeed**. Tau therefore stops being an optional widening row and becomes
+the **required control arm**: without it, H4 has no positive control and is unfalsifiable.
+
+**Registered consequence for the validation set:** tau PHF6 306-311 is a **required**
+row, not an optional one. If it cannot be promoted, H4 is withdrawn rather than reported
+without its control.
 
 ---
 

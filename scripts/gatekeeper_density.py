@@ -51,6 +51,32 @@ in that paper; the 2025 thesis's "7 aa" (p.48) is a slip. The zipper peptides ar
 crystals this author has computed interaction energies for; they come from
 deposited structures and are therefore hardcoded here by design, not read from
 regions.json, which holds no crystal rows.
+
+WHAT THIS TABLE IS NOW FOR -- READ THIS BEFORE QUOTING ANY NUMBER FROM IT.
+The gatekeeper hypothesis (H3) was RETIRED AS A NOVELTY CLAIM on 16 Nov 2026.
+It is not wrong; it is PUBLISHED, four times over, and the paradox this script
+was built to display is the standard tau story. Mandelkow 2007 states it --
+tau is "unusually rich in polar and charged amino acids", which "renders its
+abnormal aggregation ... even more enigmatic" -- and resolves it in the same
+paragraph: "the aggregation of tau is based on short hexapeptide motifs".
+Computed from UniProt P10636-8: WHOLE TAU441 IS 35.6% GATEKEEPER AND IT
+AGGREGATES; PHF6 inside it is 16.7%; the repeat domain is 29.6%. That is this
+script's whole argument, in print since 2007, for a different protein.
+SO THESE NUMBERS ARE CONTEXT WITH CITATIONS, NOT A FINDING. See
+PREREGISTRATION.md 9.1. What survives is H4, which is about PREDICTION rather
+than composition: tau is globally gatekeeper-rich with a zipper-grade local
+window AND THE PREDICTORS FIND IT; TRIOBP-1 324-348 is the same architecture
+AND THEY MISSED IT. The window-matched control below is the evidence for H4,
+and it is now the point of this script rather than a caveat to it.
+
+THE ROLE CONFLICT THIS CREATES, WHICH IS NOT YET RESOLVED.
+tau PHF6 VQIVYK is flagged [ROLE CONFLICT] in ZIPPERS because it is now BOTH:
+  (a) a deposited-crystal comparator here (PDB 2ON9), and
+  (b) the REQUIRED control-arm validation row for H4 (PREREGISTRATION.md 9.1).
+IT MAY SERVE IN ONLY ONE ROLE PER PUBLISHED TABLE, AND THE ROLE MUST BE STATED.
+A table that silently uses it as both puts the same hexapeptide on both sides of
+its own comparison. The author decides which role it keeps where; this script
+does not decide it, it only refuses to hide it.
 """
 import json
 import sys
@@ -102,14 +128,29 @@ exactly what the found_by column exists to exclude. Swapping in the clean
 DISC1 row does not restore the headline, it breaks it. One region is
 gatekeeper-rich; the other is indistinguishable from a steric zipper.
 
-What survives is narrower and still worth having: a 25-residue region that
-is half proline and charge was mapped experimentally as aggregation-
-critical, and the predictors missed it. That is n = 1 on the paradox, and
-n = 2 on the prediction failure. Do not state them as one number.
+AND AS OF 16 Nov 2026 THE PARADOX ITSELF IS PRE-EMPTED. Mandelkow 2007
+states it for tau and resolves it: tau441 is 35.6% gatekeeper by this
+same measure AND IT AGGREGATES, via "short hexapeptide motifs" -- PHF6 at
+16.7% inside a 29.6% repeat domain. Globally gatekeeper-rich, locally
+zipper-grade. That is this table's argument, published, for tau, in 2007.
+So H3 is RETIRED AS A NOVELTY CLAIM: context with citations, never a
+finding. See PREREGISTRATION.md 9.1.
+
+WHAT SURVIVES IS H4, AND IT IS ABOUT PREDICTION, NOT COMPOSITION:
+
+    tau         global 35.6%, local PHF6 16.7%  -> PREDICTORS FIND IT
+    TRIOBP-1    region 48.0%, local 6-mer 0.0%  -> PREDICTORS MISSED IT
+
+Same architecture, opposite outcome. Tau is the built-in positive control.
+Do not state the composition and the prediction failure as one number, and
+do not state the composition as new.
 """
 
 ZIPPERS = [                         # deposited crystals, not validation rows
-    ('tau PHF6 (2ON9)',      'VQIVYK'),
+    # ROLE CONFLICT, OPENED 16 Nov 2026 -- READ THE DOCSTRING BEFORE PUBLISHING
+    # ANY TABLE CONTAINING THIS ROW. VQIVYK is now BOTH a deposited-crystal
+    # comparator here AND the required control-arm validation row for H4.
+    ('tau PHF6 (2ON9) [ROLE CONFLICT]', 'VQIVYK'),
     ('a-syn NACore (4RIL)',  'GAVVTGVTAVA'),
     # 4ZNN is deposited as GVVHGVTTVA, which is the A53T DISEASE MUTANT, not
     # wild type: UniProt P37840 residues 47-56 are GVVHGVATVA (Ala at 53).
@@ -223,10 +264,16 @@ def main():
                   f'({best})   {at_or_below}/{len(wins)} windows at or below '
                   f'the worst zipper ({worst:.1f}%)')
     print()
-    print('  So both the paradox and its resolution are real: the REGION is')
-    print('  gatekeeper-rich, and it CONTAINS zipper-grade windows. A')
-    print('  window-scanning predictor had one to find, and missed the region.')
-    print('  That is a sharper failure than "uninformative by construction".')
+    print('  THIS BLOCK IS NOW THE EVIDENCE FOR H4, NOT A CAVEAT TO H3.')
+    print('  The REGION is gatekeeper-rich and CONTAINS zipper-grade windows,')
+    print('  so a window-scanning predictor had one to find and missed the')
+    print('  region anyway. The control that makes this a claim rather than an')
+    print('  anecdote is TAU, which has the SAME architecture -- global 35.6%,')
+    print('  PHF6 16.7% -- and where the predictors SUCCEED ("the only two')
+    print('  spots in the tau sequence where a beta conformation is strongly')
+    print('  predicted", Mandelkow 2007). Same shape, opposite outcome.')
+    print('  The composition is published context; the PREDICTION FAILURE is')
+    print('  the claim. See PREREGISTRATION.md 9.1 and H4.')
     return 0
 
 

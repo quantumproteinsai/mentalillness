@@ -31,5 +31,10 @@ keywords:
 # reuse but detach the rows from the reasoning that justifies them.
 license: CC-BY-4.0
 repository-code: "https://github.com/quantumproteinsai/mentalillness"
+url: "https://zenodo.org/records/24290698"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24290697"
+    description: "Concept DOI: always resolves to the latest version. Cite the version DOI above instead, unless you mean whatever is current."
 date-released: 2026-11-16
 doi: "10.5281/zenodo.24290698"  # reserved on Zenodo 16 Nov 2026, registered at publication

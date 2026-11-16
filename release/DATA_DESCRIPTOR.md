@@ -218,10 +218,12 @@ protein regions, with circularity and prediction-concordance labels*, version
 
 <https://doi.org/10.5281/zenodo.24290698>
 
+Published record: <https://zenodo.org/records/24290698>
+
 This is the **version DOI**: it resolves to 1.0.0 and only 1.0.0, which is what a
 citation of a specific analysis needs. Zenodo also mints a **concept DOI** at
-publication, resolving to whatever version is current; use that one only when
-you mean "the latest".
+publication, resolving to whatever version is
+current: **10.5281/zenodo.24290697**. Use that one only when you mean "the latest".
 
 ## Licence
 

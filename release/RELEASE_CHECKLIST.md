@@ -5,6 +5,34 @@ decisions that are **yours**, not defaults to be inherited.
 
 ---
 
+## DEPOSITED — 16 Nov 2026
+
+**<https://zenodo.org/records/24290698>**
+
+| | |
+|---|---|
+| version DOI | `10.5281/zenodo.24290698` — cite this |
+| concept DOI | `10.5281/zenodo.24290697` — latest version, use only if you mean that |
+| licence | CC BY 4.0 |
+| files | 5, byte sizes verified against the published record |
+
+### `release/` NOW DIFFERS FROM WHAT WAS DEPOSITED, AND THAT IS CORRECT
+
+`DATA_DESCRIPTOR.md` in this repository has been updated since publication to
+carry the DOIs, which did not exist when it was uploaded. **The deposited files
+are frozen and cannot be changed.** Zenodo lets you edit *metadata* after
+publication, never files.
+
+So do not try to reconcile them. **Any change to a deposited file requires a new
+version** — bump `VERSION`, rebuild, tag, and deposit as v1.0.1 or v1.1.0, which
+gets its own version DOI under the same concept DOI.
+
+**What this means in practice:** small repo-side improvements to the descriptor
+are free and should not trigger a new deposit. A new deposit is warranted when
+the *data* change — a row added, a stratum resolved, an error corrected.
+
+---
+
 ## SETTLED
 
 ### ~~2. Authorship~~ — done, and now complete

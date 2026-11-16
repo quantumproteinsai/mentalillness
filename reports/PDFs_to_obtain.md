@@ -36,22 +36,34 @@ Ranked by what changes if you read it.
    no named proteins, no fold changes, no FDR. Even the 42/41/20 counts we have are
    second-hand. If a per-protein table exists anywhere, it is in that supplement.
 
-3. **Leliveld et al. (2008)**, *J. Neuroscience* **28**:3839, and **Korth (2012)**.
-   Both 403. **STILL OPEN.**
-   The primary sources for two things we are currently leaning on: cold-sarkosyl-insoluble
-   DISC1 in patient brain but not controls, and — far more important — the report that
-   **brain-derived aggregates do not stimulate thioflavin T** while recombinant DISC1
-   fibrils do. That single observation decides whether the disease species is an ordered
-   amyloid at all. We have it only as a statement inside a 2025 paper citing them.
+3. ~~**Leliveld et al. (2008)**, *J. Neuroscience* **28**:3839~~ **— READ IN FULL
+   16 Nov 2026, supplied by the author.** **Korth (2012) is still unread, and the
+   thioflavin T item now rests on it alone.**
 
-   **CORRECTION, 16 Nov 2026: this entry used to read "*J. Neuroscience* (2008/2009)",
-   which silently merged two different papers in two different journals.** The
-   J. Neurosci. paper is **2008 only** and is the one that carries the thioflavin T and
-   cold-sarkosyl claims. **Leliveld et al. (2009), *Biochemistry* 48:7746-7755**
-   (doi:10.1021/bi900901e) is a separate paper on the C-terminal domain 640-854; it has
-   now been **read in full** (item 3a) and contains **no thioflavin T experiment at all**.
-   Reading it does not close this item. Do not let the shared first author collapse them
-   again.
+   **THE THIOFLAVIN T CLAIM IS IN NEITHER LELIVELD PAPER.** Both have now been read in
+   full. Neither contains a thioflavin T experiment of any kind. Cukkemane 2025
+   attributes the claim to "Leliveld 2009 and Korth 2012"; **the Leliveld half of that
+   attribution does not hold.** Either it is Korth 2012 alone, or it is a mis-citation.
+   Until Korth 2012 is read, *nothing in this project may lean on the ThT negative.*
+
+   **CORRECTION OF A CORRECTION, same day.** This entry first read "*J. Neuroscience*
+   (2008/2009)", merging two papers in two journals. On splitting them I asserted the
+   2008 paper "carries the thioflavin T and cold-sarkosyl claims." **The cold-sarkosyl
+   half is right; the thioflavin T half was wrong** — I inferred it from the citation
+   rather than from the paper, which is the error this project's first rule exists to
+   prevent.
+
+   **What the 2008 paper does give, and it substantially answers the question the ThT
+   claim was being used for.** It reaches the same conclusion by circular dichroism
+   instead: the rDISC598 dimer has "essentially the same far-UV CD spectrum as the
+   combined oligomer plus multimer fraction, indicating that rDISC598 **self-associates
+   as folded subunits**." The Discussion is explicit — "we do not think that the type of
+   Sarkosyl-resistant DISC1 aggregates described here are directly comparable with those
+   found in classic misfolding diseases, because we do not have evidence of extensive
+   conformational misfolding of multimeric DISC1." **So the authors themselves decline to
+   call the brain species an ordered amyloid, on CD evidence, in 2008.** That is a
+   stronger footing than a dye negative, and it is now READ rather than inherited. Full
+   assessment in `data/references_to_check.json`, key `leliveld2008`.
 
 3a. ~~**Leliveld et al. (2009)**, *Biochemistry* **48**:7746.~~ **READ IN FULL 16 Nov
    2026, supplied by the author.** Not on this list under its own name before — it was

@@ -274,6 +274,60 @@ numbers in the paper that the row is sourced to.**
 **Leliveld et al. 2009 is assessed in its own section below** — it does not
 touch 384-415, and it narrows the redox proposal rather than confirming it.
 
+### The thioflavin T negative is not where we thought, and I put it there [READ, 16 Nov 2026]
+
+**Correction of something this file asserted earlier the same day.** On
+splitting the merged "Leliveld 2008/2009" obtain-list entry I wrote that the
+2008 *J. Neurosci.* paper "carries the thioflavin T and cold-sarkosyl claims."
+The cold-sarkosyl half is right. **The thioflavin T half was wrong.** Both
+Leliveld papers have now been read in full and **neither contains a thioflavin
+T experiment of any kind.** Cukkemane 2025 attributes the ThT negative to
+"Leliveld 2009 and Korth 2012"; the Leliveld half of that attribution does not
+hold. It rests on **Korth 2012 alone, still unread**, or it is a mis-citation.
+**Nothing in this project may lean on the ThT negative until Korth 2012 is
+read.** I inferred it from a citation instead of reading it, which is precisely
+the line rule 1 draws.
+
+**The question it was being used for is substantially answered anyway, by a
+better measurement.** Leliveld 2008 reports that the rDISC598 dimer has
+"essentially the same far-UV circular dichroism spectrum as the combined
+oligomer plus multimer fraction, indicating that rDISC598 **self-associates as
+folded subunits**", and its Discussion states plainly: "we do not think that
+the type of Sarkosyl-resistant DISC1 aggregates described here are directly
+comparable with those found in classic misfolding diseases, because we do not
+have evidence of extensive conformational misfolding of multimeric DISC1."
+**The originating group declined to call the disease species an ordered amyloid,
+on CD evidence, in 2008.** That is firmer than a dye negative — a dye negative
+in a dilute extract can be a sensitivity failure, CD on purified protein cannot
+— and it is now READ rather than inherited.
+
+**Two numbers in that paper do not match its own data, and one of them matters
+to us.** The Discussion says "~20% of sporadic cases"; the reported subgroup is
+**7 of 45 = 15.6%**. And the Abstract says insoluble DISC1 was found in patients
+"**but not healthy controls**" — while Figure 1b shows a **nonzero control mean
+of 0.4** and at least one control near 1.5, with the positivity threshold
+*defined as* "strongest background immunoreactivity in normal controls".
+**Controls are not clean, and the paper's own figure says so.** This is the same
+pattern the 2025 thesis found independently seventeen years later. It is
+corroboration, and it is a standing prohibition on "absent in controls" phrasing
+anywhere in our write-up. Also stated by the authors and worth carrying: brain
+samples were processed blinded, **but the Western blot analysis was unblinded.**
+
+**The redox thread is now fully closed on the Leliveld side.** 20 mM β-ME in
+inclusion-body solubilisation, 10 mM in on-column refolding, 5 mM DTT in the SEC
+buffer and in DLS, 5 mM glutathione in the cell lysis buffers. Both Leliveld
+papers used reductant throughout. **Only Narayanan 2011 remains unverified.**
+
+**A premise to check in the DISC1 384-415 chain.** The 2023 preprint says the
+~70 kDa insoluble brain species was "detected using an antibody that recognises
+part of the C region of DISC1", citing this paper, and infers that the species
+has lost roughly the first 250 residues. **This paper's Methods say its
+antiserum was raised against full-length DISC1(1-854) and affinity-purified on
+the same, and mAb 3D4 likewise against full-length.** A full-length immunogen
+does not localise an epitope, so that inference loses the support it is given
+here. The preprint cites Yerabham 2017 alongside — check there before calling it
+an error.
+
 **The pattern recorded earlier still stands:** both URLs the sweep logged are
 dead and the repository blocks scripts, so this was obtained by asking the
 author, not by retrieval. Availability recorded at sweep time is not

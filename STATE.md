@@ -1127,6 +1127,51 @@ it.**
 naming out loud:** ANuPP succeeding is inconvenient for a project about predictor
 failure. **Whichever way it is placed, say so in print.**
 
+### The floor of 15 is reached, and the discordant stratum doubled [16 Nov 2026]
+
+`data/regions.json` is **15 rows** — the floor named in `CLAUDE.md`. **But read
+the §7 amendment before celebrating: 15 is a floor on the *dataset*, not on the
+*test*.** The breakdown is **4 discordant, 3 concordant, 8 pending.**
+
+**hnRNPA1 251-295** is the fourth discordant row and the strongest-worded yet.
+Cryo-EM core from full-length protein (*"The fibril core is formed by 45 residues
+(Gly251 to Tyr295)"*), and the predictor comparison **names the entire frozen
+legacy arm as failing**:
+
+> "Five out of seven tested methods (Aggrescan, FoldAmyloid, Pasta 2.0, TANGO 2.2
+> and Amylpred 2)" … "lacked any hit within the fibril cross-β structure"
+
+**The numbering trap was handled by lookup, not arithmetic.** This file's own
+`_frame_traps_are_worse_than_assumed` warns that hnRNPA1's frames differ by an
+*internal* alternative exon. P09651-1 is 372 aa, P09651-2 is 320 aa, the paper
+uses 320. Searching the exact 45-mer in the 372-frame puts it at **303-347**, so
+the +52 constant offset *happens* to be right here — because this core sits
+C-terminal to the insert. **Verified, not assumed**, and it would not hold for a
+range spanning the exon.
+
+### The sourcing lesson, now with numbers
+
+Searching for **clean** rows added three rows and **zero** test power — all three
+concordant. Searching for **published post-hoc predictor failures** added **two
+discordant rows in one afternoon**, both with the tools named in print, needing
+no run of ours. **The binding constraint is discordant rows.**
+
+### And a pattern the write-up must not hide
+
+**In every discordant case where a paper ran several tools, at least one tool
+succeeded.** On DISC1, ANuPP hit 387-395 and 400-415 precisely. On hnRNPA1, WALTZ
+scored four true positives in the core (ZipperDB also hit, but alongside 85 false
+positives). Murray's own phrasing for FUS is the same shape — the hitting tools
+showed *"no consensus on the identities of these segments."*
+
+**So the honest claim is not "the predictors fail."** It is *"the widely used
+2004-2010 generation fails, while scattered other tools succeed sporadically and
+without consensus."* A report that mentions only the failures would be selective
+and would not survive review. **It also sharpens the real question:** not whether
+prediction is possible, but whether any tool succeeds **reliably across rows**
+rather than luckily on one — which is exactly what a stratified benchmark over
+four discordant rows can answer and a case study cannot.
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

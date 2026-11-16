@@ -377,6 +377,13 @@ may be cited in a manuscript until obtained.**
     may be cited at all.**
 
 19. ~~**Bradshaw et al. 2017 and Cukkemane et al. 2021 — the two never-opened primaries.**~~
+    **BOTH NOW OBTAINED AND READ, 16 Nov 2026. ZERO rows carry `source_not_opened`.**
+    Bradshaw 2017 (*J Biol Chem* 292:9583-9598) names all four legacy-arm tools and their
+    failure, confirms the 25-mer a third independent way, and shows 324-328 to be an
+    over-attribution. **One follow-on:** the predictor runs it reports live in
+    **Bradshaw et al. 2014, *PLoS ONE* 9:e111196** (open access) — open that for the
+    settings and figures behind the sentence the stratum assignment rests on.
+    Original entry follows for the record.**
     **CUKKEMANE 2021 OBTAINED AND READ 16 Nov 2026** (*Transl Psychiatry* 11:639), closing four
     rows. **BRADSHAW 2017 REMAINS THE ONLY NEVER-OPENED PRIMARY, and the exact citation is now
     pinned** — it was previously recorded only as "Bradshaw et al. 2017":

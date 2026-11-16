@@ -1745,6 +1745,80 @@ reads *"Implied as only region unique to the long variant"* — an inference fro
 isoform difference, not a mapping. A good reminder that the footnote matters as
 much as the table.
 
+### The last never-opened primary is closed, and it upgrades the headline row [READ, 16 Nov 2026]
+
+Bradshaw et al. 2017, *J Biol Chem* 292:9583-9598, CC BY. **Zero rows now carry
+`source_not_opened`.** Every primary named by every row has been opened.
+
+**The sequence is confirmed a third independent way.** Figure 12B prints the
+25-mer under a 324/330/340/348 scale: `PLRENKRVPLTALLNQSRGERRGPP` —
+byte-for-byte what the row already held, which came first from reconstruction and
+then from Zaharija 2022's Figure 1B.
+
+### The stratum assignment is now the strongest in the set
+
+The Discussion names **all four tools**, and they **are** the frozen legacy arm of
+§5.1:
+
+> "this portion of TRIOBP-1 was one of the **less strongly predicted** to contain
+> an 'aggregation motif,' with only the sequence around aa 230-236 predicted to
+> have some aggregate-forming propensity by the **AGGRESCAN**, **FoldAmyloid**,
+> and **ProA** servers. **It was not predicted as such by TANGO.** In all
+> instances, however, **at least four sites elsewhere in the protein were more
+> strongly predicted**"
+
+**230-236 is outside 324-348.** Three tools put a weak signal *near but not on*
+the region, TANGO put none there, and all four ranked at least four other sites
+higher. **Stronger than FUS 39-95 or hnRNPA1 251-295, because the named tools are
+not merely comparable to our arm — they are our arm.**
+
+**One more link to follow:** the runs are "In our **previous** analyses (8)" —
+Bradshaw 2014, *PLoS ONE* 9:e111196, open access. Cite 2017 for the region, but
+open 2014 for the predictor settings.
+
+### The gatekeeper observation is theirs, and they offer a different mechanism
+
+**This is the fifth pre-emption of the compositional strand and by far the most
+direct, because it is on our own headline region:**
+
+> "The 25-aa region **contains multiple proline residues** (Fig. 12B), suggesting
+> that it likely represents a **turn** between CC1 and CC2. It is also **rich in
+> charged amino acids**, allowing for the possibility that TRIOBP-1 aggregation
+> is dependent on **protein-protein interactions**."
+
+Figure 12B colours the prolines purple and the charges red and blue — the two
+residue classes this project counts. **Computed from their printed sequence:
+4 + 8 = 12/25 = 48.0%**, reproducing our headline figure from the source. H3 was
+already retired for other reasons; this shows it was **less novel than the
+retirement assumed.**
+
+**And they propose a mechanism we did not, which is a live alternative to H4:**
+
+> "That this region was **not strongly predicted** to have an innate aggregation
+> propensity might further implicate the **involvement of additional proteins or
+> other cellular factors**"
+
+Their reading is that the region matters because **other proteins bind there**,
+not because of its own propensity. **That must be stated alongside H4, not
+omitted.**
+
+### Two rows corrected against the primary
+
+**324-328 is an over-attribution.** Bradshaw 2017 makes *no* claim about it. Its
+constructs are 324-652 vs 349-652; Figure 12A lists 323/324 and 348/349 as
+**construct borders**. Zaharija 2022's Figure 6B legend attributes to the primary
+a claim it does not make. The row's existing "do not score independently"
+instruction is **verified, not inferred**.
+
+**60-189 does not aggregate.** It is the PH domain, shown "with **no sign of
+aggregation**", and deleting it "did not ablate its aggregation propensity". If
+kept at all it is a **negative control**, never an aggregation-critical region.
+
+**Sufficiency is explicitly negative**, which the construct column must carry:
+aa 1-382 does not aggregate, so the linker "is **not in itself sufficient**".
+Necessity is shown twice and quantified blind — ≥1.3 aggregates per cell with
+the region versus ≤0.1 without, p < 0.001.
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

@@ -3,59 +3,95 @@
 Everything in `release/` is generated and reproducible. What remains are
 decisions that are **yours**, not defaults to be inherited.
 
-## 1. Licence
+---
 
-Not chosen. The usual choice for a dataset is **CC0** (public domain) or
-**CC BY 4.0** (attribution required).
+## SETTLED
 
-One thing to decide deliberately rather than by habit: several rows **quote
-sentences** from papers under varying publisher licences. Quotation for
-scholarly purposes is normal and is not what a dataset licence governs — but the
-quotes are substantial in places, and a few come from papers that are not open
-access. Worth a minute's thought before picking.
+### ~~2. Authorship~~ — done
 
-## 2. Authorship
+`CITATION.cff` and `.zenodo.json` now carry:
 
-`CITATION.cff` has your name and `TODO AUTHOR` markers for ORCID, affiliation,
-co-authors and whether to publish an email. **I left contact details blank on
-purpose** — publishing them is a decision, not a formality.
+- Bertrand Mercier des Rochettes
+- ORCID `0000-0002-1145-1881`
+- `contact@quantum-proteins.ai`
 
-Also to settle: whether anyone else merits authorship on the dataset.
+**One question left open deliberately:** whether anyone else merits authorship on
+the dataset. It is marked `TODO AUTHOR` rather than assumed to be no.
 
-## 3. Version number
+### ~~4. Where to deposit~~ — Zenodo
 
-Currently `1.0.0-draft`, set in `scripts/build_release.py`. Drop `-draft` when
-depositing. **Do not deposit while the string says draft.**
+`.zenodo.json` is written and valid. Zenodo reads it automatically if you deposit
+by linking a GitHub release; if you upload manually, it is still the record of
+what the metadata should say.
 
-## 4. Where to deposit
+---
 
-Zenodo is the usual choice and mints a DOI. It also links to a GitHub release if
-you want the code alongside. Alternatives: Figshare, Dryad, or a journal's data
-descriptor track.
+## STILL OPEN
 
-**This repository has no remote decided for public release** — `CLAUDE.md` notes
-that whether to add one is the author's decision. Deposit is an outward-facing,
-hard-to-reverse act; nothing here does it for you.
+### 1. Licence — *recommended, not confirmed*
 
-## 5. Decide what the release claims
+I set **CC-BY-4.0** in `CITATION.cff` and `.zenodo.json`. **Change one line in
+each if you disagree.**
 
-The descriptor currently states the limitations plainly, including that the
-discordant stratum holds **4 documented rows** and supports a case series rather
-than a rate. **Do not soften that on the way to deposit.** If the dataset is
-published before the benchmark, that honesty is the thing that makes it citable.
+The reasoning, so you can argue with it: the value of this dataset is
+**curatorial**. The provenance, the circularity calls and the stratum labels are
+the work. CC BY keeps attribution attached, which is what makes a reader go back
+and check the reasoning. CC0 would maximise reuse but detach the rows from the
+justification that makes them trustworthy.
 
-## 6. Before each rebuild
+**No `LICENSE` file has been added** — I did not want to make a recommendation
+look like a decision. Add one when you have confirmed the choice.
+
+### 3. Version number
+
+Still `1.0.0-draft`, set in `scripts/build_release.py` (one constant, `VERSION`).
+
+**Do not deposit while the string says draft.** Drop the suffix, re-run the
+build, and the filenames and metadata follow.
+
+### 5. What the release claims
+
+The descriptor states the limitations plainly — 17 rows, a discordant stratum of
+**4 documented rows** supporting a case series rather than a rate, 8 rows still
+`PENDING`, rows that are not independent, and that insolubility is now reported
+in control brains so these must not be called disease-specific aggregates.
+
+**Do not soften that on the way to deposit.** If the dataset is published before
+the benchmark, that honesty is what makes it citable.
+
+---
+
+## Deposit procedure
+
+**Nothing in this repository deposits anything.** Depositing is outward-facing
+and effectively irreversible: a Zenodo DOI is permanent, and a published record
+can be superseded but not withdrawn cleanly.
+
+When you are ready:
+
+1. `python3 scripts/validate_regions.py` — **must exit 0**
+2. Drop `-draft` from `VERSION` in `scripts/build_release.py`
+3. `python3 scripts/build_release.py`
+4. Commit, tag (e.g. `v1.0.0`), push the tag
+5. Either link the GitHub repository to Zenodo and publish a release — Zenodo
+   picks up `.zenodo.json` — or upload `release/` manually and paste the metadata
+6. Add the returned DOI to `CITATION.cff` and `.zenodo.json`, and to the
+   descriptor's Citation section, which currently says **"Not yet deposited; no
+   DOI assigned. Do not cite this version as archival."**
+
+## Before each rebuild
 
 ```
-python3 scripts/validate_regions.py   # must exit 0
+python3 scripts/validate_regions.py   # gate, must exit 0
 python3 scripts/build_release.py
 ```
 
 The validator is a gate, not a formality — it caught a retired field name
 surviving in a row on its first run.
 
-## 7. Still open upstream
+## Still open upstream (does not block the dataset)
 
-- 8 of 17 rows are `stratum: PENDING` and need a predictor run or a published one.
-- `PREREGISTRATION.md` §12 steps 4-5 (freeze) are not done. The dataset can be
-  published without them; the benchmark cannot.
+- 8 of 17 rows are `stratum: PENDING` and need a predictor run, or a published
+  one found by search.
+- `PREREGISTRATION.md` §12 steps 4-5 (the freeze) are not done. **The dataset can
+  be published without them; the benchmark cannot.**

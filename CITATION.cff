@@ -12,17 +12,22 @@ version: 1.0.0-draft
 authors:
   - family-names: "Mercier des Rochettes"
     given-names: "Bertrand"
-    # TODO AUTHOR: add orcid, affiliation, and decide whether to publish an email.
-    # Left blank deliberately -- publishing contact details is your call, not a default.
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
-    # affiliation: ""
-# TODO AUTHOR: co-authors, if any.
+    orcid: "https://orcid.org/0000-0002-1145-1881"
+    email: "contact@quantum-proteins.ai"
+# TODO AUTHOR: co-authors, if any. Left as a question rather than an assumption.
 keywords:
   - protein aggregation
   - amyloid
   - benchmark dataset
   - aggregation prediction
   - circularity
-license: # TODO AUTHOR: see release/RELEASE_CHECKLIST.md
-# doi: # assigned on deposit
+  - curated dataset
+# RECOMMENDED, NOT DECIDED BY YOU YET -- change this one line if you disagree.
+# CC-BY-4.0 over CC0 because the value of this dataset is curatorial: the
+# provenance, the circularity calls and the stratum labels are the work, and
+# attribution is what makes a reader go back and check them. CC0 would maximise
+# reuse but detach the rows from the reasoning that justifies them.
+license: CC-BY-4.0
+repository-code: "https://github.com/quantumproteinsai/mentalillness"
+# doi: # assigned by Zenodo on deposit
 # date-released: # on deposit

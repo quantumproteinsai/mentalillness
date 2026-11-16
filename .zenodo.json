@@ -1,0 +1,25 @@
+{
+  "title": "Experimentally mapped aggregation-critical protein regions, with circularity and prediction-concordance labels",
+  "upload_type": "dataset",
+  "description": "<p>A hand-curated set of 17 protein regions across 8 proteins, shown experimentally to be required for, or to constitute the core of, protein aggregation. Every row was established by opening the source paper and checking the claim against it.</p><p>The dataset carries three columns that aggregation datasets usually lack, each because omitting it produces a benchmark that silently measures the wrong thing:</p><ul><li><strong>construct</strong> &mdash; which construct established the region. A region can be necessary in one construct and dispensable in another, and both results can be correct.</li><li><strong>circularity_status</strong> &mdash; whether a predictor was in the discovery path. A region found <em>by</em> a predictor cannot be used to test that predictor. Circular rows are kept and labelled, not dropped.</li><li><strong>stratum</strong> &mdash; whether experiment and prediction agree. Regions that are mapped cleanly tend to be the ones predictors find, so a dataset of well-mapped regions is enriched for agreement; only discordant rows can discriminate between predictors.</li></ul><p><strong>Limitations are stated in the data descriptor and should be read before use.</strong> The dataset is small and is not a random sample: the discordant stratum holds 4 documented rows, which supports a case series rather than a rate. 8 of 17 rows are not yet assessed for stratum. Rows are not independent. Most rows are recombinant or cell-based and cannot speak to aggregation in patients.</p>",
+  "creators": [
+    {
+      "name": "Mercier des Rochettes, Bertrand",
+      "orcid": "0000-0002-1145-1881"
+    }
+  ],
+  "keywords": [
+    "protein aggregation",
+    "amyloid",
+    "benchmark dataset",
+    "aggregation prediction",
+    "circularity",
+    "curated dataset",
+    "TRIOBP-1",
+    "DISC1"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "notes": "Version 1.0.0-draft. Generated from data/regions.json by scripts/build_release.py and gated by scripts/validate_regions.py. See release/DATA_DESCRIPTOR.md."
+}

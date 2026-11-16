@@ -1982,13 +1982,33 @@ cache, not the resource. This is the same shape as the earlier finding that *a
 status code is not reachability*, now extended: **a status code is not current
 state.**
 
-### Still open
+### Closed, same day, by deleting and recreating the repository
 
-GitHub holds the orphaned objects. `git gc` locally cannot touch them. Before
-the repository is public again, either delete and recreate it under the same
-name and push the clean history — which preserves the URL the deposited
-`CITATION.cff` points at — or ask GitHub Support to purge unreachable objects
-and stay private until they confirm.
+`git gc` locally cannot reach objects held by the host, so the repository was
+deleted and recreated under the same name — preserving the URL the deposited
+`CITATION.cff` points at — and the clean history pushed into it.
+
+**Two things surfaced only by doing it, both worth knowing in advance:**
+
+- **The deploy key died with the repository.** Deploy keys are per-repository, so
+  authentication succeeded while every operation returned *"Repository not
+  found"*. Re-adding the same key failed with *"Key is already in use"*, which is
+  itself diagnostic: GitHub still had it registered, so the deletion had not
+  fully propagated. A fresh key pair sidesteps the uniqueness constraint, and
+  retires the deleted repository's credential rather than reusing it.
+- **A private repository cannot be audited by HTTP.** Everything 404s whether it
+  is clean or merely hidden, so the two cases are indistinguishable. The test
+  that works is to ask the server for the object: `git fetch origin <bad-sha>`,
+  and an independent `git clone --mirror` audited for the path. Both were run and
+  both were clean, before visibility was changed.
+
+**Verified afterwards, unauthenticated:** `commit/4319b7d` → 404, where it had
+been 200; the old path at the old SHA → 404; and every path the deposited files
+promise — `CITATION.cff`, `LICENSE`, `PREREGISTRATION.md`, both scripts, the
+descriptor, the dataset — → 200.
+
+**The order that made this safe: private, verify the object store, then public.**
+The first attempt went public before anyone had looked past the branch.
 
 **The Zenodo deposit is unaffected**: it holds its own copies, never contained a
 sweep, and no row of `data/regions.json` rests on one.

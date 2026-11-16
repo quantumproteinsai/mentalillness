@@ -349,9 +349,8 @@ the literature, not a run of bad luck:
 | von Bergen 2000 (PNAS) | Discussion (v): "the corresponding **hexapeptides** in R1 (`244QTAPVPM250`)" | that sequence is **SEVEN** residues, 244-250 | **7**. Verified against P10636-8: 244-250 is `QTAPVPM`. The R4 partner `337VEVKSE342` really is six, so only the R1 label is wrong |
 | Sharma 2023 (JMB) | Methods: "**seven** different computational programs" | then lists **eight** (ZipperDB, LARKSdb, Waltz, Aggrescan, FoldAmyloid, PASTA 2.0, TANGO 2.2, Amylpred 2) | **seven** — LARKSdb never reappears in Results or Fig. 4 |
 | Sharma 2023 (JMB) | truncated construct "residues **Met286**-Phe320" | 286 is **Ser**; cannot contain Asp262; cannot cover a 251-295 core | **Met186** — the unique Met satisfying all three constraints; a digit transposition |
-| Sharma 2023 (JMB) | "the predictions ... **did match well** the experimentally verified β-sheet structure" | introduced as "**Related conclusions**" to a failure | **did NOT match well** — a dropped negation that inverts the meaning of three citations |
 
-**Fourteen, across nine papers and SEVEN independent groups** (updated 16 Nov 2026: the
+**Thirteen, across nine papers and SEVEN independent groups** (updated 16 Nov 2026: the
 Mizuguchi slip found by reading the apoA-I primary, the Seuma slip reported by the
 unbiased-screen audit). None of them changed a row, because each was caught by
 arithmetic, by a figure, or — in the Seuma and Giasson cases — by knowing the
@@ -1174,6 +1173,36 @@ and would not survive review. **It also sharpens the real question:** not whethe
 prediction is possible, but whether any tool succeeds **reliably across rows**
 rather than luckily on one — which is exactly what a stratified benchmark over
 four discordant rows can answer and a case study cannot.
+
+### I withdrew an inconsistency the same day I logged it [16 Nov 2026]
+
+I recorded Sharma 2023's sentence — *"In all cases, it was found that the
+predictions of the highly amyloidogenic regions **did match well** the
+experimentally verified β-sheet structure [27-29]"* — as a dropped negation,
+reasoning that it is introduced as *"Related conclusions"* to a statement of
+predictor failure, so it must mean *did **not** match well*.
+
+**I inferred that from context without opening the cited papers.** That is the
+move `CLAUDE.md` rule 1 exists to forbid, and I made it while logging other
+people's numbering errors.
+
+A search of ref 28 (Liberta 2019, AA amyloidosis) reports — at **snippet** level
+— that the N-terminal ~21 residues, *the most amyloidogenic stretch*, **are** the
+fibril core. If that holds, the sentence is **literally true** for that
+reference, and *"Related conclusions"* means *related comparisons were made*,
+not *the same conclusion was reached*.
+
+**Corrected status: the sentence is ambiguous, not demonstrably wrong.** It is
+**removed from the tally**, which goes back to **thirteen**. The operational
+instruction was right either way and stands: **the direction of refs 27-29 must
+be read out of each primary and must not be taken from that sentence in either
+reading.**
+
+**And the lead itself may point the other way.** Liberta 2019 looks like it may
+be **CONCORDANT**, not discordant — which would still be worth having, since it
+is *ex vivo* human and mouse material and the concordant stratum is the pipeline
+positive control. But that is snippet-grade, and our own premise audit records
+that snippet assessment is biased. **Nothing moves until a primary is opened.**
 
 ### What that inventory is not
 

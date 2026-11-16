@@ -265,11 +265,25 @@ pattern rather than weakening it.
 **A third one-residue slip, in two days, from the same group.** The body text
 writes the deletion constructs as **Δ384-414** three times (31 residues) while
 Figure 5A and panels D-F label them **Δ384-415** and the same sentence says
-"these 32 amino acids". 384-415 is right. With 7-vs-8 and 593-vs-597 that is
-three; a fourth, unrelated, is in the same paper's Results, which prints
-"AA 539-738" for both I+S and S+C (S+C is 635-836). **Verify every residue
-number in this literature against the figure or the arithmetic, including
-numbers in the paper that the row is sourced to.**
+"these 32 amino acids". 384-415 is right.
+
+**Running tally of residue-number inconsistencies found by reading primaries,
+all within single papers, 15-16 Nov 2026.** This is now a documented property of
+the literature, not a run of bad luck:
+
+| paper | prints | and also | right answer |
+|---|---|---|---|
+| Zaharija 2022 / 2025 thesis | 333-340, "8 amino acids" ×3 | thesis p.48: "the 7 aa domain" | **8** |
+| Zaharija 2022 | short variant "593 aa" (p.2) | "597 AA long protein" (p.13) | **593** |
+| Zaharija & Bradshaw 2023 | Δ384-**414** ×3 (body) | Δ384-**415** (Fig. 5) + "32 amino acids" | **384-415** |
+| Zaharija & Bradshaw 2023 | "AA 539-738" for I+S | same string for S+C | S+C = **635-836** |
+| Leliveld 2009 | "668-**747**" (Abstract, Discussion) | "668 and **748**" (Discussion) | **668-747** (2 of 3) |
+| Leliveld 2009 | S704 throughout | "DISC1-S**707**Δ22" (p.7) | **S704** |
+
+**Six, across four papers and two independent groups.** None of them changed a
+row, because each was caught by arithmetic or by a figure. **Verify every
+residue number in this literature against the figure or the arithmetic,
+including numbers in the paper a row is sourced to, and including the abstract.**
 
 **Leliveld et al. 2009 is assessed in its own section below** — it does not
 touch 384-415, and it narrows the redox proposal rather than confirming it.

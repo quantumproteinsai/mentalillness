@@ -245,9 +245,79 @@ half the 2017 legacy set has already evaporated.
 
 By that rule AggreProt and AggrescanAI are in, and the remaining eleven-plus PLM-era
 tools from the September 2026 census are exploratory unless they ship installable
-weights. **Any tool meeting the rule may be added freely before the freeze and none
+weights. **MEMBERSHIP SUPERSEDED 16 Nov 2026 — see §5.2b. The
+rule below is unchanged; AggreProt fails it.** **Any tool meeting the rule may be added freely before the freeze and none
 after.** The novelty claim — that no PLM predictor has ever been run on DISC1 or
 TRIOBP-1 — is unaffected either way, since it concerns the class, not our coverage of it.
+
+### 5.2b The confirmatory modern arm is ONE tool — REGISTERED 16 Nov 2026
+
+**The rule in §5.2 is not relaxed. AggreProt fails it.**
+
+Its code is public (GitHub, Zenodo v1.0) but its trained weights are not. The README
+instructs `unzip nnap-data.zip`, never says where that archive is, and it is in neither
+the repository nor the 22.9 kB Zenodo release. The paper's entire data-availability
+statement points at the web server. **It therefore cannot be run locally at all**, and is
+recorded as **UNAVAILABLE, not as a failure** — the same treatment ProA receives in §5.1.
+Evidence: `reports/modern_arm_local_runnability_2026-11-16.md`. A request for the archive
+was sent to the corresponding authors on 16 Nov 2026
+(`correspondence/2026-11-16_aggreprot_weights_request.md`).
+
+> **Registered: the confirmatory modern arm is AggrescanAI alone.**
+
+#### What this costs, stated rather than buried
+
+**The headline question in `CLAUDE.md` asks about a *generation* of predictors. One tool
+cannot answer a question about a generation.** The claim is therefore narrowed, now,
+before any score exists:
+
+- **Permitted:** *a PLM-based predictor, AggrescanAI, does / does not recover these
+  regions.*
+- **Not permitted:** *modern predictors do / do not recover these regions.*
+
+The title and abstract must carry the narrower form. **This is a real loss of scope and
+is not to be recovered by rhetoric later.**
+
+#### Consequences for the statistic
+
+1. **There is no multiplicity correction across modern tools, because there is one.**
+   Stouffer's Z and Fisher's combination still run **across rows** exactly as §3.1
+   registers. Nothing in the per-row machinery changes.
+2. **The legacy-versus-modern contrast becomes one-against-one per row**, not an ensemble
+   contrast. Any between-generation statement must be worded accordingly.
+3. **n = 1 means a tool-specific result cannot be distinguished from a generational one.**
+   Where AggrescanAI succeeds or fails, the report says *AggrescanAI*, never *modern
+   methods*.
+
+#### Training-set contamination, registered before scoring
+
+Navarro 2026 [READ] states AggrescanAI's shipped model is the **CPAD90** ensemble: CPAD
+2.0 **plus homologues** transferred via HoTIDP from OrthoInspector and OmaDB. The
+membership list is not published.
+
+**Registered:**
+
+4. **Every row is checked against CPAD 2.0 before scoring**, and the result recorded per
+   row. Absence from CPAD is **not** sufficient — a row whose protein has an orthologue in
+   CPAD is flagged `TRAINING_SET_UNCERTAIN`.
+5. **Confirmatory analysis runs on rows that are not CPAD-implicated.** CPAD-implicated
+   rows are reported separately and are **excluded from the primary statistic**, because a
+   hit on a training protein is recall, not prediction.
+6. **If that exclusion empties the discordant stratum, the confirmatory analysis does not
+   run** and the project reports the contamination as its result. Said now so it cannot be
+   relitigated once the numbers are visible.
+
+*Expected, not assumed:* the discordant stratum is DISC1 and TRIOBP-1, psychiatric
+scaffold proteins unlikely to appear in an amyloid-curated database. **That is a
+prediction to be checked under 4, not a reason to skip it.**
+
+#### Re-admission
+
+7. **If the AggreProt weights arrive before the freeze, it is admitted** under §5.2's
+   unchanged rule and this section is amended with the date.
+8. **If they arrive after the freeze, it is exploratory**, reported separately, excluded
+   from the confirmatory claim, with the date of receipt stated. **A pending email does not
+   delay the freeze.**
 
 ### 5.2a A no-call is not a low score — REGISTERED 16 Nov 2026
 

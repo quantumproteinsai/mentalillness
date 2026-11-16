@@ -7,6 +7,32 @@ Ranked by what changes if you read it.
 
 ## Tier 0 — these decide whether the project is viable
 
+0. **Zaharija B (2025), PhD thesis, University of Rijeka** — "Karakterizacija agregacije
+   DISC1 proteina u neuropsihijatrijskim poremećajima", mentor N.J. Bradshaw, co-mentor
+   R. Andretić Waldowski. **FOUND 16 Nov 2026 BY ACCIDENT, while hunting the 2024 full
+   text. The project did not know it existed.** [SNIPPET — not read; everything here is
+   search-engine summary, not quoted.]
+
+   **It is wanted for two unrelated reasons, and it is the best remaining route to
+   both.**
+   - **It is the first author's own thesis on the DISC1 384-415 work.** Theses reproduce
+     their papers' figures, so this is the most likely *free* source for the published
+     Figure 5 — and therefore for Δ384-**414** vs Δ384-**415**, the last freeze blocker
+     (item 4a).
+   - **It is a SECOND 2025 thesis from this group, and §11 was discharged against the
+     first one only.** Samardžija's thesis contained no predictor runs. This is a
+     different document. The search summary says its aims include refining DISC1 domain
+     borders "using earlier bioinformatics data and new empirical data" — domain-boundary
+     bioinformatics is **not** aggregation prediction, and that distinction is the entire
+     novelty claim, so it must be **checked, not assumed.**
+
+   **Routes, neither automatable.** The faculty PDF
+   (`biotech.uniri.hr/wp-content/uploads/2025/03/PhD_02_2025_Zaharija_Beti.pdf`) returns
+   **HTTP 404** — the third instance of link rot on this same faculty site today. The
+   repository holds it as object `biotechri:1106`, but `repository.biotech.uniri.hr`
+   returns **HTTP 418** to scripted requests, an explicit anti-automation response that
+   was **not worked around**. Manual browser, or ask the author.
+
 1. ~~**Samardžija B (2025), PhD thesis, University of Rijeka.**~~
    **RESOLVED 15 Nov 2026 — READ IN FULL. The gap holds; this item is closed.**
    The author supplied the PDF after both recorded URLs returned **HTTP 404** and
@@ -109,8 +135,14 @@ Ranked by what changes if you read it.
 
    **ABSTRACT READ 16 Nov 2026** (PubMed record, PMID 38135095; *Prog
    Neuropsychopharmacol Biol Psychiatry* **130**:110923, epub 21 Dec 2023). It confirms
-   the claim survived peer review **unchanged in substance**. Full text remains behind
-   the Elsevier/Ovid paywall.
+   the claim survived peer review **unchanged in substance**.
+
+   **NO FREE FULL TEXT EXISTS — reproducible negative, 16 Nov 2026.** Europe PMC's REST
+   record for the DOI returns `isOpenAccess: "N"`, `inEPMC: "N"`, `inPMC: "N"`,
+   `hasPDF: "N"`, no PMCID, and a single full-text URL marked *"Subscription required"*.
+   bioRxiv has **only v1** (4 Aug 2023) — no revised post-acceptance version and no "Now
+   published in" link, so there is no free text to diff against. The remaining free
+   route is **item 0**, the first author's thesis.
 
    **What is still wanted, and it is now a single question.** Both abstracts say only
    "approximately 30 amino acids" — the figure 384-415 (32 residues) appears in neither.

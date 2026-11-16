@@ -212,11 +212,16 @@ working file is never edited by it.
 
 ## Citation
 
-Version **1.0.0**, released 16 November 2026. See `CITATION.cff`.
+Mercier des Rochettes, B. (2026). *Experimentally mapped aggregation-critical
+protein regions, with circularity and prediction-concordance labels*, version
+1.0.0 [Data set]. Zenodo. **10.5281/zenodo.24290698**
 
-**The DOI is assigned by Zenodo at deposit and is not in these files yet.** Once
-it exists it belongs in three places: `CITATION.cff`, `.zenodo.json`, and this
-section. Until then, cite the version and the repository, not a DOI.
+<https://doi.org/10.5281/zenodo.24290698>
+
+This is the **version DOI**: it resolves to 1.0.0 and only 1.0.0, which is what a
+citation of a specific analysis needs. Zenodo also mints a **concept DOI** at
+publication, resolving to whatever version is current; use that one only when
+you mean "the latest".
 
 ## Licence
 

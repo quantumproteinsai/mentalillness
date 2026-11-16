@@ -31,5 +31,4 @@ keywords:
 license: CC-BY-4.0
 repository-code: "https://github.com/quantumproteinsai/mentalillness"
 date-released: 2026-11-16
-# doi: # ASSIGNED BY ZENODO ON DEPOSIT -- add it here, in
-# .zenodo.json, and in release/DATA_DESCRIPTOR.md's Citation section.
+doi: "10.5281/zenodo.24290698"  # reserved on Zenodo 16 Nov 2026, registered at publication

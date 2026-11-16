@@ -281,7 +281,7 @@ Ranked by what changes if you read it.
 Ordered by how much each one decides. Every row these would promote is currently
 at **READ-BY-SUBAGENT** grade, which is weaker than READ and cannot be published.
 
-5. **Giasson et al. 2001, *J. Biol. Chem.* 276:2380** — α-synuclein 71-82.
+10. **Giasson et al. 2001, *J. Biol. Chem.* 276:2380** — α-synuclein 71-82.
    **The highest-value request in the α-synuclein branch, because it decides the
    whole branch.** Five of the six other α-synuclein regions assessed are
    CIRCULAR (2-7, P1 36-42, P2 45-57 from a Zyggregator/CamSol pass; NACore
@@ -289,18 +289,18 @@ at **READ-BY-SUBAGENT** grade, which is weaker than READ and cannot be published
    circular, **α-synuclein contributes no clean row at all** — which is itself a
    finding worth reporting. Agent reports the full text sits behind Cloudflare.
 
-6. **von Bergen et al. 2000, *PNAS* 97:5129, Figures 1 and 4** — tau PHF6
+11. **von Bergen et al. 2000, *PNAS* 97:5129, Figures 1 and 4** — tau PHF6
    306-311 and PHF6* 275-280. Confirms the **two strongest clean candidates in
    the entire sweep**: agent reports a systematic 15-mer peptide walk from L253
    to D348 with no algorithm named anywhere, four years before TANGO. Already on
    the obtain list; this raises its priority.
 
-7. **Shimonaka et al. 2016, *J. Biol. Chem.* 291:8896** — TDP-43 tiles 274-313,
+12. **Shimonaka et al. 2016, *J. Biol. Chem.* 291:8896** — TDP-43 tiles 274-313,
    314-353, 354-373. **Three rows from one PDF**, and the only window-tiling
    aggregation screen the unbiased-screen audit found in the whole field. Also
    settles whether 314-353 really is assay-discordant.
 
-8. **The three complete-scan papers nobody could open.** All closed access, all
+13. **The three complete-scan papers nobody could open.** All closed access, all
    yield regions, and two of them disagree with each other and with Gray 2019 at
    24-28:
    - Williams et al. 2004, *J. Mol. Biol.* 335:833 (proline scan, Aβ40) —
@@ -314,7 +314,7 @@ at **READ-BY-SUBAGENT** grade, which is weaker than READ and cannot be published
      mutants" of 42 positions, so **also incomplete**; which 8 were skipped is
      not in the abstract. The JBC URL OpenAlex advertises returns 403.
 
-9. **Jiang et al. 2013, PMC3707662** — to settle the **DISPUTED** row C1 of
+14. **Jiang et al. 2013, PMC3707662** — to settle the **DISPUTED** row C1 of
    `aggregation_region_ground_truth_inventory.md`. Our note says the 318-343
    patch came out of an unbiased N→C truncation walk; an audit subagent says it
    was named by sequence analysis first. Both claim to be from reading the paper.

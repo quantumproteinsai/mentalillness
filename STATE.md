@@ -1819,6 +1819,64 @@ aa 1-382 does not aggregate, so the linker "is **not in itself sufficient**".
 Necessity is shown twice and quantified blind — ≥1.3 aggregates per cell with
 the region versus ≤0.1 without, p < 0.001.
 
+### Bradshaw 2014: the legacy-arm run, parameterised — and a false positive on our own protein [READ, 16 Nov 2026]
+
+*PLoS ONE* 9:e111196, CC BY. Bradshaw 2017 attributes its predictor result to "our
+**previous** analyses (8)". **This is paper 8**, and the run is specified well
+enough to reproduce:
+
+| tool | URL | threshold |
+|---|---|---|
+| AGGRESCAN | `bioinf.uab.es/aggrescan` | A4V value of 0, per residue |
+| FoldAmyloid | `bioinfo.protres.ru/fold-amyloid/oga.cgi` | default parameters, **21.4** |
+| ProA | `www.abl.ku.edu/ProA` | ProA-SVM *and* ProA-RF, 0.5 |
+| TANGO | `tango.crg.es` | α-helix *and* β-sheet, default, 5% |
+
+Four servers, **six measures**, with an explicit consensus rule: *"stretches of 5
+or more consecutive amino acids which were each predicted to have aggregation
+propensity by at least 3 of these 6 methods."* **All four are the frozen legacy
+arm of §5.1.**
+
+**It cross-validates Murray 2017 independently.** Murray gives FoldAmyloid as
+threshold **21.4** at `bioinfo.protres.ru`, scale "contacts 8 Å", frame 5.
+Bradshaw gives **21.4** at the same host with "default parameters". Same
+threshold, same host, unrelated groups — and Murray names the defaults Bradshaw
+leaves implicit. **Together they pin the §5.1 reimplementation target from two
+directions.**
+
+**One reproducibility gap, recorded:** the 2014 Methods give **no accession and no
+reading frame**. The 652-aa frame arrived in 2017. So the "aa 230-236" quoted in
+2017 could be either frame — but **checked, and it does not matter**: 230-236, or
+289-295 if converted from the 593 frame, both fall **outside** 324-348. The
+stratum assignment is robust either way.
+
+### A documented false positive, this time on our own protein
+
+The predictors' **only** β-sheet call on TRIOBP-1 was the **PH domain** — and the
+same paper refutes it:
+
+> "The alternative, aggregation occurring through the interaction of β-strands,
+> is seemingly discounted as deletion of **the only region of the TRIOBP-1 protein
+> with a predicted β-strand**, the Pleckstrin homology domain, **has no effect on
+> the aggregation propensity**"
+
+ΔPH aggregates identically to full length, by microscopy and by aggregome
+Western blot, in **two** cell types.
+
+**So `TRIOBP-1 60-189` is reclassified as CONCORDANT of an unusual and useful
+kind: the predictors found it and experiment says they were wrong.** It is a
+**negative control** — a region the tools called and experiment rejected — paired
+with 324-348, a region experiment found and the tools missed. **The two together
+state the failure more cleanly than either alone.**
+
+**And it is a third instance of the structural-context hypothesis, on this
+project's own protein** — removing the objection that the idea could not be
+tested here. hnRNPA1: predictors hit the folded **RRMs**. LECT2: disulfides lock
+down the predicted regions. TRIOBP-1: the only β-prone call is the folded **PH
+domain**. In all three the tools flag something **structurally sequestered** and
+miss what is free to engage. Still a hypothesis from three Discussion sections,
+and still silent on FUS-LC, which is wholly disordered.
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

@@ -221,5 +221,15 @@
       "CRMP1_1-127_IS_NOT_A_MAPPED_REGION": "Table 2 gives '1-127*' for CRMP1lv, and the asterisk is defined as 'Implied as only region unique to the long variant, lv'. THE PAPER STATES IT IS AN INFERENCE FROM ISOFORM DIFFERENCE, NOT A MAPPING. It must never be entered as an experimentally mapped region. A good example of why the table footnote matters as much as the table."
     },
     "a_statement_worth_keeping": "'While visible deposits of aggregated protein have not yet been detected in CMI patients, we propose the existence of more subtle protein misassembly in these conditions.' The authors are explicit that the visible-deposit evidence is absent. Consistent with Cukkemane 2021's 'DISC1 amyloid has not been reported either in human post-mortem brains or in animal models'."
+  },
+  "bradshaw2014": {
+    "citation": "Bradshaw NJ, Bader V, Prikulis I, Lueking A, Mullner S, Korth C (2014). Aggregation of the Protein TRIOBP-1 and Its Potential Relevance to Schizophrenia. PLoS ONE 9(10):e111196. doi:10.1371/journal.pone.0111196.",
+    "provenance": "READ IN FULL, 16 Nov 2026, publisher PDF supplied by the author. PLoS ONE, CC BY, so the publisher PDF is the version of record.",
+    "read_in_full": true,
+    "verified_against_publisher_pdf": true,
+    "source_version": "version_of_record",
+    "VERDICT": "THIS IS WHERE THE LEGACY-ARM PREDICTOR RUN ON TRIOBP-1 LIVES, and it is specified well enough to reproduce. All four tools of PREREGISTRATION 5.1 with thresholds and URLs, plus an explicit consensus rule. It also contains a documented FALSE POSITIVE of that arm, experimentally refuted in the same paper.",
+    "what_it_does_NOT_contain": "NO mapping of 324-348. That is the 2017 paper. This 2014 paper establishes that TRIOBP-1 aggregates, that TRIOBP-4 does not, that aggregation rises in post-mitotic cells, and that the PH domain is not responsible. The 25-aa region is not identified here.",
+    "the_frame_is_not_stated": "No accession and no reading frame for the analysed sequence. The 652-aa frame was introduced in 2017. Resolve before any attempt to reproduce the 2014 run."
   }
 }

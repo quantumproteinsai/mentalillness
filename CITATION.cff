@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "Experimentally mapped aggregation-critical protein regions, with circularity and prediction-concordance labels"
+abstract: >-
+  A hand-curated set of protein regions shown experimentally to be required for,
+  or to constitute the core of, protein aggregation. Every row was established by
+  opening the source paper and checking the claim against it. Each region carries
+  the construct that established it, whether a predictor was in its discovery
+  path (circularity), and whether experiment and prediction agree (stratum).
+type: dataset
+version: 1.0.0-draft
+authors:
+  - family-names: "Mercier des Rochettes"
+    given-names: "Bertrand"
+    # TODO AUTHOR: add orcid, affiliation, and decide whether to publish an email.
+    # Left blank deliberately -- publishing contact details is your call, not a default.
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    # affiliation: ""
+# TODO AUTHOR: co-authors, if any.
+keywords:
+  - protein aggregation
+  - amyloid
+  - benchmark dataset
+  - aggregation prediction
+  - circularity
+license: # TODO AUTHOR: see release/RELEASE_CHECKLIST.md
+# doi: # assigned on deposit
+# date-released: # on deposit

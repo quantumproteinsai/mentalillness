@@ -6,10 +6,28 @@
     "DISC1": "UniProt Q9NRI5, canonical, 854 aa (SV=3)."
   },
   "_columns": {
-    "evidence": "what experiment establishes the region",
-    "construct": "WHICH CONSTRUCT established it. A region can be necessary in one construct and dispensable in another; both results can be correct. Without this column the benchmark scores against a moving target.",
-    "found_by": "how the region was discovered. 'prediction' rows are CIRCULAR for a predictor benchmark and must be analysed separately.",
-    "verified_against_publisher_pdf": "false means nobody has opened the source and checked this row."
+    "_note": "THE THIRTEEN FIELDS BELOW ARE PRESENT ON EVERY ROW AND ARE THE STABLE SCHEMA. Anything else on a row is per-row commentary: useful, but not enumerable and not to be relied on by code. The released dataset moves all such commentary under a single `notes` object; see release/DATA_DESCRIPTOR.md.",
+    "protein": "Protein name as used in the source literature. Not an accession -- see `frame` for the numbering frame and accession where one is recorded.",
+    "residues": "The region, in the frame named by `frame`. Usually 'start-end'; occasionally a compound or descriptive string, so PARSE DEFENSIVELY.",
+    "evidence": "What experiment establishes the region.",
+    "construct": "WHICH CONSTRUCT established it. A region can be necessary in one construct and dispensable in another, and both results can be correct. Without this column the benchmark scores against a moving target.",
+    "found_by": "How the region was DISCOVERED. Rows found by prediction are CIRCULAR for a predictor benchmark and are analysed separately.",
+    "source": "Full citation of the paper the row rests on.",
+    "verified_against_publisher_pdf": "false means nobody has opened the source and checked this row. WHERE THIS DISAGREES WITH `source_version`, source_version GOVERNS -- it is stricter and more informative.",
+    "circularity_status": "CLEAN | CIRCULAR | UNDECIDABLE. Whether a predictor was in the DISCOVERY path. See _SCHEMA_CIRCULARITY.",
+    "circularity_basis": "Written justification for circularity_status. Prose, always present, never inferable from a keyword -- see _circularity_cannot_be_grepped.",
+    "stratum": "DISCORDANT | DISCORDANT_DERIVED | DISCORDANT_PROVISIONAL | CONCORDANT | PENDING. Whether experiment and prediction AGREE on this region. Distinct from circularity: circularity is about discovery, stratum is about outcome. See _SCHEMA_STRATUM.",
+    "stratum_basis": "Written justification for stratum, naming the tools and quoting the source where the assignment is documented.",
+    "source_version": "version_of_record | author_manuscript | pmc_full_text | preprint | source_not_opened | UNRECORDED. WHICH VERSION of the source was actually opened. See _SCHEMA_SOURCE_VERSION.",
+    "source_version_note": "Written justification for source_version, including citability under PREREGISTRATION.md 12.1 decision 3.",
+    "_optional_but_common": {
+      "frame": "The numbering frame and, where recorded, the accession. READ THIS BEFORE USING ANY RESIDUE NUMBER -- see _frame_traps_are_worse_than_assumed.",
+      "sequence": "The amino acid sequence of the region. Where present it has been checked to match the stated range in length.",
+      "sequence_provenance": "Where the sequence came from and what about it is verified.",
+      "range_provenance": "Where the residue range came from, quoted from the source.",
+      "verified_against": "The specific document that was read to verify the row, which is NOT always the document named in `source`.",
+      "note": "Free prose. Often carries the most important caveat on the row."
+    }
   },
   "regions": [
     {
@@ -136,7 +154,6 @@
     {
       "protein": "DISC1",
       "residues": "716-761",
-      "sequence_unverified": "VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH",
       "evidence": "solid-state NMR beta-strand chemical shifts, EM morphology",
       "construct": "as above",
       "found_by": "RADAR sequence-repeat search; standard amyloid predictors failed",
@@ -153,7 +170,9 @@
       "verified_against": "Cukkemane et al. 2021, Transl Psychiatry 11:639 -- publisher PDF read in full, 16 Nov 2026.",
       "OUR_CAUTION_IS_NOW_CONFIRMED_AT_SOURCE": "THE ROW ALREADY CARRIED, IN CAPITALS, \"THIS IS A DOCKING RESTRAINT, NOT A MEASUREMENT\". THAT WAS WRITTEN WITHOUT HAVING READ THE PAPER, AND THE PAPER CONFIRMS IT VERBATIM. Structural models section: \"The proposed beta-structure was INTRODUCED INTO THE MODEL using MODELLER 9.23 AFTER ADDING RESTRAINTS defining antiparallel beta-strands in segments 716-737 and 739-761, respectively, via the model-addrsr.py script.\" The beta-strands were IMPOSED as restraints and then docked with CLUSPRO; they were not observed. The ssNMR evidence is chemical shifts \"reminiscent of residues in beta-strands\" for Ala, Gly, Leu, Pro, Ser, Thr and Val -- composition-level, not site-resolved. The paper itself concedes \"the ultimate proof is still lacking\" and \"Due to the unavailability of a high-resolution 3D structure of the DISC1 C-region beta-core, we are rather limited\".",
       "CIRCULARITY_CONFIRMED_AT_SOURCE": "found_by already read \"RADAR sequence-repeat search\" and the paper states it outright: \"A manual search, however, for (pseudo)repeats using the program RADAR [63] identified one such long tandem motif covering residues 717-737 and 739-761.\" The region was found BY a sequence search. The CIRCULAR label stands, now verified rather than inferred.",
-      "SEVENTEENTH_INCONSISTENCY": "THE PAPER GIVES TWO DIFFERENT START RESIDUES FOR THE SAME MOTIF. Abstract and Results: the beta-core is \"residues 716-761\". Methods restraints: \"segments 716-737 and 739-761\". Discussion, reporting what RADAR actually returned: \"covering residues 717-737 and 739-761\". SO THE RADAR OUTPUT STARTS AT 717 AND EVERYTHING ELSE STARTS AT 716. One of them is wrong and the paper does not say which. Our row records 716-761 from the abstract; if the RADAR motif is the real object then the row is 717-761. UNRESOLVED, and it does not matter much because the row is CIRCULAR and excluded from the primary analysis -- but it must not be quoted as though the paper were consistent."
+      "SEVENTEENTH_INCONSISTENCY": "THE PAPER GIVES TWO DIFFERENT START RESIDUES FOR THE SAME MOTIF. Abstract and Results: the beta-core is \"residues 716-761\". Methods restraints: \"segments 716-737 and 739-761\". Discussion, reporting what RADAR actually returned: \"covering residues 717-737 and 739-761\". SO THE RADAR OUTPUT STARTS AT 717 AND EVERYTHING ELSE STARTS AT 716. One of them is wrong and the paper does not say which. Our row records 716-761 from the abstract; if the RADAR motif is the real object then the row is 717-761. UNRESOLVED, and it does not matter much because the row is CIRCULAR and excluded from the primary analysis -- but it must not be quoted as though the paper were consistent.",
+      "sequence": "VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH",
+      "sequence_provenance": "RETIRED FIELD NAME FIXED 16 Nov 2026, found by scripts/validate_regions.py while preparing the dataset for release. This sequence sat under the obsolete key \"sequence_unverified\" long after that key was renamed on the TRIOBP-1 rows -- a leftover no human reading the file had noticed, and exactly the kind of thing a consumer of the published dataset would have tripped over. VERIFIED WHILE FIXING IT, rather than merely renamed: UniProt Q9NRI5 residues 716-761 are VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH, byte-for-byte what the row held, and 46 residues as 716-761 requires. WHAT REMAINS UNVERIFIED IS THE RANGE, NOT THE LETTERS. The sequence is whatever UniProt says lies at 716-761; whether 716-761 is the right range is the circularity problem recorded on this row -- it came from a RADAR repeat search and from MODELLER restraints, not from a measurement. See circularity_basis and SEVENTEENTH_INCONSISTENCY."
     },
     {
       "protein": "DISC1",

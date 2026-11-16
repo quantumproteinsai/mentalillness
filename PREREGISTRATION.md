@@ -142,10 +142,24 @@ not report those as findings.
 
 | tool | status **16 Nov 2026**, content-verified | how it will be run |
 |---|---|---|
-| **TANGO** (Fernandez-Escamilla 2004, *Nat Biotechnol* 22:1302) | **LIVE at `https://tango.crg.es/`** — **the protocol matters**: `http://` serves a CRG "ERROR 404 … maintenance" page, `https://` serves the real site (`<title>Homepage \| Tango</title>`). **Do not confuse with the unrelated image-analysis TANGO at `biophysique.mnhn.fr/tango`** | web, **HTTPS**, settings recorded verbatim |
+| **TANGO** (Fernandez-Escamilla 2004, *Nat Biotechnol* 22:1302) | **LIVE at `https://tango.crg.es/`**, academic licence, registration required. **The protocol matters**: `http://` serves a CRG maintenance page. **Not** the image-analysis TANGO at `biophysique.mnhn.fr/tango` | **LOCAL EXECUTABLE under academic licence** (author decision, 16 Nov 2026) — **version-pinnable, therefore reproducible**. Record the version string and the exact invocation, not web-form settings |
 | **AGGRESCAN** | **LIVE**, redirects to `andromeda.uab.cat/bioinf/aggrescan/` | web, settings recorded verbatim |
 | **FoldAmyloid** | **server dead**, both hosts return 000 | **reimplemented** from Garbuzynskiy 2010 + the scales in Galzitskaya 2006b |
 | **ProA** | **DEAD.** `abl.ku.edu/ProA/` now returns **HTTP 200 by silently redirecting to the lab homepage** `mgm.ku.edu` | **cannot be run. Recorded as unavailable, not as a failure.** |
+
+**TANGO IS NOW A LOCAL TOOL, WHICH REMOVES THIS SECTION'S OWN OBJECTION TO IT.**
+§5.2 excludes web services from the confirmatory arm because *"a web form is not
+a reproducible tool — it cannot be version-pinned."* On 16 Nov 2026 the author
+obtained TANGO under an **academic licence as a downloadable program**, so that
+objection no longer applies to it: the run becomes version-pinnable and
+repeatable. **AGGRESCAN is now the only web-only tool left in the legacy arm**,
+and its lack of a version string is a stated limitation rather than an oversight.
+
+**What §12 step 4 must capture for TANGO**, given it is now local: the **version
+string** of the downloaded program, the **platform and date obtained**, the
+**exact command line or parameter set**, and the **licence type** under which it
+was obtained. A version-pinnable tool is only reproducible if the pin is actually
+written down.
 
 **STATUS-CODE CHECKING IS NOT ENOUGH, AND THREE OF THESE FOUR PROVE IT.** A
 naive `curl -o /dev/null -w '%{http_code}'` sweep on 16 Nov 2026 returned **200

@@ -346,8 +346,9 @@ the literature, not a run of bad luck:
 | Seuma 2021 (eLife) | gatekeepers "...E11, **D22**, L17, A42" (Discussion) | "...L17, **E22**, A42" (Methods) | **E22** — Aβ22 is Glu; the Dutch mutation is E22Q |
 | Giasson 2001 (JBC) | peptide `VTGVTAVAQKT**V**` (title, abstract, Results, Discussion) | Methods: `VTGVTAVAQKT**A**` | **V** — P37840 position 82 is Val. **A SEQUENCE slip, not a numbering slip, and it sits in the description of the peptide carrying the whole sufficiency claim** |
 | von Bergen 2000 (PNAS) | Abstract: scan of "the **full** τ sequence" | Fig. 4: "the region of τ from **L253 ... to D348**" (96 aa of 441) | **L253-D348**. A SCOPE claim, not a number — it decides whether the row is an unbiased scan of a PROTEIN or of a PRE-SELECTED DOMAIN |
+| von Bergen 2000 (PNAS) | Discussion (v): "the corresponding **hexapeptides** in R1 (`244QTAPVPM250`)" | that sequence is **SEVEN** residues, 244-250 | **7**. Verified against P10636-8: 244-250 is `QTAPVPM`. The R4 partner `337VEVKSE342` really is six, so only the R1 label is wrong |
 
-**Ten, across eight papers and SIX independent groups** (updated 16 Nov 2026: the
+**Eleven, across eight papers and SIX independent groups** (updated 16 Nov 2026: the
 Mizuguchi slip found by reading the apoA-I primary, the Seuma slip reported by the
 unbiased-screen audit). None of them changed a row, because each was caught by
 arithmetic, by a figure, or — in the Seuma and Giasson cases — by knowing the
@@ -863,23 +864,55 @@ necessarily overruns. Recorded so it is not later mistaken for one.)*
 `NLKHQPGGGKVQIVYKPVDLSKVTSKCGSLGNIHHKPGGGQVE` **byte-for-byte** against the
 printed string.
 
-### But Figure 1 also demotes PHF6*, and the reason is structural
+### CORRECTION: I demoted PHF6* wrongly, and the full text says so
 
-**PHF6\* (275-280) sits in the first six residues of R2 — and R2 is DELETED from
-the probe.** The scan was run with PHF43, which is ΔR2. This experiment therefore
-could not establish PHF6* the way it established PHF6, and the paper does not
-claim it did: the Abstract names **one** motif, *"a minimal hexapeptide
-interaction motif of 306VQIVYK311"*, and Figure 4 calls PHF6* *"the **analogous**
-sequence in R2."*
+From the figures alone I concluded that PHF6* was named only by analogy, because
+it sits in R2 and R2 is deleted from the PHF43 probe. **The full text, supplied
+immediately afterwards, shows that is wrong.** Results (iii):
 
-**PHF6\* is identified by sequence analogy, not by its own signal.** That is not
-predictor-circular — analogy to an experimentally mapped motif is not an
-algorithm — but it is a homology inference, and entering it as a second
-independent clean row would have **double-counted one experimental result**.
+> "A **second maximum of interaction** was centered around Ile-278, covering the
+> sequence 275VQIINK280 (PHF6*)."
 
-**Consequence for H4: the control arm is n = 1, not n = 2**, and must be stated
-that way. Independent support for PHF6* would have to come from von Bergen 2001
-(*JBC* 276:48165), where ΔK280 — which sits inside PHF6* — is characterised.
+and the Figure 4 caption: *"**Another cluster of strong interaction** occurs
+around the spots that harbor the analogous sequence in R2."*
+
+**PHF6\* has its own measured binding maximum.** My error was conflating the
+probe with the membrane: the probe need not contain PHF6*, the **membrane** does,
+and it spans 253-354 including all of R2. PHF43 binding a PHF6*-containing
+peptide is a real heterotypic interaction — and the probe lacking R2 makes that
+result *cleaner*, not weaker, since the signal cannot come from the probe's own
+copy of the motif. **PHF6\* is restored to CLEAN.**
+
+**The caveat that does survive is a different one, and it is real.** *Necessity
+was demonstrated only for PHF6.* Every mutational experiment targets 306-311 —
+the proline scan, K19ΔVQI, K19NAE, K19Y310E, and ΔVQI/NAE in full-length ht23.
+PHF6* has a binding maximum and nothing else. So PHF6* enters as a clean row with
+**sufficiency and necessity untested**, and **the H4 control arm stays n = 1** —
+not because PHF6* is contaminated, but because it is detected inside the *same
+single experiment* and carries no mutational validation.
+
+### Two things the full text adds to the PHF6 row
+
+**Necessity is strong, which is why this row can carry the control arm.** Proline
+substitution inhibits aggregation at *every* residue of PHF6, while the outside
+control G272P shows "no significant change". ΔVQI and NAE cause "a **complete
+loss** of PHF formation" in full-length ht23 — necessity in an isolated construct
+*and* in the intact protein.
+
+**But the radiolabel sits inside the motif being mapped.** Methods: *"The purified
+peptide PHF43 (50 μg) was **iodinated at Tyr-310**."* Tyr-310 is the fifth residue
+of 306VQIVYK311 (verified against P10636-8). The probe therefore carries a bulky
+iodine covalently attached inside its own PHF6 motif, and the assay then measures
+that probe binding PHF6-containing peptides. The mutational work is independent
+of the label and confirms the result, so this does not invalidate it — **but a
+reviewer will spot it, and we should raise it rather than be shown it.**
+
+**And the "no algorithm named anywhere" claim is now definitively dead.**
+Discussion (v) cites **ref 30 = Street & Mayo 1999, *PNAS* 96:9074** for the
+β-propensity argument. Still post hoc, so the row stays CLEAN — but note that
+this sentence is itself a gatekeeper argument, *"β-sheet breakers such as P and
+E"*, **published in 1999.** That is a fifth pre-emption of the compositional
+strand, and the earliest.
 
 ### RATIFIED BY THE AUTHOR, 16 Nov 2026: the reframing is adopted
 

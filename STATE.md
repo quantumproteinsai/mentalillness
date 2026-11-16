@@ -349,9 +349,10 @@ the literature, not a run of bad luck:
 | von Bergen 2000 (PNAS) | Discussion (v): "the corresponding **hexapeptides** in R1 (`244QTAPVPM250`)" | that sequence is **SEVEN** residues, 244-250 | **7**. Verified against P10636-8: 244-250 is `QTAPVPM`. The R4 partner `337VEVKSE342` really is six, so only the R1 label is wrong |
 | Sharma 2023 (JMB) | Methods: "**seven** different computational programs" | then lists **eight** (ZipperDB, LARKSdb, Waltz, Aggrescan, FoldAmyloid, PASTA 2.0, TANGO 2.2, Amylpred 2) | **seven** — LARKSdb never reappears in Results or Fig. 4 |
 | Sharma 2023 (JMB) | truncated construct "residues **Met286**-Phe320" | 286 is **Ser**; cannot contain Asp262; cannot cover a 251-295 core | **Met186** — the unique Met satisfying all three constraints; a digit transposition |
-| Richards 2023 (preprint) | Suppl. Table 1: "Ramachandran favoured (%) **5.26**" with outliers **0** | and "Favored rotamers (%) **94.74**" | labels **swapped**. 18/19 = 94.74%, 1/19 = 5.26%; favoured 5.26% with zero outliers is arithmetically impossible |
+| Richards 2023 — **preprint AND version of record** | Table 1: "Ramachandran favoured (%) **5.26**" with outliers **0** | and "Favored rotamers (%) **94.74**" | labels **swapped**. 18/19 = 94.74%, 1/19 = 5.26%; favoured 5.26% with zero outliers is impossible. **It survived peer review at *Structure*** |
+| Richards 2023 — version of record | Intro: "have been identified **and assemble into** amyloid-forming LECT2 peptides **assemble into** amyloid-like fibrils" | preprint: "have been identified, and **PREDICTED** amyloid-forming LECT2 peptides assemble into..." | the **preprint**. Copyediting garbled the verb and **dropped "predicted"** — the word that flags ref 20 as circular |
 
-**Fourteen, across ten papers and EIGHT independent groups** (updated 16 Nov 2026: the
+**Fifteen, across ten papers and EIGHT independent groups** (updated 16 Nov 2026: the
 Mizuguchi slip found by reading the apoA-I primary, the Seuma slip reported by the
 unbiased-screen audit). None of them changed a row, because each was caught by
 arithmetic, by a figure, or — in the Seuma and Giasson cases — by knowing the
@@ -1540,6 +1541,56 @@ and was retired four days later. This is a hypothesis drawn from two Discussion
 sections with no measurement behind it. If it enters `PREREGISTRATION.md` it
 enters as a pre-specified **secondary** analysis with its own falsification
 condition — and only if the author decides it earns the space.
+
+### The LECT2 version of record, read — and the preprint is better evidence [16 Nov 2026]
+
+The NIHMS manuscript (`nihms-1928634.pdf`, the accepted *Structure* version) is
+now read in full. **Both versions have been read**, which is what makes the
+comparison below possible. Everything recorded from the web read holds.
+
+**The frame is now pinned to a named accession**, which the preprint never gave:
+the Key Resources table specifies *"residues 19-151 of the human LECT2 protein
+(GenBank AAC17734.1)"*. Verified: 151 − 19 + 1 = **133**, matching the mature
+chain and the paper's own *"21 of the 133 residues"*.
+
+### §12.1's version rule just paid off, and it cut the unexpected way
+
+I assumed the version of record would be the better evidence. **Here it is
+worse.** The Introduction sentence about prior work:
+
+> **Preprint:** "Amyloidogenic segments of LECT2 have been identified, and
+> **predicted** amyloid-forming LECT2 peptides assemble into amyloid-like fibrils
+> in isolation."
+>
+> **Published:** "Amyloidogenic segments of LECT2 have been identified **and
+> assemble into** amyloid-forming LECT2 peptides **assemble into** amyloid-like
+> fibrils in isolation."
+
+Copyediting **garbled the verb and dropped the word "predicted"** — and that word
+is precisely what flags reference 20 (Tsiolaki 2019) as **circular**. It is the
+authors' own acknowledgement that the peptides tested there were chosen by an
+algorithm.
+
+**So: cite the published version per §12.1, but quote the preprint for that
+sentence, naming the version each quotation comes from.** The assumption that the
+version of record is always the better source is false here, and this is a
+concrete counter-example rather than a hypothetical one.
+
+**And the Ramachandran error survived peer review.** Table 1 of the published
+version prints the same impossible figures — *favoured 5.26%* with *outliers 0%*
+— so it is not a preprint artefact. It passed review at *Structure* and was
+copyedited around. Tally **15**.
+
+**Two more things from the published version**, recorded so the two are not
+treated as interchangeable in either direction. The fibrils were grown in *"a
+modified version of the fibrillization buffer used by Tsiolaki et al."* — the
+growth conditions are inherited from the circular paper. **That does not make the
+structure circular** (the core came from the density and from Rosetta threading
+over all 21-residue windows, neither of which depends on buffer), but a reviewer
+tracing provenance will land on Tsiolaki and we should say it first. And the
+published version **adds** AFM confirming the left-handed twist (Figure S11) and
+a domain-swapping model through loop 2 (Figure S10) — neither affects the core
+range.
 
 ### What that inventory is not
 

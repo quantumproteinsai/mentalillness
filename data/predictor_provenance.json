@@ -134,10 +134,28 @@
         "edge_artefact": "The smoother is np.convolve(..., mode=\"same\"), which ZERO-PADS at the termini. The first and last window_size//2 residues are biased downward by construction, not by biology -- 3 residues at each end at the default. A second reason to prefer the raw column."
       },
       "CIRCULARITY_QUESTION_OPEN": {
-        "observation": "The weight files are named cpad_hotidp90_model_cv_1..5.h5.",
-        "why_it_matters": "data/regions.json _CPAD_CONTAMINATION_WARNING records that CANYA (Thompson 2025) found TANGO, CamSol and Aggrescan were trained on sequences within CPAD. If AggrescanAI is CPAD-trained too, the contamination extends from the legacy arm into the MODERN arm -- the arm this project exists to test.",
-        "EVIDENCE_GRADE": "INFERENCE FROM A FILENAME. Not READ, not a snippet of any paper. MUST NOT be written into regions.json or the pre-registration until the Methods of Navarro et al. 2026, J Mol Biol, DOI 10.1016/j.jmb.2026.169643 are opened. PDF NOT YET OBTAINED.",
-        "also_note": "The notebook downloads ONLY the five homology_models. The 33 balanced_models/ in the same HF repo are unused by the published notebook, so \"AggrescanAI\" means the CPAD-named ensemble specifically."
+        "_STATUS": "CLOSED 16 Nov 2026 -- CONFIRMED, AND WORSE THAN THE FILENAME SUGGESTED.",
+        "_evidence_grade": "READ. Navarro et al. (2026) J Mol Biol 438:169643, version of record, full PDF opened. Supersedes the earlier inference from the model filename.",
+        "confirmed_verbatim": "\"We used the Curated Protein Aggregation Database (CPAD) 2.0 [22] ... The dataset was divided into training and testing subsets. The training subset (80%) has 75,524 total residues, of which 2,167 correspond to APR+ positions.\"",
+        "the_shipped_model_is_the_CPAD90_ensemble": "\"Models trained on the CPAD90 dataset showed significant improvement ... Consequently, the final predictive model corresponds to the ensemble trained on the CPAD90 dataset using optimized hyperparameters, from now on called AggrescanAI.\" This matches the shipped weight filenames cpad_hotidp90_model_cv_1..5.h5 exactly: CPAD + HoTIDP homology transfer at the 90% threshold.",
+        "THE_CONTAMINATION_SURFACE_IS_WIDER_THAN_CPAD_MEMBERSHIP": "CPAD90 is CPAD \"together with homologous sequences\", built by homology transfer through the HoTIDP server using OrthoInspector and OmaDB orthologues. SO IT IS NOT SUFFICIENT TO CHECK THAT A BENCHMARK PROTEIN IS ABSENT FROM CPAD. An ORTHOLOGUE of a CPAD protein can carry a transferred APR annotation into the training set. Any row of regions.json whose protein is homologous to a CPAD entry is potentially training data for AggrescanAI.",
+        "WE_CANNOT_CHECK_IT_FROM_PUBLISHED_FILES": "The paper's entire data-availability statement is \"Data will be made available on request.\" The CPAD90 membership list is therefore NOT public. CPAD 2.0 itself is public, so CPAD membership is checkable; the homology-expanded set is not, short of asking the authors or extracting Supplementary Table 2.",
+        "the_authors_knew_and_said_so": "\"A crucial consideration is that the predictor was trained on datasets that, even with augmentation, currently encompass a restricted subset of experimentally validated Aggregation-Prone Regions (APRs).\""
+      },
+      "PUBLISHED_PERFORMANCE_READ_THE_MARGIN_BEFORE_SPENDING": {
+        "_source": "Navarro 2026 Figure 2, ROC on the external AmyPro validation set [READ].",
+        "AggrescanAI": 0.69,
+        "ANuPP": 0.6,
+        "AggreProt": 0.6,
+        "AGGRESCAN": 0.58,
+        "Aggrescan3D": 0.51,
+        "WHAT_THIS_MEANS": "The best modern sequence predictor scores AUROC 0.69 on an external benchmark, and the structure-aware Aggrescan3D scores 0.51 -- indistinguishable from random. NO CONFIDENCE INTERVALS ARE GIVEN for any of these. CLAUDE.md rule 2 applies directly: before we spend anything on separating two predictors, note that the published gap between the best modern tool and the 2007 legacy tool is 0.69 vs 0.58, reported without error bars, on a benchmark the same paper calls inadequate. A benchmark of ours that aims to resolve differences smaller than that needs its power argued first.",
+        "AND_IT_IS_SELF_ASSESSED": "This ranking is reported by the authors of the winning tool, on a benchmark set they constructed. It is not independent."
+      },
+      "licence_and_reuse": {
+        "gitlab_repo": "NO LICENSE FILE. Licence unstated.",
+        "huggingface_weights": "No model card, no licence.",
+        "paper": "Elsevier, NOT open access. The PDF states: \"All rights are reserved, including those for text and data mining, AI training, and similar technologies.\""
       }
     },
     "CONSEQUENCE_FOR_5.2_AUTHORS_CALL": "As of today the modern arm is ONE tool, not two. A single-tool modern arm weakens a headline question that is about a GENERATION of predictors. Options, to be registered before scoring: wait for the AggreProt weights, widen the arm to another version-pinnable local tool, or register explicitly that the modern arm is one tool and say so in the title.",

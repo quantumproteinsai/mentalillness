@@ -161,7 +161,11 @@ No model card, no licence, and no `config.json` on the HuggingFace repo. **No
 `LICENSE` file exists in the GitLab repository.** Licence is therefore *unstated*,
 not permissive-by-default.
 
-### A circularity question that must be answered before it is run
+### A circularity question — now CLOSED, and the answer is bad
+
+> **Settled 16 Nov 2026 by reading Navarro et al. (2026) *J. Mol. Biol.* **438**:169643, version of record.** The inference below was correct and understated. See the end of this report.
+
+#### The original filename inference, kept for the record
 
 The weight files are named **`cpad_hotidp90_model_cv_*`**.
 
@@ -229,3 +233,116 @@ would breach the pre-registration. Note in particular that AggrescanAI's own
 example sequence is **UniProt P37840, α-synuclein — which is a row in
 `data/regions.json`** — so even its demo cannot be used as a smoke test.
 Use an unrelated sequence.
+
+
+---
+
+## CLOSED: AggrescanAI is CPAD-trained, and the exposure is wider than CPAD
+
+**Navarro et al. (2026), *J. Mol. Biol.* **438**:169643 — full PDF opened [READ,
+version of record].** This supersedes the filename inference above.
+
+> "We used the Curated Protein Aggregation Database (CPAD) 2.0 … The training
+> subset (80%) has 75,524 total residues, of which 2,167 correspond to APR+
+> positions."
+
+and the shipped model is named explicitly:
+
+> "the final predictive model corresponds to the ensemble trained on the
+> **CPAD90** dataset using optimized hyperparameters, from now on called
+> AggrescanAI."
+
+which matches the weight filenames `cpad_hotidp90_model_cv_{1..5}.h5` exactly.
+
+**The important part is what CPAD90 is.** It is CPAD *together with homologous
+sequences*, built by transferring annotations through the HoTIDP server using
+OrthoInspector and OmaDB orthologues. **So checking that one of our proteins is
+absent from CPAD is not sufficient** — an orthologue of a CPAD protein can carry
+a transferred APR annotation into training. And the membership list is not
+published: the entire data-availability statement is *"Data will be made
+available on request."*
+
+The authors say it themselves:
+
+> "the predictor was trained on datasets that, even with augmentation, currently
+> encompass a restricted subset of experimentally validated Aggregation-Prone
+> Regions."
+
+### A third kind of circularity
+
+This project already separates two: **`circularity_status`** (was a predictor in
+the *discovery* path) and **`stratum`** (do experiment and prediction *agree*).
+This is neither. It is **training-set membership of the benchmark row**, and it
+is recorded in `regions.json` as
+`_AGGRESCANAI_HITS_ON_OUR_ROWS_ARE_NOT_EVIDENCE_OF_PREDICTION`.
+
+It bites immediately. Navarro reports AggrescanAI recovering tau R3 306–336, tau
+`275VQIINK280`, and α-synuclein APRs in the N-terminus and NAC domain — **three
+regions that overlap rows in our dataset.** Tau and α-synuclein are among the
+most heavily annotated proteins in CPAD. **A hit on a training protein is recall,
+not prediction.**
+
+## The paper contradicts one of our own rows, and both sides are right
+
+Our `tau 275-280` row is `CONCORDANT`, on von Bergen 2000: PHF6 and PHF6* "are
+the only two spots in the tau sequence where a β conformation is strongly
+predicted". Navarro says of the same segment:
+
+> "AggrescanAI also identifies an additional APR within the second repeat (R2,
+> residues 275–305) that is **not detected by Aggrescan**. This segment includes
+> the 275VQIINK280 motif."
+
+**Both are true.** They are different predictors — a 2000-era β-propensity method
+and AGGRESCAN 2007. So the same region is concordant for one tool and discordant
+for another.
+
+**`stratum` as defined cannot express that.** It attaches one label to a region,
+in exactly the way a benchmark ignoring `construct` attaches one label to a
+protein — the failure mode `CLAUDE.md` was written to prevent, reappearing one
+column over. **No row value was changed on the strength of this**; the finding is
+recorded as `_STRATUM_IS_A_PROPERTY_OF_A_PAIR_NOT_OF_A_REGION`. Making stratum a
+(region, predictor) pair is a schema change and must be registered, not slipped
+in before a freeze.
+
+## Read the margin before spending anything
+
+Figure 2, AUROC on the external AmyPro set:
+
+| tool | AUROC |
+|---|---|
+| **AggrescanAI** | **0.69** |
+| ANuPP | 0.60 |
+| **AggreProt** | **0.60** |
+| **AGGRESCAN** | **0.58** |
+| Aggrescan3D | **0.51** |
+
+**No confidence intervals are given for any of them.** The structure-aware tool is
+indistinguishable from random. The gap between the best modern predictor and the
+2007 legacy one is **0.69 vs 0.58, unbarred**, self-reported by the winning tool's
+authors on a benchmark they built — and which they themselves call inadequate.
+
+**CLAUDE.md rule 2 applies before any compute is spent.** A benchmark of ours
+aiming to resolve differences of that size must argue its power first, on 4
+discordant rows.
+
+## A third independent call for exactly this dataset
+
+> "These observations highlight the need for a more specific, **gold-standard
+> reference set of APRs** to improve benchmarking across prediction tools."
+
+That is now **three groups in print** — Thompson 2025 (CANYA), Planas-Iglesias
+2024 (AggreProt), Navarro 2026 (AggrescanAI) — saying the standard APR benchmark
+databases cannot support predictor comparison. Navarro's closing wish list asks
+for "improved the experimental annotation of APRs at residue-level resolution,
+which would reduce label ambiguity".
+
+**`data/regions.json` is that object.** The data descriptor currently argues its
+own necessity; it should cite these three instead.
+
+## Licence
+
+| artefact | licence |
+|---|---|
+| GitLab repository | **none — no LICENSE file** |
+| HuggingFace weights | none, no model card |
+| paper | Elsevier, **not** open access; "All rights are reserved, including those for text and data mining, AI training, and similar technologies" |

@@ -848,6 +848,84 @@ assert.
 6-residue *measurement* or an inference from a coarser grid. **Figures 1 and 4
 remain outstanding**; the text is READ, the figures are not.
 
+### Tau already is the gatekeeper paradox, in print since 2007, with its resolution [READ, 16 Nov 2026]
+
+Mandelkow, von Bergen, Biernat & Mandelkow, *Brain Pathol* 2007;17:83-90, supplied
+by the author. **It is a review, so by `CLAUDE.md` its numbers are checked against
+UniProt and not trusted.** Every one of them holds against P10636-8 —
+`306VQIVYK311` and `275VQIINK280` both exact, all four repeat boundaries exact
+(R1 Q244-K274, R2 V275-S305, R3 V306-Q336, R4 V337-N368), and "only five types of
+residues (G, K, P, S, T) make up half of the sequence" computes to **49.0%**.
+**Zero discrepancies — the first paper in this entire sweep with none, and it is
+the review.** That does not overturn the rule; one accurate review is not a
+licence. It is recorded because the running tally would otherwise imply the
+literature is uniformly sloppy, and it is not.
+
+**The finding is not the numbers. It is that tau is our paradox, already solved.**
+
+> "Tau is unusually rich in polar and charged amino acids... Only five types of
+> residues (G, K, P, S, T) make up half of the sequence. This explains the high
+> solubility and unfolded nature of the protein; **however, it renders its
+> abnormal aggregation in Alzheimer's disease (AD) even more enigmatic.** In
+> particular, at first glance, **the sequence contains no elements that are
+> particularly amyloidogenic**"
+
+Computed from P10636-8: **whole tau441 is 35.6% proline-plus-charge** (43 P,
+44 K, 29 D, 27 E, 14 R) and it aggregates. That is the same shape as TRIOBP-1
+324-348 at 48.0%, and the review calls it *enigmatic* — in 2007. **And it gives
+the resolution:**
+
+> "The puzzle was partially solved with the realization that the aggregation of
+> tau is based on short hexapeptide motifs in the repeat domain"
+
+PHF6 is **16.7%** gatekeeper against the repeat domain's 29.6% and the protein's
+35.6%. **Globally gatekeeper-rich protein, locally zipper-grade hexapeptide,
+aggregation driven by the local motif.** That is exactly the window-matched
+control `scripts/gatekeeper_density.py` already computes — and it is the standard
+tau story, twenty years old.
+
+**This is the fourth and most direct pre-emption of the compositional strand**,
+after Murray 2017 (composition does not discriminate), Seuma 2021 (gatekeeper
+residues, measured) and our own n=1 problem. **The gatekeeper framing cannot be
+the headline.** It is not merely pre-empted in general terms; the specific
+paradox — gatekeeper-rich protein aggregating anyway — is the textbook tau case
+with a textbook answer.
+
+**The gatekeeper concept is also better supported than we need it to be**, which
+is the same problem from the other side. Two FTDP-17 mutations that *delete a
+gatekeeper residue* both *accelerate* aggregation: **ΔK280** removes a lysine,
+**P301L** removes a proline, and both "strongly enhance the rate of PHF
+aggregation by increasing the propensity for β-structure." That is the converse
+of Giasson's A76E, where *adding* charge slowed assembly. Gatekeepers suppress,
+graded, in both directions, measured, published. **Nothing is left to discover
+there.**
+
+### What survives is sharper than what it replaces
+
+The distinction that tau does *not* pre-empt is about **prediction, not
+composition**:
+
+| | global gatekeeper | local hexapeptide | do the predictors find it? |
+|---|---|---|---|
+| tau | 35.6% | PHF6 16.7% | **YES** — *"the only two spots in the τ sequence where a β conformation is strongly predicted"* |
+| TRIOBP-1 324-348 | 48.0% | contains a **0%** 6-mer | **NO** — missed |
+
+**Same compositional architecture; opposite prediction outcome.** The claim worth
+making is not "a gatekeeper-rich region aggregates" — tau, 2007 — but **"a
+window-scanning predictor had a zipper-grade window to find and missed it, in a
+case structurally identical to the one where it succeeds."** That is a
+prediction-failure claim with tau as its built-in positive control, and
+`gatekeeper_density.py`'s docstring already gropes toward it: *"a window-scanning
+predictor had a 0%-gatekeeper hexapeptide to find inside TRIOBP-1 324-348 and
+missed the region anyway."*
+
+**Recommendation to the author, who decides it:** demote composition from
+headline to context, promote the window-level prediction failure, and make tau
+PHF6 a required comparator row rather than an optional one. This costs the
+inversion, which was n=1 and getting lonelier, and buys a contrast with a control
+arm. **It is a reframing, not a retreat — but it is the author's call, and it
+should be made before the freeze.**
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

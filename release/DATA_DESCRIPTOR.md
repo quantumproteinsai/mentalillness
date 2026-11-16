@@ -74,7 +74,7 @@ they all hit it. Only the **discordant** rows can.
 cannot support predictor comparison** — and two of the three are the authors of
 the predictors being compared.
 
-**Thompson et al. 2025**, *Sci. Adv.* (CANYA), on training contamination:
+**Thompson et al. 2025**, *Sci. Adv.* **11**(18):eadt5111, doi:10.1126/sciadv.adt5111 (CANYA), on training contamination:
 
 > "several of these methods (including TANGO, CamSol, and Aggrescan) were
 > directly trained on sequences within CPAD"

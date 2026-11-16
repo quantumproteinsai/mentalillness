@@ -36,12 +36,41 @@ Ranked by what changes if you read it.
    no named proteins, no fold changes, no FDR. Even the 42/41/20 counts we have are
    second-hand. If a per-protein table exists anywhere, it is in that supplement.
 
-3. **Leliveld et al.**, *J. Neuroscience* (2008/2009), and **Korth (2012)**. Both 403.
+3. **Leliveld et al. (2008)**, *J. Neuroscience* **28**:3839, and **Korth (2012)**.
+   Both 403. **STILL OPEN.**
    The primary sources for two things we are currently leaning on: cold-sarkosyl-insoluble
    DISC1 in patient brain but not controls, and — far more important — the report that
    **brain-derived aggregates do not stimulate thioflavin T** while recombinant DISC1
    fibrils do. That single observation decides whether the disease species is an ordered
    amyloid at all. We have it only as a statement inside a 2025 paper citing them.
+
+   **CORRECTION, 16 Nov 2026: this entry used to read "*J. Neuroscience* (2008/2009)",
+   which silently merged two different papers in two different journals.** The
+   J. Neurosci. paper is **2008 only** and is the one that carries the thioflavin T and
+   cold-sarkosyl claims. **Leliveld et al. (2009), *Biochemistry* 48:7746-7755**
+   (doi:10.1021/bi900901e) is a separate paper on the C-terminal domain 640-854; it has
+   now been **read in full** (item 3a) and contains **no thioflavin T experiment at all**.
+   Reading it does not close this item. Do not let the shared first author collapse them
+   again.
+
+3a. ~~**Leliveld et al. (2009)**, *Biochemistry* **48**:7746.~~ **READ IN FULL 16 Nov
+   2026, supplied by the author.** Not on this list under its own name before — it was
+   hidden inside the "2008/2009" conflation above.
+
+   **It closes the reducing-agent question for this span and narrows a proposal.**
+   The register recorded that question as "unverified for Narayanan 2011 and Leliveld
+   2009". Verified now, and the answer is the opposite of the modern papers': β-ME at
+   every step, a published ±reductant gel (Figure 3A: no reduction / 2% β-ME / 10 mM
+   DTT), and an iodoacetamide thiol-blocking control. See `STATE.md` — **the "nobody has
+   checked disulfides" proposal must be narrowed to fibril growth before it is put to
+   anyone.**
+
+   **It does not give a DISC1 aggregation-critical region.** Its mapped regions —
+   765-854 dimerisation, 668-747 oligomerisation — are *ordered self-association*, which
+   the paper explicitly distinguishes from aggregation ("we presently do not know whether
+   this HMW multimer arises through simple misfolding or in a more coordinated process").
+   Considered and rejected for `data/regions.json`; scoring them as aggregation regions
+   would be a category error.
 
 ## Tier 1 — these fix the validation table
 
@@ -57,7 +86,22 @@ Ranked by what changes if you read it.
 4a. **Zaharija B & Bradshaw NJ (2024)**, "Aggregation of Disrupted in Schizophrenia 1
    arises from a central region of the protein", *Prog Neuropsychopharmacol Biol
    Psychiatry* **130**:110923. **Added 15 Nov 2026 from the thesis reference list
-   (ref. 502); we did not have it.**
+   (ref. 502). SUBSTANTIALLY ADDRESSED 16 Nov 2026, NOT CLOSED.**
+
+   **Its preprint was read in full** — bioRxiv 2023.08.03.551216v1, supplied by the
+   author — and it is the source of our DISC1 384-415 row. **The range is confirmed**
+   three ways (D ends at 383; 1-383 does not aggregate, 1-415 does; 383+32=415 matches
+   both "these 32 amino acids" and the stored 32-residue string). The Flag-DISC1
+   **257-655** construct the thesis cites is its Figure 3E. `found_by` is clean: no
+   aggregation predictor, and the region falls outside all four ESPRIT domains.
+
+   **What is still wanted from the 2024 paper, and only this:** confirm the boundaries
+   did not move in peer review. A preprint is not the version of record. Two things
+   found in the preprint that must be carried either way — the Discussion's claim that
+   384-415 is "sufficient for aggregation" is **not supported by its constructs**
+   (384-415 was never expressed alone; 384-538 and 1-415 were), and the body text
+   writes the deletion as Δ384-**414** three times against Δ384-**415** in the figures.
+   Full assessment in `data/references_to_check.json`, key `zaharija2023preprint`.
 
    **Potentially a better-sourced Tier A DISC1 row than 384-415.** It is experimental
    region-mapping of DISC1 aggregation by the same group, and the thesis uses its

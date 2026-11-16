@@ -208,18 +208,35 @@ A row enters the confirmatory analysis only if **all** of the following hold:
 4. The **residue range** has been checked against the frame recorded in `_numbering`.
 5. `verified_against_publisher_pdf` is **true**.
 
-### 6.3 One Tier A row now passes rule 5; the other still fails it
+### 6.3 Both Tier A rows now pass rule 5
 
-**Updated 16 Nov 2026.** The TRIOBP-1 blocker is cleared, by a different paper from the
-one this section named:
+**Updated 16 Nov 2026. Both blockers cleared in one day, each by a source this section
+had not named.** The confirmatory analysis is no longer blocked on provenance.
 
-| row | sequence | range | blocker |
+| row | sequence | range | status |
 |---|---|---|---|
-| TRIOBP-1 324-348 | ~~DERIVED~~ **READ** — Zaharija 2022 Fig. 1B | **READ** — Zaharija 2022 §2.2 | **CLEARED 16 Nov 2026** |
-| DISC1 384-415 | **READ** from UniProt Q9NRI5 REST, 854 aa, SV=3 | from the source paper, **unchecked** | **confirm the range in the source** |
+| TRIOBP-1 324-348 | ~~DERIVED~~ **READ** — Zaharija 2022 Fig. 1B | **READ** — Zaharija 2022 §2.2 | **CLEARED** |
+| DISC1 384-415 | **READ** — UniProt Q9NRI5, 854 aa, SV=3 | ~~unchecked~~ **READ** — Zaharija & Bradshaw 2023 preprint | **CLEARED, one caveat** |
 
-UniProt confirms DISC1's *letters*; it does not confirm that 384-415 is the right range.
-That row is still the one thing standing between this document and a freeze.
+**The caveat on DISC1, which is not a provenance problem but must travel with the row.**
+The range is confirmed three ways in its source: the D region ends at 383, construct
+1-383 does not aggregate while 1-415 does, and 383 + 32 = 415 matches both "these 32
+amino acids were deleted" and the 32-residue UniProt string already stored. But:
+
+1. **The source is a preprint.** The version of record is *Prog Neuropsychopharmacol
+   Biol Psychiatry* **130**:110923 (2024), still unread. Re-check the boundaries against
+   it before the freeze — this is now the only §6.3 item left, and it is a re-check, not
+   a gap.
+2. **The paper's sufficiency claim overreaches its constructs, and §6.2's `construct`
+   rule is what catches it.** The Discussion says 384-415 "was both sufficient for
+   aggregation", but **384-415 was never expressed alone.** What was expressed alone is
+   the whole linker, **384-538** (155 aa), and **1-415**. Necessity is clean — deletion
+   abolishes aggregation in 1-854, 1-836 and 1-655 alike. Sufficiency is established for
+   the linker, and for 384-415 *in the context of 1-383*. **Do not state 384-415 as
+   "sufficient for aggregation" in print without that qualifier.**
+3. **`found_by` is clean.** Found by truncation and deletion, no aggregation predictor
+   involved. The region also falls outside all four ESPRIT domains — "not found within
+   any of 94 most stable DISC1 fragments" — so the structural screen missed it too.
 
 **How the TRIOBP-1 row cleared.** Figure 1B of Zaharija et al. 2022 (*Int. J. Mol. Sci.*
 **23**:11048, publisher PDF read in full) prints
@@ -348,10 +365,13 @@ Stated so it cannot be quietly avoided:
    region: the thesis says **7 aa**, `regions.json` says **333-340, an 8-mer**~~
    **— SETTLED 16 Nov 2026 at EIGHT. The 2022 paper says "8 amino acids" three times
    (abstract, discussion p.13, Figure 6D legend); the thesis is wrong by one, and
-   `regions.json` was right.** **Still open:** confirm the DISC1 384-415 range in its
-   source, and (b) read Zaharija & Bradshaw 2024 (*Prog Neuropsychopharmacol Biol
-   Psychiatry* 130:110923), which maps DISC1 aggregation to a central region and may
-   supersede or source that unverified range. **Both remaining items are DISC1 items.**
+   `regions.json` was right.** ~~Confirm the DISC1 384-415 range in its source~~
+   **— done 16 Nov 2026 against the Zaharija & Bradshaw 2023 preprint, which IS that
+   source; range confirmed three ways.** **One item left, and it is a re-check rather
+   than a gap:** read Zaharija & Bradshaw **2024** (*Prog Neuropsychopharmacol Biol
+   Psychiatry* 130:110923), the peer-reviewed version of record of that preprint, and
+   confirm the boundaries did not move in review. Carry the sufficiency qualifier in
+   §6.3(2) with the row regardless.
 2. ~~Read the 2025 thesis (§11).~~ **Done 15 Nov 2026 — read in full, condition
    discharged, novelty claim unchanged.**
 3. ~~Settle every **[AUTHOR DECISION]**.~~ **Done 15 Nov 2026** (§3.1, §5.1, §5.2),

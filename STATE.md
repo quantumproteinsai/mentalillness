@@ -229,9 +229,50 @@ protein, starting at AA 60"). It also fixes the frame: the two variants are
 So the p.13 figure is the paper's own arithmetic slip. `CLAUDE.md`'s numbering
 trap is now READ-confirmed rather than inherited.
 
-**What it does not do:** it does not touch DISC1. **Both remaining freeze
-blockers are now DISC1 blockers** — confirm the 384-415 range in its source, and
-read Zaharija & Bradshaw 2024.
+**What it does not do:** it does not touch DISC1 — but the next two papers did.
+
+### Both Tier A rows are now READ. §6.3 is cleared. [READ, 16 Nov 2026]
+
+Two more PDFs arrived the same day, both supplied by the author.
+
+**Zaharija & Bradshaw 2023 (bioRxiv 2023.08.03.551216v1) is the source of the
+DISC1 384-415 row, and the range holds.** Three internal checks agree: the D
+region ends at 383; construct 1-383 does not aggregate while 1-415 does; and
+383 + 32 = 415 matches both "these 32 amino acids were deleted" and the
+32-residue UniProt string we had already stored. `found_by` is clean — found by
+truncation and deletion, no aggregation predictor — and the region sits outside
+all four ESPRIT domains, "not found within any of 94 most stable DISC1
+fragments", so the structural screen missed it too. That sharpens the central
+pattern rather than weakening it.
+
+**Two things must travel with that row.**
+
+1. **The paper's sufficiency claim overreaches its own constructs.** The
+   Discussion says 384-415 "was both sufficient for aggregation, and that
+   aggregation was abolished when it was deleted". The second half is clean:
+   deletion abolishes aggregation in 1-854, 1-836 and 1-655 alike. The first
+   half is not — **384-415 was never expressed alone.** What was expressed alone
+   is the whole linker, **384-538** (155 residues), and **1-415**. So
+   sufficiency is established for the linker, and for 384-415 *in the context of
+   1-383*. **Never write "384-415 is sufficient for aggregation" unqualified.**
+   The `construct` column caught this, which is the second time this week that
+   column has earned its place.
+2. **It is a preprint.** The version of record is *Prog Neuropsychopharmacol
+   Biol Psychiatry* **130**:110923 (2024), still unread. Re-check the boundaries
+   against it — that is now the single remaining §6.3 item, and it is a
+   re-check, not a gap.
+
+**A third one-residue slip, in two days, from the same group.** The body text
+writes the deletion constructs as **Δ384-414** three times (31 residues) while
+Figure 5A and panels D-F label them **Δ384-415** and the same sentence says
+"these 32 amino acids". 384-415 is right. With 7-vs-8 and 593-vs-597 that is
+three; a fourth, unrelated, is in the same paper's Results, which prints
+"AA 539-738" for both I+S and S+C (S+C is 635-836). **Verify every residue
+number in this literature against the figure or the arithmetic, including
+numbers in the paper that the row is sourced to.**
+
+**Leliveld et al. 2009 is assessed in its own section below** — it does not
+touch 384-415, and it narrows the redox proposal rather than confirming it.
 
 **The pattern recorded earlier still stands:** both URLs the sweep logged are
 dead and the repository blocks scripts, so this was obtained by asking the
@@ -344,7 +385,7 @@ and the Q/N-rich work where aggregation tracks coiled-coil propensity. Claim the
 determinant, not the sign: two papers disagree on whether stable coiled-coil
 formation promotes or inhibits aggregation.
 
-## The thing that is cheap and nobody has done
+## The thing that is cheap and nobody has done — NARROWED 16 Nov 2026, it was partly done in 2009
 
 The DISC1 fibril construct contains three free cysteines (C698, C762, C782), and
 across the 2021, 2025 and 2026 papers there is **zero mention of DTT, TCEP,
@@ -353,9 +394,35 @@ grown from a three-cysteine construct in air with the thiol state uncontrolled
 and unreported. Non-reducing against reducing SDS-PAGE would settle it in an
 afternoon.
 
-That is a wet-lab question, not a computation — and it is the kind of specific,
-cheap, decisive question worth putting to an experimental group, which the plan
-identifies as the way to approach one.
+**That still holds for the fibrils. It does NOT hold for the span.** Leliveld et
+al. 2009 (*Biochemistry* **48**:7746, read in full 16 Nov 2026) worked on
+rDISC1 **640-854**, which *contains the entire 691-836 fibril construct*, and
+did the opposite of leaving redox uncontrolled:
+
+- **β-mercaptoethanol at every step** — 20 mM in lysis, GnHCl solubilisation,
+  GST wash and on-column refolding; 10 mM in preparative SEC, analytical SEC,
+  DLS and the NDEL1 binding buffer; 1 mM DTT in the glycerol-gradient lysis.
+- **The ±reductant experiment was run.** Figure 3A loads rDISC640 without
+  reduction, with 2% β-ME, and with 10 mM DTT. Result, in their words: *"Adding
+  reductant dissociated some of the slower migrating bands."* So some
+  slow-migrating species in this span **are** reductant-sensitive.
+- **And a thiol-blocking control exists.** Iodoacetamide treatment of reduced
+  DISC640, to block disulfide formation by the extra cysteine of the C704
+  variant, **did not** prevent 19F7 staining of the HMW multimers — so HMW
+  multimer formation there is not disulfide-dependent.
+
+**Why this matters more than a citation.** The plan was to put this to an
+experimental group as a cheap decisive question. Put as previously written —
+"nobody has checked whether disulfides matter for C-terminal DISC1 assembly" —
+the group would answer that they published the ±reductant gel and the
+iodoacetamide control seventeen years ago. **The question that survives is
+strictly narrower:** the thiol state during *fibril growth* of 691-836 under
+the 2021/2025/2026 protocols is still uncontrolled and unreported, and nothing
+in Leliveld 2009 speaks to fibrils — it studies soluble dimers, oligomers and
+HMW multimers. Ask that, not the broad version. [READ, 16 Nov 2026]
+
+This is the third premise audit to change a proposal rather than a fact, and the
+first to be caught by reading a paper the obtain list had already named.
 
 Related and equally unexplored: **no seeding assay has ever been run on
 psychiatric brain homogenate**, though FRET-biosensor and RT-QuIC are routine in

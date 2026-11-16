@@ -110,5 +110,30 @@
     "what_it_adds_4_FRAME_CONFIRMED": "593 is correct, 597 is the paper's own slip. p.2: short variant '593 amino acids long', and the two variants are 'amino acids 1-652 and 60-652 respectively'; 60..652 inclusive = 593. p.13-14 then says '597 AA long protein, starting at AA 60'. CLAUDE.md's numbering trap is now READ-confirmed.",
     "what_it_does_NOT_give": "Nothing on DISC1 region mapping. Both remaining freeze blockers are DISC1 blockers: confirm the 384-415 range in its source, and read Zaharija & Bradshaw 2024 (Prog Neuropsychopharmacol Biol Psychiatry 130:110923).",
     "no_predictor_runs": "Consistent with the thesis finding: the only bioinformatics mentioned is the legacy 'initial bioinformatic analyses' that implicated the PH domain (p.13, citing Bradshaw 2014), which experiment did not confirm. No TANGO/AGGRESCAN/FoldAmyloid/WALTZ/PASTA/AmylPred2/AggreProt/AggrescanAI run is reported. The novelty claim is untouched."
+  },
+  "leliveld2009biochem": {
+    "citation": "Leliveld SR, Hendriks P, Michel M, Sajnani G, Bader V, Trossbach S, Prikulis I, Hartmann R, Jonas E, Willbold D, Requena JR, Korth C (2009). Oligomer Assembly of the C-Terminal DISC1 Domain (640-854) Is Controlled by Self-Association Motifs and Disease-Associated Polymorphism S704C. Biochemistry 48:7746-7755. doi:10.1021/bi900901e",
+    "verified_against_publisher_pdf": true,
+    "read_in_full": true,
+    "date_read": "2026-11-16",
+    "VERDICT": "ANSWERS THE REDUCING-AGENT QUESTION FOR THE 640-854 SPAN AND NARROWS A PROPOSAL. Does NOT map an aggregation-critical region and does NOT close obtain-list item 3.",
+    "CITATION_TRAP": "The obtain list read 'Leliveld et al., J. Neuroscience (2008/2009)', merging two papers. The J Neurosci paper is 2008 (28:3839) and carries the thioflavin-T and cold-sarkosyl claims. This is the 2009 Biochemistry paper. It contains NO thioflavin T experiment. Item 3 stays open.",
+    "what_it_adds_REDUCING_AGENT": "20 mM beta-ME in lysis, GnHCl solubilisation, GST wash and on-column refolding; 10 mM in preparative SEC, analytical SEC, DLS and the NDEL1 binding buffer; 1 mM DTT in glycerol-gradient lysis. Figure 3A runs the explicit +/-reductant comparison (no reduction / 2% beta-ME / 10 mM DTT): 'Adding reductant dissociated some of the slower migrating bands.' Iodoacetamide blocking of the C704 thiol did NOT prevent 19F7 staining of HMW multimers, so HMW multimer formation there is not disulfide-dependent. 640-854 CONTAINS the entire 691-836 fibril construct. The surviving question is the thiol state during FIBRIL GROWTH under the 2021/2025/2026 protocols only.",
+    "why_its_regions_are_NOT_rows": "765-854 dimerisation and 668-747 oligomerisation are ORDERED self-association, which the paper distinguishes from aggregation: 'we presently do not know whether this HMW multimer arises through simple misfolding or in a more coordinated process'. Considered and rejected for regions.json.",
+    "no_predictor_runs": "COILS, Paircoil2, Marcoil (coiled-coil), JPred/PSIPRED/PHD (secondary structure), DICHROWEB/CDSSTR (CD deconvolution). Zero aggregation predictors. Fourth independent paper consistent with the novelty claim.",
+    "incidental": "Scottish translocation product = 597 of 854 residues. NUMERAL TRAP: 597 also appears, wrongly, as TRIOBP-1's short-variant length in Zaharija 2022. Unrelated proteins, same number, read one day apart. Do not transcribe one for the other."
+  },
+  "zaharija2023preprint": {
+    "citation": "Zaharija B & Bradshaw NJ (2023). Aggregation of Disrupted in Schizophrenia 1 arises from a central region of the protein. bioRxiv 2023.08.03.551216v1, posted 4 Aug 2023. CC-BY-NC. PREPRINT; version of record is Prog Neuropsychopharmacol Biol Psychiatry 130:110923 (2024), STILL UNREAD.",
+    "verified_against_publisher_pdf": true,
+    "read_in_full": true,
+    "date_read": "2026-11-16",
+    "VERDICT": "THE SOURCE OF THE DISC1 384-415 ROW. Range confirmed. Freeze blocker converts from 'confirm the range' (done) to 'check the 2024 version of record for changed boundaries' (smaller).",
+    "what_it_adds_1_RANGE_CONFIRMED": "384-415, immediately C-terminal of the D region (257-383). Three internal checks agree: 1-383 does not aggregate, 1-415 does, and 383+32=415 matches both 'these 32 amino acids' and the 32-residue UniProt string we already stored.",
+    "what_it_adds_2_SOURCE_SLIP": "p.9 writes the deletion constructs as delta-384-414 three times (31 residues) while Figure 5A and panels D-F label them delta-384-415 and the same sentence says 32 amino acids. 384-415 is right. Third one-residue slip found in this group's work in two days, after 7-vs-8 and 593-vs-597. A fourth, unrelated: Results prints 'AA 539-738' for both I+S and S+C; S+C is 635-836.",
+    "what_it_adds_3_SUFFICIENCY_OVERREACH": "The Discussion says 384-415 'was both sufficient for aggregation'. 384-415 was never expressed alone. Expressed alone: the whole linker 384-538 (155 aa) and 1-415. Necessity is clean (deletion abolishes aggregation in 1-854, 1-836 and 1-655). Sufficiency is construct-dependent. Recorded in the construct column, which exists for exactly this.",
+    "what_it_adds_4_NOT_CIRCULAR": "Found by truncation and deletion. No aggregation predictor used. The region is outside all four ESPRIT domains -- 'not found within any of 94 most stable DISC1 fragments' -- so the structural screen missed it as well. found_by confirmed clean.",
+    "relation_to_obtain_list_4a": "This is the preprint of item 4a. The Flag-DISC1 257-655 construct the 2025 thesis cites is Figure 3E here. Item 4a is SUBSTANTIALLY addressed but NOT closed: the 2024 peer-reviewed version is the version of record.",
+    "no_predictor_runs": "Only secondary-structure prediction cited post-hoc (Soares 2011 review). No TANGO/AGGRESCAN/FoldAmyloid/WALTZ/PASTA/AmylPred2/AggreProt/AggrescanAI. Fifth paper consistent with the novelty claim."
   }
 }

@@ -335,7 +335,12 @@ at **READ-BY-SUBAGENT** grade, which is weaker than READ and cannot be published
 The publisher-PDF gate was made precise, and two promoted rows fail it. **Neither
 may be cited in a manuscript until obtained.**
 
-15. **Murray et al. 2017, *Cell* 171:615 — the version of record.**
+15. ~~**Murray et al. 2017, *Cell* 171:615 — the version of record.**~~ **OBTAINED AND READ
+    IN FULL, 16 Nov 2026. CLEARED.** Every recorded claim re-checked and all hold. It also
+    supplied a fully parameterised published run of all eight predictors on FUS-LC 2-214,
+    which becomes a second validation target for the §5.1 FoldAmyloid reimplementation, and
+    the Figure S7 legend revealing that ZipperDB cannot score proline-containing windows at
+    all. Original entry follows for the record.**
     **Highest priority of anything on this list.** FUS 39-95 is a **primary-stratum
     discordant row**, and it was read as PMC5650524 web text with no PDF opened,
     so `source_version` is `pmc_full_text` and it is **not citable**. The quoted

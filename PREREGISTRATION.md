@@ -150,7 +150,15 @@ not report those as findings.
 **The FoldAmyloid reimplementation is itself a pre-registered object.** It must reproduce
 the paper's own published checks before it may score our rows: the reported 80%/72%
 sensitivity/specificity on its 407-peptide set, and the protein-level result that **only
-the contact scale finds tau 306-311**. **RESOLVED 15 Nov 2026, by Claude on the author's instruction — and the answer is
+the contact scale finds tau 306-311**. **A SECOND, INDEPENDENT CHECK ADDED 16 Nov 2026,
+from the Murray 2017 version of record.** That paper publishes a fully parameterised
+FoldAmyloid run on FUS-LC residues 2-214 — `scale = "Expected number of contacts 8 Å"`,
+`averaging frame = 5`, `threshold = 21.4`, at `bioinfo.protres.ru/fold-amyloid` — and its
+Figure S7 panel shows the score oscillating roughly between 16 and 21 across all 213
+positions and **never crossing threshold: zero positive predictions on the entire
+sequence.** Our reimplementation must reproduce that curve. It is a **sharper** check than
+a sensitivity/specificity figure, because it is a whole-curve comparison on a named
+sequence that is also one of our rows. **RESOLVED 15 Nov 2026, by Claude on the author's instruction — and the answer is
 neither of the two options originally offered.** If the reimplementation fails those
 checks it is **excluded from the confirmatory legacy arm**, so that a bug in our code can
 never masquerade as a 2010 tool's failure and contaminate the legacy-versus-modern
@@ -186,6 +194,30 @@ tools from the September 2026 census are exploratory unless they ship installabl
 weights. **Any tool meeting the rule may be added freely before the freeze and none
 after.** The novelty claim — that no PLM predictor has ever been run on DISC1 or
 TRIOBP-1 — is unaffected either way, since it concerns the class, not our coverage of it.
+
+### 5.2a A no-call is not a low score — REGISTERED 16 Nov 2026
+
+Murray 2017's Figure S7 legend states that for ZipperDB **"dotted red lines span segments
+where proline residues preclude a prediction."** **ZipperDB structurally cannot evaluate a
+proline-containing window — it returns nothing, not a low value.**
+
+This is a mechanism, not a performance problem, and it bears directly on **H4**: TRIOBP-1
+324-348 contains **four prolines in 25 residues**, so a tool behaving this way has blind
+spots across that region *by construction*. **A predictor that cannot score the windows in
+question is not making a wrong prediction; it is making no prediction**, and the two must
+not be reported as the same thing.
+
+**Registered before any run:**
+
+1. **Every tool in both arms is checked for no-call behaviour** (prolines, length limits,
+   composition filters) **before scoring**, and the behaviour is recorded per tool.
+2. **A no-call is not a tie and is never silently midranked** in the `v = 1 − P^m`
+   statistic. Where a predictor cannot score a window, that window is **excluded from both
+   M and m**, and the exclusion count is reported per row per tool.
+3. **If a tool cannot score a majority of a region's windows, it is reported as
+   INAPPLICABLE to that row, not as a failure on it.** Scoring a tool as having missed a
+   region it was never able to evaluate would be the mirror image of the circularity this
+   project exists to avoid.
 
 ### 5.3 Window size and score normalisation
 

@@ -1406,6 +1406,57 @@ not reconciled.**
 then steps 4–5 (predictor versions, freeze commit).** No predictor may run until
 then.
 
+### Murray 2017 version of record: blocker cleared, and it hands over two things [READ, 16 Nov 2026]
+
+The *Cell* PDF settles freeze blocker 15. **FUS 39-95 is now `version_of_record` and
+citable** — which mattered, because it is a primary-stratum row that our own gate
+had made uncitable. Every claim recorded on the row was re-checked against the
+PDF and **all of them hold**, including the 57-residue arithmetic and the
+predictor sentence.
+
+**Our gatekeeper computation is independently confirmed by the paper's prose.**
+We computed 3.5% for 39-95: one proline, one charge in 57. The Discussion says,
+without having seen our arithmetic: *"The sidechain of D46, **the only charged
+residue** in the core-forming segment"* and *"The absence of purely hydrophobic
+sidechains (**except Pro72**)."* 2/57 = 3.5%. That is as good a check as this
+project gets.
+
+### The published predictor run is fully parameterised — a second §5.1 check
+
+Murray 2017 publishes **every setting** for all eight tools on FUS-LC 2-214,
+including **FoldAmyloid at `bioinfo.protres.ru/fold-amyloid`, scale "Expected
+number of contacts 8 Å", averaging frame 5, threshold 21.4.** (That also settles
+the host question: `bioinfo` is the URL published in *Cell*, not a mistake —
+though both hosts return 000 today.)
+
+**Figure S7's FoldAmyloid panel never crosses threshold anywhere across 213
+positions.** So the published result is not "low propensity" — it is **zero
+positive predictions on the entire sequence.** Registered in §5.1 as a *second*
+validation target for the reimplementation, and a sharper one than a
+sensitivity/specificity number because it is a whole-curve comparison on a named
+sequence that is also one of our rows.
+
+### And a mechanism that changes how a miss must be scored — new §5.2a
+
+From the Figure S7 legend, which was **not** in the PMC text I read first:
+
+> "For ZipperDB … **dotted red lines span segments where proline residues
+> preclude a prediction.**"
+
+**ZipperDB structurally cannot evaluate a proline-containing window.** It returns
+nothing, not a low value. **TRIOBP-1 324-348 has four prolines in 25 residues**,
+so a tool behaving this way has blind spots across our headline region *by
+construction*.
+
+**A predictor that cannot score the windows in question is not making a wrong
+prediction; it is making no prediction.** Registered in a new §5.2a before any
+run: every tool is checked for no-call behaviour first; a no-call is never
+silently midranked but **excluded from both M and m**, with the count reported;
+and a tool that cannot score most of a region's windows is reported
+**INAPPLICABLE to that row, not failed on it.** Scoring a tool as having missed a
+region it could never evaluate would be the mirror image of the circularity this
+project exists to avoid.
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

@@ -265,16 +265,16 @@
       "residues": "39-95",
       "frame": "UniProt P35637, 526 aa",
       "evidence": "The structurally ordered core of FUS-LC fibrils, determined by 3D solid-state NMR. 'We therefore conclude that residues 39-95 constitute the structurally ordered core of FUS-LC fibrils', with 55-62 only partially dynamic. Abstract: 'a segment of only 57 residues forms the fibril core, while other segments remain dynamically disordered.' VERIFIED: 39-95 is exactly 57 residues.",
-      "construct": "FUS low-complexity domain, residues 2-214 ('without the His tag, contains 214 residues'), with an additional N-terminal His tag on the NMR samples. THE CONSTRUCT MATTERS: the core is 57 of 214 residues, so the surrounding 157 residues were present and remained dynamically disordered -- this is a core mapped IN CONTEXT, not an isolated peptide that happened to aggregate.",
+      "construct": "FUS-LC residues 2-214 with an N-terminal His tag of sequence MSYYHHHHHHDYDIPTTENLYFQGAMDP (Figure 1A). NOTE IT IS 2-214, NOT 1-214. Expressed in E. coli, purified under denaturing conditions, polymerised at ~30 uM after dialysis, with seeded growth at a 19:1 monomer:seed ratio. THE CONSTRUCT POINT STANDS AND IS SHARPENED: the core is 57 of 214 residues with the other 157 PRESENT AND DYNAMICALLY DISORDERED -- the paper detects them directly by INEPT spectra. This is a core mapped IN CONTEXT, not an isolated peptide.",
       "found_by": "STRUCTURE DETERMINATION (solid-state NMR, MCASSIGN assignment). No predictor in the discovery path. Prediction appears ONLY afterwards, and only to record that it failed.",
       "source": "Murray et al. 2017, Cell 171:615 (PMC5650524)",
       "note": "THE MOST IMPORTANT ROW ADDED ON 16 Nov 2026, AND IT COMES FROM THE PAPER THAT PRE-EMPTED OUR COMPOSITIONAL CLAIM. Murray 2017 publishes both halves of this project's old shape for FUS -- named predictors failing on a mapped core, and composition failing to discriminate. That cost us the compositional headline (PREREGISTRATION.md 9.1). IT ALSO HANDS BACK THE BEST TEST ROW IN THE SET. See _WHY_THIS_ROW_IS_THE_CONTROL_PAIR_FOR_H4 below.",
-      "verified_against_publisher_pdf": false,
-      "provenance_note": "READ BY THE MAIN SESSION via PMC5650524 (open access), twice, on 16 Nov 2026: once for the predictor passage and once for the core definition. Both quoted verbatim above. The PDF itself has not been opened, so verified_against_publisher_pdf stays FALSE pending that; the SEQUENCE and the 57-residue arithmetic are independently verified against UniProt.",
+      "verified_against_publisher_pdf": true,
+      "provenance_note": "READ IN FULL from the version of record, 16 Nov 2026, publisher PDF supplied by the author. Supersedes the earlier PMC5650524 web-text read. Every claim recorded on this row was re-checked against the PDF and all of them hold.",
       "sequence": "SGYSQSTDTSGYGQSSYSSYGQSQNTGYGTQSTPQGYGSTGGYGSSQSSQSSYGQQS",
       "sequence_provenance": "RETRIEVED FROM UniProt P35637, residues 39-95, 16 Nov 2026. Length 57, matching the paper's own 'a segment of only 57 residues' -- an independent arithmetic check on the range.",
       "verified_against": "Murray et al. 2017, Cell 171:615 -- PMC5650524 full text read by the main session; publisher PDF not yet opened.",
-      "range_provenance": "READ. 'We therefore conclude that residues 39-95 constitute the structurally ordered core of FUS-LC fibrils.' Corroborated by the abstract's independent residue count (57).",
+      "range_provenance": "READ, version of record. Results: \"We therefore conclude that residues 39-95 constitute the structurally ordered core of FUS-LC fibrils, with partial disorder or enhanced dynamics in residues 55-62 that precludes detection or unambiguous assignment of solid-state NMR signals to these sites.\" Abstract independently: \"a segment of only 57 residues forms the fibril core\" -- and 39-95 is exactly 57. The assignment came from TWO INDEPENDENT MCASSIGN calculations using different programs (mcassign2b, mcassign2c) and different input files, in \"full agreement\", plus segmental isotopic labelling (N112/C112 and N60/C60 ligation constructs) as a separate confirmation.",
       "circularity_status": "CLEAN",
       "circularity_basis": "The core was determined structurally and the predictors were run afterwards, which is the permitted direction. The paper states the direction itself: the core 'is not predicted by computational methods that assess propensities for amyloid formation'.",
       "stratum": "DISCORDANT",
@@ -286,8 +286,23 @@
         "the_three_row_structure": "tau PHF6 16.7% gatekeeper, is a zipper, FOUND. FUS 39-95 3.5%, 52/52 windows zipper-grade, MISSED. TRIOBP-1 324-348 48.0%, 7/20 windows zipper-grade, MISSED. Composition does not order these outcomes -- which is Murray's own point, now doing work FOR the project rather than against it.",
         "honest_limit": "n is still small and FUS is one protein. This strengthens H4; it does not by itself make a rate estimate. See PREREGISTRATION.md 7."
       },
-      "source_version": "pmc_full_text",
-      "source_version_note": "NOT CITABLE under 12.1 decision 3. Murray 2017 Cell 171:615 was read as PMC5650524 web text; no PDF was opened. FREEZE BLOCKER -- obtain the Cell PDF. This is a PRIMARY-STRATUM row, so the gate bites on the main analysis."
+      "source_version": "version_of_record",
+      "source_version_note": "Murray DT et al. (2017) Cell 171:615-627, doi 10.1016/j.cell.2017.08.048 -- VERSION OF RECORD, read in full 16 Nov 2026 including all STAR Methods and Supplemental Figures S1-S7. FREEZE BLOCKER CLEARED (PREREGISTRATION 12.1 decision 3, obtain-list item 15). This row is now CITABLE, which matters because it is a primary-stratum row.",
+      "INDEPENDENT_CONFIRMATION_OF_OUR_GATEKEEPER_COMPUTATION": "OUR COMPUTED FIGURE IS CONFIRMED BY THE PAPER'S OWN PROSE, WHICH IS AS GOOD A CHECK AS THIS PROJECT GETS. We computed 3.5% proline-plus-charge for 39-95: exactly one proline and exactly one charged residue in 57. The Discussion says, independently: \"The sidechain of D46, THE ONLY CHARGED RESIDUE in the core-forming segment\", and \"The absence of purely hydrophobic sidechains (EXCEPT PRO72) in the core of FUS-LC fibrils\". One charge (D46), one proline (P72). 2/57 = 3.5%. The arithmetic and the paper agree without either having seen the other.",
+      "THE_PUBLISHED_PREDICTOR_RUN_IS_FULLY_PARAMETERISED": {
+        "why_this_matters": "PREREGISTRATION 5.1 requires legacy-tool settings 'recorded verbatim', and requires the FoldAmyloid REIMPLEMENTATION to reproduce published checks before it may score our rows. MURRAY 2017 SUPPLIES A COMPLETE, PARAMETER-SPECIFIED, PUBLISHED RUN OF ALL EIGHT TOOLS ON A PROTEIN THAT IS NOW ONE OF OUR ROWS. That is a second, independent validation target for the reimplementation, on top of Garbuzynskiy's own checks.",
+        "input": "All predictions were run on residues 2-214 of the FUS-LC sequence.",
+        "FoldAmyloid": "http://bioinfo.protres.ru/fold-amyloid -- scale = 'Expected number of contacts 8 A', averaging frame = 5, threshold = 21.4. NOTE THE HOST: this is the bioinfo.protres.ru host, published in Cell in 2017, which settles that it was a legitimate FoldAmyloid host and not a mistake. Both it and antares.protres.ru return 000 as of 16 Nov 2026.",
+        "FISH": "http://www.comprec.pwr.wroc.pl/fish/fish.php -- default: threshold = 0.19, prediction = 'standard'.",
+        "MetAmyl": "threshold set to 'best global accuracy'.",
+        "PASTA_2_0": "'top pairing energies' = 20, 'energy threshold' = -5.",
+        "WALTZ": "http://waltz.switchlab.org -- pH 7, threshold set for 'best overall performance'.",
+        "Zyggregator": "run at pH 8.",
+        "Aggrescan": "http://bioinf.uab.es/aggrescan",
+        "ZipperDB": "http://services.mbi.ucla.edu/zipperdb",
+        "the_reimplementation_check_this_creates": "Figure S7's FoldAmyloid panel shows the score oscillating roughly between 16 and 21 across all 213 positions and NEVER CROSSING the 21.4 threshold. So the published result is not merely 'low propensity' -- IT IS ZERO POSITIVE PREDICTIONS ACROSS THE ENTIRE SEQUENCE. Our reimplementation, run with scale='contacts 8A', frame=5, threshold=21.4 on FUS-LC 2-214, must reproduce that. It is a sharper check than a sensitivity/specificity number because it is a whole-curve comparison on a specific sequence."
+      },
+      "ZIPPERDB_CANNOT_SCORE_PROLINE_AND_THAT_BEARS_ON_H4": "FROM THE FIGURE S7 LEGEND, WHICH IS NOT IN THE PMC TEXT WE READ FIRST: \"For ZipperDB, the dashed cyan line indicates the upper-bound threshold and DOTTED RED LINES SPAN SEGMENTS WHERE PROLINE RESIDUES PRECLUDE A PREDICTION.\" SO ZIPPERDB STRUCTURALLY CANNOT EVALUATE A PROLINE-CONTAINING WINDOW -- it returns no value rather than a low value. THIS IS A MECHANISM, NOT A PERFORMANCE PROBLEM, and it bears directly on H4: TRIOBP-1 324-348 contains FOUR prolines in 25 residues, so a tool with this behaviour has blind spots across that region BY CONSTRUCTION rather than by failing to detect something. A predictor that cannot score the windows in question is not making a wrong prediction; it is making no prediction, and the two must be reported differently. CHECK EVERY TOOL IN THE LEGACY ARM FOR THE SAME BEHAVIOUR BEFORE SCORING, and pre-register how a no-call is handled in the v = 1 - P^m statistic -- a no-call is not a tie and must not be silently midranked."
     },
     {
       "protein": "hnRNPA1",
@@ -435,6 +450,6 @@
       "preprint": "Not peer reviewed. NOT CITABLE unless the row is explicitly about the preprint.",
       "UNRECORDED": "Predates the rule. Must be resolved before the freeze; it is a lookup, not a re-read."
     },
-    "the_two_freeze_blockers_this_created": "FUS 39-95 (pmc_full_text, and it is a PRIMARY-STRATUM row) needs Murray 2017 Cell 171:615. LECT2 55-75 (preprint) needs PMC9934627, with the core range re-checked against it. A RULE IS NOT WEAKENED TO ACCOMMODATE A ROW WHEN THE ROW CAN BE OBTAINED."
+    "the_two_freeze_blockers_this_created": "FUS 39-95 CLEARED 16 Nov 2026 -- the Cell version of record was supplied and read in full, and the row is now version_of_record and citable. ONE BLOCKER REMAINS: LECT2 55-75 rests on the bioRxiv preprint 10.1101/2023.02.08.527771 and needs the published version, PMC9934627, with the 55-75 core range RE-CHECKED against it. Ten older rows also remain UNRECORDED."
   }
 }

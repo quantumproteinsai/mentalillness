@@ -1,0 +1,4 @@
+{
+  "_what": "Immutable provenance records for locally installed predictors, required by PREREGISTRATION.md 12 step 4. Append-only: a changed checksum makes a NEW record, it never edits an old one.",
+  "records": []
+}

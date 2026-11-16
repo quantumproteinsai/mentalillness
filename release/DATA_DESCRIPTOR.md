@@ -68,6 +68,66 @@ they all hit it. Only the **discordant** rows can.
 | `CONCORDANT` | 4 | the predictors find it |
 | `PENDING` | 8 | not yet assessed; requires a predictor run or a published one |
 
+## Why a hand-read set, when curated APR databases already exist
+
+**Because three independent groups have now stated in print that those databases
+cannot support predictor comparison** — and two of the three are the authors of
+the predictors being compared.
+
+**Thompson et al. 2025**, *Sci. Adv.* (CANYA), on training contamination:
+
+> "several of these methods (including TANGO, CamSol, and Aggrescan) were
+> directly trained on sequences within CPAD"
+
+and, on WALTZ-DB hexapeptides, that "no method significantly outperformed
+hydrophobicity".
+
+**Planas-Iglesias et al. 2024**, *Nucleic Acids Res.* **52**:W159–W169
+(AggreProt), on the labels themselves:
+
+> "AmyPro and CPAD 2.0 … are widely used for predictor benchmarking. However, we
+> and other groups have recently contested this relatively common practice by
+> experimentally investigating the amyloid propensity of some of the sequences
+> and revealed **many inaccuracies in the database labels**. As a result,
+> comparing protein-level predictions … based on these databases is potentially
+> biased, and their performance **should always be validated by an experiment**."
+
+**Navarro et al. 2026**, *J. Mol. Biol.* **438**:169643 (AggrescanAI), stating
+the remedy:
+
+> "These observations highlight the need for a more specific, **gold-standard
+> reference set of APRs** to improve benchmarking across prediction tools."
+
+Its conclusions ask for "improved … experimental annotation of APRs at
+residue-level resolution, which would reduce label ambiguity and upper-bound
+limitations."
+
+**This dataset is an attempt at that object.** Every row was read from its source
+paper; none was bulk-imported. That is why it is 17 rows and not 17,000.
+
+### The same three papers set a floor on what a benchmark can claim
+
+Navarro's Figure 2 reports AUROC on an external benchmark: **AggrescanAI 0.69,
+ANuPP 0.60, AggreProt 0.60, AGGRESCAN 0.58, Aggrescan3D 0.51** — the last
+indistinguishable from random. **No confidence intervals are given.** Anyone using
+this dataset to separate two predictors should size the expected difference
+against that, before spending anything.
+
+### A contamination check this dataset cannot do for you
+
+AggrescanAI is trained on **CPAD90** — CPAD 2.0 *plus homologous sequences*
+transferred through the HoTIDP server from OrthoInspector and OmaDB orthologues
+(Navarro 2026, Methods). **So confirming that a row's protein is absent from CPAD
+is not sufficient**: an orthologue of a CPAD protein can carry a transferred
+annotation into training. The CPAD90 membership list is not published.
+
+Several proteins here — tau and α-synuclein in particular — are heavily annotated
+in CPAD. **A modern predictor's hit on those rows may be recall of its training
+data rather than prediction.** This is a third kind of circularity, distinct from
+both columns above: not a predictor in the *discovery* path, and not
+experiment–prediction *agreement*, but **training-set membership of the benchmark
+row**. It must be resolved per row, per predictor, by whoever runs one.
+
 ## Composition
 
 | | |

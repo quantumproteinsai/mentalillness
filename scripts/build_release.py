@@ -51,6 +51,11 @@ DOC_KEYS = {
     '_THE_DOCUMENTED_PREDICTOR_FAILURE_IN_CUKKEMANE_2021',
     '_THE_LEGACY_ARM_RUN_ON_TRIOBP_1_IS_PUBLISHED_AND_FULLY_PARAMETERISED',
     '_A_DOCUMENTED_FALSE_POSITIVE_ON_OUR_OWN_PROTEIN',
+    # Both added 16 Nov 2026. They are about HOW TO READ THE ROWS -- a consumer who
+    # misses either will misread a stratum label or mistake training-set recall for
+    # prediction -- so they are dataset documentation, not project notes.
+    '_STRATUM_IS_A_PROPERTY_OF_A_PAIR_NOT_OF_A_REGION',
+    '_AGGRESCANAI_HITS_ON_OUR_ROWS_ARE_NOT_EVIDENCE_OF_PREDICTION',
 }
 # Everything else is a project note: true, kept, but about THIS PROJECT's
 # hypotheses and workflow rather than about the data.

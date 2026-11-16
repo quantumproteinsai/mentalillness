@@ -1259,6 +1259,50 @@ more in the human fibril defining a water-filled cavity. **Gatekeeper residues
 are not excluded from amyloid cores; they sit buried and charge-compensated in
 real disease fibrils.** Cite it.
 
+### The LECT2 branch: one row, one exclusion, and a snippet that would have lied [16 Nov 2026]
+
+**The new sweep rule earned its keep immediately.** The search summary for LECT2
+said the core *"has not been predicted by previous work."* Read in full, the
+sentence continues: *"**and the newly identified core segment is predicted to
+form steric zipper structures by the amyloid-prediction algorithm in ZipperDB**."*
+
+Prior *literature* missed it; **ZipperDB, run post hoc, hits it.** Quoting only
+the first half — which is what the snippet gave me — would have produced a **false
+DISCORDANT assignment**. Only ZipperDB is run, so our frozen legacy arm is
+untested and the row is **PENDING**.
+
+**LECT2 55-75 enters CLEAN**, verified two ways (UniProt O14960 mature 55-75 =
+`MIVGQEKPYQNKNAINNGVRI`, matching Figure 2A byte-for-byte; Met55/Ile75 and the
+21-residue length both check), with the register independently confirmed by a
+Rosetta threading search over *all* 21-residue windows.
+
+**But it carries the sharpest construct conflict in the set.** The companion
+*ex vivo* structure from a patient kidney reports that **all 133 residues** are
+in the fibril. **21 residues versus 133, for the same protein.** The recombinant
+authors flagged the risk themselves — *"It remains to be seen whether recombinant
+LECT2 amyloid fibrils exactly match those present in the kidneys"* — and they
+apparently do not. This row must never be called the ALECT2 disease core.
+
+### And the ex vivo structure is excluded, with a reason worth generalising
+
+**A whole-protein core cannot test a window predictor.** If the ordered core is
+the entire sequence, every window is in the positive class, **specificity is
+undefined**, and every predictor scores identically well by construction. The
+ALECT2 paper shows the problem in its own analysis: it ran WALTZ, TANGO,
+Aggrescan and AmylPred, but with the core spanning everything, its overlap claim
+cannot be a per-tool test.
+
+**Registered as a general exclusion rule:** any fibril whose ordered core is the
+whole protein is uninformative for this benchmark and is excluded *with that
+reason stated*. That is `CLAUDE.md` rule 3 — the proposed comparison is
+impossible, and saying so is the finding.
+
+**Best remaining lead from this branch:** Tsiolaki 2019 (*J Struct Biol*
+207:260), described here as having *"identified the regions immediately preceding
+and following"* the true core. A prediction-driven paper that **bracketed the
+core without hitting it** is exactly the shape of a documented discordant
+assignment.
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

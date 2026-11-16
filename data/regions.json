@@ -25,9 +25,11 @@
       "sequence_provenance": "READ, 16 Nov 2026, NO LONGER DERIVED. Figure 1B of Zaharija 2022 prints the stretch ELEKL|PLRENKRVPLTALLNQSRGERRGPP|SDGHE under a 324-348 numbering row, the coloured segment flanked by five residues either side. It reproduces the previously DERIVED string byte-for-byte. Two independent alignment checks pass: 333-340 = LTALLNQS carries zero charges and the paper calls it 'the uncharged region', and 341-345 = RGERR, which the paper calls 'the cluster of charged amino acids beginning at AA 341'. The 48.0% gatekeeper figure no longer rests on a reconstruction. Figure 12B of Bradshaw 2017 is no longer needed for the letters; it is still wanted for the mechanistic half of that paper.",
       "sequence": "PLRENKRVPLTALLNQSRGERRGPP",
       "verified_against": "Zaharija et al. 2022, Int. J. Mol. Sci. 23:11048 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author.",
-      "range_provenance": "READ. Zaharija 2022 §2.2 p.6: 'a 25 amino acid stretch from AA 324-348 is required for aggregation', in the 652-aa frame fixed on p.2.",
+      "range_provenance": "READ. Zaharija 2022 \u00a72.2 p.6: 'a 25 amino acid stretch from AA 324-348 is required for aggregation', in the 652-aa frame fixed on p.2.",
       "circularity_status": "CLEAN",
-      "circularity_basis": "Found by experimental truncation scanning. The source paper states explicitly that it was NOT predicted. No predictor in the discovery path."
+      "circularity_basis": "Found by experimental truncation scanning. The source paper states explicitly that it was NOT predicted. No predictor in the discovery path.",
+      "stratum": "DISCORDANT",
+      "stratum_basis": "DOCUMENTED IN PRINT. Bradshaw 2017 states the region was NOT predicted, and the published predictor negatives are cited evidence in CLAUDE.md. Experiment and prediction disagree. THIS IS ONE OF THE TWO ROWS THAT CARRY THE PRIMARY STATISTIC."
     },
     {
       "protein": "TRIOBP-1",
@@ -41,7 +43,9 @@
       "verified_against_publisher_pdf": false,
       "verified_against": "restatement READ in Zaharija 2022 Figure 6B legend; the primary, Bradshaw 2017, remains unread.",
       "circularity_status": "CLEAN",
-      "circularity_basis": "Sub-annotation of the clean 324-348 row, from the same truncation series. Not to be scored as an independent region -- see note."
+      "circularity_basis": "Sub-annotation of the clean 324-348 row, from the same truncation series. Not to be scored as an independent region -- see note.",
+      "stratum": "PENDING",
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
     },
     {
       "protein": "TRIOBP-1",
@@ -57,7 +61,9 @@
       "verified_against": "Zaharija et al. 2022, Int. J. Mol. Sci. 23:11048 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author.",
       "sequence_provenance": "READ, 16 Nov 2026. Derived from the Figure 1B stretch above, which is itself now read rather than reconstructed. LENGTH SETTLED AT 8: the 2022 paper states 'just 8 amino acids (333-340 of the 652 amino acid-long TRIOBP-1)' in its abstract, 'just 8 amino acids (AA 333-340)' in its discussion p.13, and 'narrow the critical region to AA 333-340' in the Figure 6D legend. The 2025 thesis's 'later shortened to the 7 aa domain' (p.48) is a slip by one. regions.json was right.",
       "circularity_status": "CLEAN",
-      "circularity_basis": "Found by experimental narrowing, truncating from the C-terminal end. No predictor."
+      "circularity_basis": "Found by experimental narrowing, truncating from the C-terminal end. No predictor.",
+      "stratum": "PENDING",
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
     },
     {
       "protein": "TRIOBP-1",
@@ -71,7 +77,9 @@
       "verified_against_publisher_pdf": true,
       "verified_against": "Zaharija et al. 2022, Int. J. Mol. Sci. 23:11048 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author.",
       "circularity_status": "CLEAN",
-      "circularity_basis": "Tested after an unexpected result, not nominated by prediction."
+      "circularity_basis": "Tested after an unexpected result, not nominated by prediction.",
+      "stratum": "PENDING",
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
     },
     {
       "protein": "TRIOBP-1",
@@ -84,7 +92,9 @@
       "note": "NEGATIVE-CONTROL ROW: prediction pointed here and experiment did not confirm it. Keep it; a benchmark needs its false positives.",
       "verified_against_publisher_pdf": false,
       "circularity_status": "CIRCULAR",
-      "circularity_basis": "PREDICTION-NOMINATED. regions.json already records that 'earlier bioinformatics pointed here; the deletion work did NOT support it'. The region entered the literature because a predictor named it. KEEPING IT LABELLED IS THE POINT: it is a prediction-nominated region that experiment REFUTED, which makes it the most informative false positive in the set."
+      "circularity_basis": "PREDICTION-NOMINATED. regions.json already records that 'earlier bioinformatics pointed here; the deletion work did NOT support it'. The region entered the literature because a predictor named it. KEEPING IT LABELLED IS THE POINT: it is a prediction-nominated region that experiment REFUTED, which makes it the most informative false positive in the set.",
+      "stratum": "PENDING",
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
     },
     {
       "protein": "DISC1",
@@ -96,7 +106,9 @@
       "note": "The paper's own framing is that it does not establish whether DISC1 aggregates in vivo. Contains three free cysteines (C698, C762, C782) and no study reports a reducing agent.",
       "verified_against_publisher_pdf": false,
       "circularity_status": "CLEAN",
-      "circularity_basis": "Boundaries from ESPRIT, which is an EXPERIMENTAL solubility screen over a random truncation library, not an aggregation predictor. Borderline but clean: no sequence-based aggregation propensity was consulted to choose it."
+      "circularity_basis": "Boundaries from ESPRIT, which is an EXPERIMENTAL solubility screen over a random truncation library, not an aggregation predictor. Borderline but clean: no sequence-based aggregation propensity was consulted to choose it.",
+      "stratum": "PENDING",
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
     },
     {
       "protein": "DISC1",
@@ -110,7 +122,9 @@
       "found_by_note": "RADAR is a sequence method, so this row is partly circular for a sequence-predictor benchmark and must be analysed separately.",
       "verified_against_publisher_pdf": false,
       "circularity_status": "CIRCULAR",
-      "circularity_basis": "Found by a RADAR sequence-repeat search -- a sequence method. Already flagged in found_by. Compounded by CAUTION_2026_11_15: it is a docking restraint, not a measurement."
+      "circularity_basis": "Found by a RADAR sequence-repeat search -- a sequence method. Already flagged in found_by. Compounded by CAUTION_2026_11_15: it is a docking restraint, not a measurement.",
+      "stratum": "PENDING",
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
     },
     {
       "protein": "DISC1",
@@ -122,7 +136,9 @@
       "note": "the restraint segments used to build the model above; not independent of it",
       "verified_against_publisher_pdf": false,
       "circularity_status": "CIRCULAR",
-      "circularity_basis": "The restraint segments used to build the 716-761 model; not independent of it, and RADAR-derived."
+      "circularity_basis": "The restraint segments used to build the 716-761 model; not independent of it, and RADAR-derived.",
+      "stratum": "PENDING",
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
     },
     {
       "protein": "DISC1",
@@ -134,14 +150,16 @@
       "note": "Overlaps the reported core at 748-761 (fourteen residues); 762-769 falls outside it. So it removes PART of the core, not all of it, and the Abstract's wording is imprecise. The authors report delta-22 point mutants T754S and P758R abolishing binding to Dixdc1, LIS1 and PCM1, so this segment carries a protein-interaction surface as well as fibril propensity.",
       "verified_against_publisher_pdf": false,
       "circularity_status": "CLEAN",
-      "circularity_basis": "A splice variant boundary (the delta-22 deletion), defined by biology rather than by any sequence analysis."
+      "circularity_basis": "A splice variant boundary (the delta-22 deletion), defined by biology rather than by any sequence analysis.",
+      "stratum": "PENDING",
+      "stratum_basis": "PENDING_LEGACY_RUN -- assignment is made AFTER the legacy arm runs and BEFORE the modern arm, per the PREREGISTRATION.md 7 amendment. Not guessed here."
     },
     {
       "protein": "DISC1",
       "residues": "384-415",
       "evidence": "truncation and deletion in cells; no single D, I, S or C region aggregates alone",
       "construct": "full-length and domain constructs in SH-SY5Y; insolubility assay in HEK293. NECESSITY AND SUFFICIENCY ARE NOT ON EQUAL FOOTING HERE -- read this column before quoting the paper's abstract. NECESSARY: deleting 384-415 from full-length 1-854, and from 1-836 and 1-655, abolishes aggregation in all three (Fig 5D-F). SUFFICIENT: the Discussion says 384-415 'was both sufficient for aggregation', but 384-415 WAS NEVER EXPRESSED ALONE. What was expressed alone is the whole linker, 384-538 (155 aa, Fig 4D), and 1-415 (Fig 5C). So sufficiency is established for the linker and for 384-415 IN THE CONTEXT OF 1-383 -- not for the 32-mer in isolation.",
-      "found_by": "experimental truncation and deletion; NOT circular. No aggregation predictor was used to find it. The only prediction mentioned is post-hoc description ('would be predicted to be alpha-helical', citing Soares 2011, a review). It also sits OUTSIDE all four ESPRIT-defined domains -- 'not found within any of 94 most stable DISC1 fragments' -- so the structural screen missed it too. CIRCULARITY RE-CHECKED 16 Nov 2026 AND STILL CLEAN, BUT NARROWLY: Zaharija's 2025 thesis §4.3.5 DOES run five aggregation predictors (TANGO, AGGRESCAN, FoldAmyloid, MetAmyl, ANuPP) on full-length DISC1 -- but AFTER the region was mapped by truncation and deletion, as a post-hoc mechanistic check, and the thesis presents the predictions as complementing a finding already in hand. The region was NOT found by prediction. This row stays in the non-circular set. It does, however, mean the legacy-predictor scores for DISC1 are published prior art.",
+      "found_by": "experimental truncation and deletion; NOT circular. No aggregation predictor was used to find it. The only prediction mentioned is post-hoc description ('would be predicted to be alpha-helical', citing Soares 2011, a review). It also sits OUTSIDE all four ESPRIT-defined domains -- 'not found within any of 94 most stable DISC1 fragments' -- so the structural screen missed it too. CIRCULARITY RE-CHECKED 16 Nov 2026 AND STILL CLEAN, BUT NARROWLY: Zaharija's 2025 thesis \u00a74.3.5 DOES run five aggregation predictors (TANGO, AGGRESCAN, FoldAmyloid, MetAmyl, ANuPP) on full-length DISC1 -- but AFTER the region was mapped by truncation and deletion, as a post-hoc mechanistic check, and the thesis presents the predictions as complementing a finding already in hand. The region was NOT found by prediction. This row stays in the non-circular set. It does, however, mean the legacy-predictor scores for DISC1 are published prior art.",
       "source": "Zaharija & Bradshaw, bioRxiv 2023.08.03.551216 (unpublished)",
       "note": "ADDED 15 Nov 2026; SOURCE READ 16 Nov 2026. A ~32-residue linker C-terminal of the D region, outside all four structured domains. CONTRADICTS the C-terminal in vitro result above, and both groups acknowledge the conflict. It is also the second case of the central pattern: an inter-domain linker in a coiled-coil scaffold protein, missed by every predictor. Caveat: same lab as the TRIOBP-1 work, so this is a second case rather than independent replication.",
       "verified_against_publisher_pdf": true,
@@ -149,11 +167,97 @@
       "sequence": "EQEKISLHFQLPSRQPALSSFLGHLAAQVQAA",
       "sequence_provenance": "RETRIEVED FROM UNIPROT 15 Nov 2026, not transcribed by hand. rest.uniprot.org/uniprotkb/Q9NRI5.fasta, header 'sp|Q9NRI5|DISC1_HUMAN ... PE=1 SV=3', full length 854, which matches the 854 aa shown on the entry page the author checked. Residues 384-415 inclusive, 1-based, 32 residues -- consistent with the '~32-residue linker' in STATE.md. IMPORTANT: UniProt confirms the SEQUENCE for this range, NOT that the range is right. The 384-415 boundaries come from the source paper and remain verified_against_publisher_pdf: false.",
       "GATEKEEPER_RESULT_2026_11_15": "18.8% gatekeeper (2 Pro + 4 charged of 32). THIS BREAKS THE HEADLINE. The worst crystallised steric zipper is 16.7% (tau VQIVYK and SOD1 30-35), so this region is +2.1 points above it -- indistinguishable. 18 of its 27 hexapeptide windows are at or below the worst zipper, minimum 0.0% at ISLHFQ. The reported 'psychiatric regions 48.0% to 50.0% (n=2)' was carried by TRIOBP-1 324-348 at 48.0% plus DISC1 716-761 at 50.0% -- and 716-761 is the docking-restraint row found by a RADAR sequence search, which the found_by column exists to exclude. With the honest DISC1 row the separation does not generalise: ONE region is gatekeeper-rich, the other is not.",
-      "verified_against": "Zaharija & Bradshaw, bioRxiv 2023.08.03.551216v1 (read in full) PLUS Zaharija B (2025) PhD thesis, University of Rijeka (READ IN FULL 16 Nov 2026, key zaharija2025thesis). RANGE SETTLED AT 384-415: the thesis's Table 11 names the actual plasmids 'DISC1 (delta-384-415)', 'DISC1 (1-655 delta-384-415)' and 'DISC1 (1-836 delta-384-415)', and both §4.3.4 and Conclusion 3.1 give AA 384-415 and 'the 32 AA'. The preprint's delta-384-414 was a typo. One stray slip remains in the thesis itself: Figure 48's caption says 'AA 383-415'.",
+      "verified_against": "Zaharija & Bradshaw, bioRxiv 2023.08.03.551216v1 (read in full) PLUS Zaharija B (2025) PhD thesis, University of Rijeka (READ IN FULL 16 Nov 2026, key zaharija2025thesis). RANGE SETTLED AT 384-415: the thesis's Table 11 names the actual plasmids 'DISC1 (delta-384-415)', 'DISC1 (1-655 delta-384-415)' and 'DISC1 (1-836 delta-384-415)', and both \u00a74.3.4 and Conclusion 3.1 give AA 384-415 and 'the 32 AA'. The preprint's delta-384-414 was a typo. One stray slip remains in the thesis itself: Figure 48's caption says 'AA 383-415'.",
       "range_provenance": "READ, 16 Nov 2026. Discussion: 'AA 384-415, immediately C-terminal of the D region'. Three internal checks agree: D region ends at 383; 1-383 does not aggregate while 1-415 does (Fig 5B,C); and 383+32=415 matches 'these 32 amino acids were deleted', which matches the 32-residue UniProt string already stored. ONE-RESIDUE SLIP IN THE SOURCE, DOES NOT AFFECT US: the p.9 body text writes the deletion constructs as delta-384-414 three times (31 residues) while Figure 5A and panels D-F label them delta-384-415 and the same sentence says 32. 384-415 is right.",
       "domain_frame_from_source": "ESPRIT regions, Yerabham 2017 via this paper's Fig 1/Results: D 257-383, I 539-655, S 635-738, C 691-836. I/S overlap at 635-655 and S/C at 691-738. Second slip: Results prints 'AA 539-738' for BOTH I+S and S+C; S+C is 635-836 per Fig 3A and the Discussion.",
       "circularity_status": "CLEAN",
-      "circularity_basis": "Found by truncation and deletion in cells. Re-checked 16 Nov 2026 against Zaharija's 2025 thesis, which DOES run five aggregation predictors on DISC1 -- but only AFTER the region was mapped, as a post-hoc mechanistic check. Prediction after mapping does not contaminate."
+      "circularity_basis": "Found by truncation and deletion in cells. Re-checked 16 Nov 2026 against Zaharija's 2025 thesis, which DOES run five aggregation predictors on DISC1 -- but only AFTER the region was mapped, as a post-hoc mechanistic check. Prediction after mapping does not contaminate.",
+      "stratum": "DISCORDANT_PROVISIONAL",
+      "stratum_basis": "Zaharija 2025 thesis 4.3.5 runs five legacy predictors on DISC1, so a documented assignment is RECOVERABLE FROM THE LITERATURE rather than needing our own run -- but the per-region outcome has not been read out yet. Confirm from the thesis before the freeze; do not assume."
+    },
+    {
+      "protein": "tau",
+      "residues": "306-311",
+      "frame": "tau441 / ht40 (2N4R), UniProt P10636-8, 441 aa. The paper fixes this itself: 'The numbering of the amino acids is that of the isoform ht40 containing 441 residues'.",
+      "evidence": "PHF6. Minimal interaction motif from an unbiased overlapping-peptide scan, with necessity shown by mutagenesis in an isolated construct AND in the full-length protein.",
+      "construct": "DISCOVERY: membrane-immobilised library of 15-mer peptides at a 3-residue step spanning 253-354 (30 peptides), probed with iodinated PHF43 = [N265-E338 dR2]. NECESSITY: proline-scanning in PHF47; K19dVQI, K19NAE, K19Y310E; and dVQI / NAE in FULL-LENGTH ht23, where both cause 'a complete loss of PHF formation'. THE CONSTRUCT COLUMN MATTERS HERE: the motif was mapped in a dR2 construct and confirmed in intact protein, which is stronger than either alone.",
+      "found_by": "UNBIASED PEPTIDE-ARRAY SCAN, 2000 -- four years before TANGO. No predictor in the discovery path. Prediction appears only POST HOC.",
+      "source": "von Bergen et al. 2000, PNAS 97:5129-5134",
+      "note": "THE CONTROL ARM FOR H4 (PREREGISTRATION.md 9.1). This is the case with the SAME compositional architecture as TRIOBP-1 324-348 -- globally gatekeeper-rich protein, locally zipper-grade hexapeptide -- WHERE THE PREDICTORS SUCCEED. Without it H4 has no positive control and is withdrawn. TWO THINGS TO CARRY INTO ANY WRITE-UP: (1) ROLE CONFLICT -- VQIVYK is also hardcoded as deposited-crystal comparator 2ON9 in scripts/gatekeeper_density.py; it may serve in ONE role per table and the role must be stated. (2) The radiolabel sits INSIDE the motif: Methods say PHF43 was 'iodinated at Tyr-310', and Tyr-310 is the fifth residue of 306VQIVYK311. The mutational work is label-independent and confirms the result, but raise this rather than be shown it.",
+      "verified_against_publisher_pdf": true,
+      "sequence": "VQIVYK",
+      "sequence_provenance": "VERIFIED against UniProt P10636-8: residues 306-311 are VQIVYK, exact. The repeat boundaries corroborate it -- PHF6 is the first six residues of R3 (V306-Q336).",
+      "verified_against": "von Bergen et al. 2000, PNAS 97:5129 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author; Figures 1 and 4 additionally inspected as images from PMC25793.",
+      "range_provenance": "READ. Abstract and Results (iii): 'a minimal hexapeptide interaction motif of 306VQIVYK311 at the beginning of the third internal repeat'. Figure 4 prints the peptide grid, 15-mers at a 3-residue step, so 306-311 is a measurement at 3-residue resolution and not an inference from a coarse grid.",
+      "circularity_status": "CLEAN",
+      "circularity_basis": "Unbiased scan; the probe PHF43 came from GluC limited proteolysis, not from a prediction. Prediction is present in the paper but ONLY POST HOC -- Discussion (v) cites Street & Mayo 1999 for beta-propensity. That is the permitted direction. NOTE FOR HONESTY: an audit subagent reported 'no algorithm named anywhere in the paper'; that is FALSE, and we state the post-hoc position ourselves rather than let a reviewer find it.",
+      "stratum": "CONCORDANT",
+      "stratum_basis": "DOCUMENTED, not predicted by us. Discussion (v): PHF6 and PHF6* 'are the only two spots in the tau sequence where a beta conformation is strongly predicted'. The predictors FIND this region, which is exactly why it serves as the positive control and NOT as a test of H1/H4."
+    },
+    {
+      "protein": "tau",
+      "residues": "275-280",
+      "frame": "tau441 / ht40 (2N4R), UniProt P10636-8, 441 aa.",
+      "evidence": "PHF6*. A SECOND, independent maximum of interaction in the same peptide scan, centred on Ile-278.",
+      "construct": "Same membrane scan and same PHF43 probe as 306-311. NOTE THE ASYMMETRY, IT IS THE POINT OF THIS ROW: R2 is DELETED from the PHF43 probe, so the signal cannot come from the probe's own copy of the motif -- which makes the detection cleaner, not weaker. ISOFORM-DEPENDENT: R2 is encoded by exon 10, so PHF6* exists only in 4R isoforms.",
+      "found_by": "Same unbiased peptide-array scan. Its own binding maximum, not an analogy to PHF6.",
+      "source": "von Bergen et al. 2000, PNAS 97:5129-5134",
+      "note": "WEAKER THAN PHF6 AND THE ROW MUST SAY SO: NECESSITY WAS NEVER TESTED FOR PHF6*. Every mutational experiment in the paper targets 306-311 -- the proline scan, K19dVQI, K19NAE, K19Y310E, dVQI/NAE in ht23. PHF6* has a binding maximum and nothing else. It is therefore NOT a second control arm: it is detected inside the SAME single experiment and carries no mutational validation, so the H4 control arm remains n = 1. Independent support would have to come from von Bergen 2001 (JBC 276:48165), where DeltaK280 -- inside PHF6* -- is characterised.",
+      "verified_against_publisher_pdf": true,
+      "sequence": "VQIINK",
+      "sequence_provenance": "VERIFIED against UniProt P10636-8: residues 275-280 are VQIINK, exact. Corroborated by the repeat boundaries -- PHF6* is the first six residues of R2 (V275-S305).",
+      "verified_against": "von Bergen et al. 2000, PNAS 97:5129 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026.",
+      "range_provenance": "READ. Results (iii): 'A second maximum of interaction was centered around Ile-278, covering the sequence 275VQIINK280 (PHF6*).' Figure 4 caption: 'Another cluster of strong interaction occurs around the spots that harbor the analogous sequence in R2.' Verified: Ile-278 lies inside 275-280.",
+      "circularity_status": "CLEAN",
+      "circularity_basis": "Same clean scan as PHF6. CORRECTION RECORDED: this row was briefly demoted on 16 Nov on the reasoning that PHF6* sits in R2 and R2 is deleted from the probe, so it must have been named by analogy. That was WRONG -- it confused the probe with the membrane. The membrane spans 253-354 and contains R2; the probe need not.",
+      "stratum": "CONCORDANT",
+      "stratum_basis": "Same documented sentence as PHF6: 'the only two spots in the tau sequence where a beta conformation is strongly predicted'."
+    },
+    {
+      "protein": "alpha-synuclein",
+      "residues": "71-82",
+      "frame": "UniProt P37840, 140 aa",
+      "evidence": "NECESSARY AND SUFFICIENT for filament assembly, by four independent lines. Necessity: D71-82 does not assemble by sedimentation or EM even after SIX WEEKS, with no random-coil-to-beta transition by CD. Sufficiency: the synthetic 12-mer self-assembles into filaments and seeds full-length alpha-synuclein.",
+      "construct": "Full-length human alpha-synuclein with an internal deletion and with A76R / A76E substitutions; human beta-synuclein as a NATURAL comparator; an isolated synthetic 12-mer. All in pRK172 / E. coli BL21(DE3), assembled in 100 mM sodium acetate pH 7.0 at 37 C with shaking. CONTROL THAT ISOLATES THE REGION: the a/b-syn hybrid (a-syn 1-97 + b-syn 87-134) assembles at wild-type rate, so the divergent C-terminus is NOT responsible for beta-synuclein's failure.",
+      "found_by": "COMPARATIVE SEQUENCE ALIGNMENT AGAINST A PARALOGUE THAT NATURALLY LACKS THE REGION. No predictor and no propensity analysis anywhere in the paper; in 2001 none of the tools under test existed.",
+      "source": "Giasson et al. 2001, J Biol Chem 276(4):2380-2386",
+      "note": "ENTERS AS A LABELLED TRUE POSITIVE, NOT AS A TEST. 71-82 overlaps ZipperDB-selected NACore 68-78 by eight residues, so this is a region the predictors DO find. ALSO: at 8.3% proline-plus-charge it sits BELOW the worst deposited zipper (16.7%), so it does not support the gatekeeper inversion -- it dilutes it. AND IT TESTS THE GATEKEEPER PREMISE DIRECTLY: A76R and A76E put a single charge into the middle of the hydrophobic core and NEITHER abolished assembly; the paper concludes a single charged residue 'is not sufficient to disrupt the hydrophobic intermolecular interactions driving filament formation'. Cite that rather than rediscover it.",
+      "verified_against_publisher_pdf": true,
+      "sequence": "VTGVTAVAQKTV",
+      "sequence_provenance": "VERIFIED against UniProt P37840: residues 71-82 are VTGVTAVAQKTV, exact match to the string printed in the title, abstract, Results and Discussion. CAUTION: the METHODS print the synthetic peptide as 'VTGVTAVAQKTA', ending in Ala. P37840 position 82 is Val, so the Methods string is wrong at the last residue -- almost certainly a typo, since every other mention is correct, but it is the described sequence of the peptide carrying the whole SUFFICIENCY claim (Figs 4E, 4F, 7). Recorded, not silently assumed.",
+      "verified_against": "Giasson et al. 2001, JBC 276:2380 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author.",
+      "range_provenance": "READ. Abstract: 'a 12-amino acid stretch ((71)VTGVTAVAQKTV(82)) in the middle of the hydrophobic domain'. BOUNDARY EVIDENCE IS SINGLE-SOURCE: the 71/82 boundaries come from the beta-synuclein alignment alone. The protease-resistant fragments F1-F3 map to 61-95 and merely CONTAIN 71-82, so proteolysis corroborates at 35-residue resolution, not at 12.",
+      "circularity_status": "CLEAN",
+      "circularity_basis": "Discovery path is a natural deletion in a close paralogue plus limited proteolysis. No algorithm, and none of the relevant tools existed in 2001.",
+      "stratum": "CONCORDANT",
+      "stratum_basis": "DOCUMENTED by overlap: 71-82 shares eight residues with NACore 68-78, which was selected by ZipperDB. A region a predictor picked is one the predictors find."
+    },
+    {
+      "protein": "FUS",
+      "residues": "39-95",
+      "frame": "UniProt P35637, 526 aa",
+      "evidence": "The structurally ordered core of FUS-LC fibrils, determined by 3D solid-state NMR. 'We therefore conclude that residues 39-95 constitute the structurally ordered core of FUS-LC fibrils', with 55-62 only partially dynamic. Abstract: 'a segment of only 57 residues forms the fibril core, while other segments remain dynamically disordered.' VERIFIED: 39-95 is exactly 57 residues.",
+      "construct": "FUS low-complexity domain, residues 2-214 ('without the His tag, contains 214 residues'), with an additional N-terminal His tag on the NMR samples. THE CONSTRUCT MATTERS: the core is 57 of 214 residues, so the surrounding 157 residues were present and remained dynamically disordered -- this is a core mapped IN CONTEXT, not an isolated peptide that happened to aggregate.",
+      "found_by": "STRUCTURE DETERMINATION (solid-state NMR, MCASSIGN assignment). No predictor in the discovery path. Prediction appears ONLY afterwards, and only to record that it failed.",
+      "source": "Murray et al. 2017, Cell 171:615 (PMC5650524)",
+      "note": "THE MOST IMPORTANT ROW ADDED ON 16 Nov 2026, AND IT COMES FROM THE PAPER THAT PRE-EMPTED OUR COMPOSITIONAL CLAIM. Murray 2017 publishes both halves of this project's old shape for FUS -- named predictors failing on a mapped core, and composition failing to discriminate. That cost us the compositional headline (PREREGISTRATION.md 9.1). IT ALSO HANDS BACK THE BEST TEST ROW IN THE SET. See _WHY_THIS_ROW_IS_THE_CONTROL_PAIR_FOR_H4 below.",
+      "verified_against_publisher_pdf": false,
+      "provenance_note": "READ BY THE MAIN SESSION via PMC5650524 (open access), twice, on 16 Nov 2026: once for the predictor passage and once for the core definition. Both quoted verbatim above. The PDF itself has not been opened, so verified_against_publisher_pdf stays FALSE pending that; the SEQUENCE and the 57-residue arithmetic are independently verified against UniProt.",
+      "sequence": "SGYSQSTDTSGYGQSSYSSYGQSQNTGYGTQSTPQGYGSTGGYGSSQSSQSSYGQQS",
+      "sequence_provenance": "RETRIEVED FROM UniProt P35637, residues 39-95, 16 Nov 2026. Length 57, matching the paper's own 'a segment of only 57 residues' -- an independent arithmetic check on the range.",
+      "verified_against": "Murray et al. 2017, Cell 171:615 -- PMC5650524 full text read by the main session; publisher PDF not yet opened.",
+      "range_provenance": "READ. 'We therefore conclude that residues 39-95 constitute the structurally ordered core of FUS-LC fibrils.' Corroborated by the abstract's independent residue count (57).",
+      "circularity_status": "CLEAN",
+      "circularity_basis": "The core was determined structurally and the predictors were run afterwards, which is the permitted direction. The paper states the direction itself: the core 'is not predicted by computational methods that assess propensities for amyloid formation'.",
+      "stratum": "DISCORDANT",
+      "stratum_basis": "DOCUMENTED IN PRINT, WITH THE PREDICTORS NAMED, which is the strongest form of assignment available and requires no run of our own. Discussion, 'What determines the fibril core?': 'Aggrescan, FISH, FoldAmyloid, MetAmyl, and PASTA 2.0 predict a low propensity for amyloid formation across the FUS-LC.' ZipperDB, Zyggregator and WALTZ 'predict that certain short segments of FUS-LC may form amyloidlike structures' but 'with no consensus on the identities of these segments'. FIVE of these eight are in or adjacent to this project's own legacy set.",
+      "_WHY_THIS_ROW_IS_THE_CONTROL_PAIR_FOR_H4": {
+        "the_computation": "COMPUTED 16 Nov 2026 from P35637: FUS 39-95 is 3.5% proline-plus-charge (one proline, one charged residue in 57), and ALL 52 of its 6-residue windows sit at or below the worst deposited steric zipper (16.7%).",
+        "why_that_matters": "IT REMOVES THE COMPOSITIONAL EXCUSE ENTIRELY. For TRIOBP-1 324-348 one can argue a window-scanning predictor was not unreasonable to downweight a region that is 48% gatekeeper. FOR FUS 39-95 THAT DEFENCE IS UNAVAILABLE: there is nothing compositionally unusual about this region at all -- every single window is zipper-grade -- and five named predictors still failed to flag it.",
+        "the_pairing": "FUS 39-95 and tau PHF6 306-311 have essentially the SAME compositional profile (low gatekeeper, zipper-grade windows) and OPPOSITE prediction outcomes: tau is FOUND, FUS is MISSED. That is a far tighter control pair than tau versus TRIOBP-1, because it holds composition almost constant. H4 was promoted on the tau/TRIOBP-1 contrast; THIS PAIR IS THE BETTER TEST OF IT.",
+        "the_three_row_structure": "tau PHF6 16.7% gatekeeper, is a zipper, FOUND. FUS 39-95 3.5%, 52/52 windows zipper-grade, MISSED. TRIOBP-1 324-348 48.0%, 7/20 windows zipper-grade, MISSED. Composition does not order these outcomes -- which is Murray's own point, now doing work FOR the project rather than against it.",
+        "honest_limit": "n is still small and FUS is one protein. This strengthens H4; it does not by itself make a rate estimate. See PREREGISTRATION.md 7."
+      }
     }
   ],
   "_rows_deliberately_excluded": {
@@ -172,5 +276,16 @@
     "the_rule_that_makes_this_workable": "PREDICTION USED AFTER MAPPING DOES NOT CONTAMINATE. A post-hoc predictor run on an already-mapped region is a mechanistic check, not a selection step. This is what keeps DISC1 384-415 clean despite Zaharija 2025 running five predictors on DISC1.",
     "circularity_is_TOOL_SPECIFIC": "A region nominated by AmylPred2 is circular for AmylPred2 and for any consensus containing it, but a tool that did not exist at the time is being tested fairly on it. Circular rows may therefore serve as LABELLED POSITIVE CONTROLS for the modern arm -- with the selection bias stated, since a region legacy tools ranked top is predictable by construction and cannot test whether modern tools recover what legacy MISSED.",
     "how_these_rows_are_analysed": "Separately, always, per CLAUDE.md. CIRCULAR rows are excluded from the primary statistic and reported as their own stratum. They are never silently pooled with CLEAN rows."
+  },
+  "_SCHEMA_STRATUM": {
+    "added": "16 Nov 2026, required by the PREREGISTRATION.md 7 amendment.",
+    "why": "WIDENING THE SET MOSTLY ADDS TRUE POSITIVES, AND A TRUE POSITIVE CANNOT DISCRIMINATE MODERN FROM LEGACY PREDICTORS BECAUSE BOTH HIT IT. A region gets mapped cleanly and early precisely when it is a classic short hydrophobic or beta-prone motif -- which is what the predictors were built to detect -- so the literature is enriched for regions the predictors find. Power lives only where experiment and prediction DISAGREE.",
+    "values": {
+      "DISCORDANT": "Experiment and prediction disagree. THE PRIMARY STATISTIC IS COMPUTED ON THIS STRATUM ONLY.",
+      "CONCORDANT": "The predictors find the region. Reported separately as a PIPELINE POSITIVE CONTROL -- it shows the predictors ran and scored sanely. Never pooled into the primary.",
+      "DISCORDANT_PROVISIONAL": "Expected discordant from published results, not yet read out. Must resolve to DISCORDANT or CONCORDANT before the freeze.",
+      "PENDING": "Assigned after the legacy arm runs and before the modern arm. That ordering is part of the freeze."
+    },
+    "the_uncomfortable_count": "AS OF 16 Nov 2026 THE DISCORDANT STRATUM HOLDS THREE ROWS: TRIOBP-1 324-348 (documented), FUS 39-95 (documented, five predictors named in print), and DISC1 384-415 (provisional, recoverable from Zaharija 2025 4.3.5). IT GREW BY ONE TODAY, AND THE GROWTH CAME FROM ASKING FOR DISCORDANT ROWS SPECIFICALLY RATHER THAN FOR CLEAN ONES. The first sweep added three clean rows and all three were CONCORDANT -- the dataset grew and the test did not. The lesson is recorded because it redirects the remaining sourcing effort: THE BINDING CONSTRAINT IS DISCORDANT ROWS, NOT CLEAN ROWS, and the cheapest source of them is papers that ran predictors post hoc and published the failure. If the stratum still cannot be grown, PREREGISTRATION.md 7 already fixes the outcome: the quantitative claim is withdrawn and the project reports a case study plus a dataset, declared rather than discovered late."
   }
 }

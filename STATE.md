@@ -1019,6 +1019,66 @@ inversion, which was n=1 and getting lonelier, and buys a contrast with a contro
 arm. **It is a reframing, not a retreat — but it is the author's call, and it
 should be made before the freeze.**
 
+### The validation set is 14 rows, and the paper that pre-empted us handed back the best row [16 Nov 2026]
+
+`data/regions.json` went from 10 to 14. Four promotions, all with the publisher
+text read and the sequence verified against UniProt: **tau PHF6 306-311**, **tau
+PHF6\* 275-280**, **α-syn 71-82**, **FUS 39-95**. Every row now carries a
+`stratum` label, as the §7 amendment requires.
+
+**The first three were all CONCORDANT — the dataset grew and the test did not.**
+That is the pattern already recorded: the literature is enriched for regions the
+predictors find. **So the audit was redirected to ask for *discordant* rows
+specifically, and that worked immediately.**
+
+**FUS 39-95 is DISCORDANT, documented in print, with the predictors named** —
+*"Aggrescan, FISH, FoldAmyloid, MetAmyl, and PASTA 2.0 predict a low propensity
+for amyloid formation across the FUS-LC"* — against a core determined by
+solid-state NMR: *"residues 39-95 constitute the structurally ordered core."*
+Verified independently: 39-95 is exactly 57 residues, matching the abstract's own
+*"a segment of only 57 residues."*
+
+### And the computation on it is better than the row
+
+Computed from P35637: **FUS 39-95 is 3.5% proline-plus-charge, and all 52 of its
+6-residue windows sit at or below the worst deposited zipper.**
+
+| row | gatekeeper | windows zipper-grade | predictors |
+|---|---|---|---|
+| tau PHF6 306-311 | 16.7% | it *is* a zipper | **FOUND** |
+| **FUS 39-95** | **3.5%** | **52 / 52** | **MISSED** |
+| TRIOBP-1 324-348 | 48.0% | 7 / 20 | **MISSED** |
+
+**This removes the compositional excuse entirely.** For TRIOBP-1 one can argue a
+window-scanning predictor was not unreasonable to downweight a region that is 48%
+gatekeeper. For FUS that defence is unavailable: there is nothing compositionally
+unusual about the region at all, every window is zipper-grade, and five named
+predictors still missed it.
+
+**FUS 39-95 and tau PHF6 are the control pair H4 actually needed** — nearly the
+same compositional profile, opposite prediction outcomes. That is a far tighter
+contrast than tau versus TRIOBP-1, because it holds composition close to
+constant. H4 was promoted on the weaker pairing; **this is the better test of
+it.**
+
+**Note what happened to Murray 2017.** It cost us the compositional headline
+(§9.1) and then supplied the best test row in the set. The project's contribution
+was never the composition observation; it is assembling the discordant set and
+asking whether the PLM generation recovers it.
+
+### The redirect is the transferable lesson
+
+**The binding constraint is discordant rows, not clean rows.** Clean rows are
+plentiful and mostly concordant. The cheapest source of discordant rows is
+**papers that ran predictors post hoc and published the failure** — exactly how
+FUS was found. Remaining sourcing effort should go there, not into widening the
+clean set.
+
+Discordant stratum now: **TRIOBP-1 324-348**, **FUS 39-95**, and **DISC1 384-415**
+(provisional — Zaharija 2025 §4.3.5 ran five legacy predictors on DISC1, so the
+assignment is recoverable from the literature rather than needing our own run;
+**read it out before the freeze, do not assume it**).
+
 ### What that inventory is not
 
 Its author read only the TRIOBP-1 rows and the contamination material itself;

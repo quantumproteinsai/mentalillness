@@ -345,8 +345,9 @@ the literature, not a run of bad luck:
 | Mizuguchi 2019 (JBC) | Δ**68-76** (Table 1, Results, Methods) | "Δ**68-78**" ×2 (p.13521) | **68-76** | 
 | Seuma 2021 (eLife) | gatekeepers "...E11, **D22**, L17, A42" (Discussion) | "...L17, **E22**, A42" (Methods) | **E22** — Aβ22 is Glu; the Dutch mutation is E22Q |
 | Giasson 2001 (JBC) | peptide `VTGVTAVAQKT**V**` (title, abstract, Results, Discussion) | Methods: `VTGVTAVAQKT**A**` | **V** — P37840 position 82 is Val. **A SEQUENCE slip, not a numbering slip, and it sits in the description of the peptide carrying the whole sufficiency claim** |
+| von Bergen 2000 (PNAS) | Abstract: scan of "the **full** τ sequence" | Fig. 4: "the region of τ from **L253 ... to D348**" (96 aa of 441) | **L253-D348**. A SCOPE claim, not a number — it decides whether the row is an unbiased scan of a PROTEIN or of a PRE-SELECTED DOMAIN |
 
-**Nine, across seven papers and FIVE independent groups** (updated 16 Nov 2026: the
+**Ten, across eight papers and SIX independent groups** (updated 16 Nov 2026: the
 Mizuguchi slip found by reading the apoA-I primary, the Seuma slip reported by the
 unbiased-screen audit). None of them changed a row, because each was caught by
 arithmetic, by a figure, or — in the Seuma and Giasson cases — by knowing the
@@ -788,6 +789,64 @@ string was *right about the crystal*; the **label** implied wild type. Relabelle
 `a-syn preNAC A53T (4ZNN)`. **Ala→Thr changes no gatekeeper count, so this moves
 no number** (0.0% either way) — fixed anyway, because an unlabelled mutant in a
 table intended for publication is a defect even when numerically inert.
+
+### The clean rows are mostly regions the predictors FIND — and that limits the benchmark [READ, 16 Nov 2026]
+
+**This is the most important design consequence of the 16 Nov sweep, and it is a
+rule 2 problem rather than a sourcing problem.**
+
+Three clean rows read in full on the same day all turn out to be regions the
+predictors hit:
+
+| row | why predictors find it |
+|---|---|
+| α-syn 71-82 | overlaps ZipperDB-selected NACore 68-78 by 8 residues |
+| tau PHF6 306-311 | *"the only two spots in the τ sequence where a β conformation is strongly predicted"* |
+| tau PHF6* 275-280 | the same sentence |
+
+**That is not a coincidence and not an artefact of our sweep.** A region gets
+mapped cleanly and early when it is a classic short hydrophobic or β-prone
+motif — which is exactly what the predictors were built to detect. The regions
+predictors *miss* are rare in the literature for the same reason they are
+interesting: they are unusual.
+
+**So widening the validation set mostly adds true positives, and true positives
+cannot discriminate modern from legacy predictors, because both classes hit
+them.** The rows that discriminate are the ones where experiment and prediction
+*disagree* — currently TRIOBP-1 324-348 and DISC1 384-415, which is to say the
+two we started with.
+
+**Reaching the floor of 15 therefore does not buy 15 rows of statistical
+power.** The pre-registered statistic should be computed on the **discordant
+stratum**, with the true-positive stratum reported separately as a sanity check
+that the predictors ran at all. **This must be decided before the freeze**, and
+it changes what the floor of 15 means: 15 rows of *dataset*, far fewer rows of
+*test*.
+
+### von Bergen 2000 is clean, but not for the reason the audit gave
+
+The subagent reported **"no algorithm named anywhere in the paper."** **That is
+false.** Predicted β-structure appears at least five times, including in the
+Abstract — *"This motif coincides with the highest predicted β-structure
+potential in τ"* — in a Results heading, and in the Discussion.
+
+**The row is still CLEAN**, because every one of those is *post hoc*: prediction
+explains the scan result, it never selects the peptides, and the Methods name no
+algorithm. The discovery path is GluC limited proteolysis → PHF43 → an
+overlapping 15-mer peptide library probed against it → the hexapeptide; with
+proline-scanning mutagenesis confirming necessity. But the honest claim is
+**"prediction appears, in the permitted direction"**, not "prediction is
+absent" — and a reviewer will find those sentences in ten seconds, so we should
+state it first. **Treat subagent claims of absence as the weakest kind of
+claim:** absence is what an agent is least able to establish and most likely to
+assert.
+
+**One defect still needs the figure.** Results (iii) says the peptides overlap
+"by three residues"; Figure 4 says they are "staggered by three residues." For a
+15-mer those are different designs — a 12-residue step (~8 peptides) versus a
+3-residue step (~28 peptides) — and the step size decides whether 306-311 is a
+6-residue *measurement* or an inference from a coarser grid. **Figures 1 and 4
+remain outstanding**; the text is READ, the figures are not.
 
 ### What that inventory is not
 

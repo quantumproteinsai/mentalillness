@@ -1,4 +1,94 @@
 {
   "_what": "Immutable provenance records for locally installed predictors, required by PREREGISTRATION.md 12 step 4. Append-only: a changed checksum makes a NEW record, it never edits an old one.",
-  "records": []
+  "records": [
+    {
+      "tool": "TANGO",
+      "sha256": "d0e381c28f847487069b0df29bb9d4f766391066710500d3170ecb73d9f31dbf",
+      "size_bytes": 211205,
+      "file_type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.9, not stripped",
+      "local_path_at_capture": "/tmp/claude-1000/-home-deploy-dev-illness/b9828da2-4279-4224-bea8-b1fee7fcbb6f/scratchpad/tango_unpack/tango_x86_64_release",
+      "captured_utc": "2026-11-16T19:00:12+00:00",
+      "captured_on": {
+        "platform": "Linux-6.17.2-1-pve-x86_64-with-glibc2.39",
+        "machine": "x86_64",
+        "python": "3.12.3"
+      },
+      "version_probe": {
+        "--version": "Error when input: no peptide sequence found",
+        "-v": "Error when input: no peptide sequence found",
+        "-V": "Error when input: no peptide sequence found",
+        "--help": "Error when input: no peptide sequence found",
+        "-h": "Error when input: no peptide sequence found",
+        "_strings_candidates": [
+          "_ZSt20__throw_length_errorPKc",
+          "_ZNSs4_Rep20_S_empty_rep_storageE",
+          "too many aminoacids, maximum is 20000",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          "GCC: (GNU) 4.1.2 20080704 (Red Hat 4.1.2-48)",
+          ".gnu.version",
+          ".gnu.version_r",
+          "_ZSt20__throw_length_errorPKc@@GLIBCXX_3.4",
+          "_ZNSs12_S_constructIPcEES0_T_S1_RKSaIcESt20forward_iterator_tag",
+          "_ZNSs4_Rep20_S_empty_rep_storageE@@GLIBCXX_3.4"
+        ]
+      },
+      "THE_PIN_IS_THE_SHA256": "The TANGO academic download page carries NO version number -- its files are named only by platform, e.g. \"Executable Tango - Linux 64bits\". So the sha256 above IS the version for the purposes of PREREGISTRATION 5.2 and 12 step 4. Cite it as such. If a future download of \"the same\" file yields a different digest, that is a different tool and must be recorded as a separate run.",
+      "STILL_TO_BE_FILLED_BY_THE_AUTHOR": {
+        "download_url": "TODO AUTHOR: the academic download page reached from https://tango.crg.es/ (the https host; http:// serves a maintenance 404 -- see reports/predictor_reachability_2026-11-16.md)",
+        "download_date": "2026-11-16",
+        "licence_type": "academic / non-profit registration, granted to contact@quantum-proteins.ai",
+        "exact_invocation": "tango_x86_64_release <identifier> nt=\"N\" ct=\"N\" ph=\"<PH>\" te=\"<KELVIN>\" io=\"<IONIC>\" tf=\"0\" stab=\"<KCAL>\" seq=\"<SEQUENCE>\"  -- run from the output directory, which is where it writes <identifier>.txt. Per-residue columns: res, aa, Beta, Turn, Helix, Aggregation, Conc-Stab_Aggregation. Summary line to stdout: AGG, AMYLO, TURN, HELIX, HELAGG, BETA.",
+        "parameters_vs_bradshaw_2014": "RECONCILED, AND THE MAPPING IS NOT ONE-TO-ONE. Bradshaw 2014 (PLoS ONE 9:e111196) reports \"both alpha helix and beta sheet aggregation using default parameters, threshold = 5%\". The local binary has NO threshold parameter and NO alpha/beta switch. Those two settings were WEB-FORM controls, and both are post-processing here: \"both\" means read the Aggregation column (beta) AND the HELAGG summary value (helical); \"threshold = 5%\" means apply a 5 percent cutoff to the output ourselves. THE REAL GAP IS \"DEFAULT PARAMETERS\". The command line has no defaults: nt and ct are MANDATORY (omitting them aborts), and ph/te/io/tf/stab are silently optional. The web form's defaults are therefore NOT recoverable from the binary, and must be taken from the TANGO paper or the archived form, or declared unknown. Until then our run is NOT a reproduction of Bradshaw's settings, only of the same program."
+      },
+      "version_claim": {
+        "claimed_version": "2.3.1",
+        "claim_comes_from": "THE ARCHIVE FILENAME ONLY: tango2_3_1.linux64.zip",
+        "THE_BINARY_SELF_REPORTS_NOTHING": "Every version flag tried -- --version, -v, -V, --help, -h -- returns the same string, \"Error when input: no peptide sequence found\". The binary has no version switch and no usage message. `strings` yields no version token: the only dated strings are the compiler banner, GCC 4.1.2 20080704 (Red Hat 4.1.2-48). The download page carries no version either. So \"2.3.1\" is a FILENAME CLAIM, not a self-report, and is NOT independently confirmable from the artefact. The sha256 above is the only pin that is.",
+        "binary_mtime_in_archive": "2011-01-03 12:41",
+        "archive_sha256": "bef9a73141f8af5e9818bb79fe4f441fda378a3441c5e5e26a9f6519dac4710c",
+        "archive_name": "tango2_3_1.linux64.zip"
+      },
+      "MEASURED_PARAMETER_SENSITIVITY_2026-11-16": {
+        "_how": "Manual example peptide DNEWGYIAYHVSQDP, one parameter varied at a time, per-residue output files compared with cmp(1). Baseline: nt=N ct=N ph=7.4 te=303 io=0.05 tf=0 stab=-10.",
+        "ph 7.4 -> 2.0": "DIFFERS. Aggregation at W04 rises 4.732 -> 12.374.",
+        "te 303 -> 330": "DIFFERS.",
+        "stab -10 -> -4": "BYTE-IDENTICAL output.",
+        "conc absent -> conc=1": "BYTE-IDENTICAL output.",
+        "stab omitted entirely": "BYTE-IDENTICAL to stab=-10.",
+        "WHAT_THIS_MEANS_FOR_PREREGISTRATION": "pH and temperature CHANGE THE ANSWER and must be pre-registered as fixed values before any run. stab and conc showed no observable effect on this sequence in this build -- which is a measurement on one peptide, NOT a proof that they are inert in general. Do not report them as ignored; report them as \"varied, no observable effect on the test peptide\"."
+      },
+      "TRAPS_FOUND_BY_RUNNING_IT": [
+        "EXIT CODE IS 0 ON FAILURE. A run with a missing N-terminal group prints \"Error when input: ...\" and still exits 0, writing no output file. Any batch harness MUST check that the output file exists and is non-empty, because the exit status will not tell it anything.",
+        "THE MANUAL DESCRIBES A DIFFERENT OUTPUT FORMAT FROM THE ONE THE BINARY PRODUCES. The manual lists a final column \"Percentage of Helical Aggregation\"; this build emits \"Conc-Stab_Aggregation\" instead and reports HELAGG only on the stdout summary line. The shipped manual is therefore not a description of the shipped binary.",
+        "THE MANUAL'S nt/ct DESCRIPTIONS ARE TRANSPOSED. It gives \"nt: Protection at the C-terminus ... Y for amidated\" and \"ct: Protection at the N-terminus ... A for acetylated\". Amidation is a C-terminal modification and acetylation an N-terminal one, so either the names or the descriptions are swapped. We use nt=N ct=N (no protection at either end), which is unaffected by the ambiguity -- but ANY protected-terminus run must resolve this first.",
+        "The output file is written to the CURRENT WORKING DIRECTORY, named <identifier>.txt, and silently overwrites. Distinct identifiers per run, or a fresh directory per run.",
+        "Maximum sequence length is 20000 aa (string found in the binary). DISC1 at 854 and TRIOBP-1 at 652 are far inside it; no chunking needed, so no window-boundary artefact from chunking."
+      ]
+    }
+  ]
 }

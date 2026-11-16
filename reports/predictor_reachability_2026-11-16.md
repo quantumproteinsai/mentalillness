@@ -96,3 +96,51 @@ it is **exploratory** under that rule — the same verdict ANuPP received in §1
 decision 2. **Worth checking whether it ships code or weights before deciding**;
 if it does, it is a serious modern-arm candidate from the most relevant group
 possible.
+
+---
+
+## CORRECTION: `biophysique.mnhn.fr/tango` is a DIFFERENT TANGO
+
+**My error, corrected the same day.** The addendum above treated that URL as "a
+real TANGO host" whose origin had died. **It was never a host for our TANGO.**
+
+`http://biophysique.mnhn.fr/tango` is the distribution page for:
+
+> Ollion J, Cochennec J, Loll F, Escudé C, Boudier T (2013). **"TANGO: a generic
+> tool for high-throughput 3D image analysis for studying nuclear
+> organization."** *Bioinformatics* **29**(14):1840-1841.
+> doi:10.1093/bioinformatics/btt276
+
+**TANGO** there stands for **Tools for Analysis of Nuclear Genome
+Organization** — an ImageJ plug-in and R package (`rtango`) for segmenting
+fluorescence microscopy images, GPL v2. **It has nothing to do with protein
+aggregation.**
+
+Our TANGO is:
+
+> Fernandez-Escamilla A-M, Rousseau F, Schymkowitz J, Serrano L (2004).
+> "Prediction of sequence-dependent and mutational effects on the aggregation of
+> peptides and proteins." *Nat Biotechnol* **22**:1302-1306.
+
+**So the 530 I measured was an unrelated tool's download page being down**, and
+the aggregation predictor's status is **unchanged**: it has **one** host,
+`tango.crg.es`, serving a soft-404 maintenance page. `switchlab.org/software`
+confirms the single host.
+
+### What I did wrong, since the method is the point of this report
+
+The body check I introduced in this very report is what should have caught it,
+and it half did: `tango.mnhn.fr` returned 530, so **I never saw any content at
+all** — and I nonetheless asserted the host "is a real TANGO host." **That was an
+inference dressed as a verification.** A 530 tells you a server is unreachable;
+it tells you *nothing* about what software the server would have served. The rule
+the rest of this report states — verify content, not status — applies equally
+when there is no content: **an unreachable host cannot be identified, only
+named.**
+
+### The collision is a live citation hazard, not just our mistake
+
+Two tools called TANGO, both in bioinformatics, both with papers in
+*Bioinformatics*-family journals, published nine years apart. **A reader or a
+tool-chain can cite the wrong one.** Any mention of TANGO in this project's
+outputs must carry the Fernandez-Escamilla 2004 citation, not the bare name.

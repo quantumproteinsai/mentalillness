@@ -107,13 +107,23 @@ Ranked by what changes if you read it.
    **257-655** construct the thesis cites is its Figure 3E. `found_by` is clean: no
    aggregation predictor, and the region falls outside all four ESPRIT domains.
 
-   **What is still wanted from the 2024 paper, and only this:** confirm the boundaries
-   did not move in peer review. A preprint is not the version of record. Two things
-   found in the preprint that must be carried either way — the Discussion's claim that
-   384-415 is "sufficient for aggregation" is **not supported by its constructs**
-   (384-415 was never expressed alone; 384-538 and 1-415 were), and the body text
-   writes the deletion as Δ384-**414** three times against Δ384-**415** in the figures.
-   Full assessment in `data/references_to_check.json`, key `zaharija2023preprint`.
+   **ABSTRACT READ 16 Nov 2026** (PubMed record, PMID 38135095; *Prog
+   Neuropsychopharmacol Biol Psychiatry* **130**:110923, epub 21 Dec 2023). It confirms
+   the claim survived peer review **unchanged in substance**. Full text remains behind
+   the Elsevier/Ovid paywall.
+
+   **What is still wanted, and it is now a single question.** Both abstracts say only
+   "approximately 30 amino acids" — the figure 384-415 (32 residues) appears in neither.
+   The preprint's body text writes the deletion as Δ384-**414** three times against
+   Δ384-**415** in its figures, and *"approximately 30" is equally consistent with 30,
+   31 and 32*, so the abstract cannot discriminate. **Get Figure 5 or the Results of the
+   published version and read which one it prints.** That is the last freeze blocker,
+   and it is one residue wide.
+
+   Carry regardless: the Discussion's claim that 384-415 is "sufficient for aggregation"
+   is **not supported by its constructs** — 384-415 was never expressed alone; 384-538
+   and 1-415 were. Full assessments in `data/references_to_check.json`, keys
+   `zaharija2023preprint` and `zaharija2024`.
 
    **Potentially a better-sourced Tier A DISC1 row than 384-415.** It is experimental
    region-mapping of DISC1 aggregation by the same group, and the thesis uses its

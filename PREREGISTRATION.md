@@ -223,10 +223,22 @@ The range is confirmed three ways in its source: the D region ends at 383, const
 1-383 does not aggregate while 1-415 does, and 383 + 32 = 415 matches both "these 32
 amino acids were deleted" and the 32-residue UniProt string already stored. But:
 
-1. **The source is a preprint.** The version of record is *Prog Neuropsychopharmacol
-   Biol Psychiatry* **130**:110923 (2024), still unread. Re-check the boundaries against
-   it before the freeze — this is now the only §6.3 item left, and it is a re-check, not
-   a gap.
+1. **The source is a preprint, and the version of record is still only an abstract.**
+   *Prog Neuropsychopharmacol Biol Psychiatry* **130**:110923, PMID 38135095. Its
+   **abstract was read 16 Nov 2026** and confirms the claim survived peer review
+   unchanged in substance — none of D, I, S or C aggregates alone, D+I+linker does,
+   "a region of approximately 30 amino acids ... is critical for aggregation, and
+   deletion of this region is sufficient to abolish the aggregation propensity".
+
+   **It cannot close this item, and the reason is exact.** Both abstracts say only
+   "approximately 30 amino acids". The claim we carry is **384-415 = 32 residues**,
+   which appears nowhere in either abstract. And the case needing exclusion is a
+   **one-residue** change at the C-terminal boundary — the preprint's body text wrote
+   Δ384-**414** three times against Δ384-**415** in its figures. "Approximately 30" is
+   equally consistent with 30, 31 and 32, so the abstract reads identically whichever
+   way review resolved that slip. **Only the full text or its Figure 5 settles it.**
+   This remains the only §6.3 item, it is a one-residue re-check, and it is now
+   quantified rather than open-ended.
 2. **The paper's sufficiency claim overreaches its constructs, and §6.2's `construct`
    rule is what catches it.** The Discussion says 384-415 "was both sufficient for
    aggregation", but **384-415 was never expressed alone.** What was expressed alone is
@@ -368,10 +380,12 @@ Stated so it cannot be quietly avoided:
    `regions.json` was right.** ~~Confirm the DISC1 384-415 range in its source~~
    **— done 16 Nov 2026 against the Zaharija & Bradshaw 2023 preprint, which IS that
    source; range confirmed three ways.** **One item left, and it is a re-check rather
-   than a gap:** read Zaharija & Bradshaw **2024** (*Prog Neuropsychopharmacol Biol
-   Psychiatry* 130:110923), the peer-reviewed version of record of that preprint, and
-   confirm the boundaries did not move in review. Carry the sufficiency qualifier in
-   §6.3(2) with the row regardless.
+   than a gap:** obtain the **full text** of Zaharija & Bradshaw **2024**
+   (*Prog Neuropsychopharmacol Biol Psychiatry* 130:110923, PMID 38135095) — its
+   abstract was read 16 Nov 2026 and confirms the substance but **not** the boundaries,
+   since both versions' abstracts say only "approximately 30 amino acids". What is
+   needed is Figure 5 or the Results: **does the published version write Δ384-414 or
+   Δ384-415?** Carry the sufficiency qualifier in §6.3(2) with the row regardless.
 2. ~~Read the 2025 thesis (§11).~~ **Done 15 Nov 2026 — read in full, condition
    discharged, novelty claim unchanged.**
 3. ~~Settle every **[AUTHOR DECISION]**.~~ **Done 15 Nov 2026** (§3.1, §5.1, §5.2),

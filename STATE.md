@@ -257,10 +257,23 @@ pattern rather than weakening it.
    1-383*. **Never write "384-415 is sufficient for aggregation" unqualified.**
    The `construct` column caught this, which is the second time this week that
    column has earned its place.
-2. **It is a preprint.** The version of record is *Prog Neuropsychopharmacol
-   Biol Psychiatry* **130**:110923 (2024), still unread. Re-check the boundaries
-   against it — that is now the single remaining §6.3 item, and it is a
-   re-check, not a gap.
+2. **It is a preprint, and the version of record is so far only an abstract.**
+   *Prog Neuropsychopharmacol Biol Psychiatry* **130**:110923, PMID 38135095,
+   epub 21 Dec 2023. Its **abstract was read 16 Nov 2026** and the claim
+   survived peer review unchanged in substance. **But the abstract cannot close
+   the item, for an exact reason:** both versions say only "approximately 30
+   amino acids", and the number we carry is **32** (384-415). The case needing
+   exclusion is a **one-residue** change at the C-terminal boundary — the
+   preprint's body text wrote Δ384-**414** three times against Δ384-**415** in
+   its figures — and "approximately 30" reads identically whether the answer is
+   30, 31 or 32. **Only Figure 5 or the Results of the published version
+   settles it.** The last freeze blocker is now one residue wide and precisely
+   stated, which is better than open-ended, but it is not closed.
+
+   *Note what just happened: the abstract of the version of record, read
+   carefully, could not supply the number the row depends on. That is the rule
+   about reading primaries restated from the other direction — a primary read at
+   abstract depth is still a secondary for this purpose.*
 
 **A third one-residue slip, in two days, from the same group.** The body text
 writes the deletion constructs as **Δ384-414** three times (31 residues) while

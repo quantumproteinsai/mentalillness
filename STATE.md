@@ -344,11 +344,15 @@ the literature, not a run of bad luck:
 | Leliveld 2009 | S704 throughout | "DISC1-S**707**Δ22" (p.7) | **S704** |
 | Mizuguchi 2019 (JBC) | Δ**68-76** (Table 1, Results, Methods) | "Δ**68-78**" ×2 (p.13521) | **68-76** | 
 | Seuma 2021 (eLife) | gatekeepers "...E11, **D22**, L17, A42" (Discussion) | "...L17, **E22**, A42" (Methods) | **E22** — Aβ22 is Glu; the Dutch mutation is E22Q |
+| Giasson 2001 (JBC) | peptide `VTGVTAVAQKT**V**` (title, abstract, Results, Discussion) | Methods: `VTGVTAVAQKT**A**` | **V** — P37840 position 82 is Val. **A SEQUENCE slip, not a numbering slip, and it sits in the description of the peptide carrying the whole sufficiency claim** |
 
-**Eight, across six papers and FOUR independent groups** (updated 16 Nov 2026: the
+**Nine, across seven papers and FIVE independent groups** (updated 16 Nov 2026: the
 Mizuguchi slip found by reading the apoA-I primary, the Seuma slip reported by the
 unbiased-screen audit). None of them changed a row, because each was caught by
-arithmetic, by a figure, or — in the Seuma case — by knowing the residue identity.
+arithmetic, by a figure, or — in the Seuma and Giasson cases — by knowing the
+residue identity. **The ninth broke the pattern: the first eight were all NUMBERS,
+this one is a SEQUENCE.** So the habit of checking ranges is not sufficient on its
+own — check the letters against the database too, every time.
 **The pattern is now clearly a property of the field and not of one lab:** the first
 six were Bradshaw/Korth-adjacent, the last two are from two unrelated groups. **Verify every
 residue number in this literature against the figure or the arithmetic,

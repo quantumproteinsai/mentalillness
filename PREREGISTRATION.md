@@ -142,7 +142,7 @@ not report those as findings.
 
 | tool | status **16 Nov 2026**, content-verified | how it will be run |
 |---|---|---|
-| **TANGO** | **DOWN.** `tango.crg.es` returns **HTTP 200 with a body reading "ERROR 404 … temporarily unavailable while we carry out maintenance"** | **cannot be run today.** Recheck before the freeze; maintenance may end |
+| **TANGO** | **DOWN AT BOTH KNOWN HOSTS.** `tango.crg.es` returns **HTTP 200 with a body reading "ERROR 404 … maintenance"**; `biophysique.mnhn.fr/tango` → `tango.mnhn.fr` returns **530, Cloudflare 1016 "Origin DNS error"**, stable across retries. The authors' own `switchlab.org/software` still points at the CRG host | **cannot be run today.** Recheck BOTH hosts before the freeze |
 | **AGGRESCAN** | **LIVE**, redirects to `andromeda.uab.cat/bioinf/aggrescan/` | web, settings recorded verbatim |
 | **FoldAmyloid** | **server dead**, both hosts return 000 | **reimplemented** from Garbuzynskiy 2010 + the scales in Galzitskaya 2006b |
 | **ProA** | **DEAD.** `abl.ku.edu/ProA/` now returns **HTTP 200 by silently redirecting to the lab homepage** `mgm.ku.edu` | **cannot be run. Recorded as unavailable, not as a failure.** |

@@ -1940,3 +1940,55 @@ reproduced as reported, and four rows are flagged as retrieved-but-not-verbatim-
 checked. One delegate caught its own summariser **inventing two residue ranges**
 and corrected them before tabling; that check was not run on those four. Nothing
 migrates into `data/regions.json` without being read first.
+
+---
+
+## A ref is not the object store — 16 Nov 2026
+
+`research_notes/` was removed from all 69 commits with `git filter-repo` before
+the repository was made public. The removal was verified two ways and **both
+checks were insufficient in the same way**:
+
+- `git log --all -- research_notes` → 0
+- `git ls-tree -r origin/main | grep research_notes` → 0
+
+Both interrogate **what the refs reach.** Neither interrogates **what the host
+still stores.** GitHub retains objects orphaned by a force-push and serves them
+by SHA, so after the repository went public:
+
+```
+https://github.com/<repo>/commit/4319b7d                      -> 200
+https://raw.githubusercontent.com/<repo>/4319b7d/research_notes/... -> 200
+```
+
+**The files I had reported as "truly gone" were publicly readable.** They were
+exposed for the minutes the repository was public, and only to someone holding a
+pre-rewrite SHA — but the claim was wrong, not merely imprecise.
+
+Closed by making the repository private again; verified from outside,
+unauthenticated.
+
+### Two transferable rules
+
+**1. To show a hosted remote is clean, probe the object store, not the branch.**
+Fetch a known-bad path at a known-bad SHA and require a 404. A local rewrite is
+necessary and nowhere near sufficient: the authoritative copy is the host's.
+
+**2. A 200 immediately after a permission change proves nothing.**
+`raw.githubusercontent.com` kept serving the file for ~7 minutes after the
+repository went private. The tell was that a **current** file 404'd on the same
+schedule — if a control you expect to break is still working, you are reading a
+cache, not the resource. This is the same shape as the earlier finding that *a
+status code is not reachability*, now extended: **a status code is not current
+state.**
+
+### Still open
+
+GitHub holds the orphaned objects. `git gc` locally cannot touch them. Before
+the repository is public again, either delete and recreate it under the same
+name and push the clean history — which preserves the URL the deposited
+`CITATION.cff` points at — or ask GitHub Support to purge unreachable objects
+and stay private until they confirm.
+
+**The Zenodo deposit is unaffected**: it holds its own copies, never contained a
+sweep, and no row of `data/regions.json` rests on one.

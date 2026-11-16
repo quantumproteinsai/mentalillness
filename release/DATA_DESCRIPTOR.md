@@ -225,8 +225,16 @@ you mean "the latest".
 
 ## Licence
 
+Copyright © 2026 Bertrand Mercier des Rochettes.
+
 **CC BY 4.0.** Full legal code in `LICENSE`; `CITATION.cff` and `.zenodo.json`
 carry the same.
+
+*The copyright line is here, and not in `LICENSE`, because `LICENSE` holds the
+unmodified Creative Commons legal code, which names no rights holder by design.
+Editing it to insert one would make it something other than the licence it
+claims to be. CC BY requires that the licensor be identifiable; this is where
+this dataset does that.*
 
 CC BY rather than CC0 because the value here is **curatorial**. The provenance,
 the circularity calls and the stratum labels are the work, and attribution is

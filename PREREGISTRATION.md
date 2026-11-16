@@ -208,17 +208,28 @@ A row enters the confirmatory analysis only if **all** of the following hold:
 4. The **residue range** has been checked against the frame recorded in `_numbering`.
 5. `verified_against_publisher_pdf` is **true**.
 
-### 6.3 Both Tier A rows currently fail rule 5
+### 6.3 One Tier A row now passes rule 5; the other still fails it
 
-**The confirmatory analysis cannot run today.** Stated plainly because it is the single
-most actionable item in this document:
+**Updated 16 Nov 2026.** The TRIOBP-1 blocker is cleared, by a different paper from the
+one this section named:
 
 | row | sequence | range | blocker |
 |---|---|---|---|
-| TRIOBP-1 324-348 | **DERIVED** from UniProt Q9H2D6, printed only in Figure 12B | from the source paper | **read Figure 12B** |
+| TRIOBP-1 324-348 | ~~DERIVED~~ **READ** — Zaharija 2022 Fig. 1B | **READ** — Zaharija 2022 §2.2 | **CLEARED 16 Nov 2026** |
 | DISC1 384-415 | **READ** from UniProt Q9NRI5 REST, 854 aa, SV=3 | from the source paper, **unchecked** | **confirm the range in the source** |
 
 UniProt confirms DISC1's *letters*; it does not confirm that 384-415 is the right range.
+That row is still the one thing standing between this document and a freeze.
+
+**How the TRIOBP-1 row cleared.** Figure 1B of Zaharija et al. 2022 (*Int. J. Mol. Sci.*
+**23**:11048, publisher PDF read in full) prints
+`ELEKL|PLRENKRVPLTALLNQSRGERRGPP|SDGHE` beneath a 324-348 numbering row, the coloured
+segment flanked by five residues either side. It reproduces the derived string
+**byte-for-byte**, and two alignment checks that could have failed did not: 333-340 comes
+out `LTALLNQS`, which carries zero charges and which the paper calls "the uncharged
+region", and 341-345 comes out `RGERR`, which the paper calls "the cluster of charged
+amino acids beginning at AA 341". **The 48.0% gatekeeper figure is no longer a
+reconstruction.** Figure 12B of Bradshaw 2017 is no longer required for the letters.
 
 ### 6.4 Exclusions fixed now
 
@@ -332,12 +343,15 @@ Stated so it cannot be quietly avoided:
 
 ## 12. Freeze protocol
 
-1. Clear §6.3: read Figure 12B, confirm the DISC1 range. **Two additions from the
-   thesis, 15 Nov 2026:** (a) settle the TRIOBP-1 minimal region against Zaharija 2022 —
-   the thesis says **7 aa**, `regions.json` says **333-340, an 8-mer**, and one is wrong;
-   (b) read Zaharija & Bradshaw 2024 (*Prog Neuropsychopharmacol Biol Psychiatry*
-   130:110923), which maps DISC1 aggregation to a central region and may supersede or
-   source the unverified 384-415 range. Both move Tier A boundaries.
+1. Clear §6.3. ~~Read Figure 12B~~ **— done 16 Nov 2026, via Zaharija 2022 Fig. 1B
+   instead; the TRIOBP-1 sequence and range are READ.** ~~(a) settle the TRIOBP-1 minimal
+   region: the thesis says **7 aa**, `regions.json` says **333-340, an 8-mer**~~
+   **— SETTLED 16 Nov 2026 at EIGHT. The 2022 paper says "8 amino acids" three times
+   (abstract, discussion p.13, Figure 6D legend); the thesis is wrong by one, and
+   `regions.json` was right.** **Still open:** confirm the DISC1 384-415 range in its
+   source, and (b) read Zaharija & Bradshaw 2024 (*Prog Neuropsychopharmacol Biol
+   Psychiatry* 130:110923), which maps DISC1 aggregation to a central region and may
+   supersede or source that unverified range. **Both remaining items are DISC1 items.**
 2. ~~Read the 2025 thesis (§11).~~ **Done 15 Nov 2026 — read in full, condition
    discharged, novelty claim unchanged.**
 3. ~~Settle every **[AUTHOR DECISION]**.~~ **Done 15 Nov 2026** (§3.1, §5.1, §5.2),

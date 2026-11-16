@@ -159,12 +159,10 @@ aggregation-critical regions.** The project's novelty does not change, and
 
 **Three things the thesis changes anyway** (none of them the predictor question):
 
-1. **A numbering discrepancy inside the group's own work.** p.48 states the
-   TRIOBP-1 critical 25-mer was "later shortened to the **7 aa** domain". Our
-   `data/regions.json` carries **333-340, an 8-mer**, sourced to Zaharija 2022 —
-   on which this thesis's author is a co-author. 333-340 inclusive is 8
-   residues, so one of the two is wrong by one. **Resolve against Zaharija 2022
-   before the freeze**; it moves a Tier A boundary.
+1. ~~**A numbering discrepancy inside the group's own work.**~~ **SETTLED 16 Nov
+   2026 — see the next section. `regions.json` was right; the thesis is wrong by
+   one.** p.48 states the TRIOBP-1 critical 25-mer was "later shortened to the
+   **7 aa** domain"; `data/regions.json` carries **333-340, an 8-mer**.
 2. **A DISC1 aggregation-region paper we did not have.** Reference 502: Zaharija
    B & Bradshaw NJ (2024), "Aggregation of Disrupted in Schizophrenia 1 arises
    from a central region of the protein", *Prog Neuropsychopharmacol Biol
@@ -187,6 +185,53 @@ aggregation-critical regions.** The project's novelty does not change, and
 TRIOBP-1 25-mer sequence, and no DISC1 384-415. It confirms only the frames —
 TRIOBP-1 "593 or 652 aa" (p.47) and DISC1 854 aa (p.38). The §6.3 blockers
 survive it untouched.
+
+### The TRIOBP-1 Tier A row is READ, and the thesis was the one that was wrong [READ, 16 Nov 2026]
+
+Zaharija et al. 2022, *Int. J. Mol. Sci.* **23**:11048 — the paper the item
+above said to resolve against — was supplied by the author and **read in full**
+as the publisher PDF. It settles more than it was fetched for.
+
+**1. The 7-vs-8 conflict: it is EIGHT, and `regions.json` was right.** The paper
+says so three times — "just 8 amino acids (333-340 of the 652 amino acid-long
+TRIOBP-1)" in the abstract, "just 8 amino acids (AA 333-340)" in the discussion
+(p.13), and "narrow the critical region to AA 333-340" in the Figure 6D legend.
+The 2025 thesis's "7 aa" (p.48) is a slip by one. **This is the third time a
+secondary restatement has disagreed with the primary and lost** — the project's
+rule about residue numbers from reviews holds again, and this time the review
+was the group's own student's thesis.
+
+**2. The 25-mer is no longer DERIVED. §6.3's TRIOBP-1 blocker is CLEARED.**
+Figure 1B prints `ELEKL|PLRENKRVPLTALLNQSRGERRGPP|SDGHE` beneath its own
+324-348 numbering row, five flanking residues either side. It reproduces the
+reconstructed string **byte-for-byte**. Two alignment checks that could have
+failed did not: 333-340 comes out `LTALLNQS`, zero charges, which the paper
+independently calls "the uncharged region"; 341-345 comes out `RGERR`, which it
+calls "the cluster of charged amino acids beginning at AA 341". **The 48.0%
+gatekeeper headline no longer rests on a reconstruction**, and Figure 12B of
+Bradshaw 2017 is no longer needed for the letters — only for that paper's
+mechanistic half. The range is read too (§2.2, p.6).
+
+**3. A new construct caveat, and it is the kind this project exists to catch.**
+The Figure 6B legend restates **324-328 as "essential for aggregation"**, citing
+Bradshaw 2017 — but the same paper's Figure 3D shows **333-652 aggregating
+indistinguishably from 324-652**, and its text concludes "the first cluster of
+charged amino acids is not required for aggregation". Both are correct:
+necessary in the 324-vs-349 truncation comparison, dispensable in the 333-652
+construct. The 324-328 row in `regions.json` now carries this and is marked **not
+to be scored as an independent region.**
+
+**4. The 593-vs-597 trap is confirmed, and 593 is the right number.** The paper
+gives the short variant as **593 aa** on p.2 ("lacking this region and thus being
+593 amino acids long") and as **597 aa** on p.13-14 ("expressed as a 597 AA long
+protein, starting at AA 60"). It also fixes the frame: the two variants are
+"amino acids 1-652 and 60-652 respectively", and 60 to 652 inclusive is **593**.
+So the p.13 figure is the paper's own arithmetic slip. `CLAUDE.md`'s numbering
+trap is now READ-confirmed rather than inherited.
+
+**What it does not do:** it does not touch DISC1. **Both remaining freeze
+blockers are now DISC1 blockers** — confirm the 384-415 range in its source, and
+read Zaharija & Bradshaw 2024.
 
 **The pattern recorded earlier still stands:** both URLs the sweep logged are
 dead and the repository blocks scripts, so this was obtained by asking the

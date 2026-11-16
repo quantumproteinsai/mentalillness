@@ -46,10 +46,13 @@ Ranked by what changes if you read it.
 ## Tier 1 — these fix the validation table
 
 4. **Bradshaw et al. (2017)**, *J. Biological Chemistry* — TRIOBP-1 aggregation-critical
-   region. Europe PMC returned HTTP 500.
-   The 324–348 ground truth and the proline/charge "turn and interaction surface"
-   hypothesis both come from here. Your own plan already lists it for Week 1; it is still
-   unread by any automated route, and the mechanistic half of the paper rests on it.
+   region. Europe PMC returned HTTP 500. **RETARGETED 16 Nov 2026 — still wanted, but no
+   longer a freeze blocker.** Figure 12B was the reason this sat at the top of Tier 1;
+   Zaharija 2022 Figure 1B has since supplied the same 25 letters and the same range
+   (item 4b), so §6.3's TRIOBP-1 row is closed without it. What remains here is the
+   **mechanistic half**: the proline/charge "turn and interaction surface" hypothesis,
+   the SEC/CD evidence for the isolated PH domain dimer (the negative-control row in
+   `regions.json`), and whether any reducing agent was used.
 
 4a. **Zaharija B & Bradshaw NJ (2024)**, "Aggregation of Disrupted in Schizophrenia 1
    arises from a central region of the protein", *Prog Neuropsychopharmacol Biol
@@ -64,12 +67,18 @@ Ranked by what changes if you read it.
    **Check `found_by` carefully:** a region found by an aggregation predictor is circular
    for this benchmark no matter how good the paper is.
 
-4b. **Zaharija et al. (2022)**, *Int. J. Mol. Sci.* **23**:11048 — **re-read for the
-   TRIOBP-1 minimal region length. A one-residue discrepancy inside the group's own
-   work.** The 2025 thesis states (p.48) that the critical 25-mer was "later shortened to
-   the **7 aa** domain"; `data/regions.json` carries **333-340, which is 8 residues**,
-   sourced to this paper, on which the thesis author is a co-author. One of the two is
-   wrong. **This moves a Tier A boundary and must be settled before the freeze.**
+4b. ~~**Zaharija et al. (2022)**, *Int. J. Mol. Sci.* **23**:11048.~~
+   **RESOLVED 16 Nov 2026 — READ IN FULL, supplied by the author. It is EIGHT
+   residues; `regions.json` was right and the thesis is wrong by one.** The paper says
+   "8 amino acids (333-340)" in its abstract, its discussion (p.13) and its Figure 6D
+   legend.
+
+   **It also cleared a blocker it was not fetched for.** Figure 1B prints the 25-mer —
+   `ELEKL|PLRENKRVPLTALLNQSRGERRGPP|SDGHE` under its own 324-348 numbering row — which
+   reproduces our DERIVED string byte-for-byte. **The TRIOBP-1 half of §6.3 is closed**,
+   and the 48.0% gatekeeper headline no longer rests on a reconstruction. Full
+   assessment in `STATE.md`; two further findings there (a construct-specific conflict
+   over 324-328, and READ confirmation that 593, not 597, is the short-variant length).
 
 5. **Narayanan et al. (2011)**, *JBC*, PMC3243500. Europe PMC returned HTTP 500.
    Needed to close one specific question: whether **any** DISC1 study used a reducing

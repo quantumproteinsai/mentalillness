@@ -41,10 +41,13 @@ windows -- which does not weaken the project, it sharpens it: a window-scanning
 predictor had a 0%-gatekeeper hexapeptide to find inside TRIOBP-1 324-348 and
 missed the region anyway.
 
-PROVENANCE. The TRIOBP-1 25-mer is DERIVED, NOT TRANSCRIBED: its source paper
-prints it only in Figure 12B. regions.json records the three consistency checks
-it passes. The headline depends on it, so verify it against Figure 12B before
-publishing anything from this. The zipper peptides are the segments whose
+PROVENANCE. The TRIOBP-1 25-mer is now READ, not derived (16 Nov 2026). It was
+reconstructed when this script was written, because Bradshaw 2017 prints it only
+in Figure 12B; it is now confirmed byte-for-byte against Figure 1B of Zaharija
+2022 (IJMS 23:11048), read in full, which prints the same stretch under its own
+324-348 numbering row. The 48.0% headline no longer rests on a reconstruction.
+333-340 = LTALLNQS is confirmed at EIGHT residues by three separate statements
+in that paper; the 2025 thesis's "7 aa" (p.48) is a slip. The zipper peptides are the segments whose
 crystals this author has computed interaction energies for; they come from
 deposited structures and are therefore hardcoded here by design, not read from
 regions.json, which holds no crystal rows.
@@ -146,7 +149,9 @@ def load_psychiatric():
                         # provenance class as one reconstructed from a figure.
                         # Both leave the RANGE unverified; only one leaves the
                         # LETTERS unverified.
-                        source=('UniProt; range unverified'
+                        source=('publisher PDF, READ'
+                                if not unverified
+                                else 'UniProt; range unverified'
                                 if prov.startswith('RETRIEVED FROM UNIPROT')
                                 else 'DERIVED, unverified' if prov
                                 else 'unverified')))

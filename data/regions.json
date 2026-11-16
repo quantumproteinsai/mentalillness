@@ -1,140 +1,146 @@
 {
- "_what": "Experimentally supported aggregation-critical regions. The validation set.",
- "_why": "A benchmark of aggregation predictors is only as sound as the ground truth it scores against. Nothing in this project is sounder than this table, so it carries provenance per row rather than per file.",
- "_numbering": {
-  "TRIOBP-1": "652-residue frame of NP_008963.3 (UniProt Q9H2D6-7). Papers using the older 593-residue frame need 59 ADDED. One paper gives the shorter variant as 593 in one place and 597 in another. A table that mixes frames without normalising is silently wrong by 59 residues.",
-  "DISC1": "UniProt Q9NRI5, canonical, 854 aa (SV=3)."
- },
- "_columns": {
-  "evidence": "what experiment establishes the region",
-  "construct": "WHICH CONSTRUCT established it. A region can be necessary in one construct and dispensable in another; both results can be correct. Without this column the benchmark scores against a moving target.",
-  "found_by": "how the region was discovered. 'prediction' rows are CIRCULAR for a predictor benchmark and must be analysed separately.",
-  "verified_against_publisher_pdf": "false means nobody has opened the source and checked this row."
- },
- "regions": [
-  {
-   "protein": "TRIOBP-1",
-   "residues": "324-348",
-   "frame": "652-residue",
-   "sequence_unverified": "PLRENKRVPLTALLNQSRGERRGPP",
-   "evidence": "truncation series in SH-SY5Y cells, insolubility fractionation, blinded counts",
-   "construct": "truncated construct already lacking both the optional N-terminus and the PH domain, so the central linker was the only aggregation route left",
-   "found_by": "experimental scanning; the authors state explicitly it was NOT predicted",
-   "source": "Bradshaw et al. 2017",
-   "note": "USE THIS AS THE GROUND TRUTH for TRIOBP-1 -- the whole 25-residue linker -- with 324-328 and 333-340 recorded below as assay-specific sub-annotations rather than competing boundary claims.",
-   "verified_against_publisher_pdf": false,
-   "sequence_provenance": "DERIVED, NOT READ. The source paper prints this sequence only in Figure 12B. It was reconstructed from the C-terminal 652 residues of UniProt Q9H2D6 and passes three independent consistency checks: the proline and charge composition matches the paper's description, genuine coiled-coil heptads appear at the stated CC1/CC2 flanks, and the 593-frame offset reproduces the identical string. VERIFY AGAINST FIGURE 12B before any published use -- the gatekeeper result depends on it."
+  "_what": "Experimentally supported aggregation-critical regions. The validation set.",
+  "_why": "A benchmark of aggregation predictors is only as sound as the ground truth it scores against. Nothing in this project is sounder than this table, so it carries provenance per row rather than per file.",
+  "_numbering": {
+    "TRIOBP-1": "652-residue frame of NP_008963.3 (UniProt Q9H2D6-7). Papers using the older 593-residue frame need 59 ADDED. One paper gives the shorter variant as 593 in one place and 597 in another. A table that mixes frames without normalising is silently wrong by 59 residues.",
+    "DISC1": "UniProt Q9NRI5, canonical, 854 aa (SV=3)."
   },
-  {
-   "protein": "TRIOBP-1",
-   "residues": "324-328",
-   "frame": "652-residue",
-   "evidence": "N-terminal deletions identified these as essential",
-   "construct": "as above",
-   "found_by": "experimental, truncating from the N-terminal end",
-   "source": "Bradshaw et al. 2017",
-   "note": "sub-annotation, not an independent region",
-   "verified_against_publisher_pdf": false
+  "_columns": {
+    "evidence": "what experiment establishes the region",
+    "construct": "WHICH CONSTRUCT established it. A region can be necessary in one construct and dispensable in another; both results can be correct. Without this column the benchmark scores against a moving target.",
+    "found_by": "how the region was discovered. 'prediction' rows are CIRCULAR for a predictor benchmark and must be analysed separately.",
+    "verified_against_publisher_pdf": "false means nobody has opened the source and checked this row."
   },
-  {
-   "protein": "TRIOBP-1",
-   "residues": "333-340",
-   "frame": "652-residue",
-   "sequence_unverified": "LTALLNQS",
-   "evidence": "fragments starting at 324 or 333 aggregated, at 349 did not; 341 and 343 partial",
-   "construct": "C-terminal fragments",
-   "found_by": "experimental narrowing, truncating from the C-terminal end",
-   "source": "IJMS 2022",
-   "note": "THE DECISIVE TEST SITS HERE. This 8-mer is 0% gatekeeper residues -- indistinguishable from VQIVYK or GNNQQNY on that measure -- while the 25-mer containing it is 48%. If this scores POSITIVE on a hexapeptide-trained predictor in isolation, the prediction failure is about FLANKING CONTEXT, which is a different and arguably better paper than intrinsic core chemistry. Compute it before framing anything.",
-   "verified_against_publisher_pdf": false
+  "regions": [
+    {
+      "protein": "TRIOBP-1",
+      "residues": "324-348",
+      "frame": "652-residue",
+      "evidence": "truncation series in SH-SY5Y cells, insolubility fractionation, blinded counts",
+      "construct": "truncated construct already lacking both the optional N-terminus and the PH domain, so the central linker was the only aggregation route left",
+      "found_by": "experimental scanning; the authors state explicitly it was NOT predicted",
+      "source": "Bradshaw et al. 2017",
+      "note": "USE THIS AS THE GROUND TRUTH for TRIOBP-1 -- the whole 25-residue linker -- with 324-328 and 333-340 recorded below as assay-specific sub-annotations rather than competing boundary claims.",
+      "verified_against_publisher_pdf": true,
+      "sequence_provenance": "READ, 16 Nov 2026, NO LONGER DERIVED. Figure 1B of Zaharija 2022 prints the stretch ELEKL|PLRENKRVPLTALLNQSRGERRGPP|SDGHE under a 324-348 numbering row, the coloured segment flanked by five residues either side. It reproduces the previously DERIVED string byte-for-byte. Two independent alignment checks pass: 333-340 = LTALLNQS carries zero charges and the paper calls it 'the uncharged region', and 341-345 = RGERR, which the paper calls 'the cluster of charged amino acids beginning at AA 341'. The 48.0% gatekeeper figure no longer rests on a reconstruction. Figure 12B of Bradshaw 2017 is no longer needed for the letters; it is still wanted for the mechanistic half of that paper.",
+      "sequence": "PLRENKRVPLTALLNQSRGERRGPP",
+      "verified_against": "Zaharija et al. 2022, Int. J. Mol. Sci. 23:11048 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author.",
+      "range_provenance": "READ. Zaharija 2022 §2.2 p.6: 'a 25 amino acid stretch from AA 324-348 is required for aggregation', in the 652-aa frame fixed on p.2."
+    },
+    {
+      "protein": "TRIOBP-1",
+      "residues": "324-328",
+      "frame": "652-residue",
+      "evidence": "N-terminal deletions identified these as essential",
+      "construct": "as above",
+      "found_by": "experimental, truncating from the N-terminal end",
+      "source": "Bradshaw et al. 2017",
+      "note": "sub-annotation, not an independent region. CONSTRUCT-SPECIFIC AND IN TENSION WITH THE 2022 DATA: the Figure 6B legend of Zaharija 2022 restates 324-328 as essential, citing Bradshaw 2017, but that paper's own Figure 3D shows TRIOBP-1 333-652 aggregating indistinguishably from 324-652, and its text concludes 'the first cluster of charged amino acids is not required for aggregation'. Necessary in the 324-vs-349 truncation comparison, dispensable in the 333-652 construct. This is exactly what the construct column exists to carry. DO NOT score this row as an independent region.",
+      "verified_against_publisher_pdf": false,
+      "verified_against": "restatement READ in Zaharija 2022 Figure 6B legend; the primary, Bradshaw 2017, remains unread."
+    },
+    {
+      "protein": "TRIOBP-1",
+      "residues": "333-340",
+      "frame": "652-residue",
+      "evidence": "fragments starting at 324 or 333 aggregated, at 349 did not; 341 and 343 partial",
+      "construct": "C-terminal fragments",
+      "found_by": "experimental narrowing, truncating from the C-terminal end",
+      "source": "IJMS 2022",
+      "note": "THE DECISIVE TEST SITS HERE. This 8-mer is 0% gatekeeper residues -- indistinguishable from VQIVYK or GNNQQNY on that measure -- while the 25-mer containing it is 48%. If this scores POSITIVE on a hexapeptide-trained predictor in isolation, the prediction failure is about FLANKING CONTEXT, which is a different and arguably better paper than intrinsic core chemistry. Compute it before framing anything.",
+      "verified_against_publisher_pdf": true,
+      "sequence": "LTALLNQS",
+      "verified_against": "Zaharija et al. 2022, Int. J. Mol. Sci. 23:11048 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author.",
+      "sequence_provenance": "READ, 16 Nov 2026. Derived from the Figure 1B stretch above, which is itself now read rather than reconstructed. LENGTH SETTLED AT 8: the 2022 paper states 'just 8 amino acids (333-340 of the 652 amino acid-long TRIOBP-1)' in its abstract, 'just 8 amino acids (AA 333-340)' in its discussion p.13, and 'narrow the critical region to AA 333-340' in the Figure 6D legend. The 2025 thesis's 'later shortened to the 7 aa domain' (p.48) is a slip by one. regions.json was right."
+    },
+    {
+      "protein": "TRIOBP-1",
+      "residues": "1-59",
+      "frame": "652-residue",
+      "evidence": "deletion reduced aggregation; deleting 1-59 together with 333-340 nearly abolished it",
+      "construct": "FULL-LENGTH protein, where a second aggregation route survives",
+      "found_by": "tested after an unexpected result, not from prediction",
+      "source": "IJMS 2022",
+      "note": "this row and 324-348 look contradictory and are not: two putative aggregation domains, removing either alone leaves some aggregation, removing both abolishes it.",
+      "verified_against_publisher_pdf": true,
+      "verified_against": "Zaharija et al. 2022, Int. J. Mol. Sci. 23:11048 -- PUBLISHER PDF READ IN FULL, 16 Nov 2026, supplied by the author."
+    },
+    {
+      "protein": "TRIOBP-1",
+      "residues": "60-189",
+      "frame": "652-residue",
+      "evidence": "stable dimer by size-exclusion chromatography and circular dichroism",
+      "construct": "isolated PH domain",
+      "found_by": "earlier bioinformatics pointed here; the deletion work did NOT support it",
+      "source": "Bradshaw et al. 2017",
+      "note": "NEGATIVE-CONTROL ROW: prediction pointed here and experiment did not confirm it. Keep it; a benchmark needs its false positives.",
+      "verified_against_publisher_pdf": false
+    },
+    {
+      "protein": "DISC1",
+      "residues": "691-836",
+      "evidence": "ITC, DLS, CD, negative-stain EM, solid-state NMR on recombinant protein",
+      "construct": "isolated C-region, E. coli, tagged, up to 400 uM, sonicated, two weeks",
+      "found_by": "boundaries from ESPRIT, an experimental screen",
+      "source": "Cukkemane et al. 2021",
+      "note": "The paper's own framing is that it does not establish whether DISC1 aggregates in vivo. Contains three free cysteines (C698, C762, C782) and no study reports a reducing agent.",
+      "verified_against_publisher_pdf": false
+    },
+    {
+      "protein": "DISC1",
+      "residues": "716-761",
+      "sequence_unverified": "VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH",
+      "evidence": "solid-state NMR beta-strand chemical shifts, EM morphology",
+      "construct": "as above",
+      "found_by": "RADAR sequence-repeat search; standard amyloid predictors failed",
+      "source": "Cukkemane et al. 2021",
+      "CAUTION_2026_11_15": "THIS IS A DOCKING RESTRAINT, NOT A MEASUREMENT. Nothing was deposited -- no coordinates, no chemical shifts, no EM map, no accession, and the paper has no data-availability section. The EM was negative-stain TEM at 120 kV with no resolution reported, and the model is a MODELLER protomer built with ANTIPARALLEL BETA-STRAND RESTRAINTS IMPOSED AS INPUT (segments 716-737 and 739-761) then docked into that envelope. Re-modelling it would re-assert the input, not confirm the topology. The paper also states its own boundary two ways, 716-761 and 717-761. The 2025 follow-up states verbatim 'No data was used for the research described in the article'.",
+      "found_by_note": "RADAR is a sequence method, so this row is partly circular for a sequence-predictor benchmark and must be analysed separately.",
+      "verified_against_publisher_pdf": false
+    },
+    {
+      "protein": "DISC1",
+      "residues": "717-737, 739-761",
+      "evidence": "sequence repeat, consistent with ssNMR shifts",
+      "construct": "as above",
+      "found_by": "RADAR",
+      "source": "Cukkemane et al. 2021",
+      "note": "the restraint segments used to build the model above; not independent of it",
+      "verified_against_publisher_pdf": false
+    },
+    {
+      "protein": "DISC1",
+      "residues": "748-769",
+      "evidence": "the delta-22 splice deletion, named for its 22 residues",
+      "construct": "splice variant",
+      "found_by": "variant, not prediction",
+      "source": "Cukkemane et al. 2021, Discussion",
+      "note": "Overlaps the reported core at 748-761 (fourteen residues); 762-769 falls outside it. So it removes PART of the core, not all of it, and the Abstract's wording is imprecise. The authors report delta-22 point mutants T754S and P758R abolishing binding to Dixdc1, LIS1 and PCM1, so this segment carries a protein-interaction surface as well as fibril propensity.",
+      "verified_against_publisher_pdf": false
+    },
+    {
+      "protein": "DISC1",
+      "residues": "384-415",
+      "evidence": "truncation and deletion in cells; no single D, I, S or C region aggregates alone",
+      "construct": "full-length and domain constructs",
+      "found_by": "experimental; no aggregation predictor involved",
+      "source": "Zaharija & Bradshaw, bioRxiv 2023.08.03.551216 (unpublished)",
+      "note": "ADDED 15 Nov 2026. A ~32-residue linker C-terminal of the D region, outside all four structured domains. CONTRADICTS the C-terminal in vitro result above, and both groups acknowledge the conflict. It is also the second case of the central pattern: an inter-domain linker in a coiled-coil scaffold protein, missed by every predictor. Caveat: same lab as the TRIOBP-1 work, so this is a second case rather than independent replication.",
+      "verified_against_publisher_pdf": false,
+      "frame": "854-residue canonical (UniProt Q9NRI5, SV=3)",
+      "sequence": "EQEKISLHFQLPSRQPALSSFLGHLAAQVQAA",
+      "sequence_provenance": "RETRIEVED FROM UNIPROT 15 Nov 2026, not transcribed by hand. rest.uniprot.org/uniprotkb/Q9NRI5.fasta, header 'sp|Q9NRI5|DISC1_HUMAN ... PE=1 SV=3', full length 854, which matches the 854 aa shown on the entry page the author checked. Residues 384-415 inclusive, 1-based, 32 residues -- consistent with the '~32-residue linker' in STATE.md. IMPORTANT: UniProt confirms the SEQUENCE for this range, NOT that the range is right. The 384-415 boundaries come from the source paper and remain verified_against_publisher_pdf: false.",
+      "GATEKEEPER_RESULT_2026_11_15": "18.8% gatekeeper (2 Pro + 4 charged of 32). THIS BREAKS THE HEADLINE. The worst crystallised steric zipper is 16.7% (tau VQIVYK and SOD1 30-35), so this region is +2.1 points above it -- indistinguishable. 18 of its 27 hexapeptide windows are at or below the worst zipper, minimum 0.0% at ISLHFQ. The reported 'psychiatric regions 48.0% to 50.0% (n=2)' was carried by TRIOBP-1 324-348 at 48.0% plus DISC1 716-761 at 50.0% -- and 716-761 is the docking-restraint row found by a RADAR sequence search, which the found_by column exists to exclude. With the honest DISC1 row the separation does not generalise: ONE region is gatekeeper-rich, the other is not."
+    }
+  ],
+  "_rows_deliberately_excluded": {
+    "DISC1 L607F": "DO NOT ADD. It appears in neither Cukkemane paper. The 2025 paper discusses L807-FS, a frameshift downstream of residue 807 -- a different residue and a different lesion. L607F's characterised phenotype is disrupted nuclear targeting and reduced ATF4 interaction, with no aggregation structure behind it.",
+    "DISC1 S704C": "Not an aggregation region. Measured from PDB 9RUX coordinates: its mouse equivalent is buried behind 96 heavy-atom neighbours with no cysteine sulfur within 11.76 A in any of four chains. A folding and packing variant."
   },
-  {
-   "protein": "TRIOBP-1",
-   "residues": "1-59",
-   "frame": "652-residue",
-   "evidence": "deletion reduced aggregation; deleting 1-59 together with 333-340 nearly abolished it",
-   "construct": "FULL-LENGTH protein, where a second aggregation route survives",
-   "found_by": "tested after an unexpected result, not from prediction",
-   "source": "IJMS 2022",
-   "note": "this row and 324-348 look contradictory and are not: two putative aggregation domains, removing either alone leaves some aggregation, removing both abolishes it.",
-   "verified_against_publisher_pdf": false
-  },
-  {
-   "protein": "TRIOBP-1",
-   "residues": "60-189",
-   "frame": "652-residue",
-   "evidence": "stable dimer by size-exclusion chromatography and circular dichroism",
-   "construct": "isolated PH domain",
-   "found_by": "earlier bioinformatics pointed here; the deletion work did NOT support it",
-   "source": "Bradshaw et al. 2017",
-   "note": "NEGATIVE-CONTROL ROW: prediction pointed here and experiment did not confirm it. Keep it; a benchmark needs its false positives.",
-   "verified_against_publisher_pdf": false
-  },
-  {
-   "protein": "DISC1",
-   "residues": "691-836",
-   "evidence": "ITC, DLS, CD, negative-stain EM, solid-state NMR on recombinant protein",
-   "construct": "isolated C-region, E. coli, tagged, up to 400 uM, sonicated, two weeks",
-   "found_by": "boundaries from ESPRIT, an experimental screen",
-   "source": "Cukkemane et al. 2021",
-   "note": "The paper's own framing is that it does not establish whether DISC1 aggregates in vivo. Contains three free cysteines (C698, C762, C782) and no study reports a reducing agent.",
-   "verified_against_publisher_pdf": false
-  },
-  {
-   "protein": "DISC1",
-   "residues": "716-761",
-   "sequence_unverified": "VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH",
-   "evidence": "solid-state NMR beta-strand chemical shifts, EM morphology",
-   "construct": "as above",
-   "found_by": "RADAR sequence-repeat search; standard amyloid predictors failed",
-   "source": "Cukkemane et al. 2021",
-   "CAUTION_2026_11_15": "THIS IS A DOCKING RESTRAINT, NOT A MEASUREMENT. Nothing was deposited -- no coordinates, no chemical shifts, no EM map, no accession, and the paper has no data-availability section. The EM was negative-stain TEM at 120 kV with no resolution reported, and the model is a MODELLER protomer built with ANTIPARALLEL BETA-STRAND RESTRAINTS IMPOSED AS INPUT (segments 716-737 and 739-761) then docked into that envelope. Re-modelling it would re-assert the input, not confirm the topology. The paper also states its own boundary two ways, 716-761 and 717-761. The 2025 follow-up states verbatim 'No data was used for the research described in the article'.",
-   "found_by_note": "RADAR is a sequence method, so this row is partly circular for a sequence-predictor benchmark and must be analysed separately.",
-   "verified_against_publisher_pdf": false
-  },
-  {
-   "protein": "DISC1",
-   "residues": "717-737, 739-761",
-   "evidence": "sequence repeat, consistent with ssNMR shifts",
-   "construct": "as above",
-   "found_by": "RADAR",
-   "source": "Cukkemane et al. 2021",
-   "note": "the restraint segments used to build the model above; not independent of it",
-   "verified_against_publisher_pdf": false
-  },
-  {
-   "protein": "DISC1",
-   "residues": "748-769",
-   "evidence": "the delta-22 splice deletion, named for its 22 residues",
-   "construct": "splice variant",
-   "found_by": "variant, not prediction",
-   "source": "Cukkemane et al. 2021, Discussion",
-   "note": "Overlaps the reported core at 748-761 (fourteen residues); 762-769 falls outside it. So it removes PART of the core, not all of it, and the Abstract's wording is imprecise. The authors report delta-22 point mutants T754S and P758R abolishing binding to Dixdc1, LIS1 and PCM1, so this segment carries a protein-interaction surface as well as fibril propensity.",
-   "verified_against_publisher_pdf": false
-  },
-  {
-   "protein": "DISC1",
-   "residues": "384-415",
-   "evidence": "truncation and deletion in cells; no single D, I, S or C region aggregates alone",
-   "construct": "full-length and domain constructs",
-   "found_by": "experimental; no aggregation predictor involved",
-   "source": "Zaharija & Bradshaw, bioRxiv 2023.08.03.551216 (unpublished)",
-   "note": "ADDED 15 Nov 2026. A ~32-residue linker C-terminal of the D region, outside all four structured domains. CONTRADICTS the C-terminal in vitro result above, and both groups acknowledge the conflict. It is also the second case of the central pattern: an inter-domain linker in a coiled-coil scaffold protein, missed by every predictor. Caveat: same lab as the TRIOBP-1 work, so this is a second case rather than independent replication.",
-   "verified_against_publisher_pdf": false,
-   "frame": "854-residue canonical (UniProt Q9NRI5, SV=3)",
-   "sequence": "EQEKISLHFQLPSRQPALSSFLGHLAAQVQAA",
-   "sequence_provenance": "RETRIEVED FROM UNIPROT 15 Nov 2026, not transcribed by hand. rest.uniprot.org/uniprotkb/Q9NRI5.fasta, header 'sp|Q9NRI5|DISC1_HUMAN ... PE=1 SV=3', full length 854, which matches the 854 aa shown on the entry page the author checked. Residues 384-415 inclusive, 1-based, 32 residues -- consistent with the '~32-residue linker' in STATE.md. IMPORTANT: UniProt confirms the SEQUENCE for this range, NOT that the range is right. The 384-415 boundaries come from the source paper and remain verified_against_publisher_pdf: false.",
-   "GATEKEEPER_RESULT_2026_11_15": "18.8% gatekeeper (2 Pro + 4 charged of 32). THIS BREAKS THE HEADLINE. The worst crystallised steric zipper is 16.7% (tau VQIVYK and SOD1 30-35), so this region is +2.1 points above it -- indistinguishable. 18 of its 27 hexapeptide windows are at or below the worst zipper, minimum 0.0% at ISLHFQ. The reported 'psychiatric regions 48.0% to 50.0% (n=2)' was carried by TRIOBP-1 324-348 at 48.0% plus DISC1 716-761 at 50.0% -- and 716-761 is the docking-restraint row found by a RADAR sequence search, which the found_by column exists to exclude. With the honest DISC1 row the separation does not generalise: ONE region is gatekeeper-rich, the other is not."
-  }
- ],
- "_rows_deliberately_excluded": {
-  "DISC1 L607F": "DO NOT ADD. It appears in neither Cukkemane paper. The 2025 paper discusses L807-FS, a frameshift downstream of residue 807 -- a different residue and a different lesion. L607F's characterised phenotype is disrupted nuclear targeting and reduced ATF4 interaction, with no aggregation structure behind it.",
-  "DISC1 S704C": "Not an aggregation region. Measured from PDB 9RUX coordinates: its mouse equivalent is buried behind 96 heavy-atom neighbours with no cysteine sulfur within 11.76 A in any of four chains. A folding and packing variant."
- },
- "_the_target_count": "The plan sets a floor of roughly fifteen well-evidenced rows before proceeding. This file holds ten, of which several are sub-annotations or circular. Widening to every protein with fragment-level aggregation mapping -- not only the psychiatric ones -- is the outstanding task.",
- "_the_inventory": "A 146-row inventory across ~45 proteins now exists at research_notes/Mental illness aggregation structures/aggregation_region_ground_truth_inventory.md. About 20 rows are circular and about 40 are independent across ~25 proteins -- roughly five times this file. That answers the statistical-power problem. Rows must be read and verified before migrating them here.",
- "_CPAD_CONTAMINATION_WARNING": "DO NOT BULK-IMPORT FROM CPAD. The CANYA paper (Thompson 2025, Sci Adv, PMC12042874) states verbatim that \"several of these methods (including TANGO, CamSol, and Aggrescan) were directly trained on sequences within CPAD\", which violates out-of-sample evaluation on those datasets. Drawing rows from CPAD without per-row provenance checks reproduces exactly the violation that paper names. The same paper reports that on WALTZ-DB hexapeptides \"no method significantly outperformed hydrophobicity\".",
- "_circularity_cannot_be_grepped": "The predictor-provenance column cannot be filled by keyword search. Circularity is PROTEIN-specific, not lab- or journal-specific: the same laboratory in the same era produced rows of opposite status, and so did two segments of one protein. Four rows would be wrongly flagged by a grep, because a post-hoc remark about a predictor, or the use of a disorder or helix-propensity tool, is not prediction-guided discovery. Each row has to be read.",
- "_frame_traps_are_worse_than_assumed": "Beyond the TRIOBP-1 59-residue offset: hnRNPA1's two frames differ by an INTERNAL ALTERNATIVE EXON, so one commonly cited range exists only in the minor-isoform frame and converting it by a constant offset yields a sequence that does not occur. Tau's canonical accession is 758-residue big tau while the entire literature uses the 441-residue frame. Huntingtin's frame shifts with the repeat length.",
- "_COAGGREGATION_IS_THREE_DIFFERENT_PHENOMENA": "ADDED 15 Nov 2026. The word 'co-aggregation' names at least THREE unrelated things, and all three surface in searches this project runs. (1) PROTEIN hetero-aggregation -- two misfolded proteins forming mixed oligomers or fibrils. This is the only sense this project means. (2) EPIDEMIOLOGICAL / FAMILIAL co-aggregation -- diagnoses clustering in families. Liu F-C et al., Clin Epidemiol 10:631-641 (2018) is titled 'Familial aggregation of Parkinson's disease and COAGGREGATION WITH NEUROPSYCHIATRIC DISEASES' and reports raised SCHIZOPHRENIA risk in first-degree relatives of PD patients. Any query pairing 'coaggregation' with 'schizophrenia' will return this literature, which is population genetics and says nothing about protein structure. See also Feldman et al., Eur J Epidemiol 29:49-56 (2014), 'modest familial co-aggregation between dementia and parkinsonism'. (3) BACTERIAL coaggregation -- specific adhesion between genetically distinct bacterial cells in biofilms, mediated by lectin-saccharide interactions. Nothing to do with amyloid. As of 15 Nov 2026 this repository is clean of senses (2) and (3); keep it that way, and label the sense whenever the word is used."
+  "_the_target_count": "The plan sets a floor of roughly fifteen well-evidenced rows before proceeding. This file holds ten, of which several are sub-annotations or circular. Widening to every protein with fragment-level aggregation mapping -- not only the psychiatric ones -- is the outstanding task.",
+  "_the_inventory": "A 146-row inventory across ~45 proteins now exists at research_notes/Mental illness aggregation structures/aggregation_region_ground_truth_inventory.md. About 20 rows are circular and about 40 are independent across ~25 proteins -- roughly five times this file. That answers the statistical-power problem. Rows must be read and verified before migrating them here.",
+  "_CPAD_CONTAMINATION_WARNING": "DO NOT BULK-IMPORT FROM CPAD. The CANYA paper (Thompson 2025, Sci Adv, PMC12042874) states verbatim that \"several of these methods (including TANGO, CamSol, and Aggrescan) were directly trained on sequences within CPAD\", which violates out-of-sample evaluation on those datasets. Drawing rows from CPAD without per-row provenance checks reproduces exactly the violation that paper names. The same paper reports that on WALTZ-DB hexapeptides \"no method significantly outperformed hydrophobicity\".",
+  "_circularity_cannot_be_grepped": "The predictor-provenance column cannot be filled by keyword search. Circularity is PROTEIN-specific, not lab- or journal-specific: the same laboratory in the same era produced rows of opposite status, and so did two segments of one protein. Four rows would be wrongly flagged by a grep, because a post-hoc remark about a predictor, or the use of a disorder or helix-propensity tool, is not prediction-guided discovery. Each row has to be read.",
+  "_frame_traps_are_worse_than_assumed": "Beyond the TRIOBP-1 59-residue offset: hnRNPA1's two frames differ by an INTERNAL ALTERNATIVE EXON, so one commonly cited range exists only in the minor-isoform frame and converting it by a constant offset yields a sequence that does not occur. Tau's canonical accession is 758-residue big tau while the entire literature uses the 441-residue frame. Huntingtin's frame shifts with the repeat length.",
+  "_COAGGREGATION_IS_THREE_DIFFERENT_PHENOMENA": "ADDED 15 Nov 2026. The word 'co-aggregation' names at least THREE unrelated things, and all three surface in searches this project runs. (1) PROTEIN hetero-aggregation -- two misfolded proteins forming mixed oligomers or fibrils. This is the only sense this project means. (2) EPIDEMIOLOGICAL / FAMILIAL co-aggregation -- diagnoses clustering in families. Liu F-C et al., Clin Epidemiol 10:631-641 (2018) is titled 'Familial aggregation of Parkinson's disease and COAGGREGATION WITH NEUROPSYCHIATRIC DISEASES' and reports raised SCHIZOPHRENIA risk in first-degree relatives of PD patients. Any query pairing 'coaggregation' with 'schizophrenia' will return this literature, which is population genetics and says nothing about protein structure. See also Feldman et al., Eur J Epidemiol 29:49-56 (2014), 'modest familial co-aggregation between dementia and parkinsonism'. (3) BACTERIAL coaggregation -- specific adhesion between genetically distinct bacterial cells in biofilms, mediated by lectin-saccharide interactions. Nothing to do with amyloid. As of 15 Nov 2026 this repository is clean of senses (2) and (3); keep it that way, and label the sense whenever the word is used."
 }

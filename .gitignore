@@ -3,3 +3,9 @@ __pycache__/
 .venv/
 .DS_Store
 *.tmp
+
+# Machine-generated literature sweeps: leads, never citable under the rule in
+# README.md, and removed from this repository's history on 16 Nov 2026 before it
+# was made public. Kept on the author's disk. Do not re-add them: an unverified
+# lead in a public repository is read as a finding whatever the label says.
+research_notes/

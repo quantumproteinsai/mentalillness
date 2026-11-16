@@ -36,14 +36,21 @@ rather than a result to establish.
 | `data/references_to_check.json` | sources nobody has opened. A lead is not a fact |
 | `scripts/gatekeeper_density.py` | reproduces the gatekeeper separation (`python3 scripts/gatekeeper_density.py`) |
 | `reports/PDFs_to_obtain.md` | papers behind paywalls, ranked by what changes if you read one |
-| `research_notes/` | six literature sweeps. **Machine-generated and unverified** |
+
 
 ## Two standing rules, both learned the hard way
 
 **A number is quoted from a source you opened, or it is declared unmeasured.**
-Everything under `research_notes/` is a lead. Entries in
-`references_to_check.json` carry `verified_against_publisher_pdf`, and it is
-`false` until somebody opens the PDF and checks the claim.
+Entries in `data/references_to_check.json` carry
+`verified_against_publisher_pdf`, and it is `false` until somebody opens the PDF
+and checks the claim.
+
+*Machine-generated literature sweeps were used as leads during this work and are
+deliberately not published here. Nothing in `data/` or `release/` rests on them:
+every row of the dataset cites a source somebody opened, and the sweeps were
+never citable under the rule above. They are kept privately because an unverified
+lead presented in a public repository is read as a finding no matter how it is
+labelled.*
 
 **Check the margin against the error bar before spending anything.** If the
 difference you want to report is smaller than the uncertainty of the method

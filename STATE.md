@@ -1458,13 +1458,34 @@ and a tool that cannot score most of a region's windows is reported
 region it could never evaluate would be the mirror image of the circularity this
 project exists to avoid.
 
-### The LECT2 blocker is NOT cleared — and a candidate answer to the headline question [16 Nov 2026]
+### CORRECTION: `PMC9934627` IS the preprint, and my obtain-list request was wrong [16 Nov 2026]
 
-**The document supplied as "the LECT2 published paper" is the bioRxiv preprint
-again** — v1, posted 11 February 2023, *"not certified by peer review"* on every
-page. **It is not PMC9934627.** The row stays `preprint` and **not citable**, and
-the freeze blocker stands. Recorded plainly so nobody later believes the
-published version was checked.
+I wrote that the supplied document "is not PMC9934627". **It is.** `PMC9934627`
+is the bioRxiv preprint *hosted in PMC* under the NIH preprint pilot, carrying an
+explicit *"This is a preprint. It has not yet been peer reviewed by a journal."*
+banner. **Obtain-list item 16 asked for "the published version, PMC9934627" —
+there is no such thing.** I had assumed a PMC identifier implied a published
+version. The author supplied exactly what I asked for and I misdescribed it.
+
+**The peer-reviewed version is a different record entirely:** *Structure*
+31(11):1386-1393.e3, doi `10.1016/j.str.2023.08.007`, PMID 37657439,
+**`PMC11456264`** (NIHMS author manuscript). Obtained and read.
+
+**BLOCKER CLEARED.** The row is now `author_manuscript` and citable.
+
+**The range survived peer review**, which was the whole point of checking: the
+published version states **55-75 five times** — Summary, Introduction, Results
+twice, Discussion. The disulfide argument and the *ex vivo* caveat both survive.
+One wording change: the preprint says the fibrils may not *"exactly match"*
+patient material, the published version drops *"exactly"*. Trivial in substance,
+recorded because it is a concrete instance of why §12.1 requires naming the
+version — **we quote that sentence.**
+
+**Standing rule added to the obtain list: a PMC id is not evidence of
+publication.** Name the journal and DOI, and check the PMC record for a preprint
+banner before treating it as the version of record.
+
+### What the preprint read still gave us
 
 **Two things from reading it in full anyway.**
 

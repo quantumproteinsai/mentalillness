@@ -347,7 +347,14 @@ may be cited in a manuscript until obtained.**
     predictor sentence and the 39-95 core definition both need checking against
     the published article. The gate bites on the main analysis, not a side row.
 
-16. **Richards et al., the PUBLISHED version — PMC9934627.**
+16. ~~**Richards et al., the PUBLISHED version — PMC9934627.**~~ **THE REQUEST WAS WRONG, AND
+    IS NOW CLEARED.** `PMC9934627` **is the preprint**, hosted in PMC under the NIH preprint
+    pilot with an explicit "has not yet been peer reviewed" banner. I had assumed a PMC id
+    implied a published version. **The peer-reviewed version is *Structure* 31(11):1386-1393.e3,
+    doi 10.1016/j.str.2023.08.007, PMID 37657439, `PMC11456264`** — obtained and read 16 Nov
+    2026, and the 55-75 core range is confirmed unchanged through review (stated five times).
+    **Rule for this list from now on: name the journal and DOI, never a bare PMC id, and check
+    the PMC record for a preprint banner.** Original entry follows for the record.**
     LECT2 55-75 rests on the **bioRxiv preprint** (10.1101/2023.02.08.527771),
     which was never peer reviewed. **Re-check the 55-75 core range against the
     published version**, since a range can change in review — and this row's whole

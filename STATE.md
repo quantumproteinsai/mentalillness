@@ -841,12 +841,45 @@ state it first. **Treat subagent claims of absence as the weakest kind of
 claim:** absence is what an agent is least able to establish and most likely to
 assert.
 
-**One defect still needs the figure.** Results (iii) says the peptides overlap
-"by three residues"; Figure 4 says they are "staggered by three residues." For a
-15-mer those are different designs — a 12-residue step (~8 peptides) versus a
-3-residue step (~28 peptides) — and the step size decides whether 306-311 is a
-6-residue *measurement* or an inference from a coarser grid. **Figures 1 and 4
-remain outstanding**; the text is READ, the figures are not.
+**RESOLVED SAME DAY — the figures were open access all along.** PMC25793 carries
+the figure images; both were downloaded and read directly, so the author was not
+asked for a PDF that was already reachable.
+
+**Figure 4 settles the stagger, in favour of the figure.** It prints every peptide
+as a labelled row — `253-LKNVKSKIGSTENLK-267`, then 256, 259, 262 … up to
+`340-KSEKLDFKDRVQSKI-354`. **15-mers at a 3-residue step: 30 peptides spanning
+253-354.** Figure 4's "staggered by three residues" is right; Results (iii)'s
+"overlaps of three residues" is the error. Both printed rows verify exactly
+against P10636-8. **So 306-311 is a measurement at 3-residue resolution, not an
+inference from a coarse grid — H4's control arm is sound and the critical path is
+clear.**
+
+*(The caption's "L253 … to D348" against a last row ending at 354 is **not** a
+discrepancy: 348 is Asp, the region of interest ends there, and the final 15-mer
+necessarily overruns. Recorded so it is not later mistaken for one.)*
+
+**Figure 1 verifies the probe.** PHF43 = `[N265-E338 ΔR2]`: 74 residues minus R2's
+31 = 43, matching the name, and residues 265-274 joined to 306-338 reconstruct
+`NLKHQPGGGKVQIVYKPVDLSKVTSKCGSLGNIHHKPGGGQVE` **byte-for-byte** against the
+printed string.
+
+### But Figure 1 also demotes PHF6*, and the reason is structural
+
+**PHF6\* (275-280) sits in the first six residues of R2 — and R2 is DELETED from
+the probe.** The scan was run with PHF43, which is ΔR2. This experiment therefore
+could not establish PHF6* the way it established PHF6, and the paper does not
+claim it did: the Abstract names **one** motif, *"a minimal hexapeptide
+interaction motif of 306VQIVYK311"*, and Figure 4 calls PHF6* *"the **analogous**
+sequence in R2."*
+
+**PHF6\* is identified by sequence analogy, not by its own signal.** That is not
+predictor-circular — analogy to an experimentally mapped motif is not an
+algorithm — but it is a homology inference, and entering it as a second
+independent clean row would have **double-counted one experimental result**.
+
+**Consequence for H4: the control arm is n = 1, not n = 2**, and must be stated
+that way. Independent support for PHF6* would have to come from von Bergen 2001
+(*JBC* 276:48165), where ΔK280 — which sits inside PHF6* — is characterised.
 
 ### RATIFIED BY THE AUTHOR, 16 Nov 2026: the reframing is adopted
 

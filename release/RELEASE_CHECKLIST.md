@@ -5,6 +5,91 @@ decisions that are **yours**, not defaults to be inherited.
 
 ---
 
+## v1.2.0 PREPARED — 17 Nov 2026 — **NOT DEPOSITED, AND BLOCKED ON ONE ACTION THAT IS YOURS**
+
+**Repo side is complete and gated.** `scripts/preflight_deposit.py` passes every check
+except the two it is designed to fail until you act:
+
+```
+DOI
+  FAIL  CITATION.cff has a real DOI, not the DOI-RESERVE-PENDING placeholder
+  FAIL  release/DATA_DESCRIPTOR.md has a real DOI, not the DOI-RESERVE-PENDING placeholder
+```
+
+**What is needed from you, in this order** — the order is the point, because deposited
+files are frozen:
+
+1. Open <https://zenodo.org/records/24306057> (v1.1.0) → **New version**. Not a fresh
+   upload: that mints an unrelated record with no link to the concept DOI.
+2. **Reserve DOI** on the draft. Tell me the number, or edit it in yourself: it replaces
+   `DOI-RESERVE-PENDING` in **`CITATION.cff`** (the `doi:` key) and in
+   **`release/DATA_DESCRIPTOR.md`** (two occurrences).
+3. `python3 scripts/preflight_deposit.py` → must exit 0.
+4. Commit, then **tag `deposited-v1.2.0`** — after the final rebuild and immediately
+   before upload, which is the lesson from v1.1.0, whose `v1.1.0` tag matches none of
+   the deposited files.
+5. Delete the five files Zenodo copied into the draft, upload the five listed under
+   "The five files to upload" at v1.2.0, update **Version** to `1.2.0`, and paste
+   `release/zenodo_description_v1.2.0.snippet.html` into the Description field's
+   **source view** (`<>` button). The title and keywords are unchanged from 1.1.0.
+6. Publish. Then verify with the concept DOI, not the form:
+   `10.5281/zenodo.24290697` must resolve to the new record with `is_last: true`.
+
+### What changed, and why it is a new version rather than a repo-side edit
+
+**Four rows** — ANXA11 39-74, TMEM106B 120-254, glycinin G4 164-190 (the first
+non-animal row), and a DISC1 interval split into the two sub-intervals its source
+actually tested. 17 → 21 rows, 8 → 11 proteins. A row added is a *data* change by this
+file's own rule.
+
+Two top-level keys moved from `project_notes` into `dataset_documentation`: the
+decoy-window rule (how to read `frame`) and the name-vs-accession limit of the CPAD
+screen (how far to trust `CPAD_ABSENT`). Both qualify a column a consumer would
+otherwise over-trust.
+
+**The honest headline is a negative, and the description says so**: the dataset grew
+from 17 rows to 21 and **the usable discordant stratum did not move off 2 rows**.
+
+### THREE DEFECTS IN THE RELEASE MACHINERY, FOUND WHILE PREPARING THIS
+
+**1. `build_release.py`'s freeze guard did not work, and overwrote the deposited
+v1.1.0 files.** The guard compared the set of CORE FIELD NAMES in the working file
+against the deposited artefact and refused only when a field had been *added*. Between
+1.1.0 and 1.2.0 four **rows** were added and no field, so it passed, and a test run at
+`VERSION = '1.1.0'` rewrote both deposited artefacts with 21 rows. **They were recovered
+from git and their md5s re-verified against the ones in the `deposited-v1.1.0` tag
+message** — `14df6109…` and `d0971d25…` — which is the only reason this is a near miss
+and not a lost deposit. The guard now compares **the bytes it is about to write** against
+the bytes on disk, which is the property actually wanted and does not require anyone to
+predict which kind of change matters.
+
+**2. `1.1.0` was never added to `DEPOSITED`.** The guard could not have protected it
+even had it worked, because the dict the code reads did not know 1.1.0 was deposited —
+the fact lived here and in `STATE.md` instead. Same shape as the three errors of earlier
+that day: *a true statement stored somewhere that could not act on it.*
+
+**3. The title lives in FOUR places, not the three this file said.** The fourth is the
+hardcoded `_dataset.title` in `build_release.py`, which is why **the deposited v1.1.0
+artefact also carries the pre-1.1.0 title** — not just `CITATION.cff` as recorded below.
+"Change it in all three and diff them against each other" is precisely the check that
+passes while the fourth stays stale. `preflight_deposit.py` now compares all four.
+
+**The lesson generalises past this file**: every defect in the v1.0.0 and v1.1.0
+deposits was caught by a human eye or not at all, and two were not. The checklist's
+lessons are now executable — `scripts/preflight_deposit.py` — because a warning in prose
+is not a constraint.
+
+### Also new: the description staging files are generated now
+
+`scripts/build_zenodo_description.py` builds both `release/zenodo_description_v*.html`
+files from `.zenodo.json`. This file previously said "both are generated from
+`.zenodo.json`; regenerate them if the description changes" — and **nothing generated
+them**; they were made by hand for v1.1.0, so "regenerate" named a step no committed code
+performed. Verified faithful by regenerating v1.1.0's snippet and diffing: it reproduces
+byte-for-byte apart from the v1.2.0 wording changes.
+
+---
+
 ## v1.1.0 DEPOSITED — 17 Nov 2026
 
 **<https://zenodo.org/records/24306057>** — version DOI `10.5281/zenodo.24306057`
@@ -292,12 +377,22 @@ the moment one does.
 ## Before each rebuild
 
 ```
-python3 scripts/validate_regions.py   # gate, must exit 0
-python3 scripts/build_release.py
+python3 scripts/validate_regions.py          # gate, must exit 0
+python3 scripts/build_release.py             # refuses to touch a deposited version
+python3 scripts/build_zenodo_description.py  # only if the description changed
+python3 scripts/preflight_deposit.py         # gate, must exit 0 BEFORE uploading
 ```
 
 The validator is a gate, not a formality — it caught a retired field name
 surviving in a row on its first run.
+
+`preflight_deposit.py` is the other gate, and it exists because **the deposit's own
+failures were never caught by a gate**: v1.0.0 went up without its DOIs and v1.1.0 went
+up with a stale title, both recorded here afterwards as lessons for a reader. It checks
+the DOI is reserved and written in, that all four copies of the title agree, that the
+version and row count match everywhere they are claimed, that previously deposited
+artefacts are byte-unchanged against `HEAD`, and that the description snippet is in step
+with `.zenodo.json`. **It deposits nothing and cannot.**
 
 ## Still open upstream (does not block the dataset)
 

@@ -24,13 +24,14 @@ WHAT IT CHANGES, AND WHAT IT DELIBERATELY DOES NOT.
     summarised.
 """
 import csv
+import io
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / 'data' / 'regions.json'
 OUT = ROOT / 'release'
-VERSION = '1.1.0'
+VERSION = '1.2.0'
 
 CORE = [
     'protein', 'residues', 'frame', 'sequence', 'evidence', 'construct',
@@ -48,7 +49,16 @@ CORE = [
 # regenerated with different content: the DOI would then point at something other
 # than what this script produces. Bump VERSION and deposit a new version instead.
 # See release/RELEASE_CHECKLIST.md.
-DEPOSITED = {'1.0.0': '10.5281/zenodo.24290698'}
+# 1.1.0 was ADDED HERE ON 17 Nov 2026, AND ITS ABSENCE WAS A LIVE DEFECT. It was
+# deposited that afternoon and never recorded, so the guard below -- the whole point
+# of which is that a DOI must not stop describing what this script produces -- would
+# have let a rebuild silently overwrite the deposited artefact. The guard was written
+# for exactly this case and could not fire, because the fact it needed was in the
+# checklist and in STATE.md rather than in the dict the code reads.
+DEPOSITED = {
+    '1.0.0': '10.5281/zenodo.24290698',
+    '1.1.0': '10.5281/zenodo.24306057',
+}
 
 # Top-level keys that document the DATASET and belong in the release.
 DOC_KEYS = {
@@ -70,6 +80,20 @@ DOC_KEYS = {
     # check could NOT reach, which a consumer needs in order to know how far to
     # trust an 'absent' verdict. Dataset documentation, not a project note.
     '_CPAD_MEMBERSHIP_CHECK_2026-11-17',
+    # Both added 17 Nov 2026 for v1.2.0, and both qualify a column a consumer will
+    # otherwise over-trust.
+    #   The decoy-window rule is about how to read `frame`: it states that scoring a
+    #   region inside a frame containing a hydrophobic segment that was never in the
+    #   sample -- a signal peptide, a transmembrane helix -- inflates the apparent
+    #   failure of every predictor. The glycinin row's own caveat points at it, and a
+    #   consumer who re-scores these rows in a different frame will get different
+    #   numbers for that reason and no other. Same class as
+    #   `_frame_traps_are_worse_than_assumed`, which was already dataset documentation.
+    #   The name-vs-accession limit states what the CPAD screen could NOT reach, and so
+    #   how far a CPAD_ABSENT verdict can be trusted. An absence is only as good as the
+    #   demonstrated sensitivity of the search that produced it.
+    '_A_HYDROPHOBIC_SEGMENT_THAT_IS_NOT_IN_THE_SAMPLE_IS_A_DECOY_WINDOW',
+    '_A_NAME_SEARCH_IS_NOT_AN_ACCESSION_SEARCH__A_LIMIT_OF_OUR_OWN_CPAD_CHECK',
 }
 # Everything else is a project note: true, kept, but about THIS PROJECT's
 # hypotheses and workflow rather than about the data.
@@ -79,25 +103,6 @@ def main():
     d = json.loads(SRC.read_text())
     rows = d['regions']
     OUT.mkdir(exist_ok=True)
-
-    # A deposited version is frozen. Refuse to rewrite it with different content
-    # rather than let a DOI quietly stop describing what it points at.
-    if VERSION in DEPOSITED:
-        existing = OUT / f'aggregation_regions_v{VERSION}.json'
-        if existing.exists():
-            have = json.loads(existing.read_text())
-            fields_now = {f for r in rows for f in r if f in CORE}
-            fields_dep = set()
-            for r in have.get('regions', []):
-                fields_dep |= {k for k in r if k != 'notes'}
-            if fields_now - fields_dep:
-                raise SystemExit(
-                    f'REFUSING TO REBUILD v{VERSION}: it is deposited as '
-                    f'{DEPOSITED[VERSION]} and its files are frozen, but the working file '
-                    f'now carries core fields the deposit does not: '
-                    f'{sorted(fields_now - fields_dep)}.\n'
-                    f'Bump VERSION in this script and deposit a new version. '
-                    f'See release/RELEASE_CHECKLIST.md.')
 
     clean = []
     for r in rows:
@@ -112,19 +117,33 @@ def main():
 
     release = {
         '_dataset': {
+            # THE TITLE LIVES IN FOUR PLACES, NOT THREE. RELEASE_CHECKLIST.md's
+            # "lesson for next time" names .zenodo.json, CITATION.cff and
+            # DATA_DESCRIPTOR.md -- and misses this one, which is why the deposited
+            # v1.1.0 artefact carries the pre-1.1.0 title. It was corrected here on
+            # 17 Nov 2026 for v1.2.0. Changing it in three places and diffing those
+            # three against each other is precisely the check that passes while this
+            # line stays stale.
             'title': 'Experimentally mapped aggregation-critical protein regions, '
-                     'with circularity and prediction-concordance labels',
+                     'with circularity, prediction-concordance and '
+                     'training-set-contamination labels',
             'version': VERSION,
             'n_regions': len(clean),
             'generated_by': 'scripts/build_release.py, from data/regions.json',
             'READ_THIS_FIRST': 'release/DATA_DESCRIPTOR.md',
             'WHAT_MAKES_THIS_DIFFERENT_FROM_OTHER_AGGREGATION_DATASETS':
-                'Three columns that aggregation datasets usually lack. `construct` records WHICH '
+                'FOUR columns that aggregation datasets usually lack -- four since 1.1.0, and '
+                'this sentence said three until v1.2.0 corrected it. `construct` records WHICH '
                 'construct established the region, because a region can be necessary in one and '
                 'dispensable in another. `circularity_status` records whether a PREDICTOR was in '
                 'the discovery path, which makes a row unusable for benchmarking the predictor '
                 'family that found it. `stratum` records whether experiment and prediction AGREE, '
-                'which is what decides whether a row can discriminate between predictors at all.',
+                'which is what decides whether a row can discriminate between predictors at all. '
+                '`cpad_status` records whether the row\'s protein is in CPAD 2.0, and therefore '
+                'whether a modern predictor\'s hit on it may be recall of training data rather '
+                'than prediction. THESE ARE THREE DIFFERENT KINDS OF CIRCULARITY -- the discovery '
+                'path, experiment-prediction agreement, and training-set membership -- and a row '
+                'can be clean on one and contaminated on another.',
             'HOW_TO_READ_A_ROW_HONESTLY':
                 'Check `source_version` before citing: not every row rests on a version of '
                 'record. Check `frame` before using a residue number: numbering frames in this '
@@ -144,14 +163,52 @@ def main():
     }
 
     jf = OUT / f'aggregation_regions_v{VERSION}.json'
-    jf.write_text(json.dumps(release, indent=2, ensure_ascii=True) + '\n')
+    payload = json.dumps(release, indent=2, ensure_ascii=True) + '\n'
+
+    # A DEPOSITED VERSION IS FROZEN: refuse to rewrite it with different content,
+    # rather than let a DOI quietly stop describing what this script produces.
+    #
+    # REWRITTEN 17 Nov 2026, BECAUSE THE PREVIOUS FORM OF THIS GUARD DID NOT WORK AND
+    # WAS PROVED NOT TO WORK BY RUNNING IT. It compared the set of CORE FIELD NAMES in
+    # the working file against those in the deposited artefact, and refused only when a
+    # field had been ADDED. Four rows were added to the dataset between v1.1.0 and
+    # v1.2.0 and not one new field, so the check passed and the deposited v1.1.0 files
+    # were overwritten with 21 rows. They were recovered from git, and their md5s
+    # re-verified against the ones in the `deposited-v1.1.0` tag message, which is the
+    # only reason this is a near miss and not a lost deposit.
+    #
+    # The guard now compares THE BYTES IT IS ABOUT TO WRITE against the bytes on disk.
+    # That is the property actually wanted -- the artefact is unchanged -- and it does
+    # not depend on anyone predicting which kind of change matters. The lesson is the
+    # project's own: a check that interrogates a proxy for the thing is not a check on
+    # the thing.
+    if VERSION in DEPOSITED and jf.exists():
+        if jf.read_text() != payload:
+            have = json.loads(jf.read_text())
+            raise SystemExit(
+                f'REFUSING TO REBUILD v{VERSION}: it is deposited as '
+                f'{DEPOSITED[VERSION]} and its files are frozen, but this build would '
+                f'change them.\n'
+                f'  on disk (deposited): {len(have.get("regions", []))} regions\n'
+                f'  this build would write: {len(clean)} regions\n'
+                f'Bump VERSION in this script and deposit a new version. '
+                f'See release/RELEASE_CHECKLIST.md.')
+
+    jf.write_text(payload)
 
     cf = OUT / f'aggregation_regions_v{VERSION}.csv'
+    rendered = io.StringIO()
+    w = csv.DictWriter(rendered, fieldnames=CORE, extrasaction='ignore', lineterminator='\r\n')
+    w.writeheader()
+    for r in clean:
+        w.writerow({k: r.get(k, '') for k in CORE})
+    if VERSION in DEPOSITED and cf.exists() and cf.read_bytes() != rendered.getvalue().encode():
+        raise SystemExit(
+            f'REFUSING TO REBUILD v{VERSION}: the CSV is deposited as '
+            f'{DEPOSITED[VERSION]} and this build would change it. '
+            f'Bump VERSION. See release/RELEASE_CHECKLIST.md.')
     with cf.open('w', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=CORE, extrasaction='ignore')
-        w.writeheader()
-        for r in clean:
-            w.writerow({k: r.get(k, '') for k in CORE})
+        fh.write(rendered.getvalue())
 
     singles = sum(1 for r in clean if 'notes' in r)
     print(f'wrote {jf.relative_to(ROOT)}  ({len(clean)} regions)')

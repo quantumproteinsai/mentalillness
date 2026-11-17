@@ -2,7 +2,7 @@
 
 **with circularity, prediction-concordance and training-set-contamination labels**
 
-Version 1.1.0 · 17 regions across 8 proteins
+Version 1.2.0 · 21 regions across 11 proteins
 
 ---
 
@@ -38,7 +38,7 @@ recorded because the exception is as informative as the rule.
 **A region found *by* a predictor cannot be used to test that predictor.** This
 sounds obvious and is pervasive in the literature: a predicted segment gets
 deleted, the deletion works, and the result is published as experimental
-mapping. Three of these 17 rows are `CIRCULAR`, and they are **kept and
+mapping. Four of these 21 rows are `CIRCULAR`, and they are **kept and
 labelled**, not dropped, because they are still evidence — just not evidence
 about predictor accuracy.
 
@@ -152,7 +152,7 @@ residue-level resolution, which would reduce label ambiguity and upper-bound
 limitations."
 
 **This dataset is an attempt at that object.** Every row was read from its source
-paper; none was bulk-imported. That is why it is 17 rows and not 17,000.
+paper; none was bulk-imported. That is why it is 21 rows and not 17,000.
 
 ### The same three papers set a floor on what a benchmark can claim
 
@@ -170,7 +170,7 @@ transferred through the HoTIDP server from OrthoInspector and OmaDB orthologues
 is not sufficient**: an orthologue of a CPAD protein can carry a transferred
 annotation into training.
 
-**Version 1.1.0 performs that check** — see `cpad_status` above — against all three
+**Version 1.1.0 introduced that check, and 1.2.0 carries it on every row** — see `cpad_status` above — against all three
 CPAD 2.0 datasets and against both orthology sources. Several proteins here, tau and
 α-synuclein in particular, are heavily annotated in CPAD and are labelled accordingly.
 
@@ -185,11 +185,11 @@ different training set.
 
 | | |
 |---|---|
-| **proteins** | TRIOBP-1 (5), DISC1 (5), tau (2), α-synuclein, FUS, hnRNPA1, serum amyloid A, LECT2 |
-| **circularity** | 14 CLEAN · 3 CIRCULAR |
-| **source version** | 14 version of record · 2 author manuscript · 1 preprint |
-| **with sequence** | 11 / 17 (each checked to match its stated range in length) |
-| **with explicit numbering frame** | 13 / 17 |
+| **proteins** | DISC1 (6) · TRIOBP-1 (5) · tau (2) · α-synuclein · FUS · hnRNPA1 · serum amyloid A · LECT2 · TMEM106B · ANXA11 · **glycinin G4 (soybean)** |
+| **circularity** | 17 CLEAN · 4 CIRCULAR |
+| **source version** | 17 version of record · 3 author manuscript · 1 preprint |
+| **with sequence** | 16 / 21 (each checked to match its stated range in length) |
+| **with explicit numbering frame** | 21 / 21 |
 
 Evidence classes span cell-based truncation series, unbiased peptide-array
 scans, solid-state NMR, cryo-EM of recombinant fibrils, and **cryo-EM of fibrils
@@ -199,7 +199,7 @@ recombinant.
 ## Read these before using a residue number
 
 **Numbering frames in this literature are a trap, and three separate kinds of
-trap appear in these 17 rows.**
+trap appear in these 21 rows.**
 
 - **A constant offset.** TRIOBP-1 is numbered here in a 652-residue frame; much
   of the literature uses 593. Convert by subtracting 59.
@@ -216,7 +216,7 @@ The `frame` field records the frame and, where available, the accession. **Where
 
 ## Honest limitations
 
-- **It is small, and the usable part is smaller than it looks.** 17 rows. The
+- **It is small, and the usable part is smaller than it looks.** 21 rows. The
   discordant stratum — the only part that can discriminate between predictors — holds
   4 documented rows and 1 derived, but **3 of those 5 are CPAD members**. For a
   predictor trained on CPAD, **2 rows remain**, both of them TRIOBP-1 and DISC1, each
@@ -225,7 +225,7 @@ The `frame` field records the frame and, where available, the accession. **Where
 - **It is not a random sample of anything.** Rows were found by targeted search,
   including a deliberate search for papers that ran predictors post hoc and
   published the failure. Prevalence must not be estimated from it.
-- **8 of 17 rows have `stratum: PENDING`.**
+- **12 of 21 rows have `stratum: PENDING`.**
 - **Two rows rest on an author manuscript and one on a preprint**, each recorded
   as such. In one instance the preprint is *better evidence* than the version of
   record, because copyediting dropped a word that marked a cited study as
@@ -241,10 +241,10 @@ The `frame` field records the frame and, where available, the accession. **Where
 
 | file | |
 |---|---|
-| `aggregation_regions_v1.1.0.json` | **authoritative.** Full records, schema documentation, per-row `notes` |
-| `aggregation_regions_v1.1.0.csv` | core columns only, for quick inspection |
+| `aggregation_regions_v1.2.0.json` | **authoritative.** Full records, schema documentation, per-row `notes` |
+| `aggregation_regions_v1.2.0.csv` | core columns only, for quick inspection |
 
-**The CSV cannot represent the `notes` object**, and 12 of 17 rows carry one.
+**The CSV cannot represent the `notes` object**, and 15 of 21 rows carry one.
 Those notes often hold the row's most important caveat — an ex vivo structure
 that contradicts it, a numbering error in the source, a sufficiency claim that
 is explicitly negative. **Use the JSON for anything that matters.**
@@ -270,20 +270,41 @@ working file is never edited by it.
 
 Mercier des Rochettes, B. (2026). *Experimentally mapped aggregation-critical
 protein regions, with circularity, prediction-concordance and
-training-set-contamination labels*, version 1.1.0 [Data set]. Zenodo.
-**10.5281/zenodo.24306057**
+training-set-contamination labels*, version 1.2.0 [Data set]. Zenodo.
+**DOI-RESERVE-PENDING**
 
-<https://doi.org/10.5281/zenodo.24306057>
+<https://doi.org/DOI-RESERVE-PENDING>
 
-This is the **version DOI**: it resolves to 1.1.0 and only 1.1.0, which is what a
+> **THIS IS A PLACEHOLDER AND THIS FILE MUST NOT BE UPLOADED CARRYING IT.**
+> `RELEASE_CHECKLIST.md` requires **reserve → write the DOI into the files → upload →
+> publish**, in that order, because deposited files are frozen: a DOI filled in after
+> publication reaches the repository copy only, leaving the deposited copy permanently
+> inconsistent. That is exactly what happened to v1.0.0's descriptor.
+>
+> So: reserve the DOI on the v1.2.0 draft, replace both occurrences of
+> `DOI-RESERVE-PENDING` here and the `doi:` key in `CITATION.cff`, rebuild nothing
+> (these two files are hand-maintained), and run
+> `python3 scripts/preflight_deposit.py`, which refuses while any placeholder remains.
+>
+> **A reserved DOI belongs to one draft.** If this draft is discarded rather than
+> published, Zenodo reserves a different number next time and both files must be
+> updated again.
+
+This will be the **version DOI**: it resolves to 1.2.0 and only 1.2.0, which is what a
 citation of a specific analysis needs. The **concept DOI**,
 **10.5281/zenodo.24290697**, always resolves to whatever version is current — use that
 one only when you mean "the latest".
 
-**Previous version.** v1.0.0 is **10.5281/zenodo.24290698**
-(<https://zenodo.org/records/24290698>). It remains citable and unchanged, but it has
-no `cpad_status` column and therefore **cannot tell a reader which rows are
-training-set contaminated**. Prefer 1.1.0.
+**Previous version.** v1.1.0 is **10.5281/zenodo.24306057**
+(<https://zenodo.org/records/24306057>). It remains citable and unchanged. It holds 17
+rows against this version's 21, and lacks the four rows added on 17 November 2026 —
+ANXA11, TMEM106B, glycinin G4, and the DISC1 interval split into the two sub-intervals
+its source actually tested. **Its deposited `CITATION.cff` also carries the pre-1.1.0
+title**, a defect recorded in `RELEASE_CHECKLIST.md` and corrected here.
+
+**v1.0.0** is **10.5281/zenodo.24290698** (<https://zenodo.org/records/24290698>). It
+has no `cpad_status` column and therefore **cannot tell a reader which rows are
+training-set contaminated**. Do not use it in preference to a later version.
 
 ## Licence
 

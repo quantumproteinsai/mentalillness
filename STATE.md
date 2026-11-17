@@ -1,4 +1,10 @@
-# In silico aggregation in mental illness — state as of 15 Nov 2026
+# In silico aggregation in mental illness — state as of 17 Nov 2026
+
+> **17 Nov 2026 — the project crossed from preparation into result.** The
+> pre-registration is frozen (`freeze-2026-11-17`), the first predictor has been run,
+> the dataset is published at **10.5281/zenodo.24306057**, and the headline question
+> has an answer. **Read the last section of this file first**; everything above it is
+> the record of how the ground was prepared, and remains true.
 
 Everything here was established by reading sources or parsing deposited files,
 not by summarising abstracts. Where a claim rests on a snippet or a secondary
@@ -2012,3 +2018,167 @@ The first attempt went public before anyone had looked past the branch.
 
 **The Zenodo deposit is unaffected**: it holds its own copies, never contained a
 sweep, and no row of `data/regions.json` rests on one.
+
+---
+
+# 17 November 2026 — the freeze, the first run, and the answer
+
+## The one-line position, updated
+
+**The predictor route has been run, and it returns a negative that survives its own
+controls.** AggrescanAI — the entire confirmatory modern arm — does not recover the
+experimentally mapped aggregation-critical regions of either DISC1 or TRIOBP-1. The
+pipeline that produced that negative reproduces the predictor's *published* performance
+on 540 independent peptides, so the null is a property of the predictor, not of our code.
+
+## The result
+
+Against thresholds fixed before any score existed (§4: recovered = `v < 0.05`; predictor
+succeeds on the set = Fisher p < 0.01):
+
+| row | v | phases | recovered? |
+|---|---|---|---|
+| DISC1 384-415 | **0.416** | 0.331 – 0.463 | no |
+| TRIOBP-1 324-348 | **0.908** | 0.777 – 0.922 | no |
+
+Stouffer Z = −0.790, p = 0.785 (primary). Fisher p = 0.746 (secondary).
+
+**The permitted claim is about AggrescanAI, not about modern predictors** (§5.2b). The
+modern arm is one tool because AggreProt's weights are published nowhere.
+
+**All 18 rows now score.** The DISC1 C-region rows fail hardest: 716-761 and 748-769 put
+their best window at the **16th percentile** of the protein, and 717-737 at the **6th**.
+Those are `PENDING` and partly `CIRCULAR`, so they are not confirmatory — but they point
+the same way as the rows that are.
+
+## Why the negative is believable — the control arm
+
+A null is worth nothing if the instrument cannot produce a positive. Three checks, in
+increasing strength:
+
+1. **α-synuclein and tau, before any row was scored.** The top 12 residues of the whole
+   441-residue tau protein are exactly VQIVYK and VQIINK.
+2. **The statistic can fire.** Under amendment §3.1a the two tau hexapeptides score
+   v = 0.0034 and 0.0080, an order of magnitude below the 0.05 bar.
+3. **540 CPAD hexapeptides, scored in context: AUROC 0.703** [0.639, 0.760], p = 0.0005 —
+   against the **0.69** Navarro et al. publish for AggrescanAI on their own external
+   benchmark.
+
+**That third check is the one that matters.** It is an independent, 540-point validation
+that our local pipeline reproduces the predictor at its published level. The registered
+null is therefore not an artefact of a broken local run.
+
+## The contamination result, which cost more than the headline
+
+§5.2b item 4 executed against **all three** CPAD 2.0 datasets, each read complete and each
+matching the database's own stated totals — APR list 286 names, peptides 2031/2031
+contiguous, structures 565/565 — plus an orthologue check in **both** OMA and
+OrthoInspector, because CPAD90 transfers annotations to homologues.
+
+- **The registered prediction held**: TRIOBP-1 and DISC1 are absent from CPAD.
+- **The cost falls on the discordant stratum**, the only one that can discriminate
+  between predictors. Of its five rows, **three are CPAD members** (FUS, hnRNPA1, LECT2)
+  and are excluded under item 5. **Two survive.**
+- Item 6 does not fire — the stratum is not empty — but **n = 2 is a case series on two
+  proteins, not a rate**, and the write-up must not promote it.
+
+**Three findings from that check are worth more than the verdict:**
+
+- **One dataset is not CPAD.** hnRNPA1 is absent from the APR list *and* the peptide table
+  and present three times in the structures table. LECT2 is the mirror image. Checking a
+  single table would have cleared one of them wrongly.
+- **One orthology database is not enough.** OMA alone would have missed MPRIP (Q6WCQ1),
+  TRIOBP's human in-paralogue, which OrthoInspector reports and which had to be checked
+  in its own right.
+- **A status code is not content, again.** The CPAD harvest stopped at 1590 of 2031
+  entries because the server began serving a CAPTCHA **under HTTP 200**. Trusting the 200
+  would have published an incomplete table as a complete one.
+
+## Two defects found by running things, not by reading them
+
+**§3.1 does not say whether windows slide or tile, and the two give different answers.**
+The section states the property its null must have — *v ~ Uniform(0,1)* — and that
+decides it: sliding windows overlap by 5 of 6 residues, are not exchangeable, and give
+mean v = 0.663 on i.i.d. scores; tiling gives 0.495. **Tiling adopted on the
+pre-registration's own criterion**, with no v computed for any row at the time.
+
+**§3.1 cannot score a region shorter than its window** — so it silently dropped the two
+tau rows that demonstrate the pipeline works. Amendment **§3.1a** scores such a region as
+one window of its own length (m = 1, v = 1 − P), which preserves the registered null
+because a single rank is uniform under exchangeability alone. **Post-unblinding, so
+exploratory by §12**, and it cannot move the headline: all four affected rows are either
+CPAD members already excluded or `PENDING`.
+
+## What the AggreProt paper settled
+
+Cima et al. 2026, *Commun Chem* **9**:229 [READ, CC BY], and its data deposit
+(10.5281/zenodo.18670709):
+
+- **The weights are "available upon request"** — the authors' own words in the version of
+  record. Not hidden, not missing: **not deposited, by policy.** AggreProt still fails
+  §5.2 and stays UNAVAILABLE rather than failing. The 16 Nov email was the sanctioned
+  route.
+- **Licence resolved**: CC BY-NC-SA 4.0, overriding both Zenodo's metadata and bio.tools.
+  Defaults answered too — linear model, average metric, threshold 0.25.
+- **AggreProt is trained on WaltzDB 2.0, not CPAD.** Our contamination column is specific
+  to AggrescanAI and does not transfer.
+- **A fourth published statement against the standard benchmarks — and the first that is a
+  measurement**: 17 hexapeptides, TEM and ThT, classified blind, 8 false positives and 6
+  false negatives in AmyPro/CPAD.
+- **Serum amyloid A is one of the seven proteins**, and the peptide is **RDMWRA at mature
+  15-20** — inside one of our rows. It does not invalidate the row: ours is the ordered
+  core of an *ex vivo* patient fibril, theirs an isolated hexapeptide in buffer. That is
+  the `construct` column's reason for existing.
+
+## The memorisation question: posed, and deliberately not answered
+
+On peptides where CPAD is demonstrably wrong, AggrescanAI scores AUROC 0.500. On
+uncontested CPAD peptides it scores 0.703. That looks like a memorisation signature and
+**is not evidence of one**: the contested interval [0.111, 0.889] contains 0.703.
+
+Simulation puts the requirement at **~40 vs 40** contested peptides for 0.86 power. **We
+have 3 vs 6**, and each additional one costs a four-week TEM experiment. **Rule 2 says
+stop**, and we stopped.
+
+## Transferable rules earned today
+
+- **A status code is not content.** HTTP 200 served a CAPTCHA page for a table that had
+  returned data minutes earlier.
+- **A form displaying a DOI is not a registered DOI.** `10.5281/zenodo.24306057` was
+  reserved on an unsaved draft; doi.org said *DOI Not Found*. The check that proves a new
+  version is live is the **concept DOI** — if it still resolves to the previous version,
+  nothing published.
+- **Reserve the DOI before uploading, not after.** Deposited files are frozen, so
+  publish-then-patch can only ever fix the repository copy. The deposited v1.1.0
+  `CITATION.cff` carries the *old title* because that file was the one place of three the
+  title was not updated in time. Recorded, not hidden.
+- **Verify a frozen artefact by digest, not by size.** All five deposited files were
+  confirmed by md5 against the local copies.
+- **Tag after the final rebuild, immediately before upload.** The `v1.1.0` tag predates the
+  morning's frame fixes and reproduces none of the deposited files but `LICENSE`; the real
+  tree is tagged **`deposited-v1.1.0`**.
+- **A 404 from a guessed filename is a wrong filename, not a broken pin.**
+- **A frame choice is a scoring choice.** The same hexapeptide scores 0.641 in the mature
+  hSAA1.1 chain and 0.718 in the P0DJI8 precursor — the `construct` lesson appearing
+  inside the predictor itself.
+- **Check the null before trusting the statistic**, and check it on simulated data where
+  the answer is known.
+
+## Where the dataset stands
+
+**18 rows, all scored. Published as v1.1.0, DOI 10.5281/zenodo.24306057**, superseding
+v1.0.0, which cannot tell a reader which rows are training-set contaminated. Every row now
+carries a `frame`, and the last six were **verified by sequence rather than assumed** —
+including serum amyloid A, where the allelic trap fired exactly as documented: the row is
+right at mature residue 52 and canonical UniProt would have been wrong, inside the region.
+
+## What is open
+
+- **The AggreProt weights.** No reply as of the freeze. If they arrive it is exploratory,
+  post-freeze, per §5.2b item 8 — and it would need its own WaltzDB contamination check.
+- **Zaharija & Bradshaw 2024**, Elsevier, absent from PMC. Cannot move the 384-415 number,
+  which the thesis's plasmid names settle, but that row is now one of only two surviving.
+- **§12's prescreen gate checks *a* publisher PDF, not *the* one.** Left unchanged at the
+  freeze deliberately; recorded so a later tightening is a visible amendment.
+- **The legacy arm is taken from published runs** (§5.1a), not re-executed, so the
+  legacy-versus-modern contrast is not yet computed.

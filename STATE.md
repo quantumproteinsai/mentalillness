@@ -2125,7 +2125,11 @@ and agrees on the verdict, since 0.12 is still above the registered 0.05 bar.
 **Neither direction is established.** The reverse was not registered and does not reach
 significance descriptively either (sign test p = 0.0625, n = 7).
 
-## Three defects in the pre-registration, found by running it rather than reading it
+## Defects in the pre-registration, found by running it rather than reading it
+
+**Three are recorded here. A fourth — §3.1 fixes no tiling phase — was found later the
+same day and is in "The glycinin row, scored" below.** It is the only one of the four that
+has changed a verdict.
 
 **§3.1 does not say whether windows slide or tile, and the two give different answers.**
 The section states the property its null must have — *v ~ Uniform(0,1)* — and that
@@ -2149,6 +2153,12 @@ capable of firing at all.
 **This one was knowable before a single CPU cycle**, and nobody noticed until the test was
 attempted. It is the clearest instance in the project of `CLAUDE.md` rule 3 — audit the
 premises of the task, not only the literature — and the premise that failed was our own.
+
+**Update, later on 17 Nov: §4's threshold is now reachable, and that is not a fix.** The
+exploratory contrast runs on 9 rows, where the minimum attainable p is 2⁻⁹ = 0.0020. The
+test can now fire; it does not. **The confirmatory set is still n = 2 and still cannot
+fire at all** — widening the dataset did not touch it, for the reason set out under "The
+count floor was a proxy, and the proxy was met without the thing it proxied for".
 
 ## What the AggreProt paper settled
 
@@ -2218,15 +2228,21 @@ stop**, and we stopped.
 
 ## Where the dataset stands
 
-**19 rows across 9 proteins. Published as v1.1.0, DOI 10.5281/zenodo.24306057**
+**21 rows across 11 proteins** as of the end of 17 Nov 2026 — ANXA11 39-74 and glycinin
+G4 164-190 added that afternoon. **The deposited release is still v1.1.0 at 19 rows,
+DOI 10.5281/zenodo.24306057**; the two new rows are in the repository and not yet in a
+deposit, so the DOI and `data/regions.json` now differ and a v1.2.0 is owed.
+
+Previously, and the deposit still reflects this: **19 rows across 9 proteins, v1.1.0**
 (deposit reproducible from tag `deposited-v1.1.0`), superseding v1.0.0, which cannot tell a
 reader which rows are training-set contaminated. Every row carries a `frame`, and the last
 seven were **verified by sequence rather than assumed** — including serum amyloid A, where
 the allelic trap fired exactly as documented: the row is right at mature residue 52 and
 canonical UniProt would have been wrong, inside the region.
 
-**18 of 19 rows score.** The exception is TRIOBP-1 324-328, now carrying
-`exclude_from_scoring` — see below. **The scarce cell is still 2 rows.**
+**20 of 21 rows score** (re-run 17 Nov 2026, `scripts/score_rows.py .`). The single
+exception is still TRIOBP-1 324-328, carrying `exclude_from_scoring` — see below.
+**The scarce cell is still 2 rows, and adding two rows did not change that.**
 
 ## What is open
 
@@ -2252,9 +2268,15 @@ canonical UniProt would have been wrong, inside the region.
   FUS 2-214). Until then the legacy arm is TANGO alone.
 - **n is the binding constraint everywhere.** The confirmatory set is 2 rows; §4 needs 5
   to be able to fire; the memorisation test needs ~40 vs 40 contested peptides against
-  the 3 vs 6 that exist. **Widening `data/regions.json` beyond DISC1 and TRIOBP-1 is the
-  one piece of work that unblocks more than one of these at once** — which is what
-  `CLAUDE.md` already says the outstanding task is.
+  the 3 vs 6 that exist.
+- ~~**Widening `data/regions.json` beyond DISC1 and TRIOBP-1 is the one piece of work that
+  unblocks more than one of these at once.**~~ **TRIED, AND IT DID NOT WORK — 17 Nov
+  2026.** The set went 10 → 21 rows across 11 proteins and the confirmatory cell did not
+  move off 2. Row count was a proxy for the scarce thing and the proxy was met without
+  it. **The recruiting rule has to change, not just continue** — see "The count floor was
+  a proxy" below. This supersedes the instruction still standing in `CLAUDE.md`, which
+  says widening to every protein with fragment-level mapping is the outstanding task; it
+  was the right next step and it has now been taken as far as it goes.
 
 ---
 
@@ -2342,3 +2364,175 @@ the machinery that was supposed to apply them was not consulted, or could not be
 
 **The cheap defence in each case was a control that costs nothing**: a positive control
 through the same query, a flag the code reads, a status computed rather than stored.
+
+---
+
+## The glycinin row, scored — and the fourth defect, 17 Nov 2026
+
+The soy glycinin G4 PM1 fibril core, **residues 164-190 of P02858**, from Li et al. 2025,
+*Adv Sci* **12**:e09821 (PMC12591115) [READ, publisher PDF, version of record]. The first
+non-animal row in the set and the first added with its frame decided before any predictor
+ran. Commits `890a65a`, `3aee73e`, `c146df2`.
+
+### The result: neither arm recovers it
+
+| arm | tool | m | M | P | v (phase 0) | across 6 phases | recovered? |
+|---|---|---|---|---|---|---|---|
+| modern | AggrescanAI | 3 | 43 | 0.849 | **0.388** | 0.135 – 0.388 | no |
+| legacy | TANGO, 9 registered grid points | 3 | 43 | 0.942 | **0.164** | 0.047 – 0.164 | no |
+| legacy | TANGO, pH 2.0 (sensitivity) | 3 | 43 | 0.965 | **0.101** | 0.035 – 0.101 | no |
+
+§4's bar is v < 0.05. **Δv = +0.224, modern worse** — the seventh row of nine running that
+way. **TANGO is completely insensitive to the registered grid here**: v = 0.164475 at all
+nine points of pH {5.0, 7.0, 7.4} × T {298, 303, 310} K, identical to six decimals.
+
+**The experimental pH is outside the registered grid.** These fibrils were made at pH 2.0,
+20 mg/mL, 90 °C. §5.1a's grid is physiological. Running only the grid would score a
+protein at a pH it never saw; adding pH 2.0 silently would be an unregistered parameter
+choice. It was run and **labelled a sensitivity**: v = 0.1010 at 298/303/310 and at 363 K.
+Moves toward recovery, does not reach it.
+
+### The fourth defect: §3.1 fixes no tiling phase, and here the phase decides
+
+| phase | m | M | P | TANGO v |
+|---|---|---|---|---|
+| **0 (primary)** | 3 | 43 | 0.9419 | **0.1645** |
+| 1 – 4 | 4 | 42 | 0.9881 | **0.0468** — below the bar |
+| 5 | 3 | 42 | 0.9643 | 0.1034 |
+
+**Four of six phases would call this region recovered. Phase 0 says it is not**, and phase
+0 is primary by the convention the AggrescanAI run set, so **the registered answer is "not
+recovered"** — on a knife-edge.
+
+**Why here and nowhere else.** The phase moves *both* terms of v = 1 − P^m: a 27-residue
+region holds 3 or 4 whole tiles depending on where tiling starts, and M flips 42/43. At
+P ≈ 0.99 the statistic is brutally sensitive to m. **Any row with small m and P near the
+bar is exposed**; every earlier row has either a much larger m or sits far from 0.05.
+
+**Recorded, deliberately not patched.** Changing the phase convention *after* seeing it
+flip a verdict is precisely the move pre-registration exists to prevent. If it is ever
+amended it must be a dated amendment that re-reports every affected row.
+
+**The claim "no conclusion here depends on the phase", in the AggrescanAI report, is no
+longer true set-wide** and has been flagged where it appears. The modern arm is still
+phase-robust here (0.135 – 0.388), so the Δv *direction* holds at every phase even where
+the legacy *verdict* does not.
+
+### A general rule the row forced: a hydrophobic segment that is not in the sample is a decoy window
+
+P02858's 563-residue precursor is a signal peptide (1-23) plus three chains: A5 (24-120),
+**A4 (121-378)** and B3 (379-563). The region sits in A4, and **A4 was scored** — 258
+residues, 43 tiles, against the precursor's 93.
+
+Scoring the precursor would have put `MGKPFTLSLSSLCLLLLSSACFA` into the window pool: 23
+residues of near-unbroken hydrophobicity that every predictor scores highly and is *right*
+to, because signal peptides thread a translocon rather than aggregate. Under §3.1 each
+such decoy lowers P and raises v. **A region can be made to look missed by choosing a
+frame that includes a hydrophobic segment that was never in the tube.** The frame choice
+is a scoring choice; it was fixed in advance, in the dataset, with reasons given.
+
+The same confound is live and unresolved for **TMEM106B 120-254**, whose scored frame
+contains a transmembrane helix.
+
+**The offset is machine-verified rather than commented.** The row stores precursor
+numbering (164-190); the profile is A4-local (44-70). `score_rows.py` carries an `OFFSET`
+table and re-checks the converted indices against the row's own stored `sequence` on every
+run, refusing to score on mismatch. All 14 TANGO outputs were checked individually.
+
+### What the publisher PDF changed, and what it did not
+
+Three caveats had been parked on figures and SI not yet opened. The version of record
+resolved them and added one the XML pass had missed:
+
+- **A necessity claim exists and is near-tautological.** §3.3 says deleting Pro164-Ala190
+  "resulted in markedly poorer fitting (Figure S4c), underscoring the necessity of this
+  region for structural integrity." That is an **in-silico deletion from the model**, not
+  mutagenesis. No construct lacking 164-190 was ever made. The row says so.
+- **The gel flag was downgraded, not deleted.** Figure 1a shows one dominant band between
+  the 35 and 40 kDa markers, unresolved into species, so it cannot adjudicate G4 vs G5.
+  The flag was kept with the retraction attached.
+- **The protein identity still rests on one residue of density at 3.6 Å.** If the fibril
+  is G5 rather than G4, the acidic chain is 320 residues, not 258, and **this row must be
+  rescored, not relabelled.**
+
+**An author list had been invented** — right surnames, initials fabricated from a snippet
+that gave surnames only. Corrected to Saiya Li, Shuangjian Li, Yijia Cheng, Yapeng Fang,
+Qin Cao, Yiping Cao, with the slip recorded on the field. **A size claim was also wrong**:
+27/563 against the precursor, a molecule that does not exist, rather than 27/258 = 10.5%
+against the chain that aggregated.
+
+### ANXA11 was unscored for no reason at all
+
+`P50995.csv` had existed in the archived run since the morning. The `RUNS` dict simply had
+no entry for it. It scores **v = 0.331** [0.142 – 0.331], not recovered, and **it is the
+second row where modern beats legacy** (Δv = −0.082; −0.042 at pH 5.0) — a margin inside
+either arm's phase spread, so a tie more than a win.
+
+### The legacy-versus-modern contrast at n = 9: unchanged
+
+**7 of 9 modern worse, median Δv = +0.224, Wilcoxon one-sided p = 0.102** (0.082 at
+pH 5.0). §4 wants p < 0.05 **and** median Δv < −0.10: both fail, and the effect size fails
+**by sign**. Taken descriptively, 7 of 9 is a one-sided binomial p = 0.0898 — **neither
+direction is established**, and it remains one tool against one tool, not a statement
+about generations.
+
+The confirmatory set reproduces exactly and is untouched: **n = 2, Stouffer Z = −0.7896,
+p = 0.7851; Fisher χ² = 1.9455 on 4 df, p = 0.7458.** The CPAD-contaminated stratum
+likewise: n = 7, Z = +2.1713, p = 0.0150.
+
+### The count floor was a proxy, and the proxy was met without the thing it proxied for
+
+`CLAUDE.md` set a floor of 15 rows. The set is now **21 rows across 11 proteins** and
+**the confirmatory cell is still 2** — DISC1 384-415 and TRIOBP-1 324-348, exactly as it
+was at 10 rows.
+
+**This is the finding of the afternoon, and it is a finding about our own plan.** Row count
+was never the scarce resource. The confirmatory stratum requires rows that are
+`DISCORDANT` *and* CPAD-absent *and* circularity-CLEAN, and the binding term is
+**DISCORDANT**: a paper where an aggregation predictor was actually *run* on the region and
+*disagreed* with the experiment. Of the 21 rows, 12 are `PENDING` — not because they are
+unexamined, but because most structural papers never run an aggregation predictor at all,
+so there is no disagreement to classify. Cryo-EM papers identify a core and move on.
+
+**So the recruiting rule has to change.** "Proteins with fragment-level aggregation
+mapping" is a search over *results*; what is needed is a search over **methods sections —
+papers that ran a predictor and reported it failing**. That is a different query, it is
+rarer, and the honest expectation is that it is rare enough that §4's n ≥ 5 may not be
+reachable from the literature at all. **If that is the case it is a reportable result about
+the field, not a failure of the benchmark**, and saying so is cheaper than another ten rows
+that all land in `PENDING`.
+
+### Housekeeping that had to be fixed to run any of this
+
+**Three reproducibility defects, all the same defect**: `score_rows.py`,
+`run_aggrescanai.py` and `run_tango_grid.py` each resolved inputs against **uncommitted**
+working directories, so none could be re-run from a clean checkout — while
+`results/aggrescanai_2026-11-17/REPORT.md` said "Reproduce with scripts/score_rows.py".
+Paths are now environment-overridable with defaults unchanged.
+
+`run_tango_grid.py` also gained a **binary checksum gate**: `predictor_provenance.json`
+says TANGO's download carries no version number, so "THE PIN IS THE SHA256" — the digest
+*is* the version. The script now refuses any other binary rather than quietly producing
+numbers under an unpinned tool.
+
+**The remote.** `CLAUDE.md` said this repository has no remote. It has one, `origin` =
+`quantumproteinsai/mentalillness`, and it **is the private dev repository itself, not the
+curated public mirror the companion project uses** — where the GitHub remote must never be
+pushed to. Both are now named in the same paragraph, because confusing them is the
+expensive direction. The `.gitignore` comment claiming `research_notes/` was scrubbed
+"before it was made public" conflated two repositories at the same URL: **the repository
+that exists now has never been public**; its deleted predecessor was, for ~7 minutes.
+
+**TANGO's distribution is now ignored, not merely untracked.** `git add -A` staged
+`tango2_3_1.linux64.zip` and `TANGO_Instructions.pdf` once. Redistributing software under
+an academic licence is the author's decision, and a warning in prose is not a constraint.
+
+### Open on this row
+
+**The Supporting Information has still not been opened** (Figures S1-S7), and it is not
+cosmetic: **Figure S4 is the sole support for the paper's necessity claim about this exact
+region**, S3a,b the sole source of the polymorph abundances, and S5 the alternative chain
+conformation inside the modelled region. **Three of the row's claims rest on a document
+nobody here has read.**
+
+**A v1.2.0 deposit is owed.** The published DOI is 19 rows; `data/regions.json` is 21.

@@ -311,28 +311,41 @@ membership list is not published.
 scaffold proteins unlikely to appear in an amyloid-curated database. **That is a
 prediction to be checked under 4, not a reason to skip it.**
 
-#### Item 4 EXECUTED — 17 Nov 2026
+#### Item 4 EXECUTED AND COMPLETE — 17 Nov 2026
 
-All 17 rows checked against CPAD 2.0 before any predictor was scored. Result recorded
-per row in `cpad_status` / `cpad_basis` / `cpad_checked`, and in full, with its limits,
-under `_CPAD_MEMBERSHIP_CHECK_2026-11-17` in `data/regions.json`.
+All 17 rows checked against CPAD 2.0 before any predictor was scored, orthologue check
+included. Result recorded per row in `cpad_status` / `cpad_basis` / `cpad_checked`, and
+in full under `_CPAD_MEMBERSHIP_CHECK_2026-11-17` in `data/regions.json`.
 
-**The prediction above held: TRIOBP-1 and DISC1 are absent.** What it did not anticipate
-is the cost to the discordant stratum. Of its 5 rows, **2 survive** (TRIOBP-1 324-348,
-DISC1 384-415), **2 are excluded** under item 5 as CPAD members (FUS 39-95, LECT2 55-75),
-and **1 is flagged** `TRAINING_SET_UNCERTAIN` (hnRNPA1 251-295, paralogues in CPAD).
+**All three CPAD datasets were read complete** and each matched the database's own stated
+total: APR protein list (286 names), peptide table (2031/2031, contiguous), structures
+table (565/565).
+
+**The orthologue check is what makes an absence mean anything**, since CPAD90 enters
+AggrescanAI's training set by transferring annotations to *homologues*. Both sources
+Navarro names were queried. DISC1: one human protein in its group — itself. TRIOBP: two,
+Q9H2D6 and **Q6WCQ1 (MPRIP)**, and that paralogue was checked in its own right and is
+also absent. **OMA alone would have missed MPRIP**; one orthology database is not enough.
+
+**The prediction above held: TRIOBP-1 and DISC1 are absent.** The cost falls on the
+discordant stratum. Of its 5 rows, **3 are excluded** under item 5 as CPAD members
+(FUS 39-95, hnRNPA1 251-295, LECT2 55-75) and **2 survive** (TRIOBP-1 324-348,
+DISC1 384-415). No row carries `TRAINING_SET_UNCERTAIN`.
+
+**One dataset is not CPAD.** hnRNPA1 is absent from the APR list *and* the peptide table
+and present three times in the structures table; LECT2 is the mirror image, APR list only.
+Checking a single table would have cleared both wrongly. Any row added later must be
+checked against all three.
 
 **Item 6 does not fire** — the stratum is not empty. But the confirmatory discordant set
-is **n = 2**, and against Navarro 2026's uncertified AUROC separation (0.69 vs 0.60, no
-confidence intervals) that supports **a case series on two proteins, not a rate**. The
-write-up must not promote it.
+is **n = 2**, both rows from the two proteins this project exists to ask about. Against
+Navarro 2026's uncertified AUROC separation (0.69 vs 0.60, **no confidence intervals**)
+that supports **a case series on two proteins, not a rate**. The write-up must not
+promote it.
 
-**Item 4 is not finished.** Absence from CPAD 2.0 is not absence from CPAD90, whose
-homologue-transfer list is unpublished; the orthologue check for TRIOBP-1 and DISC1 is
-outstanding, and the peptide harvest reached 1590 of 2031 entries before the server
-began serving a CAPTCHA **under HTTP 200**. Every absence is therefore recorded as
-`CPAD_ABSENT_PROVISIONAL`, never as clean. **No row may be described as
-training-set-clean until that check is done.**
+**What remains uncertain, and will stay so.** The CPAD90 membership list is unpublished,
+so no row may be called training-set-clean in absolute terms. `CPAD_ABSENT_ORTHOLOGY_CHECKED`
+is the strongest claim public sources support, and it is not a certificate.
 
 #### Re-admission
 

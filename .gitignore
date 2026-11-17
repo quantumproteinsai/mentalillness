@@ -5,9 +5,26 @@ __pycache__/
 *.tmp
 
 # Machine-generated literature sweeps: leads, never citable under the rule in
-# README.md, and removed from this repository's history on 16 Nov 2026 before it
-# was made public. Kept on the author's disk. Do not re-add them: an unverified
-# lead in a public repository is read as a finding whatever the label says.
+# README.md. Kept on the author's disk.
+#
+# Removed from all 69 commits with git filter-repo on 16 Nov 2026. This comment
+# used to say that happened "before it was made public", which conflated two
+# repositories at the same URL -- see STATE.md, "A ref is not the object store".
+# THE REPOSITORY THAT EXISTS NOW HAS NEVER BEEN PUBLIC: it is private, has no
+# public mirror, and was created on 16 Nov 2026 when its predecessor was deleted
+# and recreated under the same name. That PREDECESSOR was public for roughly
+# seven minutes, which is the whole reason the deletion was necessary -- orphaned
+# research_notes/ objects stayed fetchable by pre-rewrite SHA after the branch
+# rewrite, so the host's object store outlived the refs.
+#
+# In this repository `git log --all -- research_notes/` returns nothing, checked
+# 17 Nov 2026. Note what that does and does not establish: it interrogates what
+# the refs reach, and that was exactly the insufficient check last time. It is
+# adequate here only because this object store was never served publicly.
+#
+# Do not re-add them. The rule does not depend on who can read the repository
+# today -- an unverified lead is read as a finding whatever the label says, and
+# this repository is intended for publication.
 research_notes/
 
 # TANGO's distribution. Academic licence: redistributing it is the author's

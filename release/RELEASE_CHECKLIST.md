@@ -140,6 +140,22 @@ is harder to audit than either route alone.
    `release/DATA_DESCRIPTOR.md`, which currently gives the concept DOI and explains why.
    Commit that.
 
+#### A DOI IS RESERVED BUT NOT PUBLISHED — as of 17 Nov 2026
+
+`10.5281/zenodo.24306057` is reserved on a **draft that has not been saved or
+published**. Verified, not assumed: doi.org returns *DOI Not Found*, the record page and
+the API both 404, and — the decisive check — the concept DOI `10.5281/zenodo.24290697`
+still resolves to v1.0.0 with `is_last: true` at version index 0. **No v1.1.0 exists.**
+
+**It is deliberately NOT written into `CITATION.cff` or `release/DATA_DESCRIPTOR.md`.**
+Those are permanent, citable files, and a reserved DOI is not a published one. A
+reserved DOI also lives only as long as its draft: discard the draft and that number is
+gone, and a later "New version" reserves a different one.
+
+**Verify before writing a DOI into anything.** The cheapest check is the concept DOI —
+if it still resolves to the previous version, the new one is not published, whatever the
+form displayed.
+
 #### The five files to upload
 
 | file | what it is |

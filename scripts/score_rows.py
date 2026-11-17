@@ -45,15 +45,37 @@ RUNS = {
     # and no transmembrane segment in P50995, so the frame carries no decoy windows --
     # see _A_HYDROPHOBIC_SEGMENT_THAT_IS_NOT_IN_THE_SAMPLE_IS_A_DECOY_WINDOW.
     'ANXA11': ('P50995.csv', '505-residue canonical P50995'),
+    # Added 17 Nov 2026. SCORED ON THE A4 ACIDIC CHAIN, NOT THE PRECURSOR, and the row's
+    # A_SIGNAL_PEPTIDE_IN_THE_SCORED_FRAME_BIASES_THE_STATISTIC key pre-registered that
+    # decision BEFORE this run. P02858's 563-residue precursor is a signal peptide plus
+    # three chains; scoring it would put 23 residues of almost unbroken hydrophobicity
+    # into the window pool as a decoy. See OFFSET below -- this row and only this row
+    # stores its residues in a frame that is NOT the frame of its profile.
+    'glycinin G4 (soybean)': ('../glycinin_2026-11-17/P02858_A4.csv',
+                              'A4 acidic chain, P02858[121:378], 258 aa'),
+}
+
+# ROW NUMBERING MINUS PROFILE NUMBERING. Zero for every row whose `residues` are in the
+# same frame as its profile, which is every row but one. For glycinin the row stores the
+# paper's and the PDB's precursor numbering (164-190) while the profile is the A4 chain,
+# so local = precursor - 120. THIS IS DECLARED RATHER THAN APPLIED SILENTLY because an
+# unannounced offset is exactly the frame trap this project has been bitten by four times;
+# the conversion is asserted against the stored sequence at load time, below.
+OFFSET = {
+    'glycinin G4 (soybean)': 120,
 }
 
 
 def load(path):
-    out = []
+    out, seq = [], []
     with open(os.path.join(RUNDIR, path)) as fh:
         for r in csv.DictReader(l for l in fh if not l.startswith('#')):
             out.append(float(r['aggrescanai_score']))
-    return out
+            for k in ('aa', 'residue', 'aminoacid'):
+                if k in r:
+                    seq.append(r[k])
+                    break
+    return out, ''.join(seq)
 
 
 def statistic(scores, a, b, phase=0):
@@ -160,8 +182,25 @@ def main(repo):
         path, frame = RUNS[prot]
         if path not in cache:
             cache[path] = load(path)
-        sc = cache[path]
+        sc, profseq = cache[path]
         a, b = (int(x) for x in res.split('-'))
+        off = OFFSET.get(prot, 0)
+        if off:
+            # THE OFFSET IS VERIFIED AGAINST THE ROW'S OWN STORED SEQUENCE, EVERY RUN.
+            # A frame conversion that is merely commented is a frame conversion that will
+            # one day be wrong. If the profile's residues at the converted indices are not
+            # the residues the row says are there, the row is NOT scored.
+            a, b = a - off, b - off
+            want = (r.get('sequence') or '').strip().upper()
+            have = profseq[a - 1:b].upper()
+            if not profseq:
+                skipped.append((prot, res, f'OFFSET {off} declared but profile carries no '
+                                           'residue column to verify it against'))
+                continue
+            if want and have != want:
+                skipped.append((prot, res, f'OFFSET {off} FAILED VERIFICATION: profile has '
+                                           f'{have[:14]}... row says {want[:14]}...'))
+                continue
         if b > len(sc):
             skipped.append((prot, res, f'range exceeds sequence length {len(sc)}'))
             continue

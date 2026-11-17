@@ -130,3 +130,53 @@ arm, on TANGO's `Aggregation` column per §5.3.
 
 **Trap handled:** TANGO exits 0 on failure, so the runner checks that the output file
 exists, is non-empty, and has exactly one row per residue. All 18 runs passed that check.
+
+---
+
+## Appendix, later on 17 November: n goes from 7 to 9, and the conclusion does not move
+
+Two rows joined the contrast the same day. **Glycinin G4 164-190** was added to the dataset
+and both arms were run on it. **ANXA11 39-74** had had a TANGO profile since this run; what
+was missing was its AggrescanAI score, blocked by a missing line in a lookup table.
+
+| row | TANGO *v* | AggrescanAI *v* | Δv |
+|---|---|---|---|
+| TRIOBP-1 1-59 | 0.9995 | 0.0409 | **−0.959** ← modern better |
+| **ANXA11 39-74** | **0.4134** | **0.3315** | **−0.082** ← modern better |
+| DISC1 748-769 | 0.9227 | 0.9955 | +0.073 |
+| DISC1 384-415 | 0.3189 | 0.4164 | +0.097 |
+| **glycinin G4 164-190** | **0.1645** | **0.3884** | **+0.224** |
+| TMEM106B 120-254 | 0.7156 | 0.9900 | +0.274 |
+| TRIOBP-1 333-340 | 0.0388 | 0.4240 | +0.385 |
+| TRIOBP-1 324-348 | 0.1235 | 0.9079 | +0.784 |
+| DISC1 691-836 | 0.0812 | 0.9994 | +0.918 |
+
+> **Modern still does not beat legacy. On 7 of 9 rows it is worse.**
+>
+> §4 requires Wilcoxon one-sided **p < 0.05** *and* median Δv **< −0.10**. Observed:
+> **p = 0.102**, median Δv = **+0.224**. Both fail, and the effect-size criterion still
+> fails **by sign**.
+
+ANXA11's TANGO v is 0.3735 at pH 5.0 and 0.4134 at pH 7.0/7.4, giving p = 0.082 and 0.102;
+**7 of 9 and the median are unchanged at every grid point.** Glycinin's TANGO v is
+identical to six decimals at all nine points.
+
+**§4's threshold is now reachable, and was not before.** The minimum attainable one-sided
+Wilcoxon p is 2⁻ⁿ — 0.25 at n=2, 0.0078 at n=7, **0.0020 at n=9**. The earlier statement
+that no data could make this significant applied to the *confirmatory* set at n=2 and still
+does; this exploratory set has passed the point where the test is merely arithmetic.
+It returns a non-significant result on the merits now, which is a different and better
+kind of negative.
+
+**ANXA11 is the second row where modern wins**, but its margin (−0.082, and −0.042 at
+pH 5.0) is well inside the phase spread of either arm. It is a tie more than a win.
+
+**Neither direction is established**: 7 of 9 gives a one-sided binomial p = 0.0898.
+And this is still one tool against one tool, not a statement about generations.
+
+**One caveat the earlier rows did not have.** The glycinin row's legacy verdict is
+**phase-dependent** — TANGO reaches v = 0.047 at four of the six tiling phases §3.1 leaves
+unfixed, against 0.164 at the primary phase 0. Its Δv *direction* is robust (modern worse
+at every phase), so the contrast above is unaffected, but see
+`results/glycinin_2026-11-17/REPORT.md` for why that row sits on a knife-edge and the
+earlier claim that "no conclusion depends on the phase" no longer holds set-wide.

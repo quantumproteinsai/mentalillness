@@ -25,8 +25,16 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ['CUDA_VISIBLE_DEVICES'] = ''
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-PROTT5 = os.path.join(HERE, 'protT5')
-MODELS = os.path.join(HERE, 'aggai', 'models', 'homology_models')
+# WHERE THE PINNED WEIGHTS LIVE. Made overridable 17 Nov 2026, same defect as the one
+# fixed in score_rows.py: these resolved only against this script's own directory, where
+# the multi-gigabyte artefacts are NOT committed and never will be, so the script could
+# not be re-run from a clean checkout without silently failing on a missing path. The
+# default is unchanged, so this alters no behaviour; AGGAI_HOME just names the directory
+# holding protT5/ and aggai/. The revision pins and per-file SHA-256s below are what
+# actually guarantee the weights are the right ones -- not their location.
+_HOME = os.environ.get('AGGAI_HOME', HERE)
+PROTT5 = os.path.join(_HOME, 'protT5')
+MODELS = os.path.join(_HOME, 'aggai', 'models', 'homology_models')
 PROTT5_REV = '94a6abc029ae13029317b140b7424e012bf8dfbf'
 AGGAI_REV = '7aba68e65d620aa55b10f9550005efff3f3240e7'
 AA = set('ACDEFGHIKLMNPQRSTVWY')

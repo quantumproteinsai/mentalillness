@@ -142,6 +142,17 @@ is harder to audit than either route alone.
    > change made there reaches Zenodo **only if you type it into the form**. The file is
    > still worth keeping in step, so that a later switch to the integration does not
    > silently publish stale metadata — but today it is documentation, not configuration.
+
+   > **DO NOT PASTE THE DESCRIPTION MARKUP INTO THE FORM.** The field *stores* HTML —
+   > the published v1.0.0 description contains `<p>`, `<ul>`, `<li>`, `<strong>`,
+   > `<em>` and `&mdash;` — **but the form is a rich-text (WYSIWYG) editor**, so pasting
+   > raw markup displays the tags as literal text, along with the `\n` escapes if the
+   > text is copied out of the JSON string. Both failure modes were hit on 17 Nov 2026.
+   >
+   > **Instead:** open `release/zenodo_description_v1.1.0.html` in a browser, select the
+   > contents of the bordered box, copy, and paste. Pasting *rendered* text carries the
+   > bold and the bullets across and leaves no tags visible. That file is generated from
+   > `.zenodo.json`, so regenerate it if the description changes; it is **not** uploaded.
 4. Publish, then **fill the new DOI into two files**: `CITATION.cff` (add the `doi:`
    key, deliberately absent with a comment saying so) and the Citation section of
    `release/DATA_DESCRIPTOR.md`, which currently gives the concept DOI and explains why.

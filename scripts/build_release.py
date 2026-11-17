@@ -37,8 +37,18 @@ CORE = [
     'found_by', 'source', 'verified_against', 'verified_against_publisher_pdf',
     'source_version', 'source_version_note', 'circularity_status',
     'circularity_basis', 'stratum', 'stratum_basis',
+    # Added 17 Nov 2026 by the PREREGISTRATION 5.2b item 4 check. These are CORE,
+    # not commentary: a consumer who cannot see that a row's protein is in CPAD
+    # cannot tell a modern predictor's recall from its prediction.
+    'cpad_status', 'cpad_basis', 'cpad_checked',
     'sequence_provenance', 'range_provenance', 'note',
 ]
+
+# Versions already deposited under a DOI. Their files are frozen and MUST NOT be
+# regenerated with different content: the DOI would then point at something other
+# than what this script produces. Bump VERSION and deposit a new version instead.
+# See release/RELEASE_CHECKLIST.md.
+DEPOSITED = {'1.0.0': '10.5281/zenodo.24290698'}
 
 # Top-level keys that document the DATASET and belong in the release.
 DOC_KEYS = {
@@ -56,6 +66,10 @@ DOC_KEYS = {
     # prediction -- so they are dataset documentation, not project notes.
     '_STRATUM_IS_A_PROPERTY_OF_A_PAIR_NOT_OF_A_REGION',
     '_AGGRESCANAI_HITS_ON_OUR_ROWS_ARE_NOT_EVIDENCE_OF_PREDICTION',
+    # Added 17 Nov 2026. It documents the `cpad_*` columns and states what the
+    # check could NOT reach, which a consumer needs in order to know how far to
+    # trust an 'absent' verdict. Dataset documentation, not a project note.
+    '_CPAD_MEMBERSHIP_CHECK_2026-11-17',
 }
 # Everything else is a project note: true, kept, but about THIS PROJECT's
 # hypotheses and workflow rather than about the data.
@@ -65,6 +79,25 @@ def main():
     d = json.loads(SRC.read_text())
     rows = d['regions']
     OUT.mkdir(exist_ok=True)
+
+    # A deposited version is frozen. Refuse to rewrite it with different content
+    # rather than let a DOI quietly stop describing what it points at.
+    if VERSION in DEPOSITED:
+        existing = OUT / f'aggregation_regions_v{VERSION}.json'
+        if existing.exists():
+            have = json.loads(existing.read_text())
+            fields_now = {f for r in rows for f in r if f in CORE}
+            fields_dep = set()
+            for r in have.get('regions', []):
+                fields_dep |= {k for k in r if k != 'notes'}
+            if fields_now - fields_dep:
+                raise SystemExit(
+                    f'REFUSING TO REBUILD v{VERSION}: it is deposited as '
+                    f'{DEPOSITED[VERSION]} and its files are frozen, but the working file '
+                    f'now carries core fields the deposit does not: '
+                    f'{sorted(fields_now - fields_dep)}.\n'
+                    f'Bump VERSION in this script and deposit a new version. '
+                    f'See release/RELEASE_CHECKLIST.md.')
 
     clean = []
     for r in rows:

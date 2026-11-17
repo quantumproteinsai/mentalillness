@@ -16,12 +16,18 @@ below, **unreachable by construction**.
 > fail, and the effect-size criterion fails **by sign** — the paired difference points the
 > opposite way from the one the pre-registration was written to detect.
 
+**ROW SET CORRECTED 17 Nov 2026, same day.** TRIOBP-1 324-328 was **removed** — its range is a
+typo in a figure legend (see `exclude_from_scoring` on that row), and the dataset had
+said in prose not to score it while this script scored it anyway. TMEM106B 120-254 was
+**added**. n is 7 either way, and **the conclusion is unchanged**: 6/7, p = 0.1484 before
+and after. The median Δv moves from +0.137 to +0.274.
+
 | row | stratum | TANGO *v* | AggrescanAI *v* | Δv (modern − legacy) |
 |---|---|---|---|---|
 | TRIOBP-1 1-59 | PENDING | 0.9995 | **0.0409** | **−0.959** |
 | DISC1 748-769 | PENDING | 0.9227 | 0.9955 | +0.073 |
 | **DISC1 384-415** | **DISCORDANT** | 0.3189 | 0.4164 | +0.098 |
-| TRIOBP-1 324-328 | PENDING | 0.5610 | 0.6983 | +0.137 |
+| TMEM106B 120-254 | PENDING | 0.7156 | 0.9900 | +0.274 |
 | TRIOBP-1 333-340 | PENDING | 0.0388 | 0.4240 | +0.385 |
 | **TRIOBP-1 324-348** | **DISCORDANT** | 0.1235 | 0.9079 | +0.784 |
 | DISC1 691-836 | PENDING | 0.0812 | 0.9994 | +0.918 |

@@ -87,13 +87,20 @@ The four short rows the registered statistic could not score are now scored unde
 | tau 306-311 (VQIVYK) | 6 | 1 | 436 | 0.9966 | **0.0034** | **yes** |
 | tau 275-280 (VQIINK) | 6 | 1 | 436 | 0.9920 | **0.0080** | **yes** |
 | TRIOBP-1 333-340 | 8 | 1 | 645 | 0.5760 | 0.424 | no |
-| TRIOBP-1 324-328 | 5 | 1 | 648 | 0.3017 | 0.698 | no |
+| ~~TRIOBP-1 324-328~~ | 5 | 1 | 648 | 0.3017 | 0.698 | **WITHDRAWN** |
 
 > **This is the first demonstration that the statistic can return "recovered" at all.**
 > Until now every scored row sat between 0.04 and 1.00, and a reader could reasonably
 > ask whether the machinery was capable of firing. It is: the two canonical tau
 > hexapeptides land at the 99.7th and 99.2nd percentile of their protein, an order of
 > magnitude below the registered v < 0.05 bar.
+
+> **TRIOBP-1 324-328 IS WITHDRAWN FROM THIS TABLE, 17 Nov 2026.** Reading Zaharija et al.
+> 2022 in full showed its range to be a typo in a figure legend — the panel the legend
+> describes isolates 324-**348**, and no construct in the paper tests 324-328. The row now
+> carries a machine-readable `exclude_from_scoring` flag. **It should never have been
+> scored: the row already said so in prose, and `score_rows.py` scored it regardless.**
+> Removing it changes nothing here — it was not recovered either way.
 
 **That strengthens the negative result rather than softening it.** The confirmatory rows
 do not fail because the statistic cannot succeed — on a region the predictor genuinely

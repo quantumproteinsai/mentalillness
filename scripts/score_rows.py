@@ -31,6 +31,7 @@ RUNS = {
     # hSAA1.1 is P0DJI8 mature with A52V -- NOT canonical, which differs inside the region.
     'serum amyloid A (hSAA1.1)': ('runs/hSAA1.1_mature.csv', 'mature hSAA1.1, 104 aa (P0DJI8 mature + A52V)'),
     'LECT2': ('runs/LECT2_mature.csv', 'mature LECT2, 133 aa (O14960[19:151])'),
+    'TMEM106B': ('runs/Q9NUM4.csv', '274-residue canonical Q9NUM4'),
 }
 
 
@@ -127,6 +128,13 @@ def main(repo):
             continue
         if not re.fullmatch(r'\d+-\d+', res.strip()):
             skipped.append((prot, res, 'composite/irregular range -- not a single interval'))
+            continue
+        if r.get('exclude_from_scoring'):
+            # Added 17 Nov 2026. A row can be excluded for reasons the statistic cannot see --
+            # e.g. a range that turns out to be a typo in the source. This check exists because
+            # TRIOBP-1 324-328 carried a PROSE note saying "DO NOT score this row" and was scored
+            # anyway, by this very script. A warning in prose is not a constraint.
+            skipped.append((prot, res, 'exclude_from_scoring: ' + r.get('exclude_from_scoring_reason', '')[:70]))
             continue
         if not r.get('frame') or r['frame'] == 'ABSENT':
             skipped.append((prot, res, 'row carries NO frame; descriptor rule: do not assume'))

@@ -160,5 +160,31 @@
     },
     "CONSEQUENCE_FOR_5.2_AUTHORS_CALL": "As of today the modern arm is ONE tool, not two. A single-tool modern arm weakens a headline question that is about a GENERATION of predictors. Options, to be registered before scoring: wait for the AggreProt weights, widen the arm to another version-pinnable local tool, or register explicitly that the modern arm is one tool and say so in the title.",
     "NOTHING_WAS_RUN": "Executing either tool on a dataset protein before the freeze would breach the pre-registration. Note that AggrescanAI's own example sequence is UniProt P37840, alpha-synuclein, WHICH IS A ROW IN data/regions.json -- so even its demo cannot serve as a smoke test. Use an unrelated sequence."
+  },
+  "_FREEZE_REACHABILITY_RECHECK_2026-11-17": {
+    "_why": "PREREGISTRATION 12 step 4 requires predictor versions, commit hashes and settings to be recorded, and the check is re-run IMMEDIATELY BEFORE the freeze rather than inherited from the previous day. A pin recorded once and never re-tested is a claim, not a fact.",
+    "_date": "2026-11-17",
+    "AggrescanAI_weights": {
+      "hf_repo": "alvaro-2/aggrescanai",
+      "pinned_revision": "7aba68e65d620aa55b10f9550005efff3f3240e7",
+      "revision_still_head_today": true,
+      "lastModified": "2025-05-27T19:31:05.000Z",
+      "VERIFIED_BY_FETCH": "homology_models/cpad_hotidp90_model_cv_1.h5 resolves at the PINNED revision, HTTP 200, 8481888 bytes. Tested against a filename read from the repo file list, NOT a guessed one -- a guessed README.md path 404ed first, which is a wrong filename and not a broken pin. Do not record a 404 from a guessed path as evidence.",
+      "THE_SHIPPED_ENSEMBLE_IS_VISIBLE_IN_THE_FILENAMES": "The repo contains homology_models/cpad_hotidp90_model_cv_1..5.h5 (five-fold CV ensemble) alongside balanced_models/balanced_model_1_1_1..33.h5. \"cpad_hotidp90\" corroborates Navarro 2026s description of CPAD90 as CPAD plus HoTIDP-transferred homologues -- observable from the artefact itself, not only from the paper. IT DOES NOT reveal membership: the list is still unpublished. See _CPAD_MEMBERSHIP_CHECK_2026-11-17 in data/regions.json."
+    },
+    "ProtT5_encoder": {
+      "hf_repo": "Rostlab/prot_t5_xl_half_uniref50-enc",
+      "PIN_RESOLVED_TODAY": "94a6abc029ae13029317b140b7424e012bf8dfbf",
+      "lastModified": "2023-01-31T21:04:38.000Z",
+      "VERIFIED_BY_FETCH": "config.json resolves at that revision, HTTP 200, 656 bytes.",
+      "closes": "The open item recorded 16 Nov 2026 as \"REVISION NOT YET PINNED. Resolve and record it before the freeze.\" It is now pinned. The upstream has been unchanged since Jan 2023, so the pin is unlikely to drift, but it is pinned regardless.",
+      "licence": "Not stated in the model card metadata (cardData.license is null). UNRESOLVED."
+    },
+    "repositories_reachable_today": {
+      "gitlab.com/bioinformatics-fil/aggrescanai": 200,
+      "github.com/loschmidt/aggreprot-predictor": 200
+    },
+    "TANGO": "Local and checksummed; no network dependency, so nothing to re-check. See the TANGO record in this file.",
+    "AggreProt": "Still UNAVAILABLE. No reply to the 16 Nov request for nnap-data.zip as of the freeze. Recorded as unavailable, not as a failure, per 5.2b item 8: a pending email does not delay the freeze."
   }
 }

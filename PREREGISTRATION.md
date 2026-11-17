@@ -710,6 +710,58 @@ Stated so it cannot be quietly avoided:
    message. **That commit is the freeze.**
 6. Only then run a predictor.
 
+### 12.2 THE FREEZE — 17 November 2026
+
+**This section is the freeze record. The commit carrying it is the freeze**, and its
+message records the SHA-256 of `data/regions.json`.
+
+**No predictor has been run. No score has been seen.** Everything registered above was
+fixed before any number existed, which is the only condition under which fixing it is
+worth anything.
+
+#### State at the freeze
+
+| | |
+|---|---|
+| rows | 17 |
+| strata | 4 `DISCORDANT`, 1 `DISCORDANT_DERIVED`, 4 `CONCORDANT`, 8 `PENDING` |
+| circularity | 14 `CLEAN`, 3 `CIRCULAR` |
+| CPAD | 7 rows `CPAD_MEMBER`, 10 `CPAD_ABSENT_ORTHOLOGY_CHECKED` |
+| **confirmatory discordant set** | **2 rows** — TRIOBP-1 324-348, DISC1 384-415 |
+| legacy arm (§5.1) | TANGO pinned by SHA-256; AGGRESCAN, FoldAmyloid; ProA unavailable |
+| modern arm (§5.2b) | AggrescanAI alone; AggreProt unavailable |
+| dataset | v1.1.0, tagged, concept DOI `10.5281/zenodo.24290697` |
+
+Predictor pins re-verified by fetch on the day of the freeze, not inherited:
+`_FREEZE_REACHABILITY_RECHECK_2026-11-17` in `data/predictor_provenance.json`. The
+ProtT5 revision, left open on 16 Nov, is now pinned at `94a6abc0`.
+
+#### Two things carried INTO the freeze as open, stated rather than quietly resolved
+
+**1. The version of record of Zaharija & Bradshaw 2024 has still not been opened.**
+Step 1's last item. It is Elsevier, closed access, and Europe PMC confirms it is not in
+PMC and has no open full text. The question it would settle is whether the published
+version writes Δ384-414 or Δ384-415.
+
+**This does not move our number.** The range is settled at **384-415** by the 2025
+thesis's actual plasmid names — `DISC1 (delta-384-415)` and two others — corroborated by
+three internal checks, with the preprint's Δ384-414 identified as a typo the thesis does
+not repeat. A construct name is stronger evidence than prose. **But the row is one of the
+two that survive CPAD exclusion**, so the boundary now carries more weight than it did
+when this item was logged, and obtaining the PDF remains worth doing. If it says 414, that
+is an amendment made before any score was seen, which is the clean case.
+
+**2. A defect in the §12 prescreen gate, found while auditing it rather than using it.**
+The gate says *no manuscript may cite a row whose `verified_against_publisher_pdf` is
+false*. **That gate passes DISC1 384-415, whose version of record was never opened** —
+because bioRxiv serves a real publisher PDF, so the flag is true for what was actually
+read. The row already documents the conflict and states that `source_version` governs.
+
+The gate as written checks *a* PDF, not *the* PDF. **It is left unchanged at the freeze**,
+because changing a registered gate at the moment of freezing is exactly the kind of
+late adjustment this document exists to prevent. It is recorded here so the write-up
+applies `source_version` as well, and so a later tightening is a visible amendment.
+
 **Amendments** after the freeze are permitted, made as commits to this file, each stating
 what changed, why, and **whether any score had been seen at the time**. An amendment made
 after unblinding is an exploratory analysis and is reported as one.

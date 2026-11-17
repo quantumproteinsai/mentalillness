@@ -59,6 +59,23 @@ def statistic(scores, a, b, phase=0):
     M = len(wins)
     idx = [j for j in range(M) if starts[j] >= a and starts[j] + W - 1 <= b]
     m = len(idx)
+
+    if m == 0:
+        # PREREGISTRATION 3.1a, AMENDMENT 17 Nov 2026, POST-UNBLINDING => EXPLORATORY.
+        # No window fits wholly inside the region, so the region is scored as ONE window
+        # of its own length against all same-length windows. m=1, v = 1-P. Uniform under
+        # H0 by exchangeability of a single rank; overlap is irrelevant at m=1.
+        # Applies ONLY here, never where the registered statistic is defined.
+        L = b - a + 1
+        if L < 1 or L > len(scores):
+            return None
+        sw = [sum(scores[i:i + L]) / L for i in range(len(scores) - L + 1)]
+        mine = sw[a - 1]
+        less = sum(1 for x in sw if x < mine)
+        eq = sum(1 for x in sw if x == mine)
+        P = (less + 0.5 * eq) / len(sw)
+        return {'M': len(sw), 'm': 1, 'best_window_score': mine, 'P': P,
+                'v': 1.0 - P, 'rule': '3.1a EXPLORATORY'}
     if m == 0:
         return None
     best = max(wins[i] for i in idx)

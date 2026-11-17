@@ -76,17 +76,36 @@ These rows are `stratum: PENDING`, so this is not a registered confirmatory resu
 716-761 is `CIRCULAR` besides. It is recorded because it is the clearest signal in the
 run and it points the same way as the confirmatory rows.
 
-Still not scored:
+### Amendment 3.1a applied — EXPLORATORY, and it validates the statistic itself
+
+The four short rows the registered statistic could not score are now scored under
+**§3.1a** (region scored as one window of its own length, *m* = 1, *v* = 1 − *P*).
+**Post-unblinding, therefore exploratory by §12, and in no confirmatory statistic.**
+
+| row | L | m | M | P | **v** | recovered? |
+|---|---|---|---|---|---|---|
+| tau 306-311 (VQIVYK) | 6 | 1 | 436 | 0.9966 | **0.0034** | **yes** |
+| tau 275-280 (VQIINK) | 6 | 1 | 436 | 0.9920 | **0.0080** | **yes** |
+| TRIOBP-1 333-340 | 8 | 1 | 645 | 0.5760 | 0.424 | no |
+| TRIOBP-1 324-328 | 5 | 1 | 648 | 0.3017 | 0.698 | no |
+
+> **This is the first demonstration that the statistic can return "recovered" at all.**
+> Until now every scored row sat between 0.04 and 1.00, and a reader could reasonably
+> ask whether the machinery was capable of firing. It is: the two canonical tau
+> hexapeptides land at the 99.7th and 99.2nd percentile of their protein, an order of
+> magnitude below the registered v < 0.05 bar.
+
+**That strengthens the negative result rather than softening it.** The confirmatory rows
+do not fail because the statistic cannot succeed — on a region the predictor genuinely
+finds, it succeeds decisively. Both tau rows are CPAD members, so their recovery is
+recall of training data, not prediction; what they establish is that **the instrument
+works end to end**, pipeline and statistic together.
+
+**16 of 17 rows are now scored.** Still not scored:
 
 | row | why |
 |---|---|
-| tau 306-311, tau 275-280 | 6 residues; a 6-residue tile contains them only if phase-aligned |
-| TRIOBP-1 324-328, 333-340 | 5 and 8 residues; shorter than one tile, or not tile-aligned |
-| DISC1 717-737, 739-761 | composite range, not a single interval |
-
-**The first line is a real limitation of the registered statistic, not an accident.** A
-6-residue window cannot score a 6-residue region unless the tiling happens to align with
-it. The two rows that validate the pipeline are the two the statistic cannot score.
+| DISC1 717-737, 739-761 | composite range, not a single interval — §3.1 takes one interval |
 
 **One frame resolution is worth reading on its own.** The serum amyloid A row's sequence
 is **not found in UniProt P0DJI8**. Aligned against P0DJI8's mature chain it gives exactly

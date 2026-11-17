@@ -19,25 +19,38 @@ import sys
 W = 6
 HERE = os.path.dirname(os.path.abspath(__file__))
 
+# WHERE THE PROFILES LIVE. Corrected 17 Nov 2026. These paths used to carry a "runs/" prefix
+# resolved against this script's own directory -- a working directory that was never
+# committed and no longer exists, so THE SCRIPT AS COMMITTED COULD NOT BE RE-RUN, while
+# results/aggrescanai_2026-11-17/REPORT.md said "Reproduce with ... scripts/score_rows.py".
+# An archived output plus a script that cannot find it is not a reproducible result. The
+# profiles ARE committed, under the dated results directory, which is now the path used.
+RUNDIR = os.path.join(HERE, os.pardir, 'results', 'aggrescanai_2026-11-17')
+
 # row protein -> the run file, and the frame that run is in.
 RUNS = {
-    'TRIOBP-1': ('runs/Q9H2D6-7.csv', '652-residue (Q9H2D6-7)'),
-    'DISC1': ('runs/Q9NRI5.csv', '854-residue canonical (Q9NRI5)'),
-    'tau': ('runs/P10636-8.csv', 'tau441 / ht40 (P10636-8)'),
-    'alpha-synuclein': ('runs/P37840_asyn.csv', 'P37840, 140 aa'),
-    'FUS': ('runs/P35637.csv', 'P35637, 526 aa'),
-    'hnRNPA1': ('runs/P09651-2.csv', 'P09651-2, 320 aa'),
+    'TRIOBP-1': ('Q9H2D6-7.csv', '652-residue (Q9H2D6-7)'),
+    'DISC1': ('Q9NRI5.csv', '854-residue canonical (Q9NRI5)'),
+    'tau': ('P10636-8.csv', 'tau441 / ht40 (P10636-8)'),
+    'alpha-synuclein': ('P37840_asyn.csv', 'P37840, 140 aa'),
+    'FUS': ('P35637.csv', 'P35637, 526 aa'),
+    'hnRNPA1': ('P09651-2.csv', 'P09651-2, 320 aa'),
     # Added 17 Nov 2026 once the mature-chain frames were resolved AND verified.
     # hSAA1.1 is P0DJI8 mature with A52V -- NOT canonical, which differs inside the region.
-    'serum amyloid A (hSAA1.1)': ('runs/hSAA1.1_mature.csv', 'mature hSAA1.1, 104 aa (P0DJI8 mature + A52V)'),
-    'LECT2': ('runs/LECT2_mature.csv', 'mature LECT2, 133 aa (O14960[19:151])'),
-    'TMEM106B': ('runs/Q9NUM4.csv', '274-residue canonical Q9NUM4'),
+    'serum amyloid A (hSAA1.1)': ('hSAA1.1_mature.csv', 'mature hSAA1.1, 104 aa (P0DJI8 mature + A52V)'),
+    'LECT2': ('LECT2_mature.csv', 'mature LECT2, 133 aa (O14960[19:151])'),
+    'TMEM106B': ('Q9NUM4.csv', '274-residue canonical Q9NUM4'),
+    # Added 17 Nov 2026. The profile was generated in the 17 Nov run and archived, but
+    # the row went unscored only because this dict had no entry for it. No signal peptide
+    # and no transmembrane segment in P50995, so the frame carries no decoy windows --
+    # see _A_HYDROPHOBIC_SEGMENT_THAT_IS_NOT_IN_THE_SAMPLE_IS_A_DECOY_WINDOW.
+    'ANXA11': ('P50995.csv', '505-residue canonical P50995'),
 }
 
 
 def load(path):
     out = []
-    with open(os.path.join(HERE, path)) as fh:
+    with open(os.path.join(RUNDIR, path)) as fh:
         for r in csv.DictReader(l for l in fh if not l.startswith('#')):
             out.append(float(r['aggrescanai_score']))
     return out
@@ -124,7 +137,12 @@ def main(repo):
         prot = r['protein']
         res = r['residues']
         if prot not in RUNS:
-            skipped.append((prot, res, 'no run: mature-chain frame not yet resolved'))
+            # NOT necessarily a frame problem. Corrected 17 Nov 2026: this message used to
+            # claim the frame was unresolved, which was false for glycinin G4 -- that row's
+            # frame is resolved and verified, there is simply no predictor profile for the
+            # protein yet. A skip reason that names the wrong cause sends the next reader
+            # to fix something that is not broken.
+            skipped.append((prot, res, 'NO PREDICTOR RUN for this protein (see the row for whether a frame is also needed)'))
             continue
         if not re.fullmatch(r'\d+-\d+', res.strip()):
             skipped.append((prot, res, 'composite/irregular range -- not a single interval'))

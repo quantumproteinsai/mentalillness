@@ -191,3 +191,54 @@ request had arrived by the freeze.
 
 **Still open:** the legacy arm for these rows is taken from published runs (§5.1a), not
 re-executed, so the legacy-versus-modern contrast is not computed here.
+
+---
+
+## Appendix, later on 17 November: a reproducibility defect, and two more scored rows
+
+Nothing in the confirmatory result changed. It was **re-derived from the archived profiles**
+and is identical: Stouffer Z = **−0.790**, p = **0.785**; Fisher χ² = **1.946** on 4 df,
+p = **0.746**.
+
+**The "Reproduce with ... `scripts/score_rows.py`" instruction above did not work.** The
+script resolved its inputs to `scripts/runs/<acc>.csv` — a working directory that was never
+committed and no longer exists — while the profiles are committed under this results
+directory. An archived output plus a script that cannot find it is not a reproducible
+result. `RUNDIR` now points here, and the rerun above is the check that it does.
+
+**Two rows were unscored for reasons that were not real.**
+
+| row | why it was skipped | now |
+|---|---|---|
+| ANXA11 39-74 | no `RUNS` entry — the profile `P50995.csv` existed all along | m 5, M 84, P 0.923, **v = 0.331** [0.142–0.331] |
+| DISC1 717-737, 739-761 | listed above as "composite range" | they are two separate single-interval rows and both score: **v = 0.996** and **v = 0.995** |
+
+So the "16 of 17 rows are now scored" line above is superseded: **19 of 21 rows score.**
+The two that do not are TRIOBP-1 324-328 (`exclude_from_scoring`, a figure-legend typo) and
+glycinin G4 164-190 (no predictor run for that protein yet).
+
+**AggrescanAI does not recover ANXA11 39-74 either.** v = 0.331 against the registered
+v < 0.05 bar; the region's best tile is around the 92nd percentile of the protein. The phase
+spread, 0.142–0.331, is the widest of any row in the set, so that row's number should never
+be quoted from a single phase. The row is `PENDING`, so this is exploratory and enters no
+confirmatory statistic.
+
+### A confound found in the TMEM106B row, which does not overturn it
+
+Under §3.1, *v* depends on how many windows **elsewhere in the scored chain** outscore the
+region — so any segment that is hydrophobic for a reason other than aggregation inflates *v*
+and makes the predictor look worse than it is.
+
+Q9NUM4 has a helical **transmembrane segment at 97-117**, inside the scored frame and outside
+the 120-254 region. [COMPUTED from `Q9NUM4.csv`:] **the two highest-scoring tiles in the whole
+protein are that helix** — 97-102 at 0.5485 and 103-108 at 0.5147 — against a best in-region
+tile of 0.3615 at 223-228. They are 2 of the 8 tiles that outrank the region.
+
+**Excluding just those two moves that row from v = 0.990 to v = 0.974.** The confound is real
+and the verdict survives it: six non-membrane tiles still beat the region. The honest statement
+is that part of TMEM106B's apparent failure is the predictor correctly finding a membrane anchor.
+
+Audited across all ten scored frames: seven carry neither a signal peptide nor a TM segment,
+hSAA1.1 and LECT2 are scored as mature chains with signals already removed, and TMEM106B is
+the one exception. The glycinin G4 row was added with the frame decision taken **in advance**
+for this reason — see `_A_HYDROPHOBIC_SEGMENT_THAT_IS_NOT_IN_THE_SAMPLE_IS_A_DECOY_WINDOW`.

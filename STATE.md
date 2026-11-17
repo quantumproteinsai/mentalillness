@@ -2218,18 +2218,28 @@ stop**, and we stopped.
 
 ## Where the dataset stands
 
-**18 rows, all scored. Published as v1.1.0, DOI 10.5281/zenodo.24306057**, superseding
-v1.0.0, which cannot tell a reader which rows are training-set contaminated. Every row now
-carries a `frame`, and the last six were **verified by sequence rather than assumed** —
-including serum amyloid A, where the allelic trap fired exactly as documented: the row is
-right at mature residue 52 and canonical UniProt would have been wrong, inside the region.
+**19 rows across 9 proteins. Published as v1.1.0, DOI 10.5281/zenodo.24306057**
+(deposit reproducible from tag `deposited-v1.1.0`), superseding v1.0.0, which cannot tell a
+reader which rows are training-set contaminated. Every row carries a `frame`, and the last
+seven were **verified by sequence rather than assumed** — including serum amyloid A, where
+the allelic trap fired exactly as documented: the row is right at mature residue 52 and
+canonical UniProt would have been wrong, inside the region.
+
+**18 of 19 rows score.** The exception is TRIOBP-1 324-328, now carrying
+`exclude_from_scoring` — see below. **The scarce cell is still 2 rows.**
 
 ## What is open
 
 - **The AggreProt weights.** No reply as of the freeze. If they arrive it is exploratory,
   post-freeze, per §5.2b item 8 — and it would need its own WaltzDB contamination check.
-- **Zaharija & Bradshaw 2024**, Elsevier, absent from PMC. Cannot move the 384-415 number,
-  which the thesis's plasmid names settle, but that row is now one of only two surviving.
+- **Zaharija & Bradshaw 2024** — **DEMOTED 17 Nov 2026, and the demotion is the lesson.**
+  It is Elsevier, absent from PMC, and was confirmed unobtainable twice by independent
+  routes. **The row is already citable** under the 16 Nov amendment, so this is a re-check,
+  not a blocker. A request went to Bradshaw on 17 Nov
+  (`correspondence/2026-11-17_bradshaw_disc1_2024_request.md`), asking the one question
+  that can be answered without the PDF: Δ384-414 or Δ384-415? **If the answer is 384-414
+  it is expensive** — residues, stored sequence and *v* all change, in both arms, as an
+  amendment made after scores were seen.
 - **§12's prescreen gate checks *a* publisher PDF, not *the* one.** Left unchanged at the
   freeze deliberately; recorded so a later tightening is a visible amendment.
 - ~~The legacy-versus-modern contrast is not yet computed.~~ **DONE, 17 Nov 2026** — see
@@ -2245,3 +2255,90 @@ right at mature residue 52 and canonical UniProt would have been wrong, inside t
   the 3 vs 6 that exist. **Widening `data/regions.json` beyond DISC1 and TRIOBP-1 is the
   one piece of work that unblocks more than one of these at once** — which is what
   `CLAUDE.md` already says the outstanding task is.
+
+---
+
+## Later on 17 November — widening the set, and three errors it exposed
+
+The set was widened beyond DISC1 and TRIOBP-1 for the first time. **One row was added and
+three mistakes were found, and the mistakes are worth more than the row.**
+
+### The row, and the rule that found it
+
+**TMEM106B 120-254** — ex vivo human post-mortem brain, eleven brains, cryo-EM at 2.7 Å,
+from Chang et al. 2022 *Cell* (author manuscript read in full). Circularity **CLEAN**: the
+core came from density plus mass spectrometry and sequence-to-map matching; CamSol and
+AlphaFold appear only afterwards, on a region the structure had already fixed.
+
+**The recruiting rule is the transferable part. CPAD 2.0 was published in 2020, so any
+region first mapped after 2020 is CPAD-absent by construction**, up to the homologue route
+the orthologue check closes separately. That matters because the two constraints on the
+scarce cell pull against each other: proteins with fragment-level mapping are mostly
+classic disease amyloids, and those are mostly in CPAD — **of fourteen tested, eleven are
+members**. Post-2020 cryo-EM of ex vivo fibrils is the systematic way out, and it yields
+CLEAN rows too, because a structure finds them rather than a predictor.
+
+**And the honest limit, recorded the day the row was added.** The region is 135 residues of
+274 — half the chain, m = 22 of M = 45 windows — so it cannot discriminate much. Both arms
+miss it (AggrescanAI 0.990, TANGO 0.716). It earns its place as a dataset entry and does
+**not** widen the discriminating stratum. **Adding rows and adding power are not the same
+thing.**
+
+Also established: **CRMP1 and NPAS3 have no fragment-level mapping published.** Widening
+within the psychiatric proteins is blocked by the literature, not by effort.
+
+### Error 1 — an absence is only as good as the search that produced it
+
+A keyword screen reported β2-microglobulin as absent from CPAD. **It is not** — 72 peptide
+rows. CPAD writes it `Beta2-microglobulin`, without the hyphen the query assumed.
+
+The peptide table carries accessions and can be settled exactly. **The APR list and the
+structures table carry none**, so there a name match is the only instrument, and it fails
+silently *toward* ABSENT. Both load-bearing verdicts were re-tested with a normalised
+matcher over 5 and 7 name variants — still absent — and **four positive controls were run
+through the same query and all four were found**, so the instrument is demonstrably
+sensitive.
+
+> **Standing rule: check by accession where the table offers one; where it does not,
+> normalise, try variants, and run positive controls through the same query.**
+
+### Error 2 — a prose warning is not a constraint
+
+TRIOBP-1 324-328 rests on a **typographic error**. Zaharija 2022's Figure 6B legend says
+*"demonstrate AA 324-328 to be essential"*, while the panel it describes shows 324-652
+aggregating and 349-652 not — isolating **324-348**. Panel D then narrows to 333-340, which
+lies *outside* 324-328. No construct in the paper tests 324-328. **Fifth source
+self-inconsistency about a residue range recorded here**, after TRIOBP-1 593/597 and
+DISC1 Δ384-414/415.
+
+**The uncomfortable half is ours.** The row already carried a note reading *"DO NOT score
+this row as an independent region"* — **and `score_rows.py` scored it anyway**, in both the
+§3.1a table and the n = 7 contrast. The row now carries a machine-readable
+`exclude_from_scoring` flag and the scorer honours it.
+
+Recomputed without it and with TMEM106B: n stays 7, **still 6/7 modern worse, p unchanged
+at 0.1484**, median Δv rising from +0.137 to +0.274. **The error did not change the
+conclusion, which is luck rather than design.**
+
+### Error 3 — a derived status must be computed from the rule *and* its amendments
+
+A ranked list of PDFs worth obtaining was built from the raw row fields —
+`verified_against_publisher_pdf` and `source_version` — **without checking whether
+amendments already covered them.** All three discordant rows were already citable: hnRNPA1
+and LECT2 under §12.1 decision 3, DISC1 384-415 under the 16 Nov amendment. The DISC1 row's
+own note still opened *"NOT CITABLE, AND THIS IS THE SERIOUS ONE"*, stale text predating
+that amendment.
+
+**Cost: the author went looking for a paper this project had already established, twice and
+by independent routes, cannot be found.** The note now states the actual status, the
+evidence for unobtainability, the three conditions, and what "citable" does *not* buy.
+
+### What these three have in common
+
+Each is a case where **a true statement was stored in a place that could not act on it** —
+a name in a table without accessions, a warning in prose a script cannot read, a status in
+a field that an amendment had since overridden. The project's rules were right each time;
+the machinery that was supposed to apply them was not consulted, or could not be.
+
+**The cheap defence in each case was a control that costs nothing**: a positive control
+through the same query, a flag the code reads, a status computed rather than stored.

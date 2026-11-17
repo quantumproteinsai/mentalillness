@@ -3,7 +3,7 @@
 > **17 Nov 2026 — the project crossed from preparation into result.** The
 > pre-registration is frozen (`freeze-2026-11-17`), the first predictor has been run,
 > the dataset is published at **10.5281/zenodo.24306057**, and the headline question
-> has an answer. **Read the last section of this file first**; everything above it is
+> has an answer, with BOTH arms run. **Read the last section of this file first**; everything above it is
 > the record of how the ground was prepared, and remains true.
 
 Everything here was established by reading sources or parsing deposited files,
@@ -2025,11 +2025,14 @@ sweep, and no row of `data/regions.json` rests on one.
 
 ## The one-line position, updated
 
-**The predictor route has been run, and it returns a negative that survives its own
-controls.** AggrescanAI — the entire confirmatory modern arm — does not recover the
-experimentally mapped aggregation-critical regions of either DISC1 or TRIOBP-1. The
-pipeline that produced that negative reproduces the predictor's *published* performance
-on 540 independent peptides, so the null is a property of the predictor, not of our code.
+**Both arms have now been run, and the answer is a negative that survives its own
+controls — with a twist nobody registered for.** AggrescanAI, the entire confirmatory
+modern arm, does not recover the experimentally mapped aggregation-critical regions of
+either DISC1 or TRIOBP-1. The pipeline that produced that negative reproduces the
+predictor's *published* performance on 540 independent peptides, so the null is a
+property of the predictor, not of our code. **And against TANGO, the one legacy tool that
+can still be run, the modern tool is the worse of the two on 6 of 7 rows.** Both
+generations miss both confirmatory regions; the newer one misses by more.
 
 ## The result
 
@@ -2094,7 +2097,35 @@ OrthoInspector, because CPAD90 transfers annotations to homologues.
   entries because the server began serving a CAPTCHA **under HTTP 200**. Trusting the 200
   would have published an incomplete table as a complete one.
 
-## Two defects found by running things, not by reading them
+## The legacy-versus-modern contrast — computed, and it runs the wrong way
+
+`results/legacy_vs_modern_2026-11-17/`. §4 requires, for *modern beats legacy*, Wilcoxon
+one-sided **p < 0.05** *and* median paired **Δv < −0.10**. Observed: **p = 0.148, median
+Δv = +0.137**. Both fail, and the effect size fails **by sign**.
+
+| | TANGO *v* | AggrescanAI *v* | Δv |
+|---|---|---|---|
+| DISC1 384-415 | 0.319 | 0.416 | +0.098 |
+| TRIOBP-1 324-348 | 0.124 | 0.908 | +0.784 |
+
+**6 of 7 scorable rows have the modern tool worse.** The single exception is TRIOBP-1
+1-59, which AggrescanAI recovers (v = 0.041) and TANGO misses outright (0.9995) — and
+which is not the mapped region the project asks about.
+
+**The legacy arm is one tool, for the same reason the modern arm is.** ProA dead,
+AGGRESCAN web-only, FoldAmyloid reimplementation unvalidated. One against one, so this is
+**not** a statement about generations.
+
+**An unplanned corroboration.** TANGO puts TRIOBP-1 324-348 at the ~97th percentile with
+3–4 windows above it. Bradshaw 2014 wrote of the same region and tool: *"at least four
+sites elsewhere in the protein were more strongly predicted."* An independent run on a
+pinned binary, with parameters that paper never stated, reproduces its rank statement —
+and agrees on the verdict, since 0.12 is still above the registered 0.05 bar.
+
+**Neither direction is established.** The reverse was not registered and does not reach
+significance descriptively either (sign test p = 0.0625, n = 7).
+
+## Three defects in the pre-registration, found by running it rather than reading it
 
 **§3.1 does not say whether windows slide or tile, and the two give different answers.**
 The section states the property its null must have — *v ~ Uniform(0,1)* — and that
@@ -2108,6 +2139,16 @@ one window of its own length (m = 1, v = 1 − P), which preserves the registere
 because a single rank is uniform under exchangeability alone. **Post-unblinding, so
 exploratory by §12**, and it cannot move the headline: all four affected rows are either
 CPAD members already excluded or `PENDING`.
+
+**§4 set a significance threshold its own design cannot reach.** The exact one-sided
+Wilcoxon signed-rank minimum for *n* pairs is 2⁻ⁿ, so at the registered confirmatory
+size of **n = 2 the smallest attainable p is 0.25**. §4 demands p < 0.05. **No data could
+ever have satisfied it on the confirmatory set.** n ≥ 5 is needed for the test to be
+capable of firing at all.
+
+**This one was knowable before a single CPU cycle**, and nobody noticed until the test was
+attempted. It is the clearest instance in the project of `CLAUDE.md` rule 3 — audit the
+premises of the task, not only the literature — and the premise that failed was our own.
 
 ## What the AggreProt paper settled
 
@@ -2163,6 +2204,17 @@ stop**, and we stopped.
   inside the predictor itself.
 - **Check the null before trusting the statistic**, and check it on simulated data where
   the answer is known.
+- **Check that a test can reach its own threshold before running it.** §4's Wilcoxon
+  cannot produce p < 0.05 at n = 2. Minimum attainable p is a property of the design, not
+  of the data, and costs nothing to compute first.
+- **An unregistered free parameter is a grid, not a choice.** TANGO's pH and temperature
+  were never registered and are known to move the answer. Running all nine combinations
+  and showing the conclusion identical at every one is honest; picking one after
+  unblinding is not.
+- **A published rank statement can validate an independent run.** Bradshaw 2014's "at
+  least four sites elsewhere were more strongly predicted" is qualitative, but it pinned
+  our TANGO run to within a window or two — useful where the paper's own parameters are
+  unrecoverable.
 
 ## Where the dataset stands
 
@@ -2180,5 +2232,16 @@ right at mature residue 52 and canonical UniProt would have been wrong, inside t
   which the thesis's plasmid names settle, but that row is now one of only two surviving.
 - **§12's prescreen gate checks *a* publisher PDF, not *the* one.** Left unchanged at the
   freeze deliberately; recorded so a later tightening is a visible amendment.
-- **The legacy arm is taken from published runs** (§5.1a), not re-executed, so the
-  legacy-versus-modern contrast is not yet computed.
+- ~~The legacy-versus-modern contrast is not yet computed.~~ **DONE, 17 Nov 2026** — see
+  the section above. It required running TANGO ourselves, because published runs report
+  thresholded calls and consensus rules rather than per-window profiles and so **cannot
+  supply a *v*** for §4's Δv.
+- **AGGRESCAN and FoldAmyloid remain unrun.** AGGRESCAN is web-only and fails the
+  version-pinnable rule; the FoldAmyloid reimplementation must first pass its registered
+  validation (Garbuzynskiy's 80%/72%, and Murray 2017's published zero-positive curve on
+  FUS 2-214). Until then the legacy arm is TANGO alone.
+- **n is the binding constraint everywhere.** The confirmatory set is 2 rows; §4 needs 5
+  to be able to fire; the memorisation test needs ~40 vs 40 contested peptides against
+  the 3 vs 6 that exist. **Widening `data/regions.json` beyond DISC1 and TRIOBP-1 is the
+  one piece of work that unblocks more than one of these at once** — which is what
+  `CLAUDE.md` already says the outstanding task is.

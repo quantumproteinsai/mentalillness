@@ -102,37 +102,47 @@ Depositing is outward-facing and effectively irreversible: a Zenodo DOI is
 permanent, and a published record can be superseded but not withdrawn cleanly.
 **The deposit is the author's own action, from the author's own account.**
 
-### Steps 1-4 are DONE as of 16 Nov 2026
+### v1.1.0 — PREPARED 17 Nov 2026, NOT YET DEPOSITED
 
-Validator passes, `VERSION` is `1.0.0`, the release is rebuilt, and the commit
-is tagged `v1.0.0` and pushed. What remains is on Zenodo and GitHub, not here.
+Repo side is done: validator passes, `VERSION` is `1.1.0`, the release is rebuilt as
+`aggregation_regions_v1.1.0.{json,csv}`, `CITATION.cff` and `.zenodo.json` are updated,
+and the commit is tagged `v1.1.0` and pushed. **The v1.0.0 files are untouched** — and
+`build_release.py` now refuses to rebuild a deposited version whose core fields have
+changed, so a DOI cannot quietly stop describing what the script produces.
 
-### What remains
+**What changed, and why it warrants a new version rather than a repo-side edit:** three
+new core columns (`cpad_status`, `cpad_basis`, `cpad_checked`) recording the CPAD 2.0
+training-set check. That is a *data* change by this file's own rule.
 
-**Chosen route: link the GitHub repository to Zenodo.**
+**Your action, from your own account:**
 
-1. The repository must be **public** — Zenodo's GitHub page lists public
-   repositories only.
-2. zenodo.org -> GitHub -> authorise -> toggle the repository **On**. Use
-   **Sync now** if it is not listed.
-3. **Zenodo only archives releases created AFTER the toggle is on.** The
-   `v1.0.0` tag already exists, so publish a GitHub *Release* from that existing
-   tag once the toggle is on. No re-tagging is needed.
-4. Zenodo reads `.zenodo.json` and mints the DOI.
-5. Check the published record: title, sole creator with ORCID, licence CC BY
-   4.0. **Metadata can be edited after publication; the files cannot.**
+1. GitHub -> Releases -> **Draft a new release** from the existing `v1.1.0` tag.
+2. Publish it. The Zenodo toggle is already on, so Zenodo archives it automatically.
+3. Zenodo reads `.zenodo.json` and mints a **new version DOI** under the same concept
+   DOI `10.5281/zenodo.24290697`.
+4. **Then fill the new DOI into two files** — `CITATION.cff` (add the `doi:` key, which
+   is deliberately absent, with a comment saying so) and the Citation section of
+   `release/DATA_DESCRIPTOR.md`, which currently gives the concept DOI and says why.
+   Commit that.
+5. Check the published record: title, sole creator with ORCID, licence CC BY 4.0, and
+   that it appears as a **new version of the existing record**, not a separate one.
 
 ### KNOW WHAT THIS ROUTE DEPOSITS
 
 **The GitHub integration archives the WHOLE REPOSITORY, not just `release/`.**
-Zenodo has no ignore mechanism for it. So the DOI covers `research_notes/` --
-which `CLAUDE.md` describes as machine-generated and unverified, under a
-standing rule never to cite across that line -- along with `CLAUDE.md`,
-`STATE.md` and `correspondence/`.
+Zenodo has no ignore mechanism for it. So the DOI covers `CLAUDE.md`, `STATE.md`,
+`PREREGISTRATION.md`, `correspondence/` and `scripts/` along with the data.
 
-That is defensible, and publishing the pre-registration alongside the data is
-arguably a virtue. **It should be a decision, not an inheritance.** The manual
-upload route deposits exactly the four files in `release/` and nothing else.
+`research_notes/` -- machine-generated and unverified, under a standing rule never to
+cite across that line -- **is no longer in the repository at all**, removed from the
+tracked tree and from history on 16 Nov 2026 before the repository was made public, so
+it is not in this deposit.
+
+Archiving the rest is defensible, and publishing the pre-registration alongside the data
+is arguably a virtue. **It should be a decision, not an inheritance.** The manual upload
+route deposits exactly the files in `release/` and nothing else.
+
+### ~~Steps 1-4 for v1.0.0~~ — done 16 Nov 2026, deposited as above
 
 ### DO NOT PUT A DOI BACK INTO `.zenodo.json`
 

@@ -8,7 +8,7 @@ abstract: >-
   the construct that established it, whether a predictor was in its discovery
   path (circularity), and whether experiment and prediction agree (stratum).
 type: dataset
-version: 1.0.0
+version: 1.1.0
 authors:
   - family-names: "Mercier des Rochettes"
     given-names: "Bertrand"
@@ -31,10 +31,18 @@ keywords:
 # reuse but detach the rows from the reasoning that justifies them.
 license: CC-BY-4.0
 repository-code: "https://github.com/quantumproteinsai/mentalillness"
-url: "https://zenodo.org/records/24290698"
+url: "https://doi.org/10.5281/zenodo.24290697"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.24290697"
-    description: "Concept DOI: always resolves to the latest version. Cite the version DOI above instead, unless you mean whatever is current."
-date-released: 2026-11-16
-doi: "10.5281/zenodo.24290698"  # reserved on Zenodo 16 Nov 2026, registered at publication
+    description: "Concept DOI: always resolves to the latest version. Once v1.1.0 is published, its own version DOI is the one to cite for a specific analysis."
+  - type: doi
+    value: "10.5281/zenodo.24290698"
+    description: "Version DOI of v1.0.0, the previous release. v1.1.0 supersedes it: v1.0.0 has no cpad_status / cpad_basis / cpad_checked columns and therefore cannot tell a reader which rows are training-set contaminated."
+date-released: 2026-11-17
+# NO `doi:` KEY UNTIL ZENODO MINTS ONE FOR v1.1.0.
+# It is deliberately absent, not forgotten. A version DOI identifies ONE version:
+# leaving v1.0.0's 10.5281/zenodo.24290698 here would make this file assert that
+# v1.1.0 is v1.0.0 -- the same class of error as putting a DOI in .zenodo.json.
+# AFTER PUBLISHING, add:  doi: "10.5281/zenodo.<new>"
+# and put the same value in release/DATA_DESCRIPTOR.md. See release/RELEASE_CHECKLIST.md.

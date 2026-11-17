@@ -1,8 +1,8 @@
 # Experimentally mapped aggregation-critical protein regions
 
-**with circularity and prediction-concordance labels**
+**with circularity, prediction-concordance and training-set-contamination labels**
 
-Version 1.0.0 · 17 regions across 8 proteins
+Version 1.1.0 · 17 regions across 8 proteins
 
 ---
 
@@ -18,7 +18,7 @@ comprehensive survey. **Every row here is one somebody read.**
 ## What it is for
 
 It was built to benchmark sequence-based aggregation predictors, and it carries
-three columns that most aggregation datasets lack — each of which exists because
+four columns that most aggregation datasets lack — each of which exists because
 leaving it out produces a benchmark that silently measures the wrong thing.
 
 ### `construct` — which construct established the region
@@ -68,6 +68,55 @@ they all hit it. Only the **discordant** rows can.
 | `CONCORDANT` | 4 | the predictors find it |
 | `PENDING` | 8 | not yet assessed; requires a predictor run or a published one |
 
+### `cpad_status` — is the row in the predictor's training set? *(new in 1.1.0)*
+
+**A third kind of circularity, and the one most likely to be missed.** Not a predictor
+in the *discovery* path, and not experiment–prediction *agreement*, but **training-set
+membership of the benchmark row itself**. A modern predictor that hits a region whose
+protein it was trained on has recalled, not predicted.
+
+| value | n rows | meaning |
+|---|---|---|
+| `CPAD_MEMBER` | 7 | the protein is in CPAD 2.0 |
+| `CPAD_ABSENT_ORTHOLOGY_CHECKED` | 10 | absent from CPAD 2.0 **and** from its orthologous group |
+
+Every row was checked, on 17 November 2026, against **all three** CPAD 2.0 datasets — the
+APR protein list (286 names), the peptide table (2031/2031, contiguous) and the structures
+table (565/565) — each read complete and each matching the database's own stated total.
+
+**Checking one CPAD dataset is not checking CPAD.** hnRNPA1 is absent from the APR list
+*and* from the peptide table, and present three times in the structures table. LECT2 is
+the exact mirror: APR list only. A check against either single table would have cleared
+one of these proteins wrongly.
+
+**Absence was then tested against the homologue route.** AggrescanAI ships the CPAD90
+model, which transfers annotations from CPAD proteins to their homologues. So absence
+only means something if the protein's *orthologous group* is also free of CPAD entries.
+Both sources that transfer was built from were queried. DISC1 has one human protein in
+its group — itself. TRIOBP has two: itself and MPRIP (Q6WCQ1), and that paralogue was
+checked separately and is also absent. **OMA alone would have missed MPRIP**; one
+orthology database under-reports the group.
+
+**`CPAD_ABSENT_ORTHOLOGY_CHECKED` is not a certificate.** The CPAD90 membership list is
+unpublished. It is the strongest statement public sources support, and no more.
+
+### What that costs, and why it is the most important number here
+
+**Three of the five discordant rows are CPAD members.**
+
+| row | stratum | `cpad_status` |
+|---|---|---|
+| TRIOBP-1 324-348 | `DISCORDANT` | absent, orthology checked |
+| DISC1 384-415 | `DISCORDANT` | absent, orthology checked |
+| FUS 39-95 | `DISCORDANT` | **CPAD member** |
+| hnRNPA1 251-295 | `DISCORDANT` | **CPAD member** |
+| LECT2 55-75 | `DISCORDANT_DERIVED` | **CPAD member** |
+
+The discordant stratum is the only one that can discriminate between predictors. Exclude
+the contaminated rows and **2 remain**. Anyone benchmarking a modern predictor on this
+dataset without this column would be measuring memorisation on most of the rows that
+appear to matter.
+
 ## Why a hand-read set, when curated APR databases already exist
 
 **Because three independent groups have now stated in print that those databases
@@ -113,20 +162,24 @@ indistinguishable from random. **No confidence intervals are given.** Anyone usi
 this dataset to separate two predictors should size the expected difference
 against that, before spending anything.
 
-### A contamination check this dataset cannot do for you
+### The contamination check, and the part of it that remains open
 
 AggrescanAI is trained on **CPAD90** — CPAD 2.0 *plus homologous sequences*
 transferred through the HoTIDP server from OrthoInspector and OmaDB orthologues
 (Navarro 2026, Methods). **So confirming that a row's protein is absent from CPAD
 is not sufficient**: an orthologue of a CPAD protein can carry a transferred
-annotation into training. The CPAD90 membership list is not published.
+annotation into training.
 
-Several proteins here — tau and α-synuclein in particular — are heavily annotated
-in CPAD. **A modern predictor's hit on those rows may be recall of its training
-data rather than prediction.** This is a third kind of circularity, distinct from
-both columns above: not a predictor in the *discovery* path, and not
-experiment–prediction *agreement*, but **training-set membership of the benchmark
-row**. It must be resolved per row, per predictor, by whoever runs one.
+**Version 1.1.0 performs that check** — see `cpad_status` above — against all three
+CPAD 2.0 datasets and against both orthology sources. Several proteins here, tau and
+α-synuclein in particular, are heavily annotated in CPAD and are labelled accordingly.
+
+**What it cannot settle for you.** The CPAD90 membership list is not published ("Data
+will be made available on request"), so no row can be certified training-set-clean in
+absolute terms, and **the check is specific to CPAD**. A predictor trained on some other
+corpus needs its own check, and this column will not do it. The method is written out in
+`_CPAD_MEMBERSHIP_CHECK_2026-11-17` inside the JSON so it can be repeated against a
+different training set.
 
 ## Composition
 
@@ -163,9 +216,12 @@ The `frame` field records the frame and, where available, the accession. **Where
 
 ## Honest limitations
 
-- **It is small.** 17 rows. The discordant stratum — the only part that can
-  discriminate between predictors — holds **4 documented rows**. That supports a
-  case series, not a rate.
+- **It is small, and the usable part is smaller than it looks.** 17 rows. The
+  discordant stratum — the only part that can discriminate between predictors — holds
+  4 documented rows and 1 derived, but **3 of those 5 are CPAD members**. For a
+  predictor trained on CPAD, **2 rows remain**, both of them TRIOBP-1 and DISC1, each
+  from a single laboratory lineage. That supports a case series on two proteins, not a
+  rate, and it should be read against the AUROC floor below before any compute is spent.
 - **It is not a random sample of anything.** Rows were found by targeted search,
   including a deliberate search for papers that ran predictors post hoc and
   published the failure. Prevalence must not be estimated from it.
@@ -185,8 +241,8 @@ The `frame` field records the frame and, where available, the accession. **Where
 
 | file | |
 |---|---|
-| `aggregation_regions_v1.0.0.json` | **authoritative.** Full records, schema documentation, per-row `notes` |
-| `aggregation_regions_v1.0.0.csv` | core columns only, for quick inspection |
+| `aggregation_regions_v1.1.0.json` | **authoritative.** Full records, schema documentation, per-row `notes` |
+| `aggregation_regions_v1.1.0.csv` | core columns only, for quick inspection |
 
 **The CSV cannot represent the `notes` object**, and 12 of 17 rows carry one.
 Those notes often hold the row's most important caveat — an ex vivo structure
@@ -213,17 +269,22 @@ working file is never edited by it.
 ## Citation
 
 Mercier des Rochettes, B. (2026). *Experimentally mapped aggregation-critical
-protein regions, with circularity and prediction-concordance labels*, version
-1.0.0 [Data set]. Zenodo. **10.5281/zenodo.24290698**
+protein regions, with circularity, prediction-concordance and
+training-set-contamination labels*, version 1.1.0 [Data set]. Zenodo.
+**10.5281/zenodo.24290697**
 
-<https://doi.org/10.5281/zenodo.24290698>
+<https://doi.org/10.5281/zenodo.24290697>
 
-Published record: <https://zenodo.org/records/24290698>
+> **The v1.1.0 version DOI is not yet in this file.** Zenodo mints it at publication.
+> Until it is filled in here and in `CITATION.cff`, the line above gives the **concept
+> DOI**, which resolves to whatever version is current. That is honest but imprecise: a
+> citation of a specific analysis needs the version DOI, because the concept DOI will
+> move when v1.2.0 appears.
 
-This is the **version DOI**: it resolves to 1.0.0 and only 1.0.0, which is what a
-citation of a specific analysis needs. Zenodo also mints a **concept DOI** at
-publication, resolving to whatever version is
-current: **10.5281/zenodo.24290697**. Use that one only when you mean "the latest".
+**Previous version.** v1.0.0 is **10.5281/zenodo.24290698**
+(<https://zenodo.org/records/24290698>). It remains citable and unchanged, but it has
+no `cpad_status` column and therefore **cannot tell a reader which rows are
+training-set contaminated**. Prefer 1.1.0.
 
 ## Licence
 

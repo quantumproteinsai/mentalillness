@@ -54,19 +54,45 @@ It is `stratum: PENDING`, so it is **not** in the confirmatory set and this is n
 registered success. It says AggrescanAI finds *something* in TRIOBP-1 — just not the
 experimentally mapped region.
 
-Not scored, with reasons:
+### Updated the same day: five more rows became scorable
+
+The frames for the four Cukkemane DISC1 rows, and the mature-chain frames for serum
+amyloid A and LECT2, were resolved and **verified by sequence** (see `frame` on each
+row). **Scorable rows went from 7 to 12. The confirmatory result did not move** — those
+two rows were already scored and nothing about them changed.
+
+| row | stratum | cpad | m | M | P | **v** |
+|---|---|---|---|---|---|---|
+| serum amyloid A 2-55 | PENDING | member | 8 | 17 | 0.971 | 0.212 |
+| LECT2 55-75 | DISCORDANT_DERIVED | member | 3 | 22 | 0.841 | 0.405 |
+| DISC1 748-769 | PENDING | absent | 3 | 142 | 0.165 | **0.995** |
+| DISC1 691-836 | PENDING | absent | 24 | 142 | 0.736 | **0.999** |
+| DISC1 716-761 | PENDING | absent | 6 | 142 | 0.165 | **1.000** |
+
+**AggrescanAI fails hard on the DISC1 C-region.** For 716-761 and 748-769 the region's
+best tile sits at the **16th percentile** of the protein — not merely unremarkable but
+actively low-scoring, in a region established by solid-state NMR on recombinant protein.
+These rows are `stratum: PENDING`, so this is not a registered confirmatory result, and
+716-761 is `CIRCULAR` besides. It is recorded because it is the clearest signal in the
+run and it points the same way as the confirmatory rows.
+
+Still not scored:
 
 | row | why |
 |---|---|
 | tau 306-311, tau 275-280 | 6 residues; a 6-residue tile contains them only if phase-aligned |
 | TRIOBP-1 324-328, 333-340 | 5 and 8 residues; shorter than one tile, or not tile-aligned |
-| DISC1 691-836, 716-761, 748-769 | row carries **no `frame`**; the descriptor's rule is *do not assume* |
 | DISC1 717-737, 739-761 | composite range, not a single interval |
-| serum amyloid A 2-55, LECT2 55-75 | mature-chain frames not yet resolved to a run |
 
 **The first line is a real limitation of the registered statistic, not an accident.** A
 6-residue window cannot score a 6-residue region unless the tiling happens to align with
 it. The two rows that validate the pipeline are the two the statistic cannot score.
+
+**One frame resolution is worth reading on its own.** The serum amyloid A row's sequence
+is **not found in UniProt P0DJI8**. Aligned against P0DJI8's mature chain it gives exactly
+one mismatch — **mature residue 52, canonical A versus hSAA1.1 V — inside the region**.
+The dataset's allelic warning fired exactly where it says it does, and the row was right
+where the canonical database entry would have been wrong.
 
 ---
 

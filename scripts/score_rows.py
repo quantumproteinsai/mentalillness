@@ -27,6 +27,10 @@ RUNS = {
     'alpha-synuclein': ('runs/P37840_asyn.csv', 'P37840, 140 aa'),
     'FUS': ('runs/P35637.csv', 'P35637, 526 aa'),
     'hnRNPA1': ('runs/P09651-2.csv', 'P09651-2, 320 aa'),
+    # Added 17 Nov 2026 once the mature-chain frames were resolved AND verified.
+    # hSAA1.1 is P0DJI8 mature with A52V -- NOT canonical, which differs inside the region.
+    'serum amyloid A (hSAA1.1)': ('runs/hSAA1.1_mature.csv', 'mature hSAA1.1, 104 aa (P0DJI8 mature + A52V)'),
+    'LECT2': ('runs/LECT2_mature.csv', 'mature LECT2, 133 aa (O14960[19:151])'),
 }
 
 

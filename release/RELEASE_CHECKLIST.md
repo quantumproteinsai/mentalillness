@@ -114,33 +114,50 @@ changed, so a DOI cannot quietly stop describing what the script produces.
 new core columns (`cpad_status`, `cpad_basis`, `cpad_checked`) recording the CPAD 2.0
 training-set check. That is a *data* change by this file's own rule.
 
+#### THE ROUTE IS MANUAL UPLOAD — correcting an error written here on 17 Nov 2026
+
+An earlier draft of this section told you to publish a GitHub Release and said "the
+Zenodo toggle is already on". **That was wrong.** v1.0.0 was deposited by **filling the
+Zenodo form and uploading five files by hand** — that is why commit `8e4f104` verifies
+*five file sizes* against the published record. The GitHub integration was never used
+and the toggle is not known to be on. Keep the route the same as v1.0.0: a mixed history
+is harder to audit than either route alone.
+
 **Your action, from your own account:**
 
-1. GitHub -> Releases -> **Draft a new release** from the existing `v1.1.0` tag.
-2. Publish it. The Zenodo toggle is already on, so Zenodo archives it automatically.
-3. Zenodo reads `.zenodo.json` and mints a **new version DOI** under the same concept
-   DOI `10.5281/zenodo.24290697`.
-4. **Then fill the new DOI into two files** — `CITATION.cff` (add the `doi:` key, which
-   is deliberately absent, with a comment saying so) and the Citation section of
-   `release/DATA_DESCRIPTOR.md`, which currently gives the concept DOI and says why.
+1. Open the published record <https://zenodo.org/records/24290698> and choose
+   **"New version"**. This keeps the concept DOI `10.5281/zenodo.24290697` and mints a
+   new version DOI. **Do not start a fresh upload** — that would create an unrelated
+   record with no link to v1.0.0.
+2. Zenodo copies the v1.0.0 files into the draft. **Delete all five**, then upload the
+   five listed below. Deleting is safe: it affects the draft only, never the published
+   v1.0.0, whose files are frozen.
+3. Update **Version** to `1.1.0` and the **title** (it gained
+   "and training-set-contamination labels"). Everything else — authors, ORCID,
+   affiliation, CC BY 4.0, keywords — carries over and should be checked, not retyped.
+4. Publish, then **fill the new DOI into two files**: `CITATION.cff` (add the `doi:`
+   key, deliberately absent with a comment saying so) and the Citation section of
+   `release/DATA_DESCRIPTOR.md`, which currently gives the concept DOI and explains why.
    Commit that.
-5. Check the published record: title, sole creator with ORCID, licence CC BY 4.0, and
-   that it appears as a **new version of the existing record**, not a separate one.
 
-### KNOW WHAT THIS ROUTE DEPOSITS
+#### The five files to upload
 
-**The GitHub integration archives the WHOLE REPOSITORY, not just `release/`.**
-Zenodo has no ignore mechanism for it. So the DOI covers `CLAUDE.md`, `STATE.md`,
-`PREREGISTRATION.md`, `correspondence/` and `scripts/` along with the data.
+| file | what it is |
+|---|---|
+| `release/aggregation_regions_v1.1.0.json` | **authoritative** — all 17 rows, schema docs, per-row notes |
+| `release/aggregation_regions_v1.1.0.csv` | core columns only |
+| `release/DATA_DESCRIPTOR.md` | the descriptor a reader must read first |
+| `LICENSE` | the full unmodified CC BY 4.0 legal code |
+| `CITATION.cff` | citation metadata |
 
-`research_notes/` -- machine-generated and unverified, under a standing rule never to
-cite across that line -- **is no longer in the repository at all**, removed from the
-tracked tree and from history on 16 Nov 2026 before the repository was made public, so
-it is not in this deposit.
+Same five as v1.0.0, with the data files at the new version. **`.zenodo.json` is not
+uploaded** — it is metadata for the GitHub integration, not a dataset file, and this
+route fills the form directly. **`RELEASE_CHECKLIST.md` is not uploaded either**: it is
+addressed to the author, not to a reader of the dataset.
 
-Archiving the rest is defensible, and publishing the pre-registration alongside the data
-is arguably a virtue. **It should be a decision, not an inheritance.** The manual upload
-route deposits exactly the files in `release/` and nothing else.
+**This route deposits exactly those five files and nothing else** — not the repository,
+not `PREREGISTRATION.md`, not `results/`. That is a decision, not an inheritance: the
+DOI is for *the dataset*, and the analysis built on it is neither finished nor published.
 
 ### ~~Steps 1-4 for v1.0.0~~ — done 16 Nov 2026, deposited as above
 

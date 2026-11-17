@@ -140,21 +140,33 @@ is harder to audit than either route alone.
    `release/DATA_DESCRIPTOR.md`, which currently gives the concept DOI and explains why.
    Commit that.
 
-#### A DOI IS RESERVED BUT NOT PUBLISHED — as of 17 Nov 2026
+#### RESERVE THE DOI FIRST — the order matters, and an earlier draft of this file got it wrong
 
-`10.5281/zenodo.24306057` is reserved on a **draft that has not been saved or
-published**. Verified, not assumed: doi.org returns *DOI Not Found*, the record page and
-the API both 404, and — the decisive check — the concept DOI `10.5281/zenodo.24290697`
-still resolves to v1.0.0 with `is_last: true` at version index 0. **No v1.1.0 exists.**
+**Reserve → write the DOI into the files → upload → publish.** Not publish-then-patch.
 
-**It is deliberately NOT written into `CITATION.cff` or `release/DATA_DESCRIPTOR.md`.**
-Those are permanent, citable files, and a reserved DOI is not a published one. A
-reserved DOI also lives only as long as its draft: discard the draft and that number is
-gone, and a later "New version" reserves a different one.
+An earlier draft of this section said to leave `doi:` out of `CITATION.cff` and fill it
+in afterwards, on the reasoning that Zenodo mints the DOI at publication. **That is only
+true if you do not reserve it.** Zenodo's *Reserve DOI* makes the number exist while the
+draft is still unpublished — which is what v1.0.0 did, and why the **deposited** v1.0.0
+`CITATION.cff` carries `doi: "10.5281/zenodo.24290698"` rather than an empty field.
 
-**Verify before writing a DOI into anything.** The cheapest check is the concept DOI —
-if it still resolves to the previous version, the new one is not published, whatever the
-form displayed.
+Publish-then-patch cannot fix this, because **deposited files are frozen**: the DOI could
+only ever reach the repository copy, leaving the deposited one silently inconsistent.
+That is what happened to v1.0.0's `DATA_DESCRIPTOR.md`, which went up without the DOIs.
+**For v1.1.0 both files carry it before upload.**
+
+`10.5281/zenodo.24306057` is reserved for the v1.1.0 draft and is written into
+`CITATION.cff` and `release/DATA_DESCRIPTOR.md`.
+
+**THE CONDITION ON THAT NUMBER.** A reserved DOI belongs to one draft. **If that draft is
+discarded rather than published, Zenodo reserves a different DOI next time and both files
+must be updated.** As of 17 Nov 2026 it is reserved and NOT live — verified, not assumed:
+doi.org returns *DOI Not Found*, the record page and API both 404, and the decisive check
+is that the concept DOI `10.5281/zenodo.24290697` still resolves to v1.0.0 with
+`is_last: true` at version index 0.
+
+**The cheapest check that a version really published** is the concept DOI: if it still
+resolves to the previous version, the new one is not live, whatever the form displayed.
 
 #### The five files to upload
 

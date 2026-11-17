@@ -255,6 +255,7 @@
     {
       "protein": "DISC1",
       "residues": "691-836",
+      "frame": "854-residue canonical (UniProt Q9NRI5, SV=3). FRAME RECORDED 17 Nov 2026, AND VERIFIED BY SEQUENCE RATHER THAN ASSUMED: the stored 46-residue sequence of the 716-761 row (VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH) occurs in Q9NRI5 at exactly 716-761. All Cukkemane et al. 2021 rows therefore share the canonical frame. Previously this field was ABSENT, which blocked these rows from being scored at all under the descriptor's own rule ('where frame is absent, do not assume') -- see the 17 Nov AggrescanAI run, where three DISC1 rows went unscored for this reason.",
       "evidence": "ITC, DLS, CD, negative-stain EM, solid-state NMR on recombinant protein",
       "construct": "isolated C-region, E. coli, tagged, up to 400 uM, sonicated, two weeks",
       "found_by": "boundaries from ESPRIT, an experimental screen",
@@ -279,6 +280,7 @@
     {
       "protein": "DISC1",
       "residues": "716-761",
+      "frame": "854-residue canonical (UniProt Q9NRI5, SV=3). FRAME RECORDED 17 Nov 2026, AND VERIFIED BY SEQUENCE RATHER THAN ASSUMED: the stored 46-residue sequence of the 716-761 row (VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH) occurs in Q9NRI5 at exactly 716-761. All Cukkemane et al. 2021 rows therefore share the canonical frame. Previously this field was ABSENT, which blocked these rows from being scored at all under the descriptor's own rule ('where frame is absent, do not assume') -- see the 17 Nov AggrescanAI run, where three DISC1 rows went unscored for this reason.",
       "sequence": "VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH",
       "evidence": "solid-state NMR beta-strand chemical shifts, EM morphology",
       "construct": "as above",
@@ -307,6 +309,7 @@
     {
       "protein": "DISC1",
       "residues": "717-737, 739-761",
+      "frame": "854-residue canonical (UniProt Q9NRI5, SV=3). FRAME RECORDED 17 Nov 2026, AND VERIFIED BY SEQUENCE RATHER THAN ASSUMED: the stored 46-residue sequence of the 716-761 row (VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH) occurs in Q9NRI5 at exactly 716-761. All Cukkemane et al. 2021 rows therefore share the canonical frame. Previously this field was ABSENT, which blocked these rows from being scored at all under the descriptor's own rule ('where frame is absent, do not assume') -- see the 17 Nov AggrescanAI run, where three DISC1 rows went unscored for this reason.",
       "evidence": "sequence repeat, consistent with ssNMR shifts",
       "construct": "as above",
       "found_by": "RADAR",
@@ -327,6 +330,7 @@
     {
       "protein": "DISC1",
       "residues": "748-769",
+      "frame": "854-residue canonical (UniProt Q9NRI5, SV=3). FRAME RECORDED 17 Nov 2026, AND VERIFIED BY SEQUENCE RATHER THAN ASSUMED: the stored 46-residue sequence of the 716-761 row (VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH) occurs in Q9NRI5 at exactly 716-761. All Cukkemane et al. 2021 rows therefore share the canonical frame. Previously this field was ABSENT, which blocked these rows from being scored at all under the descriptor's own rule ('where frame is absent, do not assume') -- see the 17 Nov AggrescanAI run, where three DISC1 rows went unscored for this reason.",
       "evidence": "the delta-22 splice deletion, named for its 22 residues",
       "construct": "splice variant",
       "found_by": "variant, not prediction",
@@ -534,7 +538,7 @@
     {
       "protein": "serum amyloid A (hSAA1.1)",
       "residues": "2-55",
-      "frame": "MATURE hSAA1.1, 104 residues (signal peptide removed). NOT UniProt P0DJI8 canonical -- see the allelic warning.",
+      "frame": "MATURE hSAA1.1, 104 residues (signal peptide removed). NOT UniProt P0DJI8 canonical -- see the allelic warning. || RESOLVED TO A RUNNABLE SEQUENCE 17 Nov 2026, AND THE ALLELIC TRAP FIRED EXACTLY AS DOCUMENTED. The stored 2-55 sequence is NOT FOUND in P0DJI8. Aligning it to P0DJI8 mature 2-55 gives exactly ONE mismatch, at MATURE RESIDUE 52: P0DJI8 canonical has A, hSAA1.1 has V. Our row is correct and the canonical entry would have been wrong, INSIDE the region. The runnable mature hSAA1.1 sequence is therefore P0DJI8[19:122] with A52V applied -- 104 residues. DO NOT take this sequence from canonical UniProt.",
       "sequence": "SFFSFLGEAFDGARDMWRAYSDMREANYIGSDKYFHARGNYDAAKRGPGGVWAA",
       "evidence": "The ordered part of an EX VIVO disease fibril, by cryo-EM at 2.7 A. 'The ordered part of the density of the mouse fibril corresponds to residues 1-69 of mSAA1.1, the ordered part of the human fibril to hSAA1.1 residues 2-55.' Residues 56-67 give diffuse density and are disordered.",
       "construct": "NO CONSTRUCT -- AND THAT IS THE POINT OF THIS ROW. Fibrils were extracted from the kidney of a deceased AA amyloidosis patient, using a procedure chosen 'to avoid harsh physical or chemically denaturing conditions and to maintain the fibril morphology'. The deposited fibril protein is itself a proteolytic fragment, mainly hSAA1.1(2-64) and hSAA1.1(2-47) by mass spectrometry. So the region is the ordered core WITHIN naturally deposited human material, not within an engineered construct. The companion murine fibril (spleen, 3.0 A, residues 1-69 of mSAA1.1) is a separate row if wanted.",
@@ -563,7 +567,7 @@
     {
       "protein": "LECT2",
       "residues": "55-75",
-      "frame": "MATURE LECT2, 133 residues. NOW PINNED TO A NAMED ACCESSION by the published Key Resources table: \"Codon-optimized synthetic gene encoding residues 19-151 of the human LECT2 protein (GenBank AAC17734.1)\". VERIFIED: 151 - 19 + 1 = 133, matching the mature chain and the paper's own \"21 of the 133 residues\". Corresponds to UniProt O14960 minus its 18-residue signal peptide. This is a better frame statement than the preprint gave.",
+      "frame": "MATURE LECT2, 133 residues. NOW PINNED TO A NAMED ACCESSION by the published Key Resources table: \"Codon-optimized synthetic gene encoding residues 19-151 of the human LECT2 protein (GenBank AAC17734.1)\". VERIFIED: 151 - 19 + 1 = 133, matching the mature chain and the paper's own \"21 of the 133 residues\". Corresponds to UniProt O14960 minus its 18-residue signal peptide. This is a better frame statement than the preprint gave. || RESOLVED TO A RUNNABLE SEQUENCE 17 Nov 2026 AND VERIFIED: the stored core sequence MIVGQEKPYQNKNAINNGVRI occurs in UniProt O14960 at 73-93, which is mature 55-75 after removing the 18-residue signal peptide. The mature chain is O14960[19:151], 133 residues, matching the paper's own '133 residues'.",
       "sequence": "MIVGQEKPYQNKNAINNGVRI",
       "evidence": "The ordered core of a recombinant LECT2 amyloid fibril by cryo-EM at 2.7 A: 'the ordered core of each protofilament spans residues 55-75 of the LECT2 sequence'. Independently corroborated INSIDE the same paper by mass spectrometry of protease-resistant material -- Supplementary Table 2 lists the peptide NAINNGVR, which is residues 67-74, i.e. inside the core.",
       "construct": "RECOMBINANT, AND THE CONSTRUCT CAVEAT IS SEVERE -- SEE THE EX VIVO CONFLICT BELOW. Full-length mature LECT2 carrying the I40V polymorphism with an N-terminal 6-His tag, expressed in E. coli BL21-gold, purified under 6 M guanidine, fibrillised at 2 mg/mL in 50 mM MOPS pH 6.5, 30 mM TCEP, 10 mM EDTA, 150 mM NaCl, 2400 rpm, 37 C, 48 h. I40V lies OUTSIDE the core, so it does not change the core sequence.",

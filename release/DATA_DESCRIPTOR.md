@@ -271,15 +271,14 @@ working file is never edited by it.
 Mercier des Rochettes, B. (2026). *Experimentally mapped aggregation-critical
 protein regions, with circularity, prediction-concordance and
 training-set-contamination labels*, version 1.1.0 [Data set]. Zenodo.
-**10.5281/zenodo.24290697**
+**10.5281/zenodo.24306057**
 
-<https://doi.org/10.5281/zenodo.24290697>
+<https://doi.org/10.5281/zenodo.24306057>
 
-> **The v1.1.0 version DOI is not yet in this file.** Zenodo mints it at publication.
-> Until it is filled in here and in `CITATION.cff`, the line above gives the **concept
-> DOI**, which resolves to whatever version is current. That is honest but imprecise: a
-> citation of a specific analysis needs the version DOI, because the concept DOI will
-> move when v1.2.0 appears.
+This is the **version DOI**: it resolves to 1.1.0 and only 1.1.0, which is what a
+citation of a specific analysis needs. The **concept DOI**,
+**10.5281/zenodo.24290697**, always resolves to whatever version is current — use that
+one only when you mean "the latest".
 
 **Previous version.** v1.0.0 is **10.5281/zenodo.24290698**
 (<https://zenodo.org/records/24290698>). It remains citable and unchanged, but it has

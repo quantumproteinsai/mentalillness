@@ -40,9 +40,10 @@ identifiers:
     value: "10.5281/zenodo.24290698"
     description: "Version DOI of v1.0.0, the previous release. v1.1.0 supersedes it: v1.0.0 has no cpad_status / cpad_basis / cpad_checked columns and therefore cannot tell a reader which rows are training-set contaminated."
 date-released: 2026-11-17
-# NO `doi:` KEY UNTIL ZENODO MINTS ONE FOR v1.1.0.
-# It is deliberately absent, not forgotten. A version DOI identifies ONE version:
-# leaving v1.0.0's 10.5281/zenodo.24290698 here would make this file assert that
-# v1.1.0 is v1.0.0 -- the same class of error as putting a DOI in .zenodo.json.
-# AFTER PUBLISHING, add:  doi: "10.5281/zenodo.<new>"
-# and put the same value in release/DATA_DESCRIPTOR.md. See release/RELEASE_CHECKLIST.md.
+# RESERVED on Zenodo 17 Nov 2026 for the v1.1.0 draft, and written here BEFORE upload so
+# that the deposited copy of this file carries its own DOI -- which is what v1.0.0 did.
+# CONDITION: this number belongs to that one draft. If that draft is discarded rather
+# than published, Zenodo reserves a DIFFERENT DOI for the next attempt and this line must
+# be updated. Verified not-yet-live on 17 Nov 2026; re-check after publishing that
+# https://doi.org/10.5281/zenodo.24306057 resolves.
+doi: "10.5281/zenodo.24306057"

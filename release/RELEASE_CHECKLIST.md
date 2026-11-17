@@ -5,7 +5,41 @@ decisions that are **yours**, not defaults to be inherited.
 
 ---
 
-## DEPOSITED — 16 Nov 2026
+## v1.1.0 DEPOSITED — 17 Nov 2026
+
+**<https://zenodo.org/records/24306057>** — version DOI `10.5281/zenodo.24306057`
+
+Verified after publication, not assumed: the version DOI resolves; **the concept DOI
+`10.5281/zenodo.24290697` now resolves to this record** (`index: 1, is_last: true`),
+which is the check that actually proves a new version went live; all five files present
+with md5 matching the local copies; version 1.1.0, CC BY 4.0, ORCID, 10 keywords.
+
+### TWO TITLE DEFECTS, ONE PERMANENT
+
+**1. The published title was malformed at upload and has been corrected.** The new words
+were *appended* to the old title rather than replacing it, giving
+"…circularity and prediction-concordance labels and&nbsp;&nbsp;training-set-contamination
+labels" — "labels" twice, with a double space. Metadata is editable after publication,
+so this was fixed on the record.
+
+**2. The DEPOSITED `CITATION.cff` carries the OLD title, and cannot be fixed.** The title
+was updated in `.zenodo.json` and `release/DATA_DESCRIPTOR.md` but **not** in
+`CITATION.cff` before upload, and deposited files are frozen. So a citation generated
+from the deposited `CITATION.cff` gives v1.1.0's DOI and version with v1.0.0's title.
+
+The repository copy is corrected, so v1.2.0 will be right. **This is recorded rather than
+quietly fixed**, because the deposited file says otherwise and a reader comparing the two
+deserves to know which is wrong. It is not worth a 1.1.1 deposit on its own; **if a 1.1.1
+happens for another reason, this goes in it.**
+
+**LESSON FOR NEXT TIME — the title lives in THREE places.** `.zenodo.json`, `CITATION.cff`
+and `release/DATA_DESCRIPTOR.md`. Change it in all three *before* upload, and diff them
+against each other; two of the three were right, which is exactly the case that passes a
+casual look.
+
+---
+
+## v1.0.0 DEPOSITED — 16 Nov 2026
 
 **<https://zenodo.org/records/24290698>**
 

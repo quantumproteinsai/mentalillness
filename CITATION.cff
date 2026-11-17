@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this dataset, please cite it as below."
-title: "Experimentally mapped aggregation-critical protein regions, with circularity and prediction-concordance labels"
+title: "Experimentally mapped aggregation-critical protein regions, with circularity, prediction-concordance and training-set-contamination labels"
 abstract: >-
   A hand-curated set of protein regions shown experimentally to be required for,
   or to constitute the core of, protein aggregation. Every row was established by

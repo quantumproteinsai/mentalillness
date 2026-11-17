@@ -32,6 +32,17 @@ quietly fixed**, because the deposited file says otherwise and a reader comparin
 deserves to know which is wrong. It is not worth a 1.1.1 deposit on its own; **if a 1.1.1
 happens for another reason, this goes in it.**
 
+### THE `v1.1.0` TAG IS NOT THE DEPOSIT — USE `deposited-v1.1.0`
+
+The `v1.1.0` tag was cut *before* the frame fixes of 17 Nov, and **matches none of the
+deposited files except `LICENSE`**. The tree that actually went to Zenodo is tagged
+**`deposited-v1.1.0`** (commit `0746017`), whose five files reproduce the published md5s
+exactly. The tag message carries those md5s.
+
+`v1.1.0` is left where it is rather than moved: it is already published, and a moved tag
+is worse than a wrong one. **Next time, tag after the final rebuild and immediately
+before upload, and verify md5s against the record before tagging.**
+
 **LESSON FOR NEXT TIME — the title lives in THREE places.** `.zenodo.json`, `CITATION.cff`
 and `release/DATA_DESCRIPTOR.md`. Change it in all three *before* upload, and diff them
 against each other; two of the three were right, which is exactly the case that passes a

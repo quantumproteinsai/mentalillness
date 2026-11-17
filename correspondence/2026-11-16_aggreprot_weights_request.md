@@ -3,6 +3,20 @@
 **Status: SENT, 16 Nov 2026**, by the author, with the first author copied.
 Awaiting reply. The text below is the record of what was asked.
 
+> **THE REQUEST ROUTE IS CONFIRMED AS THE OFFICIAL ONE — 17 Nov 2026.** The full AggreProt
+> paper (Cima et al. 2026, *Commun Chem* **9**:229, doi:10.1038/s42004-026-02007-5, CC BY,
+> read in full) states in its Code availability section that **"the models' weights are
+> available to the scientific community upon request."** So the archive is not hidden and
+> not missing — it is simply not deposited, by policy. Asking is the sanctioned route, and
+> the email went to two of the three corresponding authors named in that paper (Bednar,
+> Martinovic; the third is Prokop).
+>
+> It also answers question 1 below without a reply: the paper gives the licence as
+> **CC BY-NC-SA 4.0**, agreeing with the repository `LICENSE` and overriding both the Zenodo
+> record's "CC BY 4.0" and bio.tools' "Proprietary". **Question 2, the web server's default
+> parameters, is also now answered from the paper** — linear model, average metric,
+> threshold 0.25 — so only the archive itself is still outstanding.
+
 **Clock starts now.** If nothing arrives, this is not a dead end: see *When a
 reply arrives* at the foot of this file. AggreProt is recorded as UNAVAILABLE,
 which is a reportable finding about the tool's reproducibility, not a gap in

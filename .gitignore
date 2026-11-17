@@ -9,3 +9,13 @@ __pycache__/
 # was made public. Kept on the author's disk. Do not re-add them: an unverified
 # lead in a public repository is read as a finding whatever the label says.
 research_notes/
+
+# TANGO's distribution. Academic licence: redistributing it is the author's
+# decision, not an agent's. `git add -A` staged both of these once already, so
+# the rule is written here as well as in CLAUDE.md -- a warning in prose is not
+# a constraint. The SHA-256 pin in scripts/run_tango_grid.py is what makes the
+# runs reproducible without shipping the binary.
+tango2_3_1.linux64.zip
+TANGO_Instructions.pdf
+tango_run/
+tango_out/

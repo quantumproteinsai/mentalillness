@@ -86,5 +86,14 @@ the outstanding task.
 
 Commit before running anything that writes results; on the companion project
 the only thing that saved six hours of computation was that its output file
-happened to be tracked. This repository has no remote, and whether to add one
-is the author's decision.
+happened to be tracked. The remote `origin`
+(`quantumproteinsai/mentalillness`) is the private dev repository itself, not a
+curated public mirror -- unlike the companion project, where the GitHub remote
+is a mirror and must never be pushed to. Pushing here is therefore ordinary, but
+still ask: the author authorises each push.
+
+Two things in the working tree are deliberately untracked and must stay that
+way: `tango2_3_1.linux64.zip` and `TANGO_Instructions.pdf`. TANGO is distributed
+under an academic licence, and redistributing it -- even in a private repository
+headed for publication -- is the author's decision, not an agent's. `git add -A`
+sweeps them in; it has already done so once.

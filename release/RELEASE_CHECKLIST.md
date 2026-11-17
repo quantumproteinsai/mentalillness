@@ -132,9 +132,16 @@ is harder to audit than either route alone.
 2. Zenodo copies the v1.0.0 files into the draft. **Delete all five**, then upload the
    five listed below. Deleting is safe: it affects the draft only, never the published
    v1.0.0, whose files are frozen.
-3. Update **Version** to `1.1.0` and the **title** (it gained
-   "and training-set-contamination labels"). Everything else — authors, ORCID,
-   affiliation, CC BY 4.0, keywords — carries over and should be checked, not retyped.
+3. Update **Version** to `1.1.0`, the **title** (it gained "and
+   training-set-contamination labels"), the **description**, and **add two keywords**:
+   `training set contamination` and `CPAD`. Authors, ORCID, affiliation and CC BY 4.0
+   carry over and need checking, not retyping.
+
+   > **`.zenodo.json` IS NOT READ ON THIS ROUTE.** It is the metadata file for the
+   > GitHub integration, which is not in use here. Any keyword, title or description
+   > change made there reaches Zenodo **only if you type it into the form**. The file is
+   > still worth keeping in step, so that a later switch to the integration does not
+   > silently publish stale metadata — but today it is documentation, not configuration.
 4. Publish, then **fill the new DOI into two files**: `CITATION.cff` (add the `doi:`
    key, deliberately absent with a comment saying so) and the Citation section of
    `release/DATA_DESCRIPTOR.md`, which currently gives the concept DOI and explains why.

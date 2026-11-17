@@ -17,13 +17,21 @@ authors:
     affiliation: "Quantum Proteins AI, Cergy-Pontoise, France"
 # Co-authors: NONE. Settled by the author 16 Nov 2026, asked and answered rather
 # than assumed. Sole authorship is deliberate, not an oversight.
+# Kept in step with .zenodo.json and with the Zenodo record itself. At v1.0.0 these three
+# lists had drifted apart: this file carried 6 keywords, the record 8. Two were added for
+# 1.1.0 for the CPAD check, and in the MANUAL deposit route they must be typed into the
+# form -- .zenodo.json is not read by it.
 keywords:
   - protein aggregation
   - amyloid
   - benchmark dataset
   - aggregation prediction
   - circularity
+  - training set contamination
+  - CPAD
   - curated dataset
+  - TRIOBP-1
+  - DISC1
 # DECIDED by the author, 16 Nov 2026. Full legal code is in LICENSE.
 # CC-BY-4.0 over CC0 because the value of this dataset is curatorial: the
 # provenance, the circularity calls and the stratum labels are the work, and

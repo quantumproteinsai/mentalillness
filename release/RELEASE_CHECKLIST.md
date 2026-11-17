@@ -149,10 +149,21 @@ is harder to audit than either route alone.
    > raw markup displays the tags as literal text, along with the `\n` escapes if the
    > text is copied out of the JSON string. Both failure modes were hit on 17 Nov 2026.
    >
-   > **Instead:** open `release/zenodo_description_v1.1.0.html` in a browser, select the
-   > contents of the bordered box, copy, and paste. Pasting *rendered* text carries the
-   > bold and the bullets across and leaves no tags visible. That file is generated from
-   > `.zenodo.json`, so regenerate it if the description changes; it is **not** uploaded.
+   > **THE RELIABLE WAY — use the editor's source view.** The Description toolbar has a
+   > **`<>`** button (right-hand end, beside undo/redo). Click it, select whatever is
+   > already in the box and delete it, then paste the entire contents of
+   > **`release/zenodo_description_v1.1.0.snippet.html`**, and leave source view. That
+   > file is *only* the markup — no doctype, no `<html>`, no wrapper `<div>` — so there
+   > is nothing to catch. Pasting into the **visual** editor instead is what produced
+   > literal tags on 17 Nov 2026, twice.
+   >
+   > A second file, `release/zenodo_description_v1.1.0.html`, renders the same text in a
+   > browser for copying as *rich* text, if the `<>` route is unavailable. Both are
+   > generated from `.zenodo.json`; regenerate them if the description changes. **Neither
+   > is uploaded.**
+   >
+   > **Check after pasting:** four bullets with bold headings, and no visible `<p>`,
+   > `&mdash;` or `<div>`.
 4. Publish, then **fill the new DOI into two files**: `CITATION.cff` (add the `doi:`
    key, deliberately absent with a comment saying so) and the Citation section of
    `release/DATA_DESCRIPTOR.md`, which currently gives the concept DOI and explains why.

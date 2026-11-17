@@ -8,6 +8,14 @@ statistic, and nothing in it bears on the registered DISC1/TRIOBP-1 result.**
 
 ## The headline, stated before the numbers so it cannot be mistaken for one
 
+> **SUPERSEDED IN PART, SAME DAY — read `results/cpad_control_2026-11-17/` with this.**
+> The control this report asks for at the foot was built: 540 CPAD hexapeptides whose
+> annotation is uncontested, scored identically. AggrescanAI gets **AUROC 0.703**
+> [0.639, 0.760] there, against the 0.69 its authors publish. **So the 0.500 below is not
+> a weak predictor and not a broken pipeline.** It is still not evidence of memorisation
+> either: the interval below contains 0.703. Nothing in this report is retracted; the
+> control tells you how to read it.
+
 > **This exercise is uninformative at the available sample size, and that is its result.**
 > AggrescanAI scores AUROC **0.500** on the firm-label set — but with 3 amyloid against 6
 > non-amyloid, the exact permutation null puts **any AUROC between 0.11 and 0.89 within

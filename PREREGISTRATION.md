@@ -97,6 +97,62 @@ This transformation is the reason for the whole construction: it makes a 25-resi
 region in a 652-residue protein and a 32-residue region in an 854-residue protein
 directly comparable, with no tuning.
 
+### 3.1a Short regions — AMENDMENT, 17 Nov 2026, POST-UNBLINDING AND THEREFORE EXPLORATORY
+
+**Scores had been seen when this was written.** §12 says an amendment made after
+unblinding is an exploratory analysis and is reported as one. **So every value produced
+by this rule is exploratory, is reported separately, and enters no confirmatory
+statistic**, now or later.
+
+**The defect.** §3.1 counts windows *wholly inside* the region. At the native window of 6
+(§5.3) a region shorter than 6 residues admits none, and a 6-to-11-residue region admits
+one only if the tiling happens to align with it. Those rows are not scored low — they are
+**not scored at all**. Four rows are affected:
+
+| row | length | stratum | why it matters |
+|---|---|---|---|
+| tau 306-311 (VQIVYK) | 6 | CONCORDANT | CPAD member |
+| tau 275-280 (VQIINK) | 6 | CONCORDANT | CPAD member |
+| TRIOBP-1 324-328 | 5 | PENDING | — |
+| TRIOBP-1 333-340 | 8 | PENDING | — |
+
+**This was found by running the statistic, not by reading it.** The two tau rows are the
+ones that demonstrate the pipeline works at all — the top 12 residues of the whole
+441-residue protein are exactly those two hexapeptides — and they are precisely the rows
+§3.1 cannot score. A benchmark that cannot score the canonical amyloid hexapeptide is
+reporting a property of its own window arithmetic.
+
+**The rule.** When the registered tiling yields *m* = 0, score the region as **one window
+of its own length L**, ranked against **all** same-length windows of the protein:
+
+> *M* = *L*ᴾ − *L* + 1 windows; *m* = 1; *P* = (windows scoring ≤ the region's own
+> window) / *M*, midrank; **v = 1 − P**.
+
+**Why this preserves §3.1's stated null, where a sliding window did not.** The objection
+to sliding windows is that overlapping windows are not independent, so best-of-*m* is not
+distributed as *x^m*. **That objection does not apply at m = 1.** The rank of a *single*
+window among identically-distributed windows is uniform under exchangeability alone;
+correlation between windows is irrelevant. Verified by simulation on i.i.d. scores, 4000
+draws each:
+
+| region length / protein | mean v | q10 / q25 / q50 / q75 / q90 | frac v < 0.05 |
+|---|---|---|---|
+| 6 in 441 | 0.497 | 0.095 / 0.240 / 0.499 / 0.749 / 0.898 | 0.052 |
+| 5 in 652 | 0.497 | 0.101 / 0.249 / 0.496 / 0.746 / 0.900 | 0.051 |
+| 8 in 652 | 0.504 | 0.108 / 0.264 / 0.506 / 0.747 / 0.897 | 0.049 |
+| **expected** | **0.500** | **0.100 / 0.250 / 0.500 / 0.750 / 0.900** | **0.050** |
+
+**The rule applies ONLY where m = 0.** It is not an alternative statistic to be preferred
+where both are defined, and it must never be used because it gives a better answer: the
+two are not interchangeable, since v at m = 1 cannot reach the small values m > 1 allows.
+
+**It cannot change the confirmatory result, and that was checked before any value was
+computed with it.** All four affected rows are either CPAD members excluded under §5.2b
+item 5 (both tau rows) or `stratum: PENDING` and outside the confirmatory set (both
+TRIOBP-1 rows). **The confirmatory set remains DISC1 384-415 and TRIOBP-1 324-348, n = 2,
+untouched.** Had this amendment been able to move the headline number, it should not have
+been made after unblinding at all.
+
 **Combination across rows — RESOLVED 15 Nov 2026, by Claude on the author's instruction.**
 
 **Primary: Stouffer's Z**, equal weights, one-sided.

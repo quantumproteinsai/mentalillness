@@ -204,3 +204,31 @@ leave-one-out.*
   part that is not tautological is the experimental half: **these polar-core regions are
   genuine, experimentally mapped aggregation determinants.** The finding is not that the
   tools dislike polar cores. It is that nature does not, and the tools have not noticed.
+
+---
+
+## Geometry does not explain the association [18 Nov 2026, unregistered, exploratory]
+
+The obvious second way for §10a's result to be wrong — after CPAD, which was already
+excluded — is the *m*/*M* geometry that §3.1b showed drives everything else in this
+project. **All seven structural rows fail *m*/*M* > 0.05**, and the mean of *v* is known
+to depart from 0.5 where *m* is large. If Φ tracked *m*/*M*, the association would be a
+restatement of region length.
+
+| test | Spearman ρ | exact *p* |
+|---|---|---|
+| **Φ vs *v*** (registered primary) | **+0.821** | **0.0171**, one-sided |
+| *m*/*M* vs *v* | +0.321 | 0.498, two-sided |
+| *m*/*M* vs Φ | +0.321 | 0.498, two-sided |
+
+**Spearman partial ρ(Φ, *v* | *m*/*M*) = +0.801**, against +0.821 unadjusted — a shift of
+−0.021. The association is not geometric.
+
+**The honest qualifier:** at *n* = 7 a test *for* confounding has very little power, so
+this shows the confound is not large enough to generate the result, not that it is absent.
+Both legs sit at ρ = +0.32, which is not nothing.
+
+**And the observation that matters for what to do next: all seven of these rows are rows
+the benchmark cannot use.** Φ needs a *deposited fibril structure*; §3.1b needs a *short
+region in a long chain*. These are different, nearly disjoint criteria. The row type that
+is exhausted for the benchmark is abundant for Φ.

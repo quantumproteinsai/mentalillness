@@ -750,6 +750,52 @@ construction", and the draft should claim the harder one.
 **10.3 The legacy baseline is itself a finding.** Of four 2017 tools, two are live, one
 is dead, and one requires reimplementation. Reported regardless of outcome.
 
+### 10a Core polarity — REGISTERED 18 Nov 2026, POST-UNBLINDING AND PERMANENTLY EXPLORATORY
+
+**Full specification: `reports/core_polarity_metric_2026-11-18.md`, committed before any
+number was computed from it.** Registered here in summary so the decision rules are in
+this document with the others.
+
+**Hypothesis.** Both arms score hydrophobicity and β-propensity. A fibril core held by
+**polar** contacts is by construction the case they should miss. Raised by the glycinin
+structure, whose Figure S6 sorts twelve published fibrils into hydrophobic- and
+hydrophilic-core classes.
+
+**Why the obvious version was dropped.** Borrowing S6's labels fails: all three distinct
+hydrophilic-core proteins there — FUS, FapC, CsgA — are CPAD 2.0 members, so core
+architecture and training-set membership are collinear and one comparison would measure
+both.
+
+**The metric.** Φ = the polar-or-charged fraction of the **buried** residues inside a
+row's region, computed from deposited coordinates: assembly built to 11 layers using the
+deposited helical rise and twist, central chain analysed, Shrake–Rupley SASA (probe 1.4 Å,
+92 points, radii fixed in the spec), core residue iff SASA < 10 Å². Sensitivities at 5 and
+20 Å², and two alternative polarity tables, are **pre-specified and all reported**.
+
+**Calibration, and the abandonment condition.** Φ is calibrated against S6's twelve
+published labels — no *v* is computed for those, so their CPAD status is irrelevant.
+**If Φ separates them with AUROC < 0.80 the metric is ABANDONED, not re-tuned.** That
+outcome is itself reported.
+
+**The test.** One-sided Spearman ρ between Φ and *v*, modern arm primary, legacy arm
+secondary, reported for all eligible rows and for CPAD-absent rows separately, with the
+minimum attainable p printed beside the observed one.
+
+**Ordering, checkable from the commit graph:** `structure` fields committed → Φ computed
+and committed → only then joined to *v*. Same discipline as §7a.
+
+**WHY THIS CAN NEVER BE CONFIRMATORY, and it is not a matter of procedure.** DISC1 and
+TRIOBP-1 have **no deposited fibril structures**, so Φ does not exist for them and the
+confirmatory stratum — DISC1 384-415 and TRIOBP-1 324-348 — is entirely outside this
+analysis. At most 7 rows are eligible, several are CPAD members, and they are not
+independent. **No result here can confirm or refute H1.**
+
+**And the near-tautology is registered in advance**, so that a positive result is not
+oversold later: predictors that score hydrophobicity scoring polar cores lower is partly a
+restatement of how they work. The finding, if there is one, lies in the experimental half
+— that polar-core regions are genuine aggregation determinants anyway. **The claim worth
+making is not that the tools dislike polar cores, but that nature does not.**
+
 ---
 
 ## 11. What would falsify the project's thesis

@@ -2,7 +2,7 @@
 
 **with circularity, prediction-concordance and training-set-contamination labels**
 
-Version 1.2.0 · 21 regions across 11 proteins
+Version 1.3.0 · 21 regions across 11 proteins
 
 ---
 
@@ -63,10 +63,37 @@ they all hit it. Only the **discordant** rows can.
 
 | stratum | n | meaning |
 |---|---|---|
-| `DISCORDANT` | 4 | experiment and prediction disagree, documented in print with the tools named |
+| `DISCORDANT` | 10 | experiment and prediction disagree |
 | `DISCORDANT_DERIVED` | 1 | disagreement established by comparing two papers, not stated by either — strictly weaker |
-| `CONCORDANT` | 4 | the predictors find it |
-| `PENDING` | 8 | not yet assessed; requires a predictor run or a published one |
+| `CONCORDANT` | 5 | the predictors find it |
+| `PENDING` | 5 | not yet assessed; requires a predictor run or a published one |
+
+### `stratum_assignment` — was this label assigned blind? *(new in 1.3.0)*
+
+**Not every `DISCORDANT` row counts the same, and this column says which is which.**
+
+Of the 10 `DISCORDANT` rows, **4 were documented in print**, with the disagreeing tools
+named by the source paper. **6 were assigned by us**, from our own legacy predictor run,
+by a fixed rule: discordant iff the legacy score missed the region at the project's
+pre-registered recovery bar. Neither the rule nor the bar was chosen after seeing a
+score.
+
+**But the order was wrong, and the column records that.** The protocol requires the label
+to be fixed *before* the modern predictor is run on the row, and for these six it was
+applied afterwards, when the modern scores were already known. The rule is mechanical and
+leaves no threshold to tune — but the choice of *whether to apply it* was made with the
+outcome visible. So every affected row carries:
+
+```
+stratum_assignment: { ..., confirmatory_eligible: false }
+```
+
+**A `DISCORDANT` label alone does not admit a row to the confirmatory set.** Read this
+flag. It is why the confirmatory count below is 2 and not 8.
+
+*For the record, applying the rule did not flatter the project's hypothesis: it made the
+result worse. That is stated here because the usual objection to a rule applied late is
+that it was applied because it helped.*
 
 ### `cpad_status` — is the row in the predictor's training set? *(new in 1.1.0)*
 
@@ -102,7 +129,10 @@ unpublished. It is the strongest statement public sources support, and no more.
 
 ### What that costs, and why it is the most important number here
 
-**Three of the five discordant rows are CPAD members.**
+**Three of the eleven discordant-family rows are CPAD members**, and they are the three
+below. The other eight are CPAD-absent and circularity-clean — but only **2 of those 8
+are `confirmatory_eligible`** (see `stratum_assignment` above), which is why the usable
+count has not moved.
 
 | row | stratum | `cpad_status` |
 |---|---|---|
@@ -218,14 +248,20 @@ The `frame` field records the frame and, where available, the accession. **Where
 
 - **It is small, and the usable part is smaller than it looks.** 21 rows. The
   discordant stratum — the only part that can discriminate between predictors — holds
-  4 documented rows and 1 derived, but **3 of those 5 are CPAD members**. For a
-  predictor trained on CPAD, **2 rows remain**, both of them TRIOBP-1 and DISC1, each
-  from a single laboratory lineage. That supports a case series on two proteins, not a
-  rate, and it should be read against the AUROC floor below before any compute is spent.
+  10 rows and 1 derived, but **3 are CPAD members** and **6 more are not
+  `confirmatory_eligible`**, their labels having been assigned after the modern
+  predictor had already run. For a predictor trained on CPAD, **2 rows remain**, both of
+  them TRIOBP-1 and DISC1, each from a single laboratory lineage. That supports a case
+  series on two proteins, not a rate, and it should be read against the AUROC floor below
+  before any compute is spent.
+- **Rows are not independent, and row count overstates n.** The 8 discordant,
+  CPAD-absent, circularity-clean rows span only **5 proteins**: three are intervals of
+  one protein and two of another, scored on one profile by one tool. Any test assuming
+  independent observations should take the protein as the unit, not the row.
 - **It is not a random sample of anything.** Rows were found by targeted search,
   including a deliberate search for papers that ran predictors post hoc and
   published the failure. Prevalence must not be estimated from it.
-- **12 of 21 rows have `stratum: PENDING`.**
+- **5 of 21 rows have `stratum: PENDING`.**
 - **Two rows rest on an author manuscript and one on a preprint**, each recorded
   as such. In one instance the preprint is *better evidence* than the version of
   record, because copyediting dropped a word that marked a cited study as
@@ -241,8 +277,8 @@ The `frame` field records the frame and, where available, the accession. **Where
 
 | file | |
 |---|---|
-| `aggregation_regions_v1.2.0.json` | **authoritative.** Full records, schema documentation, per-row `notes` |
-| `aggregation_regions_v1.2.0.csv` | core columns only, for quick inspection |
+| `aggregation_regions_v1.3.0.json` | **authoritative.** Full records, schema documentation, per-row `notes` |
+| `aggregation_regions_v1.3.0.csv` | core columns only, for quick inspection |
 
 **The CSV cannot represent the `notes` object**, and 15 of 21 rows carry one.
 Those notes often hold the row's most important caveat — an ex vivo structure
@@ -270,17 +306,23 @@ working file is never edited by it.
 
 Mercier des Rochettes, B. (2026). *Experimentally mapped aggregation-critical
 protein regions, with circularity, prediction-concordance and
-training-set-contamination labels*, version 1.2.0 [Data set]. Zenodo.
-**10.5281/zenodo.24337561**
+training-set-contamination labels*, version 1.3.0 [Data set]. Zenodo.
+**DOI-RESERVE-PENDING**
 
-<https://doi.org/10.5281/zenodo.24337561>
+<https://doi.org/DOI-RESERVE-PENDING>
 
-This is the **version DOI**: it resolves to 1.2.0 and only 1.2.0, which is what a
+This is the **version DOI**: it resolves to 1.3.0 and only 1.3.0, which is what a
 citation of a specific analysis needs. The **concept DOI**,
 **10.5281/zenodo.24290697**, always resolves to whatever version is current — use that
 one only when you mean "the latest".
 
-**Previous version.** v1.1.0 is **10.5281/zenodo.24306057**
+**Previous version.** v1.2.0 is **10.5281/zenodo.24337561**
+(<https://zenodo.org/records/24337561>). It remains citable and unchanged. It carries
+seven rows at `stratum: PENDING` whose labels this version assigns from the legacy
+predictor run, and it has no `stratum_assignment` column, so it cannot tell a reader
+which stratum labels were assigned blind and which were not.
+
+**v1.1.0** is **10.5281/zenodo.24306057**
 (<https://zenodo.org/records/24306057>). It remains citable and unchanged. It holds 17
 rows against this version's 21, and lacks the four rows added on 17 November 2026 —
 ANXA11, TMEM106B, glycinin G4, and the DISC1 interval split into the two sub-intervals

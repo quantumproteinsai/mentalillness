@@ -5,13 +5,51 @@ decisions that are **yours**, not defaults to be inherited.
 
 ---
 
-## v1.3.0 IS OWED — 18 Nov 2026
+## v1.3.0 PREPARED — 18 Nov 2026 — **BLOCKED ON THE DOI RESERVATION, which is yours**
 
-`data/regions.json` has moved past the v1.2.0 deposit: **seven stratum labels changed**
-under §7a and a `stratum_assignment` field was added. A *data* change warrants a new
-version by this file's own rule. `10.5281/zenodo.24337561` remains correct for what it
-contains. `preflight_deposit.py` now refuses with *"VERSION is 1.2.0 but 1.2.0 is already
-deposited"* until `VERSION` is bumped.
+Repo side is complete. `preflight_deposit.py` passes every check except the two it is
+designed to fail until the DOI is reserved:
+
+```
+DOI
+  FAIL  CITATION.cff has a real DOI, not the DOI-RESERVE-PENDING placeholder
+  FAIL  release/DATA_DESCRIPTOR.md has a real DOI, not the DOI-RESERVE-PENDING placeholder
+```
+
+**Reserve → write in → preflight → commit → tag → upload → publish.** Same order as
+v1.2.0, for the same reason: deposited files are frozen.
+
+1. <https://zenodo.org/records/24337561> (v1.2.0) → **New version**
+2. **Reserve DOI**, give me the number — it replaces `DOI-RESERVE-PENDING` in
+   `CITATION.cff` (the `doi:` key) and `release/DATA_DESCRIPTOR.md` (**two** occurrences,
+   not three this time: the instruction block that caused the miscount is gone)
+3. `python3 scripts/preflight_deposit.py` → must exit 0
+4. Commit, tag `v1.3.0` **and** `deposited-v1.3.0` at the same commit
+5. Delete the five copied files, upload the v1.3.0 five, set **Version** to `1.3.0`,
+   paste `release/zenodo_description_v1.3.0.snippet.html` into the Description **source
+   view**
+6. Publish → verify the concept DOI resolves to the new record
+7. **Add `1.3.0` to `release/deposited.json` in the commit that records the deposit.**
+   This step is the one that has failed twice; it is now a numbered step rather than a
+   thing to remember.
+
+### What changed, and why it is a new version
+
+**No rows added or removed. Seven `stratum` labels changed**, under §7a: six
+`PENDING → DISCORDANT`, one `PENDING → CONCORDANT`, assigned mechanically from the legacy
+run. A new core column **`stratum_assignment`** records the rule, the legacy score, the
+previous value, and `confirmatory_eligible`.
+
+**The confirmatory count does not move: still 2.** Six of the eight eligible-looking rows
+carry `confirmatory_eligible: false`, because the label was applied after the modern arm
+had run. **That flag is the reason this is a data change worth a DOI** — a reader of
+v1.2.0 sees seven rows as `PENDING`; a reader of v1.3.0 sees how they were resolved *and*
+which resolutions were blind.
+
+Two placement decisions, both arguable and both stated: `stratum_assignment` is **core**,
+not per-row commentary, because a consumer who cannot see `confirmatory_eligible` cannot
+reproduce the confirmatory set; and the top-level key explaining it is **dataset
+documentation**, not a project note, for the same reason.
 
 ### THE SAME DEFECT RECURRED ONE DAY AFTER BEING WRITTEN UP
 

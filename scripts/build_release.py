@@ -31,7 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / 'data' / 'regions.json'
 OUT = ROOT / 'release'
-VERSION = '1.2.0'
+VERSION = '1.3.0'
 
 CORE = [
     'protein', 'residues', 'frame', 'sequence', 'evidence', 'construct',
@@ -42,6 +42,10 @@ CORE = [
     # not commentary: a consumer who cannot see that a row's protein is in CPAD
     # cannot tell a modern predictor's recall from its prediction.
     'cpad_status', 'cpad_basis', 'cpad_checked',
+    # Added 18 Nov 2026 by the §7a stratum assignment. CORE, not commentary: it carries
+    # confirmatory_eligible, and a consumer who cannot see that flag cannot reproduce the
+    # confirmatory set -- the stratum label alone does not admit a row.
+    'stratum_assignment',
     'sequence_provenance', 'range_provenance', 'note',
 ]
 
@@ -100,6 +104,11 @@ DOC_KEYS = {
     #   demonstrated sensitivity of the search that produced it.
     '_A_HYDROPHOBIC_SEGMENT_THAT_IS_NOT_IN_THE_SAMPLE_IS_A_DECOY_WINDOW',
     '_A_NAME_SEARCH_IS_NOT_AN_ACCESSION_SEARCH__A_LIMIT_OF_OUR_OWN_CPAD_CHECK',
+    # Added 18 Nov 2026. It documents what stratum_assignment means, why six rows carrying
+    # a DISCORDANT label are nonetheless not in the confirmatory set, and why the honest
+    # unit of analysis is the protein rather than the row. A consumer who misses it will
+    # read the stratum column as admitting rows it does not admit.
+    '_THE_STRATUM_ASSIGNMENT_OF_18_NOV_2026__A_REGISTERED_RULE_APPLIED_TOO_LATE',
 }
 # Everything else is a project note: true, kept, but about THIS PROJECT's
 # hypotheses and workflow rather than about the data.

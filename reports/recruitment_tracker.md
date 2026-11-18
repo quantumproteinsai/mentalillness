@@ -246,7 +246,9 @@ predictor missed it" is true before any software runs, in the direction of our o
 usually in the abstract. **Applied this morning it would have rejected all three of
 today's recruits before a paper was opened:** TAF15 0.153, CHCHD2 0.200, CHCHD10 0.217.
 
-Only **7 of 20** existing rows pass. Both founding confirmatory rows do, narrowly —
+Only **10 of the 23 scored** rows pass (11 of all 24, counting the excluded row).
+*Corrected 18 Nov 2026 from “7 of 20” — see the §3.1a short-region fix.*
+Both founding confirmatory rows do, narrowly —
 DISC1 384–415 at 0.0352 and TRIOBP-1 324–348 at 0.0370 — so the project's own question
 stays answerable.
 

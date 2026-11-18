@@ -115,7 +115,10 @@ software runs, and it is true in the direction of this project's own H1.
 
 - **13 of 23 scored rows have m/M > 0.05.** TMEM106B 120–254 is 0.489, serum amyloid A
   2–55 is 0.471, CHCHD10 42–75 is 0.217.
-- **Only 7 of 20 rows can ever reach p < 0.05 under any rank-based test.**
+- **Only 10 of the 23 scored rows can ever reach p < 0.05 under any rank-based test**
+  (11 of all 24, counting the row excluded from scoring). *Corrected 18 Nov 2026: this
+  first read 7 of 20, before the §3.1a short-region rows were given their sliding-pool
+  m = 1 instead of a tiling m = 0.*
 - A weaker, formula-specific consequence: v cannot fall below
   **1 − ((M−0.5)/M)^m**, which exceeds 0.05 for **9 of 23** rows, and where that floor is
   attained v is **anti-conservative by 2.1×** (CHCHD10 reports v = 0.104 where the

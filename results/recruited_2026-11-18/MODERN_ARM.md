@@ -161,7 +161,11 @@ Under H0 the chain's top-ranked window falls inside the region with probability 
 *m*/*M***. So **no rank-based statistic — not this one, not a repaired one — can return a
 p below *m*/*M*.**
 
-**Only 7 of 20 rows have *m*/*M* ≤ 0.05.** The other thirteen are beyond rescue by any
+**Only 10 of the 23 scored rows have *m*/*M* ≤ 0.05** (11 of all 24, counting the row
+excluded from scoring). **CORRECTED 18 Nov 2026, same day:** this first read 7 of 20, from
+the pass that computed *m*/*M* by tiling alone and returned 0 for the four §3.1a
+short-region rows. Under §3.1a those use the sliding pool with *m* = 1 — tau 306–311 is
+0.0023, not 0. The other thirteen are beyond rescue by any
 amendment to §3.1: the region is simply too large a fraction of its own protein for its
 ranking to be surprising.
 

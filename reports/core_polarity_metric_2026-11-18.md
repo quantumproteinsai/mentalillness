@@ -191,3 +191,34 @@ discovery about amyloid. What would make it a finding is the *experimental* half
 polar-core regions are nonetheless genuine aggregation determinants, which the rows
 establish independently of any predictor. **The interesting claim is not that the tools
 dislike polar cores; it is that nature does not.**
+
+---
+
+## Two deviations from this specification, recorded 18 Nov 2026
+
+**1. Eleven layers were registered; thirteen were executed.** §10a and this file both say
+the assembly is built to **11 layers**. `scripts/core_polarity.py` builds **13**
+(`copies=6`, −6…+6), and its own docstring gives the reason: *"so the analysis chain
+always has >= 5 subunits on each side"*.
+
+**The direction is known and one-way.** More layers can only increase burial, never
+decrease it, so Φ computed at 13 is an upper bound on Φ computed at 11. At a 4.8 Å rise
+the sixth neighbour sits ~29 Å from the analysis chain and cannot occlude it against a
+1.4 Å probe, so the two should be identical. **That is reasoning, not a measurement, and
+it is recorded as reasoning.** The deviation is conservative and documented in the code,
+but it is a deviation from a registered number and is not waved away.
+
+**2. The Φ results cannot be re-run from this repository.** No coordinate file is
+committed — `git ls-files` returns zero `.cif`/`.pdb` entries — and no reproduce command
+for `core_polarity.py` appears in any report. The PDB IDs and chains are recorded, so the
+analysis is **re-derivable** by someone who downloads them; it is not **re-runnable** as
+committed.
+
+This is the same defect class as the `score_rows.py` path bug of 17 Nov, whose comment
+reads: *"An archived output plus a script that cannot find it is not a reproducible
+result."* It has now recurred in a second analysis.
+
+**Both are pre-submission blockers, not analysis blockers.** Neither changes a number
+today. Before the manuscript is submitted: re-run Φ at 11 layers and report whether any
+value moved, and either commit the coordinates or commit a fetch script that pins the
+PDB IDs and checksums what it downloads.

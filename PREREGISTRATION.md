@@ -858,6 +858,40 @@ restatement of how they work. The finding, if there is one, lies in the experime
 — that polar-core regions are genuine aggregation determinants anyway. **The claim worth
 making is not that the tools dislike polar cores, but that nature does not.**
 
+### 10b Structural recruitment for Φ — REGISTERED 18 Nov 2026, BEFORE ANY SEARCH
+
+**Full rule: `reports/structural_recruiting_rule_2026-11-18.md`, committed before the
+first query was issued.** Summarised here so the decision rules sit with the others.
+
+**Why.** At *n* = 7 the §10a result dies if any one of four rows is dropped. *n* is the
+only thing that fixes that. **§3.1b does not block this pool**: Φ needs a deposited fibril
+structure, §3.1b needs a short region in a long chain, and the two criteria are nearly
+disjoint — all seven current Φ rows fail *m*/*M* > 0.05.
+
+**Eligibility (all six):** an experimentally mapped region to `regions.json` standard, read
+in full, in a named frame; a deposit **of the aggregated state** covering **≥ 80 %** of the
+region; Φ computable (deposited rise and twist, or ≥ 5 layers as deposited); frame verified
+against UniProt/RefSeq; `found_by` not prediction. ***m*/*M* is NOT a criterion here and
+must not be applied** — applying it would reimport the constraint this analysis is free of,
+after the geometry is visible.
+
+**One row per protein**, fixed in advance: most region residues modelled, tie to lowest
+start residue; for structures, highest coverage, then resolution, then lowest PDB ID.
+
+**Ordering:** screened candidate list committed (rejects included) → Φ computed and
+committed → predictor run → join. As §7a and §10a.
+
+**Stopping — the rule that makes this worth doing:** search to pool exhaustion or 15 rows;
+**the Φ–*v* test is recomputed ONCE, at the final *n*.** No interim analysis, and
+recruitment does not stop because a *p* crossed a threshold. **If fewer than three new rows
+are admitted the analysis is not re-run at all** and the *n* = 7 result stands with its
+fragility, reported as a negative.
+
+**This stays permanently exploratory.** DISC1 and TRIOBP-1 have no deposited fibril
+structures, so the confirmatory stratum is outside this analysis and no *n* changes that.
+
+---
+
 ---
 
 ## 11. What would falsify the project's thesis

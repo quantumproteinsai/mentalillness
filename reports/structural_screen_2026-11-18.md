@@ -15,9 +15,14 @@ the PDF before it can be admitted or rejected).
 
 ## Current position
 
-**1 admitted. 0 pending. 3 rejected.** Both pending PDFs were supplied and read in full on
-18 Nov. Under §10b S5 the Φ–*v* test is **not** recomputed until **three** rows are
-admitted, so the *n* = 7 result stands unchanged today.
+**1 admitted. 6 pending a PDF. 5 rejected.** Under §10b S5 the Φ–*v* test is **not**
+recomputed until **three** rows are admitted, so the *n* = 7 result stands unchanged.
+
+**Second screening round, 18 Nov, against the PDB itself.** Eight further proteins were put
+through E2/E3/E4 using the RCSB REST API, which is a primary source and `[READ]` grade for
+deposit facts: method, resolution, helical rise and twist, and the construct's UniProt
+alignment. **E1, E5 and E6 cannot be settled this way** — they need the paper — so nothing
+below is admitted.
 
 ---
 
@@ -148,3 +153,88 @@ test it. **This is why tau and α-synuclein — both of which have rows in
 `data/regions.json` and abundant deposits — are not simply added here**; admitting them
 would need a deposit outside the calibration set, which is possible and is left in the
 pool above.
+
+
+---
+
+# Second round, 18 Nov 2026 — eight proteins screened against the PDB
+
+**A discriminator worth stating, because it rejects a candidate cleanly.** A cross-β
+amyloid stacks one β-strand per subunit along the fibril axis, so its deposited helical
+rise is **≈ 4.75–4.85 Å**, or **≈ 2.4 Å with a ≈ 179° twist** when the asymmetric unit is
+two rungs related by a 2₁ screw. Every incumbent Φ row sits in that band. A helical
+filament with a rise far outside it is not a cross-β assembly, whatever it is called.
+
+## Rejected in round two
+
+### Gelsolin — REJECTED on E2 and E4
+
+Seven EM entries, **none helical**: all are gelsolin domains bound to F-actin (12BW, 12BX,
+12BY, 12BZ, 8VIZ, 8VKH, 9UG2). **There is no deposited structure of gelsolin in an
+aggregated state at all**, so there is nothing for Φ to be computed on. Finnish-type
+gelsolin amyloidosis is well described in the literature; the structure is not deposited.
+
+### ASC / PYCARD — REJECTED on E3
+
+Thirteen EM entries, most helical, and **none of them cross-β**. ASC-PYD filaments deposit
+at **rise 13.7–13.95 Å, twist ≈ 53°** (3J63, 9WZ4, 9WZ7, 9WZ8, 9WZD, 9WZG) and ASC-CARD
+filaments at **rise 5.0–5.27 Å, twist ≈ −100.6°** (6K99, 6N1H, 9WZ5, 9WZB, 9WZC). These are
+helical polymers of **folded death-domain** subunits — inflammasome signalling filaments —
+not amyloid. E3 asks for the aggregated state with a cross-β core, and this is a different
+kind of object that the word "filament" disguises.
+
+## Pending a PDF after round two
+
+Each of the six below clears E2–E4 on deposit facts. **None can be admitted**: E1 (was a
+predictor in the discovery path?), E5 (frame) and E6 require the paper, and in every case
+**the modelled core range must be read from the deposit itself** — the alignments recorded
+here are the *construct's* span, not the ordered core, and E2's ≥ 80 % test is against the
+core.
+
+| protein | deposit | res. | rise / twist | construct span (UniProt) | the issue to settle |
+|---|---|---|---|---|---|
+| **β2-microglobulin** | 6GK3 | 3.98 Å | 4.83 / −0.608 | P61769 42–105 | Is this wild type or the **ΔN6** truncation variant? The two are different rows |
+| **SOD1** | 7VZF | 2.95 Å | 4.82 / −1.187 | P00441 1–154 | *"full-length human SOD1"* — the best WT candidate. 9JBO (3.39 Å) is the other WT |
+| **human lysozyme** | 8QUT | 2.80 Å | 4.78 / −1.0 | P61626 19–148 | WT, *"heat-irreversible"*. Carries a second, **unidentified 10-residue peptide** entity |
+| **apolipoprotein A-I** | 9PVY | 2.15 Å | 4.85 / −0.68 | P02647 25–267 | **Patient-derived cardiac fibril**, but of the **L90P variant**. Best resolution in the whole pool |
+| **medin (lactadherin)** | 9U02 | 2.70 Å | 4.804 / −2.008 | Q08431 268–317 | **The only medin deposit, and it is heterotypic** — a co-fibril with Aβ40 |
+| **IAPP / amylin** | 6Y1A | 4.20 Å | 2.351 / 178.23 | P10997 **34–70** | Many polymorphs; R1/R2 tie-breaks must be applied before, not after, looking |
+
+### Four things these raise that are not bookkeeping
+
+**1. Mutants and variants are not wild-type rows, and the pool is full of them.** SOD1's
+other six deposits are G85R, H46R, G93A, D101N, C6A/C111A and G93A; lysozyme's other is
+D87G; **all three** apolipoprotein A-I deposits are L90P or R173P. This is the same issue
+that disqualified TDP-43's SegB structure (A315E, chosen *"to make the fibrils more
+homogeneous"*) — but **apolipoprotein A-I is a different case and must not be lumped in**:
+there the variant *is* the pathological species, taken from a patient, and the dataset
+already carries hSAA1.1 with A52V on exactly that reasoning. **It is admissible if the
+frame is explicit about the variant.** A row that silently used the canonical sequence
+would be wrong.
+
+**2. Medin's only structure is a two-protein interface.** 9U02 is a co-fibril of medin with
+Aβ40. Φ computed on it would describe a heterotypic interface, not a homomeric core. The
+dataset already carries exactly this caveat on **ANXA11 (9FOR), buried partly by TDP-43**,
+so the precedent is admission-with-caveat rather than rejection — but it is the weakest
+kind of row and should not be the one that carries the *n* from 7 to 8.
+
+**3. The IAPP frame trap is real, and now verified.** UniProt P10997 is the **89-residue
+precursor**; mature IAPP is the 37-mer at **P10997 34–70**, confirmed by the deposit
+alignments for 6Y1A and 6ZRF. Any IAPP row must say which frame it is in, as the hSAA1.1
+and LECT2 rows already do. Note also that **6VW2 is SUMO-tagged** (a second accession,
+Q12306, in the same entity), which is a construct difference, not a frame one.
+
+**4. β2-microglobulin's construct span is the question, not a detail.** 6GK3 aligns to
+P61769 **42–105**. P61769 carries a 20-residue signal peptide, so mature β2m is 21–119 in
+UniProt numbering. A span starting at 42 is **not** the mature N-terminus, and ΔN6 — the
+truncation variant central to the β2m amyloid literature — starts six residues in. Whether
+6GK3 is WT or ΔN6 decides what the row is, and the title does not say.
+
+## What is needed next, in order of what it would settle
+
+1. **SOD1 7VZF** — the cleanest wild-type, full-length, well-resolved candidate in the pool.
+2. **Human lysozyme 8QUT** — wild type, 2.80 Å, and a classic systemic amyloidosis protein.
+3. **β2-microglobulin 6GK3** — one sentence in the Methods decides WT versus ΔN6.
+
+Apolipoprotein A-I, medin and IAPP are all live but each carries a caveat that must be
+written into the row rather than discovered later.

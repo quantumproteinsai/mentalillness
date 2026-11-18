@@ -176,3 +176,85 @@ construct lacking 164-190 was ever made — see
 the protein's identity rests on one residue of density at 3.6 Å; **if the fibril is G5
 rather than G4 this row must be rescored**, since G5's acidic chain is 320 residues, not
 258.
+
+---
+
+## The Supporting Information, read 18 November 2026
+
+Obtained as `ADVS-12-e09821-s002.pdf` from the **Europe PMC `supplementaryFiles` API** for
+PMC12591115. PMC's own article pages served a **reCAPTCHA** to a scripted client, so that
+route yielded a challenge page rather than the article; the Europe PMC route was checked
+against a control request that returned *"not open access"*, so a hit there means the files
+exist rather than that the query was malformed.
+
+**All three claims that rested on unread figures are now resolved. One of them corrects
+this row's own previous reading.**
+
+### S4 — the necessity claim is weaker than the main text says
+
+Section 3.3 says removing Pro164-Ala190 *"resulted in markedly poorer fitting (Figure S4c),
+underscoring the necessity of this region for structural integrity."*
+
+**Figure S4's own caption calls the figure "Sequence validation of PM1"**, and S4c reads,
+verbatim:
+
+> *Control reconstruction with the Pro164-Ala190 segment excluded **from the input
+> sequence**, resulting in significantly poorer map-model fit.*
+
+So the segment was withheld from the **sequence supplied to ModelAngelo** and the model
+rebuilt. That tests whether the density is correctly assigned to Pro164-Ala190 — a sound
+sequence-assignment control — and says nothing about whether the region is required for
+aggregation. **No construct lacking 164-190 was made, nothing was mutated, nothing was
+assayed for fibril formation.** The main text's word *necessity* overstates its own
+supplementary figure; the caption is the better guide.
+
+### S3b — the abundances, and the polymorph nobody modelled
+
+By contour-length measurement of AFM images (FiberApp): **PM1 27.8%, PM2 1.4%,
+PM3 70.8%.** This row is built on PM1, so **it rests on 27.8% of the fibrils.**
+
+**The dominant form was never modelled.** Figure S2 records PM3 at 3.23 Å auto-refine and
+FSC 0.143 of 3.13 Å, annotated *"(not suitable for model building)"*. The species that is
+70.8% of the sample has no atomic model and no assigned sequence. Height distributions
+confirm these are distinct species, not views of one: PM1 5.4 nm, PM2 6.9 nm, PM3 3.7 nm.
+
+### S5 — this row had it wrong, and the correction matters
+
+The row previously recorded *an alternative conformation inside the modelled region*. S5
+says otherwise, verbatim:
+
+> *Note that Val165–Asp172 (highlighted in purple) belongs to **an adjacent chain**, not
+> the Pro164–Ala190 chain.*
+
+**Within the span of this region, part of the density belongs to a neighbouring chain
+threaded through it.** S7's note calls these *"extensive interchain interaction interfaces
+between the two primary chains"*. So the ordering of 164-190 is a **quaternary** property,
+not a property of the sequence alone — **a single-sequence predictor is being asked to find
+a region whose order depends on a partner chain it cannot see.** That is a limitation of
+the benchmark question as posed, and it applies to any cryo-EM row with an interdigitated
+core.
+
+### A lead the SI hands us, recorded as a lead
+
+`CLAUDE.md` asks what structural feature the predictors are all missing. The paper's title
+is *"**Dual Hydrophilic-Hydrophobic Core Architecture** in Soy Glycinin Amyloid Fibrils"*,
+and **Figure S6 sorts twelve published fibril structures into hydrophobic-core (Aβ 7q4b,
+Aβ 7q4m, α-syn 6h6b, tau 5o3l, prion 7yat, prion 8wzx, transthyretin 7ob4, AL59 9faa) and
+hydrophilic-core (FUS 6xfm, FapC 9nqd, FapC 9u4u, CsgA 8enq).**
+
+Every predictor in both arms is built on hydrophobicity and β-propensity. **A core held by
+polar contacts is by construction the case they should fail on** — and the dataset already
+contains a coincidence worth checking: **FUS is in S6's hydrophilic list, and FUS 39-95 is
+among the worst-scored rows in the set (AggrescanAI v = 0.958).**
+
+**Two rows is not evidence.** A test needs core-architecture labels assigned from the
+structures *independently of the scores*, or it repeats the select-on-the-outcome error
+retracted in `reports/recruiting_rule_2026-11-18.md`. S6 is a published, outside-sourced
+classification, which is the independent labelling such a test needs. **The confound to
+handle: FUS is a CPAD member and glycinin is not**, so a naive comparison mixes training-set
+membership with core architecture.
+
+### Also in the package
+
+`ADVS-12-e09821-s001.py` — **read, not run.** A CCTBX helical-replication utility, which
+independently confirms the PM1 helical parameters: **rise 4.8 Å, twist −1.6°.**

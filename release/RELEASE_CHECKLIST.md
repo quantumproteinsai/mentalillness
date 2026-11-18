@@ -5,33 +5,36 @@ decisions that are **yours**, not defaults to be inherited.
 
 ---
 
-## v1.3.0 PREPARED — 18 Nov 2026 — **BLOCKED ON THE DOI RESERVATION, which is yours**
+## v1.3.0 READY TO UPLOAD — DOI reserved 18 Nov 2026 — **NOT YET PUBLISHED**
 
-Repo side is complete. `preflight_deposit.py` passes every check except the two it is
-designed to fail until the DOI is reserved:
+**Reserved version DOI: `10.5281/zenodo.24339193`**, written into `CITATION.cff` and
+`release/DATA_DESCRIPTOR.md` before upload. **`preflight_deposit.py` exits 0.** Tagged
+`v1.3.0` and `deposited-v1.3.0` at the same commit; the tag message carries the md5s.
 
-```
-DOI
-  FAIL  CITATION.cff has a real DOI, not the DOI-RESERVE-PENDING placeholder
-  FAIL  release/DATA_DESCRIPTOR.md has a real DOI, not the DOI-RESERVE-PENDING placeholder
-```
+**Verified reserved-but-not-live, with controls, 18 Nov 2026:**
 
-**Reserve → write in → preflight → commit → tag → upload → publish.** Same order as
-v1.2.0, for the same reason: deposited files are frozen.
+| check | result |
+|---|---|
+| `doi.org/10.5281/zenodo.24339193` | **404** — reserved, unpublished |
+| `api/records/24339193` | **404** |
+| concept DOI `…24290697` | **200 → records/24337561** — still v1.2.0 |
+| `doi.org/…24337561` *(control)* | 200 |
+
+**The placeholder appeared twice, as predicted** — the instruction block that made it
+three in v1.2.0 is gone, so the count the procedure states is now the count in the file.
+
+### THE REMAINING STEPS ARE YOURS, AT THE FORM
 
 1. <https://zenodo.org/records/24337561> (v1.2.0) → **New version**
-2. **Reserve DOI**, give me the number — it replaces `DOI-RESERVE-PENDING` in
-   `CITATION.cff` (the `doi:` key) and `release/DATA_DESCRIPTOR.md` (**two** occurrences,
-   not three this time: the instruction block that caused the miscount is gone)
-3. `python3 scripts/preflight_deposit.py` → must exit 0
-4. Commit, tag `v1.3.0` **and** `deposited-v1.3.0` at the same commit
-5. Delete the five copied files, upload the v1.3.0 five, set **Version** to `1.3.0`,
-   paste `release/zenodo_description_v1.3.0.snippet.html` into the Description **source
-   view**
-6. Publish → verify the concept DOI resolves to the new record
-7. **Add `1.3.0` to `release/deposited.json` in the commit that records the deposit.**
-   This step is the one that has failed twice; it is now a numbered step rather than a
-   thing to remember.
+2. Delete the five copied files; upload the v1.3.0 five
+3. Set **Version** to `1.3.0`. Title, keywords, authors, licence carry over — check, do
+   not retype. **Leave the Additional Description empty**: it is the field that carried
+   "Version 1.0.0" forward through two deposits.
+4. Paste `release/zenodo_description_v1.3.0.snippet.html` into the Description **source
+   view** (`<>`), not the visual editor
+5. Publish → verify `10.5281/zenodo.24290697` resolves to the new record
+6. **Add `1.3.0` to `release/deposited.json` in the commit that records the deposit.**
+   The step that has failed twice; numbered now rather than remembered.
 
 ### What changed, and why it is a new version
 

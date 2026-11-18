@@ -307,9 +307,9 @@ working file is never edited by it.
 Mercier des Rochettes, B. (2026). *Experimentally mapped aggregation-critical
 protein regions, with circularity, prediction-concordance and
 training-set-contamination labels*, version 1.3.0 [Data set]. Zenodo.
-**DOI-RESERVE-PENDING**
+**10.5281/zenodo.24339193**
 
-<https://doi.org/DOI-RESERVE-PENDING>
+<https://doi.org/10.5281/zenodo.24339193>
 
 This is the **version DOI**: it resolves to 1.3.0 and only 1.3.0, which is what a
 citation of a specific analysis needs. The **concept DOI**,

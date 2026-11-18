@@ -40,10 +40,15 @@ is one row, so it waits for the next substantive change rather than minting v1.4
 
 ---
 
-## v1.4.0 PREPARED — 18 Nov 2026 — **BLOCKED ON THE DOI RESERVATION, which is yours**
+## v1.4.0 READY TO UPLOAD — DOI reserved 18 Nov 2026 — **NOT YET PUBLISHED**
 
-Repo side complete; `preflight_deposit.py` fails on exactly the two DOI placeholders and
-nothing else.
+**Reserved version DOI: `10.5281/zenodo.24342313`**, written into `CITATION.cff` and
+`release/DATA_DESCRIPTOR.md` before upload. **`preflight_deposit.py` exits 0.** Tagged
+`v1.4.0` and `deposited-v1.4.0` at the same commit.
+
+Verified reserved-but-not-live, with controls: `doi.org/10.5281/zenodo.24342313` → **404**
+and `api/records/24342313` → **404**, while the concept DOI still resolves to record
+24339193 (v1.3.0) and that record returns 200.
 
 1. <https://zenodo.org/records/24339193> (v1.3.0) → **New version**
 2. **Reserve DOI**, give me the number — it replaces `DOI-RESERVE-PENDING` in

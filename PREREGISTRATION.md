@@ -1195,6 +1195,47 @@ stating what changed, why, and **whether any score had been seen at the time.**
 
 ---
 
+### 12.1a The Δ384-414/415 question is numerically inert [18 Nov 2026]
+
+**Scores had been seen when this was computed. It changes nothing registered, and it
+reads no predictor output** — only the chain length, the window width and the two
+candidate boundaries, exactly as §3.1b does.
+
+Under §3.1 (non-overlapping tiling, *W* = 6, *L* = 854), both candidate regions select
+**the same five tiles**:
+
+| region | length | *M* | *m* | tiles | *m*/*M* |
+|---|---|---|---|---|---|
+| 384–**415** | 32 aa | 142 | 5 | 385-390, 391-396, 397-402, 403-408, 409-414 | 0.035211 |
+| 384–**414** | 31 aa | 142 | 5 | 385-390, 391-396, 397-402, 403-408, 409-414 | 0.035211 |
+
+**Residue 415 falls in no scored tile.** The last tile inside the region ends at 414, and
+the next begins at 415 but ends at 420, outside either boundary. So *P*, *v*, *m*/*M*,
+`power_eligible`, the §5.2b Stouffer input and the §4 verdict are **bit-identical under
+either reading.** No result in this project depends on which number the version of
+record prints.
+
+**What this retires, and what it does not.** The blocker had two components and they
+separate cleanly:
+
+- **The boundary question is closed.** It was never capable of moving a number, and that
+  was computable from the start. **Rule 2 again, arriving late**: the margin was one
+  residue and the resolution of the statistic is six.
+- **The citability question stands, unchanged.** The row's source is a preprint plus a
+  thesis; `source_version` governs over the boolean flag, and DISC1 384-415 still cannot
+  be cited to a version of record. The 2024 paper is behind an Elsevier paywall the
+  author has declined to pay.
+
+**Consequence: the blocker is re-tiered, not cleared.** It no longer gates the analysis
+or the freeze — nothing downstream moves — and it is **needed at manuscript submission**,
+where a reprint request, an institutional-repository deposit or interlibrary loan has
+months rather than days to resolve. One `sequence` field in `data/regions.json` is a
+32-residue string; if the version of record proved to say 31, that field would need the
+last residue trimmed, with no consequence for any score. The preprint settles it at 32
+on three internal checks and the thesis agrees, so this is a formality, not a doubt.
+
+---
+
 ## 13. Signature
 
 - Pre-registration ratified by: ____________________  date: __________

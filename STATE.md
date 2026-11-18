@@ -3048,3 +3048,23 @@ two columns `CLAUDE.md` forbids dropping. Full assessment in
 **Still unread: Zaharija & Bradshaw 2024** (*Prog Neuropsychopharmacol Biol Psychiatry*
 130:110923). Venko cites it as ref [122], the third document to point there. It remains
 the open Δ384-414/415 blocker.
+
+### The paywalled paper turns out not to block any number [18 Nov 2026]
+
+The author cannot obtain Zaharija & Bradshaw 2024 without paying Elsevier. Before
+treating that as a cost, the question *what does it actually control?* was computed —
+from the chain length, the window width and the two candidate boundaries, reading **no
+predictor output**.
+
+**Under §3.1, Δ384-414 and Δ384-415 select the same five tiles.** Residue 415 falls in no
+scored tile: the last tile inside the region ends at **414**, and the next runs 415-420,
+outside either reading. So *M* = 142, *m* = 5, *m*/*M* = 0.035211, *P*, *v*,
+`power_eligible`, the Stouffer input and the §4 verdict are **bit-identical either way.**
+
+**The blocker is re-tiered, not cleared.** Registered as §12.1a. The boundary question is
+closed and could have been closed weeks ago — **rule 2 again: the margin was one residue
+and the resolution of the statistic is six.** The *citability* question stands: the row
+still rests on a preprint plus a thesis, `source_version` still governs, and DISC1
+384-415 still cannot be cited to a version of record. That is now a **submission-time**
+requirement, not an analysis-time one, which gives a reprint request, an
+institutional-repository deposit or interlibrary loan months instead of days.

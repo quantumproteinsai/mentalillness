@@ -40,6 +40,41 @@ is one row, so it waits for the next substantive change rather than minting v1.4
 
 ---
 
+## v1.4.0 PREPARED — 18 Nov 2026 — **BLOCKED ON THE DOI RESERVATION, which is yours**
+
+Repo side complete; `preflight_deposit.py` fails on exactly the two DOI placeholders and
+nothing else.
+
+1. <https://zenodo.org/records/24339193> (v1.3.0) → **New version**
+2. **Reserve DOI**, give me the number — it replaces `DOI-RESERVE-PENDING` in
+   `CITATION.cff` (the `doi:` key) and `release/DATA_DESCRIPTOR.md` (**two** occurrences)
+3. `python3 scripts/preflight_deposit.py` → must exit 0
+4. Commit; tag `v1.4.0` **and** `deposited-v1.4.0` at the same commit
+5. Delete the five copied files, upload the v1.4.0 five, set **Version** to `1.4.0`,
+   **leave Additional Description empty**, paste
+   `release/zenodo_description_v1.4.0.snippet.html` into the Description **source view**
+6. Publish → verify the concept DOI resolves to the new record
+7. **Add `1.4.0` to `release/deposited.json` in the commit that records the deposit.**
+
+### What changed, and why it warrants a version
+
+**No rows added or removed. A new core column, `structure`**, on the seven rows whose
+region is the ordered core of a deposited fibril — PDB entry, chain, modelled range,
+method, resolution, helical parameters, every candidate considered and the rule that
+chose. **Its absence is informative**: no deposited structure exists for that row, which
+is true of every DISC1 and TRIOBP-1 row.
+
+Also the glycinin row's correction from the Supporting Information, read 18 Nov — which
+**overturned one of that row's own claims** (Val165–Asp172 belongs to an adjacent chain,
+where the row had recorded an alternative conformation).
+
+**That correction is the part that decides it.** By this file's own test — *would a reader
+who found the DOI and not the repository be misled by what is missing?* — a corrected
+claim is a yes. The `structure` column alone would also qualify, since the core-polarity
+analysis published alongside cannot be reproduced without it.
+
+---
+
 ## v1.3.0 DEPOSITED — DOI reserved 18 Nov 2026, published and verified
 
 **Reserved version DOI: `10.5281/zenodo.24339193`**, written into `CITATION.cff` and

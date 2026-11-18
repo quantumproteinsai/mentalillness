@@ -31,7 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / 'data' / 'regions.json'
 OUT = ROOT / 'release'
-VERSION = '1.3.0'
+VERSION = '1.4.0'
 
 CORE = [
     'protein', 'residues', 'frame', 'sequence', 'evidence', 'construct',

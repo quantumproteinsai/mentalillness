@@ -2,7 +2,7 @@
 
 **with circularity, prediction-concordance and training-set-contamination labels**
 
-Version 1.3.0 · 21 regions across 11 proteins
+Version 1.4.0 · 21 regions across 11 proteins
 
 ---
 
@@ -67,6 +67,17 @@ they all hit it. Only the **discordant** rows can.
 | `DISCORDANT_DERIVED` | 1 | disagreement established by comparing two papers, not stated by either — strictly weaker |
 | `CONCORDANT` | 5 | the predictors find it |
 | `PENDING` | 5 | not yet assessed; requires a predictor run or a published one |
+
+### `structure` — which deposited fibril structure, if any *(new in 1.4.0)*
+
+Seven rows describe the ordered core of a solved fibril. Each records the PDB entry, the
+chain, the modelled range, the method and resolution, the helical rise and twist, **every
+candidate entry considered**, and the rule that chose among them.
+
+**Its absence carries information.** A row without `structure` has no deposited fibril
+structure at all — true of every DISC1 and TRIOBP-1 row, which is why those rows cannot
+take part in any structure-based analysis, including the core-polarity result reported
+with this version.
 
 ### `stratum_assignment` — was this label assigned blind? *(new in 1.3.0)*
 
@@ -277,8 +288,8 @@ The `frame` field records the frame and, where available, the accession. **Where
 
 | file | |
 |---|---|
-| `aggregation_regions_v1.3.0.json` | **authoritative.** Full records, schema documentation, per-row `notes` |
-| `aggregation_regions_v1.3.0.csv` | core columns only, for quick inspection |
+| `aggregation_regions_v1.4.0.json` | **authoritative.** Full records, schema documentation, per-row `notes` |
+| `aggregation_regions_v1.4.0.csv` | core columns only, for quick inspection |
 
 **The CSV cannot represent the `notes` object**, and 15 of 21 rows carry one.
 Those notes often hold the row's most important caveat — an ex vivo structure
@@ -306,17 +317,22 @@ working file is never edited by it.
 
 Mercier des Rochettes, B. (2026). *Experimentally mapped aggregation-critical
 protein regions, with circularity, prediction-concordance and
-training-set-contamination labels*, version 1.3.0 [Data set]. Zenodo.
-**10.5281/zenodo.24339193**
+training-set-contamination labels*, version 1.4.0 [Data set]. Zenodo.
+**DOI-RESERVE-PENDING**
 
-<https://doi.org/10.5281/zenodo.24339193>
+<https://doi.org/DOI-RESERVE-PENDING>
 
-This is the **version DOI**: it resolves to 1.3.0 and only 1.3.0, which is what a
+This is the **version DOI**: it resolves to 1.4.0 and only 1.4.0, which is what a
 citation of a specific analysis needs. The **concept DOI**,
 **10.5281/zenodo.24290697**, always resolves to whatever version is current — use that
 one only when you mean "the latest".
 
-**Previous version.** v1.2.0 is **10.5281/zenodo.24337561**
+**Previous version.** v1.3.0 is **10.5281/zenodo.24339193**
+(<https://zenodo.org/records/24339193>). It remains citable and unchanged, but it has no
+`structure` column, so it cannot say which deposited fibril structure a row's ordered core
+comes from — nor which rows have none at all.
+
+**v1.2.0** is **10.5281/zenodo.24337561**
 (<https://zenodo.org/records/24337561>). It remains citable and unchanged. It carries
 seven rows at `stratum: PENDING` whose labels this version assigns from the legacy
 predictor run, and it has no `stratum_assignment` column, so it cannot tell a reader

@@ -8,7 +8,7 @@ abstract: >-
   the construct that established it, whether a predictor was in its discovery
   path (circularity), and whether experiment and prediction agree (stratum).
 type: dataset
-version: 1.3.0
+version: 1.4.0
 authors:
   - family-names: "Mercier des Rochettes"
     given-names: "Bertrand"
@@ -45,6 +45,9 @@ identifiers:
     value: "10.5281/zenodo.24290697"
     description: "Concept DOI: always resolves to the latest version. Once v1.1.0 is published, its own version DOI is the one to cite for a specific analysis."
   - type: doi
+    value: "10.5281/zenodo.24339193"
+    description: "Version DOI of v1.3.0, the previous release. v1.4.0 supersedes it: v1.3.0 has no structure column, so it cannot say which deposited fibril structure a row's ordered core comes from, nor which rows have none at all."
+  - type: doi
     value: "10.5281/zenodo.24337561"
     description: "Version DOI of v1.2.0, the previous release. v1.3.0 supersedes it: v1.2.0 carries seven rows at stratum PENDING whose labels this version assigns from the legacy predictor run, and it lacks the stratum_assignment column recording which labels were assigned blind and which were not."
   - type: doi
@@ -67,4 +70,4 @@ date-released: 2026-11-18
 # CONDITION ON A RESERVED DOI: it belongs to ONE draft. If that draft is discarded
 # rather than published, Zenodo reserves a DIFFERENT number for the next attempt and
 # this line and the descriptor must both be updated again.
-doi: "10.5281/zenodo.24339193"
+doi: "DOI-RESERVE-PENDING"

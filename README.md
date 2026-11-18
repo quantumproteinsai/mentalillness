@@ -3,15 +3,19 @@
 A benchmark of protein aggregation predictors against experimentally mapped
 aggregation-critical regions, in schizophrenia-associated scaffold proteins.
 
-**The validation set is published.** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24290698.svg)](https://doi.org/10.5281/zenodo.24290698)
+**The validation set is published.** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24290697.svg)](https://doi.org/10.5281/zenodo.24290697)
 
 > Mercier des Rochettes, B. (2026). *Experimentally mapped aggregation-critical
-> protein regions, with circularity and prediction-concordance labels*, v1.0.0
-> [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.24290698>
+> protein regions, with circularity, prediction-concordance and
+> training-set-contamination labels*, v1.4.0 [Data set]. Zenodo.
+> <https://doi.org/10.5281/zenodo.24342313>
 
-17 regions across 8 proteins, every row read from its source paper. CC BY 4.0.
-The analysis built on it is **not** published and is not finished; the dataset
-stands on its own and was deposited first deliberately.
+The badge is the **concept DOI** (`10.5281/zenodo.24290697`) and always resolves
+to the latest version; cite the **version DOI** above for a specific analysis.
+
+**24 regions across 14 proteins**, every row read from its source paper. CC BY
+4.0. The analysis built on it is **not** published and is not finished; the
+dataset stands on its own and was deposited first deliberately.
 
 **Start with [`STATE.md`](STATE.md).** It is the current position, and parts of
 the original plan did not survive contact with the primary sources.
@@ -31,14 +35,29 @@ rather than a result to establish.
 | path | what it is |
 |---|---|
 | `STATE.md` | current position, with the three corrections that matter |
-| `data/regions.json` | **the validation set: 17 rows**, with construct, circularity, stratum and source-version columns. The working file |
-| `release/` | what was deposited at 10.5281/zenodo.24290698, derived from it by `scripts/build_release.py` |
+| `PREREGISTRATION.md` | the statistic, the thresholds and the eligibility rule, frozen at `freeze-2026-11-17`, with every amendment dated and marked for whether scores had been seen |
+| `data/regions.json` | **the validation set: 24 rows**, with construct, circularity, stratum, power-eligibility and source-version columns. The working file |
+| `release/` | what was deposited at 10.5281/zenodo.24290697, derived from it by `scripts/build_release.py` |
+| `manuscript/benchmark_draft.md` | the write-up: a null benchmark, an information limit, a polar-core association, and five named defects. **Draft, not submitted** |
 | `data/references_to_check.json` | sources nobody has opened. A lead is not a fact |
+| `scripts/score_rows.py` | the §3.1 statistic, and the floor and information-limit warnings it prints on every run |
 | `scripts/gatekeeper_density.py` | reproduces the gatekeeper separation (`python3 scripts/gatekeeper_density.py`) |
 | `reports/PDFs_to_obtain.md` | papers behind paywalls, ranked by what changes if you read one |
 
+## Before you benchmark anything against regions like these
 
-## Two standing rules, both learned the hard way
+Under the null, the top-ranked window of a chain falls inside a mapped region of
+*m* windows, out of *M*, with probability **exactly *m*/*M***. That is the
+smallest *p* **any** rank-based statistic can return for that row. Where it
+exceeds your α, no better predictor and no amendment to the statistic rescues
+the row — only a longer protein or a shorter mapped region.
+
+**13 of the 23 scored rows here exceed *m*/*M* > 0.05.** The check needs two
+integers, no predictor and no compute, and it is worth running before a candidate
+paper is read in full.
+
+
+## Three standing rules, all learned the hard way
 
 **A number is quoted from a source you opened, or it is declared unmeasured.**
 Entries in `data/references_to_check.json` carry
@@ -54,7 +73,16 @@ labelled.*
 
 **Check the margin against the error bar before spending anything.** If the
 difference you want to report is smaller than the uncertainty of the method
-reporting it, no amount of further work rescues it.
+reporting it, no amount of further work rescues it. The *m*/*M* bound above is
+this rule in its cheapest form, and it was still found one step too late.
+
+**Audit the premises of the task, not only the literature.** The most useful
+findings here were facts about proposed comparisons rather than about papers:
+two crystals that were not independent determinations, two sequences identical
+between species so the intended contrast could not exist, a residue number from a
+review that disagreed with the database, and a 2026 paper comparing predictions
+in one numbering frame against an experimental region quoted in another. **If a
+proposed experiment is impossible or uninformative, that is the finding.**
 
 ## Not in scope
 

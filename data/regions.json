@@ -1244,6 +1244,43 @@
     "assigned": "2026-11-18",
     "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
+  },
+  {
+   "protein": "Orb2 (Drosophila melanogaster)",
+   "residues": "176-206",
+   "frame": "704-residue canonical UniProt Q9VSR3 (ORB2_DROME), which IS the Orb2B frame. VERIFIED AGAINST THE SEQUENCE, not assumed: UniProt 176-206 returns QLHQQQHQQQHQQHQQHQQQQQLHQHQQQLS, which matches the paper's Figure 4F sequence character for character, and the 704 aa length matches the 704 printed for Orb2B in that figure. THE FRAME TRAP IS REAL AND WAS CHECKED: Orb2A and Orb2B share the prion-like domain but differ in their N-terminal extension (Orb2A 9 residues, Orb2B 162; Orb2A is 551 aa), so the same core carries different residue numbers in the two isoforms. The canonical entry is the long one, so no conversion is needed.",
+   "sequence": "QLHQQQHQQQHQQHQQHQQQQQLHQHQQQLS",
+   "evidence": "Cryo-EM of amyloid filaments purified from approximately three million adult Drosophila heads, 2.6 A overall resolution, atomic model built DE NOVO from density. VERBATIM: 'the protofilament core structure extends from residues 176-206 of Orb2B'. Three identical protofilaments, C3 symmetry, triangular cross-section ~80 A per side with a 15 A channel; twist -1.55 deg, rise 4.75 A. The fold is a hairpin of beta1 (176-186) and beta2 (197-206) with a wide turn (187-196).",
+   "construct": "ENDOGENOUS FULL-LENGTH PROTEIN FROM TISSUE -- the strongest construct provenance in this dataset. Purified from adult fly heads, 97.5% Orb2B by LC-MS/MS. NOT recombinant, and the distinction is the authors' own: 'When we assembled Orb2 filaments from recombinant protein, filaments were longer, morphologically distinct, less biochemically active, and had negligible seeding capacity compared to endogenous ones ... suggesting that the same prion-like protein can adopt distinct structures in vitro and in vivo.' A recombinant Orb2 row would therefore NOT be this row.",
+   "found_by": "ORDERED CRYO-EM CORE, NOT A NECESSITY MAPPING. The region is the span resolved in the reconstruction; no deletion experiment establishes that 176-206 is required for aggregation. Route (a) under PREREGISTRATION 10b. NO PREDICTOR IS IN THE DISCOVERY PATH: the model was built de novo from density and stereochemically refined, and the paper names no aggregation predictor anywhere. Adjacent evidence that does NOT establish the range: Orb2 mutations known to disrupt aggregation map onto this interface (ref 10, Majumdar 2012), and removal of 54 residues from the glutamine-rich region impaired long-term but not short-term memory (ref 6, Keleman 2007) -- a memory readout over a different span, recorded so it is not mistaken for a mapping of 176-206.",
+   "circularity_status": "CLEAN",
+   "circularity_basis": "CLEAN. The full text of the author manuscript was read on 18 Nov 2026 and contains no aggregation predictor of any kind -- no TANGO, AGGRESCAN, ZipperDB, 3D profile, WALTZ, PASTA, FoldAmyloid, AmylPred, PLAAC or language model. Software named is for cryo-EM and refinement only: RELION-3, MotionCor2, Gctf, Coot, REFMAC, MolProbity, PHENIX. Supplementary material was NOT read and is the one remaining gap.",
+   "source": "Hervas R, Rau MJ, Park Y, Zhang W, Murzin AG, Fitzpatrick JAJ, Scheres SHW, Si K (2020) 'Cryo-EM structure of a neuronal functional amyloid implicated in memory persistence in Drosophila.' Science 367(6483):1230-1234. doi:10.1126/science.aba3526.",
+   "verified_against": "Europe PMC Funders author manuscript (EMS86251), supplied by the author and READ IN FULL on 18 Nov 2026, including all four main figures and their legends.",
+   "verified_against_publisher_pdf": false,
+   "source_version": "accepted_manuscript",
+   "source_version_note": "EUROPE PMC FUNDERS AUTHOR MANUSCRIPT, NOT THE VERSION OF RECORD. Text is the accepted version of Science 367:1230-1234. source_version governs over the boolean flag (PREREGISTRATION 12.1). The range, the frame and the helical parameters were all independently confirmable against UniProt and the PDB deposit, so the citation gap is formal rather than substantive -- but it is recorded, not glossed.",
+   "sequence_provenance": "READ from UniProt Q9VSR3 at 176-206, 18 Nov 2026, and compared character by character against the sequence printed in Figure 4F of the paper. EXACT MATCH over all 31 residues.",
+   "range_provenance": "READ, 18 Nov 2026, from the Results: 'the protofilament core structure extends from residues 176-206 of Orb2B'. Corroborated within the same paper by the secondary-structure assignment (beta1 176-186, turn 187-196, beta2 197-206) and by the '31 amino acid protofilament core' stated in the Abstract; 206-176+1 = 31.",
+   "cpad_status": "UNCHECKED",
+   "cpad_basis": "NOT YET CHECKED against CPAD 2.0. Must be done before this row enters any analysis that separates CPAD-absent rows.",
+   "structure": {
+    "pdb": "6VPS",
+    "emdb": "EMD-21316",
+    "modelled": "176-206",
+    "method": "ELECTRON MICROSCOPY",
+    "resolution_A": 2.6,
+    "helical_rise_A": 4.75,
+    "helical_twist_deg": -1.55,
+    "symmetry": "C3, three identical protofilaments",
+    "source_material": "endogenous, purified from ~3 million adult Drosophila heads",
+    "provenance": "READ from the paper's Data and materials availability statement, 18 Nov 2026. NOT yet checked against the PDB deposit itself."
+   },
+   "note": "ADMITTED 18 Nov 2026 under PREREGISTRATION 10b, the structural recruitment rule registered BEFORE the first search query. Passes E1 (route a), E2 (region is the modelled core, 100% coverage), E3 (aggregated state from endogenous tissue), E4 (rise and twist deposited), E5 (frame verified against UniProt) and E6 (no predictor in the discovery path). FIRST of the three rows PREREGISTRATION 10b S5 requires before the Phi-v test may be recomputed; at fewer than three the n = 7 result stands unchanged. A FLAG RAISED BEFORE THE PDF WAS OPENED AND KEPT HERE: this paper describes its core as hydrophilic in explicit contrast to pathogenic amyloids, so it is a row the Phi hypothesis predicts well, read in after the hypothesis existed. It was admitted on E1-E6 alone, and its Phi has NOT been computed.",
+   "stratum": "PENDING",
+   "stratum_basis": "NO PREDICTOR HAS BEEN RUN ON THIS CHAIN. Under PREREGISTRATION 7 the stratum comes from the legacy arm and must be committed BEFORE the modern arm is run. Because nothing has run yet, this is only the second row in the project whose arm ordering can be intact from the start.",
+   "power_eligible": null,
+   "power_limit": "NOT YET COMPUTED BY scripts/apply_power_eligible.py, which needs a predictor profile for the chain length. COMPUTED BY HAND AFTER ADMISSION AND RECORDED HERE: L = 704, W = 6, M = 117, m = 4, m/M = 0.0342, which is BELOW the 0.05 bar. READ THIS CAREFULLY: m/M is explicitly NOT a criterion under 10b and was NOT used to admit this row -- it was computed only after E1-E6 had been applied. It is recorded because it has a consequence: this is the first candidate in a week that is ALSO usable by the benchmark arm, where recruitment has been exhausted since 18 Nov. Admitting it there is a SEPARATE decision under the eight-stage pipeline and 5.2b, not a consequence of this one."
   }
  ],
  "_rows_deliberately_excluded": {

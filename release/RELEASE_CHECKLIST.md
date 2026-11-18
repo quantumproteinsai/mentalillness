@@ -5,7 +5,42 @@ decisions that are **yours**, not defaults to be inherited.
 
 ---
 
-## v1.3.0 READY TO UPLOAD — DOI reserved 18 Nov 2026 — **NOT YET PUBLISHED**
+## BATCH CHANGES; DO NOT MINT A DOI PER EDIT — policy, 18 Nov 2026
+
+**Three deposits were made in two days.** Each was justified on its own, but a dataset
+whose version number moves faster than its content is harder to cite, not easier: a reader
+choosing between four DOIs has to work out which difference mattered, and the answer is
+usually "none that affects you".
+
+**So: accumulate, then deposit.** The replacement for depositing on every edit is not
+forgetting — it is `scripts/deposit_status.py`, which compares the working file against
+the most recently deposited artefact and prints what has piled up:
+
+```
+python3 scripts/deposit_status.py
+```
+
+It imports `build_release.build()` rather than reimplementing the transform, so a status
+report cannot disagree with what the builder would actually write. It reads only — no
+files, no network.
+
+**The test for whether a batch is ready is not a count.** It is:
+
+> **Would a reader who found the DOI and not the repository be misled by what is missing?**
+
+A corrected claim, a changed `stratum`, a new row, a retraction → **yes, deposit.** More
+commentary on a row, a tightened caveat, a note that only matters to someone auditing the
+project → **no, it waits.**
+
+**Currently owed:** the glycinin row's `source_version_note` and `notes` (the Supporting
+Information, read 18 Nov, which **corrected one of the row's own claims** — S5 shows
+Val165–Asp172 belongs to an adjacent chain, where the row had recorded an alternative
+conformation), plus one project note. **A corrected claim is on the "yes" side** — but it
+is one row, so it waits for the next substantive change rather than minting v1.4.0 alone.
+
+---
+
+## v1.3.0 DEPOSITED — DOI reserved 18 Nov 2026, published and verified
 
 **Reserved version DOI: `10.5281/zenodo.24339193`**, written into `CITATION.cff` and
 `release/DATA_DESCRIPTOR.md` before upload. **`preflight_deposit.py` exits 0.** Tagged

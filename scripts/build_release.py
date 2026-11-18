@@ -114,12 +114,17 @@ DOC_KEYS = {
 # hypotheses and workflow rather than about the data.
 
 
-def main():
-    global DEPOSITED
-    DEPOSITED = _deposited()
+def build(version=None):
+    """The transform, with no side effects. Returns the release dict.
+
+    SPLIT OUT OF main() ON 18 Nov 2026 so that scripts/deposit_status.py can ask what a
+    rebuild WOULD produce without writing anything. Duplicating the transform in a second
+    script would have let the two drift apart, and a status report that does not match
+    what the builder actually writes is worse than no status report.
+    """
+    version = version or VERSION
     d = json.loads(SRC.read_text())
     rows = d['regions']
-    OUT.mkdir(exist_ok=True)
 
     clean = []
     for r in rows:
@@ -144,7 +149,7 @@ def main():
             'title': 'Experimentally mapped aggregation-critical protein regions, '
                      'with circularity, prediction-concordance and '
                      'training-set-contamination labels',
-            'version': VERSION,
+            'version': version,
             'n_regions': len(clean),
             'generated_by': 'scripts/build_release.py, from data/regions.json',
             'READ_THIS_FIRST': 'release/DATA_DESCRIPTOR.md',
@@ -178,6 +183,18 @@ def main():
             **proj,
         },
     }
+
+    return release
+
+
+def main():
+    global DEPOSITED
+    DEPOSITED = _deposited()
+    release = build(VERSION)
+    clean = release['regions']
+    doc = release['dataset_documentation']
+    proj = {k: v for k, v in release['project_notes'].items() if k != '_what_these_are'}
+    OUT.mkdir(exist_ok=True)
 
     jf = OUT / f'aggregation_regions_v{VERSION}.json'
     payload = json.dumps(release, indent=2, ensure_ascii=True) + '\n'

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="175" viewBox="0 0 470 175" font-family="Helvetica,Arial,sans-serif">
+<text x="0" y="12" font-size="10" fill="#1a1a1c" text-anchor="start" font-weight="bold">Figure 3. Trois formes de circularité, suivies séparément</text>
+<rect x="0" y="26" width="148" height="120" rx="5" fill="#dbe8fc" stroke="#2663eb" stroke-width="1.2"/>
+<circle cx="20" cy="46" r="7" fill="#2663eb" stroke="none" stroke-width="1"/>
+<text x="34" y="44" font-size="9" fill="#2663eb" text-anchor="start" font-weight="bold">Découverte</text>
+<text x="11" y="76" font-size="8" fill="#1a1a1c" text-anchor="start">Un prédicteur a-t-il servi à trouver</text>
+<text x="11" y="86.5" font-size="8" fill="#1a1a1c" text-anchor="start">la région ? Si un segment prédit a</text>
+<text x="11" y="97" font-size="8" fill="#1a1a1c" text-anchor="start">été supprimé et que la suppression</text>
+<text x="11" y="107.5" font-size="8" fill="#1a1a1c" text-anchor="start">a fonctionné, cette région ne peut</text>
+<text x="11" y="118" font-size="8" fill="#1a1a1c" text-anchor="start">pas tester ce prédicteur.</text>
+<rect x="158" y="26" width="148" height="120" rx="5" fill="#fcedd6" stroke="#b5540a" stroke-width="1.2"/>
+<circle cx="178" cy="46" r="7" fill="#b5540a" stroke="none" stroke-width="1"/>
+<text x="192" y="44" font-size="9" fill="#b5540a" text-anchor="start" font-weight="bold">Accord</text>
+<text x="169" y="76" font-size="8" fill="#1a1a1c" text-anchor="start">Expérience et prédiction</text>
+<text x="169" y="86.5" font-size="8" fill="#1a1a1c" text-anchor="start">concordent-elles déjà ? Les</text>
+<text x="169" y="97" font-size="8" fill="#1a1a1c" text-anchor="start">régions faciles à cartographier sont</text>
+<text x="169" y="107.5" font-size="8" fill="#1a1a1c" text-anchor="start">souvent les motifs classiques que</text>
+<text x="169" y="118" font-size="8" fill="#1a1a1c" text-anchor="start">les outils ont été conçus pour</text>
+<text x="169" y="128.5" font-size="8" fill="#1a1a1c" text-anchor="start">trouver.</text>
+<rect x="316" y="26" width="148" height="120" rx="5" fill="#fce6e6" stroke="#ba121c" stroke-width="1.2"/>
+<circle cx="336" cy="46" r="7" fill="#ba121c" stroke="none" stroke-width="1"/>
+<text x="350" y="44" font-size="9" fill="#ba121c" text-anchor="start" font-weight="bold">Apprentissage</text>
+<text x="327" y="76" font-size="8" fill="#1a1a1c" text-anchor="start">La protéine figure-t-elle dans la</text>
+<text x="327" y="86.5" font-size="8" fill="#1a1a1c" text-anchor="start">base ayant servi à entraîner l'outil</text>
+<text x="327" y="97" font-size="8" fill="#1a1a1c" text-anchor="start">moderne ? Si oui, un succès peut</text>
+<text x="327" y="107.5" font-size="8" fill="#1a1a1c" text-anchor="start">relever de la mémoire et non de la</text>
+<text x="327" y="118" font-size="8" fill="#1a1a1c" text-anchor="start">prédiction.</text>
+</svg>

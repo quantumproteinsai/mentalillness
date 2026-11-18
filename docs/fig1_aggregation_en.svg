@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="150" viewBox="0 0 470 150" font-family="Helvetica,Arial,sans-serif">
+<text x="0" y="12" font-size="10" fill="#1a1a1c" text-anchor="start" font-weight="bold">Figure 1. From a working protein to a fibril</text>
+<circle cx="40" cy="80" r="34" fill="#dbe8fc" stroke="#2663eb" stroke-width="1.2"/>
+<polyline points="44.25,80 44.3672,81.0635 44.13,82.1773 43.5185,83.2472 42.5456,84.174 41.2578,84.8625 39.7338,85.2297 38.0799,85.2142 36.4225,84.7821 34.8983,83.9328 33.6437,82.7009 32.7824,81.1557 32.4147,79.3976 32.607,77.5518 33.3847,75.7591 34.7268,74.1656 36.5657,72.9104 38.7894,72.1145 41.2482,71.8693 43.765,72.2277 46.1476,73.1981 48.2038,74.7408 49.7565,76.7691 50.6584,79.1536 50.8055,81.7302 50.1472,84.3117 48.6927,86.7011 46.5135,88.7067 43.7403,90.1573 40.5556,90.9165 37.1818,90.8948 33.8655,90.0586 30.86,88.435 28.4054,86.1125 26.7098,83.2363 25.9325,80 26.1691,76.632 27.4422,73.3798 29.6969,70.4916 32.8022,68.1978 36.5576,66.6922 40.7066,66.1165 44.9539,66.5473 48.986,67.9884 52.495,70.3678 55.2016,73.5406 56.8773,77.2975 57.3633,81.3789 56.5845,85.492 54.5579,89.3326 51.3943,92.607 47.2928,95.055 42.5284,96.4696 37.4339,96.7148 32.3765,95.7377 27.7313,93.5745 23.8536,90.3509 21.052,86.2747 19.5636,81.6229 19.5348,76.723 21.0076,71.9298 23.914,67.5995 28.078,64.0638 33.2259,61.6042 39.0039,60.4297 45.0028,60.6599 50.7867,62.3132 55.9245,65.3038 60.0225,69.4445 62.7539,74.4591" fill="none" stroke="#2663eb" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="40" y="132" font-size="8.5" fill="#6b707a" text-anchor="middle">folded and working</text>
+<polyline points="169,80 173.5,95.177 178,98.2596 182.5,87.7463 187,72.2559 191.5,63.5042 196,67.4426 200.5,80.2627 205,91.905 209.5,93.9422 214,85.6666 218.5,73.9948 223,67.7383 227.5,70.9514 232,80.3783 236.5,88.5402 241,89.6566" fill="none" stroke="#b5540a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="205" y="132" font-size="8.5" fill="#6b707a" text-anchor="middle">misfolded, sticky surface exposed</text>
+<polyline points="336,56 392,56 400,60 392,64" fill="#fcedd6" stroke="#b5540a" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="336,64 392,64 400,68 392,72" fill="#fcedd6" stroke="#b5540a" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="336,72 392,72 400,76 392,80" fill="#fcedd6" stroke="#b5540a" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="336,80 392,80 400,84 392,88" fill="#fcedd6" stroke="#b5540a" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="336,88 392,88 400,92 392,96" fill="#fcedd6" stroke="#b5540a" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="336,96 392,96 400,100 392,104" fill="#fcedd6" stroke="#b5540a" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="336,104 392,104 400,108 392,112" fill="#fcedd6" stroke="#b5540a" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="370" y="132" font-size="8.5" fill="#6b707a" text-anchor="middle">copies stack into a fibril</text>
+<line x1="84" y1="80" x2="154" y2="80" stroke="#6b707a" stroke-width="1.4" stroke-linecap="round"/>
+<polygon points="159,80 154.395,81.9471 154.395,78.0529" fill="#6b707a" stroke="none" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="249" y1="80" x2="321" y2="80" stroke="#6b707a" stroke-width="1.4" stroke-linecap="round"/>
+<polygon points="326,80 321.395,81.9471 321.395,78.0529" fill="#6b707a" stroke="none" stroke-width="1" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

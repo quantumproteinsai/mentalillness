@@ -25,10 +25,30 @@ weakness a referee will find first, and *n* is the only thing that fixes it.
 
 ## Eligibility — all six must hold
 
-**E1. An experimentally mapped aggregation-critical region**, to the same standard as
+**E1. An experimentally determined region, by EITHER route**, to the same standard as
 every row in `data/regions.json`: a residue range in a **named frame**, with `construct`
 and `found_by` recorded, from a source **read in full**. A region asserted in a review is
-not a row.
+not a row. The two admissible routes are:
+
+- **(a) structure determination** — the ordered fibril core read off density or
+  solid-state NMR; or
+- **(b) deletion or truncation mapping** — a region whose removal abolishes aggregation
+  of a longer construct.
+
+**In both cases no aggregation predictor may appear in the discovery path.**
+
+> **E1 CORRECTED SAME DAY, BEFORE ANY CANDIDATE WAS ADMITTED.** As first written, E1
+> demanded an *"aggregation-critical"* region, which reads as route (b) only. **All seven
+> rows already in this analysis are route (a)** — FUS by solid-state NMR, the other six by
+> cryo-EM density. Recruiting under the original wording would have admitted a **different
+> evidence type** from the incumbents and silently made the association a comparison
+> across two kinds of region. Found by checking the incumbent rows' `found_by` values
+> against the rule, not by anything failing.
+>
+> **Consequence for E2:** for a route (a) row the region *is* the modelled core, so
+> coverage is 100 % by construction and the ≥ 80 % threshold only bites on route (b) rows.
+> **Which route a row took is recorded**, and if the final set mixes routes, the mix is
+> reported and the test is repeated within the larger route.
 
 **E2. A deposited structure of the aggregated state**, whose model covers **≥ 80 % of the
 region's residues**. Below 80 % the row is rejected, not truncated to fit.

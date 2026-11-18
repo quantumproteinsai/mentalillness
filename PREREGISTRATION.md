@@ -868,10 +868,14 @@ only thing that fixes that. **§3.1b does not block this pool**: Φ needs a depo
 structure, §3.1b needs a short region in a long chain, and the two criteria are nearly
 disjoint — all seven current Φ rows fail *m*/*M* > 0.05.
 
-**Eligibility (all six):** an experimentally mapped region to `regions.json` standard, read
-in full, in a named frame; a deposit **of the aggregated state** covering **≥ 80 %** of the
-region; Φ computable (deposited rise and twist, or ≥ 5 layers as deposited); frame verified
-against UniProt/RefSeq; `found_by` not prediction. ***m*/*M* is NOT a criterion here and
+**Eligibility (all six):** an experimentally determined region to `regions.json` standard,
+read in full, in a named frame, by **either** (a) structure determination **or** (b)
+deletion/truncation mapping, with the route recorded; a deposit **of the aggregated state**
+covering **≥ 80 %** of the region; Φ computable (deposited rise and twist, or ≥ 5 layers as
+deposited); frame verified against UniProt/RefSeq; `found_by` not prediction.
+**E1 was corrected the same day, before any candidate was admitted:** as first written it
+demanded route (b) only, while **all seven incumbent rows are route (a)**, so recruiting
+under it would have mixed evidence types without saying so. ***m*/*M* is NOT a criterion here and
 must not be applied** — applying it would reimport the constraint this analysis is free of,
 after the geometry is visible.
 

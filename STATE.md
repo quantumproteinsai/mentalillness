@@ -3000,3 +3000,51 @@ construction. The pool that produces eligible rows is **deletion and truncation 
 large proteins** — where DISC1 and TRIOBP-1 came from — and it yields the stronger
 evidence type as a side effect, a necessity claim rather than an ordered core. Target
 shape: ≥ 400 residues, mapped region ≤ 20 residues, CPAD-absent, found without a predictor.
+
+---
+
+## 18 November 2026, later still — the prior-art question is settled, and the answer is no
+
+The publisher PDF of **Venko & Žerovnik 2026** (*Biomolecules* 16:1286,
+doi:10.3390/biom16091286) was supplied and **read in full**. It had been the one
+outstanding threat to the novelty claim: 20 aggregating proteins, six of them shared
+with `data/regions.json`, through >40 predictors, published two months ago.
+
+**It does not pre-empt this project.** It reports predictor output, not a benchmark —
+no statistic, no null model, no decoys, no pre-registration, no threshold, no error bar,
+no validation set. Agreement with experiment is assessed narratively, in prose. The
+authors say so themselves: *"A major limitation of the present study is the lack of
+experimental evidence for the investigated proteins, which prevents a direct validation
+of the predicted CPRs and APRs."* **What they say they lack is what `data/regions.json`
+is**, and that statement now comes from an independent group rather than from this file.
+
+**It corroborates the premise on two rows, in print.** TRIOBP-1 324-348: *"Unexpectedly,
+this region was only predicted by FuzzDrop in our analysis."* DISC1 716-761: *"which
+surprisingly are not defined in our computational studies."*
+
+**And it cuts against us on one.** For **DISC1 384-415** their consensus is *not* a miss
+— Table 3 places aggregation-prone 403-411 (≥2 predictors) and amyloid-prone 388-394 and
+400-406 (≥4 predictors) strictly inside our row, in the same 854-residue frame. Recorded
+because the record does not get to quote only the half that helps.
+
+**A correction to our own framing.** "44 programs" is not the denominator for regions.
+Their Table 2 lists **5** aggregation-region tools (SODA, FuzDrop, ANuPP, Aggrescan,
+TANGO), 14 amyloid, 5 condensation, 2 prion. *"Only FuzDrop"* is **1 of 5, not 1 of 44.**
+
+**Three defects, all from the full text.** (1) **The TRIOBP-1 frame collision:** Table 1
+declares the 593-residue frame, but 324-348 is a 652-frame number — predictions and
+target are 59 residues apart, so the comparison cannot be verified as written. This
+project's own numbering trap, in print, in 2026. (2) **A citation slip:** 324-348 is
+attributed to Bradshaw 2014 *PLoS ONE*, which points at the PH domain; it is from
+Bradshaw 2017 *JBC*, a paper absent from their reference list. (3) **An internal
+inconsistency:** 716-761 is "not defined" by their 14 amyloid tools but their own
+aggregation consensus lists 751-757, inside it.
+
+**The nearest published neighbour has neither `construct` nor `found_by`.** Those are the
+two columns `CLAUDE.md` forbids dropping. Full assessment in
+`reports/prior_art_venko_2026.md`; entry `venko2026` in `data/references_to_check.json`,
+`verified_against_publisher_pdf: true`.
+
+**Still unread: Zaharija & Bradshaw 2024** (*Prog Neuropsychopharmacol Biol Psychiatry*
+130:110923). Venko cites it as ref [122], the third document to point there. It remains
+the open Δ384-414/415 blocker.

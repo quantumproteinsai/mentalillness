@@ -82,6 +82,38 @@ the outstanding task.
 - **DISC1**: UniProt Q9NRI5, canonical, 854 aa. Verify residue numbers against
   UniProt, never against a review.
 
+## The two explainers are part of the deliverable
+
+`docs/explainer_en.pdf` and `docs/explainer_fr.pdf` explain the project **for
+undergraduate readers** — first-year biology assumed, nothing more. They are not
+summaries for the author and should not drift into the register of `STATE.md`.
+
+**They are generated, never hand-edited:**
+
+```
+python3 scripts/make_explainer.py
+```
+
+Each figure has **one source** in that script and is rendered twice, once to a `.svg` in
+`docs/` and once to PDF vector operators, so the two cannot disagree. Editing a PDF or an
+SVG by hand breaks that guarantee silently.
+
+**Rebuild when a number they quote has moved — not on a schedule, and not every session.**
+The explainers state the row count, the number of scored regions, the 7-of-9 split, the
+Wilcoxon p, the confirmatory n, the smallest attainable p at that n, and the v < 0.05 bar.
+**Those are real results, and a stale figure in a document written for outsiders is worse
+than no document.** If a result changes, the rebuild belongs in the same commit.
+
+**The two languages are one document.** Any change to the English must be made to the
+French in the same commit, and the French must keep its accents — the PDF writer encodes
+cp1252 and handles them.
+
+**Keep the honesty of the main record.** Figures drawn from a formula are labelled
+schematic; figures showing real results say so. The explainers state plainly that nothing
+is established yet, that the decisive subset holds two rows, and that §4's threshold was
+unreachable at that n. Do not quietly upgrade that into a positive finding to make the
+document more satisfying to read.
+
 ## Housekeeping
 
 Commit before running anything that writes results; on the companion project

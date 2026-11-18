@@ -592,7 +592,7 @@ def content(L, figs):
         ('p', L['p7']), ('fig', figs[2]), ('p', L['p8']),
         ('note', L['n1']),
         ('h', L['h5']),
-        ('p', L['p9']), ('fig', figs[3]), ('p', L['p10']),
+        ('p', L['p9']), ('fig', figs[3]), ('p', L['p10']), ('note', L['p10b']),
         ('h', L['h6']),
         ('p', L['p11']), ('fig', figs[4]), ('p', L['p12']), ('b', L['b2']),
         ('note', L['n2']),
@@ -698,7 +698,18 @@ EN = {
     'p10': 'The threshold was fixed in writing before any software was run: a region counts '
            'as recovered if v is below 0.05. Choosing that number afterwards, once the '
            'scores are visible, would produce a result that looks convincing and means '
-           'nothing.',
+           'nothing. Writing it down first, however, does not make it a good threshold -- '
+           'see the note below.',
+    'p10b': 'And on 18 November 2026 it turned out not to be one. Because v is built from a '
+            'ranking, there is a smallest value it can possibly take, and that smallest '
+            'value depends on how long the protein is and how long the region is. For 9 of '
+            'our 23 scored regions that floor sits ABOVE 0.05, so a perfect predictor -- '
+            'one that ranked the region top of the whole protein -- would still be scored '
+            'as having failed. For those regions the threshold can never fire, and "the '
+            'predictor missed it" is true before any software runs. This was arithmetic we '
+            'could have done on day one, and we did not. It is recorded here rather than '
+            'quietly repaired, because a reader deserves to know which of our numbers mean '
+            'something.',
     'h6': '6. What we have found so far',
     'p11': 'Two tools have been run on every region we could score: TANGO, from the older '
            'generation, and AggrescanAI, a recent machine-learning tool. The bars below are '
@@ -716,10 +727,15 @@ EN = {
            'The difference is not statistically significant: p = 0.10, which is not '
            'evidence that the older tool is better either.'],
     'n2': 'The honest summary is that nothing is established yet. The part of the dataset '
-          'that can settle the question properly contains just two regions, and with two '
-          'pairs the smallest p-value the test can possibly produce is 0.25. No data could '
-          'have passed the threshold. That is a flaw in our own design, found by running it '
-          'rather than by reading it, and it is recorded rather than quietly patched.',
+          'that can settle the question properly held just two regions for most of this '
+          'work, and with two pairs the smallest p-value the test can possibly produce is '
+          '0.25 -- no data could have passed the threshold. Three regions were added on 18 '
+          'November 2026, taking it to five and giving a result of p = 0.38: still nothing, '
+          'but for the first time a real test rather than an impossible one. Two of those '
+          'three regions come from proteins so similar that they count as one measurement, '
+          'and all three sit in the group whose threshold can never fire. That is a flaw in '
+          'our own design, found by running it rather than by reading it, and it is '
+          'recorded rather than quietly patched.',
     'h7': '7. Why we write the rules down first',
     'p13': 'The statistic, the threshold and the way regions are selected were all written '
            'down and committed before any predictor was run. This is called '
@@ -876,7 +892,19 @@ FR = {
     'p10': "Le seuil a été fixé par écrit avant toute exécution de logiciel : une région "
            "est considérée comme retrouvée si v est inférieur à 0,05. Choisir ce nombre "
            "après coup, une fois les scores visibles, produirait un résultat convaincant en "
-           "apparence et vide de sens.",
+           "apparence et vide de sens. Mais l'écrire d'abord n'en fait pas pour autant un "
+           "bon seuil — voir la note ci-dessous.",
+    'p10b': "Et le 18 novembre 2026, il s'est avéré que ce n'en était pas un. Comme v est "
+            "construit à partir d'un classement, il existe une valeur minimale qu'il peut "
+            "atteindre, et cette valeur dépend de la longueur de la protéine et de celle de "
+            "la région. Pour 9 de nos 23 régions notées, ce plancher se situe AU-DESSUS de "
+            "0,05 : un prédicteur parfait — qui classerait la région en tête de toute la "
+            "protéine — serait malgré tout compté comme ayant échoué. Pour ces régions, le "
+            "seuil ne peut jamais se déclencher, et « le prédicteur l'a manquée » est vrai "
+            "avant même qu'un logiciel ne s'exécute. C'était un calcul que nous aurions pu "
+            "faire dès le premier jour, et nous ne l'avons pas fait. Il est consigné ici "
+            "plutôt que réparé discrètement, car un lecteur mérite de savoir lesquels de nos "
+            "chiffres ont un sens.",
     'h6': "6. Ce que nous avons trouvé jusqu'ici",
     'p11': "Deux outils ont été appliqués à toutes les régions que nous pouvions noter : "
            "TANGO, de l'ancienne génération, et AggrescanAI, un outil récent "
@@ -895,11 +923,16 @@ FR = {
            "L'écart n'est pas statistiquement significatif : p = 0,10, ce qui ne prouve pas "
            "non plus que l'ancien outil soit meilleur."],
     'n2': "Le résumé honnête est que rien n'est encore établi. La partie du jeu de données "
-          "capable de trancher proprement ne contient que deux régions, et avec deux paires "
-          "la plus petite valeur de p que le test puisse produire est 0,25. Aucune donnée "
-          "n'aurait pu franchir le seuil. C'est un défaut de notre propre protocole, "
-          "découvert en l'exécutant plutôt qu'en le lisant, et il est consigné plutôt que "
-          "corrigé discrètement.",
+          "capable de trancher proprement n'a contenu que deux régions pendant l'essentiel "
+          "de ce travail, et avec deux paires la plus petite valeur de p que le test puisse "
+          "produire est 0,25 : aucune donnée n'aurait pu franchir le seuil. Trois régions "
+          "ont été ajoutées le 18 novembre 2026, la portant à cinq, pour un résultat de "
+          "p = 0,38 : toujours rien, mais pour la première fois un vrai test plutôt qu'un "
+          "test impossible. Deux de ces trois régions proviennent de protéines si "
+          "semblables qu'elles comptent pour une seule mesure, et toutes trois appartiennent "
+          "au groupe dont le seuil ne peut jamais se déclencher. C'est un défaut de notre "
+          "propre protocole, découvert en l'exécutant plutôt qu'en le lisant, et il est "
+          "consigné plutôt que corrigé discrètement.",
     'h7': "7. Pourquoi nous écrivons les règles d'abord",
     'p13': "La statistique, le seuil et le mode de sélection des régions ont tous été écrits "
            "et enregistrés avant toute exécution de prédicteur. Cela s'appelle le "

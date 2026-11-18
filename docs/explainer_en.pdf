@@ -606,7 +606,7 @@ endobj
 << /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
 endobj
 7 0 obj
-<< /Length 5493 >>
+<< /Length 6971 >>
 stream
 q 1 0 0 -1 62.00 781.89 cm
 1.00 w
@@ -807,13 +807,39 @@ BT /F1 10.00 Tf 1 0 0 1 62.00 408.89 Tm (The threshold was fixed in writing befo
 0.100 0.100 0.110 rg
 BT /F1 10.00 Tf 1 0 0 1 62.00 394.89 Tm (0.05. Choosing that number afterwards, once the scores are visible, would produce a result that looks) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 380.89 Tm (convincing and means nothing.) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 380.89 Tm (convincing and means nothing. Writing it down first, however, does not make it a good threshold -- see the) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 366.89 Tm (note below.) Tj ET
+q 1 0 0 -1 62.00 349.89 cm
+1.00 w
+0.970 0.970 0.980 rg
+0.00 0.00 471.28 109.00 re
+f
+1.00 w
+0.710 0.330 0.040 rg
+0.00 0.00 3.00 109.00 re
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 337.89 Tm (And on 18 November 2026 it turned out not to be one. Because v is built from a ranking, there is a) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 324.89 Tm (smallest value it can possibly take, and that smallest value depends on how long the protein is and how) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 311.89 Tm (long the region is. For 9 of our 23 scored regions that floor sits ABOVE 0.05, so a perfect predictor -- one) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 298.89 Tm (that ranked the region top of the whole protein -- would still be scored as having failed. For those regions) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 285.89 Tm (the threshold can never fire, and "the predictor missed it" is true before any software runs. This was) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 272.89 Tm (arithmetic we could have done on day one, and we did not. It is recorded here rather than quietly) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 259.89 Tm (repaired, because a reader deserves to know which of our numbers mean something.) Tj ET
 0.150 0.390 0.920 rg
-BT /F2 13.00 Tf 1 0 0 1 62.00 349.89 Tm (6. What we have found so far) Tj ET
+BT /F2 13.00 Tf 1 0 0 1 62.00 214.89 Tm (6. What we have found so far) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 328.89 Tm (Two tools have been run on every region we could score: TANGO, from the older generation, and) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 193.89 Tm (Two tools have been run on every region we could score: TANGO, from the older generation, and) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 314.89 Tm (AggrescanAI, a recent machine-learning tool. The bars below are real results, not illustrations.) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 179.89 Tm (AggrescanAI, a recent machine-learning tool. The bars below are real results, not illustrations.) Tj ET
 0.420 0.440 0.480 rg
 BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (3) Tj ET
 endstream
@@ -822,7 +848,7 @@ endobj
 << /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
 endobj
 9 0 obj
-<< /Length 8090 >>
+<< /Length 8650 >>
 stream
 q 1 0 0 -1 62.00 777.89 cm
 0.100 0.100 0.110 rg
@@ -1018,32 +1044,38 @@ BT /F1 10.00 Tf 1 0 0 1 78.00 416.89 Tm (either.) Tj ET
 q 1 0 0 -1 62.00 398.89 cm
 1.00 w
 0.970 0.970 0.980 rg
-0.00 0.00 471.28 70.00 re
+0.00 0.00 471.28 109.00 re
 f
 1.00 w
 0.710 0.330 0.040 rg
-0.00 0.00 3.00 70.00 re
+0.00 0.00 3.00 109.00 re
 f
 Q
 0.100 0.100 0.110 rg
 BT /F1 9.50 Tf 1 0 0 1 76.00 386.89 Tm (The honest summary is that nothing is established yet. The part of the dataset that can settle the question) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 373.89 Tm (properly contains just two regions, and with two pairs the smallest p-value the test can possibly produce is) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 373.89 Tm (properly held just two regions for most of this work, and with two pairs the smallest p-value the test can) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 360.89 Tm (0.25. No data could have passed the threshold. That is a flaw in our own design, found by running it) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 360.89 Tm (possibly produce is 0.25 -- no data could have passed the threshold. Three regions were added on 18) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 347.89 Tm (rather than by reading it, and it is recorded rather than quietly patched.) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 347.89 Tm (November 2026, taking it to five and giving a result of p = 0.38: still nothing, but for the first time a real test) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 334.89 Tm (rather than an impossible one. Two of those three regions come from proteins so similar that they count) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 321.89 Tm (as one measurement, and all three sit in the group whose threshold can never fire. That is a flaw in our) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 308.89 Tm (own design, found by running it rather than by reading it, and it is recorded rather than quietly patched.) Tj ET
 0.150 0.390 0.920 rg
-BT /F2 13.00 Tf 1 0 0 1 62.00 302.89 Tm (7. Why we write the rules down first) Tj ET
+BT /F2 13.00 Tf 1 0 0 1 62.00 263.89 Tm (7. Why we write the rules down first) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 281.89 Tm (The statistic, the threshold and the way regions are selected were all written down and committed before) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 242.89 Tm (The statistic, the threshold and the way regions are selected were all written down and committed before) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 267.89 Tm (any predictor was run. This is called pre-registration, and it exists because of a simple human tendency: if) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 228.89 Tm (any predictor was run. This is called pre-registration, and it exists because of a simple human tendency: if) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 253.89 Tm (you look at the results first and choose the test afterwards, you will choose the test that works. Doing it in) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 214.89 Tm (you look at the results first and choose the test afterwards, you will choose the test that works. Doing it in) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 239.89 Tm (this order has already cost us results we would have liked to keep:) Tj ET
-q 1 0 0 -1 64.00 225.89 cm
+BT /F1 10.00 Tf 1 0 0 1 62.00 200.89 Tm (this order has already cost us results we would have liked to keep:) Tj ET
+q 1 0 0 -1 64.00 186.89 cm
 1.00 w
 0.150 0.390 0.920 rg
 5.20 4.00 m
@@ -1054,10 +1086,10 @@ q 1 0 0 -1 64.00 225.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 218.89 Tm (Four defects in our own plan were found by executing it, including one where the answer changes) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 179.89 Tm (Four defects in our own plan were found by executing it, including one where the answer changes) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 204.89 Tm (depending on where you start cutting the windows.) Tj ET
-q 1 0 0 -1 64.00 194.89 cm
+BT /F1 10.00 Tf 1 0 0 1 78.00 165.89 Tm (depending on where you start cutting the windows.) Tj ET
+q 1 0 0 -1 64.00 155.89 cm
 1.00 w
 0.150 0.390 0.920 rg
 5.20 4.00 m
@@ -1068,12 +1100,12 @@ q 1 0 0 -1 64.00 194.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 187.89 Tm (Several regions could have been moved into the main analysis late, which would have raised the) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 148.89 Tm (Several regions could have been moved into the main analysis late, which would have raised the) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 173.89 Tm (sample size from 2 to 8 - but the rules say the labels must be fixed before the modern tool is run, and) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 134.89 Tm (sample size from 2 to 8 - but the rules say the labels must be fixed before the modern tool is run, and) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 159.89 Tm (they were not, so those regions are reported separately.) Tj ET
-q 1 0 0 -1 64.00 149.89 cm
+BT /F1 10.00 Tf 1 0 0 1 78.00 120.89 Tm (they were not, so those regions are reported separately.) Tj ET
+q 1 0 0 -1 64.00 110.89 cm
 1.00 w
 0.150 0.390 0.920 rg
 5.20 4.00 m
@@ -1084,7 +1116,7 @@ q 1 0 0 -1 64.00 149.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 142.89 Tm (Applying that rule did not help our hypothesis in any case. It made the negative result stronger.) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 103.89 Tm (Applying that rule did not help our hypothesis in any case. It made the negative result stronger.) Tj ET
 0.420 0.440 0.480 rg
 BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (4) Tj ET
 endstream
@@ -1387,18 +1419,18 @@ xref
 0000006891 00000 n 
 0000016326 00000 n 
 0000016469 00000 n 
-0000022014 00000 n 
-0000022157 00000 n 
-0000030299 00000 n 
-0000030443 00000 n 
-0000037878 00000 n 
-0000038023 00000 n 
-0000040391 00000 n 
-0000040536 00000 n 
-0000040627 00000 n 
-0000040762 00000 n 
+0000023492 00000 n 
+0000023635 00000 n 
+0000032337 00000 n 
+0000032481 00000 n 
+0000039916 00000 n 
+0000040061 00000 n 
+0000042429 00000 n 
+0000042574 00000 n 
+0000042665 00000 n 
+0000042800 00000 n 
 trailer
 << /Size 18 /Root 17 0 R /Info 16 0 R >>
 startxref
-40813
+42851
 %%EOF

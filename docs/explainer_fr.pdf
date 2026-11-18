@@ -614,7 +614,7 @@ endobj
 << /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
 endobj
 7 0 obj
-<< /Length 6306 >>
+<< /Length 7946 >>
 stream
 0.100 0.100 0.110 rg
 BT /F1 10.00 Tf 1 0 0 1 62.00 777.89 Tm (Chaque ligne de notre jeu de données porte une étiquette pour chacune des trois. Les lignes qui échouent) Tj ET
@@ -823,15 +823,43 @@ BT /F1 10.00 Tf 1 0 0 1 62.00 345.89 Tm (Le seuil a été fixé par écrit avant tou
 0.100 0.100 0.110 rg
 BT /F1 10.00 Tf 1 0 0 1 62.00 331.89 Tm (si v est inférieur à 0,05. Choisir ce nombre après coup, une fois les scores visibles, produirait un résultat) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 317.89 Tm (convaincant en apparence et vide de sens.) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 317.89 Tm (convaincant en apparence et vide de sens. Mais l'écrire d'abord n'en fait pas pour autant un bon seuil —) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 303.89 Tm (voir la note ci-dessous.) Tj ET
+q 1 0 0 -1 62.00 286.89 cm
+1.00 w
+0.970 0.970 0.980 rg
+0.00 0.00 471.28 122.00 re
+f
+1.00 w
+0.710 0.330 0.040 rg
+0.00 0.00 3.00 122.00 re
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 274.89 Tm (Et le 18 novembre 2026, il s'est avéré que ce n'en était pas un. Comme v est construit à partir d'un) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 261.89 Tm (classement, il existe une valeur minimale qu'il peut atteindre, et cette valeur dépend de la longueur de la) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 248.89 Tm (protéine et de celle de la région. Pour 9 de nos 23 régions notées, ce plancher se situe AU-DESSUS de) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 235.89 Tm (0,05 : un prédicteur parfait — qui classerait la région en tête de toute la protéine — serait malgré tout compté) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 222.89 Tm (comme ayant échoué. Pour ces régions, le seuil ne peut jamais se déclencher, et « le prédicteur l'a) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 209.89 Tm (manquée » est vrai avant même qu'un logiciel ne s'exécute. C'était un calcul que nous aurions pu faire) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 196.89 Tm (dès le premier jour, et nous ne l'avons pas fait. Il est consigné ici plutôt que réparé discrètement, car un) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 183.89 Tm (lecteur mérite de savoir lesquels de nos chiffres ont un sens.) Tj ET
 0.150 0.390 0.920 rg
-BT /F2 13.00 Tf 1 0 0 1 62.00 286.89 Tm (6. Ce que nous avons trouvé jusqu'ici) Tj ET
+BT /F2 13.00 Tf 1 0 0 1 62.00 138.89 Tm (6. Ce que nous avons trouvé jusqu'ici) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 265.89 Tm (Deux outils ont été appliqués à toutes les régions que nous pouvions noter : TANGO, de l'ancienne) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 117.89 Tm (Deux outils ont été appliqués à toutes les régions que nous pouvions noter : TANGO, de l'ancienne) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 251.89 Tm (génération, et AggrescanAI, un outil récent d'apprentissage automatique. Les barres ci-dessous sont des) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 103.89 Tm (génération, et AggrescanAI, un outil récent d'apprentissage automatique. Les barres ci-dessous sont des) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 237.89 Tm (résultats réels, non des illustrations.) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 89.89 Tm (résultats réels, non des illustrations.) Tj ET
 0.420 0.440 0.480 rg
 BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (3) Tj ET
 endstream
@@ -840,7 +868,7 @@ endobj
 << /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
 endobj
 9 0 obj
-<< /Length 8317 >>
+<< /Length 9000 >>
 stream
 q 1 0 0 -1 62.00 777.89 cm
 0.100 0.100 0.110 rg
@@ -1036,32 +1064,40 @@ BT /F1 10.00 Tf 1 0 0 1 78.00 416.89 Tm (soit meilleur.) Tj ET
 q 1 0 0 -1 62.00 398.89 cm
 1.00 w
 0.970 0.970 0.980 rg
-0.00 0.00 471.28 70.00 re
+0.00 0.00 471.28 122.00 re
 f
 1.00 w
 0.710 0.330 0.040 rg
-0.00 0.00 3.00 70.00 re
+0.00 0.00 3.00 122.00 re
 f
 Q
 0.100 0.100 0.110 rg
 BT /F1 9.50 Tf 1 0 0 1 76.00 386.89 Tm (Le résumé honnête est que rien n'est encore établi. La partie du jeu de données capable de trancher) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 373.89 Tm (proprement ne contient que deux régions, et avec deux paires la plus petite valeur de p que le test puisse) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 373.89 Tm (proprement n'a contenu que deux régions pendant l'essentiel de ce travail, et avec deux paires la plus) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 360.89 Tm (produire est 0,25. Aucune donnée n'aurait pu franchir le seuil. C'est un défaut de notre propre protocole,) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 360.89 Tm (petite valeur de p que le test puisse produire est 0,25 : aucune donnée n'aurait pu franchir le seuil. Trois) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 347.89 Tm (découvert en l'exécutant plutôt qu'en le lisant, et il est consigné plutôt que corrigé discrètement.) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 347.89 Tm (régions ont été ajoutées le 18 novembre 2026, la portant à cinq, pour un résultat de p = 0,38 : toujours) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 334.89 Tm (rien, mais pour la première fois un vrai test plutôt qu'un test impossible. Deux de ces trois régions) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 321.89 Tm (proviennent de protéines si semblables qu'elles comptent pour une seule mesure, et toutes trois) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 308.89 Tm (appartiennent au groupe dont le seuil ne peut jamais se déclencher. C'est un défaut de notre propre) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 295.89 Tm (protocole, découvert en l'exécutant plutôt qu'en le lisant, et il est consigné plutôt que corrigé discrètement.) Tj ET
 0.150 0.390 0.920 rg
-BT /F2 13.00 Tf 1 0 0 1 62.00 302.89 Tm (7. Pourquoi nous écrivons les règles d'abord) Tj ET
+BT /F2 13.00 Tf 1 0 0 1 62.00 250.89 Tm (7. Pourquoi nous écrivons les règles d'abord) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 281.89 Tm (La statistique, le seuil et le mode de sélection des régions ont tous été écrits et enregistrés avant toute) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 229.89 Tm (La statistique, le seuil et le mode de sélection des régions ont tous été écrits et enregistrés avant toute) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 267.89 Tm (exécution de prédicteur. Cela s'appelle le pré-enregistrement, et cela existe à cause d'une tendance) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 215.89 Tm (exécution de prédicteur. Cela s'appelle le pré-enregistrement, et cela existe à cause d'une tendance) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 253.89 Tm (humaine simple : si l'on regarde d'abord les résultats et que l'on choisit le test ensuite, on choisira le test) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 201.89 Tm (humaine simple : si l'on regarde d'abord les résultats et que l'on choisit le test ensuite, on choisira le test) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 239.89 Tm (qui fonctionne. Procéder dans cet ordre nous a déjà coûté des résultats que nous aurions aimé garder :) Tj ET
-q 1 0 0 -1 64.00 225.89 cm
+BT /F1 10.00 Tf 1 0 0 1 62.00 187.89 Tm (qui fonctionne. Procéder dans cet ordre nous a déjà coûté des résultats que nous aurions aimé garder :) Tj ET
+q 1 0 0 -1 64.00 173.89 cm
 1.00 w
 0.150 0.390 0.920 rg
 5.20 4.00 m
@@ -1072,10 +1108,10 @@ q 1 0 0 -1 64.00 225.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 218.89 Tm (Quatre défauts de notre propre protocole ont été découverts en l'exécutant, dont un où la réponse) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 166.89 Tm (Quatre défauts de notre propre protocole ont été découverts en l'exécutant, dont un où la réponse) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 204.89 Tm (change selon l'endroit où l'on commence à découper les fenêtres.) Tj ET
-q 1 0 0 -1 64.00 194.89 cm
+BT /F1 10.00 Tf 1 0 0 1 78.00 152.89 Tm (change selon l'endroit où l'on commence à découper les fenêtres.) Tj ET
+q 1 0 0 -1 64.00 142.89 cm
 1.00 w
 0.150 0.390 0.920 rg
 5.20 4.00 m
@@ -1086,12 +1122,12 @@ q 1 0 0 -1 64.00 194.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 187.89 Tm (Plusieurs régions auraient pu rejoindre tardivement l'analyse principale, ce qui aurait porté l'effectif de) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 135.89 Tm (Plusieurs régions auraient pu rejoindre tardivement l'analyse principale, ce qui aurait porté l'effectif de) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 173.89 Tm (2 à 8 ; mais les règles exigent que les étiquettes soient fixées avant l'exécution de l'outil moderne, ce) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 121.89 Tm (2 à 8 ; mais les règles exigent que les étiquettes soient fixées avant l'exécution de l'outil moderne, ce) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 159.89 Tm (qui n'a pas été fait. Ces régions sont donc rapportées séparément.) Tj ET
-q 1 0 0 -1 64.00 149.89 cm
+BT /F1 10.00 Tf 1 0 0 1 78.00 107.89 Tm (qui n'a pas été fait. Ces régions sont donc rapportées séparément.) Tj ET
+q 1 0 0 -1 64.00 97.89 cm
 1.00 w
 0.150 0.390 0.920 rg
 5.20 4.00 m
@@ -1102,9 +1138,9 @@ q 1 0 0 -1 64.00 149.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 142.89 Tm (De toute façon, appliquer cette règle n'a pas aidé notre hypothèse : le résultat négatif en est sorti) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 90.89 Tm (De toute façon, appliquer cette règle n'a pas aidé notre hypothèse : le résultat négatif en est sorti) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 128.89 Tm (renforcé.) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 76.89 Tm (renforcé.) Tj ET
 0.420 0.440 0.480 rg
 BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (4) Tj ET
 endstream
@@ -1415,18 +1451,18 @@ xref
 0000007513 00000 n 
 0000016899 00000 n 
 0000017042 00000 n 
-0000023400 00000 n 
-0000023543 00000 n 
-0000031912 00000 n 
-0000032056 00000 n 
-0000039890 00000 n 
-0000040035 00000 n 
-0000042532 00000 n 
-0000042677 00000 n 
-0000042768 00000 n 
-0000042921 00000 n 
+0000025040 00000 n 
+0000025183 00000 n 
+0000034235 00000 n 
+0000034379 00000 n 
+0000042213 00000 n 
+0000042358 00000 n 
+0000044855 00000 n 
+0000045000 00000 n 
+0000045091 00000 n 
+0000045244 00000 n 
 trailer
 << /Size 18 /Root 17 0 R /Info 16 0 R >>
 startxref
-42972
+45295
 %%EOF

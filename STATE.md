@@ -1,4 +1,4 @@
-# In silico aggregation in mental illness — state as of 17 Nov 2026
+# In silico aggregation in mental illness — state as of 18 Nov 2026
 
 > **17 Nov 2026 — the project crossed from preparation into result.** The
 > pre-registration is frozen (`freeze-2026-11-17`), the first predictor has been run,
@@ -2796,3 +2796,144 @@ the output looks entirely normal.
 
 Both were caught by noticing values implausible against the physics — **a 1.0 Å rise is
 not a β-sheet.** Nothing in the pipeline objected, and nothing would have.
+
+---
+
+# 18 November 2026, later — the pipeline run end to end, and the fifth defect
+
+**Five proteins were asked for. Three were recruited, one was rejected as circular, and
+the exercise ended by finding a defect in §3.1 that is worth more than the rows.**
+
+## Where the dataset stands
+
+**24 rows across 14 proteins**, up from 21 across 11. New: **TAF15 7–99** (Q92804),
+**CHCHD10 42–75** (Q8WYQ3), **CHCHD2 54–86** (Q9Y6H1). Every residue number was verified
+**three ways** — the paper's text, the UniProt residue at that position, and the span
+actually modelled in the deposited mmCIF — and all three agree on all three rows.
+Publisher PDFs read in full for both source papers, plus one supplementary PDF and one
+peer-review file.
+
+**The confirmatory set reached n = 5 for the first time**, under an ordering that for the
+first time satisfies §7, and returned **Stouffer Z = +0.2963, one-sided p = 0.3835**. A
+null, with the sign moved from Z = −0.7896 at n = 2.
+
+## THE FIFTH DEFECT: §3.1's statistic cannot reach §4's bar on 9 of 23 rows
+
+*v* = 1 − *P*^*m*, and *P* is a midrank over *M* tiled windows, so *P* ≤ (*M*−0.5)/*M*.
+Therefore
+
+> **min *v* = 1 − ((*M*−0.5)/*M*)^*m***,
+
+attained by a **perfect** predictor — one that ranks the region's best window top of the
+entire chain. Where that floor exceeds 0.05, **§4's recovery criterion cannot fire at
+all.**
+
+**Nine of twenty-three scored rows are in that state**, including all three recruited
+today: TAF15 (floor 0.0739), CHCHD2 (0.0961), CHCHD10 (0.1041), and also TMEM106B
+(0.2179), serum amyloid A (0.2124), TRIOBP-1 60–189 (0.0929), DISC1 691–836 (0.0812),
+LECT2 (0.0666), hnRNPA1 (0.0642).
+
+A 100 000-draw null simulation at each row's own geometry
+(`scripts/v_floor_simulation.py`) gives **P(*v* < 0.05) = 0.0000 exactly** for those nine.
+
+**And the rest are not merely conservative — the bar misses in both directions.** FUS
+39–95 reads **0.0913** and TRIOBP-1 1–59 reads **0.0838**, against DISC1 384–415 at
+**0.0345** and TRIOBP-1 324–348 at **0.0370**. *A criterion with a nominal 5%
+false-positive rate actually runs between 0% and 9.1% across this dataset, decided by
+chain length and region length alone.* **Rows are not being judged on a common scale.**
+
+The mean of *v* also departs from 0.5 where *m* is large (TMEM106B 0.442, SAA 0.449), so
+**§3.1's "*v* ~ Uniform(0, 1)" holds where *m* is small relative to *M* and fails where it
+is not.** The departure is not confined to the lower tail.
+
+**Nothing in any of this depends on a predictor output.** The floor and the simulation
+read only *M* and *m* — chain length and region length — which the dataset fixed days ago.
+**This was computable before any predictor ran**, which is why reporting it afterwards is
+arithmetic rather than a post-hoc choice. It is `CLAUDE.md` rule 2 arriving one step late:
+the margin was checked against the error bar *after* the compute, not before.
+
+`scripts/score_rows.py` now prints the floor as a column and flags every affected row on
+every run, so this cannot go quiet again.
+
+### What it invalidates, and what it does not
+
+**Survives:** the Stouffer confirmatory statistic, which consumes *v* directly rather than
+the 0.05 bar. **n = 5, Z = +0.2963, p = 0.3835** stands as computed.
+
+**Does not survive:** any row-level statement of the form *"the predictor failed to
+recover this region at v < 0.05"* for those nine rows. For them that sentence is **true by
+arithmetic before any predictor runs**, and it points in the direction of our own H1.
+Every such claim already in the record needs re-reading against the floor table.
+
+### §4 is now unreachable for a third independent reason
+
+1. the 2⁻ⁿ exact Wilcoxon floor at small *n* (recorded 17 Nov);
+2. the CHCHD pair's 84.8% sequence identity, which makes them one effective row;
+3. **two of the five confirmatory paired differences are exact ties**, which Wilcoxon
+   drops — leaving n = 3 and a floor of 0.125.
+
+## TFG — rejected at stage 4, and the paper's title says why
+
+*"Fibril structures of TFG protein mutants **validate the identification of TFG as a
+disease-related amyloid protein by the IMPAcT method**."* IMPAcT is a **ZipperDB-based
+amyloid predictor**; TFG is in that paper because the predictor nominated it, and the
+paper exists to validate the predictor. **That is exactly the circularity `found_by` was
+added to catch.** Rejected rather than demoted, because of a second disqualifier: the
+structures are of the G269V and P285L **mutants**, and the paper states the WT sequence
+does not form them.
+
+It cost one word-boundary grep. After scoring it would have been invisible.
+
+## The CHCHD pair: a prediction made in advance and confirmed on both arms
+
+The two rows were flagged, **before either arm ran**, as **28/33 = 84.8% identical** over
+the scored span, with the explicit prediction that they would "score almost identically
+**by construction**" because every predictor in both arms is a function of sequence.
+
+**Legacy: 0.10407 and 0.09608. Modern: bit-identical to the legacy values** — differences
+of 1.4 × 10⁻¹¹ and 6.9 × 10⁻¹⁷, floating-point noise on exact ties. Both predictors place
+the chain's single highest-scoring window inside the region, so *P* hits its cap and **the
+scores drop out of the statistic entirely.**
+
+Rule recorded on both rows: **any confirmatory or pooled statistic uses at most one of the
+pair.** The drive therefore delivered **two** effective candidates, not three.
+
+## The ordering, satisfied for the first time
+
+TANGO ran, the stratum labels were committed (`5048837`) and pushed, and **only then** was
+AggrescanAI pointed at these accessions. Checked rather than asserted:
+`results/aggrescanai_2026-11-17/` holds eleven profiles and none is Q92804, Q8WYQ3 or
+Q9Y6H1; the strings appear nowhere else under `results/`; and `score_rows.py`
+independently listed all three as *"NO PREDICTOR RUN for this protein"*.
+
+These are **the first three rows in the project whose stratum label satisfies §7's
+ordering requirement.** The six labelled on 17 Nov knew their modern scores and remain
+held out.
+
+## One claim of mine that was simply wrong
+
+This file and the tracker recorded TAF15 as **blocked on an unreachable publisher PDF**.
+It was never blocked: Nature open access, `nature.com/articles/s41586-023-06801-2.pdf`,
+28.2 MB, downloads directly. **The author was asked for a PDF that was one request away.**
+
+The retry habit it prompted was worth keeping: TPPP, sunflower 11S and ApoA-II were each
+retried at the publisher's own URL and against Europe PMC, and all three are genuinely
+blocked (403s, no OA record). One of four assumed-blocked candidates was reachable — a
+high enough rate to check rather than assert.
+
+## A pattern in the dataset worth naming before it becomes invisible
+
+All three new regions are **ordered cryo-EM cores, not necessity mappings**. The words
+"necessary", "sufficient" and "required" do not occur in connection with the region in any
+of the three papers, and **no truncation series tests whether any part is dispensable.**
+They sit with ANXA11, one notch below DISC1 and TRIOBP-1, whose regions *were* mapped by
+deletion.
+
+**The dataset is drifting toward structure-defined rows because those are the papers being
+published.** The `construct` column holds the line: CHCHD10 42–75 is the ordered core *of
+a recombinant 1–98 fragment*, and whether full-length CHCHD10 adopts it is untested.
+
+And the geometry compounds it: short proteins with long ordered cores are **exactly** the
+*m*/*M* regime that breaks the statistic. CHCHD10 is a 142-residue protein with a
+34-residue core — 5 windows out of 23. **Recruiting more rows of this shape would add
+rows that cannot pass the bar.**

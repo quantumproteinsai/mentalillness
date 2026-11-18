@@ -49,16 +49,22 @@ CORE = [
 # regenerated with different content: the DOI would then point at something other
 # than what this script produces. Bump VERSION and deposit a new version instead.
 # See release/RELEASE_CHECKLIST.md.
-# 1.1.0 was ADDED HERE ON 17 Nov 2026, AND ITS ABSENCE WAS A LIVE DEFECT. It was
-# deposited that afternoon and never recorded, so the guard below -- the whole point
-# of which is that a DOI must not stop describing what this script produces -- would
-# have let a rebuild silently overwrite the deposited artefact. The guard was written
-# for exactly this case and could not fire, because the fact it needed was in the
-# checklist and in STATE.md rather than in the dict the code reads.
-DEPOSITED = {
-    '1.0.0': '10.5281/zenodo.24290698',
-    '1.1.0': '10.5281/zenodo.24306057',
-}
+# WHICH VERSIONS ARE DEPOSITED IS NOW READ FROM release/deposited.json, NOT HARDCODED.
+# This was a literal here, and twice in two days the just-deposited version was missing
+# from it, so the guard below could not fire and overwrote deposited artefacts: 1.1.0 on
+# 17 Nov, then 1.2.0 on 18 Nov -- the second time one day after the first was written up
+# as a lesson. A literal is edited by whoever remembers. A file both scripts read, and
+# that preflight_deposit.py refuses to let fall out of step, is edited because something
+# checks it.
+def _deposited():
+    p = ROOT / 'release' / 'deposited.json'
+    if not p.exists():
+        raise SystemExit('release/deposited.json is missing: it records which versions are '
+                         'frozen under a DOI, and without it the freeze guard cannot run.')
+    return {v: d['doi'] for v, d in json.loads(p.read_text())['versions'].items()}
+
+
+DEPOSITED = None  # populated in main(); see _deposited()
 
 # Top-level keys that document the DATASET and belong in the release.
 DOC_KEYS = {
@@ -100,6 +106,8 @@ DOC_KEYS = {
 
 
 def main():
+    global DEPOSITED
+    DEPOSITED = _deposited()
     d = json.loads(SRC.read_text())
     rows = d['regions']
     OUT.mkdir(exist_ok=True)

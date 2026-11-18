@@ -612,6 +612,56 @@ prediction disagree — which currently holds the two rows we started with.
   case study plus a dataset — and says so plainly.** That is a pre-registered outcome,
   not a failure.
 
+### 7a The stratum rule applied — AMENDMENT, 18 Nov 2026, POST-UNBLINDING AND THEREFORE EXPLORATORY
+
+**This amends nothing in the rule above. It records that the rule was applied late, and
+fixes the consequence.**
+
+**What was found.** Seven rows sat at `stratum: PENDING` with the legacy arm already run
+on them. §7 says the label comes from published predictor results "and otherwise from the
+legacy arm's own output". `PENDING` had been read as *the source paper ran no predictor,
+so the stratum cannot be decided*. **That reading was wrong.** It means *the legacy arm
+has not been run on this row yet* — and since 17 Nov, it has.
+
+**What was applied**, mechanically, on 18 Nov 2026: `DISCORDANT` iff TANGO *v* ≥ 0.05,
+the recovery bar fixed in §4. Six rows became `DISCORDANT`; TRIOBP-1 333-340
+(*v* = 0.0388) became `CONCORDANT`. **No threshold was chosen and no row was judged by
+eye**: both the rule and the bar predate every number in this project.
+
+**Why none of those rows is confirmatory.** §7 also fixes an ordering — the assignment is
+made after the legacy run and *before* the modern run, and "that ordering is part of the
+freeze". **On 17 Nov both arms ran and no labels were applied in between**, so each of
+these rows' AggrescanAI scores was already known when the rule was applied.
+
+The rule is deterministic and leaves nothing to tune. But **the discretion did not vanish,
+it moved**: it now sits in *whether to apply the rule at all*, a choice made after seeing
+that applying it would take the confirmatory set from 2 rows to 8. So:
+
+- the labels **stand**, because they are correct under a rule registered before unblinding;
+- every affected row carries **`stratum_assignment.confirmatory_eligible: false`**;
+- `scripts/score_rows.py` **reads that flag** and holds those rows out of the confirmatory
+  statistic. A stratum label alone no longer admits a row.
+
+**The confirmatory set is therefore unchanged: n = 2, Stouffer Z = −0.7896, p = 0.7851**,
+bit-identical to the freeze.
+
+**The exploratory result, reported under §12 and never as confirmatory:** n = 8 gives
+**Stouffer Z = −2.4095, one-sided p = 0.9920**. It does not rescue H1 — **it makes the
+negative stronger**, which is worth stating precisely because the worry about applying a
+rule post-hoc is that it was applied *because* it helped. It did not help.
+
+**And n = 8 is not n = 8.** Three of the eight rows are DISC1 and two are TRIOBP-1;
+691-836 wholly contains 748-769, while 384-415 is disjoint. Overlap is not the point —
+all three are scored on one profile of one protein by one tool, and Stouffer and Wilcoxon
+both assume independent pairs. **The honest unit is the protein: n = 5**, where the
+minimum attainable one-sided Wilcoxon p is 0.031 against §4's 0.05 — reachable with no
+margin, and unreachable again one protein fewer.
+
+**Registered for new rows, and checkable:** the stratum label must be **committed to git
+before the modern arm is run on that row**. That is verifiable after the fact from the
+commit graph, which is what makes it a constraint rather than an intention. The recruiting
+rule that goes with it is `reports/recruiting_rule_2026-11-18.md`.
+
 ---
 
 ## 8. Rows found by prediction

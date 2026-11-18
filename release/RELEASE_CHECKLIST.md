@@ -5,7 +5,31 @@ decisions that are **yours**, not defaults to be inherited.
 
 ---
 
-## v1.2.0 READY TO UPLOAD — DOI reserved 18 Nov 2026 — **NOT YET PUBLISHED**
+## v1.3.0 IS OWED — 18 Nov 2026
+
+`data/regions.json` has moved past the v1.2.0 deposit: **seven stratum labels changed**
+under §7a and a `stratum_assignment` field was added. A *data* change warrants a new
+version by this file's own rule. `10.5281/zenodo.24337561` remains correct for what it
+contains. `preflight_deposit.py` now refuses with *"VERSION is 1.2.0 but 1.2.0 is already
+deposited"* until `VERSION` is bumped.
+
+### THE SAME DEFECT RECURRED ONE DAY AFTER BEING WRITTEN UP
+
+Yesterday's defect 2 was *`1.1.0` was never added to `DEPOSITED`*. It was fixed by adding
+that one line. **On 18 Nov the guard failed again, identically, because `1.2.0` was not
+added either** — and it overwrote the just-deposited v1.2.0 artefacts, which were restored
+from git with their md5s re-verified against the published record (`459495c4…`,
+`f7bc5079…`).
+
+**Patching the instance is not fixing the defect.** The list lived as a Python literal
+that someone had to remember to edit in the same breath as publishing. So it is now
+**`release/deposited.json`**, read by `build_release.py` *and* `preflight_deposit.py`,
+with the rule stated in the file: **add a version the moment it is published, in the
+commit that records the deposit.**
+
+---
+
+## v1.2.0 DEPOSITED — 18 Nov 2026 — published, verified, and now superseded in the working tree
 
 **Reserved version DOI: `10.5281/zenodo.24337561`**, written into `CITATION.cff` and
 `release/DATA_DESCRIPTOR.md` **before** upload, which is the order this file requires.

@@ -1,0 +1,37 @@
+{
+  "_what": "Every version of this dataset that has been DEPOSITED under a DOI. Files of a deposited version are FROZEN: Zenodo lets metadata be edited after publication, never files.",
+  "_why_this_file_exists": "It was a Python literal in scripts/build_release.py, and twice in two days the just-deposited version was not added to it, so the freeze guard could not fire and overwrote deposited artefacts. 1.1.0 on 17 Nov and 1.2.0 on 18 Nov, the second time one day after the first was recorded as a lesson. A literal in a script is edited by whoever remembers; a file named `deposited.json` that both scripts read, and that preflight refuses to let fall out of step, is edited because something checks it.",
+  "_read_by": [
+    "scripts/build_release.py -- refuses to rebuild a version listed here if the bytes would change",
+    "scripts/preflight_deposit.py -- refuses to prepare a deposit for a version already listed here, and refuses if a listed version's artefacts have drifted"
+  ],
+  "_the_rule": "ADD A VERSION HERE IMMEDIATELY AFTER PUBLISHING IT, in the same commit that records the deposit. Not later.",
+  "versions": {
+    "1.0.0": {
+      "doi": "10.5281/zenodo.24290698",
+      "record": "https://zenodo.org/records/24290698",
+      "deposited": "2026-11-16",
+      "n_regions": 17,
+      "tag": null,
+      "note": "Deposited before the deposited-* tag convention existed. Its descriptor went up WITHOUT the DOIs, uncorrectably, because the DOI was filled in after publication and deposited files are frozen. That is why the reserve-first rule exists."
+    },
+    "1.1.0": {
+      "doi": "10.5281/zenodo.24306057",
+      "record": "https://zenodo.org/records/24306057",
+      "deposited": "2026-11-17",
+      "n_regions": 17,
+      "tag": "deposited-v1.1.0",
+      "note": "Its deposited CITATION.cff carries the PRE-1.1.0 title and cannot be fixed. Its record metadata also carried an Additional Description reading 'Version 1.0.0. DOI 10.5281/zenodo.24290698'; metadata is editable, so that one is repairable, and as of 18 Nov 2026 it had not yet been."
+    },
+    "1.2.0": {
+      "doi": "10.5281/zenodo.24337561",
+      "record": "https://zenodo.org/records/24337561",
+      "deposited": "2026-11-18",
+      "n_regions": 21,
+      "tag": "deposited-v1.2.0",
+      "note": "First deposit where the version tag and the deposited-* tag point at the same commit, and the first whose five published md5s were verified against the local artefacts. Published md5s: aggregation_regions_v1.2.0.json 459495c447157f763b52dd61e1e48bc1, aggregation_regions_v1.2.0.csv f7bc5079121abdd706a284a8edd2b732, DATA_DESCRIPTOR.md baac6011b8510793057f531053b8b1aa, LICENSE 2ab724713fdaf49e4523c4503bfd068d, CITATION.cff ecd6f4e50f918289a8239351d8e80db8."
+    }
+  },
+  "_concept_doi": "10.5281/zenodo.24290697",
+  "_concept_doi_note": "Resolves to the latest version. It is the cheapest check that a new version really went live: if it still resolves to the previous one, the new one is not published, whatever the form displayed."
+}

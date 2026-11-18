@@ -213,8 +213,16 @@ def main(repo):
         alt = [statistic(sc, a, b, phase=p) for p in range(W)]
         vs = [x['v'] for x in alt if x]
         st['v_phase_min'], st['v_phase_max'] = min(vs), max(vs)
+        sa = r.get('stratum_assignment') or {}
         st.update(protein=prot, residues=res, stratum=r['stratum'],
-                  cpad=r['cpad_status'], circ=r['circularity_status'], frame=frame)
+                  cpad=r['cpad_status'], circ=r['circularity_status'], frame=frame,
+                  # A STRATUM LABEL ALONE DOES NOT ADMIT A ROW TO THE CONFIRMATORY SET.
+                  # Added 18 Nov 2026: rows relabelled from PENDING by the mechanical
+                  # PREREGISTRATION 7 rule carry confirmatory_eligible: false, because the
+                  # ordering §7 calls part of the freeze was broken -- the modern arm had
+                  # already run on them. The flag defaults to True so every other row is
+                  # unaffected, and it is read HERE rather than trusted to a reader.
+                  conf_ok=sa.get('confirmatory_eligible', True))
         results.append(st)
 
     results.sort(key=lambda x: x['v'])
@@ -246,12 +254,46 @@ def main(repo):
         print(f'    Fisher chi2 = {chi:.4f} on {2*n} df   p = {pF:.4f}   [secondary]')
         print()
 
-    conf = [x for x in results
-            if x['stratum'].startswith('DISCORDANT')
-            and x['cpad'] == 'CPAD_ABSENT_ORTHOLOGY_CHECKED'
-            and x['circ'] == 'CLEAN']
+    def eligible(x):
+        return (x['stratum'].startswith('DISCORDANT')
+                and x['cpad'] == 'CPAD_ABSENT_ORTHOLOGY_CHECKED'
+                and x['circ'] == 'CLEAN')
+
+    conf = [x for x in results if eligible(x) and x['conf_ok']]
+    held = [x for x in results if eligible(x) and not x['conf_ok']]
+
     print('=' * 125)
     combine(conf, 'CONFIRMATORY (5.2b item 5: discordant, CPAD-absent, circularity CLEAN)')
+
+    if held:
+        print(f'HELD OUT OF THE CONFIRMATORY SET ({len(held)} rows) — they meet every stratum')
+        print('criterion but carry confirmatory_eligible: false. Their stratum was assigned')
+        print('from the legacy arm on 18 Nov 2026, AFTER the modern arm had already run on')
+        print('them, breaching the ordering PREREGISTRATION 7 calls part of the freeze.')
+        for x in held:
+            print(f'    {x["protein"]} {x["residues"]}')
+        print()
+        combine(conf + held,
+                'EXPLORATORY (§12): the confirmatory set PLUS the held-out rows. '
+                'NOT A CONFIRMATORY RESULT')
+        prots = sorted({x['protein'] for x in conf + held})
+        print(f'    AND THE UNIT IS WRONG: {len(conf + held)} rows but only {len(prots)} '
+              f'proteins — {", ".join(prots)}.')
+        print(f'    Stouffer and Wilcoxon both assume independent pairs; overlapping')
+        print(f'    intervals of one protein on one profile are not independent. Treat the')
+        print(f'    honest n as {len(prots)}, where the minimum attainable one-sided')
+        print(f'    Wilcoxon p is {2**-len(prots):.4f} against the 0.05 of §4.')
+        print()
+
+    stuck = [x for x in results if x['stratum'] == 'PENDING']
+    if stuck:
+        print(f'STILL PENDING ({len(stuck)} rows) — scored by the modern arm with NO stratum.')
+        print('Under §7 the stratum comes from the legacy arm, so each of these needs a')
+        print('legacy run, and the label must be COMMITTED BEFORE the modern arm is run on')
+        print('it. For these rows that ordering is already lost; for new rows it is not.')
+        for x in stuck:
+            print(f'    {x["protein"]} {x["residues"]}')
+        print()
     combine([x for x in results if x['cpad'] == 'CPAD_MEMBER'],
             'CPAD-CONTAMINATED ROWS (reported separately, EXCLUDED from the primary)')
     combine([x for x in results if x['circ'] == 'CLEAN'

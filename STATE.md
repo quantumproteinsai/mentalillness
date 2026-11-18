@@ -2645,3 +2645,80 @@ The dataset is citable at 21 rows. **The confirmatory stratum is still 2 rows**,
 contrast is still 7 of 9 with p = 0.102, and §4 still cannot fire on the confirmatory set.
 Publishing the asset does not advance the analysis built on it, and the recruiting-rule
 problem recorded above is untouched.
+
+---
+
+## The stratum rule, applied too late — 18 Nov 2026
+
+**Yesterday's conclusion in this file is retracted.** It said the recruiting rule must
+become *"a search over methods sections for papers that ran a predictor and reported it
+failing"*. That rule **selects on the outcome being measured**, imports a different
+agreement threshold from every paper, and samples a literature whose publication bias runs
+both ways and cannot be estimated. It is withdrawn; see
+`reports/recruiting_rule_2026-11-18.md`.
+
+**The inference behind it was also unnecessary**, and this is the substance of the day.
+§7, amended 16 Nov **before any predictor ran**, already says stratum comes from published
+predictor results "and otherwise **from the legacy arm's own output**". `PENDING` had been
+read as *the source paper ran no predictor, so the stratum cannot be decided*. **It means
+the legacy arm has not been run on this row yet** — and since 17 Nov, for nine rows, it
+had been. The label was never applied.
+
+### What applying it did
+
+Mechanically, `DISCORDANT` iff TANGO *v* ≥ 0.05 (§4's bar; both rule and bar predate every
+number): **six rows PENDING → DISCORDANT, one → CONCORDANT** (TRIOBP-1 333-340, *v* =
+0.0388). Strata are now 10 `DISCORDANT`, 5 `CONCORDANT`, 1 `DISCORDANT_DERIVED`,
+5 `PENDING`.
+
+**None of them is confirmatory, and that is the point.** §7 also fixes an ordering — assign
+after the legacy run, *before* the modern run, "part of the freeze". On 17 Nov both arms
+ran with no labels applied between them, so every affected row's AggrescanAI score was
+already known. The rule leaves no threshold to tune, but **the discretion moved rather than
+vanished**: into *whether to apply the rule at all*, decided after seeing it would take the
+confirmatory set from 2 to 8.
+
+So the labels stand, each row carries `stratum_assignment.confirmatory_eligible: false`,
+and **`score_rows.py` now reads that flag**. A stratum label alone no longer admits a row
+to the confirmatory set — the constraint is in the code, not in a caveat.
+
+### The numbers, and the thing that defuses the worry
+
+| set | n | Stouffer Z | p |
+|---|---|---|---|
+| **confirmatory, unchanged** | **2** | **−0.7896** | **0.7851** |
+| exploratory (§12), with the six held-out rows | 8 | **−2.4095** | **0.9920** |
+
+**Applying the rule did not help H1 — it made the negative stronger.** That is worth
+recording precisely because the objection to a post-hoc rule is that it was applied
+*because* it helped. Here the opposite happened, and the confirmatory statistic is
+bit-identical to the freeze.
+
+**n = 8 is not n = 8.** Three rows are DISC1, two TRIOBP-1. Checked: 691-836 wholly
+contains 748-769, 384-415 is disjoint — but overlap is beside the point, since all three
+are one protein, one profile, one tool, and both tests assume independent pairs. **The
+honest unit is the protein: n = 5**, minimum attainable one-sided Wilcoxon p = 0.031
+against §4's 0.05. Reachable with no margin; unreachable one protein fewer.
+
+### What is now registered for new rows
+
+**One row per NEW protein, post-2020 structural work, no predictor in the discovery path,
+and the stratum label COMMITTED TO GIT BEFORE the modern arm is run on that row.** The last
+clause is verifiable from the commit graph, which is what makes it a constraint. Registered
+as §7a; the rule and its reasoning are in `reports/recruiting_rule_2026-11-18.md`.
+
+**Five new proteins** is the outstanding scope, since none of the eight rows above can
+carry confirmatory standing.
+
+### Consequences to carry forward
+
+- **A v1.3.0 deposit is owed.** `data/regions.json` now differs from the v1.2.0 deposit
+  made this morning: seven stratum labels changed and a `stratum_assignment` field was
+  added. By `RELEASE_CHECKLIST.md`'s own rule — a new deposit when the *data* change —
+  this qualifies. `10.5281/zenodo.24337561` remains correct for what it contains.
+- **Four rows are still `PENDING`** (serum amyloid A 2-55, DISC1 739-761, 717-737,
+  716-761) because the legacy arm has not run on them. The scorer now lists them
+  explicitly rather than letting them sit unnoticed.
+- **The v1.1.0 record metadata is still wrong.** Checked 18 Nov: `updated` is still
+  2026-11-17T11:29:09Z and the Additional Description still reads "Version 1.0.0. DOI
+  10.5281/zenodo.24290698". The edit did not take.

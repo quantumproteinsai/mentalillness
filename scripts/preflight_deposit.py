@@ -117,7 +117,15 @@ def main():
     #    Their files are frozen; a modified one means a DOI no longer describes
     #    what this repository produces. Checked against git, not against memory.
     print('\nPreviously deposited artefacts (frozen)')
-    for dv, dd in sorted(br.DEPOSITED.items()):
+    reg = json.loads((ROOT / 'release' / 'deposited.json').read_text())['versions']
+    deposited = {v: d['doi'] for v, d in reg.items()}
+    # THE REGISTRY AND THE RESERVED DOI MUST AGREE. If CITATION.cff's doi is one that
+    # release/deposited.json already lists, this version has been deposited and the
+    # preparation is for a version that no longer needs one.
+    if m and m.group(1) in deposited.values() and deposited.get(version) != m.group(1):
+        fail.append(f'CITATION.cff doi {m.group(1)} belongs to a DIFFERENT deposited version')
+        print(f'  FAIL  CITATION.cff doi belongs to another version in deposited.json')
+    for dv, dd in sorted(deposited.items()):
         if dv == version:
             fail.append(f'VERSION is {version} but {version} is already deposited as {dd}')
             print(f'  FAIL  VERSION is still {version}, which is deposited as {dd}')

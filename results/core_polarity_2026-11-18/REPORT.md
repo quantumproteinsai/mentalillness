@@ -114,3 +114,93 @@ failing** — both were found by reading values that looked implausible against 
 The join to *v* is the next commit. **Whatever it shows, it stays exploratory**: DISC1 and
 TRIOBP-1 have no structures, so the confirmatory stratum is not in this analysis at all,
 and seven non-independent rows cannot settle anything.
+
+---
+
+# The join to *v* — §10a §5, run after Φ was committed
+
+## The registered primary test passes
+
+**Spearman ρ = +0.821, exact one-sided p = 0.0171, n = 7.** The registered α was 0.05 and
+the direction was named in advance: higher Φ → higher *v* → worse recovery.
+
+| row | Φ | *v* (AggrescanAI) |
+|---|---|---|
+| FUS 39-95 | 0.675 | 0.9582 |
+| TMEM106B 120-254 | 0.577 | 0.9900 |
+| LECT2 55-75 | 0.526 | 0.4054 |
+| glycinin G4 164-190 | 0.480 | 0.3884 |
+| hnRNPA1 251-295 | 0.465 | 0.4626 |
+| serum amyloid A 2-55 | 0.462 | 0.2124 |
+| ANXA11 39-74 | 0.441 | 0.3315 |
+
+p is **exact over all 5040 permutations**, not asymptotic; the smallest attainable value
+at n = 7 is 0.0002, so 0.0171 is a real result rather than a floor.
+
+**These seven rows are seven distinct proteins.** This is the only analysis in the project
+where the independence assumption is actually satisfied — the confirmatory set's n = 8
+collapsed to 5 proteins, and this one does not collapse at all.
+
+## It is not a CPAD artefact, and that was the obvious way for it to be wrong
+
+| | |
+|---|---|
+| ρ(CPAD membership, *v*) | **+0.000** |
+| ρ(CPAD membership, Φ) | **+0.144** |
+
+CPAD members span Φ 0.462–0.675 and *v* 0.212–0.958; CPAD-absent rows span Φ 0.441–0.577
+and *v* 0.332–0.990. **The two factors are not collinear here**, which is precisely what
+killed the first version of this test when it tried to borrow S6's labels. The association
+survives the confound that the design was rebuilt to avoid.
+
+## BUT IT IS FRAGILE, AND THIS IS THE QUALIFIER THAT MATTERS
+
+Leave-one-out, unregistered, **all seven reported**:
+
+| dropped | ρ | p |
+|---|---|---|
+| hnRNPA1 251-295 | +0.886 | 0.0167 |
+| LECT2 55-75 | +0.829 | 0.0292 |
+| glycinin G4 164-190 | +0.829 | 0.0292 |
+| **FUS 39-95** | +0.771 | **0.0514** |
+| **TMEM106B 120-254** | +0.771 | **0.0514** |
+| **serum amyloid A 2-55** | +0.771 | **0.0514** |
+| **ANXA11 39-74** | +0.771 | **0.0514** |
+
+**Dropping any one of four rows takes p just above 0.05.** At n = 6 the smallest
+attainable p is 0.0014, so 0.0514 is a genuine value and not a floor — the result simply
+does not have room to spare. **The correct reading is "significant at the registered α on
+seven rows, and not robust to the loss of any one of four of them."**
+
+One of those four is **TMEM106B**, which carries the standing transmembrane-helix confound:
+its frame contains a hydrophobic segment that was never in the fibril, which inflates its
+*v* independently of anything about polarity. It is also the second-highest Φ. So the
+single most influential point is the one with a known, unrelated reason to sit where it
+sits.
+
+## The two subgroup analyses say nothing, and were expected not to
+
+- **CPAD-absent rows alone: ρ = +1.000, p = 0.1667, n = 3.** The association is as extreme
+  as the data permit and **still cannot reach significance, because 0.1667 is the smallest
+  attainable p at n = 3.** This is the same structural defect as §4 at n = 2: a test that
+  could not have passed whatever the data did.
+- **Legacy arm: ρ = +0.500, p = 0.50, n = 3.** TANGO was never run on FUS, hnRNPA1, SAA or
+  LECT2, so the secondary analysis has three points. It neither supports nor contradicts.
+
+## What this licenses, and what it does not
+
+**Permitted:** *Across seven structurally characterised proteins, fibril cores with a
+higher buried polar fraction are recovered less well by AggrescanAI (ρ = +0.82,
+p = 0.017), and this is not explained by CPAD membership. The association is not robust to
+leave-one-out.*
+
+**Not permitted:**
+
+- anything about **DISC1 or TRIOBP-1**, which have no structures and are not in this
+  analysis — the confirmatory stratum is untouched and the headline question unmoved;
+- any claim that the legacy generation behaves the same way: n = 3 cannot support it;
+- **and the tautology registered in advance still applies.** A predictor built on
+  hydrophobicity scoring polar cores lower is partly a restatement of how it works. The
+  part that is not tautological is the experimental half: **these polar-core regions are
+  genuine, experimentally mapped aggregation determinants.** The finding is not that the
+  tools dislike polar cores. It is that nature does not, and the tools have not noticed.

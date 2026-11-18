@@ -17,6 +17,7 @@ import re
 import sys
 
 W = 6
+BAR = 0.05          # PREREGISTRATION 4: a row is "recovered" iff v < BAR.
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 # WHERE THE PROFILES LIVE. Corrected 17 Nov 2026. These paths used to carry a "runs/" prefix
@@ -53,6 +54,17 @@ RUNS = {
     # stores its residues in a frame that is NOT the frame of its profile.
     'glycinin G4 (soybean)': ('../glycinin_2026-11-17/P02858_A4.csv',
                               'A4 acidic chain, P02858[121:378], 258 aa'),
+    # Added 18 Nov 2026, the three rows recruited under the eight-stage pipeline in
+    # reports/recruitment_tracker.md. THE ORDER THESE ARRIVED IN IS THE POINT: the legacy
+    # arm ran first, the stratum labels were committed (5048837) and pushed, and only then
+    # was the modern arm pointed at these accessions. Their canonical frames carry no
+    # signal peptide and no transmembrane segment, so no decoy windows enter the pool --
+    # see _A_HYDROPHOBIC_SEGMENT_THAT_IS_NOT_IN_THE_SAMPLE_IS_A_DECOY_WINDOW.
+    'TAF15': ('../recruited_2026-11-18/Q92804.csv', '592-residue canonical Q92804'),
+    'CHCHD10': ('../recruited_2026-11-18/Q8WYQ3.csv', '142-residue canonical Q8WYQ3'),
+    # 151, NOT 142: 142 is the length of the paralogue CHCHD10 and an easy slip to make
+    # when the two are tabulated side by side. Verified against the fetched sequence.
+    'CHCHD2': ('../recruited_2026-11-18/Q9Y6H1.csv', '151-residue canonical Q9Y6H1'),
 }
 
 # ROW NUMBERING MINUS PROFILE NUMBERING. Zero for every row whose `residues` are in the
@@ -225,13 +237,39 @@ def main(repo):
                   conf_ok=sa.get('confirmatory_eligible', True))
         results.append(st)
 
-    results.sort(key=lambda x: x['v'])
-    print(f'{"protein":18s} {"region":12s} {"stratum":22s} {"cpad":30s} {"m":>4s} {"M":>5s} {"P":>8s} {"v":>10s}')
-    print('-' * 125)
+    # MINIMUM ATTAINABLE v, ADDED 18 Nov 2026, AND IT IS NOT A COSMETIC COLUMN.
+    # P is a midrank over M tiled windows, so its largest possible value is (M-0.5)/M --
+    # attained when the region contains the single highest-scoring window in the chain.
+    # Hence v = 1 - P^m can never fall below 1 - ((M-0.5)/M)^m, WHATEVER THE PREDICTOR
+    # OUTPUTS. When that floor exceeds §4's recovery bar of 0.05 the row CANNOT be scored
+    # as recovered even by a perfect predictor, and a 200k-draw simulation of the null at
+    # that geometry gives P(v < 0.05) = 0.0000 exactly. The floor depends only on M and m
+    # -- chain length and region length -- so it was computable before any predictor ran.
     for x in results:
+        x['v_floor'] = 1.0 - ((x['M'] - 0.5) / x['M']) ** x['m']
+    results.sort(key=lambda x: x['v'])
+    print(f'{"protein":18s} {"region":12s} {"stratum":22s} {"cpad":30s} {"m":>4s} {"M":>5s} '
+          f'{"P":>8s} {"v":>10s} {"min v":>8s}')
+    print('-' * 140)
+    for x in results:
+        flag = '  <-- v<0.05 UNREACHABLE' if x['v_floor'] >= BAR else ''
         print(f'{x["protein"]:18s} {x["residues"]:12s} {x["stratum"]:22s} {x["cpad"]:30s} '
-              f'{x["m"]:4d} {x["M"]:5d} {x["P"]:8.5f} {x["v"]:10.6f}  [{x["v_phase_min"]:.3f}-{x["v_phase_max"]:.3f}]')
+              f'{x["m"]:4d} {x["M"]:5d} {x["P"]:8.5f} {x["v"]:10.6f} {x["v_floor"]:8.5f}'
+              f'  [{x["v_phase_min"]:.3f}-{x["v_phase_max"]:.3f}]{flag}')
     print()
+    unreach = [x for x in results if x['v_floor'] >= BAR]
+    if unreach:
+        print(f'*** {len(unreach)} of {len(results)} SCORED ROWS CANNOT REACH §4\'s RECOVERY BAR '
+              f'(v < {BAR}) ***')
+        print('    v = 1 - P^m and P <= (M-0.5)/M, so min v = 1 - ((M-0.5)/M)^m. For these')
+        print('    rows that floor is ABOVE the bar: a perfect predictor -- one that puts the')
+        print('    highest-scoring window in the chain inside the region -- still fails. The')
+        print('    floor is a function of M and m alone and was computable before any')
+        print('    predictor ran. This is a defect in §4, like the 2^-n Wilcoxon floor.')
+        for x in sorted(unreach, key=lambda z: -z['v_floor']):
+            print(f'      {x["protein"]:18s} {x["residues"]:12s} M={x["M"]:4d} m={x["m"]:3d} '
+                  f'min v = {x["v_floor"]:.5f}')
+        print()
     if skipped:
         print('NOT SCORED:')
         for p, res, why in skipped:

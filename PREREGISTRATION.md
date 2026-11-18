@@ -1218,9 +1218,12 @@ record prints.
 **What this retires, and what it does not.** The blocker had two components and they
 separate cleanly:
 
-- **The boundary question is closed.** It was never capable of moving a number, and that
-  was computable from the start. **Rule 2 again, arriving late**: the margin was one
-  residue and the resolution of the statistic is six.
+- **The boundary question is closed, now twice over.** It was closed *textually* on
+  16 Nov by the 2025 thesis, whose Table 11 names the plasmids `DISC1 (Δ384-415)` and
+  whose §4.3.4 and Conclusion 3.1 both say 384-415 — identifying the preprint's Δ384-414
+  as a typo. What is added here is that it could never have mattered: the two readings
+  are the same measurement. **Rule 2 again, arriving late** — the margin was one residue
+  and the resolution of the statistic is six.
 - **The citability question stands, unchanged.** The row's source is a preprint plus a
   thesis; `source_version` governs over the boolean flag, and DISC1 384-415 still cannot
   be cited to a version of record. The 2024 paper is behind an Elsevier paywall the

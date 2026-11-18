@@ -30,6 +30,14 @@
       "n_regions": 21,
       "tag": "deposited-v1.2.0",
       "note": "First deposit where the version tag and the deposited-* tag point at the same commit, and the first whose five published md5s were verified against the local artefacts. Published md5s: aggregation_regions_v1.2.0.json 459495c447157f763b52dd61e1e48bc1, aggregation_regions_v1.2.0.csv f7bc5079121abdd706a284a8edd2b732, DATA_DESCRIPTOR.md baac6011b8510793057f531053b8b1aa, LICENSE 2ab724713fdaf49e4523c4503bfd068d, CITATION.cff ecd6f4e50f918289a8239351d8e80db8."
+    },
+    "1.3.0": {
+      "doi": "10.5281/zenodo.24339193",
+      "record": "https://zenodo.org/records/24339193",
+      "deposited": "2026-11-18",
+      "n_regions": 21,
+      "tag": "deposited-v1.3.0",
+      "note": "Same 21 rows as v1.2.0; seven stratum labels assigned under PREREGISTRATION 7a and the stratum_assignment column added, six of the relabelled rows flagged confirmatory_eligible: false. FIRST DEPOSIT RECORDED HERE IN THE SAME COMMIT THAT PUBLISHED IT, which is the step that failed for 1.1.0 and again for 1.2.0. Published md5s, verified against the record: aggregation_regions_v1.3.0.json 9c6d6c02918fbf3c22039cfd28c169f6, aggregation_regions_v1.3.0.csv 4e7bcf1ac7431ae66db10004ea82b459, DATA_DESCRIPTOR.md 658b958e2282958dcf1194496e402fbc, LICENSE 2ab724713fdaf49e4523c4503bfd068d, CITATION.cff 4528a2f2e62d57dd2444d8d9c5b8d242. Concept DOI verified resolving here after publication."
     }
   },
   "_concept_doi": "10.5281/zenodo.24290697",

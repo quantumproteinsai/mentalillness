@@ -262,7 +262,7 @@ BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (1) Tj ET
 endstream
 endobj
 4 0 obj
-<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
 endobj
 5 0 obj
 << /Length 9334 >>
@@ -611,7 +611,7 @@ BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (2) Tj ET
 endstream
 endobj
 6 0 obj
-<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
 endobj
 7 0 obj
 << /Length 6306 >>
@@ -837,7 +837,7 @@ BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (3) Tj ET
 endstream
 endobj
 8 0 obj
-<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
 endobj
 9 0 obj
 << /Length 8317 >>
@@ -1110,10 +1110,10 @@ BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (4) Tj ET
 endstream
 endobj
 10 0 obj
-<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 9 0 R >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 9 0 R >>
 endobj
 11 0 obj
-<< /Length 4258 >>
+<< /Length 7781 >>
 stream
 0.150 0.390 0.920 rg
 BT /F2 13.00 Tf 1 0 0 1 62.00 767.89 Tm (8. La suite) Tj ET
@@ -1122,94 +1122,170 @@ BT /F1 10.00 Tf 1 0 0 1 62.00 746.89 Tm (Le goulot d'étranglement n'est pas le l
 0.100 0.100 0.110 rg
 BT /F1 10.00 Tf 1 0 0 1 62.00 732.89 Tm (cartographiées et indemnes des trois formes de circularité. Il nous faut environ cinq nouvelles protéines.) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 718.89 Tm (Une piste prometteuse vient d'une structure récente d'une protéine de soja : le coeur de sa fibrille est) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 718.89 Tm (Entre-temps, une piste a été testée. Une structure récente d'une protéine de soja possède un coeur de) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 704.89 Tm (maintenu en partie par des contacts hydrophiles plutôt qu'hydrophobes. Or tous les prédicteurs comparés) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 704.89 Tm (fibrille maintenu en partie par des contacts HYDROPHILES plutôt qu'hydrophobes. Or tous les prédicteurs) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 690.89 Tm (reposent sur la chimie hydrophobe ; un coeur hydrophile est donc exactement le cas où ils devraient) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 690.89 Tm (étudiés reposent sur la chimie hydrophobe : un coeur hydrophile est donc exactement le cas où ils) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 676.89 Tm (échouer. C'est une hypothèse et non un résultat, et les données nécessaires pour la tester équitablement) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 676.89 Tm (devraient échouer. Nous avons écrit comment le mesurer, et à quelle condition abandonner la mesure,) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 662.89 Tm (n'existent pas encore.) Tj ET
-0.150 0.390 0.920 rg
-BT /F2 13.00 Tf 1 0 0 1 62.00 631.89 Tm (Glossaire) Tj ET
-q 1 0 0 -1 64.00 617.89 cm
+BT /F1 10.00 Tf 1 0 0 1 62.00 662.89 Tm (avant de calculer quoi que ce soit.) Tj ET
+q 1 0 0 -1 62.00 641.89 cm
+0.100 0.100 0.110 rg
+BT /F2 10.00 Tf 1 0 0 -1 0.00 12.00 Tm (Figure 6. Le résultat sur la polarité, pour sept protéines dont la structure est résolue) Tj ET
+1.00 w
+0.985 0.985 0.990 rg
+86.00 32.00 300.00 160.00 re
+f
+0.100 0.100 0.110 RG
+1.00 w 1 J
+[] 0 d
+86.00 192.00 m 386.00 192.00 l S
+[] 0 d
+0.100 0.100 0.110 RG
+1.00 w 1 J
+[] 0 d
+86.00 32.00 m 86.00 192.00 l S
+[] 0 d
+0.730 0.070 0.110 RG
+1.00 w 1 J
+[3 2] 0 d
+86.00 184.00 m 386.00 184.00 l S
+[] 0 d
+0.730 0.070 0.110 rg
+BT /F2 7.00 Tf 1 0 0 -1 389.00 187.00 Tm (v = 0.05) Tj ET
 1.00 w
 0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
+1.000 1.000 1.000 RG
+363.41 38.69 m
+363.41 41.01 361.53 42.89 359.21 42.89 c
+356.89 42.89 355.01 41.01 355.01 38.69 c
+355.01 36.37 356.89 34.49 359.21 34.49 c
+361.53 34.49 363.41 36.37 363.41 38.69 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 352.21 30.69 Tm (FUS) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+258.41 33.60 m
+258.41 35.92 256.53 37.80 254.21 37.80 c
+251.89 37.80 250.01 35.92 250.01 33.60 c
+250.01 31.28 251.89 29.40 254.21 29.40 c
+256.53 29.40 258.41 31.28 258.41 33.60 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 235.74 25.60 Tm (TMEM106B) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+203.77 127.14 m
+203.77 129.46 201.89 131.34 199.57 131.34 c
+197.25 131.34 195.37 129.46 195.37 127.14 c
+195.37 124.82 197.25 122.94 199.57 122.94 c
+201.89 122.94 203.77 124.82 203.77 127.14 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 188.68 119.14 Tm (LECT2) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+154.49 129.86 m
+154.49 132.18 152.61 134.06 150.29 134.06 c
+147.97 134.06 146.09 132.18 146.09 129.86 c
+146.09 127.54 147.97 125.66 150.29 125.66 c
+152.61 125.66 154.49 127.54 154.49 129.86 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 138.62 121.86 Tm (glycinin) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+138.41 117.98 m
+138.41 120.30 136.53 122.18 134.21 122.18 c
+131.89 122.18 130.01 120.30 130.01 117.98 c
+130.01 115.66 131.89 113.78 134.21 113.78 c
+136.53 113.78 138.41 115.66 138.41 117.98 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 118.65 109.98 Tm (hnRNPA1) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+135.20 158.02 m
+135.20 160.34 133.32 162.22 131.00 162.22 c
+128.68 162.22 126.80 160.34 126.80 158.02 c
+126.80 155.70 128.68 153.82 131.00 153.82 c
+133.32 153.82 135.20 155.70 135.20 158.02 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 124.00 150.02 Tm (SAA) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+112.70 138.96 m
+112.70 141.28 110.82 143.16 108.50 143.16 c
+106.18 143.16 104.30 141.28 104.30 138.96 c
+104.30 136.64 106.18 134.76 108.50 134.76 c
+110.82 134.76 112.70 136.64 112.70 138.96 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 95.08 130.96 Tm (ANXA11) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.50 Tf 1 0 0 -1 111.02 209.00 Tm (polarité du coeur enfoui  \(0 = tout hydrophobe, 1 = tout hydrophile\)) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 7.50 Tf 1 0 0 -1 67.58 38.00 Tm (1.0) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 7.50 Tf 1 0 0 -1 73.83 192.00 Tm (0) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 -1 19.98 102.00 Tm (v \(plus bas = le) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 -1 28.46 112.00 Tm (prédicteur l'a) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 -1 44.66 122.00 Tm (trouvée\)) Tj ET
+0.080 0.500 0.240 rg
+BT /F2 9.00 Tf 1 0 0 -1 92.00 44.00 Tm (rho = +0,82,  p = 0,017) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 -1 0.00 226.00 Tm (Chaque point est une protéine dont la structure de la fibrille est résolue : son coeur peut donc être mesuré et non supposé. Plus le) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 -1 0.00 236.50 Tm (coeur est polaire, moins le prédicteur réussit. Données réelles ; la statistique a été fixée avant d'être calculée.) Tj ET
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 375.89 Tm (La mesure devait d'abord passer un test : reproduire, à partir des coordonnées brutes, une classification) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 361.89 Tm (publiée de douze autres structures de fibrilles - et nous nous étions engagés d'avance à l'abandonner si) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 347.89 Tm (elle échouait. Elle a réussi. Ensuite, sur sept protéines, plus le coeur est polaire, moins le prédicteur) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 333.89 Tm (moderne réussit \(corrélation +0,82, p = 0,017\). C'est la première prédiction que ce projet ait formulée à) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 319.89 Tm (l'avance puis confirmée.) Tj ET
+q 1 0 0 -1 62.00 302.89 cm
+1.00 w
+0.970 0.970 0.980 rg
+0.00 0.00 471.28 109.00 re
+f
+1.00 w
+0.710 0.330 0.040 rg
+0.00 0.00 3.00 109.00 re
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 610.89 Tm (Résidu - un acide aminé au sein de la chaîne protéique.) Tj ET
-q 1 0 0 -1 64.00 600.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
+BT /F1 9.50 Tf 1 0 0 1 76.00 290.89 Tm (Deux réserves honnêtes. Le résultat est fragile : retirez n'importe laquelle de quatre des sept protéines et) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 593.89 Tm (Fibrille - la fibre ordonnée et empilée que forme la protéine agrégée.) Tj ET
-q 1 0 0 -1 64.00 583.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
+BT /F1 9.50 Tf 1 0 0 1 76.00 277.89 Tm (il repasse juste au-dessus du seuil. Et il ne répond pas à la question principale, car les deux protéines) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 576.89 Tm (Région critique pour l'agrégation - le segment de séquence dont l'expérience montre qu'il provoque) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 264.89 Tm (autour desquelles le projet a été construit n'ont jamais eu de fibrille résolue : elles ne figurent donc pas) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 562.89 Tm (l'agrégation.) Tj ET
-q 1 0 0 -1 64.00 552.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
+BT /F1 9.50 Tf 1 0 0 1 76.00 251.89 Tm (sur cette figure. Il y a aussi un sens où le résultat est à moitié évident : un outil qui évalue la chimie) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 545.89 Tm (Circularité - tester un outil à l'aide d'une réponse que l'outil lui-même a contribué à produire.) Tj ET
-q 1 0 0 -1 64.00 535.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
+BT /F1 9.50 Tf 1 0 0 1 76.00 238.89 Tm (hydrophobe donnera bien sûr un score faible aux coeurs hydrophiles. La moitié qui ne l'est pas, c'est que) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 528.89 Tm (Pré-enregistrement - fixer l'analyse par écrit avant de voir le moindre résultat.) Tj ET
-q 1 0 0 -1 64.00 518.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
+BT /F1 9.50 Tf 1 0 0 1 76.00 225.89 Tm (ces coeurs provoquent malgré tout une agrégation réelle en laboratoire. Les outils ne se trompent pas sur) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 511.89 Tm (v - notre score pour une région : faible signifie que le prédicteur a classé cette région au-dessus du) Tj ET
-0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 497.89 Tm (reste de la même protéine.) Tj ET
-q 1 0 0 -1 62.00 479.89 cm
+BT /F1 9.50 Tf 1 0 0 1 76.00 212.89 Tm (la chimie ; ils se trompent sur ce que la nature en fait.) Tj ET
+q 1 0 0 -1 62.00 181.89 cm
 1.00 w
 0.970 0.970 0.980 rg
 0.00 0.00 471.28 57.00 re
@@ -1220,29 +1296,117 @@ f
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 467.89 Tm (Le jeu de données à l'origine de ce document est publié en libre accès et possède son propre DOI :) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 169.89 Tm (Le jeu de données à l'origine de ce document est publié en libre accès et possède son propre DOI :) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 454.89 Tm (chacun peut vérifier les lignes, les étiquettes et les raisonnements. Chaque ligne indique de quel article) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 156.89 Tm (chacun peut vérifier les lignes, les étiquettes et les raisonnements. Chaque ligne indique de quel article) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 441.89 Tm (elle provient et si quelqu'un a réellement ouvert cet article.) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 143.89 Tm (elle provient et si quelqu'un a réellement ouvert cet article.) Tj ET
 0.420 0.440 0.480 rg
 BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (5) Tj ET
 endstream
 endobj
 12 0 obj
-<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 11 0 R >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 11 0 R >>
 endobj
 13 0 obj
-<< /Type /Pages /Count 5 /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R] >>
+<< /Length 2444 >>
+stream
+0.150 0.390 0.920 rg
+BT /F2 13.00 Tf 1 0 0 1 62.00 767.89 Tm (Glossaire) Tj ET
+q 1 0 0 -1 64.00 753.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 746.89 Tm (Résidu - un acide aminé au sein de la chaîne protéique.) Tj ET
+q 1 0 0 -1 64.00 736.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 729.89 Tm (Fibrille - la fibre ordonnée et empilée que forme la protéine agrégée.) Tj ET
+q 1 0 0 -1 64.00 719.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 712.89 Tm (Région critique pour l'agrégation - le segment de séquence dont l'expérience montre qu'il provoque) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 698.89 Tm (l'agrégation.) Tj ET
+q 1 0 0 -1 64.00 688.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 681.89 Tm (Circularité - tester un outil à l'aide d'une réponse que l'outil lui-même a contribué à produire.) Tj ET
+q 1 0 0 -1 64.00 671.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 664.89 Tm (Pré-enregistrement - fixer l'analyse par écrit avant de voir le moindre résultat.) Tj ET
+q 1 0 0 -1 64.00 654.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 647.89 Tm (v - notre score pour une région : faible signifie que le prédicteur a classé cette région au-dessus du) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 633.89 Tm (reste de la même protéine.) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (6) Tj ET
+endstream
 endobj
 14 0 obj
-<< /Title (Un logiciel peut-il trouver les régions collantes d'une protéine ?) /Producer (illness project, scripts/make_explainer.py) >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 13 0 R >>
 endobj
 15 0 obj
-<< /Type /Catalog /Pages 13 0 R >>
+<< /Type /Pages /Count 6 /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R] >>
+endobj
+16 0 obj
+<< /Title (Un logiciel peut-il trouver les régions collantes d'une protéine ?) /Producer (illness project, scripts/make_explainer.py) >>
+endobj
+17 0 obj
+<< /Type /Catalog /Pages 15 0 R >>
 endobj
 xref
-0 16
+0 18
 0000000000 65535 f 
 0000000015 00000 n 
 0000000112 00000 n 
@@ -1255,12 +1419,14 @@ xref
 0000023543 00000 n 
 0000031912 00000 n 
 0000032056 00000 n 
-0000036367 00000 n 
-0000036512 00000 n 
-0000036596 00000 n 
-0000036749 00000 n 
+0000039890 00000 n 
+0000040035 00000 n 
+0000042532 00000 n 
+0000042677 00000 n 
+0000042768 00000 n 
+0000042921 00000 n 
 trailer
-<< /Size 16 /Root 15 0 R /Info 14 0 R >>
+<< /Size 18 /Root 17 0 R /Info 16 0 R >>
 startxref
-36800
+42972
 %%EOF

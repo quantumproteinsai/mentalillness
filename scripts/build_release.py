@@ -46,6 +46,13 @@ CORE = [
     # confirmatory_eligible, and a consumer who cannot see that flag cannot reproduce the
     # confirmatory set -- the stratum label alone does not admit a row.
     'stratum_assignment',
+    # Added 18 Nov 2026 with PREREGISTRATION 10a. CORE because it names the experimental
+    # object the row describes -- which deposited structure the ordered core comes from,
+    # which chain, and which candidates were considered. A consumer cannot reproduce the
+    # core-polarity analysis without it, and its ABSENCE is informative too: it means no
+    # deposited fibril structure exists for that row, which is the case for every DISC1
+    # and TRIOBP-1 row.
+    'structure',
     'sequence_provenance', 'range_provenance', 'note',
 ]
 

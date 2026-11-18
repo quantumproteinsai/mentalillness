@@ -459,9 +459,41 @@ def fig_results(L):
     return f, FW, H
 
 
+
+POLAR = [('FUS', 0.675, 0.9582), ('TMEM106B', 0.577, 0.9900), ('LECT2', 0.526, 0.4054),
+         ('glycinin', 0.480, 0.3884), ('hnRNPA1', 0.465, 0.4626), ('SAA', 0.462, 0.2124),
+         ('ANXA11', 0.441, 0.3315)]
+
+
+def fig_polarity(L):
+    H = 250
+    f = [text(0, 12, L['f6t'], 10, INK, True)]
+    x0, y0, w, h = 86, 32, 300, 160
+    f.append(rect(x0, y0, w, h, fill=(0.985, 0.985, 0.99), stroke=None))
+    f.append(line(x0, y0 + h, x0 + w, y0 + h, INK, 1))
+    f.append(line(x0, y0, x0, y0 + h, INK, 1))
+    lo, hi = 0.42, 0.70
+    def px(phi): return x0 + (phi - lo) / (hi - lo) * w
+    def py(v): return y0 + h - v * h
+    # the v = 0.05 recovery bar, for continuity with Figure 5
+    f.append(line(x0, py(0.05), x0 + w, py(0.05), RED, 1, dash='3,2'))
+    f.append(text(x0 + w + 3, py(0.05) + 3, 'v = 0.05', 7, RED, True))
+    for nm, phi, v in POLAR:
+        f.append(circ(px(phi), py(v), 4.2, fill=BLUE, stroke=WHITE, lw=1))
+        f.append(text(px(phi), py(v) - 8, nm, 7, MUTED, anchor='middle'))
+    f.append(text(x0 + w / 2, y0 + h + 17, L['f6x'], 8.5, MUTED, anchor='middle'))
+    f.append(text(x0 - 8, y0 + 6, '1.0', 7.5, MUTED, anchor='end'))
+    f.append(text(x0 - 8, y0 + h, '0', 7.5, MUTED, anchor='end'))
+    for i, ln in enumerate(wrap(L['f6y'], 8, 74)):
+        f.append(text(x0 - 12, y0 + h / 2 - 10 + i * 10, ln, 8, MUTED, anchor='end'))
+    f.append(text(x0 + 6, y0 + 12, L['f6stat'], 9, GREEN, True))
+    for i, ln in enumerate(wrap(L['f6cap'], 8, FW)):
+        f.append(text(0, y0 + h + 34 + i * 10.5, ln, 8, MUTED))
+    return f, FW, H
+
 FIGS = [('fig1_aggregation', fig_fibril), ('fig2_predictor', fig_profile),
         ('fig3_circularity', fig_circ), ('fig4_statistic', fig_stat),
-        ('fig5_results', fig_results)]
+        ('fig5_results', fig_results), ('fig6_polarity', fig_polarity)]
 
 # ============================================================================= LAYOUT
 PW, PH = 595.28, 841.89
@@ -567,10 +599,11 @@ def content(L, figs):
         ('h', L['h7']),
         ('p', L['p13']), ('b', L['b3']),
         ('h', L['h8']),
-        ('p', L['p14']),
+        ('p', L['p14']), ('fig', figs[5]), ('p', L['p15']),
+        ('note', L['n4']),
+        ('note', L['n3']),
         ('h', L['h9']),
         ('b', L['gloss']),
-        ('note', L['n3']),
     ]
 
 
@@ -705,12 +738,34 @@ EN = {
     'h8': '8. What happens next',
     'p14': 'The bottleneck is not the software; it is the number of independent, '
            'well-mapped regions that are clean on all three kinds of circularity. We need '
-           'about five new proteins. One promising lead comes from a recent structure of a '
-           'soy protein: its fibril core is held together partly by water-attracting '
-           'contacts rather than water-repelling ones. Every predictor in the comparison is '
-           'built on water-repelling chemistry, so a water-attracting core is exactly the '
-           'case they should fail on. That is a hypothesis, not a finding, and the data '
-           'needed to test it fairly do not exist yet.',
+           'about five new proteins. Meanwhile one lead has been tested. A recent structure '
+           'of a soy protein has a fibril core held together partly by water-ATTRACTING '
+           'contacts rather than water-repelling ones. Every predictor here is built on '
+           'water-repelling chemistry, so a water-attracting core is exactly the case they '
+           'should fail on. We wrote down how to measure that, and the threshold for '
+           'abandoning the measure, before computing anything.',
+    'f6t': 'Figure 6. The polar-core result, on seven structurally solved proteins',
+    'f6x': 'how polar the buried core is  (0 = all water-repelling, 1 = all water-attracting)',
+    'f6y': 'v  (lower = the predictor found it)',
+    'f6stat': 'rho = +0.82,  p = 0.017',
+    'f6cap': 'Each point is one protein whose fibril structure has been solved, so its core '
+             'can be measured rather than guessed. The more polar the core, the worse the '
+             'predictor does. Real data; the statistic was fixed before it was computed.',
+    'p15': 'The measure had to pass a test first: it was required to reproduce, from raw '
+           'coordinates, a published classification of twelve other fibril structures - and '
+           'we committed in advance to abandoning it if it did not. It passed. Then, across '
+           'seven proteins, the more polar the core, the worse the modern predictor did '
+           '(correlation +0.82, p = 0.017). That is the first prediction this project made '
+           'in advance and then confirmed.',
+    'n4': 'Two honest qualifications. The result is fragile: remove any one of four of the '
+          'seven proteins and it slips just past the threshold. And it does not answer the '
+          'main question, because the two proteins the project was built around have never '
+          'had their fibrils solved, so they are not in this figure at all. There is also a '
+          'sense in which the finding is half obvious - a tool that scores water-repelling '
+          'chemistry will of course score water-attracting cores low. The half that is not '
+          'obvious is that those cores drive real aggregation in the laboratory anyway. The '
+          'tools are not wrong about chemistry; they are wrong about what nature does with '
+          'it.',
     'h9': 'Glossary',
     'gloss': ['Residue - one amino acid within the protein chain.',
               'Fibril - the ordered, stacked fibre that aggregated protein forms.',
@@ -863,13 +918,36 @@ FR = {
     'h8': "8. La suite",
     'p14': "Le goulot d'étranglement n'est pas le logiciel, mais le nombre de régions "
            "indépendantes, bien cartographiées et indemnes des trois formes de circularité. "
-           "Il nous faut environ cinq nouvelles protéines. Une piste prometteuse vient d'une "
-           "structure récente d'une protéine de soja : le coeur de sa fibrille est maintenu "
-           "en partie par des contacts hydrophiles plutôt qu'hydrophobes. Or tous les "
-           "prédicteurs comparés reposent sur la chimie hydrophobe ; un coeur hydrophile est "
-           "donc exactement le cas où ils devraient échouer. C'est une hypothèse et non un "
-           "résultat, et les données nécessaires pour la tester équitablement n'existent pas "
-           "encore.",
+           "Il nous faut environ cinq nouvelles protéines. Entre-temps, une piste a été "
+           "testée. Une structure récente d'une protéine de soja possède un coeur de "
+           "fibrille maintenu en partie par des contacts HYDROPHILES plutôt qu'hydrophobes. "
+           "Or tous les prédicteurs étudiés reposent sur la chimie hydrophobe : un coeur "
+           "hydrophile est donc exactement le cas où ils devraient échouer. Nous avons écrit "
+           "comment le mesurer, et à quelle condition abandonner la mesure, avant de "
+           "calculer quoi que ce soit.",
+    'f6t': "Figure 6. Le résultat sur la polarité, pour sept protéines dont la structure est résolue",
+    'f6x': "polarité du coeur enfoui  (0 = tout hydrophobe, 1 = tout hydrophile)",
+    'f6y': "v  (plus bas = le prédicteur l'a trouvée)",
+    'f6stat': "rho = +0,82,  p = 0,017",
+    'f6cap': "Chaque point est une protéine dont la structure de la fibrille est résolue : "
+             "son coeur peut donc être mesuré et non supposé. Plus le coeur est polaire, "
+             "moins le prédicteur réussit. Données réelles ; la statistique a été fixée "
+             "avant d'être calculée.",
+    'p15': "La mesure devait d'abord passer un test : reproduire, à partir des coordonnées "
+           "brutes, une classification publiée de douze autres structures de fibrilles - et "
+           "nous nous étions engagés d'avance à l'abandonner si elle échouait. Elle a réussi. "
+           "Ensuite, sur sept protéines, plus le coeur est polaire, moins le prédicteur "
+           "moderne réussit (corrélation +0,82, p = 0,017). C'est la première prédiction que "
+           "ce projet ait formulée à l'avance puis confirmée.",
+    'n4': "Deux réserves honnêtes. Le résultat est fragile : retirez n'importe laquelle de "
+          "quatre des sept protéines et il repasse juste au-dessus du seuil. Et il ne répond "
+          "pas à la question principale, car les deux protéines autour desquelles le projet "
+          "a été construit n'ont jamais eu de fibrille résolue : elles ne figurent donc pas "
+          "sur cette figure. Il y a aussi un sens où le résultat est à moitié évident : un "
+          "outil qui évalue la chimie hydrophobe donnera bien sûr un score faible aux coeurs "
+          "hydrophiles. La moitié qui ne l'est pas, c'est que ces coeurs provoquent malgré "
+          "tout une agrégation réelle en laboratoire. Les outils ne se trompent pas sur la "
+          "chimie ; ils se trompent sur ce que la nature en fait.",
     'h9': "Glossaire",
     'gloss': ["Résidu - un acide aminé au sein de la chaîne protéique.",
               "Fibrille - la fibre ordonnée et empilée que forme la protéine agrégée.",

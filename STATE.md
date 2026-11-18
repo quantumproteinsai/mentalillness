@@ -2722,3 +2722,77 @@ carry confirmatory standing.
 - **The v1.1.0 record metadata is still wrong.** Checked 18 Nov: `updated` is still
   2026-11-17T11:29:09Z and the Additional Description still reads "Version 1.0.0. DOI
   10.5281/zenodo.24290698". The edit did not take.
+
+---
+
+## The first pre-registered positive — core polarity, 18 Nov 2026
+
+**Registered before computing** (`reports/core_polarity_metric_2026-11-18.md`,
+PREREGISTRATION §10a), **structures committed second** (`9afee85`), **Φ computed and
+committed third** (`54ec69f`), **joined to *v* fourth** (`244f0ab`). The ordering is in the
+commit graph, which is the only reason the result is worth anything.
+
+### The result
+
+**Spearman ρ = +0.821, exact one-sided p = 0.0171, n = 7**, against α = 0.05 and a
+direction named in advance: higher buried polar fraction → higher *v* → worse recovery.
+p is exact over all 5040 permutations; the minimum attainable at n = 7 is 0.0002.
+
+**The metric survived its abandonment condition first.** Registered bar: AUROC < 0.80
+against the twelve published labels in the glycinin paper's Figure S6 → abandon, not
+re-tune. Observed **0.844**, and all nine pre-specified cut × variant combinations pass.
+**The primary variant is the weakest of the nine**, which is the right way round.
+
+**The pre-registered check on the metric passed too.** The LECT2 paper is titled
+*"…reveals a network of polar ladders at its core"*, recorded on the row before Φ existed
+precisely as an opportunity for the metric to fail. Φ put LECT2 at 0.526, above the 0.477
+threshold, agreeing with its authors. Two independent FUS depositions of different
+segments also agree with each other (0.675, 0.778).
+
+### Why it is worth more than its p-value
+
+- **Seven rows, seven distinct proteins.** This is the **only** analysis in the project
+  where the independence assumption actually holds. The confirmatory set's n = 8 collapses
+  to 5 proteins; this does not collapse at all.
+- **It is not a CPAD artefact**, which is the obvious way for it to be wrong and the thing
+  that killed the first version of the test: ρ(CPAD, *v*) = **+0.000**, ρ(CPAD, Φ) =
+  **+0.144**, with members and non-members spanning the same ranges of both.
+
+### Why it is worth less than its p-value
+
+**Leave-one-out: dropping any one of FOUR rows takes p to 0.0514.** At n = 6 the smallest
+attainable p is 0.0014, so that is a genuine value and not a floor — the result has no
+room to spare. All seven leave-one-out values are reported, not the flattering ones.
+
+One of the four is **TMEM106B**, which carries the standing transmembrane-helix confound
+*and* is the second-highest Φ: the most influential point has a known, unrelated reason to
+sit where it does.
+
+**Both subgroup analyses say nothing, and were expected not to.** CPAD-absent rows alone
+give ρ = +1.000 at **p = 0.1667 — as extreme as the data permit, and still not
+significant, because 0.1667 IS the smallest attainable p at n = 3.** That is the same
+structural defect as §4 at n = 2, met a second time. The legacy arm has three points,
+because TANGO was never run on four of these rows.
+
+### What it does not touch, and the tautology registered in advance
+
+**DISC1 and TRIOBP-1 have no deposited fibril structures.** They are absent from every
+line of this analysis, the confirmatory stratum is untouched, and `CLAUDE.md`'s headline
+question is unmoved. This is permanently exploratory for that structural reason, not a
+procedural one.
+
+And the near-tautology was registered *before* the result, so it cannot be quietly dropped
+now: a predictor built on hydrophobicity scoring polar cores lower is partly a restatement
+of how it works. **The half that is not a restatement is that these polar-core regions are
+experimentally mapped aggregation determinants.** The claim worth making is not that the
+tools dislike polar cores; it is that **nature does not, and the tools have not noticed.**
+
+### Two parser defects, neither caught by anything failing
+
+A **400 kB read cap** silently truncated the larger mmCIF files, returning `rise = None`
+for 9V45. A **regex that crossed a newline into a `loop_` table** returned `rise = 1.0,
+twist = None` for 8WZX instead of 2.38 / 179.217. A wrong rise builds a wrong assembly and
+the output looks entirely normal.
+
+Both were caught by noticing values implausible against the physics — **a 1.0 Å rise is
+not a β-sheet.** Nothing in the pipeline objected, and nothing would have.

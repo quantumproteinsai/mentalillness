@@ -254,7 +254,7 @@ BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (1) Tj ET
 endstream
 endobj
 4 0 obj
-<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
 endobj
 5 0 obj
 << /Length 9383 >>
@@ -603,7 +603,7 @@ BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (2) Tj ET
 endstream
 endobj
 6 0 obj
-<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
 endobj
 7 0 obj
 << /Length 5493 >>
@@ -819,7 +819,7 @@ BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (3) Tj ET
 endstream
 endobj
 8 0 obj
-<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
 endobj
 9 0 obj
 << /Length 8090 >>
@@ -1090,102 +1090,176 @@ BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (4) Tj ET
 endstream
 endobj
 10 0 obj
-<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 9 0 R >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 9 0 R >>
 endobj
 11 0 obj
-<< /Length 3977 >>
+<< /Length 7382 >>
 stream
 0.150 0.390 0.920 rg
 BT /F2 13.00 Tf 1 0 0 1 62.00 767.89 Tm (8. What happens next) Tj ET
 0.100 0.100 0.110 rg
 BT /F1 10.00 Tf 1 0 0 1 62.00 746.89 Tm (The bottleneck is not the software; it is the number of independent, well-mapped regions that are clean on) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 732.89 Tm (all three kinds of circularity. We need about five new proteins. One promising lead comes from a recent) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 732.89 Tm (all three kinds of circularity. We need about five new proteins. Meanwhile one lead has been tested. A) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 718.89 Tm (structure of a soy protein: its fibril core is held together partly by water-attracting contacts rather than) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 718.89 Tm (recent structure of a soy protein has a fibril core held together partly by water-ATTRACTING contacts) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 704.89 Tm (water-repelling ones. Every predictor in the comparison is built on water-repelling chemistry, so a) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 704.89 Tm (rather than water-repelling ones. Every predictor here is built on water-repelling chemistry, so a) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 690.89 Tm (water-attracting core is exactly the case they should fail on. That is a hypothesis, not a finding, and the) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 690.89 Tm (water-attracting core is exactly the case they should fail on. We wrote down how to measure that, and the) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 676.89 Tm (data needed to test it fairly do not exist yet.) Tj ET
-0.150 0.390 0.920 rg
-BT /F2 13.00 Tf 1 0 0 1 62.00 645.89 Tm (Glossary) Tj ET
-q 1 0 0 -1 64.00 631.89 cm
+BT /F1 10.00 Tf 1 0 0 1 62.00 676.89 Tm (threshold for abandoning the measure, before computing anything.) Tj ET
+q 1 0 0 -1 62.00 655.89 cm
+0.100 0.100 0.110 rg
+BT /F2 10.00 Tf 1 0 0 -1 0.00 12.00 Tm (Figure 6. The polar-core result, on seven structurally solved proteins) Tj ET
+1.00 w
+0.985 0.985 0.990 rg
+86.00 32.00 300.00 160.00 re
+f
+0.100 0.100 0.110 RG
+1.00 w 1 J
+[] 0 d
+86.00 192.00 m 386.00 192.00 l S
+[] 0 d
+0.100 0.100 0.110 RG
+1.00 w 1 J
+[] 0 d
+86.00 32.00 m 86.00 192.00 l S
+[] 0 d
+0.730 0.070 0.110 RG
+1.00 w 1 J
+[3 2] 0 d
+86.00 184.00 m 386.00 184.00 l S
+[] 0 d
+0.730 0.070 0.110 rg
+BT /F2 7.00 Tf 1 0 0 -1 389.00 187.00 Tm (v = 0.05) Tj ET
 1.00 w
 0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
+1.000 1.000 1.000 RG
+363.41 38.69 m
+363.41 41.01 361.53 42.89 359.21 42.89 c
+356.89 42.89 355.01 41.01 355.01 38.69 c
+355.01 36.37 356.89 34.49 359.21 34.49 c
+361.53 34.49 363.41 36.37 363.41 38.69 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 352.21 30.69 Tm (FUS) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+258.41 33.60 m
+258.41 35.92 256.53 37.80 254.21 37.80 c
+251.89 37.80 250.01 35.92 250.01 33.60 c
+250.01 31.28 251.89 29.40 254.21 29.40 c
+256.53 29.40 258.41 31.28 258.41 33.60 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 235.74 25.60 Tm (TMEM106B) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+203.77 127.14 m
+203.77 129.46 201.89 131.34 199.57 131.34 c
+197.25 131.34 195.37 129.46 195.37 127.14 c
+195.37 124.82 197.25 122.94 199.57 122.94 c
+201.89 122.94 203.77 124.82 203.77 127.14 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 188.68 119.14 Tm (LECT2) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+154.49 129.86 m
+154.49 132.18 152.61 134.06 150.29 134.06 c
+147.97 134.06 146.09 132.18 146.09 129.86 c
+146.09 127.54 147.97 125.66 150.29 125.66 c
+152.61 125.66 154.49 127.54 154.49 129.86 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 138.62 121.86 Tm (glycinin) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+138.41 117.98 m
+138.41 120.30 136.53 122.18 134.21 122.18 c
+131.89 122.18 130.01 120.30 130.01 117.98 c
+130.01 115.66 131.89 113.78 134.21 113.78 c
+136.53 113.78 138.41 115.66 138.41 117.98 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 118.65 109.98 Tm (hnRNPA1) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+135.20 158.02 m
+135.20 160.34 133.32 162.22 131.00 162.22 c
+128.68 162.22 126.80 160.34 126.80 158.02 c
+126.80 155.70 128.68 153.82 131.00 153.82 c
+133.32 153.82 135.20 155.70 135.20 158.02 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 124.00 150.02 Tm (SAA) Tj ET
+1.00 w
+0.150 0.390 0.920 rg
+1.000 1.000 1.000 RG
+112.70 138.96 m
+112.70 141.28 110.82 143.16 108.50 143.16 c
+106.18 143.16 104.30 141.28 104.30 138.96 c
+104.30 136.64 106.18 134.76 108.50 134.76 c
+110.82 134.76 112.70 136.64 112.70 138.96 c
+B
+0.420 0.440 0.480 rg
+BT /F1 7.00 Tf 1 0 0 -1 95.08 130.96 Tm (ANXA11) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.50 Tf 1 0 0 -1 93.81 209.00 Tm (how polar the buried core is  \(0 = all water-repelling, 1 = all water-attracting\)) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 7.50 Tf 1 0 0 -1 67.58 38.00 Tm (1.0) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 7.50 Tf 1 0 0 -1 73.83 192.00 Tm (0) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 -1 25.76 102.00 Tm (v \(lower = the) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 -1 11.75 112.00 Tm (predictor found it\)) Tj ET
+0.080 0.500 0.240 rg
+BT /F2 9.00 Tf 1 0 0 -1 92.00 44.00 Tm (rho = +0.82,  p = 0.017) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 -1 0.00 226.00 Tm (Each point is one protein whose fibril structure has been solved, so its core can be measured rather than guessed. The more polar) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 -1 0.00 236.50 Tm (the core, the worse the predictor does. Real data; the statistic was fixed before it was computed.) Tj ET
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 389.89 Tm (The measure had to pass a test first: it was required to reproduce, from raw coordinates, a published) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 375.89 Tm (classification of twelve other fibril structures - and we committed in advance to abandoning it if it did not. It) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 361.89 Tm (passed. Then, across seven proteins, the more polar the core, the worse the modern predictor did) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 347.89 Tm (\(correlation +0.82, p = 0.017\). That is the first prediction this project made in advance and then confirmed.) Tj ET
+q 1 0 0 -1 62.00 330.89 cm
+1.00 w
+0.970 0.970 0.980 rg
+0.00 0.00 471.28 109.00 re
+f
+1.00 w
+0.710 0.330 0.040 rg
+0.00 0.00 3.00 109.00 re
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 624.89 Tm (Residue - one amino acid within the protein chain.) Tj ET
-q 1 0 0 -1 64.00 614.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
+BT /F1 9.50 Tf 1 0 0 1 76.00 318.89 Tm (Two honest qualifications. The result is fragile: remove any one of four of the seven proteins and it slips) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 607.89 Tm (Fibril - the ordered, stacked fibre that aggregated protein forms.) Tj ET
-q 1 0 0 -1 64.00 597.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
+BT /F1 9.50 Tf 1 0 0 1 76.00 305.89 Tm (just past the threshold. And it does not answer the main question, because the two proteins the project) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 590.89 Tm (Aggregation-critical region - the stretch of sequence that experiments show drives the aggregation.) Tj ET
-q 1 0 0 -1 64.00 580.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
+BT /F1 9.50 Tf 1 0 0 1 76.00 292.89 Tm (was built around have never had their fibrils solved, so they are not in this figure at all. There is also a) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 573.89 Tm (Circularity - testing a tool using an answer that the tool itself helped to produce.) Tj ET
-q 1 0 0 -1 64.00 563.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
+BT /F1 9.50 Tf 1 0 0 1 76.00 279.89 Tm (sense in which the finding is half obvious - a tool that scores water-repelling chemistry will of course score) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 556.89 Tm (Pre-registration - fixing the analysis in writing before seeing any results.) Tj ET
-q 1 0 0 -1 64.00 546.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
+BT /F1 9.50 Tf 1 0 0 1 76.00 266.89 Tm (water-attracting cores low. The half that is not obvious is that those cores drive real aggregation in the) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 539.89 Tm (v - our score for one region: small means the predictor ranked that region above the rest of the same) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 253.89 Tm (laboratory anyway. The tools are not wrong about chemistry; they are wrong about what nature does with) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 525.89 Tm (protein.) Tj ET
-q 1 0 0 -1 62.00 507.89 cm
+BT /F1 9.50 Tf 1 0 0 1 76.00 240.89 Tm (it.) Tj ET
+q 1 0 0 -1 62.00 209.89 cm
 1.00 w
 0.970 0.970 0.980 rg
 0.00 0.00 471.28 57.00 re
@@ -1196,29 +1270,115 @@ f
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 495.89 Tm (The dataset behind this document is published openly and has its own DOI, so anyone can check the) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 197.89 Tm (The dataset behind this document is published openly and has its own DOI, so anyone can check the) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 482.89 Tm (rows, the labels and the reasoning for themselves. Each row records which paper it came from and) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 184.89 Tm (rows, the labels and the reasoning for themselves. Each row records which paper it came from and) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 469.89 Tm (whether someone actually opened that paper.) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 171.89 Tm (whether someone actually opened that paper.) Tj ET
 0.420 0.440 0.480 rg
 BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (5) Tj ET
 endstream
 endobj
 12 0 obj
-<< /Type /Page /Parent 13 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 11 0 R >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 11 0 R >>
 endobj
 13 0 obj
-<< /Type /Pages /Count 5 /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R] >>
+<< /Length 2315 >>
+stream
+0.150 0.390 0.920 rg
+BT /F2 13.00 Tf 1 0 0 1 62.00 767.89 Tm (Glossary) Tj ET
+q 1 0 0 -1 64.00 753.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 746.89 Tm (Residue - one amino acid within the protein chain.) Tj ET
+q 1 0 0 -1 64.00 736.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 729.89 Tm (Fibril - the ordered, stacked fibre that aggregated protein forms.) Tj ET
+q 1 0 0 -1 64.00 719.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 712.89 Tm (Aggregation-critical region - the stretch of sequence that experiments show drives the aggregation.) Tj ET
+q 1 0 0 -1 64.00 702.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 695.89 Tm (Circularity - testing a tool using an answer that the tool itself helped to produce.) Tj ET
+q 1 0 0 -1 64.00 685.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 678.89 Tm (Pre-registration - fixing the analysis in writing before seeing any results.) Tj ET
+q 1 0 0 -1 64.00 668.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 661.89 Tm (v - our score for one region: small means the predictor ranked that region above the rest of the same) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 647.89 Tm (protein.) Tj ET
+0.420 0.440 0.480 rg
+BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (6) Tj ET
+endstream
 endobj
 14 0 obj
-<< /Title (Can software find the sticky parts of a protein?) /Producer (illness project, scripts/make_explainer.py) >>
+<< /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 13 0 R >>
 endobj
 15 0 obj
-<< /Type /Catalog /Pages 13 0 R >>
+<< /Type /Pages /Count 6 /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R] >>
+endobj
+16 0 obj
+<< /Title (Can software find the sticky parts of a protein?) /Producer (illness project, scripts/make_explainer.py) >>
+endobj
+17 0 obj
+<< /Type /Catalog /Pages 15 0 R >>
 endobj
 xref
-0 16
+0 18
 0000000000 65535 f 
 0000000015 00000 n 
 0000000112 00000 n 
@@ -1231,12 +1391,14 @@ xref
 0000022157 00000 n 
 0000030299 00000 n 
 0000030443 00000 n 
-0000034473 00000 n 
-0000034618 00000 n 
-0000034702 00000 n 
-0000034837 00000 n 
+0000037878 00000 n 
+0000038023 00000 n 
+0000040391 00000 n 
+0000040536 00000 n 
+0000040627 00000 n 
+0000040762 00000 n 
 trailer
-<< /Size 16 /Root 15 0 R /Info 14 0 R >>
+<< /Size 18 /Root 17 0 R /Info 16 0 R >>
 startxref
-34888
+40813
 %%EOF

@@ -1,0 +1,219 @@
+[
+ {
+  "label": "FUS 39-95",
+  "pdb": "5W3N",
+  "chain": "E",
+  "mode": "AS DEPOSITED (no helical parameters)",
+  "n_res_in_range": 57,
+  "n_env_atoms": 79740,
+  "range": "39-95",
+  "cut_5": {
+   "n_core": 38,
+   "phi": 0.6578947368421053,
+   "phi_no_gly": 0.9615384615384616,
+   "phi_YC_nonpolar": 0.5526315789473685,
+   "core_seq": "GSTDTSGYGSSSSGNGYGTQSTPQGYGSTGGYGSSGQS"
+  },
+  "cut_10": {
+   "n_core": 40,
+   "phi": 0.675,
+   "phi_no_gly": 0.9642857142857143,
+   "phi_YC_nonpolar": 0.575,
+   "core_seq": "GSTDTSGYGSSSSGSNGYGTQSTPQGYGSTGGYGSSSGQS"
+  },
+  "cut_20": {
+   "n_core": 44,
+   "phi": 0.7045454545454546,
+   "phi_no_gly": 0.96875,
+   "phi_YC_nonpolar": 0.6136363636363636,
+   "core_seq": "GSSTDTSGYGSSSSGSNTGYGTQSTPQGYGSTGGYGSSSSSGQS"
+  },
+  "group": "row"
+ },
+ {
+  "label": "hnRNPA1 251-295",
+  "pdb": "7ZJ2",
+  "chain": "G",
+  "mode": "replicated 13 copies (rise 2.370 A, twist 179.050 deg)",
+  "n_res_in_range": 45,
+  "n_env_atoms": 49296,
+  "range": "251-295",
+  "cut_5": {
+   "n_core": 43,
+   "phi": 0.46511627906976744,
+   "phi_no_gly": 0.7407407407407407,
+   "phi_YC_nonpolar": 0.4186046511627907,
+   "core_seq": "GSNFGGGGSNDFGNYNNQSSNFGPMKGGNFGGRSSGPGGGGQY"
+  },
+  "cut_10": {
+   "n_core": 43,
+   "phi": 0.46511627906976744,
+   "phi_no_gly": 0.7407407407407407,
+   "phi_YC_nonpolar": 0.4186046511627907,
+   "core_seq": "GSNFGGGGSNDFGNYNNQSSNFGPMKGGNFGGRSSGPGGGGQY"
+  },
+  "cut_20": {
+   "n_core": 43,
+   "phi": 0.46511627906976744,
+   "phi_no_gly": 0.7407407407407407,
+   "phi_YC_nonpolar": 0.4186046511627907,
+   "core_seq": "GSNFGGGGSNDFGNYNNQSSNFGPMKGGNFGGRSSGPGGGGQY"
+  },
+  "group": "row"
+ },
+ {
+  "label": "SAA 2-55",
+  "pdb": "6MST",
+  "chain": "H",
+  "mode": "replicated 13 copies (rise 2.400 A, twist 0.790 deg)",
+  "n_res_in_range": 54,
+  "n_env_atoms": 67236,
+  "range": "2-55",
+  "cut_5": {
+   "n_core": 52,
+   "phi": 0.46153846153846156,
+   "phi_no_gly": 0.5333333333333333,
+   "phi_YC_nonpolar": 0.38461538461538464,
+   "core_seq": "SFFSFLGEAFDGARDMWRAYSDMREANYIGSDKYFHARGNYDAARGPGGVWA"
+  },
+  "cut_10": {
+   "n_core": 52,
+   "phi": 0.46153846153846156,
+   "phi_no_gly": 0.5333333333333333,
+   "phi_YC_nonpolar": 0.38461538461538464,
+   "core_seq": "SFFSFLGEAFDGARDMWRAYSDMREANYIGSDKYFHARGNYDAARGPGGVWA"
+  },
+  "cut_20": {
+   "n_core": 54,
+   "phi": 0.46296296296296297,
+   "phi_no_gly": 0.5319148936170213,
+   "phi_YC_nonpolar": 0.3888888888888889,
+   "core_seq": "SFFSFLGEAFDGARDMWRAYSDMREANYIGSDKYFHARGNYDAAKRGPGGVWAA"
+  },
+  "group": "row"
+ },
+ {
+  "label": "LECT2 55-75",
+  "pdb": "8G2V",
+  "chain": "A",
+  "mode": "replicated 13 copies (rise 2.345 A, twist 179.490 deg)",
+  "n_res_in_range": 21,
+  "n_env_atoms": 21580,
+  "range": "55-75",
+  "cut_5": {
+   "n_core": 19,
+   "phi": 0.5263157894736842,
+   "phi_no_gly": 0.5882352941176471,
+   "phi_YC_nonpolar": 0.5263157894736842,
+   "core_seq": "MIVGQEKPQNKNAINNGVR"
+  },
+  "cut_10": {
+   "n_core": 19,
+   "phi": 0.5263157894736842,
+   "phi_no_gly": 0.5882352941176471,
+   "phi_YC_nonpolar": 0.5263157894736842,
+   "core_seq": "MIVGQEKPQNKNAINNGVR"
+  },
+  "cut_20": {
+   "n_core": 20,
+   "phi": 0.55,
+   "phi_no_gly": 0.6111111111111112,
+   "phi_YC_nonpolar": 0.5,
+   "core_seq": "MIVGQEKPYQNKNAINNGVR"
+  },
+  "group": "row"
+ },
+ {
+  "label": "TMEM106B 120-254",
+  "pdb": "7U16",
+  "chain": "B",
+  "mode": "replicated 13 copies (rise 4.800 A, twist -0.400 deg)",
+  "n_res_in_range": 135,
+  "n_env_atoms": 42744,
+  "range": "120-254",
+  "cut_5": {
+   "n_core": 113,
+   "phi": 0.5752212389380531,
+   "phi_no_gly": 0.5963302752293578,
+   "phi_YC_nonpolar": 0.4690265486725664,
+   "core_seq": "SIDVKYIGKSAYVSYDVQTYLNITNLITNNNYVEVEIAQQIGARLNITIGPLDMKQIDYTVPTVIAEESMYDFCTLISIKVHNIVLMMQVTVTTTYFGHSEQISQERYQYVDC"
+  },
+  "cut_10": {
+   "n_core": 123,
+   "phi": 0.5772357723577236,
+   "phi_no_gly": 0.6016949152542372,
+   "phi_YC_nonpolar": 0.4796747967479675,
+   "core_seq": "SIDVKYIGKSAYVSYDVQRTYLNITNTLNITNNNYSVEVEIAQVQSTVIGARLNITIGPLDMKQIDYTVPTVIAEEMSMYDFCTLISIKVHNIVLMMQVTVTTTYFGHSEQISQERYQYVDCG"
+  },
+  "cut_20": {
+   "n_core": 135,
+   "phi": 0.5851851851851851,
+   "phi_no_gly": 0.6076923076923076,
+   "phi_YC_nonpolar": 0.48148148148148145,
+   "core_seq": "SIDVKYIGVKSAYVSYDVQKRTIYLNITNTLNITNNNYYSVEVENITAQVQFSKTVIGKARLNNITIIGPLDMKQIDYTVPTVIAEEMSYMYDFCTLISIKVHNIVLMMQVTVTTTYFGHSEQISQERYQYVDCG"
+  },
+  "group": "row"
+ },
+ {
+  "label": "ANXA11 39-74",
+  "pdb": "9FOR",
+  "chain": "p",
+  "mode": "replicated 13 copies (rise 4.980 A, twist -1.830 deg)",
+  "n_res_in_range": 36,
+  "n_env_atoms": 44265,
+  "range": "39-74",
+  "cut_5": {
+   "n_core": 34,
+   "phi": 0.4411764705882353,
+   "phi_no_gly": 0.5172413793103449,
+   "phi_YC_nonpolar": 0.35294117647058826,
+   "core_seq": "DNVATYAGFNQDYLSGMAANMSGTFGGANMPNLY"
+  },
+  "cut_10": {
+   "n_core": 34,
+   "phi": 0.4411764705882353,
+   "phi_no_gly": 0.5172413793103449,
+   "phi_YC_nonpolar": 0.35294117647058826,
+   "core_seq": "DNVATYAGFNQDYLSGMAANMSGTFGGANMPNLY"
+  },
+  "cut_20": {
+   "n_core": 34,
+   "phi": 0.4411764705882353,
+   "phi_no_gly": 0.5172413793103449,
+   "phi_YC_nonpolar": 0.35294117647058826,
+   "core_seq": "DNVATYAGFNQDYLSGMAANMSGTFGGANMPNLY"
+  },
+  "group": "row"
+ },
+ {
+  "label": "glycinin 164-190",
+  "pdb": "9V45",
+  "chain": "F",
+  "mode": "replicated 13 copies (rise 2.400 A, twist 179.466 deg)",
+  "n_res_in_range": 27,
+  "n_env_atoms": 27820,
+  "range": "164-190",
+  "cut_5": {
+   "n_core": 25,
+   "phi": 0.48,
+   "phi_no_gly": 0.48,
+   "phi_YC_nonpolar": 0.44,
+   "core_seq": "VVAISLLDTSNFNQLDQTPRVFYLA"
+  },
+  "cut_10": {
+   "n_core": 25,
+   "phi": 0.48,
+   "phi_no_gly": 0.48,
+   "phi_YC_nonpolar": 0.44,
+   "core_seq": "VVAISLLDTSNFNQLDQTPRVFYLA"
+  },
+  "cut_20": {
+   "n_core": 25,
+   "phi": 0.48,
+   "phi_no_gly": 0.48,
+   "phi_YC_nonpolar": 0.44,
+   "core_seq": "VVAISLLDTSNFNQLDQTPRVFYLA"
+  },
+  "group": "row"
+ }
+]

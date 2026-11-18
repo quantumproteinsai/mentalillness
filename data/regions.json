@@ -832,7 +832,23 @@
     "provenance": "READ from the Data availability statement of the version of record, which names \"9CWW (D10-NT polymorph-1)\" explicitly. Rise, twist and resolution COMPUTED from the deposited mmCIF, not transcribed."
    },
    "NON_INDEPENDENT_WITH_THE_CHCHD2_ROW": "THESE TWO ROWS ARE NOT INDEPENDENT OBSERVATIONS, AND THE REASON IS SEQUENCE, NOT AUTHORSHIP. CHCHD10 43-75 and CHCHD2 54-86 align over 33 residues at 28/33 = 84.8% IDENTITY (differences at alignment positions 22, 23, 25, 27, 30: V/T, M/L, S/H, L/I, A/G). The paper makes this its central point -- \"the core ordered regions of D2-NT and D10-NT fibrils are formed by highly homologous regions within each protein\". EVERY PREDICTOR IN BOTH ARMS IS A FUNCTION OF SEQUENCE, so these two rows will score almost identically BY CONSTRUCTION, and a rank test that counts them twice inflates n without adding information. They also share one laboratory, one preparation and one imaging pipeline. RULE: any confirmatory or pooled statistic uses AT MOST ONE of this pair; the other is reported alongside as a near-replicate. Recorded on both rows so it cannot be lost.",
-   "note": "ADDED 18 Nov 2026 under the recruitment pipeline in reports/recruitment_tracker.md. Recruited to grow the confirmatory stratum, WHICH IT MAY NOT BE ABLE TO JOIN: see the non-independence field, and note that the stratum label is assigned in a later commit from the legacy arm and may come out CONCORDANT. The protein is a mitochondrial coiled-coil-helix protein mutated in heritable FTD, ALS and Parkinson disease; the region spans the disease mutations p.V57E, p.G58R and p.S59L, and the paper shows S59L cannot be accommodated by the wild-type fold."
+   "note": "ADDED 18 Nov 2026 under the recruitment pipeline in reports/recruitment_tracker.md. Recruited to grow the confirmatory stratum, WHICH IT MAY NOT BE ABLE TO JOIN: see the non-independence field, and note that the stratum label is assigned in a later commit from the legacy arm and may come out CONCORDANT. The protein is a mitochondrial coiled-coil-helix protein mutated in heritable FTD, ALS and Parkinson disease; the region spans the disease mutations p.V57E, p.G58R and p.S59L, and the paper shows S59L cannot be accommodated by the wild-type fold.",
+   "stratum": "DISCORDANT",
+   "stratum_basis": "ASSIGNED MECHANICALLY FROM THE LEGACY ARM ON 2026-11-18, UNDER PREREGISTRATION 7 (amended 16 Nov 2026, before any predictor ran): stratum is taken \"from the published predictor results where they exist, and otherwise from the LEGACY ARM'S OWN OUTPUT\". No published predictor run exists for this region, so the legacy arm decides it. RULE: DISCORDANT iff TANGO v >= 0.05, the recovery bar fixed in PREREGISTRATION 4. OBSERVED: TANGO v = 0.1041 at pH 7.0 / 310 K, phase 0 (P = 0.9783, m = 5 tiled windows wholly inside the region), so DISCORDANT. The call is identical at all 9 grid points, so the two parameters that were never pre-registered do not decide this label. || THE ORDERING IS INTACT, AND THIS IS THE DIFFERENCE FROM THE SIX ROWS LABELLED EARLIER THE SAME DAY. Section 7 requires the assignment to be made AFTER the legacy run and BEFORE the modern run. For this row that is exactly what happened: TANGO ran on Q8WYQ3 on 18 Nov, this label was committed, and NO AggrescanAI run on Q8WYQ3 existed at that moment -- the accession appears nowhere in results/aggrescanai_2026-11-17/. Nothing downstream was visible when the rule was applied, and there was no discretion left in whether to apply it, because the row was recruited under a pipeline that fixes this order in advance (reports/recruitment_tracker.md). So this row IS confirmatory_eligible.",
+   "stratum_assignment": {
+    "rule": "PREREGISTRATION 7: DISCORDANT iff legacy v >= 0.05 (the \u00a74 bar)",
+    "legacy_tool": "TANGO, SHA-256 d0e381c2...9f31dbf, pH 7.0 / 310 K, phase 0, Aggregation column, W=6 non-overlapping tiling",
+    "legacy_v": 0.1041,
+    "legacy_P": 0.9783,
+    "legacy_m": 5,
+    "grid_sensitivity": "identical at all 9 grid points",
+    "profiles": "results/recruited_2026-11-18/tango_profiles/ (9 per accession)",
+    "assigned": "2026-11-18",
+    "previous_value": "none (row created 18 Nov with no stratum field)",
+    "ordering": "INTACT -- the modern arm had NOT run on this accession when the label was applied, and the label is committed before it does",
+    "confirmatory_eligible": true,
+    "reported_as": "CONFIRMATORY under PREREGISTRATION 5.2b"
+   }
   },
   {
    "protein": "CHCHD2",
@@ -870,7 +886,23 @@
     "provenance": "READ from the Data availability statement of the version of record, which names \"9OYR (D2-NT)\" explicitly. Rise, twist and resolution COMPUTED from the deposited mmCIF."
    },
    "NON_INDEPENDENT_WITH_THE_CHCHD10_ROW": "THESE TWO ROWS ARE NOT INDEPENDENT OBSERVATIONS, AND THE REASON IS SEQUENCE, NOT AUTHORSHIP. CHCHD10 43-75 and CHCHD2 54-86 align over 33 residues at 28/33 = 84.8% IDENTITY (differences at alignment positions 22, 23, 25, 27, 30: V/T, M/L, S/H, L/I, A/G). The paper makes this its central point -- \"the core ordered regions of D2-NT and D10-NT fibrils are formed by highly homologous regions within each protein\". EVERY PREDICTOR IN BOTH ARMS IS A FUNCTION OF SEQUENCE, so these two rows will score almost identically BY CONSTRUCTION, and a rank test that counts them twice inflates n without adding information. They also share one laboratory, one preparation and one imaging pipeline. RULE: any confirmatory or pooled statistic uses AT MOST ONE of this pair; the other is reported alongside as a near-replicate. Recorded on both rows so it cannot be lost.",
-   "note": "ADDED 18 Nov 2026 under the recruitment pipeline. The region spans the disease mutations p.T61I and p.V66M. NOTE THE HELICAL SYMMETRY DIFFERENCE from the CHCHD10 row: 9OYR has a 4.796 A rise and a 1.34 deg twist (one subunit per layer per protofilament), while 9CWW has a 2.365 A rise and a 178.845 deg twist (pseudo-2_1 screw). The two assemblies are built differently even though the sequences are 85% identical, which is the paper's own finding and is why both were kept despite the overlap."
+   "note": "ADDED 18 Nov 2026 under the recruitment pipeline. The region spans the disease mutations p.T61I and p.V66M. NOTE THE HELICAL SYMMETRY DIFFERENCE from the CHCHD10 row: 9OYR has a 4.796 A rise and a 1.34 deg twist (one subunit per layer per protofilament), while 9CWW has a 2.365 A rise and a 178.845 deg twist (pseudo-2_1 screw). The two assemblies are built differently even though the sequences are 85% identical, which is the paper's own finding and is why both were kept despite the overlap.",
+   "stratum": "DISCORDANT",
+   "stratum_basis": "ASSIGNED MECHANICALLY FROM THE LEGACY ARM ON 2026-11-18, UNDER PREREGISTRATION 7 (amended 16 Nov 2026, before any predictor ran): stratum is taken \"from the published predictor results where they exist, and otherwise from the LEGACY ARM'S OWN OUTPUT\". No published predictor run exists for this region, so the legacy arm decides it. RULE: DISCORDANT iff TANGO v >= 0.05, the recovery bar fixed in PREREGISTRATION 4. OBSERVED: TANGO v = 0.0961 at pH 7.0 / 310 K, phase 0 (P = 0.98, m = 5 tiled windows wholly inside the region), so DISCORDANT. The call is identical at all 9 grid points, so the two parameters that were never pre-registered do not decide this label. || THE ORDERING IS INTACT, AND THIS IS THE DIFFERENCE FROM THE SIX ROWS LABELLED EARLIER THE SAME DAY. Section 7 requires the assignment to be made AFTER the legacy run and BEFORE the modern run. For this row that is exactly what happened: TANGO ran on Q9Y6H1 on 18 Nov, this label was committed, and NO AggrescanAI run on Q9Y6H1 existed at that moment -- the accession appears nowhere in results/aggrescanai_2026-11-17/. Nothing downstream was visible when the rule was applied, and there was no discretion left in whether to apply it, because the row was recruited under a pipeline that fixes this order in advance (reports/recruitment_tracker.md). So this row IS confirmatory_eligible.",
+   "stratum_assignment": {
+    "rule": "PREREGISTRATION 7: DISCORDANT iff legacy v >= 0.05 (the \u00a74 bar)",
+    "legacy_tool": "TANGO, SHA-256 d0e381c2...9f31dbf, pH 7.0 / 310 K, phase 0, Aggregation column, W=6 non-overlapping tiling",
+    "legacy_v": 0.0961,
+    "legacy_P": 0.98,
+    "legacy_m": 5,
+    "grid_sensitivity": "identical at all 9 grid points",
+    "profiles": "results/recruited_2026-11-18/tango_profiles/ (9 per accession)",
+    "assigned": "2026-11-18",
+    "previous_value": "none (row created 18 Nov with no stratum field)",
+    "ordering": "INTACT -- the modern arm had NOT run on this accession when the label was applied, and the label is committed before it does",
+    "confirmatory_eligible": true,
+    "reported_as": "CONFIRMATORY under PREREGISTRATION 5.2b"
+   }
   },
   {
    "protein": "TAF15",
@@ -907,7 +939,23 @@
     ],
     "provenance": "READ from the Data availability statement of the publisher PDF. Rise, twist, resolution and the modelled range COMPUTED from the deposited mmCIF, not transcribed."
    },
-   "note": "ADDED 18 Nov 2026 under the recruitment pipeline in reports/recruitment_tracker.md. TAF15 is the FUS homologue; the authors set out to find FUS filaments in FTLD-FET and found TAF15 instead. The row is independent of every other row in the dataset in sequence, laboratory and material -- unlike the CHCHD10/CHCHD2 pair added the same day."
+   "note": "ADDED 18 Nov 2026 under the recruitment pipeline in reports/recruitment_tracker.md. TAF15 is the FUS homologue; the authors set out to find FUS filaments in FTLD-FET and found TAF15 instead. The row is independent of every other row in the dataset in sequence, laboratory and material -- unlike the CHCHD10/CHCHD2 pair added the same day.",
+   "stratum": "DISCORDANT",
+   "stratum_basis": "ASSIGNED MECHANICALLY FROM THE LEGACY ARM ON 2026-11-18, UNDER PREREGISTRATION 7 (amended 16 Nov 2026, before any predictor ran): stratum is taken \"from the published predictor results where they exist, and otherwise from the LEGACY ARM'S OWN OUTPUT\". No published predictor run exists for this region, so the legacy arm decides it. RULE: DISCORDANT iff TANGO v >= 0.05, the recovery bar fixed in PREREGISTRATION 4. OBSERVED: TANGO v = 1.0 at pH 7.0 / 310 K, phase 0 (P = 0.4592, m = 15 tiled windows wholly inside the region), so DISCORDANT. The call is identical at all 9 grid points, so the two parameters that were never pre-registered do not decide this label. || THE ORDERING IS INTACT, AND THIS IS THE DIFFERENCE FROM THE SIX ROWS LABELLED EARLIER THE SAME DAY. Section 7 requires the assignment to be made AFTER the legacy run and BEFORE the modern run. For this row that is exactly what happened: TANGO ran on Q92804 on 18 Nov, this label was committed, and NO AggrescanAI run on Q92804 existed at that moment -- the accession appears nowhere in results/aggrescanai_2026-11-17/. Nothing downstream was visible when the rule was applied, and there was no discretion left in whether to apply it, because the row was recruited under a pipeline that fixes this order in advance (reports/recruitment_tracker.md). So this row IS confirmatory_eligible.",
+   "stratum_assignment": {
+    "rule": "PREREGISTRATION 7: DISCORDANT iff legacy v >= 0.05 (the \u00a74 bar)",
+    "legacy_tool": "TANGO, SHA-256 d0e381c2...9f31dbf, pH 7.0 / 310 K, phase 0, Aggregation column, W=6 non-overlapping tiling",
+    "legacy_v": 1.0,
+    "legacy_P": 0.4592,
+    "legacy_m": 15,
+    "grid_sensitivity": "identical at all 9 grid points",
+    "profiles": "results/recruited_2026-11-18/tango_profiles/ (9 per accession)",
+    "assigned": "2026-11-18",
+    "previous_value": "none (row created 18 Nov with no stratum field)",
+    "ordering": "INTACT -- the modern arm had NOT run on this accession when the label was applied, and the label is committed before it does",
+    "confirmatory_eligible": true,
+    "reported_as": "CONFIRMATORY under PREREGISTRATION 5.2b"
+   }
   }
  ],
  "_rows_deliberately_excluded": {

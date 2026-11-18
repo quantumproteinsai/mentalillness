@@ -257,6 +257,25 @@ def main(repo):
               f'{x["m"]:4d} {x["M"]:5d} {x["P"]:8.5f} {x["v"]:10.6f} {x["v_floor"]:8.5f}'
               f'  [{x["v_phase_min"]:.3f}-{x["v_phase_max"]:.3f}]{flag}')
     print()
+    # THE INFORMATION LIMIT, which is deeper than the floor above and is NOT a property
+    # of the 1 - P^m formula. Under H0 the chain's top-ranked window falls inside the
+    # region with probability exactly m/M. So NO rank-based statistic -- not this one, not
+    # a repaired one -- can return a p below m/M for that row. Where m/M > BAR the row is
+    # beyond rescue by any amendment: the region is simply too large a fraction of its own
+    # protein for its ranking to be surprising. Computable from the dataset alone, with no
+    # predictor and no compute.
+    info = [x for x in results if x['m'] / x['M'] > BAR]
+    if info:
+        print(f'*** {len(info)} of {len(results)} SCORED ROWS ARE BEYOND ANY RANK-BASED TEST '
+              f'AT ALPHA = {BAR} ***')
+        print('    Under H0 the top window of the chain falls inside the region with')
+        print('    probability exactly m/M, so no rank statistic can return p < m/M. These')
+        print('    rows exceed that bound. This is an INFORMATION LIMIT, not a formula')
+        print('    defect: amending the statistic cannot rescue them. Only a longer protein')
+        print('    or a shorter mapped region can.')
+        for x in sorted(info, key=lambda z: -(z['m'] / z['M'])):
+            print(f'      {x["protein"]:18s} {x["residues"]:12s} m/M = {x["m"]/x["M"]:.4f}')
+        print()
     unreach = [x for x in results if x['v_floor'] >= BAR]
     if unreach:
         print(f'*** {len(unreach)} of {len(results)} SCORED ROWS CANNOT REACH §4\'s RECOVERY BAR '

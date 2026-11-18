@@ -127,3 +127,58 @@ ProtT5 revision `94a6abc029ae13029317b140b7424e012bf8dfbf`, AggrescanAI weights 
 `7aba68e65d620aa55b10f9550005efff3f3240e7`, both pinned and checksummed by the runner.
 Ensemble spread is recorded per run: 0.893, 0.899 and 0.867 maximum across the five CV
 models — **large**, and a standing caveat on every AggrescanAI number in this project.
+
+---
+
+## Addendum, same day: the floor is the smaller of two problems
+
+### *v* is anti-conservative at the floor, by a factor of two
+
+The floor is not merely unreachable — where it *is* attained, the number reported is
+wrong in the dangerous direction. Calibrating each row's *v* against its own null
+(200 000 draws):
+
+| row | *M* | *m* | nominal *v* | **calibrated p** | ratio |
+|---|---|---|---|---|---|
+| CHCHD10 42–75 | 23 | 5 | 0.104071 | **0.21816** | **2.10×** |
+| CHCHD2 54–86 | 25 | 5 | 0.096079 | **0.20022** | **2.08×** |
+| TAF15 7–99 | 98 | 15 | 0.783350 | 0.82718 | 1.06× |
+| ANXA11 39–74 | 84 | 5 | 0.331484 | 0.35828 | 1.08× |
+| TRIOBP-1 324–348 | 108 | 4 | 0.907876 | 0.91533 | 1.01× |
+| DISC1 384–415 | 142 | 5 | 0.416408 | 0.41107 | 0.99× |
+
+The two floor-attaining rows report a *v* that **understates the probability of the
+observation by a factor of 2.1**. The calibrated values match theory exactly:
+0.218 ≈ 5/23 and 0.200 = 5/25.
+
+**Away from the floor — large *M*, small *m* — *v* is well calibrated** (0.99–1.08×). The
+defect is specific to small *M* with large *m*, and the two founding confirmatory rows are
+not affected.
+
+### The information limit, which no amendment can repair
+
+Under H0 the chain's top-ranked window falls inside the region with probability **exactly
+*m*/*M***. So **no rank-based statistic — not this one, not a repaired one — can return a
+p below *m*/*M*.**
+
+**Only 7 of 20 rows have *m*/*M* ≤ 0.05.** The other thirteen are beyond rescue by any
+amendment to §3.1: the region is simply too large a fraction of its own protein for its
+ranking to be surprising.
+
+| passes *m*/*M* ≤ 0.05 | *m*/*M* |
+|---|---|
+| TRIOBP-1 333–340 | 0.0016 |
+| tau 306–311, tau 275–280 | 0.0023 |
+| DISC1 748–769 | 0.0211 |
+| **DISC1 384–415** | **0.0352** |
+| **TRIOBP-1 324–348** | **0.0370** |
+| alpha-synuclein 71–82 | 0.0435 |
+
+**Both founding confirmatory rows pass, narrowly.** The project's own question remains
+answerable. It is the recruited rows — and most of the widening done on 17 Nov — that are
+not.
+
+**This is the criterion that should govern recruitment**, and it costs nothing to apply:
+*m*/*M* needs only the chain length and the region length, both of which a candidate row
+carries before any paper is read in full. **Applied on 18 Nov it would have rejected all
+three of today's recruits at stage 1.**

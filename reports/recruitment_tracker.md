@@ -222,3 +222,61 @@ nobody repeats it:
 **The retry was worth running anyway: it is what proved TAF15 was never blocked.** One of
 four assumed-blocked candidates was reachable, which is a high enough rate to justify
 checking rather than asserting.
+
+---
+
+## RECRUITMENT IS PAUSED — 18 November 2026, and the reason is arithmetic
+
+**Do not recruit another row until a candidate's m/M has been checked.** Registered as
+**PREREGISTRATION §3.1b**.
+
+### The rule, and it is checked at stage 1
+
+> **A row is `power_eligible` iff m/M ≤ 0.05**, where *M* is the number of 6-residue
+> tiled windows in the scored chain and *m* the number wholly inside the region.
+> In residues, with W = 6: **m/M ≈ (region length) / (chain length)**, so the rule reads
+> roughly **the mapped region must be at most 5% of the protein.**
+
+Under H0 the chain's top-ranked window lands inside the region with probability exactly
+*m*/*M*. **No rank-based statistic can return a p below that** — not §3.1's, not a
+repaired one. Where *m*/*M* > 0.05 the row is beyond any test at α = 0.05, and "the
+predictor missed it" is true before any software runs, in the direction of our own H1.
+
+**This costs nothing.** It needs the chain length and the region length, both of which are
+usually in the abstract. **Applied this morning it would have rejected all three of
+today's recruits before a paper was opened:** TAF15 0.153, CHCHD2 0.200, CHCHD10 0.217.
+
+Only **7 of 20** existing rows pass. Both founding confirmatory rows do, narrowly —
+DISC1 384–415 at 0.0352 and TRIOBP-1 324–348 at 0.0370 — so the project's own question
+stays answerable.
+
+### The pool has to change, and that is the real consequence
+
+| what the rule wants | what recent cryo-EM fibril papers supply |
+|---|---|
+| **long protein, short mapped region** | short protein, long ordered core |
+| necessity established by deletion | ordered core read off a density map |
+| *m*/*M* ≈ 0.02–0.04 | *m*/*M* ≈ 0.15–0.49 |
+
+**The cryo-EM core pool is close to exhausted for this purpose**, and not by accident:
+the technique resolves the ordered core, and papers choose constructs in which that core
+is a large fraction of the chain. CHCHD10 is a 142-residue protein with a 34-residue
+core. Nine of the thirteen failing rows came from that literature.
+
+**Search the other pool instead: deletion and truncation mapping on large proteins.** It
+is where DISC1 and TRIOBP-1 came from. It yields the right geometry *and* the stronger
+evidence type — a necessity claim rather than an ordered core — so it fixes both defects
+named on 18 Nov at once.
+
+**Concrete search shape:** proteins of ≥ 400 residues with a mapped aggregation-critical
+region of ≤ 20 residues, found by deletion, truncation, alanine scan or peptide-array,
+post-2015, CPAD-absent. The three blocked publisher PDFs (TPPP, ApoA-II, sunflower 11S)
+should be **screened for m/M before anyone is asked for them again** — on the deposited
+ranges, TPPP and sunflower 11S look likely to fail it.
+
+### What happens to the rows already in
+
+**Nothing is removed.** Dropping rows after seeing their scores is the post-hoc selection
+the pre-registration exists to prevent. They are **labelled** with `power_eligible` and
+their m/M, reported, and excluded from any statistic that uses §4's recovery criterion —
+with both versions shown wherever a statistic is recomputed on the eligible subset.

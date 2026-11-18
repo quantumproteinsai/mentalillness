@@ -48,6 +48,6 @@
 <text x="134" y="226" font-size="8.5" fill="#1a1a1c" text-anchor="start">TANGO (ancienne génération)</text>
 <rect x="268" y="218" width="11" height="9" rx="0" fill="#2663eb" stroke="none" stroke-width="1"/>
 <text x="284" y="226" font-size="8.5" fill="#1a1a1c" text-anchor="start">AggrescanAI (moderne)</text>
-<text x="0" y="244" font-size="8" fill="#6b707a" text-anchor="start">Seules deux barres de tout le graphique passent sous la ligne pointillée. Sur sept des neuf régions, l'outil moderne fait moins bien</text>
-<text x="0" y="254.5" font-size="8" fill="#6b707a" text-anchor="start">que l'ancien.</text>
+<text x="0" y="244" font-size="8" fill="#6b707a" text-anchor="start">Seules deux barres de tout le graphique passent sous la ligne pointillée, et l'une des deux ne résiste pas à un examen plus attentif —</text>
+<text x="0" y="254.5" font-size="8" fill="#6b707a" text-anchor="start">voir la note. Sur sept des neuf régions, l'outil moderne fait moins bien que l'ancien.</text>
 </svg>

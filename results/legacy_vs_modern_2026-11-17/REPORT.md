@@ -36,6 +36,17 @@ Negative Δv favours modern. One row does: **TRIOBP-1 1-59**, which AggrescanAI 
 (v = 0.041) and TANGO misses completely (v = 0.9995). It is `PENDING` and is not the
 mapped region the project asks about.
 
+> **CORRECTION, 18 Nov 2026.** *"AggrescanAI recovers"* is wrong, and the arithmetic that
+> shows it needs no predictor. This row has **M = 108, m = 9**, and its v of **0.040903 is
+> exactly the floor** 1 − ((M−0.5)/M)^m — AggrescanAI's best window inside the region is
+> the top-ranked window of the entire chain. Under H0 that occurs with probability
+> **m/M = 9/108 = 0.0833**, and exact calibration returns **p = 0.08333**. The
+> pre-registered v **understates the tail by 2.04×**, so the row falls below 0.05 only
+> because the statistic is anti-conservative at this geometry. **The row is NOT recovered,
+> and this table's one negative Δv is not a modern success.** See PREREGISTRATION §3.1b
+> and `scripts/calibrate_v.py`. The Δv of −0.959 is unaffected and still points the way it
+> did; what changes is that neither arm recovers this region.
+
 ## Three premises that had to be audited before anything could be computed
 
 **1. The published legacy runs cannot supply a *v*.** §5.1a takes the legacy arm from

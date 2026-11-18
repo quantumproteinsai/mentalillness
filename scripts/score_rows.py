@@ -322,6 +322,19 @@ def main(repo):
     print('=' * 125)
     combine(conf, 'CONFIRMATORY (5.2b item 5: discordant, CPAD-absent, circularity CLEAN)')
 
+    # PREREGISTRATION 3.1b. BOTH VERSIONS ARE SHOWN, ALWAYS. The amendment forbids
+    # re-reporting a statistic with the failing rows quietly dropped, so the full set
+    # above stays the headline and this is printed beside it, never instead of it.
+    conf_pow = [x for x in conf if x['m'] / x['M'] <= BAR]
+    if len(conf_pow) != len(conf):
+        dropped = [x for x in conf if x not in conf_pow]
+        print(f'    ---- and again on the {len(conf_pow)} of {len(conf)} rows that are '
+              f'power_eligible (§3.1b, m/M <= {BAR}) ----')
+        print('    Set aside, because no rank-based test can reach the bar on them:')
+        for x in sorted(dropped, key=lambda z: -(z['m'] / z['M'])):
+            print(f'        {x["protein"]} {x["residues"]}  m/M = {x["m"]/x["M"]:.4f}')
+        combine(conf_pow, '    CONFIRMATORY, power_eligible rows only')
+
     if held:
         print(f'HELD OUT OF THE CONFIRMATORY SET ({len(held)} rows) — they meet every stratum')
         print('criterion but carry confirmatory_eligible: false. Their stratum was assigned')

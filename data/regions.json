@@ -61,7 +61,19 @@
    "THE_FIFTH_AND_MOST_DIRECT_PRE_EMPTION_OF_THE_COMPOSITIONAL_STRAND": "THE ORIGINAL AUTHORS MADE THE GATEKEEPER OBSERVATION THEMSELVES, IN 2017, ON THIS EXACT REGION. Discussion p.9591: \"The 25-aa region CONTAINS MULTIPLE PROLINE RESIDUES (Fig. 12B), suggesting that it likely represents a TURN between CC1 and CC2. It is also RICH IN CHARGED AMINO ACIDS, allowing for the possibility that TRIOBP-1 aggregation is dependent on protein-protein interactions.\" Figure 12B colours the prolines purple and the charges red and blue, exactly the two residue classes this project counts. COMPUTED FROM THEIR PRINTED SEQUENCE: 4 prolines + 8 charged = 12/25 = 48.0%, reproducing our headline figure from the source. SO THE QUALITATIVE OBSERVATION IS THEIRS AND HAS BEEN IN PRINT SINCE 2017. What this project added was the QUANTIFICATION and the comparison against deposited steric zippers -- and H3 was already retired on 16 Nov (PREREGISTRATION 9.1) for other reasons. This confirms that retirement was correct and shows the claim was even less novel than the retirement assumed. THEY ALSO OFFER A MECHANISM WE DID NOT: a turn, plus a protein-protein interaction site. Their reading is that the region matters because other proteins bind there, not because of its own aggregation propensity -- \"That this region was not strongly predicted to have an innate aggregation propensity might further implicate the involvement of additional proteins or other cellular factors in the aggregation process\". THAT IS A LIVE ALTERNATIVE HYPOTHESIS TO H4 AND MUST BE STATED ALONGSIDE IT.",
    "cpad_status": "CPAD_ABSENT_ORTHOLOGY_CHECKED",
    "cpad_basis": "ABSENT from all three CPAD 2.0 datasets, each read COMPLETE on 17 Nov 2026: the APR protein list (286 names), the peptide table (2031 of 2031 entries, P-0001..P-2031, contiguous, no gaps) and the structures table (565 of 565 entries). Searched by name variant and by UniProt accession Q9H2D6. ORTHOLOGUE CHECK DONE, as \u00a75.2b item 4 requires: TRIOBP's orthologous group was read from BOTH sources Navarro 2026 names. OMA group 1142574 (44 members) contains exactly two reviewed entries, TARA_HUMAN and TARA_MOUSE. OrthoInspector Eukaryota2023 returns 436 ortholog relations and TWO human proteins in the group: Q9H2D6 itself and Q6WCQ1 (MPRIP, myosin phosphatase Rho-interacting protein / p116Rip). THAT PARALOGUE WAS CHECKED SEPARATELY AND IS ALSO ABSENT from all three CPAD tables. So no member of TRIOBP's orthologous group is in CPAD. Absence is therefore NOT merely unobserved -- it survives the homologue route by which CPAD90 would otherwise carry this protein into AggrescanAI's training set. RESIDUAL UNCERTAINTY, STATED: the CPAD90 membership list itself is unpublished, so this is the strongest check available from public sources, not a certificate. See _CPAD_MEMBERSHIP_CHECK_2026-11-17.",
-   "cpad_checked": "2026-11-17"
+   "cpad_checked": "2026-11-17",
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.037037,
+    "m": 4,
+    "M": 108,
+    "chain_length": 652,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
+   }
   },
   {
    "protein": "TRIOBP-1",
@@ -85,7 +97,19 @@
    "cpad_basis": "ABSENT from all three CPAD 2.0 datasets, each read COMPLETE on 17 Nov 2026: the APR protein list (286 names), the peptide table (2031 of 2031 entries, P-0001..P-2031, contiguous, no gaps) and the structures table (565 of 565 entries). Searched by name variant and by UniProt accession Q9H2D6. ORTHOLOGUE CHECK DONE, as \u00a75.2b item 4 requires: TRIOBP's orthologous group was read from BOTH sources Navarro 2026 names. OMA group 1142574 (44 members) contains exactly two reviewed entries, TARA_HUMAN and TARA_MOUSE. OrthoInspector Eukaryota2023 returns 436 ortholog relations and TWO human proteins in the group: Q9H2D6 itself and Q6WCQ1 (MPRIP, myosin phosphatase Rho-interacting protein / p116Rip). THAT PARALOGUE WAS CHECKED SEPARATELY AND IS ALSO ABSENT from all three CPAD tables. So no member of TRIOBP's orthologous group is in CPAD. Absence is therefore NOT merely unobserved -- it survives the homologue route by which CPAD90 would otherwise carry this protein into AggrescanAI's training set. RESIDUAL UNCERTAINTY, STATED: the CPAD90 membership list itself is unpublished, so this is the strongest check available from public sources, not a certificate. See _CPAD_MEMBERSHIP_CHECK_2026-11-17.",
    "cpad_checked": "2026-11-17",
    "exclude_from_scoring": true,
-   "exclude_from_scoring_reason": "THE RANGE IS A TYPOGRAPHIC ERROR IN A FIGURE LEGEND, AND THIS ROW SHOULD NEVER ENTER A STATISTIC. SETTLED 17 Nov 2026 BY READING Zaharija et al. 2022 IN FULL (IJMS 23:11048, CC BY, version of record, PDF supplied by the author). Its Figure 6B legend reads \"N-terminal deletions of TRIOBP-1 demonstrate AA 324-328 to be essential for aggregation [15]\" -- AND IT IS CONTRADICTED BY THE PANEL IT DESCRIBES. Panel B shows four constructs: 1-652, 281-652 and 324-652 all aggregate, 349-652 does not. The region those four isolate is 324-348, not 324-328. The Introduction agrees -- \"an equivalent construct from which amino acids 324-348 had been deleted did not [aggregate] ... this 25 amino acid-long loop\" -- and NO CONSTRUCT ANYWHERE IN THE PAPER TESTS 324-328. The paper also shows 333-652 aggregating indistinguishably from 324-652, i.e. \"the first cluster of charged amino acids is not required for aggregation\", which rules out 324-328 directly. || SO THIS ROW DUPLICATES TRIOBP-1 324-348 VIA A FIVE-FOR-FORTY-EIGHT DIGIT SLIP. It is kept rather than deleted, because the dataset keeps and labels rather than drops, and because the slip is itself evidence about this literature -- the FIFTH source self-inconsistency about a residue range recorded here. But it is now machine-readably excluded. || HOW IT WAS CAUGHT, AND THE REAL LESSON. The row already carried a prose note saying \"DO NOT score this row as an independent region\". IT WAS SCORED ANYWAY, by our own scripts/score_rows.py, on 17 Nov 2026 -- it appears in the 3.1a amendment table and in the n=7 legacy-versus-modern comparison. A WARNING IN PROSE IS NOT A CONSTRAINT. If a row must not be scored, that has to be a field the code reads, which is what exclude_from_scoring now is."
+   "exclude_from_scoring_reason": "THE RANGE IS A TYPOGRAPHIC ERROR IN A FIGURE LEGEND, AND THIS ROW SHOULD NEVER ENTER A STATISTIC. SETTLED 17 Nov 2026 BY READING Zaharija et al. 2022 IN FULL (IJMS 23:11048, CC BY, version of record, PDF supplied by the author). Its Figure 6B legend reads \"N-terminal deletions of TRIOBP-1 demonstrate AA 324-328 to be essential for aggregation [15]\" -- AND IT IS CONTRADICTED BY THE PANEL IT DESCRIBES. Panel B shows four constructs: 1-652, 281-652 and 324-652 all aggregate, 349-652 does not. The region those four isolate is 324-348, not 324-328. The Introduction agrees -- \"an equivalent construct from which amino acids 324-348 had been deleted did not [aggregate] ... this 25 amino acid-long loop\" -- and NO CONSTRUCT ANYWHERE IN THE PAPER TESTS 324-328. The paper also shows 333-652 aggregating indistinguishably from 324-652, i.e. \"the first cluster of charged amino acids is not required for aggregation\", which rules out 324-328 directly. || SO THIS ROW DUPLICATES TRIOBP-1 324-348 VIA A FIVE-FOR-FORTY-EIGHT DIGIT SLIP. It is kept rather than deleted, because the dataset keeps and labels rather than drops, and because the slip is itself evidence about this literature -- the FIFTH source self-inconsistency about a residue range recorded here. But it is now machine-readably excluded. || HOW IT WAS CAUGHT, AND THE REAL LESSON. The row already carried a prose note saying \"DO NOT score this row as an independent region\". IT WAS SCORED ANYWAY, by our own scripts/score_rows.py, on 17 Nov 2026 -- it appears in the 3.1a amendment table and in the n=7 legacy-versus-modern comparison. A WARNING IN PROSE IS NOT A CONSTRAINT. If a row must not be scored, that has to be a field the code reads, which is what exclude_from_scoring now is.",
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.001543,
+    "m": 1,
+    "M": 648,
+    "chain_length": 652,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1a (region shorter than the window; m = 1)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
+   }
   },
   {
    "protein": "TRIOBP-1",
@@ -119,6 +143,18 @@
     "ordering": "BREACHED -- modern arm had already run on this row when the label was applied",
     "confirmatory_eligible": false,
     "reported_as": "EXPLORATORY under PREREGISTRATION 12"
+   },
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.00155,
+    "m": 1,
+    "M": 645,
+    "chain_length": 652,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1a (region shorter than the window; m = 1)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
    }
   },
   {
@@ -151,6 +187,18 @@
     "ordering": "BREACHED -- modern arm had already run on this row when the label was applied",
     "confirmatory_eligible": false,
     "reported_as": "EXPLORATORY under PREREGISTRATION 12"
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.083333,
+    "m": 9,
+    "M": 108,
+    "chain_length": 652,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -173,7 +221,19 @@
    "cpad_status": "CPAD_ABSENT_ORTHOLOGY_CHECKED",
    "cpad_basis": "ABSENT from all three CPAD 2.0 datasets, each read COMPLETE on 17 Nov 2026: the APR protein list (286 names), the peptide table (2031 of 2031 entries, P-0001..P-2031, contiguous, no gaps) and the structures table (565 of 565 entries). Searched by name variant and by UniProt accession Q9H2D6. ORTHOLOGUE CHECK DONE, as \u00a75.2b item 4 requires: TRIOBP's orthologous group was read from BOTH sources Navarro 2026 names. OMA group 1142574 (44 members) contains exactly two reviewed entries, TARA_HUMAN and TARA_MOUSE. OrthoInspector Eukaryota2023 returns 436 ortholog relations and TWO human proteins in the group: Q9H2D6 itself and Q6WCQ1 (MPRIP, myosin phosphatase Rho-interacting protein / p116Rip). THAT PARALOGUE WAS CHECKED SEPARATELY AND IS ALSO ABSENT from all three CPAD tables. So no member of TRIOBP's orthologous group is in CPAD. Absence is therefore NOT merely unobserved -- it survives the homologue route by which CPAD90 would otherwise carry this protein into AggrescanAI's training set. RESIDUAL UNCERTAINTY, STATED: the CPAD90 membership list itself is unpublished, so this is the strongest check available from public sources, not a certificate. See _CPAD_MEMBERSHIP_CHECK_2026-11-17.",
    "cpad_checked": "2026-11-17",
-   "verified_against": "FILLED 17 Nov 2026 from Zaharija et al. 2022 (IJMS 23:11048, CC BY, READ IN FULL), which was previously empty. The paper states the basis twice. Introduction: \"Initial bioinformatic analyses of TRIOBP-1 suggested that its aggregation was likely driven by its PH domain, which contains several stretches of amino acids that may make it prone to aggregation. However, deletion of the PH domain from plasmid constructs encoding full-length mouse Triobp-1 did not prevent the proteins they encoded from aggregating [9].\" Figure 6A legend: \"Mouse Triobp-1 constructs show the PH domain to be expendable for aggregation [9].\" Reference [9] is Bradshaw 2014 PLoS ONE 9:e111196, WHICH THIS PROJECT HAS READ IN FULL. So the row rests on a read primary plus a read restatement. NOTE WHAT THE ROW ACTUALLY IS: a region predicted to aggregate and then experimentally refuted -- a documented FALSE POSITIVE of the legacy predictors, not an aggregation-critical region."
+   "verified_against": "FILLED 17 Nov 2026 from Zaharija et al. 2022 (IJMS 23:11048, CC BY, READ IN FULL), which was previously empty. The paper states the basis twice. Introduction: \"Initial bioinformatic analyses of TRIOBP-1 suggested that its aggregation was likely driven by its PH domain, which contains several stretches of amino acids that may make it prone to aggregation. However, deletion of the PH domain from plasmid constructs encoding full-length mouse Triobp-1 did not prevent the proteins they encoded from aggregating [9].\" Figure 6A legend: \"Mouse Triobp-1 constructs show the PH domain to be expendable for aggregation [9].\" Reference [9] is Bradshaw 2014 PLoS ONE 9:e111196, WHICH THIS PROJECT HAS READ IN FULL. So the row rests on a read primary plus a read restatement. NOTE WHAT THE ROW ACTUALLY IS: a region predicted to aggregate and then experimentally refuted -- a documented FALSE POSITIVE of the legacy predictors, not an aggregation-critical region.",
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.194444,
+    "m": 21,
+    "M": 108,
+    "chain_length": 652,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
+   }
   },
   {
    "protein": "DISC1",
@@ -206,6 +266,18 @@
     "ordering": "BREACHED -- modern arm had already run on this row when the label was applied",
     "confirmatory_eligible": false,
     "reported_as": "EXPLORATORY under PREREGISTRATION 12"
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.169014,
+    "m": 24,
+    "M": 142,
+    "chain_length": 854,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -233,7 +305,19 @@
    "cpad_status": "CPAD_ABSENT_ORTHOLOGY_CHECKED",
    "cpad_basis": "ABSENT from all three CPAD 2.0 datasets, each read COMPLETE on 17 Nov 2026: the APR protein list (286 names), the peptide table (2031 of 2031 entries, P-0001..P-2031, contiguous, no gaps) and the structures table (565 of 565 entries). Searched by name variant and by UniProt accession Q9NRI5. ORTHOLOGUE CHECK DONE, as \u00a75.2b item 4 requires: DISC1's orthologous group was read from both sources. OMA group 1461613 (115 members) contains exactly two reviewed entries, DISC1_HUMAN and DISC1_RAT. OrthoInspector Eukaryota2023 returns 251 ortholog relations and exactly ONE human protein in the group, Q9NRI5 itself -- no human in-paralogue at all. So no member of DISC1's orthologous group is in CPAD. Absence is therefore NOT merely unobserved -- it survives the homologue route by which CPAD90 would otherwise carry this protein into AggrescanAI's training set. RESIDUAL UNCERTAINTY, STATED: the CPAD90 membership list itself is unpublished, so this is the strongest check available from public sources, not a certificate. See _CPAD_MEMBERSHIP_CHECK_2026-11-17.",
    "cpad_checked": "2026-11-17",
-   "frame": "854-residue canonical (UniProt Q9NRI5, SV=3). FRAME RECORDED 17 Nov 2026, AND VERIFIED BY SEQUENCE RATHER THAN ASSUMED: the stored 46-residue sequence of the 716-761 row (VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH) occurs in Q9NRI5 at exactly 716-761. All Cukkemane et al. 2021 rows therefore share the canonical frame. Previously this field was ABSENT, which blocked these rows from being scored at all under the descriptor's own rule ('where frame is absent, do not assume') -- see the 17 Nov AggrescanAI run, where three DISC1 rows went unscored for this reason."
+   "frame": "854-residue canonical (UniProt Q9NRI5, SV=3). FRAME RECORDED 17 Nov 2026, AND VERIFIED BY SEQUENCE RATHER THAN ASSUMED: the stored 46-residue sequence of the 716-761 row (VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH) occurs in Q9NRI5 at exactly 716-761. All Cukkemane et al. 2021 rows therefore share the canonical frame. Previously this field was ABSENT, which blocked these rows from being scored at all under the descriptor's own rule ('where frame is absent, do not assume') -- see the 17 Nov AggrescanAI run, where three DISC1 rows went unscored for this reason.",
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.042254,
+    "m": 6,
+    "M": 142,
+    "chain_length": 854,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
+   }
   },
   {
    "protein": "DISC1",
@@ -257,7 +341,19 @@
    "frame": "854-residue canonical (UniProt Q9NRI5, SV=3). FRAME RECORDED 17 Nov 2026, AND VERIFIED BY SEQUENCE RATHER THAN ASSUMED: the stored 46-residue sequence of the 716-761 row (VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH) occurs in Q9NRI5 at exactly 716-761. All Cukkemane et al. 2021 rows therefore share the canonical frame. Previously this field was ABSENT, which blocked these rows from being scored at all under the descriptor's own rule ('where frame is absent, do not assume') -- see the 17 Nov AggrescanAI run, where three DISC1 rows went unscored for this reason.",
    "sequence": "EDERQMDDLEGAAPPIPPRLH",
    "sequence_provenance": "READ from UniProt Q9NRI5 (854 aa, SV=3) at these coordinates, 17 Nov 2026. Checked in place: the concatenation 717-737 + S738 + 739-761 reproduces the 46-residue sequence stored on the DISC1 716-761 row exactly.",
-   "range_provenance": "SPLIT FROM A COMPOSITE ROW, 17 Nov 2026. Until today this segment and its partner were a SINGLE row with residues '717-737, 739-761' -- two intervals in one field. That is not a range, and PREREGISTRATION 3.1 scores one interval, so the row could not be scored at all: it was the last unscored row in the 17 Nov AggrescanAI run. The two segments are the two units of the RADAR-detected sequence repeat and are separated by a single residue, S738, which belongs to neither. NOTHING ELSE ABOUT THE ROW CHANGED -- same source, same evidence, same CIRCULAR status, same found_by. Splitting a composite range is a representation fix, not a new claim, and the two rows are NOT independent of each other nor of DISC1 716-761, which they were the restraints for."
+   "range_provenance": "SPLIT FROM A COMPOSITE ROW, 17 Nov 2026. Until today this segment and its partner were a SINGLE row with residues '717-737, 739-761' -- two intervals in one field. That is not a range, and PREREGISTRATION 3.1 scores one interval, so the row could not be scored at all: it was the last unscored row in the 17 Nov AggrescanAI run. The two segments are the two units of the RADAR-detected sequence repeat and are separated by a single residue, S738, which belongs to neither. NOTHING ELSE ABOUT THE ROW CHANGED -- same source, same evidence, same CIRCULAR status, same found_by. Splitting a composite range is a representation fix, not a new claim, and the two rows are NOT independent of each other nor of DISC1 716-761, which they were the restraints for.",
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.014085,
+    "m": 2,
+    "M": 142,
+    "chain_length": 854,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
+   }
   },
   {
    "protein": "DISC1",
@@ -281,7 +377,19 @@
    "frame": "854-residue canonical (UniProt Q9NRI5, SV=3). FRAME RECORDED 17 Nov 2026, AND VERIFIED BY SEQUENCE RATHER THAN ASSUMED: the stored 46-residue sequence of the 716-761 row (VEDERQMDDLEGAAPPIPPRLHSEDKRKTPLKVLEEWKTHLIPSLH) occurs in Q9NRI5 at exactly 716-761. All Cukkemane et al. 2021 rows therefore share the canonical frame. Previously this field was ABSENT, which blocked these rows from being scored at all under the descriptor's own rule ('where frame is absent, do not assume') -- see the 17 Nov AggrescanAI run, where three DISC1 rows went unscored for this reason.",
    "sequence": "EDKRKTPLKVLEEWKTHLIPSLH",
    "sequence_provenance": "READ from UniProt Q9NRI5 (854 aa, SV=3) at these coordinates, 17 Nov 2026. Checked in place: the concatenation 717-737 + S738 + 739-761 reproduces the 46-residue sequence stored on the DISC1 716-761 row exactly.",
-   "range_provenance": "SPLIT FROM A COMPOSITE ROW, 17 Nov 2026. Until today this segment and its partner were a SINGLE row with residues '717-737, 739-761' -- two intervals in one field. That is not a range, and PREREGISTRATION 3.1 scores one interval, so the row could not be scored at all: it was the last unscored row in the 17 Nov AggrescanAI run. The two segments are the two units of the RADAR-detected sequence repeat and are separated by a single residue, S738, which belongs to neither. NOTHING ELSE ABOUT THE ROW CHANGED -- same source, same evidence, same CIRCULAR status, same found_by. Splitting a composite range is a representation fix, not a new claim, and the two rows are NOT independent of each other nor of DISC1 716-761, which they were the restraints for."
+   "range_provenance": "SPLIT FROM A COMPOSITE ROW, 17 Nov 2026. Until today this segment and its partner were a SINGLE row with residues '717-737, 739-761' -- two intervals in one field. That is not a range, and PREREGISTRATION 3.1 scores one interval, so the row could not be scored at all: it was the last unscored row in the 17 Nov AggrescanAI run. The two segments are the two units of the RADAR-detected sequence repeat and are separated by a single residue, S738, which belongs to neither. NOTHING ELSE ABOUT THE ROW CHANGED -- same source, same evidence, same CIRCULAR status, same found_by. Splitting a composite range is a representation fix, not a new claim, and the two rows are NOT independent of each other nor of DISC1 716-761, which they were the restraints for.",
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.021127,
+    "m": 3,
+    "M": 142,
+    "chain_length": 854,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
+   }
   },
   {
    "protein": "DISC1",
@@ -313,6 +421,18 @@
     "ordering": "BREACHED -- modern arm had already run on this row when the label was applied",
     "confirmatory_eligible": false,
     "reported_as": "EXPLORATORY under PREREGISTRATION 12"
+   },
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.021127,
+    "m": 3,
+    "M": 142,
+    "chain_length": 854,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
    }
   },
   {
@@ -343,7 +463,19 @@
    "the_exception_and_why_it_is_narrow": "THE VERSION OF RECORD IS DEMONSTRABLY UNOBTAINABLE, WHICH IS A DIFFERENT CASE FROM THE ONE PREREGISTRATION 12.1 DECISION 3 WAS WRITTEN FOR. That decision said \"a rule is not weakened to accommodate a row when the row CAN be obtained\". This row cannot. THE NEGATIVE IS DOCUMENTED, NOT ASSUMED: OpenAlex reports oa_status \"green\" for 10.1016/j.pnpbp.2023.110923 with exactly ONE open location -- the bioRxiv preprint we already hold -- and no PMCID; Europe PMC returns pmcid None, isOpenAccess N, inEPMC N, hasPDF N. There is no author manuscript and no repository copy. The author also reports being unable to find it free. SO THE ROW IS CITABLE UNDER A NARROW EXCEPTION, AND ALL THREE OF ITS CONDITIONS HOLD HERE: (i) the version of record is unobtainable, as a documented negative rather than an unmade attempt; (ii) the specific claim is corroborated by independent documents that WERE read in full -- the Zaharija 2025 thesis, whose Table 11 names the plasmids \"DISC1 (delta-384-415)\", \"DISC1 (1-655 delta-384-415)\" and \"DISC1 (1-836 delta-384-415)\", and now Samardzija 2026, which cites the 2024 paper for \"the aggregation prone-region between\" D and I inside a 257-655 construct, both checks passing arithmetically; (iii) any citation must name the PREPRINT as the source read and state that the version of record was not consulted. WHAT THE EXCEPTION DOES NOT BUY: it does NOT settle delta-384-414 versus delta-384-415. That was resolved separately by the thesis Table 11 plasmid names, and the published boundaries remain unchecked. Say so in print.",
    "cpad_status": "CPAD_ABSENT_ORTHOLOGY_CHECKED",
    "cpad_basis": "ABSENT from all three CPAD 2.0 datasets, each read COMPLETE on 17 Nov 2026: the APR protein list (286 names), the peptide table (2031 of 2031 entries, P-0001..P-2031, contiguous, no gaps) and the structures table (565 of 565 entries). Searched by name variant and by UniProt accession Q9NRI5. ORTHOLOGUE CHECK DONE, as \u00a75.2b item 4 requires: DISC1's orthologous group was read from both sources. OMA group 1461613 (115 members) contains exactly two reviewed entries, DISC1_HUMAN and DISC1_RAT. OrthoInspector Eukaryota2023 returns 251 ortholog relations and exactly ONE human protein in the group, Q9NRI5 itself -- no human in-paralogue at all. So no member of DISC1's orthologous group is in CPAD. Absence is therefore NOT merely unobserved -- it survives the homologue route by which CPAD90 would otherwise carry this protein into AggrescanAI's training set. RESIDUAL UNCERTAINTY, STATED: the CPAD90 membership list itself is unpublished, so this is the strongest check available from public sources, not a certificate. See _CPAD_MEMBERSHIP_CHECK_2026-11-17.",
-   "cpad_checked": "2026-11-17"
+   "cpad_checked": "2026-11-17",
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.035211,
+    "m": 5,
+    "M": 142,
+    "chain_length": 854,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
+   }
   },
   {
    "protein": "tau",
@@ -367,7 +499,19 @@
    "source_version_note": "von Bergen 2000 PNAS 97:5129, publisher PDF supplied by the author; Figures 1 and 4 additionally read as images from PMC25793.",
    "cpad_status": "CPAD_MEMBER",
    "cpad_basis": "PRESENT in all three CPAD 2.0 datasets: APR protein list (\"Tau\"), structures table (\"Microtubule-associated protein tau\", Homo sapiens; \"Tau protein\"), and 139 peptide rows under UniProt P10636. EXCLUDED from the primary confirmatory statistic under \u00a75.2b item 5: an AggrescanAI hit here is recall of training data, not prediction.",
-   "cpad_checked": "2026-11-17"
+   "cpad_checked": "2026-11-17",
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.002294,
+    "m": 1,
+    "M": 436,
+    "chain_length": 441,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1a (region shorter than the window; m = 1)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
+   }
   },
   {
    "protein": "tau",
@@ -391,7 +535,19 @@
    "source_version_note": "Same source and PDF as tau 306-311.",
    "cpad_status": "CPAD_MEMBER",
    "cpad_basis": "PRESENT in all three CPAD 2.0 datasets: APR protein list (\"Tau\"), structures table (\"Microtubule-associated protein tau\", Homo sapiens; \"Tau protein\"), and 139 peptide rows under UniProt P10636. EXCLUDED from the primary confirmatory statistic under \u00a75.2b item 5: an AggrescanAI hit here is recall of training data, not prediction.",
-   "cpad_checked": "2026-11-17"
+   "cpad_checked": "2026-11-17",
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.002294,
+    "m": 1,
+    "M": 436,
+    "chain_length": 441,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1a (region shorter than the window; m = 1)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
+   }
   },
   {
    "protein": "alpha-synuclein",
@@ -415,7 +571,19 @@
    "source_version_note": "Giasson 2001 JBC 276:2380, publisher PDF supplied by the author.",
    "cpad_status": "CPAD_MEMBER",
    "cpad_basis": "PRESENT in all three CPAD 2.0 datasets: APR protein list (\"alpha-Synuclein\"), structures table (Homo sapiens), and 26 peptide rows under UniProt P37840. EXCLUDED from the primary confirmatory statistic under \u00a75.2b item 5.",
-   "cpad_checked": "2026-11-17"
+   "cpad_checked": "2026-11-17",
+   "power_eligible": true,
+   "power_limit": {
+    "m_over_M": 0.043478,
+    "m": 1,
+    "M": 23,
+    "chain_length": 140,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "ELIGIBLE: this row can in principle be recovered at v < 0.05."
+   }
   },
   {
    "protein": "FUS",
@@ -477,6 +645,18 @@
     ],
     "chosen_by": "rule 1: the only entry deposited with the source paper",
     "note": "NOT a helical reconstruction, so it carries NO helical parameters and cannot be replicated to 11 layers. The 9 deposited chains are used as deposited, and this row is flagged as having a shallower assembly than the others."
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.091954,
+    "m": 8,
+    "M": 87,
+    "chain_length": 526,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -523,6 +703,18 @@
     ],
     "chosen_by": "rule 1: the only entry deposited with the source paper",
     "note": "Modelled range equals the row range exactly."
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.132075,
+    "m": 7,
+    "M": 53,
+    "chain_length": 320,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -568,6 +760,18 @@
     ],
     "chosen_by": "rule 2: the source paper deposited both a MOUSE fibril (6DSO, P05367) and a HUMAN one (6MST, P0DJI8). This row is hSAA1.1, so 6MST is the matching entry. Resolution agrees (2.7 vs 3.0) but did not decide it.",
     "note": "Modelled range equals the row range exactly."
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.470588,
+    "m": 8,
+    "M": 17,
+    "chain_length": 104,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -620,6 +824,18 @@
     ],
     "chosen_by": "rule 1: the only entry deposited with the source paper",
     "note": "THE SOURCE PAPER IS TITLED \"...reveals a NETWORK OF POLAR LADDERS AT ITS CORE\". That is an independent, published, pre-existing statement about this core being polar, made by its own authors and recorded here BEFORE any Phi was computed. If the metric works it should rank this row high; if it does not, that is evidence against the metric rather than against the paper."
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.136364,
+    "m": 3,
+    "M": 22,
+    "chain_length": 133,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -680,6 +896,18 @@
     ],
     "chosen_by": "rule 4 (amended 18 Nov 2026): nine entries, one per brain, all the same fold -- which is the source paper\u2019s own claim. Best resolution 2.7 A is a tie between 7U16 and 7U18; the lower PDB ID breaks it.",
     "note": "Only 3 chains deposited, so this entry MUST be replicated to 11 layers before burial is computed. Also carries the standing transmembrane-helix confound."
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.488889,
+    "m": 22,
+    "M": 45,
+    "chain_length": 274,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -734,6 +962,18 @@
     ],
     "chosen_by": "rule 4: both entries are the designated fold and both match the range; 9FOR has the better resolution (2.75 vs 2.9 A).",
     "note": "THE FILAMENT IS HETEROMERIC. Entity 1 is TDP-43 (284-345, 5 chains) and entity 2 is ANXA11 (39-74, 5 chains). ANXA11 residues are therefore buried partly BY TDP-43, which is physically correct and must be kept -- but it means Phi for this row describes burial in a two-protein interface, not a homomeric one."
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.059524,
+    "m": 5,
+    "M": 84,
+    "chain_length": 505,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -792,6 +1032,18 @@
     ],
     "chosen_by": "rule 1: 9V45 is PM1, the polymorph the paper models and discusses. 9V4F is PM2 and is already in _rows_deliberately_excluded.",
     "note": "PM1 is 27.8% of the fibrils (Figure S3b); PM3, at 70.8%, has no atomic model at all. Phi therefore describes a minority polymorph. NOTE A CONVENTION DIFFERENCE: the deposit gives rise 2.4 A / twist 179.466 deg (per chain), while the authors\u2019 own supplementary script uses 4.8 A / -1.6 deg (per two-chain layer). Same fibril, different convention; the deposited values are used."
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.069767,
+    "m": 3,
+    "M": 43,
+    "chain_length": 258,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -848,6 +1100,18 @@
     "ordering": "INTACT -- the modern arm had NOT run on this accession when the label was applied, and the label is committed before it does",
     "confirmatory_eligible": true,
     "reported_as": "CONFIRMATORY under PREREGISTRATION 5.2b"
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.217391,
+    "m": 5,
+    "M": 23,
+    "chain_length": 142,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -902,6 +1166,18 @@
     "ordering": "INTACT -- the modern arm had NOT run on this accession when the label was applied, and the label is committed before it does",
     "confirmatory_eligible": true,
     "reported_as": "CONFIRMATORY under PREREGISTRATION 5.2b"
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.2,
+    "m": 5,
+    "M": 25,
+    "chain_length": 151,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   },
   {
@@ -955,6 +1231,18 @@
     "ordering": "INTACT -- the modern arm had NOT run on this accession when the label was applied, and the label is committed before it does",
     "confirmatory_eligible": true,
     "reported_as": "CONFIRMATORY under PREREGISTRATION 5.2b"
+   },
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.153061,
+    "m": 15,
+    "M": 98,
+    "chain_length": 592,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6)",
+    "meaning": "m/M is P(the chain's top-ranked window falls inside this region) under H0, hence the smallest p ANY rank-based statistic can return for this row. Where it exceeds the bar, no amendment to the statistic can rescue the row -- only a longer protein or a shorter mapped region.",
+    "assigned": "2026-11-18",
+    "consequence": "NOT ELIGIBLE: this row CANNOT reach v < 0.05 under any rank-based test. It is retained, labelled and reported, and excluded from statistics that use PREREGISTRATION 4's recovery criterion. The benchmark has no opinion on whether a predictor succeeded here, and saying so is the honest report."
    }
   }
  ],

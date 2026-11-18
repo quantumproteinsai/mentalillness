@@ -2112,6 +2112,15 @@ one-sided **p < 0.05** *and* median paired **Δv < −0.10**. Observed: **p = 0.
 1-59, which AggrescanAI recovers (v = 0.041) and TANGO misses outright (0.9995) — and
 which is not the mapped region the project asks about.
 
+> **CORRECTED 18 Nov 2026 — THAT RECOVERY IS AN ARTEFACT AND THE ROW IS NOT RECOVERED.**
+> TRIOBP-1 1-59 has M = 108, m = 9, and its v of **0.040903 sits exactly on the floor**
+> 1 − ((M−0.5)/M)^m: AggrescanAI's best window in the region is the top-ranked window of
+> the whole chain. Under H0 that happens with probability m/M = 9/108 = **0.0833**, and
+> exact calibration (`scripts/calibrate_v.py`) returns **p = 0.08333**, not 0.041. The
+> pre-registered v understates it by **2.04×**. At the registered bar of 0.05 the row is
+> **NOT recovered**. See §3.1b. This was the project's **only** CPAD-absent row in which
+> the modern predictor succeeded, and it does not survive calibration.
+
 **The legacy arm is one tool, for the same reason the modern arm is.** ProA dead,
 AGGRESCAN web-only, FoldAmyloid reimplementation unvalidated. One against one, so this is
 **not** a statement about generations.
@@ -2937,3 +2946,57 @@ And the geometry compounds it: short proteins with long ordered cores are **exac
 *m*/*M* regime that breaks the statistic. CHCHD10 is a 142-residue protein with a
 34-residue core — 5 windows out of 23. **Recruiting more rows of this shape would add
 rows that cannot pass the bar.**
+
+## §3.1b applied — and the recruitment added no usable power at all
+
+**The amendment was written, then applied to every row. The result is worth stating
+without softening.**
+
+| | n | Stouffer Z | p |
+|---|---|---|---|
+| confirmatory, as reported on 18 Nov | 5 | +0.2963 | 0.3835 |
+| **confirmatory, power_eligible only** | **2** | **−0.7896** | **0.7851** |
+
+**The two surviving rows are DISC1 384–415 and TRIOBP-1 324–348 — the two the project
+started with, and the numbers are the ones it has had since 17 November.** All three rows
+recruited on 18 November fail *m*/*M* ≤ 0.05: TAF15 0.153, CHCHD2 0.200, CHCHD10 0.217.
+
+**A day of recruitment moved the confirmatory arm from n = 2 to n = 2.** The rows are
+real, verified three ways, circularity-clean and correctly ordered — and they cannot
+contribute to the question, because each region is too large a fraction of its own
+protein for any rank-based test to find its ranking surprising.
+
+**Both numbers are printed side by side on every run and neither replaces the other.**
+Dropping the three after seeing their scores would be the post-hoc selection this project
+exists to avoid; reporting n = 5 without the second line would be worse.
+
+**11 of 24 rows are power_eligible.** Of the 13 that are not, nine came from recent
+cryo-EM fibril-core papers — the pool that systematically produces short proteins with
+long ordered cores.
+
+### One verdict changed, and it was the project's only positive
+
+**TRIOBP-1 1-59 is no longer recovered by the modern arm.** Its v of 0.040903 sits exactly
+on the floor: AggrescanAI's best window in the region is the top-ranked window of the whole
+chain, which under H0 happens with probability m/M = 9/108 = **0.0833**. Exact calibration
+(`scripts/calibrate_v.py`, closed-form, no simulation) returns **p = 0.08333**, so the
+pre-registered v **understates the tail by 2.04×** and the row falls under 0.05 only
+because the statistic is anti-conservative at this geometry.
+
+**This was the only CPAD-absent row in the dataset where a modern predictor succeeded**,
+and it was the single negative Δv in the legacy-versus-modern table. It does not survive
+calibration. The correction is applied in `STATE.md` above, in
+`results/legacy_vs_modern_2026-11-17/REPORT.md`, and in both explainers.
+
+The other three rows under the bar — tau 306–311, tau 275–280, TRIOBP-1 333–340 — **do**
+survive calibration (p = 0.0046, 0.0092, 0.0403). They have m = 1 and large M, the regime
+where v is faithful.
+
+### What recruitment looks like now
+
+`reports/recruitment_tracker.md` records the pause and the new pool. The rule wants a
+**long protein with a short mapped region**; cryo-EM core papers supply the opposite by
+construction. The pool that produces eligible rows is **deletion and truncation mapping on
+large proteins** — where DISC1 and TRIOBP-1 came from — and it yields the stronger
+evidence type as a side effect, a necessity claim rather than an ordered core. Target
+shape: ≥ 400 residues, mapped region ≤ 20 residues, CPAD-absent, found without a predictor.

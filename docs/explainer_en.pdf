@@ -848,7 +848,7 @@ endobj
 << /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
 endobj
 9 0 obj
-<< /Length 8650 >>
+<< /Length 9045 >>
 stream
 q 1 0 0 -1 62.00 777.89 cm
 0.100 0.100 0.110 rg
@@ -997,9 +997,9 @@ f
 0.100 0.100 0.110 rg
 BT /F1 8.50 Tf 1 0 0 -1 284.00 226.00 Tm (AggrescanAI \(modern\)) Tj ET
 0.420 0.440 0.480 rg
-BT /F1 8.00 Tf 1 0 0 -1 0.00 244.00 Tm (Only two bars in the whole chart fall below the dashed line. On seven of the nine regions the modern tool scores worse than the) Tj ET
+BT /F1 8.00 Tf 1 0 0 -1 0.00 244.00 Tm (Only two bars in the whole chart fall below the dashed line, and one of those two does not survive a closer look -- see the note. On) Tj ET
 0.420 0.440 0.480 rg
-BT /F1 8.00 Tf 1 0 0 -1 0.00 254.50 Tm (older one.) Tj ET
+BT /F1 8.00 Tf 1 0 0 -1 0.00 254.50 Tm (seven of the nine regions the modern tool scores worse than the older one.) Tj ET
 Q
 0.100 0.100 0.110 rg
 BT /F1 10.00 Tf 1 0 0 1 62.00 485.89 Tm (Read plainly:) Tj ET
@@ -1026,8 +1026,12 @@ q 1 0 0 -1 64.00 454.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 447.89 Tm (On 7 of 9 regions the modern tool does worse than the older one.) Tj ET
-q 1 0 0 -1 64.00 437.89 cm
+BT /F1 10.00 Tf 1 0 0 1 78.00 447.89 Tm (The one apparent success by the modern tool turned out, on 18 November 2026, not to be one: the) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 433.89 Tm (region is short enough and the protein small enough that landing top of the ranking happens by luck) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 419.89 Tm (about 8% of the time, which is above our threshold. Our own score understated that by half.) Tj ET
+q 1 0 0 -1 64.00 409.89 cm
 1.00 w
 0.150 0.390 0.920 rg
 5.20 4.00 m
@@ -1038,10 +1042,22 @@ q 1 0 0 -1 64.00 437.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 430.89 Tm (The difference is not statistically significant: p = 0.10, which is not evidence that the older tool is better) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 402.89 Tm (On 7 of 9 regions the modern tool does worse than the older one.) Tj ET
+q 1 0 0 -1 64.00 392.89 cm
+1.00 w
+0.150 0.390 0.920 rg
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 416.89 Tm (either.) Tj ET
-q 1 0 0 -1 62.00 398.89 cm
+BT /F1 10.00 Tf 1 0 0 1 78.00 385.89 Tm (The difference is not statistically significant: p = 0.10, which is not evidence that the older tool is better) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 371.89 Tm (either.) Tj ET
+q 1 0 0 -1 62.00 353.89 cm
 1.00 w
 0.970 0.970 0.980 rg
 0.00 0.00 471.28 109.00 re
@@ -1052,30 +1068,30 @@ f
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 386.89 Tm (The honest summary is that nothing is established yet. The part of the dataset that can settle the question) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 341.89 Tm (The honest summary is that nothing is established yet. The part of the dataset that can settle the question) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 373.89 Tm (properly held just two regions for most of this work, and with two pairs the smallest p-value the test can) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 328.89 Tm (properly held just two regions for most of this work, and with two pairs the smallest p-value the test can) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 360.89 Tm (possibly produce is 0.25 -- no data could have passed the threshold. Three regions were added on 18) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 315.89 Tm (possibly produce is 0.25 -- no data could have passed the threshold. Three regions were added on 18) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 347.89 Tm (November 2026, taking it to five and giving a result of p = 0.38: still nothing, but for the first time a real test) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 302.89 Tm (November 2026, taking it to five and giving a result of p = 0.38: still nothing, but for the first time a real test) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 334.89 Tm (rather than an impossible one. Two of those three regions come from proteins so similar that they count) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 289.89 Tm (rather than an impossible one. Two of those three regions come from proteins so similar that they count) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 321.89 Tm (as one measurement, and all three sit in the group whose threshold can never fire. That is a flaw in our) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 276.89 Tm (as one measurement, and all three sit in the group whose threshold can never fire. That is a flaw in our) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 308.89 Tm (own design, found by running it rather than by reading it, and it is recorded rather than quietly patched.) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 263.89 Tm (own design, found by running it rather than by reading it, and it is recorded rather than quietly patched.) Tj ET
 0.150 0.390 0.920 rg
-BT /F2 13.00 Tf 1 0 0 1 62.00 263.89 Tm (7. Why we write the rules down first) Tj ET
+BT /F2 13.00 Tf 1 0 0 1 62.00 218.89 Tm (7. Why we write the rules down first) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 242.89 Tm (The statistic, the threshold and the way regions are selected were all written down and committed before) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 197.89 Tm (The statistic, the threshold and the way regions are selected were all written down and committed before) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 228.89 Tm (any predictor was run. This is called pre-registration, and it exists because of a simple human tendency: if) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 183.89 Tm (any predictor was run. This is called pre-registration, and it exists because of a simple human tendency: if) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 214.89 Tm (you look at the results first and choose the test afterwards, you will choose the test that works. Doing it in) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 169.89 Tm (you look at the results first and choose the test afterwards, you will choose the test that works. Doing it in) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 200.89 Tm (this order has already cost us results we would have liked to keep:) Tj ET
-q 1 0 0 -1 64.00 186.89 cm
+BT /F1 10.00 Tf 1 0 0 1 62.00 155.89 Tm (this order has already cost us results we would have liked to keep:) Tj ET
+q 1 0 0 -1 64.00 141.89 cm
 1.00 w
 0.150 0.390 0.920 rg
 5.20 4.00 m
@@ -1086,25 +1102,9 @@ q 1 0 0 -1 64.00 186.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 179.89 Tm (Four defects in our own plan were found by executing it, including one where the answer changes) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 134.89 Tm (Four defects in our own plan were found by executing it, including one where the answer changes) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 165.89 Tm (depending on where you start cutting the windows.) Tj ET
-q 1 0 0 -1 64.00 155.89 cm
-1.00 w
-0.150 0.390 0.920 rg
-5.20 4.00 m
-5.20 5.22 4.22 6.20 3.00 6.20 c
-1.78 6.20 0.80 5.22 0.80 4.00 c
-0.80 2.78 1.78 1.80 3.00 1.80 c
-4.22 1.80 5.20 2.78 5.20 4.00 c
-f
-Q
-0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 148.89 Tm (Several regions could have been moved into the main analysis late, which would have raised the) Tj ET
-0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 134.89 Tm (sample size from 2 to 8 - but the rules say the labels must be fixed before the modern tool is run, and) Tj ET
-0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 120.89 Tm (they were not, so those regions are reported separately.) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 120.89 Tm (depending on where you start cutting the windows.) Tj ET
 q 1 0 0 -1 64.00 110.89 cm
 1.00 w
 0.150 0.390 0.920 rg
@@ -1116,7 +1116,11 @@ q 1 0 0 -1 64.00 110.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 103.89 Tm (Applying that rule did not help our hypothesis in any case. It made the negative result stronger.) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 103.89 Tm (Several regions could have been moved into the main analysis late, which would have raised the) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 89.89 Tm (sample size from 2 to 8 - but the rules say the labels must be fixed before the modern tool is run, and) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 78.00 75.89 Tm (they were not, so those regions are reported separately.) Tj ET
 0.420 0.440 0.480 rg
 BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (4) Tj ET
 endstream
@@ -1125,23 +1129,35 @@ endobj
 << /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 9 0 R >>
 endobj
 11 0 obj
-<< /Length 7382 >>
+<< /Length 7748 >>
 stream
+q 1 0 0 -1 64.00 784.89 cm
+1.00 w
 0.150 0.390 0.920 rg
-BT /F2 13.00 Tf 1 0 0 1 62.00 767.89 Tm (8. What happens next) Tj ET
+5.20 4.00 m
+5.20 5.22 4.22 6.20 3.00 6.20 c
+1.78 6.20 0.80 5.22 0.80 4.00 c
+0.80 2.78 1.78 1.80 3.00 1.80 c
+4.22 1.80 5.20 2.78 5.20 4.00 c
+f
+Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 746.89 Tm (The bottleneck is not the software; it is the number of independent, well-mapped regions that are clean on) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 777.89 Tm (Applying that rule did not help our hypothesis in any case. It made the negative result stronger.) Tj ET
+0.150 0.390 0.920 rg
+BT /F2 13.00 Tf 1 0 0 1 62.00 745.89 Tm (8. What happens next) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 732.89 Tm (all three kinds of circularity. We need about five new proteins. Meanwhile one lead has been tested. A) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 724.89 Tm (The bottleneck is not the software; it is the number of independent, well-mapped regions that are clean on) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 718.89 Tm (recent structure of a soy protein has a fibril core held together partly by water-ATTRACTING contacts) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 710.89 Tm (all three kinds of circularity. We need about five new proteins. Meanwhile one lead has been tested. A) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 704.89 Tm (rather than water-repelling ones. Every predictor here is built on water-repelling chemistry, so a) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 696.89 Tm (recent structure of a soy protein has a fibril core held together partly by water-ATTRACTING contacts) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 690.89 Tm (water-attracting core is exactly the case they should fail on. We wrote down how to measure that, and the) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 682.89 Tm (rather than water-repelling ones. Every predictor here is built on water-repelling chemistry, so a) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 676.89 Tm (threshold for abandoning the measure, before computing anything.) Tj ET
-q 1 0 0 -1 62.00 655.89 cm
+BT /F1 10.00 Tf 1 0 0 1 62.00 668.89 Tm (water-attracting core is exactly the case they should fail on. We wrote down how to measure that, and the) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 10.00 Tf 1 0 0 1 62.00 654.89 Tm (threshold for abandoning the measure, before computing anything.) Tj ET
+q 1 0 0 -1 62.00 633.89 cm
 0.100 0.100 0.110 rg
 BT /F2 10.00 Tf 1 0 0 -1 0.00 12.00 Tm (Figure 6. The polar-core result, on seven structurally solved proteins) Tj ET
 1.00 w
@@ -1260,14 +1276,14 @@ BT /F1 8.00 Tf 1 0 0 -1 0.00 226.00 Tm (Each point is one protein whose fibril s
 BT /F1 8.00 Tf 1 0 0 -1 0.00 236.50 Tm (the core, the worse the predictor does. Real data; the statistic was fixed before it was computed.) Tj ET
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 389.89 Tm (The measure had to pass a test first: it was required to reproduce, from raw coordinates, a published) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 367.89 Tm (The measure had to pass a test first: it was required to reproduce, from raw coordinates, a published) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 375.89 Tm (classification of twelve other fibril structures - and we committed in advance to abandoning it if it did not. It) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 353.89 Tm (classification of twelve other fibril structures - and we committed in advance to abandoning it if it did not. It) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 361.89 Tm (passed. Then, across seven proteins, the more polar the core, the worse the modern predictor did) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 339.89 Tm (passed. Then, across seven proteins, the more polar the core, the worse the modern predictor did) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 347.89 Tm (\(correlation +0.82, p = 0.017\). That is the first prediction this project made in advance and then confirmed.) Tj ET
-q 1 0 0 -1 62.00 330.89 cm
+BT /F1 10.00 Tf 1 0 0 1 62.00 325.89 Tm (\(correlation +0.82, p = 0.017\). That is the first prediction this project made in advance and then confirmed.) Tj ET
+q 1 0 0 -1 62.00 308.89 cm
 1.00 w
 0.970 0.970 0.980 rg
 0.00 0.00 471.28 109.00 re
@@ -1278,20 +1294,20 @@ f
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 318.89 Tm (Two honest qualifications. The result is fragile: remove any one of four of the seven proteins and it slips) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 296.89 Tm (Two honest qualifications. The result is fragile: remove any one of four of the seven proteins and it slips) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 305.89 Tm (just past the threshold. And it does not answer the main question, because the two proteins the project) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 283.89 Tm (just past the threshold. And it does not answer the main question, because the two proteins the project) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 292.89 Tm (was built around have never had their fibrils solved, so they are not in this figure at all. There is also a) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 270.89 Tm (was built around have never had their fibrils solved, so they are not in this figure at all. There is also a) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 279.89 Tm (sense in which the finding is half obvious - a tool that scores water-repelling chemistry will of course score) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 257.89 Tm (sense in which the finding is half obvious - a tool that scores water-repelling chemistry will of course score) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 266.89 Tm (water-attracting cores low. The half that is not obvious is that those cores drive real aggregation in the) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 244.89 Tm (water-attracting cores low. The half that is not obvious is that those cores drive real aggregation in the) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 253.89 Tm (laboratory anyway. The tools are not wrong about chemistry; they are wrong about what nature does with) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 231.89 Tm (laboratory anyway. The tools are not wrong about chemistry; they are wrong about what nature does with) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 240.89 Tm (it.) Tj ET
-q 1 0 0 -1 62.00 209.89 cm
+BT /F1 9.50 Tf 1 0 0 1 76.00 218.89 Tm (it.) Tj ET
+q 1 0 0 -1 62.00 187.89 cm
 1.00 w
 0.970 0.970 0.980 rg
 0.00 0.00 471.28 57.00 re
@@ -1302,11 +1318,11 @@ f
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 197.89 Tm (The dataset behind this document is published openly and has its own DOI, so anyone can check the) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 175.89 Tm (The dataset behind this document is published openly and has its own DOI, so anyone can check the) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 184.89 Tm (rows, the labels and the reasoning for themselves. Each row records which paper it came from and) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 162.89 Tm (rows, the labels and the reasoning for themselves. Each row records which paper it came from and) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 171.89 Tm (whether someone actually opened that paper.) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 149.89 Tm (whether someone actually opened that paper.) Tj ET
 0.420 0.440 0.480 rg
 BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (5) Tj ET
 endstream
@@ -1421,16 +1437,16 @@ xref
 0000016469 00000 n 
 0000023492 00000 n 
 0000023635 00000 n 
-0000032337 00000 n 
-0000032481 00000 n 
-0000039916 00000 n 
-0000040061 00000 n 
-0000042429 00000 n 
-0000042574 00000 n 
-0000042665 00000 n 
-0000042800 00000 n 
+0000032732 00000 n 
+0000032876 00000 n 
+0000040677 00000 n 
+0000040822 00000 n 
+0000043190 00000 n 
+0000043335 00000 n 
+0000043426 00000 n 
+0000043561 00000 n 
 trailer
 << /Size 18 /Root 17 0 R /Info 16 0 R >>
 startxref
-42851
+43612
 %%EOF

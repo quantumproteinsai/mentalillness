@@ -719,10 +719,15 @@ EN = {
     'f5bar': 'v = 0.05',
     'f5leg1': 'TANGO (older generation)',
     'f5leg2': 'AggrescanAI (modern)',
-    'f5cap': 'Only two bars in the whole chart fall below the dashed line. On seven of the '
+    'f5cap': 'Only two bars in the whole chart fall below the dashed line, and one of '
+             'those two does not survive a closer look -- see the note. On seven of the '
              'nine regions the modern tool scores worse than the older one.',
     'p12': 'Read plainly:',
     'b2': ['Neither tool reliably recovers these regions.',
+           'The one apparent success by the modern tool turned out, on 18 November 2026, '
+           'not to be one: the region is short enough and the protein small enough that '
+           'landing top of the ranking happens by luck about 8% of the time, which is '
+           'above our threshold. Our own score understated that by half.',
            'On 7 of 9 regions the modern tool does worse than the older one.',
            'The difference is not statistically significant: p = 0.10, which is not '
            'evidence that the older tool is better either.'],
@@ -915,10 +920,15 @@ FR = {
     'f5bar': "v = 0,05",
     'f5leg1': "TANGO (ancienne génération)",
     'f5leg2': "AggrescanAI (moderne)",
-    'f5cap': "Seules deux barres de tout le graphique passent sous la ligne pointillée. Sur "
+    'f5cap': "Seules deux barres de tout le graphique passent sous la ligne pointillée, et "
+             "l'une des deux ne résiste pas à un examen plus attentif — voir la note. Sur "
              "sept des neuf régions, l'outil moderne fait moins bien que l'ancien.",
     'p12': "En clair :",
     'b2': ["Aucun des deux outils ne retrouve ces régions de manière fiable.",
+           "Le seul succès apparent de l'outil moderne s'est révélé, le 18 novembre 2026, "
+           "n'en être pas un : la région est assez courte et la protéine assez petite pour "
+           "qu'arriver en tête du classement se produise par chance environ 8 % du temps, "
+           "ce qui dépasse notre seuil. Notre propre score sous-estimait cela de moitié.",
            "Sur 7 des 9 régions, l'outil moderne fait moins bien que l'ancien.",
            "L'écart n'est pas statistiquement significatif : p = 0,10, ce qui ne prouve pas "
            "non plus que l'ancien outil soit meilleur."],

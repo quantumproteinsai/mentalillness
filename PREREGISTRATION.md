@@ -97,6 +97,65 @@ This transformation is the reason for the whole construction: it makes a 25-resi
 region in a 652-residue protein and a 32-residue region in an 854-residue protein
 directly comparable, with no tuning.
 
+### 3.1b The information limit m/M — AMENDMENT, 18 Nov 2026, POST-UNBLINDING
+
+**This amends no formula. It records a bound that was always true of §3.1, states that
+nobody computed it, and fixes a recruitment criterion so the bound stops being violated.**
+
+**The bound.** Under H0 the chain's top-ranked window falls inside the region with
+probability **exactly m/M**. The smallest p any rank-based statistic can return for that
+row is therefore **m/M**. Not this statistic — *any* of them. Amending §3.1 cannot move
+it, because it is a property of the data, not of the transformation applied to them.
+
+**What it implies for §4.** Where **m/M > 0.05**, §4's recovery criterion (v < 0.05)
+**cannot fire**. "The predictor missed this region" is then true by arithmetic before any
+software runs, and it is true in the direction of this project's own H1.
+
+**What was found on 18 Nov 2026, after the modern arm had run:**
+
+- **13 of 23 scored rows have m/M > 0.05.** TMEM106B 120–254 is 0.489, serum amyloid A
+  2–55 is 0.471, CHCHD10 42–75 is 0.217.
+- **Only 7 of 20 rows can ever reach p < 0.05 under any rank-based test.**
+- A weaker, formula-specific consequence: v cannot fall below
+  **1 − ((M−0.5)/M)^m**, which exceeds 0.05 for **9 of 23** rows, and where that floor is
+  attained v is **anti-conservative by 2.1×** (CHCHD10 reports v = 0.104 where the
+  calibrated p is 0.218 = 5/23).
+- **Both founding confirmatory rows pass**, narrowly: DISC1 384–415 at **0.0352** and
+  TRIOBP-1 324–348 at **0.0370**. The project's own question remains answerable.
+
+**That this was never computed is the finding, not the bound.** m/M needs the chain length
+and the region length and nothing else. It was available on day one, it is available from
+an abstract, and it costs no compute. It was not computed until after three rows had been
+recruited, read, verified, scored on both arms and committed. Applied at stage 1 it would
+have rejected all three.
+
+**REGISTERED FOR ALL FUTURE ROWS, and it binds recruitment rather than analysis:**
+
+> **A row is `power_eligible` iff m/M ≤ 0.05.** This is checked at **stage 1** of the
+> recruitment pipeline, before the paper is read in full, and a candidate that fails it is
+> rejected with the ratio recorded.
+
+**Rows already in the dataset are NOT removed.** They are labelled, reported, and excluded
+from any statistic that uses §4's recovery criterion. Removing them after seeing the
+scores would be exactly the post-hoc selection this document exists to prevent; labelling
+them is not. The `power_eligible` flag and the m/M ratio are carried on every row.
+
+**What is NOT licensed by this amendment:**
+
+- no change to v, to W, to the tiling, or to §4's threshold;
+- no re-reporting of any existing result with the failing rows silently dropped — where a
+  statistic is recomputed on the eligible subset, both versions are shown;
+- no claim that a `power_eligible: false` row shows a predictor failing. For those rows
+  **the benchmark has no opinion**, and saying so is the only honest report.
+
+**The consequence for recruitment is a change of literature, not of standards.** m/M ≤
+0.05 wants a **long protein with a short mapped region**. Recent cryo-EM fibril-core
+papers systematically yield the opposite — a short protein whose ordered core is a large
+fraction of it — so that pool is close to exhausted for this purpose. Deletion and
+truncation mapping on large proteins is the pool that produces eligible rows, and it is
+also the pool that produces necessity claims rather than mere ordered cores. DISC1 and
+TRIOBP-1 came from it.
+
 ### 3.1a Short regions — AMENDMENT, 17 Nov 2026, POST-UNBLINDING AND THEREFORE EXPLORATORY
 
 **Scores had been seen when this was written.** §12 says an amendment made after

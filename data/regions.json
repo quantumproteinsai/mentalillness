@@ -31,7 +31,8 @@
       "verified_against": "The specific document that was read to verify the row, which is NOT always the document named in `source`.",
       "note": "Free prose. Often carries the most important caveat on the row."
     },
-    "stratum_assignment": "OPTIONAL, added 18 Nov 2026. Present only on rows whose stratum was assigned MECHANICALLY from the legacy arm's own output under PREREGISTRATION 7, rather than from a published predictor run. Records the rule, the legacy tool and its v, the previous value, and whether the row is confirmatory_eligible. A ROW CARRYING confirmatory_eligible: false IS NOT IN THE CONFIRMATORY SET, whatever its stratum says -- scripts/score_rows.py enforces this, and the stratum label alone is not sufficient to admit a row."
+    "stratum_assignment": "OPTIONAL, added 18 Nov 2026. Present only on rows whose stratum was assigned MECHANICALLY from the legacy arm's own output under PREREGISTRATION 7, rather than from a published predictor run. Records the rule, the legacy tool and its v, the previous value, and whether the row is confirmatory_eligible. A ROW CARRYING confirmatory_eligible: false IS NOT IN THE CONFIRMATORY SET, whatever its stratum says -- scripts/score_rows.py enforces this, and the stratum label alone is not sufficient to admit a row.",
+    "structure": "OPTIONAL, added 18 Nov 2026 for PREREGISTRATION 10a. The deposited fibril structure whose ordered core this row describes: PDB entry, entity, chains deposited, modelled range, method, resolution, helical rise and twist, EVERY candidate entry considered, and the rule that chose among them. ABSENT MEANS NO DEPOSITED FIBRIL STRUCTURE EXISTS for this row -- which is the case for every DISC1 and TRIOBP-1 row, and is why the core-polarity analysis cannot reach the confirmatory stratum."
   },
   "regions": [
     {
@@ -461,7 +462,22 @@
       "ZIPPERDB_CANNOT_SCORE_PROLINE_AND_THAT_BEARS_ON_H4": "FROM THE FIGURE S7 LEGEND, WHICH IS NOT IN THE PMC TEXT WE READ FIRST: \"For ZipperDB, the dashed cyan line indicates the upper-bound threshold and DOTTED RED LINES SPAN SEGMENTS WHERE PROLINE RESIDUES PRECLUDE A PREDICTION.\" SO ZIPPERDB STRUCTURALLY CANNOT EVALUATE A PROLINE-CONTAINING WINDOW -- it returns no value rather than a low value. THIS IS A MECHANISM, NOT A PERFORMANCE PROBLEM, and it bears directly on H4: TRIOBP-1 324-348 contains FOUR prolines in 25 residues, so a tool with this behaviour has blind spots across that region BY CONSTRUCTION rather than by failing to detect something. A predictor that cannot score the windows in question is not making a wrong prediction; it is making no prediction, and the two must be reported differently. CHECK EVERY TOOL IN THE LEGACY ARM FOR THE SAME BEHAVIOUR BEFORE SCORING, and pre-register how a no-call is handled in the v = 1 - P^m statistic -- a no-call is not a tie and must not be silently midranked.",
       "cpad_status": "CPAD_MEMBER",
       "cpad_basis": "PRESENT in all three CPAD 2.0 datasets: APR protein list (\"RNA-binding protein FUS\"), structures table (Homo sapiens), and 49 peptide rows under UniProt P35637. EXCLUDED from the primary confirmatory statistic under \u00a75.2b item 5. NOTE THE COST: this is a DISCORDANT row, and the discordant stratum is the only one that can discriminate between predictors.",
-      "cpad_checked": "2026-11-17"
+      "cpad_checked": "2026-11-17",
+      "structure": {
+        "pdb": "5W3N",
+        "entity": "1",
+        "chains_deposited": 9,
+        "modelled": "37-97",
+        "method": "SOLID-STATE NMR",
+        "resolution_A": null,
+        "helical_rise_A": null,
+        "helical_twist_deg": null,
+        "candidates": [
+          "5W3N"
+        ],
+        "chosen_by": "rule 1: the only entry deposited with the source paper",
+        "note": "NOT a helical reconstruction, so it carries NO helical parameters and cannot be replicated to 11 layers. The 9 deposited chains are used as deposited, and this row is flagged as having a shallower assembly than the others."
+      }
     },
     {
       "protein": "hnRNPA1",
@@ -492,7 +508,22 @@
       "source_version_note": "Sharma 2023 J Mol Biol 435:168211, NIHMS1922724 AUTHOR MANUSCRIPT supplied by the author -- NOT the version of record. Citable under 12.1 decision 3 provided the version is named. Copyediting could alter wording, and this project quotes sentences from it.",
       "cpad_status": "CPAD_MEMBER",
       "cpad_basis": "PRESENT -- AND THIS VERDICT CHANGED ON 17 Nov 2026 WHEN THE CHECK WAS COMPLETED. On the partial tables available earlier the same day, hnRNPA1 appeared only as paralogues (\"hnRNP D-like\", \"hnRNP D0\") and was recorded TRAINING_SET_UNCERTAIN. Completing the STRUCTURES table found the protein itself, three times and explicitly human: \"Heterogeneous nuclear ribonucleoprotein A1\", \"hnRNP A1\", \"hnRNPA1\" (all Homo sapiens). It is absent from the APR list and from the peptide table, so A PROTEIN CAN BE A CPAD MEMBER THROUGH ONE DATASET ALONE -- checking one table is not checking CPAD. Now EXCLUDED under \u00a75.2b item 5, not merely flagged. NOTE THE COST: this is a DISCORDANT row.",
-      "cpad_checked": "2026-11-17"
+      "cpad_checked": "2026-11-17",
+      "structure": {
+        "pdb": "7ZJ2",
+        "entity": "1",
+        "chains_deposited": 12,
+        "modelled": "251-295",
+        "method": "ELECTRON MICROSCOPY",
+        "resolution_A": 3.32,
+        "helical_rise_A": 2.37,
+        "helical_twist_deg": 179.05,
+        "candidates": [
+          "7ZJ2"
+        ],
+        "chosen_by": "rule 1: the only entry deposited with the source paper",
+        "note": "Modelled range equals the row range exactly."
+      }
     },
     {
       "protein": "serum amyloid A (hSAA1.1)",
@@ -521,7 +552,23 @@
       "cpad_basis": "PRESENT. APR protein list (\"Serum Amyloid A-1\", and again case-variant as \"Serum amyloid A-1\"), and structures table (\"Serum amyloid A-1 protein\", Homo sapiens; \"Serum amyloid A-2 protein\", Mus musculus). Absent from the peptide table. EXCLUDED from the primary confirmatory statistic under \u00a75.2b item 5.",
       "cpad_checked": "2026-11-17",
       "A_PUBLISHED_MISANNOTATION_IN_THIS_PROTEIN__READ_2026-11-17": "RESOLVED THE SAME DAY IT WAS RAISED, FROM THE DEPOSITED PRIMARY DATA. Earlier today this field said the peptide's identity was in an unopened Supplementary Table and that its position, read off a plot, was not citable. The authors' Zenodo deposit (doi:10.5281/zenodo.18670709, CC BY 4.0, Supplementary_files.zip sha256 3396507420fdf9c65bdc6a870b75f447229ffda2c1f881fd4c3aaad1aeef15b6) contains the per-peptide table, and it is now READ rather than inferred. || THE PEPTIDE IS RDMWRA, AT MATURE RESIDUES 15-20 OF hSAA1.1 -- LOCATED BY SEQUENCE SEARCH IN THE SEQUENCE STORED ON THIS ROW, NOT BY READING A FIGURE. That is inside this row's 2-55. Cima et al. 2026 record it as: AmyPro/CPAD annotate it amyloid, AggreProt scores it 0.017 (threshold 0.25, i.e. predicts NON-amyloid), and the experiment -- TEM plus Thioflavin-T after four weeks, classified from TEM blind to the predictions -- found NO aggregation. So the DATABASE ANNOTATION OF THIS HEXAPEPTIDE IS WRONG, and AggreProt was right. || THIS DOES NOT INVALIDATE THIS ROW, AND THE REASON IS THE `construct` COLUMN. This row is the ordered core of an EX VIVO fibril from a patient's kidney by cryo-EM at 2.7 A: a statement about which residues are ORDERED INSIDE deposited human material. Cima's result is that an isolated synthetic hexapeptide did not nucleate in buffer. Both can be true, and usually are: a segment that cannot nucleate alone can still be ordered within a fibril the rest of the chain builds. What it does establish is that the AmyPro/CPAD annotation of THIS protein is unreliable at hexapeptide resolution, which is a reason to keep this row sourced to the cryo-EM paper and never to a database.",
-      "OUR_OWN_MODERN_ARM_GETS_THIS_HEXAPEPTIDE_WRONG": "A DOCUMENTED FALSE POSITIVE FOR AggrescanAI, ON AN EXPERIMENTALLY RESOLVED HEXAPEPTIDE, FROM OUR OWN RUN. [COMPUTED 17 Nov 2026, results/aggrescanai_2026-11-17/hSAA1.1_mature.csv.] On RDMWRA (mature 15-20), which Cima et al. 2026 showed experimentally does NOT aggregate, AggrescanAI gives a per-residue mean of 0.641 and a maximum of 0.787, against a whole-chain mean of 0.322 -- the 89th percentile of the chain. AggreProt gives 0.017 against its own 0.25 threshold. ON THIS ONE PEPTIDE AggreProt IS RIGHT AND AggrescanAI IS WRONG, and the tool that is right is the one we could not obtain weights for. || STATE THE LIMITS BEFORE ANYONE QUOTES THIS. n = 1 hexapeptide: this is an anecdote, not a rate, and CLAUDE.md rule 2 applies. The comparison is also not perfectly matched -- both predictors are scored IN FULL-CHAIN CONTEXT while the experiment was on an ISOLATED synthetic peptide in buffer, so a high in-context score is not straightforwardly a false positive about the isolated peptide. That mismatch is the same `construct` problem this dataset exists to track, and it cuts both ways. || AND NOTE WHAT IT CANNOT BE EXPLAINED BY. Serum amyloid A is a CPAD_MEMBER, so AggrescanAI may have seen this protein in training. That makes a high score here recall rather than prediction -- which makes the error WORSE, not better: it scores highly a segment that the database mislabels, in the direction of the mislabel."
+      "OUR_OWN_MODERN_ARM_GETS_THIS_HEXAPEPTIDE_WRONG": "A DOCUMENTED FALSE POSITIVE FOR AggrescanAI, ON AN EXPERIMENTALLY RESOLVED HEXAPEPTIDE, FROM OUR OWN RUN. [COMPUTED 17 Nov 2026, results/aggrescanai_2026-11-17/hSAA1.1_mature.csv.] On RDMWRA (mature 15-20), which Cima et al. 2026 showed experimentally does NOT aggregate, AggrescanAI gives a per-residue mean of 0.641 and a maximum of 0.787, against a whole-chain mean of 0.322 -- the 89th percentile of the chain. AggreProt gives 0.017 against its own 0.25 threshold. ON THIS ONE PEPTIDE AggreProt IS RIGHT AND AggrescanAI IS WRONG, and the tool that is right is the one we could not obtain weights for. || STATE THE LIMITS BEFORE ANYONE QUOTES THIS. n = 1 hexapeptide: this is an anecdote, not a rate, and CLAUDE.md rule 2 applies. The comparison is also not perfectly matched -- both predictors are scored IN FULL-CHAIN CONTEXT while the experiment was on an ISOLATED synthetic peptide in buffer, so a high in-context score is not straightforwardly a false positive about the isolated peptide. That mismatch is the same `construct` problem this dataset exists to track, and it cuts both ways. || AND NOTE WHAT IT CANNOT BE EXPLAINED BY. Serum amyloid A is a CPAD_MEMBER, so AggrescanAI may have seen this protein in training. That makes a high score here recall rather than prediction -- which makes the error WORSE, not better: it scores highly a segment that the database mislabels, in the direction of the mislabel.",
+      "structure": {
+        "pdb": "6MST",
+        "entity": "1",
+        "chains_deposited": 12,
+        "modelled": "2-55",
+        "method": "ELECTRON MICROSCOPY",
+        "resolution_A": 2.7,
+        "helical_rise_A": 2.4,
+        "helical_twist_deg": 0.79,
+        "candidates": [
+          "6DSO",
+          "6MST"
+        ],
+        "chosen_by": "rule 2: the source paper deposited both a MOUSE fibril (6DSO, P05367) and a HUMAN one (6MST, P0DJI8). This row is hSAA1.1, so 6MST is the matching entry. Resolution agrees (2.7 vs 3.0) but did not decide it.",
+        "note": "Modelled range equals the row range exactly."
+      }
     },
     {
       "protein": "LECT2",
@@ -558,7 +605,22 @@
       "new_content_in_the_published_version": "The published version adds material absent from the preprint: atomic force microscopy confirming both the 850 A crossover and the LEFT-HANDED twist (Figure S11), and a domain-swapping hypothesis with a modelled swapped dimer through loop 2 (Figure S10, citing beta2-microglobulin). Neither changes the core range. Recorded so the two versions are not treated as interchangeable in either direction.",
       "cpad_status": "CPAD_MEMBER",
       "cpad_basis": "PRESENT in the APR protein list as \"Leukocyte cell-derived chemotaxin-2\". Absent from the structures and peptide tables -- again, one dataset is enough for membership. EXCLUDED from the primary confirmatory statistic under \u00a75.2b item 5. NOTE THE COST: this is the DISCORDANT_DERIVED row.",
-      "cpad_checked": "2026-11-17"
+      "cpad_checked": "2026-11-17",
+      "structure": {
+        "pdb": "8G2V",
+        "entity": "1",
+        "chains_deposited": 10,
+        "modelled": "55-75",
+        "method": "ELECTRON MICROSCOPY",
+        "resolution_A": 2.715,
+        "helical_rise_A": 2.345,
+        "helical_twist_deg": 179.49,
+        "candidates": [
+          "8G2V"
+        ],
+        "chosen_by": "rule 1: the only entry deposited with the source paper",
+        "note": "THE SOURCE PAPER IS TITLED \"...reveals a NETWORK OF POLAR LADDERS AT ITS CORE\". That is an independent, published, pre-existing statement about this core being polar, made by its own authors and recorded here BEFORE any Phi was computed. If the metric works it should rank this row high; if it does not, that is evidence against the metric rather than against the paper."
+      }
     },
     {
       "protein": "TMEM106B",
@@ -595,6 +657,29 @@
         "ordering": "BREACHED -- modern arm had already run on this row when the label was applied",
         "confirmatory_eligible": false,
         "reported_as": "EXPLORATORY under PREREGISTRATION 12"
+      },
+      "structure": {
+        "pdb": "7U16",
+        "entity": "1",
+        "chains_deposited": 3,
+        "modelled": "120-254",
+        "method": "ELECTRON MICROSCOPY",
+        "resolution_A": 2.7,
+        "helical_rise_A": 4.8,
+        "helical_twist_deg": -0.4,
+        "candidates": [
+          "7U10",
+          "7U11",
+          "7U12",
+          "7U13",
+          "7U14",
+          "7U15",
+          "7U16",
+          "7U17",
+          "7U18"
+        ],
+        "chosen_by": "rule 4 (amended 18 Nov 2026): nine entries, one per brain, all the same fold -- which is the source paper\u2019s own claim. Best resolution 2.7 A is a tie between 7U16 and 7U18; the lower PDB ID breaks it.",
+        "note": "Only 3 chains deposited, so this entry MUST be replicated to 11 layers before burial is computed. Also carries the standing transmembrane-helix confound."
       }
     },
     {
@@ -633,6 +718,22 @@
         "ordering": "BREACHED -- modern arm had already run on this row when the label was applied",
         "confirmatory_eligible": false,
         "reported_as": "EXPLORATORY under PREREGISTRATION 12"
+      },
+      "structure": {
+        "pdb": "9FOR",
+        "entity": "2",
+        "chains_deposited": 10,
+        "modelled": "39-74",
+        "method": "ELECTRON MICROSCOPY",
+        "resolution_A": 2.75,
+        "helical_rise_A": 4.98,
+        "helical_twist_deg": -1.83,
+        "candidates": [
+          "9FOF",
+          "9FOR"
+        ],
+        "chosen_by": "rule 4: both entries are the designated fold and both match the range; 9FOR has the better resolution (2.75 vs 2.9 A).",
+        "note": "THE FILAMENT IS HETEROMERIC. Entity 1 is TDP-43 (284-345, 5 chains) and entity 2 is ANXA11 (39-74, 5 chains). ANXA11 residues are therefore buried partly BY TDP-43, which is physically correct and must be kept -- but it means Phi for this row describes burial in a two-protein interface, not a homomeric one."
       }
     },
     {
@@ -675,6 +776,22 @@
         "ordering": "BREACHED -- modern arm had already run on this row when the label was applied",
         "confirmatory_eligible": false,
         "reported_as": "EXPLORATORY under PREREGISTRATION 12"
+      },
+      "structure": {
+        "pdb": "9V45",
+        "entity": "1",
+        "chains_deposited": 10,
+        "modelled": "164-190",
+        "method": "ELECTRON MICROSCOPY",
+        "resolution_A": 3.41,
+        "helical_rise_A": 2.4,
+        "helical_twist_deg": 179.466,
+        "candidates": [
+          "9V45",
+          "9V4F"
+        ],
+        "chosen_by": "rule 1: 9V45 is PM1, the polymorph the paper models and discusses. 9V4F is PM2 and is already in _rows_deliberately_excluded.",
+        "note": "PM1 is 27.8% of the fibrils (Figure S3b); PM3, at 70.8%, has no atomic model at all. Phi therefore describes a minority polymorph. NOTE A CONVENTION DIFFERENCE: the deposit gives rise 2.4 A / twist 179.466 deg (per chain), while the authors\u2019 own supplementary script uses 4.8 A / -1.6 deg (per two-chain layer). Same fibril, different convention; the deposited values are used."
       }
     }
   ],

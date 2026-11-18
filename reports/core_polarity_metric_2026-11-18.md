@@ -57,6 +57,19 @@ own source paper, not from a search.
 3. failing that, the row is **excluded** and the reason recorded. No tie is broken by
    looking at anything downstream.
 
+**AMENDED 18 Nov 2026, BEFORE ANY Φ WAS COMPUTED, and the amendment is recorded rather
+than folded in silently.** Applying rule 1-3 left two rows undecided, because a paper can
+deposit many entries of *the same fold*: TMEM106B has nine (one per brain/disease,
+the paper's whole point being that the fold is shared) and ANXA11 has two. Rules 1 and 2
+cannot separate entries that are all the designated fold and all match the range, and
+rule 3 would discard two of the seven eligible rows for being *too* well deposited.
+
+**Added rule 4: among entries that satisfy 1 or 2, take the one with the best reported
+resolution; ties broken by the lowest PDB ID.** Resolution is a property of the
+experiment, fixed years before this project existed and independent of Φ and of *v*, so
+this cannot be steered. Every candidate entry is recorded on the row, not just the chosen
+one, so the choice is auditable.
+
 **Polymorphism is recorded, not averaged.** Glycinin is the worked example: PM1 is 27.8%
 of the fibrils and PM3, at 70.8%, has no atomic model at all (Figure S3b/S2). Φ therefore
 describes *the modelled polymorph*, and the row says so.

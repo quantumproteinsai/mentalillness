@@ -280,3 +280,64 @@ ranges, TPPP and sunflower 11S look likely to fail it.
 the pre-registration exists to prevent. They are **labelled** with `power_eligible` and
 their m/M, reported, and excluded from any statistic that uses §4's recovery criterion —
 with both versions shown wherever a statistic is recomputed on the eligible subset.
+
+---
+
+## NPAS3 — REJECTED, on three independent grounds. 18 Nov 2026
+
+**Source PDFs supplied by the author** and read in full: Samardžija *et al.* (2021)
+*J. Pers. Med.* **11**:1070; Samardžija *et al.* (2023) *Cells* **12**:1848; Samardžija
+*et al.* (2026) *Sci. Rep.* **16**:8240. All three are Bradshaw's group — the same
+laboratory as the DISC1 and TRIOBP-1 rows.
+
+NPAS3 was the strongest lead the literature search produced: a schizophrenia-associated
+protein, CPAD-absent, 933 residues, aggregating in post-mortem brain. **It fails anyway,
+and each reason would be sufficient alone.**
+
+**1. Geometry. Both candidate regions fail §3.1b**, and they fail in opposite directions:
+
+| claimed region | source | length | *m*/*M* |
+|---|---|---|---|
+| **PAS1 domain, aa 157–208** | Samardžija 2021, Discussion, verbatim | 52 aa | **0.0516** |
+| **inter-PAS linker, aa 211–331** | Nucifora 2016, as cited by Samardžija 2021 | 121 aa | **0.1290** |
+
+**2. The two groups disagree about which region it is**, and the 2021 paper says so in
+print: *"In contrast, previous studies showed NPAS3 protein aggregation to be dependent
+instead on the unstructured linker region between the two PAS domains (aa 211-331)."* The
+regions **do not overlap**. A benchmark row needs one region, not a choice between two
+published ones made by us.
+
+**3. The readout is a declared surrogate, not aggregation.** Verbatim: *"We therefore used
+cytoplasmic expression of NPAS3 as a surrogate for its misfolding and aggregation."* The
+PAS1 result is a **localisation** result — the fragments lacking PAS1 are nuclear, those
+containing it are cytoplasmic — and the paper's own heading for it is *"the critical domain
+for **mislocalization**"*. Visible aggregates appeared in **14% of cells**. The row would
+record a region necessary for *cytoplasmic residence*, which is not what this dataset
+scores.
+
+**The frame is confirmed and worth keeping** even though the row is rejected: the paper
+states *"All amino acid numbers refer to the 933 long amino acid splice variant of human
+NPAS3 (NP_001158221.1)"*, which happens to match canonical Q8IXF0 at 933 aa.
+
+### What the three PDFs did give the project
+
+- **CRMP1** is a genuine family member — insoluble in patient brain alongside DISC1 and
+  TRIOBP-1, and a confirmed DISC1 co-aggregation partner — but **no fragment-level mapping
+  of CRMP1 aggregation exists in any of the three papers.** Not recruitable until one does.
+- **A lead on an existing row, not a new one:** Zaharija B & Bradshaw NJ (2024),
+  *"Aggregation of disrupted in schizophrenia 1 arises from a central region of the
+  protein"*, *Prog. Neuropsychopharmacol. Biol. Psychiatry* **130**:110923. Cited in the
+  2026 Methods as the source of *"the aggregation prone-region between"* the D and I
+  domains of DISC1 (construct aa 257–655). **This is the paper the outstanding Δ384-414/415
+  query to Bradshaw concerns.** It has not been read.
+- **TRIOBP-1 Δ1–59 Δ333–340 abolishes aggregation** (*Cells* 2023, citing Zaharija 2022) —
+  a genuine necessity claim, and both regions are already rows. TRIOBP-1 333–340 is 8
+  residues in 652 (*m*/*M* = 0.0016) and is **power_eligible**; it is, however,
+  **CONCORDANT**, so it cannot enter the confirmatory stratum.
+
+### The search result, stated plainly
+
+**No power-eligible recruitment candidate has been found.** Screened and rejected on
+18 Nov: TFG (circular), TAF15, CHCHD10, CHCHD2 (admitted, then found power-ineligible),
+TPPP, ApoA-II, sunflower 11S ×2 (all fail *m*/*M*), Ninjurin-1 (derived 30-mer), NPAS3
+(above). **The constraint is real and it is biting.**

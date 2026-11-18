@@ -2228,12 +2228,19 @@ stop**, and we stopped.
 
 ## Where the dataset stands
 
-**21 rows across 11 proteins** as of the end of 17 Nov 2026 — ANXA11 39-74 and glycinin
-G4 164-190 added that afternoon. **The deposited release is still v1.1.0 at 19 rows,
-DOI 10.5281/zenodo.24306057**; the two new rows are in the repository and not yet in a
-deposit, so the DOI and `data/regions.json` now differ and a v1.2.0 is owed.
+**21 rows across 11 proteins, PUBLISHED 18 Nov 2026 as v1.2.0,
+DOI 10.5281/zenodo.24337561** (<https://zenodo.org/records/24337561>), reproducible from
+tag `deposited-v1.2.0`. The repository and the deposited dataset agree again.
 
-Previously, and the deposit still reflects this: **19 rows across 9 proteins, v1.1.0**
+**CORRECTION TO WHAT THIS SECTION SAID ON 17 Nov.** It claimed v1.1.0 was "19 rows across
+9 proteins". **v1.1.0 is 17 rows across 8 proteins** — checked in the deposited artefact
+itself and at all three release tags, which agree. The 19/9 figure was the state of
+`data/regions.json` at some point *after* the deposit, not what went into it, and it was
+written here without being checked against the released file. The gap v1.2.0 closed was
+therefore **four rows, not two**: ANXA11 39-74, TMEM106B 120-254, glycinin G4 164-190, and
+a DISC1 interval split into the two sub-intervals its source actually tested.
+
+Previously: **17 rows across 8 proteins, v1.1.0**, DOI 10.5281/zenodo.24306057
 (deposit reproducible from tag `deposited-v1.1.0`), superseding v1.0.0, which cannot tell a
 reader which rows are training-set contaminated. Every row carries a `frame`, and the last
 seven were **verified by sequence rather than assumed** — including serum amyloid A, where
@@ -2535,4 +2542,106 @@ region**, S3a,b the sole source of the polymorph abundances, and S5 the alternat
 conformation inside the modelled region. **Three of the row's claims rest on a document
 nobody here has read.**
 
-**A v1.2.0 deposit is owed.** The published DOI is 19 rows; `data/regions.json` is 21.
+~~**A v1.2.0 deposit is owed.**~~ **DONE 18 Nov 2026 — `10.5281/zenodo.24337561`.** See
+"The v1.2.0 deposit" below. (The "19 rows" in the original of this line was wrong; the
+deposited v1.1.0 is 17.)
+
+---
+
+## The v1.2.0 deposit — 18 Nov 2026, and four defects in our own release machinery
+
+**Published: <https://zenodo.org/records/24337561>, version DOI `10.5281/zenodo.24337561`,
+21 regions across 11 proteins, CC BY 4.0, 10 keywords.** Reproducible from tag
+`deposited-v1.2.0` (commit `ce26db2`), whose message carries the five md5s.
+
+### Verified after publication, with controls, not assumed
+
+| check | before upload | after publishing |
+|---|---|---|
+| concept DOI `…24290697` resolves to | record **24306057** (v1.1.0) | record **24337561** (v1.2.0) |
+| `doi.org/10.5281/zenodo.24337561` | **404** | **200** |
+| `api/records/24337561` | **404** | 200, version `1.2.0` |
+
+**That before/after pair is the whole proof.** A form displaying a DOI is not a published
+record, and the cheapest check that a version really went live is the concept DOI. Both
+halves were run: the 404s were taken *before* upload alongside two known-good URLs
+returning 200, because **a 404 from a broken network is indistinguishable from a 404 from
+an absent record.** Same shape as the `raw.githubusercontent.com` cache finding.
+
+**All five published files match the local copies byte for byte** — md5s compared against
+the artefacts at `ce26db2`, not eyeballed. Metadata: version `1.2.0`, date `2026-11-18`,
+licence `cc-by-4.0`, 10 keywords matching `.zenodo.json` and `CITATION.cff` as sets, title
+correct and singular.
+
+**The DOI was reserved and written in before upload**, so the *deposited* `CITATION.cff`
+carries its own DOI — which is what v1.0.0's descriptor failed to do, uncorrectably,
+because deposited files are frozen.
+
+### FOUR DEFECTS, ALL IN OUR OWN MACHINERY, ALL FOUND BY RUNNING IT
+
+**1. The freeze guard did not work, and overwrote the deposited v1.1.0 artefacts.**
+`build_release.py` was supposed to refuse to rebuild a deposited version. It compared the
+set of CORE FIELD NAMES against the deposited artefact and refused only when a field had
+been *added*. Between 1.1.0 and 1.2.0 **four rows were added and no field**, so it passed,
+and a test run at `VERSION='1.1.0'` rewrote both deposited files with 21 rows. They were
+restored from git and their md5s re-verified against the `deposited-v1.1.0` tag message —
+`14df6109…`, `d0971d25…` — **which is the only reason this is a near miss and not a lost
+deposit.** The guard now compares the bytes it is about to write against the bytes on
+disk.
+
+**2. `'1.1.0'` was never added to `DEPOSITED`.** The guard could not have protected it
+even had it worked: the fact that 1.1.0 was deposited lived in `RELEASE_CHECKLIST.md` and
+in this file, not in the dict the code reads.
+
+**3. The title lives in FOUR places, not the three the checklist's own lesson names.**
+The fourth is the hardcoded `_dataset.title` in `build_release.py` — which is why the
+deposited v1.1.0 *artefact* carries the pre-1.1.0 title too, not only its `CITATION.cff`
+as recorded. "Change it in all three and diff them against each other" is exactly the
+check that passes while the fourth stays stale.
+
+**4. The Additional Description has said "Version 1.0.0. DOI …24290698" since the first
+deposit**, and Zenodo's "New version" flow copies metadata forward. Checked against the
+API: records 24290698 **and 24306057** both carry it, so **the published v1.1.0 record
+states that it is version 1.0.0 and gives v1.0.0's DOI.** Deleted on the v1.2.0 draft
+rather than corrected, because correcting it would create a *fifth* copy of the
+version-and-DOI pair to keep in step, and this copy had already drifted across two
+deposits. Everything it said is in `DATA_DESCRIPTOR.md`, which is uploaded.
+
+**No gate could have caught #4**: `preflight_deposit.py` reads the repository, and that
+field exists only on Zenodo. **The form holds state the repository never sees.**
+
+### What was built so this is not rediscovered a fourth time
+
+- **`scripts/preflight_deposit.py`** — a pre-upload gate, 24 checks: DOI reserved and
+  written into both files and absent from the persistent `.zenodo.json` template; all
+  four copies of the title agree; version and row count match everywhere claimed;
+  previously deposited artefacts byte-unchanged against `HEAD`; the description snippet in
+  step with `.zenodo.json`. **It deposits nothing and cannot.**
+- **`scripts/build_zenodo_description.py`** — the checklist said the two description
+  files are "generated from `.zenodo.json`; regenerate them if the description changes",
+  and **nothing generated them**; they were hand-made for v1.1.0, so "regenerate" named a
+  step no committed code performed. Verified faithful by regenerating v1.1.0's snippet and
+  diffing.
+- **`v1.2.0` and `deposited-v1.2.0` point at the same commit** — the first time the
+  version tag is usable. v1.1.0's was cut before its final rebuild and matches none of its
+  deposited files except `LICENSE`.
+
+**The transferable rule, and it is the project's own, arriving by a new route:** every
+defect in the v1.0.0 and v1.1.0 deposits was recorded afterwards as a lesson addressed to
+a reader, and two of them recurred anyway. **A warning in prose is not a constraint** —
+now applied to our own release process rather than to a dataset column.
+
+### Still open on the deposit
+
+**The published v1.1.0 record still says it is version 1.0.0.** Zenodo metadata is
+editable after publication even though files are frozen, so deleting the Additional
+Description on record 24306057 fixes it. **This is the repairable half of the v1.1.0
+title problem**: its deposited `CITATION.cff` is stuck with the old title permanently;
+its record metadata is not.
+
+### What the deposit does NOT change
+
+The dataset is citable at 21 rows. **The confirmatory stratum is still 2 rows**, the
+contrast is still 7 of 9 with p = 0.102, and §4 still cannot fire on the confirmatory set.
+Publishing the asset does not advance the analysis built on it, and the recruiting-rule
+problem recorded above is untouched.

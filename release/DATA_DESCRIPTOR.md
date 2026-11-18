@@ -271,26 +271,11 @@ working file is never edited by it.
 Mercier des Rochettes, B. (2026). *Experimentally mapped aggregation-critical
 protein regions, with circularity, prediction-concordance and
 training-set-contamination labels*, version 1.2.0 [Data set]. Zenodo.
-**DOI-RESERVE-PENDING**
+**10.5281/zenodo.24337561**
 
-<https://doi.org/DOI-RESERVE-PENDING>
+<https://doi.org/10.5281/zenodo.24337561>
 
-> **THIS IS A PLACEHOLDER AND THIS FILE MUST NOT BE UPLOADED CARRYING IT.**
-> `RELEASE_CHECKLIST.md` requires **reserve → write the DOI into the files → upload →
-> publish**, in that order, because deposited files are frozen: a DOI filled in after
-> publication reaches the repository copy only, leaving the deposited copy permanently
-> inconsistent. That is exactly what happened to v1.0.0's descriptor.
->
-> So: reserve the DOI on the v1.2.0 draft, replace both occurrences of
-> `DOI-RESERVE-PENDING` here and the `doi:` key in `CITATION.cff`, rebuild nothing
-> (these two files are hand-maintained), and run
-> `python3 scripts/preflight_deposit.py`, which refuses while any placeholder remains.
->
-> **A reserved DOI belongs to one draft.** If this draft is discarded rather than
-> published, Zenodo reserves a different number next time and both files must be
-> updated again.
-
-This will be the **version DOI**: it resolves to 1.2.0 and only 1.2.0, which is what a
+This is the **version DOI**: it resolves to 1.2.0 and only 1.2.0, which is what a
 citation of a specific analysis needs. The **concept DOI**,
 **10.5281/zenodo.24290697**, always resolves to whatever version is current — use that
 one only when you mean "the latest".

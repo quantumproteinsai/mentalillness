@@ -5,35 +5,55 @@ decisions that are **yours**, not defaults to be inherited.
 
 ---
 
-## v1.2.0 PREPARED — 17 Nov 2026 — **NOT DEPOSITED, AND BLOCKED ON ONE ACTION THAT IS YOURS**
+## v1.2.0 READY TO UPLOAD — DOI reserved 18 Nov 2026 — **NOT YET PUBLISHED**
 
-**Repo side is complete and gated.** `scripts/preflight_deposit.py` passes every check
-except the two it is designed to fail until you act:
+**Reserved version DOI: `10.5281/zenodo.24337561`**, written into `CITATION.cff` and
+`release/DATA_DESCRIPTOR.md` **before** upload, which is the order this file requires.
 
-```
-DOI
-  FAIL  CITATION.cff has a real DOI, not the DOI-RESERVE-PENDING placeholder
-  FAIL  release/DATA_DESCRIPTOR.md has a real DOI, not the DOI-RESERVE-PENDING placeholder
-```
+**`python3 scripts/preflight_deposit.py` exits 0.** All 24 checks pass, and the tree is
+tagged **`deposited-v1.2.0`** — cut after the final rebuild and immediately before
+upload, which is the v1.1.0 lesson applied. The tag message carries the md5s.
 
-**What is needed from you, in this order** — the order is the point, because deposited
-files are frozen:
+**Verified, not assumed, on 18 Nov 2026 — the reserved DOI is NOT live, which is the
+correct pre-upload state:**
+
+| check | result |
+|---|---|
+| `doi.org/10.5281/zenodo.24337561` | **404** — reserved, unpublished |
+| `zenodo.org/api/records/24337561` | **404** |
+| concept DOI `…24290697` via the API | **302 → `/api/records/24306057`** — still v1.1.0 |
+| `zenodo.org/records/24306057` *(control)* | 200 |
+| `doi.org/10.5281/zenodo.24290697` *(control)* | 200 |
+
+The controls are not decoration. A 404 from a broken network looks identical to a 404
+from an absent record, so a check that expects absence is worthless without a parallel
+check that expects presence — the same reasoning as the `raw.githubusercontent.com`
+cache finding in `STATE.md`.
+
+### THE FIVE REMAINING STEPS ARE YOURS, AT THE ZENODO FORM
 
 1. Open <https://zenodo.org/records/24306057> (v1.1.0) → **New version**. Not a fresh
    upload: that mints an unrelated record with no link to the concept DOI.
-2. **Reserve DOI** on the draft. Tell me the number, or edit it in yourself: it replaces
-   `DOI-RESERVE-PENDING` in **`CITATION.cff`** (the `doi:` key) and in
-   **`release/DATA_DESCRIPTOR.md`** (two occurrences).
-3. `python3 scripts/preflight_deposit.py` → must exit 0.
-4. Commit, then **tag `deposited-v1.2.0`** — after the final rebuild and immediately
-   before upload, which is the lesson from v1.1.0, whose `v1.1.0` tag matches none of
-   the deposited files.
-5. Delete the five files Zenodo copied into the draft, upload the five listed under
-   "The five files to upload" at v1.2.0, update **Version** to `1.2.0`, and paste
-   `release/zenodo_description_v1.2.0.snippet.html` into the Description field's
-   **source view** (`<>` button). The title and keywords are unchanged from 1.1.0.
-6. Publish. Then verify with the concept DOI, not the form:
+2. **Delete the five files Zenodo copied into the draft**, then upload the five listed
+   under "The five files to upload" at v1.2.0. Deleting affects the draft only; the
+   published v1.1.0 files are frozen and untouchable.
+3. Set **Version** to `1.2.0`. Title, keywords, authors, ORCID and CC BY 4.0 carry over
+   from 1.1.0 unchanged — check them, do not retype them.
+4. Paste `release/zenodo_description_v1.2.0.snippet.html` into the Description field's
+   **source view** (the `<>` button at the right-hand end of the toolbar). Not the
+   visual editor: that renders the tags literally, which happened twice on 17 Nov 2026.
+   After pasting, check for four bullets with bold headings and no visible `<p>` or
+   `&mdash;`.
+5. **Publish**, then verify with the concept DOI rather than the form:
    `10.5281/zenodo.24290697` must resolve to the new record with `is_last: true`.
+   A form displaying a DOI is not a published record.
+
+**If the draft is discarded rather than published**, Zenodo reserves a different number
+next time, and `10.5281/zenodo.24337561` must be replaced in both files and the
+`deposited-v1.2.0` tag re-cut.
+
+**After publishing**, record the five published md5s here against the local ones in the
+tag message, and verify the concept DOI — that is what closed out v1.0.0 and v1.1.0.
 
 ### What changed, and why it is a new version rather than a repo-side edit
 

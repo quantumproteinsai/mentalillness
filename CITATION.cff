@@ -50,7 +50,7 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.24290698"
     description: "Version DOI of v1.0.0. It has no cpad_status / cpad_basis / cpad_checked columns and therefore cannot tell a reader which rows are training-set contaminated. Do not use it in preference to a later version."
-date-released: 2026-11-17
+date-released: 2026-11-18
 # THE DOI IS NOT YET RESERVED FOR v1.2.0, AND THE ORDER MATTERS.
 # RELEASE_CHECKLIST.md requires: reserve -> write the number into this file and into
 # release/DATA_DESCRIPTOR.md -> upload -> publish. Not publish-then-patch, because
@@ -64,4 +64,4 @@ date-released: 2026-11-17
 # CONDITION ON A RESERVED DOI: it belongs to ONE draft. If that draft is discarded
 # rather than published, Zenodo reserves a DIFFERENT number for the next attempt and
 # this line and the descriptor must both be updated again.
-doi: "DOI-RESERVE-PENDING"
+doi: "10.5281/zenodo.24337561"

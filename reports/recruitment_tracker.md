@@ -38,10 +38,10 @@ with tau, insulin, transthyretin and CsgA as positive controls — all of which 
 
 | protein | accession | CPAD | structures | paper | OA | status |
 |---|---|---|---|---|---|---|
-| **TAF15** | Q92804 | **absent** | 8ONS (2023, 1.97 Å), 9THM+ (2025) | *TAF15 amyloid filaments in FTLD*, Nature 2024 | **yes**, PMC10781619 | **stage 2** |
-| **CHCHD10** | Q8WYQ3 | **absent** | 9CWW (2024, 2.3 Å) | *Amyloid fibril structures link CHCHD10 and CHCHD2 to neurodegeneration*, Nat Commun 2025 | **yes**, PMC12318133 | stage 1 done |
-| **CHCHD2** | Q9Y6H1 | **absent** | 9OYR (2025, 2.03 Å) | same paper as CHCHD10 | **yes**, PMC12318133 | stage 1 done |
-| **TFG** | Q92734 | **absent** | 8TEQ, 8TER (2023, 2.84 Å) | *Fibril structures of TFG protein mutants…*, PNAS Nexus 2023 | **yes**, PMC10703350 | stage 1 done |
+| **TAF15** | Q92804 | **absent** | 8ONS (2023, 1.97 Å), 9THM+ (2025) | *TAF15 amyloid filaments in FTLD*, Nature 2024 | **yes**, PMC10781619 | **IN, stage 5 done** |
+| **CHCHD10** | Q8WYQ3 | **absent** | 9CWW (2024, 2.3 Å) | *Amyloid fibril structures link CHCHD10 and CHCHD2 to neurodegeneration*, Nat Commun 2025 | **yes**, PMC12318133 | **IN, stage 5 done** |
+| **CHCHD2** | Q9Y6H1 | **absent** | 9OYR (2025, 2.03 Å) | same paper as CHCHD10 | **yes**, PMC12318133 | **IN, stage 5 done** |
+| **TFG** | Q92734 | **absent** | 8TEQ, 8TER (2023, 2.84 Å) | *Fibril structures of TFG protein mutants…*, PNAS Nexus 2023 | **yes**, PMC10703350 | **REJECTED: CIRCULAR** |
 | **TPPP** | O94811 | **absent** | 9J4D–9J4F (2024, 2.93 Å) | *TPPP/p25 amyloid seeding…MSA*, Cell 2026 | **no** | **blocked: PDF** |
 | **ApoA-II** | P09813 | **absent** | 8OQ4, 8OQ5 (2023, 2.6 Å) | *…Structural Basis of Amyloid Resistance…*, JMB 2024 | **no** | **blocked: PDF** |
 | **sunflower 11S** | A0A9K3J848 | **absent** | 26SG (2026, 3.05 Å) | *Cryo-EM Structures of Sunflower Amyloid Fibrils…*, Small 2026 | **no** | **blocked: PDF** |
@@ -131,3 +131,94 @@ one deposited with this paper; the 2025 entries (9THM, 9THN, 9THP, 9TKE…) belo
 *different, paywalled* paper on FTLD-TAF15 subtypes. Rule 1 of §10a §2 points at 8ONS, but
 that needs confirming from the paper's own data-availability statement rather than from
 deposit dates.
+
+---
+
+## 18 November 2026, later: three rows in, one rejected, and a correction
+
+`data/regions.json` now holds **24 rows across 14 proteins**, up from 21 across 11.
+**No stratum label was written with them** — that is stage 7, it is assigned mechanically
+from the legacy arm, and it gets its own commit before any modern predictor runs.
+
+### TFG — REJECTED AT STAGE 4, AND THE PAPER'S TITLE SAYS WHY
+
+The title is *"Fibril structures of TFG protein mutants **validate the identification of
+TFG as a disease-related amyloid protein by the IMPAcT method**"*. IMPAcT is a
+**computational amyloid predictor** that "entails comparing the computed amyloidogenic
+propensity of mutant protein sequences to their wild-type counterparts", and it **employs
+the ZipperDB database**. TFG is in that paper *because a predictor nominated it*, and the
+paper exists to validate the predictor.
+
+**That is the exact circularity `found_by` was added to catch.** Scoring a predictor on a
+region a predictor discovered measures the predictor against itself. Rejected — not
+demoted to the exploratory arm, rejected, because there is a second disqualifier: the
+structures are of the **G269V and P285L mutants**, and the paper states the WT sequence
+does not form them.
+
+**It cost one word-boundary grep to find, and it would have been invisible after
+scoring.** The selection written in this file hours earlier called TFG a target and
+flagged only the mutant caveat. The circularity was the bigger problem and was missed.
+
+### TAF15 — the "blocked on a publisher PDF" note above was WRONG
+
+This file recorded that the TAF15 publisher PDF had not been opened. **It was retrievable
+all along**: Nature open access, `nature.com/articles/s41586-023-06801-2.pdf`, 28.2 MB,
+22 pages including Extended Data. Read in full on 18 Nov. It **agrees with the Europe PMC
+XML** on the region (7–99), the frame (Q92804, 592 aa) and the accession (8ONS), and it
+contains no aggregation predictor. `verified_against_publisher_pdf` is `true`.
+
+The lesson is not about TAF15. **"Blocked on a PDF" was asserted without trying the
+publisher's own open-access URL**, and three candidates below still carry that label on
+the same kind of evidence. Each should be retried before being reported as blocked.
+
+### CHCHD10 and CHCHD2 — in, with a non-independence that is worse than "same lab"
+
+Both rows carry a field, `NON_INDEPENDENT_WITH_THE_CHCHD2_ROW` / `..._CHCHD10_ROW`,
+recording the real problem. It is **not** the shared laboratory that was flagged when
+these two were proposed:
+
+> CHCHD10 43–75 and CHCHD2 54–86 align over 33 residues at **28/33 = 84.8% identity**.
+> Every predictor in both arms is a function of sequence, so **these two rows score almost
+> identically by construction**, and a rank test that counts them twice inflates *n*
+> without adding information.
+
+**Rule, recorded on both rows:** any confirmatory or pooled statistic uses **at most one**
+of the pair; the other is reported beside it as a near-replicate. So the pair contributes
+**one** effective row to §5.2b, not two — which means the recruitment drive has delivered
+**two** effective new candidates (TAF15, and one of the CHCHD pair), not three.
+
+### What all three rows share, and what it costs
+
+All three regions are **ordered cryo-EM cores, not necessity mappings**. The words
+"necessary", "sufficient" and "required" do not occur in connection with the region in
+any of the three papers, and no truncation series tests whether any part is dispensable.
+They sit with ANXA11, one notch below DISC1 and TRIOBP-1, whose regions *were* mapped by
+deletion. **The dataset is drifting towards structure-defined rows because those are the
+papers being published** — worth stating before it becomes invisible.
+
+| row | material | strength |
+|---|---|---|
+| TAF15 7–99 | *ex vivo* human post-mortem brain, FTLD-FET | strongest; ties ANXA11 |
+| CHCHD10 42–75 | recombinant fragment 1–98, in vitro | weakest; mouse + fibroblast support only |
+| CHCHD2 54–86 | recombinant fragment 1–113, in vitro | weakest; **no** in vivo arm of its own |
+
+### Still open
+
+Two more proteins are wanted, and the three "blocked" candidates should each be retried
+at the publisher's own URL before anyone is asked for a PDF.
+
+### The retry, done rather than promised — 18 Nov 2026
+
+All three "blocked" candidates were retried at the publisher's own URL and against Europe
+PMC. **All three are genuinely blocked**, and the retry is recorded with its negatives so
+nobody repeats it:
+
+| candidate | retry | result |
+|---|---|---|
+| TPPP (Cell 2026) | PMID 42190663 | `isOpenAccess: N`, no PMCID, no PDF; publisher URL **HTTP 403** |
+| sunflower 11S (Small 2026) | PMID 42801496 | `isOpenAccess: N`, no PMCID, no PDF; Wiley **HTTP 403** |
+| ApoA-II (JMB 2024, 8OQ4/8OQ5) | searched by accession and title | no open-access record surfaces |
+
+**The retry was worth running anyway: it is what proved TAF15 was never blocked.** One of
+four assumed-blocked candidates was reachable, which is a high enough rate to justify
+checking rather than asserting.

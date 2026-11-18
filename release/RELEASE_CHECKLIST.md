@@ -30,6 +30,36 @@ from an absent record, so a check that expects absence is worthless without a pa
 check that expects presence — the same reasoning as the `raw.githubusercontent.com`
 cache finding in `STATE.md`.
 
+### A FOURTH DEPOSIT DEFECT, FOUND ON THE v1.2.0 DRAFT — and this one is live on v1.1.0
+
+**The Additional Description field has said "Version 1.0.0. DOI 10.5281/zenodo.24290698"
+since the first deposit, and "New version" copies it forward.** Checked against the API
+on 18 Nov 2026, not assumed:
+
+```
+record 24290698 (v1.0.0): notes = "Version 1.0.0. DOI 10.5281/zenodo.24290698. ..."
+record 24306057 (v1.1.0): notes = "Version 1.0.0. DOI 10.5281/zenodo.24290698. ..."
+```
+
+So **the published v1.1.0 record currently states that it is version 1.0.0 and carries
+v1.0.0's DOI.** It arrived on the v1.2.0 draft the same way and was deleted there.
+
+**DELETED RATHER THAN CORRECTED, deliberately.** Correcting it would create a fifth
+copy of version-and-DOI to keep in step — after `CITATION.cff`, `DATA_DESCRIPTOR.md`,
+the built artefact's `_dataset`, and the Version field — and this copy has already
+drifted twice. Everything it said is in `DATA_DESCRIPTOR.md`, which is uploaded.
+
+**FIX v1.1.0's RECORD TOO.** Zenodo metadata is editable after publication, unlike
+files, so delete the Additional Description on record 24306057 as well. This is the
+*repairable* half of the v1.1.0 title problem: the deposited `CITATION.cff` cannot be
+fixed because files are frozen, but record metadata can.
+
+**Why none of the gates caught it:** `preflight_deposit.py` reads the repository, and
+this field exists only on Zenodo. A check cannot see a field it is not told about, and
+the form carries state the repository never sees. **The version-DOI pair now lives in
+one more place than this file had ever counted** — which is the same miscount as the
+title living in four places rather than three.
+
 ### THE FIVE REMAINING STEPS ARE YOURS, AT THE ZENODO FORM
 
 1. Open <https://zenodo.org/records/24306057> (v1.1.0) → **New version**. Not a fresh

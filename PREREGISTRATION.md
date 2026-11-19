@@ -896,6 +896,58 @@ structures, so the confirmatory stratum is outside this analysis and no *n* chan
 
 ---
 
+### 10c Discontinuous ordered cores — REGISTERED 19 Nov 2026, BEFORE ANY Φ WAS COMPUTED
+
+**The gap this closes.** §10b E2 says a route (a) row's region *is* the modelled core, and
+assumes without saying so that the core is one contiguous span. **All eleven structure rows
+already in `data/regions.json` are contiguous** — 37-97, 251-295, 2-55, 55-75, 120-254,
+39-74, 164-190, 42-75, 54-86, 7-99, 176-206 — so the assumption has never been tested.
+Reading the deposited coordinates of three candidates on 19 Nov broke it: **7VZF (SOD1)
+models 3-55 and 86-153** with a 30-residue disordered gap, and **8QUT (human lysozyme)
+models 22-34 and 50-128** with a 15-residue gap. Both papers describe the gap in their own
+words; it is a real feature of the fold, not a modelling failure.
+
+**Why the obvious mechanical answer is wrong.** R1 ("if a protein yields several eligible
+regions, take the one with the greatest fraction of region residues modelled; tie broken by
+the lowest start residue") would, applied to segments, pick SOD1 3-55 and lysozyme **22-34**
+— thirteen residues — and discard the other seventy-nine. Φ computed on a fragment of a
+core is not Φ of that core. R1 was written for *several distinct regions in one protein*,
+not for one region in several pieces, and must not be stretched to cover this.
+
+**The rule.** A discontinuous ordered core is **one region**, recorded as an explicit
+segment list, with:
+
+- **C1.** `residues` written as comma-separated segments (e.g. `3-55,86-153`), and
+  `region_contiguous: false`. Every segment must satisfy E5 separately — the frame is
+  verified against each block of the modelled sequence, character for character.
+- **C2.** **Φ is computed over all modelled residues of the target entity**, gaps excluded
+  because they are not there. The gap is not interpolated, and residues not in the deposit
+  are never invented.
+- **C3.** The row is **`benchmark_eligible: false`, reason `NON_CONTIGUOUS`** — recorded as
+  a ground *separate from m/M*, because it is a different defect. The §3.1 statistic tiles a
+  contiguous span and has no defined behaviour on a segment list. This costs nothing: both
+  candidates fail *m*/*M* anyway, as all seven incumbent Φ rows do.
+- **C4.** If the final Φ set mixes contiguous and discontinuous rows, **the mix is reported
+  and the association is repeated within the contiguous subset**, exactly as §10b already
+  requires for a route (a)/(b) mix.
+
+**Why admit rather than reject.** Rejecting gapped cores would exclude a structural class
+for a reason unrelated to the hypothesis, and it would not be neutral: **the two gapped
+candidates are the two largest cores in the pool** (SOD1 121 modelled residues, lysozyme 92,
+against a median of ~35 for the eleven incumbents). A contiguity filter is therefore a
+size filter wearing a disguise, and if buried polarity varies with core size it would bias
+the set in an unknown direction. That argument is about geometry, not about Φ.
+
+> **BLINDNESS, AND HOW TO CHECK IT.** Φ has **not** been computed for SOD1, lysozyme or
+> β2-microglobulin, and no *v* has been computed for any of them. This rule is committed
+> **before** the first Φ call, in the same commit as the screen that admits the rows and
+> ahead of any result. The commit graph is the evidence, as for §7a, §10a and §10b. What
+> follows is the honest statement of exposure: **this rule admits rows, so it makes S5's
+> three-row threshold easier to reach, and I wrote it while knowing that.** It is recorded
+> here so the author can reverse it on exactly that ground.
+
+---
+
 ---
 
 ## 11. What would falsify the project's thesis

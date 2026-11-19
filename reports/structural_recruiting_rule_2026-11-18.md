@@ -129,3 +129,46 @@ A larger *n* makes the association more credible; it does not make it a test of 
 **And the registered near-tautology still stands.** A predictor built on hydrophobicity
 scoring polar cores lower is partly a restatement of how it works. The claim worth making
 is not that the tools dislike polar cores, but that nature does not.
+
+---
+
+# Amendment: §10c, discontinuous ordered cores — 19 Nov 2026
+
+**Registered before any Φ was computed.** Full text in `PREREGISTRATION.md` §10c; this is
+the summary and the reason.
+
+**What broke.** E2 says a route (a) row's region *is* the modelled core. It assumed, without
+saying so, that the core is **one contiguous span**. All eleven structure rows then in the
+dataset are contiguous, so the assumption had never been tested. Reading the deposited
+coordinates of the three candidates on 19 Nov broke it: **7VZF models 3-55 and 86-153**
+(30-residue gap) and **8QUT models 22-34 and 50-128** (15-residue gap). Both papers describe
+the gap themselves. It is a feature of the fold, not a modelling failure.
+
+**Why R1 could not be stretched to cover it.** R1 picks among *several distinct regions in
+one protein*. Applied to segments it would have taken SOD1 **3-55** and lysozyme **22-34** —
+thirteen residues — discarding seventy-nine. **Φ computed on a fragment of a core is not Φ
+of that core.**
+
+**The rule.** One region, recorded as a segment list; `region_contiguous: false`; E5 verified
+per segment; **Φ computed over all modelled residues, gaps excluded because they are not
+there and never interpolated**; the row marked `benchmark_eligible: false` with reason
+`NON_CONTIGUOUS`, **a ground separate from *m*/*M*** because the §3.1 statistic tiles a
+contiguous span and has no defined behaviour on a segment list; and if the final set mixes
+contiguous with discontinuous rows, the mix is reported and the association repeated within
+the contiguous subset.
+
+**Why admit rather than reject.** A contiguity filter is **a size filter wearing a
+disguise**: the two gapped candidates are the two largest cores in the pool — SOD1 121
+modelled residues, lysozyme 92, against a median of ~35 for the eleven incumbents. If buried
+polarity varies with core size, excluding them biases the set in an unknown direction. The
+argument is about geometry and says nothing about Φ.
+
+> **The exposure, stated rather than buried.** This rule admits rows, so it makes S5's
+> three-row threshold easier to reach, and it was written by the same agent that wanted the
+> rows, on the day it wanted them. Φ had not been computed for SOD1, lysozyme or β2m, and no
+> *v* had been computed for any of them; the rule is committed ahead of the first Φ call and
+> the commit graph is the evidence. **The author should review it on exactly that ground.**
+
+**One thing §10c does not do.** It does not relax S2. The pool is not exhausted — four
+candidates pending, five unscreened — so the final *n* is unknown and **the Φ–*v* test must
+not be recomputed now**, three rows or not.

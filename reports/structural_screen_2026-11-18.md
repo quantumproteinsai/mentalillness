@@ -238,3 +238,176 @@ truncation variant central to the β2m amyloid literature — starts six residue
 
 Apolipoprotein A-I, medin and IAPP are all live but each carries a caveat that must be
 written into the row rather than discovered later.
+
+---
+
+# Third round, 19 Nov 2026 — the three decisive candidates, each read in full
+
+All three source papers were obtained and read: two open access via Europe PMC, one
+(β2-microglobulin) supplied by the author as the publisher PDF, along with the lysozyme
+publisher PDF. **For every one, the modelled residue range was read from the deposited
+coordinates themselves** — the `_atom_site` records of the mmCIF downloaded from RCSB —
+and not from the RCSB alignment summary, which reports the *construct's* span.
+
+That step was not bookkeeping. It overturned an assumption in §10b that had never been
+tested, and it caught one error of my own.
+
+## What reading the coordinates changed
+
+**Two of the three cores are discontinuous.** 7VZF models **3-55 and 86-153**, a 30-residue
+gap; 8QUT models **22-34 and 50-128**, a 15-residue gap. **All eleven structure rows already
+in the dataset are contiguous.** §10b E2 — "for a route (a) row the region *is* the modelled
+core" — had silently assumed one span. The gap is registered and closed as **§10c**, written
+and committed **before any Φ was computed**, and the rule's own exposure is stated there:
+it admits rows, and so makes §10b's three-row stopping threshold easier to reach.
+
+**My own SOD1 reference sequence was wrong.** The sequence I first used to verify the frame
+was typed from memory and was 124 residues, not 154; the match failed, and the real P00441
+was fetched from the UniProt REST API, after which both blocks matched exactly. **E5 is the
+rule that caught it.** A frame "verified" against a remembered sequence is not verified.
+
+---
+
+## Verdicts
+
+| deposit | protein | verdict | what decided it |
+|---|---|---|---|
+| **6GK3** | β2-microglobulin | **ADMITTED** | wild type, settled twice in the authors' own words |
+| **7VZF** | SOD1 | **ADMITTED under §10c** | WT, apo, pH 7.4; discontinuous core |
+| **8QUT** | human lysozyme | **PENDING** | 5 copies of an *Unidentified peptide* in the core |
+
+### 6GK3 — β2-microglobulin, ADMITTED
+
+**The WT-versus-ΔN6 question is settled, and the answer is wild type.** Neither the
+coordinates nor the deposited SEQRES can decide it — both begin at residue 22, far past the
+N-terminus where ΔN6 differs. The paper decides it twice:
+
+> "low pH was used here to generate fibrils from the **wild-type protein** since this
+> sequence does not aggregate at neutral pH"
+
+and the Discussion contrasts the structure "presented here for the wild-type protein"
+against D76N and ΔN6, which "may adopt fibrillar structures different from those presented
+here". Core **22-85**, contiguous, verified character for character against mature
+numbering. Rise 4.83 Å — cross-β. No aggregation predictor anywhere in the paper.
+
+**Three caveats are written into the row rather than left to be found:** fibrils grown at
+**pH 2.5** (the authors explain why — WT β2m will not aggregate at neutral pH); **3.9 Å**,
+the lowest resolution in the Φ set, so side chains are modelled under restraints rather than
+observed; and the sample is **polymorphic**, at least six morphologies, the solved form
+being 56% of fibrils. A single NMR resonance per residue shows all polymorphs share this
+subunit fold, which is why the heterogeneity is a caveat and not a rejection.
+
+One further wrinkle recorded for Φ: the authors note that **E44 and D76 are buried in the
+core and "will be protonated at the pH at which these fibrils were grown"**. Φ counts them
+as charged by residue type. The metric is applied uniformly and is not adjusted per row —
+but the fact is on the record before Φ runs.
+
+### 7VZF — SOD1, ADMITTED under §10c
+
+The cleanest *conditions* in the entire pool: **pH 7.4, 37 °C, no heat and no acid**, with
+the protein in the apo, reduced state the authors argue is the physiologically plausible
+precursor. Recombinant wild-type full-length human SOD1 (1-153); no sequence-difference
+records in the deposit; the mutants the group has *not* done are listed as future work.
+Rise 4.82 Å — cross-β. No hit for Aggrescan, TANGO, Waltz or Zyggregator in the full text.
+
+**Adjacent evidence that is not the discovery path, recorded so it is not mistaken for it:**
+the paper compares its core with two earlier models from **protease digestion and mass
+spectrometry** — a "three key region model" and an "N-terminal core model". Those are
+experimental, cited as after-the-fact agreement, and were not used to build or restrain the
+model.
+
+**The one substantive weakness, recorded before Φ was computed:** the paper's own statistics
+table gives **MolProbity 2.86, clashscore 37.29, Ramachandran favoured 73.50%**. Φ is
+SASA-based and therefore depends on geometry, so this is the least trustworthy Φ in the set
+on geometric grounds — separately from its resolution, which is fine at 2.95 Å.
+
+### 8QUT — human lysozyme, PENDING on a specific and answerable question
+
+Everything else clears. Wild type (commercial Sigma L1667, no mutation). Rise 4.78 Å.
+Deposited as the central 5 layers of a 9-layer refinement, so E4 is satisfied twice over.
+Frame verified: **mature numbering**, both blocks matching character for character. And the
+discovery path is unusually strong — ModelAngelo fit the human map **without being given a
+sequence**, and the sequence it read back returned human lysozyme as the top BLASTp hit.
+
+**What blocks it is the second entity.** The deposit contains, alongside five lysozyme
+chains, **five copies of a polymer whose `pdbx_description` is literally `Unidentified
+peptide`** — ten UNK residues each. The paper describes it as "an additional 12 residues
+whose sequence could not be identified" and "a 7-residue β-strand of unknown sequence
+composition". **The deposit models 10 per chain; the text says 12.** That discrepancy is
+small, but the entity is not: it is 1:1 with lysozyme in the deposited asymmetric unit, not
+a trace.
+
+**And the Methods supply a candidate identity that makes this worse, not better:**
+
+> "The batch L1667 from Sigma was found to contain a minute amount of rice protein
+> contaminant, i.e., trypsin inhibitor, a residue of protein expression. Trypsin inhibitor
+> was also found to form amyloid fibrils, its structure was solved by cryoEM and will be
+> presented in a separate study."
+
+So the unidentified peptide in the lysozyme fibril core may be a **different protein**. If
+it is, this is a heterotypic interface, and Φ computed on it would describe something other
+than a homomeric lysozyme core. The dataset already carries that caveat on **ANXA11
+(9FOR)** and would have carried it on **medin (9U02)** — but in both of those the partner is
+*known*. Here it is not. Φ cannot classify a residue whose identity is unknown, and ten
+unknown residues per chain still occlude solvent-accessible surface on the residues that
+*can* be classified.
+
+**What would settle it:** the Supplementary Material (Supplementary Fig. 4 and Table S5),
+which was not supplied and has not been read, and the separate trypsin-inhibitor study the
+authors promise. Pending, not rejected.
+
+---
+
+## A numbering defect in the lysozyme paper, found by arithmetic
+
+The paper describes the native fold's four disulfides in a single sentence:
+
+> "two bonds in sub-domain A (Cys24-Cys146, Cys48-Cys134), one in sub-domain B
+> (Cys65-Cys81) and one inter-domain disulfide bond (Cys77-Cys95)"
+
+**Mature human lysozyme is 130 residues, so Cys146 and Cys134 cannot exist in it.** Computed
+against P61626: the cysteines are at **6, 30, 65, 77, 81, 95, 116, 128** in mature numbering
+and at **24, 48, 83, 95, 99, 113, 134, 146** in UniProt precursor numbering.
+
+**The sentence mixes two frames.** `Cys24-Cys146` and `Cys48-Cys134` are *precursor*
+numbering (mature C6-C128 and C30-C116); `Cys65-Cys81` and `Cys77-Cys95` are *mature*
+numbering. Four numbers, two frames, one sentence — and **Cys95 is a cysteine in both
+frames**, which is exactly the kind of coincidence that lets such a slip survive review.
+
+The rest of the paper is in mature numbering and is consistent with the deposit: sub-domain
+A 1-40 and 86-130, sub-domain B 41-85, the β-strand list, and the core range 22-34 / 50-128
+all check out. **The defect is confined to that sentence and does not affect the row** — but
+it is the fourth frame collision this project has found in published work, and the second in
+a 2024-or-later paper.
+
+---
+
+## Where the recruitment now stands
+
+**2 admitted, 1 pending, 5 rejected**, out of fourteen proteins screened.
+
+| | |
+|---|---|
+| admitted | Orb2 (6VPS), β2-microglobulin (6GK3), SOD1 (7VZF) — **3 rows** |
+| pending a PDF or a fact | human lysozyme (8QUT), apolipoprotein A-I (9PVY), medin (9U02), IAPP (6Y1A) |
+| rejected | TDP-43, PMEL17, Aβ Uppsala, gelsolin, ASC/PYCARD |
+| unscreened | HET-s (218-289), Sup35 NM, αA-crystallin R116C, β-endorphin, Pmel17 CAF |
+
+`data/regions.json` is now **27 rows across 17 proteins**.
+
+### The thing to be careful about next
+
+**§10b S5 requires three new rows before the Φ–*v* test may be recomputed, and three have
+now been admitted.** That is exactly the moment the rule was written to protect against.
+Two points follow, and both are constraints rather than conclusions:
+
+1. **The lysozyme decision must not be made under that pressure.** It is pending on the
+   identity of a peptide, and that question is indifferent to how many rows the analysis
+   needs. If it resolves against admission, *n* goes from 7 to 10 and not to 11.
+2. **§10b S2 still binds: the test is recomputed ONCE, at the final *n*.** The pool is not
+   exhausted — four candidates are pending and five unscreened — so **the final *n* is not
+   yet known, and Φ–*v* must not be run now.** Reaching the threshold permits the
+   recomputation eventually; it does not trigger it today.
+
+What *can* proceed, and is next in order, is **computing Φ for the three admitted rows** and
+committing it — step 2 of §10b's ordering, with the predictor and the join still after it.

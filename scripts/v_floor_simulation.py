@@ -29,7 +29,7 @@ GEOM = [
     ('hnRNPA1 251-295', 53, 7), ('FUS 39-95', 87, 8),
     ('TRIOBP-1 1-59', 108, 9), ('glycinin 164-190', 43, 3),
     ('ANXA11 39-74', 84, 5), ('alpha-synuclein 71-82', 23, 1),
-    ('TRIOBP-1 324-348', 108, 4), ('DISC1 384-415', 142, 5),
+    ('TRIOBP-1 324-348', 108, 4), ('DISC1 384-414', 142, 5),
     ('DISC1 748-769', 142, 3), ('tau 306-311', 436, 1),
 ]
 
@@ -77,7 +77,7 @@ def main(draws=200000):
     print('\nAND THE REST OF THE TABLE IS WORSE THAN "CONSERVATIVE", WHICH IS WHAT A FIRST')
     print('READING OF IT SUGGESTS. The rows that CAN fire do not fire at 0.05 either, and')
     print('they miss in BOTH directions: FUS 39-95 reads 0.091 and TRIOBP-1 1-59 reads')
-    print('0.084 -- nearly TWICE the nominal level -- while DISC1 384-415 reads 0.035 and')
+    print('0.084 -- nearly TWICE the nominal level -- while DISC1 384-414 reads 0.035 and')
     print('TRIOBP-1 324-348 reads 0.037. So a criterion with a nominal 5% false-positive')
     print('rate actually runs anywhere from 0% to 9% across this dataset, decided by chain')
     print('length and region length alone. Rows are NOT being judged on a common scale.')

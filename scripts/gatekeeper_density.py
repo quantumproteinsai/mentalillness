@@ -21,7 +21,7 @@ the project's own data rather than against the literature.
     was DISC1 716-761, whose regions.json entry carries, in capitals,
     "THIS IS A DOCKING RESTRAINT, NOT A MEASUREMENT", and whose found_by reads
     "RADAR sequence-repeat search" -- found BY a sequence search, which is what
-    the found_by column exists to catch. Meanwhile DISC1 384-415, the row
+    the found_by column exists to catch. Meanwhile DISC1 384-414, the row
     STATE.md's N=2 spine actually names ("experimental; no aggregation
     predictor involved"), was not in the table and carries no sequence in
     regions.json at all. So the headline n=2 was one unverified row plus one
@@ -103,9 +103,11 @@ INCLUDE = {
     ('TRIOBP-1', '333-340'): (
         'the test', 'the narrowed 8-mer, found by experimental truncation. '
         'Sits INSIDE 324-348 and is itself 0% gatekeeper.'),
-    ('DISC1', '384-415'): (
+    ('DISC1', '384-414'): (
         'region', 'found_by: experimental, no aggregation predictor involved. '
-        'Sequence retrieved from UniProt Q9NRI5 (854 aa, SV=3) on 15 Nov 2026, '
+        'BOUNDARY CORRECTED 19 Nov 2026 from 384-414 to 384-414 by the '
+        'corresponding author, from sequencing of the deletion vectors. '
+        'Sequence re-sliced from UniProt Q9NRI5 (854 aa, SV=3), '
         'not transcribed by hand. This is the row STATE.md\'s N=2 argument '
         'actually rests on, and it is NOT gatekeeper-rich -- see the banner.'),
 }
@@ -126,7 +128,7 @@ THE SEPARATION DOES NOT GENERALISE. Restored to an honest n = 2 on
 15 Nov 2026, the two experimentally mapped psychiatric regions disagree:
 
     TRIOBP-1 324-348    48.0%   gatekeeper-rich, as claimed
-    DISC1    384-415    18.8%   +2.1 points above the WORST zipper (16.7%)
+    DISC1    384-414    19.4%   +2.7 points above the WORST zipper (16.7%)
 
 The reported "48.0% to 50.0% (n = 2)" was TRIOBP-1 plus DISC1 716-761, and
 716-761 is the docking-restraint row found by a RADAR sequence search --

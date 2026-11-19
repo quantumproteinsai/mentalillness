@@ -1317,6 +1317,32 @@ separate cleanly:
   as a typo. What is added here is that it could never have mattered: the two readings
   are the same measurement. **Rule 2 again, arriving late** — the margin was one residue
   and the resolution of the statistic is six.
+
+  > **THE TEXTUAL CLOSURE WAS WRONG, AND THE NUMERICAL ONE HELD. [19 Nov 2026]**
+  > The corresponding author sequenced the deletion vectors and reports the deleted
+  > region as **384-414** (1-383 joined to 415-854). So the preprint's Δ384-414 was
+  > **not** a typo — the thesis plasmid names, the figure labels and "these 32 amino
+  > acids" are. `data/regions.json` now reads 384-414.
+  >
+  > **This is the amendment working as intended, and it is worth being precise about
+  > why.** §12.1a was written *before* the question was put to the author and committed
+  > the project to the claim that no number could move. Re-running on the corrected row
+  > confirms it to every digit: *v* = 0.416408 and the confirmatory *n* = 2 Stouffer
+  > *Z* = −0.7896, one-sided *p* = 0.7851, equal to the freeze. **Had the prediction
+  > been made after the answer arrived it would be worth nothing**; the order is in the
+  > commit graph.
+  >
+  > **One number does move, and it is not covered by the invariance:** gatekeeper
+  > density, whose denominator is the region length — 6 of 31 = **19.4%**, formerly 6 of
+  > 32 = 18.8%. Ala415 is not a gatekeeper, so the count is unchanged. This moves the
+  > region *further* from the worst crystallised zipper (16.7%), from +2.1 to +2.7
+  > points, and so does not rescue the retired H3 headline.
+  >
+  > **What the error was.** Three internal checks passed and all three were checks on
+  > *transcriptions* of the construct rather than on the construct. Agreement among
+  > restatements that all descend from one document is not independent corroboration.
+  > The row's own `source_version_note` had flagged this exact question as unsettled,
+  > which is why it was asked; the flag was the thing that worked.
 - **The citability question stands, unchanged.** The row's source is a preprint plus a
   thesis; `source_version` governs over the boolean flag, and DISC1 384-415 still cannot
   be cited to a version of record. The 2024 paper is behind an Elsevier paywall the

@@ -8,10 +8,18 @@ aggregation-critical regions, in schizophrenia-associated scaffold proteins.
 > Mercier des Rochettes, B. (2026). *Experimentally mapped aggregation-critical
 > protein regions, with circularity, prediction-concordance and
 > training-set-contamination labels*, v1.4.0 [Data set]. Zenodo.
-> <https://doi.org/10.5281/zenodo.24342313>
+> <https://doi.org/10.5281/zenodo.24290697>
 
-The badge is the **concept DOI** (`10.5281/zenodo.24290697`) and always resolves
-to the latest version; cite the **version DOI** above for a specific analysis.
+**Cite the concept DOI `10.5281/zenodo.24290697`, not the v1.4.0 version DOI.**
+It resolves correctly to v1.4.0 (`zenodo.org/records/24342313`, verified
+19 Nov 2026). The version DOI `10.5281/zenodo.24342313` **does not resolve**: the
+record is published at Zenodo, but the DOI was never registered with DataCite —
+`doi.org` returns 404 and the handle API returns `responseCode 100`, handle not
+found, while `24306057` (v1.1.0) and the concept DOI both return 200. This was
+found on 19 Nov 2026 because **an external correspondent could not open a DOI we
+had sent him**, and it is the second instance of the rule already in `STATE.md`:
+*a form displaying a DOI is not a registered DOI.* The first instance was caught
+before anything was published; this one was not, and it reached a third party.
 
 **The deposited version v1.4.0 holds 24 regions across 14 proteins**, every row
 read from its source paper. CC BY 4.0. The analysis built on it is **not**

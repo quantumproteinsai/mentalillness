@@ -39,9 +39,17 @@ personal communication rather than to a printed number.
 One detail that may be worth a line in any future paper: under the rank statistic I use,
 the two readings are indistinguishable. The statistic tiles the 854-residue chain in
 non-overlapping 6-residue windows, so the windows lying wholly inside the region are the
-same five under either boundary — residue 415 falls in no scored window. Every number I
-report is identical either way. I had registered that invariance before writing to you,
-precisely so the answer could not be used selectively.
+same five under either boundary — residue 415 falls in no scored window. Every number that
+statistic produces is identical either way, and I wrote that invariance into my
+pre-registration on 18 November, after writing to you but before your reply arrived, so it
+could not be shaped to fit the answer. One number outside that statistic does move: the
+gatekeeper density I compute for the region goes from 18.8% to 19.4%, because its
+denominator is the region length and Ala415 is not a gatekeeper.
+
+A caveat on what you will find if you open the dataset today. **The deposited v1.4.0
+predates your correction and still records DISC1 384-415.** The corrected boundary is in my
+working file and will go into the next deposited version; the extract I send you will carry
+the corrected values, so please treat that as authoritative over the deposit for this row.
 
 **2. TRIOBP-1 324-328 → 324-348.** Thank you for confirming the figure legend slip. I have
 recorded your confirmation against that entry, which I keep as a flagged duplicate rather

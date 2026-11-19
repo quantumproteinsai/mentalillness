@@ -1325,8 +1325,16 @@ separate cleanly:
   > acids" are. `data/regions.json` now reads 384-414.
   >
   > **This is the amendment working as intended, and it is worth being precise about
-  > why.** §12.1a was written *before* the question was put to the author and committed
-  > the project to the claim that no number could move. Re-running on the corrected row
+  > why — including about its own ordering, which this paragraph first stated wrongly.**
+  > §12.1a was committed on **18 Nov, 21:34**: the day *after* the question went to the
+  > author (17 Nov) and the day *before* the reply arrived (19 Nov). It was **not**
+  > written before the question was put, as first claimed here and as the commit message
+  > of `7ce6e71` still claims. **The ordering that matters survives** — the project
+  > committed to *no number can move* before learning which way the answer went — but it
+  > is a weaker claim than the one first written. In a project whose entire warrant is
+  > the order of its commits, an overstated ordering is the worst available error, and
+  > this one was caught only because the author proofread the outgoing email against the
+  > repository. Re-running on the corrected row
   > confirms it to every digit: *v* = 0.416408 and the confirmatory *n* = 2 Stouffer
   > *Z* = −0.7896, one-sided *p* = 0.7851, equal to the freeze. **Had the prediction
   > been made after the answer arrived it would be worth nothing**; the order is in the

@@ -343,3 +343,55 @@ NPAS3 (NP_001158221.1)"*, which happens to match canonical Q8IXF0 at 933 aa.
 18 Nov: TFG (circular), TAF15, CHCHD10, CHCHD2 (admitted, then found power-ineligible),
 TPPP, ApoA-II, sunflower 11S ×2 (all fail *m*/*M*), Ninjurin-1 (derived 30-mer), NPAS3
 (above). **The constraint is real and it is biting.**
+
+---
+
+## The three blocked PDFs are closed by arithmetic. None needs to be requested. — 19 Nov 2026
+
+The §3.1b pause note said these three *"should be screened for m/M before anyone is asked
+for them again — on the deposited ranges, TPPP and sunflower 11S look likely to fail it."*
+Screened today, from UniProt chain lengths and the deposited coordinates. **No publisher
+PDF was needed for any of the three, and none should now be requested for the benchmark.**
+
+| candidate | chain | deposited core | *M* | *m* | *m*/*M* | verdict |
+|---|---|---|---|---|---|---|
+| **TPPP** O94811 (9J4D) | 219 | 131 | 36 | 21 | **0.583** | **REJECT** — 12× the bar |
+| **ApoA-II** P09813 (8OQ4) | 102 | 78 | 17 | 13 | **0.765** | **REJECT** — 15× the bar |
+| **sunflower 11S** A0A9K3J848 (26SG) | 512 | 34, **two segments** | 85 | 4 | **0.0471** | **REJECT, but not on m/M** |
+
+**TPPP and ApoA-II fail exactly as predicted**, and the prediction was made from deposited
+ranges alone on 18 Nov. Two author favours saved.
+
+**Sunflower 11S is the interesting one, and it fails for a different reason than anyone
+expected.** It is the **first candidate in weeks to clear the *m*/*M* bar** — 0.0471
+against 0.05, a 512-residue chain with a 34-residue core, exactly the geometry the pool is
+short of. And it is **discontinuous**: the deposit models **94-115 and 333-344**, in all
+three chains, a 217-residue gap. Under §10c C3 the §3.1 statistic has no defined behaviour
+on a segment list, so **no *v* exists** and the row is benchmark-ineligible on contiguity.
+
+> **That is the second time in two days that §10c C3, not *m*/*M*, has been the binding
+> constraint** — SOD1 was the first. The two filters were registered as independent and
+> are turning out to bite the same candidates for unrelated reasons. **A gapped core is not
+> rare**: of the structural candidates whose coordinates have now been read, three of the
+> last five are discontinuous (SOD1, lysozyme 8QUT, sunflower 11S).
+
+**Sunflower 11S is NOT rejected outright — it is reclassified.** Non-contiguity bars it
+from the benchmark and says nothing about Φ, which is computed over all modelled residues
+and does not care about gaps (§10c C2). It would be:
+
+- the **11th Φ row**, and
+- a **second plant seed-storage protein** beside glycinin G4, which is the only non-animal
+  row in the Φ set and currently *n* = 1 for that class.
+
+**So the PDF is still worth having — for Φ, not for the benchmark**, and it should be
+re-ranked in `reports/PDFs_to_obtain.md` on that basis rather than dropped. It must still
+pass §10b E1–E6 and §10c C1 on a full read before admission, and its CPAD status is
+unchecked.
+
+### What this leaves
+
+**The structural pool has now produced zero benchmark-eligible rows out of every candidate
+examined.** That is no longer a run of bad luck; §10b selects for long ordered cores, and
+the one candidate that broke the *m*/*M* pattern broke the contiguity one instead. The
+route (b) search registered on 18 Nov is the only remaining way to move the confirmatory
+cell, and it is now the next action.

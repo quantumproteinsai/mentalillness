@@ -159,3 +159,38 @@ The 18 profiles are archived under `tango_profiles/`.
 - **β2m contributes no *v* to any statistic** despite having one, being
   confirmatory-ineligible and power-ineligible.
 - **Orb2's polyQ interpretation is unchecked against prior art.** See §1.
+
+---
+
+## Appendix, 19 Nov 2026 — an internal contradiction found by preparing an extract for the source authors
+
+While assembling `correspondence/2026-11-19_extract_for_bradshaw.md`, the TRIOBP-1 324-348
+row was found to contradict itself. `note_on_the_source_field` read:
+
+> "the document actually opened is Zaharija 2022. **THIS ROW IS SUPPORTED BY ZAHARIJA 2022,
+> NOT BY BRADSHAW 2017, which has never been read.**"
+
+while `verified_against`, `source_version_note` and `sequence_provenance` in the same row
+all record that the Bradshaw 2017 publisher PDF **was** supplied by the author and read in
+full on 16 Nov 2026. **Three fields said read; one said never read** — and the stale one is
+the field a reader consults when deciding what to cite. Corrected.
+
+**Two gaps this exposes, neither yet closed:**
+
+1. **Nothing in the pipeline compares a row's fields against each other.**
+   `validate_regions.py` checks schema, vocabulary, sequence-vs-range arithmetic and
+   duplicates — all *within* a field or *across* rows, never *between* fields of one row.
+   A row can therefore assert a source is unread beside a field asserting it was read, and
+   validate cleanly. **A check for that specific contradiction is worth adding**: any field
+   containing "never been read" or "has not been read" where `verified_against_publisher_pdf`
+   is true, or where `source_version` is `version_of_record`.
+
+2. **What actually caught it was the prospect of a subject-matter expert reading the row.**
+   Not a script, and not a re-read — the row had been read many times. **That is an
+   argument for sending extracts to source authors as a matter of course**, early, as a
+   routine integrity check rather than a courtesy. The author offered; the offer turned out
+   to be worth more than the confirmation it was made about.
+
+The same row's `frame` field was also expanded from the bare string `"652-residue"` — a
+length with no sequence record attached — to name NP_008963.3 / Q9H2D6-7, the +59 offset
+and the Figure 12B verification. **A frame is not specified by a chain length.**

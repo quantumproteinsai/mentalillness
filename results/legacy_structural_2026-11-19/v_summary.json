@@ -1,0 +1,140 @@
+{
+ "SOD1 (superoxide dismutase [Cu-Zn]) 3-55,86-153": {
+  "v": null,
+  "refused": true,
+  "reason": "NON-CONTIGUOUS (PREREGISTRATION 10c C3). The region is two segments with a 30-residue disordered gap at 56-85. The 3.1 statistic tiles a contiguous span and has no defined behaviour on a segment list, so no v exists for this row. NOT refused on m/M, which is a different defect -- for reference only, m/M would also fail at ~0.80.",
+  "stratum": null
+ },
+ "Orb2 (Drosophila melanogaster) 176-206": {
+  "accession": "Q9VSR3",
+  "scored_frame": "Q9VSR3 canonical, 704 aa, which IS the Orb2B frame",
+  "reporting_point": "pH 7.0 / 310 K",
+  "chain_length": 704,
+  "v": 0.9716716354555832,
+  "P": 0.41025641025641024,
+  "M": 117,
+  "m": 4,
+  "m_over_M": 0.03418803418803419,
+  "grid": {
+   "ph5.0_T298": {
+    "v": 0.9790735000400584,
+    "P": 0.3803418803418803,
+    "m": 4
+   },
+   "ph5.0_T303": {
+    "v": 0.9750501255489118,
+    "P": 0.3974358974358974,
+    "m": 4
+   },
+   "ph5.0_T310": {
+    "v": 0.9704727155776894,
+    "P": 0.41452991452991456,
+    "m": 4
+   },
+   "ph7.0_T298": {
+    "v": 0.9790735000400584,
+    "P": 0.3803418803418803,
+    "m": 4
+   },
+   "ph7.0_T303": {
+    "v": 0.9750501255489118,
+    "P": 0.3974358974358974,
+    "m": 4
+   },
+   "ph7.0_T310": {
+    "v": 0.9716716354555832,
+    "P": 0.41025641025641024,
+    "m": 4
+   },
+   "ph7.4_T298": {
+    "v": 0.9790735000400584,
+    "P": 0.3803418803418803,
+    "m": 4
+   },
+   "ph7.4_T303": {
+    "v": 0.9750501255489118,
+    "P": 0.3974358974358974,
+    "m": 4
+   },
+   "ph7.4_T310": {
+    "v": 0.9704727155776894,
+    "P": 0.41452991452991456,
+    "m": 4
+   }
+  },
+  "grid_v_min": 0.9704727155776894,
+  "grid_v_max": 0.9790735000400584,
+  "call_stable_across_grid": true,
+  "floor_v": 0.016984751913109997,
+  "call_forced_by_information_limit": false,
+  "refused": false,
+  "call": "DISCORDANT",
+  "stratum": "DISCORDANT"
+ },
+ "beta-2-microglobulin 22-85": {
+  "accession": "B2M_mature",
+  "scored_frame": "P61769 MINUS the 20-residue signal peptide = mature 99 aa, I1..M99",
+  "reporting_point": "pH 7.0 / 310 K",
+  "chain_length": 99,
+  "v": 0.27202384332787144,
+  "P": 0.96875,
+  "M": 16,
+  "m": 10,
+  "m_over_M": 0.625,
+  "grid": {
+   "ph5.0_T298": {
+    "v": 0.27202384332787144,
+    "P": 0.96875,
+    "m": 10
+   },
+   "ph5.0_T303": {
+    "v": 0.27202384332787144,
+    "P": 0.96875,
+    "m": 10
+   },
+   "ph5.0_T310": {
+    "v": 0.27202384332787144,
+    "P": 0.96875,
+    "m": 10
+   },
+   "ph7.0_T298": {
+    "v": 0.27202384332787144,
+    "P": 0.96875,
+    "m": 10
+   },
+   "ph7.0_T303": {
+    "v": 0.27202384332787144,
+    "P": 0.96875,
+    "m": 10
+   },
+   "ph7.0_T310": {
+    "v": 0.27202384332787144,
+    "P": 0.96875,
+    "m": 10
+   },
+   "ph7.4_T298": {
+    "v": 0.27202384332787144,
+    "P": 0.96875,
+    "m": 10
+   },
+   "ph7.4_T303": {
+    "v": 0.27202384332787144,
+    "P": 0.96875,
+    "m": 10
+   },
+   "ph7.4_T310": {
+    "v": 0.27202384332787144,
+    "P": 0.96875,
+    "m": 10
+   }
+  },
+  "grid_v_min": 0.27202384332787144,
+  "grid_v_max": 0.27202384332787144,
+  "call_stable_across_grid": true,
+  "floor_v": 0.27202384332787144,
+  "call_forced_by_information_limit": true,
+  "refused": false,
+  "call": "DISCORDANT",
+  "stratum": "DISCORDANT"
+ }
+}

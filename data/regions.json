@@ -1279,10 +1279,26 @@
     "deposit_numbering": "DEPOSIT FRAME IS NOT THE UNIPROT FRAME, OFFSET -153. 6VPS numbers its modelled residues 23-53; the UniProt span appears only in _entity.pdbx_fragment as 'UNP residues 176-206'. The 31 modelled residues read QLHQQQHQQQHQQHQQHQQQQQLHQHQQQLS in all nine chains, matching Orb2B 176-206 character for character, so the two frames describe the same region. FOUND 19 Nov 2026 by asking for 176-206 in the coordinates and getting NO ATOMS; the Phi script errored rather than scoring whatever lay at those indices. The 'modelled' field above is in the UniProt frame, which is the dataset's frame; data/phi_spec.json carries the deposit frame, which is what the coordinates need."
    },
    "note": "ADMITTED 18 Nov 2026 under PREREGISTRATION 10b, the structural recruitment rule registered BEFORE the first search query. Passes E1 (route a), E2 (region is the modelled core, 100% coverage), E3 (aggregated state from endogenous tissue), E4 (rise and twist deposited), E5 (frame verified against UniProt) and E6 (no predictor in the discovery path). FIRST of the three rows PREREGISTRATION 10b S5 requires before the Phi-v test may be recomputed; at fewer than three the n = 7 result stands unchanged. A FLAG RAISED BEFORE THE PDF WAS OPENED AND KEPT HERE: this paper describes its core as hydrophilic in explicit contrast to pathogenic amyloids, so it is a row the Phi hypothesis predicts well, read in after the hypothesis existed. It was admitted on E1-E6 alone, and its Phi has NOT been computed.",
-   "stratum": "PENDING",
-   "stratum_basis": "NO PREDICTOR HAS BEEN RUN ON THIS CHAIN. Under PREREGISTRATION 7 the stratum comes from the legacy arm and must be committed BEFORE the modern arm is run. Because nothing has run yet, this is only the second row in the project whose arm ordering can be intact from the start.",
+   "stratum": "DISCORDANT",
+   "stratum_basis": "ASSIGNED 19 Nov 2026 FROM THIS PROJECT'S OWN LEGACY ARM, AND THE ORDERING IS INTACT FROM THE START -- the first row in the project for which that is true together with the other two admitted on 18-19 Nov. TANGO (sha256 d0e381c2..., the pinned digest, re-verified at run time), 9-point pH/temperature grid, reporting point pH 7.0 / 310 K, section 3.1 statistic imported from scripts/score_rows.py. L=704 (Q9VSR3 canonical = the Orb2B frame), M=117, m=4, P=0.4103, v=0.9717; the grid spans v = 0.9705..0.9791 and the call is stable at every one of the nine points. DISCORDANT iff v >= 0.05, the bar fixed in section 4 before any number in this project existed. || THE CALL IS EARNED, NOT FORCED, AND THAT WAS CHECKED: the smallest v attainable at M=117, m=4 is 0.0170, so v < 0.05 was reachable and was not reached. || WHAT TANGO ACTUALLY DID, BECAUSE v ALONE UNDERSTATES IT: the best 6-residue window inside the experimentally determined, endogenous, cryo-EM-resolved amyloid core scores EXACTLY 0.0000 and ranks 87th of 117 windows in the chain. TANGO's chain maximum (78.70) sits at residue 493, far outside the core. This is not a near miss. || DO NOT PRESENT THIS AS NOVEL WITHOUT A PRIOR-ART CHECK. The core is glutamine/histidine-rich (QLHQQQHQQQHQQHQQHQQQQQLHQHQQQLS) and TANGO carries no polyglutamine term; a zero on a polyQ tract may well be a documented limitation of the tool rather than a finding of ours. The measurement stands; the interpretation needs the literature first.",
    "power_eligible": null,
-   "power_limit": "NOT YET COMPUTED BY scripts/apply_power_eligible.py, which needs a predictor profile for the chain length. COMPUTED BY HAND AFTER ADMISSION AND RECORDED HERE: L = 704, W = 6, M = 117, m = 4, m/M = 0.0342, which is BELOW the 0.05 bar. READ THIS CAREFULLY: m/M is explicitly NOT a criterion under 10b and was NOT used to admit this row -- it was computed only after E1-E6 had been applied. It is recorded because it has a consequence: this is the first candidate in a week that is ALSO usable by the benchmark arm, where recruitment has been exhausted since 18 Nov. Admitting it there is a SEPARATE decision under the eight-stage pipeline and 5.2b, not a consequence of this one."
+   "power_limit": "NOT YET COMPUTED BY scripts/apply_power_eligible.py, which needs a predictor profile for the chain length. COMPUTED BY HAND AFTER ADMISSION AND RECORDED HERE: L = 704, W = 6, M = 117, m = 4, m/M = 0.0342, which is BELOW the 0.05 bar. READ THIS CAREFULLY: m/M is explicitly NOT a criterion under 10b and was NOT used to admit this row -- it was computed only after E1-E6 had been applied. It is recorded because it has a consequence: this is the first candidate in a week that is ALSO usable by the benchmark arm, where recruitment has been exhausted since 18 Nov. Admitting it there is a SEPARATE decision under the eight-stage pipeline and 5.2b, not a consequence of this one.",
+   "stratum_assignment": {
+    "assigned": "2026-11-19",
+    "arm": "legacy / TANGO",
+    "v": 0.9716716354555832,
+    "M": 117,
+    "m": 4,
+    "m_over_M": 0.03418803418803419,
+    "floor_v": 0.016984751913109997,
+    "call_forced_by_information_limit": false,
+    "grid_v_min": 0.9704727155776894,
+    "grid_v_max": 0.9790735000400584,
+    "call_stable_across_grid": true,
+    "run": "results/legacy_structural_2026-11-19",
+    "confirmatory_eligible": true,
+    "confirmatory_eligible_basis": "TRUE, and unlike the six rows held out by the section 7a amendment this one is not retrospective: no modern predictor has been run on this chain, this label is committed to git BEFORE the modern arm, and the commit graph is the evidence. Admission to the benchmark arm is still a SEPARATE decision under the eight-stage pipeline and 5.2b -- a stratum label alone does not admit a row."
+   }
   },
   {
    "protein": "beta-2-microglobulin",
@@ -1320,10 +1336,38 @@
     "resolution_caveat": "3.9 A is the LOWEST resolution in the Phi set. At that resolution side-chain positions are modelled under restraints rather than observed, so a SASA-based Phi carries more uncertainty here than for the 2.0-2.7 A rows. Recorded before Phi was computed."
    },
    "note": "THE QUESTION THIS ROW WAS PENDING ON IS SETTLED, AND THE ANSWER IS WILD TYPE. The screen of 18 Nov flagged that 6GK3 might be the dN6 truncation variant -- dN6 lacks the first six mature residues and is ~30% of the protein in dialysis-related amyloidosis deposits, so WT and dN6 would be different rows. Neither the coordinates nor the deposited SEQRES can decide it, because both begin at residue 22, well past the N-terminus. The paper decides it twice over: 'low pH was used here to generate fibrils from the WILD-TYPE protein since this sequence does not aggregate at neutral pH', and the Discussion contrasts the structure 'presented here for the wild-type protein' against D76N and dN6, which 'may adopt fibrillar structures different from those presented here'. ADMITTED under PREREGISTRATION 10b on 19 Nov 2026, before any Phi was computed.",
-   "stratum": "PENDING",
-   "stratum_basis": "No predictor has been run on this chain. Stratum is assigned from the legacy arm and must be committed before the modern arm runs (section 7a).",
-   "power_eligible": null,
-   "power_limit": "Not computed. This row was recruited for the core-polarity analysis (section 10b), where m/M is explicitly NOT a criterion. Mature beta2m is 99 residues, so M = 16 at W = 6 and a 64-residue region spans m = 10 tiles; m/M would be ~0.63, far above the 0.05 bar, exactly as all seven incumbent Phi rows are."
+   "stratum": "DISCORDANT",
+   "stratum_basis": "ASSIGNED 19 Nov 2026 BY THE REGISTERED RULE, AND THE LABEL IS FALSE ABOUT THE WORLD. READ THE WHOLE FIELD BEFORE QUOTING THE WORD DISCORDANT. || THE MECHANICAL RESULT: TANGO at the pinned digest, 9-point grid, reporting point pH 7.0 / 310 K, scored on the MATURE 99-residue chain (P61769 minus the 20-residue signal peptide), which is the frame this row's residues are stored in. M=16, m=10, P=0.9688, v=0.2720, identical at all nine grid points. v >= 0.05, so the section 7 rule returns DISCORDANT. || WHY THAT IS THE OPPOSITE OF WHAT HAPPENED. The smallest v attainable at M=16, m=10 is 0.2720 -- and the observed v IS 0.2720, to every digit. The statistic is at its floor, which happens only when the region's best window is the single highest-scoring window in the entire chain. It is: TANGO's chain maximum (94.39, window starting at residue 61) lies INSIDE the mapped core, ranked 1 of 16. Residue 61 opens the native E-strand (Phe62-Phe70) that this row's found_by field records as 'long been identified as a region of high amyloidogenicity'. TANGO SUCCEEDED MAXIMALLY AND THE REGISTERED STATISTIC CANNOT SAY SO. || WHY THE LABEL IS NEVERTHELESS LEFT AS DISCORDANT: the rule is registered and mechanical, and an agent who overrides a registered rule because the answer looks wrong has replaced pre-registration with judgement. The label stands; the defect is recorded beside it and the row is confirmatory-ineligible, so nothing is computed from it. || THE GENERAL DEFECT, WHICH IS SECTION 7's AND NOT THIS ROW'S: the stratum rule thresholds v against 0.05 without consulting whether 0.05 was attainable, i.e. it inherits the 3.1b information limit without saying so. Measured across the dataset on 19 Nov: 5 of the 10 rows whose stratum came from our own TANGO v carry a DISCORDANT label no predictor output could have avoided. IT CHANGES NO PRIMARY RESULT, and that was checked rather than hoped: a call is forced only above m/M ~ 0.1026 while power_eligible requires m/M <= 0.05, so the forced set is a strict subset of the power-ineligible set, and no power_eligible row anywhere in the dataset carries a forced call.",
+   "power_eligible": false,
+   "power_limit": {
+    "m_over_M": 0.625,
+    "m": 10,
+    "M": 16,
+    "chain_length": 99,
+    "rule": "PREREGISTRATION 3.1b: power_eligible iff m/M <= 0.05",
+    "statistic": "PREREGISTRATION 3.1 (tiling, W=6), scored on the mature 99-aa chain",
+    "floor_v": 0.27202384332787144,
+    "assigned": "2026-11-19",
+    "consequence": "INELIGIBLE: m/M = 0.6250, so the smallest p any rank-based statistic can return for this row is 0.625, and the smallest v the section 3.1 statistic can return is 0.2720. Recovery at v < 0.05 is arithmetically impossible and no predictor and no amendment rescues it -- only a longer chain or a shorter mapped region. COMPUTED FROM A PREDICTOR RUN rather than by hand, replacing the estimate recorded on admission."
+   },
+   "stratum_assignment": {
+    "assigned": "2026-11-19",
+    "arm": "legacy / TANGO",
+    "v": 0.27202384332787144,
+    "M": 16,
+    "m": 10,
+    "m_over_M": 0.625,
+    "floor_v": 0.27202384332787144,
+    "call_forced_by_information_limit": true,
+    "observed_v_equals_floor": true,
+    "predictor_top_window_inside_region": true,
+    "grid_v_min": 0.27202384332787144,
+    "grid_v_max": 0.27202384332787144,
+    "call_stable_across_grid": true,
+    "run": "results/legacy_structural_2026-11-19",
+    "confirmatory_eligible": false,
+    "confirmatory_eligible_basis": "FALSE. The call is forced by the information limit, so the label carries no information about agreement between predictor and experiment and must not be used to select the row into any statistic. The row is independently power-ineligible (m/M = 0.625), so this costs nothing."
+   }
   },
   {
    "protein": "SOD1 (superoxide dismutase [Cu-Zn])",
@@ -1366,9 +1410,10 @@
    },
    "note": "ADMITTED 19 Nov 2026 UNDER PREREGISTRATION 10c, THE DISCONTINUOUS-CORE RULE, WHICH WAS WRITTEN IN THE SAME COMMIT AND BEFORE ANY Phi WAS COMPUTED. The core is two blocks with a 30-residue disordered gap (56-85), the largest core in the Phi set at 121 modelled residues against a median of ~35. Without 10c this row could not have been recorded at all: 10b E2 silently assumed a contiguous core, and R1 applied to segments would have kept 3-55 and thrown away 68 of the 121 ordered residues. THE OPEN EXPOSURE, STATED PLAINLY: 10c was written by the same agent that wanted this row, on the same day, and it makes section 10b's three-row stopping threshold easier to reach. It was registered blind and the commit graph shows that, but the author should review it on exactly that ground.",
    "stratum": "PENDING",
-   "stratum_basis": "No predictor has been run on this chain. Stratum is assigned from the legacy arm and must be committed before the modern arm runs (section 7a).",
+   "stratum_basis": "PERMANENTLY UNASSIGNABLE, NOT AWAITING WORK, AND 'PENDING' IS THE WRONG WORD FOR IT -- THE ENUM HAS NO RIGHT ONE. The section 7 rule derives the stratum from the legacy arm's v, thresholded at 0.05. THIS ROW HAS NO v AND NEVER WILL: the region is two segments with a 30-residue gap, and under 10c C3 the section 3.1 statistic has no defined behaviour on a segment list. scripts/tango_v_structural.py refuses it BY NAME and prints the reason, so the refusal is auditable rather than an absence. || WHAT 'PENDING' MEANT BEFORE AND WHY IT IS RETAINED ANYWAY: the section 7a amendment fixed PENDING to mean 'the legacy arm has not been run on this row yet'. That reading is wrong here in a way the enum cannot express -- the legacy arm HAS been run on the chain, and the statistic declined it. The permitted values are DISCORDANT, DISCORDANT_DERIVED, DISCORDANT_PROVISIONAL, CONCORDANT and PENDING; a value such as NOT_APPLICABLE would be correct and ADDING ONE TO A DATASET HEADED FOR A DOI IS THE AUTHOR'S DECISION, NOT AN AGENT'S. Flagged for the author in reports/legacy_structural_2026-11-19.md. || THE FIELD IS INERT FOR THIS ROW, which is why leaving it is safe rather than merely convenient: the stratum is consumed only to select rows into the benchmark arm, and this row is benchmark_eligible false on the separate 10c C3 ground. It cannot reach a statistic by any path. || THE LEGACY ARM WAS STILL RUN ON THE CHAIN -- see the report -- because refusing to compute v is not the same as refusing to look.",
    "power_eligible": false,
-   "power_limit": "BENCHMARK-INELIGIBLE ON A GROUND SEPARATE FROM m/M: the region is NON-CONTIGUOUS (PREREGISTRATION 10c C3). The section 3.1 statistic tiles a contiguous span and has no defined behaviour on a segment list, so no v can be computed for this row and none should be. The m/M bar is not the reason and must not be recorded as the reason. For reference only, the region would also fail m/M: 153 residues give M = 25 at W = 6, and 121 region residues span m = 20, so m/M ~ 0.80."
+   "power_limit": "BENCHMARK-INELIGIBLE ON A GROUND SEPARATE FROM m/M: the region is NON-CONTIGUOUS (PREREGISTRATION 10c C3). The section 3.1 statistic tiles a contiguous span and has no defined behaviour on a segment list, so no v can be computed for this row and none should be. The m/M bar is not the reason and must not be recorded as the reason. For reference only, the region would also fail m/M: 153 residues give M = 25 at W = 6, and 121 region residues span m = 20, so m/M ~ 0.80.",
+   "stratum_not_assignable": "TRUE. Reason NON_CONTIGUOUS, the same ground as benchmark_eligible false under PREREGISTRATION 10c C3. Recorded as its own machine-readable field because the lesson of the TRIOBP-1 324-328 row is that A WARNING IN PROSE IS NOT A CONSTRAINT: that row carried 'DO NOT score this row as an independent region' in its note and was scored anyway by our own script. Any code that assigns or consumes a stratum must read this field."
   }
  ],
  "_rows_deliberately_excluded": {

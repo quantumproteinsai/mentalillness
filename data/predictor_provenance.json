@@ -89,6 +89,57 @@
         "The output file is written to the CURRENT WORKING DIRECTORY, named <identifier>.txt, and silently overwrites. Distinct identifiers per run, or a fresh directory per run.",
         "Maximum sequence length is 20000 aa (string found in the binary). DISC1 at 854 and TRIOBP-1 at 652 are far inside it; no chunking needed, so no window-boundary artefact from chunking."
       ]
+    },
+    {
+      "tool": "AggrescanAI (local reimplementation of aggrescanai.ipynb)",
+      "captured_utc": "2026-11-19T14:45:00+00:00",
+      "WHY_THIS_RECORD_EXISTS_AND_WHY_IT_IS_LATE": "THE MODERN ARM RAN ON 17 AND 18 NOV WITH NO PROVENANCE RECORD AT ALL. Until today this file held exactly ONE record, TANGO, and no report in this project named a torch, tensorflow, keras or transformers version. The WEIGHTS were pinned by revision and checksummed; THE SOFTWARE THAT RUNS THEM WAS NOT. That asymmetry was invisible while the environment survived, and became visible the moment it did not: on 19 Nov the venv, the site-packages and the multi-gigabyte weights were all gone, having lived in a session scratchpad that was cleared. PREREGISTRATION 12 step 4 requires this record and it was not written for this tool. Recorded as a defect, not presented as foresight.",
+      "weights": {
+        "prott5_repo": "Rostlab/prot_t5_xl_half_uniref50-enc",
+        "prott5_revision": "94a6abc029ae13029317b140b7424e012bf8dfbf",
+        "prott5_pytorch_model_bin_sha256": "7f51ba885541c7dc569d46b796af57cc7a2ba7945107dced4f19d1b5ec091157",
+        "prott5_spiece_model_sha256": "74da7b4afcde53faa570114b530c726135bdfcdb813dec3abfb27f9d44db7324",
+        "aggrescanai_repo": "alvaro-2/aggrescanai",
+        "aggrescanai_revision": "7aba68e65d620aa55b10f9550005efff3f3240e7",
+        "aggrescanai_path_in_repo": "homology_models/cpad_hotidp90_model_cv_{1..5}.h5",
+        "model_sha256": {
+          "cpad_hotidp90_model_cv_1.h5": "db9c9ef10e0d7ef1996dd82a64155a17d685f9b93be2e00bd4b76a11ba5c18bc",
+          "cpad_hotidp90_model_cv_2.h5": "0651f614e3e2a5c5cf4fb5e43a4ff72767acfcd6113649ed4d0b69af6c4935bc",
+          "cpad_hotidp90_model_cv_3.h5": "35be990e3db48c52c1e51f3fe006a76d018b75259e50c96905d97be45e769075",
+          "cpad_hotidp90_model_cv_4.h5": "f6694741740877aae98d91960d075d081cc906e85c9966b61e96bff85a6ff074",
+          "cpad_hotidp90_model_cv_5.h5": "5a59e3f112887d86ce96bda7bae9e1cd8c8cd872c44d74c695059318d6ce9ee1"
+        },
+        "ALL_FIVE_MATCH_THE_17_NOV_RUN": "VERIFIED, not assumed: the five digests above are byte-identical to those recorded in the headers of every CSV committed on 17 and 18 Nov. The model weights are the same objects."
+      },
+      "software_19_nov_2026": {
+        "python": "3.12.3",
+        "platform": "Linux-6.17.2-1-pve-x86_64-with-glibc2.39",
+        "torch": "2.5.1+cpu",
+        "transformers": "4.46.3",
+        "tensorflow": "2.17.1",
+        "keras": "3.15.1",
+        "numpy": "1.26.4",
+        "h5py": "3.16.0",
+        "sentencepiece": "0.2.0",
+        "venv": "/home/deploy/.venvs/aggai",
+        "AGGAI_HOME": "/home/deploy/aggai_home",
+        "NOTE": "THESE ARE THE 19 NOV VERSIONS. THE 17-18 NOV VERSIONS ARE UNKNOWN AND UNRECOVERABLE -- they were never recorded and the environment is gone. So this record cannot say the two stacks were the same; it can only say what the difference does, which was MEASURED. See equivalence_measured_19_nov below."
+      },
+      "equivalence_measured_19_nov": {
+        "what_was_done": "All 14 archived profiles were re-run on the rebuilt stack and compared against the committed CSVs residue by residue, then the section 3.1 statistic was recomputed for every scored row from BOTH profile sets. scripts/modern_arm_equivalence.py, which has no tolerance to set.",
+        "residues_compared": 5092,
+        "residues_differing": 218,
+        "fraction_differing": "4.281%",
+        "max_absolute_delta": 1e-06,
+        "rows_compared": 24,
+        "rows_whose_v_moved": 0,
+        "max_v_delta": 0.0,
+        "verdict": "NO REPORTED NUMBER MOVES. The stacks differ only by float rounding at the sixth decimal, the last place the CSV stores, consistent with different CPU kernel ordering. v depends on the RANK of 6-residue window means, and no two window means in this dataset sit within 1e-06 of each other, so no rank reorders. Every one of the 24 v deltas is EXACTLY zero.",
+        "the_margin_this_was_checked_against": "CLAUDE.md rule 2. The discrepancy is 1e-06 against an ENSEMBLE SPREAD of 0.85-0.96 already recorded for every run -- six orders of magnitude, and already a standing caveat on every AggrescanAI number here. The decisive comparison is not that ratio though, it is the rank test above, because v cannot see magnitude.",
+        "WHAT_THIS_DOES_NOT_LICENSE": "IT IS A STATEMENT ABOUT THIS DATASET, NOT A GENERAL EQUIVALENCE. A future row whose two best window means sit within 1e-06 of each other WOULD move, and nothing warns of that. Re-run scripts/modern_arm_equivalence.py after adding rows. Do NOT read this record as 'the stack does not matter'; read it as 'on these 24 rows, measured, it did not'."
+      },
+      "deliberate_differences_from_the_notebook": "Unchanged from the runner's docstring: weights read from pinned local copies rather than /resolve/main; float32 upcast from fp16 because there is no GPU (an upcast, not a precision loss); no smoothing, because the notebook's moving average is display-only and PREREGISTRATION 5.3 aggregates per-residue scores downstream.",
+      "A_TRAP_HIT_WHILE_REBUILDING": "The first download of the five .h5 models used the path models/homology_models/ and returned FIVE IDENTICAL 15-BYTE FILES whose contents were the ASCII string 'Entry not found'. curl exited 0. The correct path is homology_models/. NOTHING WOULD HAVE CAUGHT THIS EXCEPT THE CHECKSUMS -- Keras would have been handed five copies of an error string. This is the project's existing rule 'a status code is not content', previously recorded against a CAPTCHA served with HTTP 200, recurring in a different disguise."
     }
   ],
   "_MODERN_ARM_STATUS_2026-11-16": {

@@ -1,0 +1,386 @@
+{
+ "rows": [
+  {
+   "protein": "TRIOBP-1",
+   "residues": "324-348",
+   "v_archived": 0.9078759884791715,
+   "v_rebuilt": 0.9078759884791715,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.5509259259259259,
+   "P_rebuilt": 0.5509259259259259,
+   "m": 4,
+   "M": 108
+  },
+  {
+   "protein": "TRIOBP-1",
+   "residues": "324-328",
+   "v_archived": 0.6983024691358024,
+   "v_rebuilt": 0.6983024691358024,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.30169753086419754,
+   "P_rebuilt": 0.30169753086419754,
+   "m": 1,
+   "M": 648
+  },
+  {
+   "protein": "TRIOBP-1",
+   "residues": "333-340",
+   "v_archived": 0.424031007751938,
+   "v_rebuilt": 0.424031007751938,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.575968992248062,
+   "P_rebuilt": 0.575968992248062,
+   "m": 1,
+   "M": 645
+  },
+  {
+   "protein": "TRIOBP-1",
+   "residues": "1-59",
+   "v_archived": 0.040903339350479184,
+   "v_rebuilt": 0.040903339350479184,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.9953703703703703,
+   "P_rebuilt": 0.9953703703703703,
+   "m": 9,
+   "M": 108
+  },
+  {
+   "protein": "TRIOBP-1",
+   "residues": "60-189",
+   "v_archived": 0.38849109314115315,
+   "v_rebuilt": 0.38849109314115315,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.9768518518518519,
+   "P_rebuilt": 0.9768518518518519,
+   "m": 21,
+   "M": 108
+  },
+  {
+   "protein": "DISC1",
+   "residues": "691-836",
+   "v_archived": 0.9993633940322272,
+   "v_rebuilt": 0.9993633940322272,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.7359154929577465,
+   "P_rebuilt": 0.7359154929577465,
+   "m": 24,
+   "M": 142
+  },
+  {
+   "protein": "DISC1",
+   "residues": "716-761",
+   "v_archived": 0.999979456373656,
+   "v_rebuilt": 0.999979456373656,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.16549295774647887,
+   "P_rebuilt": 0.16549295774647887,
+   "m": 6,
+   "M": 142
+  },
+  {
+   "protein": "DISC1",
+   "residues": "717-737",
+   "v_archived": 0.9964168815711169,
+   "v_rebuilt": 0.9964168815711169,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.05985915492957746,
+   "P_rebuilt": 0.05985915492957746,
+   "m": 2,
+   "M": 142
+  },
+  {
+   "protein": "DISC1",
+   "residues": "739-761",
+   "v_archived": 0.9954674922676308,
+   "v_rebuilt": 0.9954674922676308,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.16549295774647887,
+   "P_rebuilt": 0.16549295774647887,
+   "m": 3,
+   "M": 142
+  },
+  {
+   "protein": "DISC1",
+   "residues": "748-769",
+   "v_archived": 0.9954674922676308,
+   "v_rebuilt": 0.9954674922676308,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.16549295774647887,
+   "P_rebuilt": 0.16549295774647887,
+   "m": 3,
+   "M": 142
+  },
+  {
+   "protein": "DISC1",
+   "residues": "384-414",
+   "v_archived": 0.4164081719070628,
+   "v_rebuilt": 0.4164081719070628,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.897887323943662,
+   "P_rebuilt": 0.897887323943662,
+   "m": 5,
+   "M": 142
+  },
+  {
+   "protein": "tau",
+   "residues": "306-311",
+   "v_archived": 0.0034403669724770714,
+   "v_rebuilt": 0.0034403669724770714,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.9965596330275229,
+   "P_rebuilt": 0.9965596330275229,
+   "m": 1,
+   "M": 436
+  },
+  {
+   "protein": "tau",
+   "residues": "275-280",
+   "v_archived": 0.008027522935779796,
+   "v_rebuilt": 0.008027522935779796,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.9919724770642202,
+   "P_rebuilt": 0.9919724770642202,
+   "m": 1,
+   "M": 436
+  },
+  {
+   "protein": "alpha-synuclein",
+   "residues": "71-82",
+   "v_archived": 0.10869565217391308,
+   "v_rebuilt": 0.10869565217391308,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.8913043478260869,
+   "P_rebuilt": 0.8913043478260869,
+   "m": 1,
+   "M": 23
+  },
+  {
+   "protein": "FUS",
+   "residues": "39-95",
+   "v_archived": 0.9582080238216845,
+   "v_rebuilt": 0.9582080238216845,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.6724137931034483,
+   "P_rebuilt": 0.6724137931034483,
+   "m": 8,
+   "M": 87
+  },
+  {
+   "protein": "hnRNPA1",
+   "residues": "251-295",
+   "v_archived": 0.4626452613934974,
+   "v_rebuilt": 0.4626452613934974,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.9150943396226415,
+   "P_rebuilt": 0.9150943396226415,
+   "m": 7,
+   "M": 53
+  },
+  {
+   "protein": "serum amyloid A (hSAA1.1)",
+   "residues": "2-55",
+   "v_archived": 0.21244628823900846,
+   "v_rebuilt": 0.21244628823900846,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.9705882352941176,
+   "P_rebuilt": 0.9705882352941176,
+   "m": 8,
+   "M": 17
+  },
+  {
+   "protein": "LECT2",
+   "residues": "55-75",
+   "v_archived": 0.4053695529676934,
+   "v_rebuilt": 0.4053695529676934,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.8409090909090909,
+   "P_rebuilt": 0.8409090909090909,
+   "m": 3,
+   "M": 22
+  },
+  {
+   "protein": "TMEM106B",
+   "residues": "120-254",
+   "v_archived": 0.9900053471300315,
+   "v_rebuilt": 0.9900053471300315,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.8111111111111111,
+   "P_rebuilt": 0.8111111111111111,
+   "m": 22,
+   "M": 45
+  },
+  {
+   "protein": "ANXA11",
+   "residues": "39-74",
+   "v_archived": 0.3314835747397943,
+   "v_rebuilt": 0.3314835747397943,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.9226190476190477,
+   "P_rebuilt": 0.9226190476190477,
+   "m": 5,
+   "M": 84
+  },
+  {
+   "protein": "glycinin G4 (soybean)",
+   "residues": "164-190",
+   "v_archived": 0.9435002578389324,
+   "v_rebuilt": 0.9435002578389324,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.38372093023255816,
+   "P_rebuilt": 0.38372093023255816,
+   "m": 3,
+   "M": 43
+  },
+  {
+   "protein": "CHCHD10",
+   "residues": "42-75",
+   "v_archived": 0.10407137931430932,
+   "v_rebuilt": 0.10407137931430932,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.9782608695652174,
+   "P_rebuilt": 0.9782608695652174,
+   "m": 5,
+   "M": 23
+  },
+  {
+   "protein": "CHCHD2",
+   "residues": "54-86",
+   "v_archived": 0.09607920320000007,
+   "v_rebuilt": 0.09607920320000007,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.98,
+   "P_rebuilt": 0.98,
+   "m": 5,
+   "M": 25
+  },
+  {
+   "protein": "TAF15",
+   "residues": "7-99",
+   "v_archived": 0.7833503832652325,
+   "v_rebuilt": 0.7833503832652325,
+   "delta": 0.0,
+   "moved_at_6dp": false,
+   "P_archived": 0.9030612244897959,
+   "P_rebuilt": 0.9030612244897959,
+   "m": 15,
+   "M": 98
+  }
+ ],
+ "residue_level": [
+  {
+   "file": "Q9H2D6-7.csv",
+   "n": 652,
+   "n_differing": 12,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "Q9NRI5.csv",
+   "n": 854,
+   "n_differing": 29,
+   "max_delta": 1.000000000001e-06
+  },
+  {
+   "file": "P10636-8.csv",
+   "n": 441,
+   "n_differing": 3,
+   "max_delta": 1.000000000001e-06
+  },
+  {
+   "file": "P37840_asyn.csv",
+   "n": 140,
+   "n_differing": 15,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "P35637.csv",
+   "n": 526,
+   "n_differing": 16,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "P09651-2.csv",
+   "n": 320,
+   "n_differing": 17,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "hSAA1.1_mature.csv",
+   "n": 104,
+   "n_differing": 12,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "LECT2_mature.csv",
+   "n": 133,
+   "n_differing": 15,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "Q9NUM4.csv",
+   "n": 274,
+   "n_differing": 18,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "P50995.csv",
+   "n": 505,
+   "n_differing": 31,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "P02858_A4.csv",
+   "n": 258,
+   "n_differing": 12,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "Q92804.csv",
+   "n": 592,
+   "n_differing": 19,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "Q8WYQ3.csv",
+   "n": 142,
+   "n_differing": 14,
+   "max_delta": 1.0000000000287557e-06
+  },
+  {
+   "file": "Q9Y6H1.csv",
+   "n": 151,
+   "n_differing": 5,
+   "max_delta": 1.0000000000287557e-06
+  }
+ ],
+ "summary": {
+  "n_residues": 5092,
+  "n_residues_differing": 218,
+  "max_residue_delta": 1.0000000000287557e-06,
+  "n_rows": 24,
+  "n_rows_moved": 0,
+  "equivalent_at_6dp": true
+ }
+}

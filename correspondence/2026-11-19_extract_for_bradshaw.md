@@ -101,7 +101,15 @@ the same dataset, and one of them was this boundary.
 1. **The deposited version (v1.4.0, DOI 10.5281/zenodo.24290697) still records DISC1
    384-415.** It predates your correction. This extract is authoritative; the deposit will
    catch up in the next version.
-2. **Venko et al. (2024)** place consensus predictor calls at 388-394, 400-406 and 403-411,
-   all strictly inside DISC1 384-414. That cuts against a simple "the predictors miss it"
-   framing for DISC1 specifically, and I record it rather than only the half that helps my
-   case.
+2. **Venko K & Žerovnik E (2026)** place predictor calls inside this region: an
+   aggregation-prone region at **403-411** called by ≥2 predictors, and amyloid-prone
+   regions at **388-394** and **400-406** called by ≥4. All three sit strictly inside DISC1
+   384-414. That cuts against a simple "the predictors miss it" framing for DISC1
+   specifically, and I record it rather than only the half that helps my case.
+
+   > **Corrected 19 Nov 2026 before sending.** This read "Venko et al. (2024)" — wrong on
+   > the year and wrong on the author form, for a two-author paper. It was caught by
+   > checking the citation against `data/references_to_check.json` rather than trusting
+   > recall, and it was addressed to people likely to know the paper. The ≥2 / ≥4
+   > distinction was also flattened into "consensus predictor calls"; those are two
+   > different claims in their Table 3.

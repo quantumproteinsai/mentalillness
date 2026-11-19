@@ -275,3 +275,49 @@ recorded only in `_entity.pdbx_fragment`. Requesting 176-206 selected **no atoms
 `core_polarity.py` refused rather than scoring something. The fifth frame collision this
 project has found, and the first inside a structural deposit rather than in prose. Recorded
 in `data/phi_spec.json` as `range_note` and in the Orb2 row.
+
+---
+
+## Is the Φ–*v* association an *m*/*M* artefact? — checked 19 Nov 2026, and it is not
+
+**Why this had to be asked.** On 19 Nov the recruitment picture resolved into something
+uncomfortable: **not one of the thirteen structural rows in the dataset is
+`power_eligible`** — every one fails *m*/*M* ≤ 0.05 — while all four rows in the benchmark's
+scarce cell have no structure at all. So **every row in the Φ set has a *v* that is
+floor-constrained**, and the floor is a function of *m*/*M*. If Φ also tracks *m*/*M*, the
+reported Φ–*v* association could be measuring region geometry rather than core chemistry.
+
+**It is not a hypothetical.** Φ and *m*/*M* do correlate across the seven rows:
+**ρ(Φ, *m*/*M*) = +0.536**.
+
+**The measurement.** On the same *n* = 7 (no new rows; the committed value is reproduced
+exactly, Σ*d*² = 10, ρ = +0.821, which also verifies the reproduction):
+
+| | ρ |
+|---|---|
+| ρ(Φ, *v*) — the reported association | **+0.821** |
+| ρ(Φ, *m*/*M*) | +0.536 |
+| ρ(*v*, *m*/*M*) | +0.321 |
+| **partial ρ(Φ, *v* │ *m*/*M*)** | **+0.812** |
+
+**Controlling for *m*/*M* moves the association by 0.009.** The confound requires *both*
+legs to be strong, and the second is weak: *v* depends on where the region's best window
+*ranks*, which is only loosely tied to how much of the chain the region covers. The
+association survives.
+
+> **WHAT THIS IS AND IS NOT.** It is a robustness diagnostic on an already-reported
+> **exploratory, permanently exploratory** result (§10a §5), computed on the same seven
+> rows, with no new rows and no new *n*. **§10b S2 is not engaged**: that clause governs
+> *recomputing the test at a larger n*, which has not been done and must not be until the
+> pool is exhausted. At *n* = 7 a partial correlation has almost no power, so this rules
+> out *gross* confounding and nothing finer.
+
+**A trap hit while doing this, worth recording because it is the fifth frame error in the
+project and the first self-inflicted one.** Computing *v* directly from the archived
+profiles gave ρ = +0.633, not +0.821. The cause: **glycinin G4 is the one row whose
+`residues` are stored in a different frame from its profile** — it is scored on the A4
+acidic chain, `P02858[121:378]`, and `scripts/score_rows.py` carries `OFFSET = {'glycinin
+G4 (soybean)': 120}` for exactly this. Bypassing `score_rows.py` bypassed the offset.
+**The committed pipeline was right and the ad-hoc reimplementation was wrong**, which is
+the argument for importing the statistic rather than rewriting it — a rule this project
+already applies to its two predictor arms and had not applied to itself.

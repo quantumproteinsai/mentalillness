@@ -106,6 +106,48 @@ def main():
         if sv in {'pmc_full_text', 'source_not_opened', 'UNRECORDED'}:
             warn(r, f'source_version {sv!r} -- NOT CITABLE under 12.1 decision 3')
 
+    # ---- 4a. A ROW THAT CONTRADICTS ITSELF
+    #
+    # ADDED 19 Nov 2026, after the TRIOBP-1 324-348 row was found asserting, in
+    # note_on_the_source_field, that its primary "has never been read" -- while
+    # verified_against, source_version_note and sequence_provenance in the SAME ROW all
+    # recorded it read in full from the publisher PDF. Three fields said read, one said
+    # unread, and the stale one is the field a reader consults when deciding what to cite.
+    #
+    # NOTHING ELSE HERE LOOKS BETWEEN FIELDS OF ONE ROW. Every other check is within a
+    # field or across rows, so a row could carry that contradiction and validate cleanly.
+    # It was caught only by assembling an extract to send to the source's own authors.
+    #
+    # The patterns are deliberately narrow: they match claims that THE SOURCE ITSELF is
+    # unread, not the many legitimate notes about unread SUPPLEMENTARY material, unread
+    # secondary citations, or sources deliberately not opened (source_not_opened rows,
+    # which are excluded below because for them the claim is true).
+    UNREAD = ('has never been read', 'have never been read', 'is still unread',
+              'are still unread', 'nobody has opened', 'has not been read',
+              'was never read', 'remains unread')
+    for r in rows:
+        sv = r.get('source_version')
+        if sv in {'source_not_opened', 'UNRECORDED'}:
+            continue          # the claim is true for these, by definition
+        if not (r.get('verified_against_publisher_pdf')
+                or sv in {'version_of_record', 'author_manuscript'}):
+            continue
+        for f, v in r.items():
+            if not isinstance(v, str):
+                continue
+            low = v.lower()
+            for pat in UNREAD:
+                if pat in low:
+                    i = low.index(pat)
+                    err(r, f'INTERNAL CONTRADICTION: field {f!r} says the source is unread '
+                           f'({pat!r}) while source_version={sv!r} and '
+                           f'verified_against_publisher_pdf='
+                           f'{r.get("verified_against_publisher_pdf")!r}. '
+                           f'Context: ...{v[max(0, i - 60):i + 80]}... '
+                           f'One of the two is stale; fix the stale one, do not delete '
+                           f'the check.')
+                    break
+
     # ---- 5. duplicates
     keys = [(r.get('protein'), r.get('residues')) for r in rows]
     for k, n in Counter(keys).items():

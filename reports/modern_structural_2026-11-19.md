@@ -16,14 +16,26 @@ pair of rows in the project for which that is true from the start.
 
 ---
 
-## 1. Orb2 — the largest generational difference in the project, and it still does not clear the bar
+> ## ⛔ THE INTERPRETATION BELOW IS WITHDRAWN. READ §3 FIRST.
+>
+> §1 and §2 were written before the CPAD check in §3 was run. **All three recruited rows
+> are CPAD-present**, and AggrescanAI is trained on CPAD90 = CPAD 2.0 plus homologues.
+> **Every AggrescanAI number in this report is in-sample.** The measurements stand exactly
+> as recorded; the generational reading of §1 does not, and is retracted there. The
+> sections are left in place rather than rewritten, because what they claimed before the
+> check is the evidence for why the check is a gate and not a formality.
+
+## 1. Orb2 — the largest *measured* difference between the arms, and it cannot be read as generational
 
 TANGO scored the best window inside the core at **exactly 0.0000**, ranked **87th of 117**.
 AggrescanAI ranks the same region **4th of 117**. *v* falls from 0.9717 to **0.1144**.
 
-That is a direct, quantitative answer to this project's headline question for one row —
-*do modern predictors recover what the 2004-2010 generation missed?* — and for Orb2 the
-answer is **most of the way, but not past the bar**. §4 requires *v* < 0.05; the floor at
+**That is NOT an answer to this project's headline question, and §3 is why.** Orb2 is in
+CPAD's APR protein list under its exact UniProt name, and so is the CPEB family it belongs
+to, so AggrescanAI has seen this protein and TANGO has not in the same way. **A
+training-set advantage and a generational advantage are indistinguishable here**, and this
+row cannot separate them. What is left is a measurement: the two arms rank this region very
+differently. Read against the §4 bar, it is still §4 requires *v* < 0.05; the floor at
 *M* = 117, *m* = 4 is 0.0170, so the bar was reachable. At rank 4 it was not reached: to
 clear 0.05 the region would need *P* > 0.9957, which at *M* = 117 means essentially rank 1.
 
@@ -59,22 +71,55 @@ elevated, but on a chain where almost everything is.
 
 ---
 
-## 3. THE CAVEAT THAT GOVERNS BOTH ROWS: neither has been checked against CPAD
+## 3. THE CAVEAT IS NOT A CAVEAT. ALL THREE ROWS ARE IN CPAD.
 
-**`cpad_status` is `UNCHECKED` for Orb2 and for β2-microglobulin.** AggrescanAI's five MLPs
-are trained on CPAD90. Until both are checked against all three CPAD 2.0 tables — by name,
-by accession, and through the orthologue route, as §5.2b item 4 requires and as was done
-for DISC1 and TRIOBP-1 — **neither number above can be interpreted.**
+Checked 19 Nov 2026 against all three CPAD 2.0 tables, each re-fetched and byte-identical
+in size to the 17 Nov capture, by accession where a table carries one and by normalised
+name elsewhere, **with positive controls through the same query** (β2m, lysozyme — both
+found) **and negative controls** (DISC1, TRIOBP-1 — both still absent).
 
-This bites hardest exactly where the result is most interesting. **β2-microglobulin is a
-classical amyloid protein with decades of literature; an entry in an aggregation database
-is the expected case, not the surprising one.** If it is in CPAD90, AggrescanAI's rank-1
-placement is partly recall, and the comparison against TANGO stops being a comparison of
-generations and becomes a comparison of training-set membership. Orb2 is a *Drosophila*
-functional amyloid and less likely to be present, but "less likely" is not a check.
+| row | peptide table (by accession) | structures (by name) | APR protein list | verdict |
+|---|---|---|---|---|
+| **Orb2** Q9VSR3 | 0 | 0 | **PRESENT** | **CPAD_PRESENT** |
+| **β2m** P61769 | **72** (17 amyloid) | **34** | **2 variants** | **CPAD_PRESENT** |
+| **SOD1** P00441 | **30** (8 amyloid) | **11** | **1** | **CPAD_PRESENT** |
 
-**No interpretive claim should be made from §1 or §2 until this is done.** The numbers
-stand; their meaning does not.
+**Orb2 is the LECT2 pattern exactly, and it nearly escaped.** Two of three tables return
+nothing. It appears only in the APR protein list, as `Translational regulator orb2` — an
+**exact normalised match** to Q9VSR3's UniProt protein name. The peptide table is the only
+one carrying accessions and therefore the tempting one to check; **checking it alone would
+have cleared this row wrongly.** The rule written on 17 Nov — *any future row must be
+checked against all three* — earned its keep on the very next row to need it. The
+orthologue route is positive too: `Cytoplasmic polyadenylation element-binding protein`,
+the CPEB family, is separately in the list.
+
+**β2-microglobulin was never unknown.** The answer had been in the repository since 17 Nov,
+under `_A_NAME_SEARCH_IS_NOT_AN_ACCESSION_SEARCH`: *"Beta-2 microglobulin carries 72 rows in
+the CPAD peptide table and 34 in the structures table."* This protein is the origin of this
+project's own cautionary tale about name searches. It is also **in the control set of**
+`results/cpad_control_2026-11-17`, whose report states in plain words that *"the control
+peptides are AggrescanAI's training data."* The row nonetheless carried
+`cpad_status: UNCHECKED` for a day, and a predictor was run on it in that state. **The
+failure was not of knowledge but of sequencing: the gate was passed rather than opened.**
+
+### 3a. This is a structural problem with §10b, not an accident of three rows
+
+**§10b recruits from deposited fibril structures. Deposited fibril structures are mostly of
+classic disease amyloids. Classic disease amyloids are mostly in CPAD.** The project already
+measured the base rate on 17 Nov: *of fourteen well-known amyloid proteins tested, **eleven**
+are CPAD members.*
+
+So §10b and §5.2b pull against each other, and §10b has now produced **three rows out of
+three that are CPAD-present**. That is not bad luck; it is what the recruitment rule selects
+for. The already-registered escape route is the calendar — `_CPAD_IS_FROZEN_AT_2020` — and
+it does not save any of these three: CPAD 2.0 is frozen at 2020 and Orb2's core was
+published *in* 2020.
+
+**What this does and does not cost.** It costs nothing for Φ: core polarity is a geometric
+measurement from coordinates and does not care what a predictor was trained on, so all
+three rows remain valid members of the Φ set. It is fatal to using any of them in a
+predictor comparison. **The two arms' numbers on Orb2 and β2m are recorded as measurements
+and must not be cited as evidence about predictor generations.**
 
 ## 4. What was NOT done, deliberately
 

@@ -1,0 +1,47 @@
+{
+ "SOD1 (superoxide dismutase [Cu-Zn]) 3-55,86-153": {
+  "v": null,
+  "refused": true,
+  "reason": "NON-CONTIGUOUS (PREREGISTRATION 10c C3). Two segments with a 30-residue gap at 56-85; the 3.1 statistic tiles a contiguous span. Refused on contiguity, NOT on m/M. The modern arm was not run on this chain at all, because there is nothing the number could be used for."
+ },
+ "Orb2 (Drosophila melanogaster) 176-206": {
+  "profile": "Q9VSR3.csv",
+  "scored_frame": "Q9VSR3 canonical, 704 aa, which IS the Orb2B frame",
+  "chain_length": 704,
+  "v": 0.11439512379990047,
+  "P": 0.9700854700854701,
+  "M": 117,
+  "m": 4,
+  "m_over_M": 0.03418803418803419,
+  "floor_v": 0.016984751913109997,
+  "call_forced_by_information_limit": false,
+  "region_best_window_start": 199,
+  "region_best_window_score": 0.32056366666666664,
+  "region_best_window_rank": 4,
+  "chain_max_window_start": 283,
+  "chain_max_window_score": 0.4481743333333333,
+  "region_holds_chain_max": false,
+  "call": "DISCORDANT",
+  "refused": false
+ },
+ "beta-2-microglobulin 22-85": {
+  "profile": "B2M_mature.csv",
+  "scored_frame": "P61769 MINUS the 20-residue signal peptide = mature 99 aa, I1..M99",
+  "chain_length": 99,
+  "v": 0.27202384332787144,
+  "P": 0.96875,
+  "M": 16,
+  "m": 10,
+  "m_over_M": 0.625,
+  "floor_v": 0.27202384332787144,
+  "call_forced_by_information_limit": true,
+  "region_best_window_start": 61,
+  "region_best_window_score": 0.9875581666666666,
+  "region_best_window_rank": 1,
+  "chain_max_window_start": 61,
+  "chain_max_window_score": 0.9875581666666666,
+  "region_holds_chain_max": true,
+  "call": "DISCORDANT",
+  "refused": false
+ }
+}

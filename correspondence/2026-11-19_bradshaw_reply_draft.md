@@ -1,6 +1,10 @@
 # Draft reply: Bradshaw, 19 Nov 2026
 
-**Status: DRAFT, NOT SENT.** Written by Claude for the author to send, amend or discard.
+**Status: SENT, 19 Nov 2026**, by the author, after three rounds of proofreading against
+the repository. Three corrections were made before it went: an overstated pre-registration
+ordering (the invariance was registered after the question was sent, not before), the
+claim that *every* number was invariant (the gatekeeper density moved), and a missing
+caveat that the deposited v1.4.0 still carries 384-415.
 
 **What his reply settled, and the one thing it overturned.** The DISC1 deletion is
 **384-414**, from sequencing of the actual vectors. This project had recorded **384-415**

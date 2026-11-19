@@ -1,7 +1,8 @@
 # Two dataset entries, for checking — DISC1 384-414 and TRIOBP-1 324-348
 
-Prepared for **N. Bradshaw and B. Zaharija**, 19 November 2026, at their offer to confirm
-the records. Extracted from `data/regions.json` (working file, ahead of the deposit).
+**Status: SENT, 19 Nov 2026**, as a follow-up to the reply above. Prepared for
+**N. Bradshaw and B. Zaharija** at their offer to confirm the records. One correction was
+made before sending: the Venko citation was wrong on both year and author form. Extracted from `data/regions.json` (working file, ahead of the deposit).
 
 **How to mark this up.** Every claim carries a tag saying where it came from. You only need
 to look hard at the **[INTERPRETATION]** lines — those are mine, not yours, and they are

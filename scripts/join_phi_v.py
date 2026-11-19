@@ -5,7 +5,18 @@ Run only AFTER Phi is committed. The ordering is the point: Phi has three pre-sp
 variants and a calibrated threshold, and this is the first moment either is allowed to
 meet a predictor score.
 
-    python3 scripts/join_phi_v.py <repo>
+    python3 scripts/join_phi_v.py <repo> [--phi <phi_rows.json>] [--expect-n <k>]
+
+--phi selects which Phi file to join. It defaults to the 18 Nov run for backward
+compatibility, but SHOULD BE GIVEN EXPLICITLY: the 19 Nov run exists at two layer counts
+and over ten rows rather than seven, and a silent default is how an n changes without
+anyone deciding that it should.
+
+--expect-n asserts the size of the PRIMARY set and exits non-zero if it differs. PREREGISTRATION
+10b S2 allows the Phi-v test to be recomputed ONCE, at the final n; the pool is not
+exhausted, so any run today must be at n = 7 and must be a correction of the executed
+layer-count deviation, not a new look at a larger set. The assertion is there so that
+growing n requires editing a number on the command line.
 
 v is taken from scripts/score_rows.py by running it and parsing its table, so the numbers
 here are the committed pipeline's, not transcribed ones. Spearman rho with an EXACT
@@ -92,9 +103,11 @@ def report(label, pairs, arm):
         print(f'    NOT SIGNIFICANT at the registered alpha = 0.05.')
 
 
-def main(repo):
-    phis = json.load(open(os.path.join(repo, 'results', 'core_polarity_2026-11-18',
-                                       'phi_rows.json')))
+def main(repo, phipath=None, expect_n=None):
+    if phipath is None:
+        phipath = os.path.join(repo, 'results', 'core_polarity_2026-11-18', 'phi_rows.json')
+    print('Phi source:', os.path.relpath(phipath, repo))
+    phis = json.load(open(phipath))
     rows = json.load(open(os.path.join(repo, 'data', 'regions.json')))['regions']
     idx = {(r['protein'], r['residues']): r for r in rows}
     v = get_v(repo)
@@ -128,8 +141,19 @@ def main(repo):
     report('SECONDARY: legacy arm', pairs_tango, 'legacy / TANGO')
     print('\nDISC1 and TRIOBP-1 have no deposited fibril structures and are absent from')
     print('every line above. The confirmatory stratum is not in this analysis.')
+    if expect_n is not None and len(pairs_all) != expect_n:
+        print('\n*** STOP. PRIMARY n = %d, but --expect-n said %d.' % (len(pairs_all), expect_n))
+        print('    PREREGISTRATION 10b S2: the Phi-v test is recomputed ONCE, at the final n.')
+        print('    If n has genuinely moved, that is a decision to record, not a default.')
+        return 1
     return 0
 
 
 if __name__ == '__main__':
-    raise SystemExit(main(sys.argv[1] if len(sys.argv) > 1 else '.'))
+    argv = sys.argv[1:]
+    _phi = _expect = None
+    if '--phi' in argv:
+        i = argv.index('--phi'); _phi = argv[i + 1]; del argv[i:i + 2]
+    if '--expect-n' in argv:
+        i = argv.index('--expect-n'); _expect = int(argv[i + 1]); del argv[i:i + 2]
+    raise SystemExit(main(argv[0] if argv else '.', _phi, _expect))

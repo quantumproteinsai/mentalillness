@@ -222,3 +222,56 @@ result."* It has now recurred in a second analysis.
 today. Before the manuscript is submitted: re-run Φ at 11 layers and report whether any
 value moved, and either commit the coordinates or commit a fetch script that pins the
 PDB IDs and checksums what it downloads.
+
+---
+
+# Both pre-submission blockers closed, 19 Nov 2026
+
+## Blocker 1 — eleven layers registered, thirteen executed: CLOSED, and it was worth checking
+
+Re-run at the registered **11 layers** across all 22 structures (10 rows, 12 calibration),
+committed in `results/core_polarity_2026-11-19/`.
+
+**Exactly one residue in one structure changed state.** In glycinin G4 (9V45) a single
+arginine sits on the SASA < 10 Å² boundary: buried at 13 layers (core 25/27, Φ = 0.480),
+exposed at 11 (core 24/27, **Φ = 0.458**). Every other row and **all twelve calibration
+structures are identical to three decimals**, and AUROC holds at **0.844** against the
+§10a abandonment bar of 0.80.
+
+The registered *n* = 7 test, re-run at 11 layers on the same rows and the same *v*:
+**ρ = +0.821, exact one-sided *p* = 0.0171** — identical to six decimal places.
+
+> **DO NOT REPORT THAT AS ROBUSTNESS.** Glycinin's Φ **rank moved from 4th to 6th**. It fell
+> two places while hnRNPA1 and SAA each rose one, and Σd² happened to stay at exactly 10 in
+> both orderings. Spearman's ρ depends only on Σd², so it could not see the change. A
+> different neighbour, or a different *v* for glycinin, and the number would have moved.
+> **The deviation did change a Φ value and did change a rank; ρ was insensitive to that
+> particular swap by arithmetic coincidence.**
+
+The earlier note said the direction of the effect was one-way reasoning rather than a
+measurement — *"That is reasoning, not a measurement."* It is now a measurement, and the
+reasoning was right about the direction (fewer layers → fractionally more exposure → the
+boundary residue leaves the core) and right that the magnitude was small. **That it was
+right does not retire the rule that produced the warning.**
+
+## Blocker 2 — Φ not reproducible from the repository: CLOSED
+
+Three files now stand in for the uncommitted coordinates:
+
+- **`data/phi_spec.json`** — every input, including deposited rise and twist, and which
+  rows are frozen under §10b S3.
+- **`data/coordinate_manifest.json`** — **SHA-256 of all 22 coordinate files analysed.**
+- **`scripts/fetch_coordinates.py`** — fetches from RCSB and verifies each checksum;
+  **a mismatch exits non-zero and names the entry**, so an RCSB re-version cannot silently
+  change a published number.
+
+The coordinates stay uncommitted (third-party data, ~90 MB, RCSB is canonical). The manifest
+is what makes that defensible rather than merely convenient.
+
+## One finding that came out of doing this
+
+**6VPS numbers its residues 23-53, not 176-206** — an offset of −153, with the UniProt span
+recorded only in `_entity.pdbx_fragment`. Requesting 176-206 selected **no atoms** and
+`core_polarity.py` refused rather than scoring something. The fifth frame collision this
+project has found, and the first inside a structural deposit rather than in prose. Recorded
+in `data/phi_spec.json` as `range_note` and in the Orb2 row.

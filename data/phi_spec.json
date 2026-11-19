@@ -1,0 +1,207 @@
+{
+ "_what": "Input specification for scripts/core_polarity.py (PREREGISTRATION 10a, 10b, 10c). Committed so that the Phi numbers are reproducible from this repository. Rise and twist are the DEPOSITED helical parameters; entries without them are analysed as deposited and flagged in the output.",
+ "_layers": "The registered replication is 11 layers and that is the script default. The 18 Nov 2026 run executed 13; both are reported so the deviation is a measured number rather than an argument.",
+ "_ranges": "A range may be discontinuous (PREREGISTRATION 10c), written as comma-separated segments. Gaps are never interpolated.",
+ "_frozen_rows": "The seven 'row' entries are the incumbent Phi set and are NOT re-selected (PREREGISTRATION 10b S3). Note FUS is analysed over 39-95, which is the registered range and is narrower than the 37-97 modelled span recorded in data/regions.json; it is left as registered.",
+ "rows": [
+  {
+   "label": "FUS 39-95",
+   "pdb": "5W3N",
+   "entity": "1",
+   "range": "39-95",
+   "group": "row"
+  },
+  {
+   "label": "hnRNPA1 251-295",
+   "pdb": "7ZJ2",
+   "entity": "1",
+   "range": "251-295",
+   "rise": 2.37,
+   "twist": 179.05,
+   "group": "row"
+  },
+  {
+   "label": "SAA 2-55",
+   "pdb": "6MST",
+   "entity": "1",
+   "range": "2-55",
+   "rise": 2.4,
+   "twist": 0.79,
+   "group": "row"
+  },
+  {
+   "label": "LECT2 55-75",
+   "pdb": "8G2V",
+   "entity": "1",
+   "range": "55-75",
+   "rise": 2.345,
+   "twist": 179.49,
+   "group": "row"
+  },
+  {
+   "label": "TMEM106B 120-254",
+   "pdb": "7U16",
+   "entity": "1",
+   "range": "120-254",
+   "rise": 4.8,
+   "twist": -0.4,
+   "group": "row"
+  },
+  {
+   "label": "ANXA11 39-74",
+   "pdb": "9FOR",
+   "entity": "2",
+   "range": "39-74",
+   "rise": 4.98,
+   "twist": -1.83,
+   "group": "row"
+  },
+  {
+   "label": "glycinin 164-190",
+   "pdb": "9V45",
+   "entity": "1",
+   "range": "164-190",
+   "rise": 2.4,
+   "twist": 179.466,
+   "group": "row"
+  },
+  {
+   "label": "Orb2 176-206",
+   "pdb": "6VPS",
+   "entity": "1",
+   "range": "23-53",
+   "rise": 4.75,
+   "twist": -1.55,
+   "group": "row_new",
+   "range_note": "DEPOSIT FRAME, NOT THE UNIPROT FRAME. 6VPS numbers its modelled residues 23-53; the UniProt span is recorded only in _entity.pdbx_fragment as 'UNP residues 176-206'. The offset is -153. The 31 modelled residues read QLHQQQHQQQHQQHQQHQQQQQLHQHQQQLS in all nine chains, which matches Orb2B 176-206 character for character, so the two frames describe the same region. Using 176-206 here selects NO ATOMS and the script errors rather than scoring something else -- which is how this was found, on 19 Nov 2026.",
+   "uniprot_range": "176-206"
+  },
+  {
+   "label": "b2m 22-85",
+   "pdb": "6GK3",
+   "entity": "1",
+   "range": "22-85",
+   "rise": 4.83,
+   "twist": -0.608,
+   "group": "row_new"
+  },
+  {
+   "label": "SOD1 3-55,86-153",
+   "pdb": "7VZF",
+   "entity": "1",
+   "range": "3-55,86-153",
+   "rise": 4.82,
+   "twist": -1.187,
+   "group": "row_new"
+  }
+ ],
+ "calibration": [
+  {
+   "label": "Abeta 7Q4B",
+   "pdb": "7Q4B",
+   "entity": "1",
+   "range": "9-42",
+   "rise": 2.4,
+   "twist": 178.4,
+   "group": "hydrophobic"
+  },
+  {
+   "label": "Abeta 7Q4M",
+   "pdb": "7Q4M",
+   "entity": "1",
+   "range": "12-42",
+   "rise": 4.9,
+   "twist": -2.9,
+   "group": "hydrophobic"
+  },
+  {
+   "label": "a-syn 6H6B",
+   "pdb": "6H6B",
+   "entity": "1",
+   "range": "38-95",
+   "rise": 2.45,
+   "twist": 179.5,
+   "group": "hydrophobic"
+  },
+  {
+   "label": "tau 5O3L",
+   "pdb": "5O3L",
+   "entity": "1",
+   "range": "306-378",
+   "rise": 2.36,
+   "twist": 179.4,
+   "group": "hydrophobic"
+  },
+  {
+   "label": "prion 7YAT",
+   "pdb": "7YAT",
+   "entity": "1",
+   "range": "119-143",
+   "rise": 4.77,
+   "twist": -1.76,
+   "group": "hydrophobic"
+  },
+  {
+   "label": "prion 8WZX",
+   "pdb": "8WZX",
+   "entity": "1",
+   "range": "94-144",
+   "rise": 2.38,
+   "twist": 179.217,
+   "group": "hydrophobic"
+  },
+  {
+   "label": "transthyretin 7OB4",
+   "pdb": "7OB4",
+   "entity": "1",
+   "range": "11-123",
+   "rise": 4.72,
+   "twist": -0.552,
+   "group": "hydrophobic"
+  },
+  {
+   "label": "AL59 9FAA",
+   "pdb": "9FAA",
+   "entity": "1",
+   "range": "1-118",
+   "rise": 4.916,
+   "twist": -0.743,
+   "group": "hydrophobic"
+  },
+  {
+   "label": "FUS 6XFM",
+   "pdb": "6XFM",
+   "entity": "1",
+   "range": "2-40",
+   "rise": 4.8,
+   "twist": -2.0,
+   "group": "HYDROPHILIC"
+  },
+  {
+   "label": "FapC 9NQD",
+   "pdb": "9NQD",
+   "entity": "1",
+   "range": "34-238",
+   "rise": 14.562,
+   "twist": -2.266,
+   "group": "HYDROPHILIC"
+  },
+  {
+   "label": "FapC 9U4U",
+   "pdb": "9U4U",
+   "entity": "1",
+   "range": "45-234",
+   "rise": 14.4,
+   "twist": -6.0,
+   "group": "HYDROPHILIC"
+  },
+  {
+   "label": "CsgA 8ENQ",
+   "pdb": "8ENQ",
+   "entity": "1",
+   "range": "41-151",
+   "group": "HYDROPHILIC"
+  }
+ ],
+ "_deposit_frames": "A deposit's auth_seq_id numbering is NOT always the UniProt frame. 6VPS is offset by -153. Every 'range' in this file is in the DEPOSIT's own numbering, because that is what the coordinates carry; where it differs from the frame recorded in data/regions.json, 'uniprot_range' and 'range_note' say so."
+}

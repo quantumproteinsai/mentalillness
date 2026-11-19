@@ -60,19 +60,34 @@ def main():
             err(r, f'source_version {r.get("source_version")!r} not in {sorted(SRCVER_OK)}')
 
     # ---- 2. sequence must match the stated range, and be real amino acids
+    #
+    # A range may be DISCONTINUOUS (PREREGISTRATION 10c), written as comma-separated
+    # segments, in which case `sequence` carries the segments separated by '|'. The
+    # length check then runs against the SUM of the segment lengths and against each
+    # segment individually -- a total-only check would pass a sequence whose internal
+    # split is in the wrong place.
     for r in rows:
         seq = r.get('sequence')
         if not seq:
             continue
-        bad = set(seq) - AA
-        if bad:
-            err(r, f'sequence contains non-amino-acid characters {sorted(bad)}')
-        m = re.match(r'^(\d+)-(\d+)', str(r.get('residues', '')))
-        if m:
-            a, b = int(m.group(1)), int(m.group(2))
+        segs = re.findall(r'(\d+)-(\d+)', str(r.get('residues', '')))
+        if not segs:
+            continue
+        parts = str(seq).split('|')
+        if len(parts) != len(segs):
+            err(r, f'residues has {len(segs)} segment(s) but sequence has {len(parts)}; '
+                   f"discontinuous rows separate segments with '|' (PREREG 10c)")
+            continue
+        for (a, b), part in zip(segs, parts):
+            a, b = int(a), int(b)
+            bad = set(part) - AA
+            if bad:
+                err(r, f'sequence segment {a}-{b} contains non-amino-acid '
+                       f'characters {sorted(bad)}')
             want = b - a + 1
-            if len(seq) != want:
-                err(r, f'sequence is {len(seq)} aa but residues {a}-{b} implies {want}')
+            if len(part) != want:
+                err(r, f'sequence segment is {len(part)} aa but residues {a}-{b} '
+                       f'implies {want}')
 
     # ---- 3. leftovers from earlier schema versions
     for r in rows:

@@ -13,9 +13,16 @@ aggregation-critical regions, in schizophrenia-associated scaffold proteins.
 The badge is the **concept DOI** (`10.5281/zenodo.24290697`) and always resolves
 to the latest version; cite the **version DOI** above for a specific analysis.
 
-**24 regions across 14 proteins**, every row read from its source paper. CC BY
-4.0. The analysis built on it is **not** published and is not finished; the
-dataset stands on its own and was deposited first deliberately.
+**The deposited version v1.4.0 holds 24 regions across 14 proteins**, every row
+read from its source paper. CC BY 4.0. The analysis built on it is **not**
+published and is not finished; the dataset stands on its own and was deposited
+first deliberately.
+
+**The working file has since grown to 27 regions across 17 proteins** and is
+ahead of the deposit. Orb2, β2-microglobulin and SOD1 were admitted on 18–19
+November 2026 under the structural-recruitment rule
+([`PREREGISTRATION.md`](PREREGISTRATION.md) §10b). Cite the deposit for a
+specific analysis; read `data/regions.json` for the current position.
 
 **Start with [`STATE.md`](STATE.md).** It is the current position, and parts of
 the original plan did not survive contact with the primary sources.
@@ -36,12 +43,14 @@ rather than a result to establish.
 |---|---|
 | `STATE.md` | current position, with the three corrections that matter |
 | `PREREGISTRATION.md` | the statistic, the thresholds and the eligibility rule, frozen at `freeze-2026-11-17`, with every amendment dated and marked for whether scores had been seen |
-| `data/regions.json` | **the validation set: 24 rows**, with construct, circularity, stratum, power-eligibility and source-version columns. The working file |
+| `data/regions.json` | **the validation set: 27 rows** (deposit v1.4.0 has 24), with construct, circularity, stratum, power-eligibility and source-version columns. The working file |
 | `release/` | what was deposited at 10.5281/zenodo.24290697, derived from it by `scripts/build_release.py` |
 | `manuscript/benchmark_draft.md` | the write-up: a null benchmark, an information limit, a polar-core association, and five named defects. **Draft, not submitted** |
 | `data/references_to_check.json` | sources nobody has opened. A lead is not a fact |
 | `scripts/score_rows.py` | the §3.1 statistic, and the floor and information-limit warnings it prints on every run |
 | `scripts/gatekeeper_density.py` | reproduces the gatekeeper separation (`python3 scripts/gatekeeper_density.py`) |
+| `data/phi_spec.json`, `data/coordinate_manifest.json` | every input to the core-polarity metric, and the SHA-256 of all 22 deposited coordinate files analysed |
+| `scripts/fetch_coordinates.py` | fetches those coordinates from RCSB and verifies each checksum; a mismatch exits non-zero rather than warning |
 | `reports/PDFs_to_obtain.md` | papers behind paywalls, ranked by what changes if you read one |
 
 ## Before you benchmark anything against regions like these

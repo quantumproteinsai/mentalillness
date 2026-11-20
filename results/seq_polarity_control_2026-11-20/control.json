@@ -1,0 +1,155 @@
+{
+ "_what": "PREREGISTRATION 10d: the sequence-polarity control on the Phi-v association. Phi_seq is computed here; Phi and v are read from committed artefacts and are not recomputed.",
+ "_registered": "PREREGISTRATION 10d, commit 414b139, BEFORE Phi_seq existed.",
+ "_polar_set": "CDEHKNQRSTY",
+ "rows": [
+  {
+   "label": "FUS 39-95",
+   "pdb": "5W3N",
+   "range": "39-95",
+   "n_res": 57,
+   "region_seq": "SGYSQSTDTSGYGQSSYSSYGQSQNTGYGTQSTPQGYGSTGGYGSSQSSQSSYGQQS",
+   "n_polar": 44,
+   "phi_seq": 0.7719298245614035,
+   "phi_cut_5": 0.6578947368421053,
+   "phi_cut_10": 0.675,
+   "n_core_cut_5": 38,
+   "n_core_cut_10": 40,
+   "curated_sequence_agrees": true,
+   "curated_sequence_note": ""
+  },
+  {
+   "label": "hnRNPA1 251-295",
+   "pdb": "7ZJ2",
+   "range": "251-295",
+   "n_res": 45,
+   "region_seq": "GSNFGGGGSYNDFGNYNNQSSNFGPMKGGNFGGRSSGPYGGGGQY",
+   "n_polar": 22,
+   "phi_seq": 0.4888888888888889,
+   "phi_cut_5": 0.46511627906976744,
+   "phi_cut_10": 0.46511627906976744,
+   "n_core_cut_5": 43,
+   "n_core_cut_10": 43,
+   "curated_sequence_agrees": true,
+   "curated_sequence_note": ""
+  },
+  {
+   "label": "SAA 2-55",
+   "pdb": "6MST",
+   "range": "2-55",
+   "n_res": 54,
+   "region_seq": "SFFSFLGEAFDGARDMWRAYSDMREANYIGSDKYFHARGNYDAAKRGPGGVWAA",
+   "n_polar": 25,
+   "phi_seq": 0.46296296296296297,
+   "phi_cut_5": 0.47058823529411764,
+   "phi_cut_10": 0.46153846153846156,
+   "n_core_cut_5": 51,
+   "n_core_cut_10": 52,
+   "curated_sequence_agrees": true,
+   "curated_sequence_note": ""
+  },
+  {
+   "label": "LECT2 55-75",
+   "pdb": "8G2V",
+   "range": "55-75",
+   "n_res": 21,
+   "region_seq": "MIVGQEKPYQNKNAINNGVRI",
+   "n_polar": 11,
+   "phi_seq": 0.5238095238095238,
+   "phi_cut_5": 0.5263157894736842,
+   "phi_cut_10": 0.5263157894736842,
+   "n_core_cut_5": 19,
+   "n_core_cut_10": 19,
+   "curated_sequence_agrees": true,
+   "curated_sequence_note": ""
+  },
+  {
+   "label": "TMEM106B 120-254",
+   "pdb": "7U16",
+   "range": "120-254",
+   "n_res": 135,
+   "region_seq": "SIDVKYIGVKSAYVSYDVQKRTIYLNITNTLNITNNNYYSVEVENITAQVQFSKTVIGKARLNNITIIGPLDMKQIDYTVPTVIAEEMSYMYDFCTLISIKVHNIVLMMQVTVTTTYFGHSEQISQERYQYVDCG",
+   "n_polar": 79,
+   "phi_seq": 0.5851851851851851,
+   "phi_cut_5": 0.5752212389380531,
+   "phi_cut_10": 0.5772357723577236,
+   "n_core_cut_5": 113,
+   "n_core_cut_10": 123,
+   "curated_sequence_agrees": true,
+   "curated_sequence_note": ""
+  },
+  {
+   "label": "ANXA11 39-74",
+   "pdb": "9FOR",
+   "range": "39-74",
+   "n_res": 36,
+   "region_seq": "LDNVATYAGQFNQDYLSGMAANMSGTFGGANMPNLY",
+   "n_polar": 16,
+   "phi_seq": 0.4444444444444444,
+   "phi_cut_5": 0.4411764705882353,
+   "phi_cut_10": 0.4411764705882353,
+   "n_core_cut_5": 34,
+   "n_core_cut_10": 34,
+   "curated_sequence_agrees": true,
+   "curated_sequence_note": ""
+  },
+  {
+   "label": "glycinin 164-190",
+   "pdb": "9V45",
+   "range": "164-190",
+   "n_res": 27,
+   "region_seq": "PVVAISLLDTSNFNNQLDQTPRVFYLA",
+   "n_polar": 13,
+   "phi_seq": 0.48148148148148145,
+   "phi_cut_5": 0.4583333333333333,
+   "phi_cut_10": 0.4583333333333333,
+   "n_core_cut_5": 24,
+   "n_core_cut_10": 24,
+   "curated_sequence_agrees": true,
+   "curated_sequence_note": ""
+  }
+ ],
+ "v": {
+  "FUS 39-95": 0.958208,
+  "hnRNPA1 251-295": 0.462645,
+  "SAA 2-55": 0.212446,
+  "LECT2 55-75": 0.40537,
+  "TMEM106B 120-254": 0.990005,
+  "ANXA11 39-74": 0.331484,
+  "glycinin 164-190": 0.388392
+ },
+ "_v_source": "scripts/score_rows.py, via join_phi_v.get_v() -- the committed pipeline, run here, not transcribed.",
+ "_reproduction_check": {
+  "rho_phi_v_cut_10": 0.8214285714285713,
+  "published": 0.821
+ },
+ "cutoffs": {
+  "cut_5": {
+   "rho_phi_v": 0.6785714285714285,
+   "p_phi_v": 0.05476190476190476,
+   "rho_phiseq_v": 0.8928571428571428,
+   "p_phiseq_v": 0.006150793650793651,
+   "rho_phi_phiseq": 0.8928571428571428,
+   "partial_rho_phi_v_given_phiseq": -0.5849056603773584,
+   "p_partial": 0.8873015873015873,
+   "n_permutations": 5040,
+   "verdict": "COLLAPSED"
+  },
+  "cut_10": {
+   "rho_phi_v": 0.8214285714285713,
+   "p_phi_v": 0.017063492063492062,
+   "rho_phiseq_v": 0.8928571428571428,
+   "p_phiseq_v": 0.006150793650793651,
+   "rho_phi_phiseq": 0.9642857142857142,
+   "partial_rho_phi_v_given_phiseq": -0.33149866741080547,
+   "p_partial": 0.729563492063492,
+   "n_permutations": 5040,
+   "verdict": "COLLAPSED"
+  }
+ },
+ "registered_verdict": "COLLAPSED",
+ "verdict_by_cutoff": {
+  "cut_5": "COLLAPSED",
+  "cut_10": "COLLAPSED"
+ }
+}

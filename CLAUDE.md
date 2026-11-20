@@ -70,9 +70,26 @@ the weight and must never be dropped:
 - `found_by` -- a region discovered *by prediction* is circular for a predictor
   benchmark. Those rows are analysed separately, not silently included.
 
-Current count is 10 rows against a floor of 15. Widening it to every protein
-with fragment-level aggregation mapping -- not only the psychiatric ones -- is
-the outstanding task.
+**Current count is 27 rows across 17 proteins. The floor of 15 was passed; this
+paragraph said 10 until 20 Nov 2026 and was misdirecting every session that read
+it.** Widening the set in general is NO LONGER the outstanding task.
+
+**The scarcity is now specific, and it is measured.** The confirmatory cell --
+DISCORDANT, circularity-clean, CPAD-absent and power-eligible -- holds **3 rows
+across 2 proteins** (TRIOBP-1 324-348, DISC1 384-414, DISC1 748-769) against §4's
+requirement of **5 PROTEINS** — and the protein count is the binding one. Recruiting from
+deposited fibril cores does not fix it: screening 82 independently curated cores
+from 69 proteins gives **10 power-eligible (12%) and 1 of those surviving the CPAD
+check -- a joint yield of 1 in 82**, and the Amyloid Atlas is redundant by protein
+(797 entries collapsed to 69), so the rest of it is worth about one further
+candidate. `results/cpad_screen_ten_2026-11-20/`.
+
+**So "there aren't many" is a result, not a gap to work around.** Do not propose a
+general widening sweep; it has been run. Two traps if any screen is run anyway:
+**eligibility is per-REGION, not per-protein** (a protein with a long core may also
+have a short one), and **one orthology database is not orthology** (OMA alone missed
+MPRIP for TRIOBP and FUS for TAF15 -- query OMA *and* OrthoInspector, and check every
+in-group paralogue in its own right).
 
 ## Numbering traps, both real
 
@@ -128,4 +145,10 @@ Two things in the working tree are deliberately untracked and must stay that
 way: `tango2_3_1.linux64.zip` and `TANGO_Instructions.pdf`. TANGO is distributed
 under an academic licence, and redistributing it -- even in a private repository
 headed for publication -- is the author's decision, not an agent's. `git add -A`
-sweeps them in; it has already done so once.
+swept them in once.
+
+**Since then both have been added to `.gitignore`, so the protection is structural
+rather than a matter of vigilance [verified 20 Nov 2026: present, untracked,
+ignored]. Do not remove those entries, and do not use `git add -f` on them.** The
+same rule will apply to the AggreProt weights if they ever arrive -- gitignore the
+archive by name *before* it lands, not after.

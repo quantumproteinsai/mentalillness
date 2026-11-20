@@ -868,7 +868,7 @@ endobj
 << /Type /Page /Parent 15 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
 endobj
 9 0 obj
-<< /Length 8728 >>
+<< /Length 8877 >>
 stream
 q 1 0 0 -1 62.00 777.89 cm
 0.100 0.100 0.110 rg
@@ -1082,11 +1082,11 @@ BT /F1 10.00 Tf 1 0 0 1 78.00 357.89 Tm (soit meilleur.) Tj ET
 q 1 0 0 -1 62.00 339.89 cm
 1.00 w
 0.970 0.970 0.980 rg
-0.00 0.00 471.28 122.00 re
+0.00 0.00 471.28 135.00 re
 f
 1.00 w
 0.710 0.330 0.040 rg
-0.00 0.00 3.00 122.00 re
+0.00 0.00 3.00 135.00 re
 f
 Q
 0.100 0.100 0.110 rg
@@ -1098,24 +1098,26 @@ BT /F1 9.50 Tf 1 0 0 1 76.00 301.89 Tm (petite valeur de p que le test puisse pr
 0.100 0.100 0.110 rg
 BT /F1 9.50 Tf 1 0 0 1 76.00 288.89 Tm (régions ont été ajoutées le 18 novembre 2026, la portant à cinq, pour un résultat de p = 0,38 : toujours) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 275.89 Tm (rien, mais pour la première fois un vrai test plutôt qu'un test impossible. Deux de ces trois régions) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 275.89 Tm (rien, mais pour la première fois un vrai test plutôt qu'un test impossible. Deux de ces trois régions sont) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 262.89 Tm (proviennent de protéines si semblables qu'elles comptent pour une seule mesure, et toutes trois) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 262.89 Tm (des régions différentes de la MÊME protéine, DISC1, l'une étant contenue dans l'autre : elles ne peuvent) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 249.89 Tm (appartiennent au groupe dont le seuil ne peut jamais se déclencher. C'est un défaut de notre propre) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 249.89 Tm (donc pas compter pour deux mesures indépendantes. Et deux des trois appartiennent au groupe dont le) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 9.50 Tf 1 0 0 1 76.00 236.89 Tm (protocole, découvert en l'exécutant plutôt qu'en le lisant, et il est consigné plutôt que corrigé discrètement.) Tj ET
+BT /F1 9.50 Tf 1 0 0 1 76.00 236.89 Tm (seuil ne peut jamais se déclencher. C'est un défaut de notre propre protocole, découvert en l'exécutant) Tj ET
+0.100 0.100 0.110 rg
+BT /F1 9.50 Tf 1 0 0 1 76.00 223.89 Tm (plutôt qu'en le lisant, et il est consigné plutôt que corrigé discrètement.) Tj ET
 0.150 0.390 0.920 rg
-BT /F2 13.00 Tf 1 0 0 1 62.00 191.89 Tm (7. Pourquoi nous écrivons les règles d'abord) Tj ET
+BT /F2 13.00 Tf 1 0 0 1 62.00 178.89 Tm (7. Pourquoi nous écrivons les règles d'abord) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 170.89 Tm (La statistique, le seuil et le mode de sélection des régions ont tous été écrits et enregistrés avant toute) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 157.89 Tm (La statistique, le seuil et le mode de sélection des régions ont tous été écrits et enregistrés avant toute) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 156.89 Tm (exécution de prédicteur. Cela s'appelle le pré-enregistrement, et cela existe à cause d'une tendance) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 143.89 Tm (exécution de prédicteur. Cela s'appelle le pré-enregistrement, et cela existe à cause d'une tendance) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 142.89 Tm (humaine simple : si l'on regarde d'abord les résultats et que l'on choisit le test ensuite, on choisira le test) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 62.00 129.89 Tm (humaine simple : si l'on regarde d'abord les résultats et que l'on choisit le test ensuite, on choisira le test) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 62.00 128.89 Tm (qui fonctionne. Procéder dans cet ordre nous a déjà coûté des résultats que nous aurions aimé garder :) Tj ET
-q 1 0 0 -1 64.00 114.89 cm
+BT /F1 10.00 Tf 1 0 0 1 62.00 115.89 Tm (qui fonctionne. Procéder dans cet ordre nous a déjà coûté des résultats que nous aurions aimé garder :) Tj ET
+q 1 0 0 -1 64.00 101.89 cm
 1.00 w
 0.150 0.390 0.920 rg
 5.20 4.00 m
@@ -1126,9 +1128,9 @@ q 1 0 0 -1 64.00 114.89 cm
 f
 Q
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 107.89 Tm (Quatre défauts de notre propre protocole ont été découverts en l'exécutant, dont un où la réponse) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 94.89 Tm (Quatre défauts de notre propre protocole ont été découverts en l'exécutant, dont un où la réponse) Tj ET
 0.100 0.100 0.110 rg
-BT /F1 10.00 Tf 1 0 0 1 78.00 93.89 Tm (change selon l'endroit où l'on commence à découper les fenêtres.) Tj ET
+BT /F1 10.00 Tf 1 0 0 1 78.00 80.89 Tm (change selon l'endroit où l'on commence à découper les fenêtres.) Tj ET
 0.420 0.440 0.480 rg
 BT /F1 8.00 Tf 1 0 0 1 533.28 32.00 Tm (4) Tj ET
 endstream
@@ -1593,16 +1595,16 @@ xref
 0000017042 00000 n 
 0000025040 00000 n 
 0000025183 00000 n 
-0000033963 00000 n 
-0000034107 00000 n 
-0000044532 00000 n 
-0000044677 00000 n 
-0000050084 00000 n 
-0000050229 00000 n 
-0000050320 00000 n 
-0000050473 00000 n 
+0000034112 00000 n 
+0000034256 00000 n 
+0000044681 00000 n 
+0000044826 00000 n 
+0000050233 00000 n 
+0000050378 00000 n 
+0000050469 00000 n 
+0000050622 00000 n 
 trailer
 << /Size 18 /Root 17 0 R /Info 16 0 R >>
 startxref
-50524
+50673
 %%EOF

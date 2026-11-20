@@ -773,8 +773,9 @@ EN = {
           '0.25 -- no data could have passed the threshold. Three regions were added on 18 '
           'November 2026, taking it to five and giving a result of p = 0.38: still nothing, '
           'but for the first time a real test rather than an impossible one. Two of those '
-          'three regions come from proteins so similar that they count as one measurement, '
-          'and all three sit in the group whose threshold can never fire. That is a flaw in '
+          'three are different regions of the SAME protein, DISC1, with one lying inside '
+          'the other, so they cannot count as two independent measurements. And two of '
+          'the three sit in the group whose threshold can never fire. That is a flaw in '
           'our own design, found by running it rather than by reading it, and it is '
           'recorded rather than quietly patched.',
     'h7': '7. Why we write the rules down first',
@@ -989,8 +990,9 @@ FR = {
           "produire est 0,25 : aucune donnée n'aurait pu franchir le seuil. Trois régions "
           "ont été ajoutées le 18 novembre 2026, la portant à cinq, pour un résultat de "
           "p = 0,38 : toujours rien, mais pour la première fois un vrai test plutôt qu'un "
-          "test impossible. Deux de ces trois régions proviennent de protéines si "
-          "semblables qu'elles comptent pour une seule mesure, et toutes trois appartiennent "
+          "test impossible. Deux de ces trois régions sont des régions différentes de la "
+          "MÊME protéine, DISC1, l'une étant contenue dans l'autre : elles ne peuvent "
+          "donc pas compter pour deux mesures indépendantes. Et deux des trois appartiennent "
           "au groupe dont le seuil ne peut jamais se déclencher. C'est un défaut de notre "
           "propre protocole, découvert en l'exécutant plutôt qu'en le lisant, et il est "
           "consigné plutôt que corrigé discrètement.",

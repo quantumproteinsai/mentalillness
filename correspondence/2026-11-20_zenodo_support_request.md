@@ -8,9 +8,22 @@ request, can make it happen. The deposit itself is correct and complete — the 
 published, holds all five files, and the concept DOI resolves to it. **Only the version
 DOI's registration is missing.**
 
-**Where to send it.** <https://zenodo.org/support>, category *Technical issue*, or
-`support@zenodo.org` if the form is unavailable. Sign in first so the request is linked to
-the account that owns the record.
+**Where to send it.** <https://zenodo.org/support>. Sign in first, so the request is linked
+to the account that owns the record.
+
+**Category: "Report bug or problem".** Checked against the live dropdown, 20 Nov 2026 --
+there is no "Technical issue" option, which this file said until it was looked at. The
+other plausible choices are worse: *General inquiry* invites a templated reply, and *Modify
+files* is for changing the files on a published record, which is not what is being asked.
+A DOI that was never registered at publication is a failure in their pipeline, so it is a
+bug report.
+
+**"Browser & OS" field.** Say that the problem is server-side and browser-independent: it
+reproduces from `curl` on both Linux and Windows, on two networks. That answers the first
+question a support desk asks and saves a round trip.
+
+**"How can we help?" is a plain textarea.** Paste the plain-text version below, not the
+markdown one -- tables written with pipes will arrive as unreadable pipe soup.
 
 **What makes this request easy for them to act on, and worth keeping in the message.** The
 same account published **v1.3.0 two hours and twenty-six minutes earlier the same day**,
@@ -74,6 +87,68 @@ record id, the DOI, and both timestamps.
 >
 > Bertrand Mercier des Rochettes
 > ORCID 0000-0002-1145-1881
+
+---
+
+## PASTE THIS ONE — plain text, for the form's textarea
+
+**Subject:** Published record 24342313 — version DOI 10.5281/zenodo.24342313 was never registered with DataCite
+
+```
+Hello,
+
+I have a published record whose version DOI does not resolve. I think the DataCite
+registration failed silently on publication, because everything on the Zenodo side
+looks correct.
+
+Record:  https://zenodo.org/records/24342313
+         "Experimentally mapped aggregation-critical protein regions", version 1.4.0,
+         published 2026-11-18 at 13:20:37 UTC.
+DOI it displays:  10.5281/zenodo.24342313
+
+What I see:
+
+  zenodo.org/api/records/24342313 ........... 200, state: done, status: published,
+                                              submitted: true, all five files present
+  concept DOI 10.5281/zenodo.24290697 ....... resolves to zenodo.org/records/24342313,
+                                              so this record IS the current version
+  doi.org/10.5281/zenodo.24342313 ........... 404
+  api.datacite.org/dois/10.5281/zenodo.24342313 .... 404
+  hdl.handle.net/api/handles/10.5281/zenodo.24342313 ... responseCode 100 (not found)
+
+So the record is published and the concept DOI points at it, but the version DOI was
+never registered.
+
+This looks like a one-off rather than something about my account. The previous version
+of the same record, published the SAME DAY at 10:54:21 UTC -- two and a half hours
+earlier, same workflow -- registered correctly:
+
+  doi.org/10.5281/zenodo.24339193 (v1.3.0) ......... 302 -> record
+  api.datacite.org/dois/10.5281/zenodo.24339193 .... 200
+
+10.5281/zenodo.24290698 (v1.0.0), 10.5281/zenodo.24306057 (v1.1.0),
+10.5281/zenodo.24337561 (v1.2.0) and the concept DOI all resolve too -- 302 at doi.org
+and 200 at DataCite for every one of them. v1.4.0 is the only one of the five version
+DOIs that does not.
+
+Re-checked on 2026-11-20, two days after publication, in case registration was simply
+slow. Unchanged. Checked from two machines on two different networks (Linux and
+Windows), with identical results, so it is not a local resolver or a cached response.
+
+Could you re-trigger the DataCite registration for 10.5281/zenodo.24342313? The DOI has
+been cited externally, so I would rather it were registered than replaced -- but if
+minting that exact DOI is not possible, please tell me and I will state the record URL
+in its place.
+
+Thank you,
+
+Bertrand Mercier des Rochettes
+ORCID 0000-0002-1145-1881
+```
+
+**Browser & OS field:** `Server-side, not browser-dependent: reproduces from curl on both Linux and Windows, on two separate networks.`
+
+**Files field:** nothing to attach. Everything above is checkable from the public API.
 
 ---
 

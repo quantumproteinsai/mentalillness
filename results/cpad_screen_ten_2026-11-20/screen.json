@@ -1,0 +1,116 @@
+{
+ "_what": "PREREGISTRATION 5.2b item 4 applied to the ten regions that passed the 3.1b power screen in results/amylocore_screen_2026-11-20/. Reports CPAD status only; admits no row.",
+ "_tables_read": {
+  "apr_option_strings": 286,
+  "apr_unique_names_case_insensitive": 259,
+  "apr_unique_stated_by_database": 268,
+  "peptides": {
+   "read": 2031,
+   "stated": 2031,
+   "contiguous_P0001_onwards": true
+  },
+  "structures": {
+   "read": 565,
+   "stated": 565,
+   "contiguous_S0001_onwards": true
+  },
+  "fetched": "2026-11-20, public browse pages, paginated 30/page"
+ },
+ "_controls": {
+  "positive_must_hit": {
+   "tau P10636": "APR 1 / pep 139 / str 17",
+   "beta2-microglobulin P61769": "APR 1 / pep 72 / str 33",
+   "transthyretin P02766": "APR 1 / pep 9 / str 152"
+  },
+  "negative_must_stay_absent": {
+   "DISC1 Q9NRI5": "0/0/0",
+   "TRIOBP-1 Q9H2D6": "0/0/0"
+  }
+ },
+ "_orthology": {
+  "databases": [
+   "OMA (omabrowser.org REST)",
+   "OrthoInspector Eukaryota2023 (api.bigest-icube.fr REST)"
+  ],
+  "why_both": "PREREGISTRATION 5.2b: CPAD90 transfers annotations to HOMOLOGUES. On 17 Nov OMA alone would have missed MPRIP for TRIOBP. On 20 Nov OMA alone would have missed FUS for TAF15: OMA group 1120003 holds exactly one human protein (TAF15 itself); OrthoInspector holds four."
+ },
+ "n_screened": 10,
+ "n_cpad_member": 8,
+ "n_training_set_uncertain": 1,
+ "n_surviving": 1,
+ "surviving": [
+  "cruciferin-3 (Q96318) 12-26"
+ ],
+ "rows": [
+  {
+   "protein": "hnRNPA1",
+   "uniprot": "P09651",
+   "cpad_status": "CPAD_MEMBER",
+   "basis": "structures x4 (explicitly Homo sapiens); absent from APR list and peptide table",
+   "checked": "17 Nov, re-confirmed 20 Nov"
+  },
+  {
+   "protein": "Orb2",
+   "uniprot": "Q9VSR3",
+   "cpad_status": "CPAD_MEMBER",
+   "basis": "APR list 'Translational regulator orb2'; 0 peptides, 0 structures",
+   "checked": "19 Nov, re-confirmed 20 Nov"
+  },
+  {
+   "protein": "FapC",
+   "uniprot": "Q9I2F0",
+   "cpad_status": "CPAD_MEMBER",
+   "basis": "APR list 'FapC amyloid-like fimbriae protein'; 0 peptides, 0 structures",
+   "checked": "20 Nov"
+  },
+  {
+   "protein": "Lysozyme",
+   "uniprot": "P61626",
+   "cpad_status": "CPAD_MEMBER",
+   "basis": "APR x2 ('Lysozyme C','Hen egg white lysozyme'); 34 peptides; 13 structures",
+   "checked": "20 Nov"
+  },
+  {
+   "protein": "Sup35NM",
+   "uniprot": "P05453",
+   "cpad_status": "CPAD_MEMBER",
+   "basis": "APR 'Sup35'; 253 peptides; 9 structures",
+   "checked": "20 Nov"
+  },
+  {
+   "protein": "PMEL",
+   "uniprot": "P40967",
+   "cpad_status": "CPAD_MEMBER",
+   "basis": "APR 'PMEL M-alpha'; 3 peptides 'Melanocyte protein PMEL (ME20-M)'; 0 structures",
+   "checked": "20 Nov"
+  },
+  {
+   "protein": "RIPK3",
+   "uniprot": "Q9Y572",
+   "cpad_status": "CPAD_MEMBER",
+   "basis": "APR 'RIP3'; 1 peptide; 2 structures incl. 'RIP1/RIP3 Necrosome'",
+   "checked": "20 Nov"
+  },
+  {
+   "protein": "RIPK1",
+   "uniprot": "Q13546",
+   "cpad_status": "CPAD_MEMBER",
+   "basis": "APR 'RIP1'; 0 peptides; 2 structures incl. 'RIP1/RIP3 Necrosome'",
+   "checked": "20 Nov"
+  },
+  {
+   "protein": "TAF15",
+   "uniprot": "Q92804",
+   "cpad_status": "TRAINING_SET_UNCERTAIN",
+   "basis": "absent from all three tables, BUT its OrthoInspector Eukaryota2023 group contains FUS (P35637), which is CPAD-present in all three (APR 1, peptides 49, structures 5)",
+   "checked": "20 Nov"
+  },
+  {
+   "protein": "cruciferin-3",
+   "uniprot": "Q96318",
+   "cpad_status": "CPAD_ABSENT_ORTHOLOGY_CHECKED",
+   "basis": "absent from all three tables; every in-group paralogue (CRU1 P15455, CRU2 P15456, CRU4 Q9ZWA9) and the OMA-group orthologue glycinin also absent",
+   "checked": "20 Nov"
+  }
+ ]
+}

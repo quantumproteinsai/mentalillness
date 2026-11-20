@@ -516,6 +516,18 @@ discordant stratum. Of its 5 rows, **3 are excluded** under item 5 as CPAD membe
 (FUS 39-95, hnRNPA1 251-295, LECT2 55-75) and **2 survive** (TRIOBP-1 324-348,
 DISC1 384-415). No row carries `TRAINING_SET_UNCERTAIN`.
 
+> **CORRECTION, 20 November 2026 — that last sentence is now false.** `TAF15 7-99` is flagged
+> **`TRAINING_SET_UNCERTAIN`**. It is absent from all three CPAD 2.0 tables, but OrthoInspector
+> Eukaryota2023 places **FUS (P35637)** in its orthologous group, and FUS is CPAD-present in all
+> three tables and is already a row in this dataset. Item 4 is explicit that this is the
+> `TRAINING_SET_UNCERTAIN` condition. **OMA alone would have missed it** — OMA group 1120003 holds
+> exactly one human protein, TAF15 itself. That is the second time one orthology database has been
+> demonstrably insufficient, after MPRIP/TRIOBP on 17 November.
+>
+> **No reported number moves.** The row is `power_eligible: false` (*m*/*M* = 0.1531) and was
+> already outside the confirmatory statistic under §3.1b. Evidence and the full screen of the ten
+> §3.1b-eligible external regions: `results/cpad_screen_ten_2026-11-20/`.
+
 **One dataset is not CPAD.** hnRNPA1 is absent from the APR list *and* the peptide table
 and present three times in the structures table; LECT2 is the mirror image, APR list only.
 Checking a single table would have cleared both wrongly. Any row added later must be

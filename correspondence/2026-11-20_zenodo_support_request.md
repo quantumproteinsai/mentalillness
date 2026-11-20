@@ -89,14 +89,34 @@ record id, the DOI, and both timestamps.
 - **Nothing in this message identifies anything beyond the public record** — record ids,
   DOIs, publication timestamps and an ORCID, all already public on Zenodo. No private
   detail is disclosed by sending it.
-- **The three verbatim checks, if you want to re-run them yourself before sending:**
+- **The three verbatim checks, if you want to re-run them yourself before sending.**
+  Linux or macOS:
 
-  ```
+  ```sh
   curl -s -o /dev/null -w '%{http_code}\n' -I https://doi.org/10.5281/zenodo.24342313
   curl -s -o /dev/null -w '%{http_code}\n'    https://api.datacite.org/dois/10.5281/zenodo.24342313
   curl -s -o /dev/null -w '%{http_code}\n'    https://zenodo.org/api/records/24342313
   ```
 
-  Expected as of 20 Nov 2026: **404**, **404**, **200**. If the first two ever return
-  anything else, the problem has fixed itself and this message should not be sent — check
-  before sending rather than after.
+  **On Windows PowerShell these three lines fail, and not for a reason about the DOI.**
+  `curl` there is an alias for `Invoke-WebRequest`, which parses `-s` as `-SessionVariable`
+  and refuses. Write `curl.exe` to reach the real curl Windows ships, and `NUL` for
+  `/dev/null`:
+
+  ```powershell
+  curl.exe -s -o NUL -w '%{http_code}\n' -I https://doi.org/10.5281/zenodo.24342313
+  curl.exe -s -o NUL -w '%{http_code}\n'    https://api.datacite.org/dois/10.5281/zenodo.24342313
+  curl.exe -s -o NUL -w '%{http_code}\n'    https://zenodo.org/api/records/24342313
+  ```
+
+  Expected: **404**, **404**, **200**. A bare `302` on the first is the healthy answer for
+  any *other* version's DOI — there is no `-L`, so curl does not follow the redirect, and
+  302 means registered rather than failed.
+
+  **If the first two ever return anything but 404, the problem has fixed itself and this
+  message should not be sent.** Check before sending rather than after.
+
+- **The checks were run twice, on two machines, and agree.** 20 Nov 2026 from Linux, and
+  again the same day from Windows on a different network: 404, 404, 200 both times. Worth
+  knowing before sending, because the one explanation a support desk will reach for first
+  is a local resolver or cache, and two networks rule that out.

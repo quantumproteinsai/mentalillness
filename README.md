@@ -108,8 +108,12 @@ scores has minimum attainable one-sided *p* = 1/C(*M*,*m*) — on this project's
 a rank-sum answers a different question, the tiled windows are not independent,
 and changing statistics after seeing scores is what the pre-registration exists
 to forbid. The general result — minimum attainable *p* under discreteness, used
-to exclude untestable hypotheses — is **Tarone's rule**, Tarone RE (1990),
-*Biometrics* **46**:515–522. Cite that; what is new here is the application.
+to set aside hypotheses that cannot reject at α — is **Gart, Chu & Tarone (1979) *J Natl Cancer Inst* **62**:957–974 and Mantel (1980) *Biometrics* **36**:381–399, the latter attributing the remark to **John Tukey**; Tarone (1990) *Biometrics* **46**:515–522 is the standard reference for the sharper multiplicity correction built on it, and is the name the significant-pattern-mining literature uses**. Cite those; what is
+new here is the application, and the fact that we apply it to decide whether a single
+benchmark row is informative rather than to shrink a multiplicity correction.
+*Corrected 20 Nov 2026 on reading the primary: this read "Tarone's rule, Tarone 1990",
+which is how the pattern-mining literature names it but is not where the idea appears —
+see* [`reports/tarone_1990_read_2026-11-20.md`](reports/tarone_1990_read_2026-11-20.md).
 
 **13 of the 23 scored rows here exceed *m*/*M* > 0.05.** The check needs two
 integers, no predictor and no compute, and it is worth running before a candidate

@@ -135,12 +135,31 @@ the data and not of the transformation applied to them.
 > candidate **pre-registered secondary** statistic for *future* rows only, to be specified
 > in full before any such row is scored — not applied to any row now in the dataset.
 >
-> **And the general result is published and named: cite it rather than presenting it as
-> ours.** Minimum attainable p under discreteness, used to exclude untestable hypotheses,
-> is **Tarone's rule** — Tarone RE (1990), "A modified Bonferroni method for discrete
-> data", *Biometrics* **46**:515–522. A literature search on 19 Nov 2026 found **no**
+> **And the general result is published: cite it rather than presenting it as ours.**
+> Minimum attainable significance level under discreteness, used to set aside hypotheses
+> that cannot reject at α, is **Gart JJ, Chu KC, Tarone RE (1979)**, *J Natl Cancer Inst*
+> **62**:957–974, and **Mantel N (1980)**, *Biometrics* **36**:381–399, the latter
+> attributing the remark to **John Tukey**. A literature search on 19 Nov 2026 found **no**
 > application of it to aggregation-predictor benchmarking, so the application is this
 > project's contribution and the bound is not.
+>
+> > **CORRECTED 20 Nov 2026, ON READING THE PRIMARY.** This passage cited *Tarone RE
+> > (1990), "A modified Bonferroni method for discrete data"* for the exclusion rule.
+> > **Tarone 1990 is not where that idea appears.** Its own introduction attributes the
+> > exclusion to Gart, Chu & Tarone (1979) and to Mantel (1980) "in remarks attributed to
+> > John Tukey"; its own contribution is a sharper Bonferroni correction factor *K*, which
+> > this project does not use, since it performs no Bonferroni correction across rows. The
+> > citation came from a `[SNIPPET]` reading of significant-pattern-mining sources, where
+> > "Tarone's rule" is the standard name for the whole package — correct in that
+> > literature, wrong as an attribution of the idea. **The register had graded it
+> > `[SNIPPET]` and said in those words that the paper had not been opened; it was cited
+> > flatly in five documents anyway.** Full reading:
+> > `reports/tarone_1990_read_2026-11-20.md`.
+> >
+> > **The claim is also now sharper, not merely corrected.** Gart, Mantel and Tarone
+> > exclude untestable hypotheses *to shrink a multiplicity correction*. §3.1b excludes
+> > them *to say a benchmark row is uninformative in principle*, at recruitment, before the
+> > paper is read in full. Same arithmetic, different purpose.
 >
 > **An unrecorded consequence of our own arithmetic, found in the same audit.** floor_v ≈
 > m/2M, so floor_v ≤ 0.05 ⟺ m/M ≲ 0.103. **The admission bar of m/M ≤ 0.05 is therefore

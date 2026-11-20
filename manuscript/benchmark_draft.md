@@ -24,8 +24,9 @@ attainable *p* for a region of *m* windows in a chain of *M* is exactly *m*/*M*.
 of any min-rank benchmark at α = 0.05**, whatever predictor is used — a verdict that needs
 two integers and no predictor. (A rank-sum has a different and lower floor, 1/C(*M*,*m*);
 that bounds how broadly the claim may be stated and rescues none of these rows. The general
-result — minimum attainable *p* under discreteness — is Tarone's rule, Tarone 1990, whose
-application to aggregation benchmarking we believe to be new.)
+result — setting aside hypotheses that cannot reject at α under a discrete null — is Gart,
+Chu & Tarone 1979 and Mantel 1980, the latter attributing it to Tukey; we apply it to a
+different end, and that application to aggregation benchmarking we believe to be new.)
 
 **This is not a defect of our statistic; it is a constraint on the design**, and it
 disqualifies most of the published region-mapping literature as benchmark material. Applied
@@ -215,8 +216,18 @@ minimum attainable one-sided *p* = 1/C(*M*,*m*) — on β2-microglobulin 22–85
 a rescue**: a rank-sum answers a different question, the tiled windows are not independent,
 and changing statistics after unblinding is what pre-registration forbids. The general
 result — minimum attainable *p* under discreteness, used to exclude untestable hypotheses —
-is **Tarone's rule** (Tarone 1990, *Biometrics* **46**:515–522); what is new here is its
-application to aggregation benchmarking, for which a literature search returned nothing.
+is **Gart, Chu & Tarone (1979) *J Natl Cancer Inst* **62**:957–974 and Mantel (1980) *Biometrics* **36**:381–399, the latter attributing the remark to **John Tukey**; Tarone (1990) *Biometrics* **46**:515–522 is the standard reference for the sharper multiplicity correction built on it, and is the name the significant-pattern-mining literature uses**.
+
+**We cite those rather than Tarone 1990 alone, and the distinction is one we got wrong
+first.** Tarone's own introduction attributes the exclusion of untestable hypotheses to
+Gart et al. and to Mantel "in remarks attributed to John Tukey"; Tarone 1990's contribution
+is a sharper correction factor *K*, which we do not use, since we apply no Bonferroni
+correction across rows. **And our purpose differs from all three.** They set aside
+untestable hypotheses *to shrink a multiplicity correction* and preserve family-wise error.
+We set them aside *to say a benchmark row is uninformative in principle*, applied at
+recruitment before a candidate paper is read in full. Same arithmetic, different end, and
+the second is what we claim is new; a literature search for either in aggregation
+benchmarking returned nothing.
 
 **Thirteen of 23 scored rows exceed *m*/*M* > 0.05**, from TMEM106B at 0.489 and SAA at
 0.471 down to ANXA11 at 0.060. **Ten can ever reach *p* < 0.05.** The two founding

@@ -3142,9 +3142,28 @@ inside the region, at rank 1 of 16, while §3.1 returns v = 0.2720 and §7 reads
 **It is a limit on the wording, not a rescue.** A rank-sum answers a different question,
 the tiled windows are not independent, and switching statistics after unblinding is what
 the pre-registration forbids. Corrected as a dated amendment in §3.1b, in README.md and in
-the released descriptor. **The general result is Tarone's rule** — Tarone RE (1990),
-*Biometrics* **46**:515-522 — and is cited rather than presented as ours; the search for an
-application of it to aggregation benchmarking came back empty, so the application stands.
+the released descriptor. **The general result is cited rather than presented as ours**; the
+search for an application of it to aggregation benchmarking came back empty, so the
+application stands.
+
+> **ATTRIBUTION CORRECTED 20 Nov 2026 — and this file was the sixth document carrying the
+> error.** The sentence above used to read *"the general result is Tarone's rule — Tarone RE
+> (1990), Biometrics 46:515-522"*. **Tarone 1990 is not where the idea is introduced, and
+> Tarone says so himself.** Read in full from the publisher PDF, p. 515, verbatim: *"Gart,
+> Chu, and Tarone (1979) noted that the number of significance tests could be reduced by
+> eliminating those tests for which rejection was not possible at the nominal false positive
+> rate, α, that is, for which α\* > α [see also Mantel (1980), in remarks attributed to John
+> Tukey]."* So the citation is **Gart JJ, Chu KC, Tarone RE (1979)** *J Natl Cancer Inst*
+> **62**:957-974 and **Mantel N (1980)** *Biometrics* **36**:381-399, crediting **John
+> Tukey**. Tarone 1990's own contribution is a sharper Bonferroni factor *K*, which this
+> project does not use at all — the confirmatory combination is Stouffer, not Bonferroni.
+> **We were citing the paper for the one part of it that is not its own.** The error came
+> from a `[SNIPPET]` that named the right paper for the wrong reason, through
+> significant-pattern-mining sources where "Tarone's rule" is the community name for the
+> whole package. The register said the paper was unopened and five documents cited it
+> anyway, one of them under a DOI. **Gart 1979 and Mantel 1980 are themselves still
+> unopened** — they are requested from the author and must not be quoted beyond what Tarone
+> quotes until they are. Full reading: `reports/tarone_1990_read_2026-11-20.md`.
 
 **An unrecorded consequence of our own arithmetic, from the same audit.** floor_v ≈ m/2M,
 so floor_v ≤ 0.05 ⟺ m/M ≲ 0.103. **The admission bar of m/M ≤ 0.05 is about twice as
@@ -3261,3 +3280,138 @@ literature; this is that, turned on the project's own most attractive result.
 **v1.5.0 was prepared earlier today with the Φ claim in its description and must not be
 deposited in that state.** The description, the data descriptor and the dataset's own
 project note are corrected in the same commit as this entry.
+
+---
+
+# 20 November 2026, later — the register is closed, the external route is closed, and one premise is now in question
+
+Four things, in rising order of how much they could cost.
+
+## 1. The reference register has no unverified entry left
+
+All five remaining `verified_against_publisher_pdf: false` entries were supplied as publisher
+PDFs and read in full. **Every 15 November correction is confirmed at source, verbatim** — the
+Cukkemane β-core really is a MODELLER restraint (*"after adding restraints defining antiparallel
+β-strands in segments 716-737 and 739-761"*), it really does disagree with itself (716 in the
+abstract, 717 in the discussion), there really is no data-availability statement and no accession,
+and Samardžija really does contain **zero schizophrenia cases**.
+
+**Louros et al. 2020 was read, and it had been cited unopened for a day.** It is the paper the
+§10d withdrawal collapses into, it was named in `STATE.md`, in the manuscript and in the agent
+memory — and nobody had opened it. It says what we said it says, and more sharply: *"most
+sequence-based predictors negatively correlate net charge to protein aggregation and have
+increased failure rates when identifying such amyloid-forming stretches"*, with a quantified 20%
+polar/charged enrichment at *n* = 219 vs 203 residues against our *n* = 7 rows. **The withdrawal
+stands and now rests on a source somebody opened.**
+
+**Two numbers in this project were wrong and are corrected.** Samardžija's Fisher *p* = 0.6922
+reproduces exactly from the published counts, but the sample odds ratio is **1.80** with interval
+**0.37 to 8.68**, not the 1.7 and 0.4-7.8 recorded on 15 November. And *"aggregates spread between
+cells"* was attributed here to Cukkemane; it is Cukkemane **citing Zhu 2017**, which remains
+unread, so the claim moved to the right source rather than becoming verified.
+
+## 2. The external recruitment route is measured, and it closes at one protein
+
+AmyloCore-ML (Singh, Jangid & Srivastava, bioRxiv v3, 18 Nov 2026) benchmarks **AggrescanAI — this
+project's own confirmatory arm** — on 82 non-redundant fibril cores from 69 proteins. Screening
+its supplementary against §3.1b and then §5.2b gives the compound yield:
+
+| gate | passes |
+|---|---|
+| §3.1b power-eligible (*m*/*M* ≤ 0.05) | **10 of 82** (12.2%) |
+| §5.2b CPAD-clean, all three tables + both orthology databases | **1 of those 10** |
+| **joint** | **1 in 82** |
+
+**Our own 1-of-13 was the base rate, not bad luck** — 7.7% against their 11.1%. So §4.2's
+*"systematically ineligible"* was too strong and is now quantified: about nine in ten deposited
+fibril cores cannot enter a min-rank benchmark, and the tenth is usually in the training set.
+
+**Eligibility is per-REGION, not per-protein, and their data proves it.** TAF15 is in both
+datasets: ours at 7-99 is ineligible (0.1531), theirs at 135-145 is eligible (0.0102). Same
+protein, two cores, opposite verdicts. `reports/route_b_screen_2026-11-19.md` screened
+per-protein and found zero where the true rate is ~12%; **its reasoning was wrong and its
+conclusion was nearly right anyway.**
+
+**Scaling will not rescue it.** The Atlas is redundant by protein — their Figure 2a gives tau 200
+entries, α-synuclein 191, Aβ 94 — and 797 entries collapsed to 69 proteins. Our 20 Nov check found
+902 entries, which collapse to roughly the same order. **At 1 in 82, the remaining Atlas is worth
+about one further candidate. §4's five proteins are not reachable from deposited fibril cores.**
+
+**Not claimed:** 90% of the eligible regions being CPAD-implicated may or may not beat the
+background rate across all 69 of their proteins. That measurement has not been run and no
+anti-correlation is asserted.
+
+## 3. TAF15 was wrong in our own dataset, and the row had already said so
+
+TAF15 is absent from all three CPAD tables, but **OrthoInspector puts FUS (P35637) in its
+orthologous group**, and FUS is CPAD-present in all three and is already a row here. Under §5.2b
+item 4 that is `TRAINING_SET_UNCERTAIN`, and the status is corrected.
+
+> **The row's own `cpad_basis` recorded the reason while the status denied it:** *"NOTE THAT ITS
+> HOMOLOGUE FUS IS A CPAD MEMBER and is already a row in this dataset."* The evidence was written
+> down and the verdict contradicted it. **A field that records a risk is not the same as a verdict
+> that acts on it, and only the verdict is machine-read.**
+
+**OMA alone would have missed it** — group 1120003 holds 133 members and exactly one human protein,
+TAF15 itself. That is the second demonstration, after MPRIP/TRIOBP on 17 November, that **querying
+one orthology database is not querying orthology.**
+
+No reported number moves: the row is `power_eligible: false` and was already outside the
+confirmatory statistic. What changes is §5.2b's claim that no row carries
+`TRAINING_SET_UNCERTAIN`, corrected in place.
+
+**And the survivor is not independent of a row we hold.** Cruciferin-3's OMA group contains
+**glycinin G4**, which is already a row. §3's Stouffer and Fisher combinations assume independent
+rows; two orthologous seed-storage globulins are not two independent tests of a predictor.
+Recorded before either is scored.
+
+## 4. THE OPEN ONE — are the DISC1 rows amyloid rows at all?
+
+**Trossbach 2016, read in full today, reports that DISC1 aggregates in the tgDISC1 rat are not
+amyloid by stain.** Verbatim:
+
+> *"the mainly perinuclear DISC1 aggregates **were not positive for ThS**, a marker for amyloid,
+> even though a recombinant DISC1 fragment (598-785) injected into the brain of wild-type rats did
+> stain for ThS. This indicates that DISC1 or its fragments are principally able to form amyloid,
+> **but not when endogenously expressed** in adult or aged tgDISC1 rats."*
+
+They are also **ThT-negative and A11-negative** — the aggresomes co-localise with γ-tubulin but
+with none of HSP70, A11 or ThT. **Cukkemane 2021 states the same thing independently**, citing
+this paper: *"DISC1 amyloid has not been reported either in human post-mortem brains or in animal
+models."*
+
+### Why this is a premise audit and not a defect
+
+This project benchmarks **amyloid and aggregation-prone-region predictors** against DISC1 regions.
+Those predictors are trained on amyloid-forming peptides — AggrescanAI on CPAD 2.0, AggreProt on
+WaltzDB, TANGO and FoldAmyloid on β-aggregation. **If the DISC1 aggregates that matter in vivo are
+not amyloid, then the predictors are being asked about a different physical object than the one
+the experiments measured.** That would not make the benchmark invalid; it would make its *subject*
+something other than what the title says.
+
+### What it does and does not touch
+
+- **It does not touch the information limit.** §3.1b is arithmetic on region length against chain
+  length. It is indifferent to what the aggregate is made of, and it is the one surviving claim.
+- **It does not retract anything.** No published or deposited statement of ours asserts that DISC1
+  forms amyloid.
+- **It does bear on the framing of the whole benchmark arm**, and on whether `data/regions.json`
+  needs an `aggregate_class` column separating *amyloid* from *aggregation* rows — which would be
+  a change to the core asset and must not be made casually.
+
+### What would settle it, in order of cost
+
+1. **Read Zaharija 2022 and Zaharija 2025 for TRIOBP-1's stain status.** If TRIOBP-1 aggregates
+   are also dye-negative, the question is about the whole discordant stratum, not about DISC1.
+   Cheap — both are already `[READ]` in the register and can be re-examined for this specific
+   point.
+2. **Ask Bradshaw.** There is already an open correspondence channel and an unsent route (b)
+   paragraph. He is the right person and the question is one sentence.
+3. **Do not run anything.** There is no computation that resolves this, and §10d is the standing
+   warning about what happens when a structural interpretation is attached to a measurement that
+   does not carry it.
+
+**Stated as a question, not a finding, and left open deliberately.** `CLAUDE.md` rule 3 says the
+most valuable results here have been facts about the premises of proposed work rather than about
+papers. This is one of those, and it was found by reading a 2016 paper that had sat in the
+register as `verified_against_publisher_pdf: false` for six days.

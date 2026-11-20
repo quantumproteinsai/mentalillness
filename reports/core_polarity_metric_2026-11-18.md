@@ -281,10 +281,18 @@ in `data/phi_spec.json` as `range_note` and in the Orb2 row.
 ## Is the Φ–*v* association an *m*/*M* artefact? — checked 19 Nov 2026, and it is not
 
 **Why this had to be asked.** On 19 Nov the recruitment picture resolved into something
-uncomfortable: **not one of the thirteen structural rows in the dataset is
-`power_eligible`** — every one fails *m*/*M* ≤ 0.05 — while all four rows in the benchmark's
-scarce cell have no structure at all. So **every row in the Φ set has a *v* that is
-floor-constrained**, and the floor is a function of *m*/*M*. If Φ also tracks *m*/*M*, the
+uncomfortable: **not one of the seven rows in this Φ–*v* test is `power_eligible`** — every
+one fails *m*/*M* ≤ 0.05 — while all four rows in the benchmark's scarce cell have no
+structure at all. So **every row in this test has a *v* that is floor-constrained**, and
+the floor is a function of *m*/*M*.
+
+> **CORRECTED 20 Nov 2026, and the correction does not touch the seven.** This paragraph
+> read *"not one of the thirteen structural rows in the dataset is `power_eligible`"*. Of
+> the thirteen structural rows it is **one** — Orb2, whose flag was `null` on 19 Nov while
+> its own `power_limit` already recorded *m*/*M* = 0.0342, and which was resolved to `true`
+> for v1.5.0. **Orb2 is not one of the seven frozen rows** in the test below (it has Φ and
+> *v* but was recruited after the freeze), so ρ = +0.82 and every number in this section
+> stand exactly as computed. The claim is narrowed to what was actually tested. If Φ also tracks *m*/*M*, the
 reported Φ–*v* association could be measuring region geometry rather than core chemistry.
 
 **It is not a hypothetical.** Φ and *m*/*M* do correlate across the seven rows:

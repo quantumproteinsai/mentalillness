@@ -7,8 +7,13 @@ abstract: >-
   opening the source paper and checking the claim against it. Each region carries
   the construct that established it, whether a predictor was in its discovery
   path (circularity), and whether experiment and prediction agree (stratum).
+  Each region also carries whether its protein is in CPAD 2.0, and therefore
+  whether a modern predictor's hit on it may be recall of training data rather
+  than prediction, and whether a rank-based statistic could return a significant
+  result for it AT ALL, which is a property of the geometry and not of any
+  predictor.
 type: dataset
-version: 1.4.0
+version: 1.5.0
 authors:
   - family-names: "Mercier des Rochettes"
     given-names: "Bertrand"
@@ -45,29 +50,32 @@ identifiers:
     value: "10.5281/zenodo.24290697"
     description: "Concept DOI: always resolves to the latest version. Once v1.1.0 is published, its own version DOI is the one to cite for a specific analysis."
   - type: doi
+    value: "10.5281/zenodo.24342313"
+    description: "Version DOI of v1.4.0, the previous release. THIS DOI DOES NOT RESOLVE: the record is published and live at https://zenodo.org/records/24342313 and displays this DOI, but it was never registered with DataCite -- doi.org and the DataCite API both return 404, re-checked 20 Nov 2026. Cite the record URL if you need v1.4.0. v1.5.0 supersedes it in any case: v1.4.0 records DISC1's deleted region as 384-415, which is wrong by one residue (it is 384-414, settled from plasmid sequencing by the corresponding author), and it lacks the six rows added in 1.5.0 and the power_eligible column."
+  - type: doi
     value: "10.5281/zenodo.24339193"
-    description: "Version DOI of v1.3.0, the previous release. v1.4.0 supersedes it: v1.3.0 has no structure column, so it cannot say which deposited fibril structure a row's ordered core comes from, nor which rows have none at all."
+    description: "Version DOI of v1.3.0. v1.4.0 superseded it: v1.3.0 has no structure column, so it cannot say which deposited fibril structure a row's ordered core comes from, nor which rows have none at all. It carries the same DISC1 384-415 error."
   - type: doi
     value: "10.5281/zenodo.24337561"
     description: "Version DOI of v1.2.0, the previous release. v1.3.0 supersedes it: v1.2.0 carries seven rows at stratum PENDING whose labels this version assigns from the legacy predictor run, and it lacks the stratum_assignment column recording which labels were assigned blind and which were not."
   - type: doi
     value: "10.5281/zenodo.24306057"
-    description: "Version DOI of v1.1.0, the previous release. v1.2.0 supersedes it: v1.1.0 holds 17 rows against this version's 21, lacking ANXA11 39-74, TMEM106B 120-254, glycinin G4 164-190 and the DISC1 interval split into the two sub-intervals its source tested. The deposited v1.1.0 copy of THIS FILE also carries the pre-1.1.0 title, which deposited files being frozen made uncorrectable; see release/RELEASE_CHECKLIST.md."
+    description: "Version DOI of v1.1.0, the previous release. v1.2.0 supersedes it: v1.1.0 holds 17 rows against this version's 27, lacking ANXA11 39-74, TMEM106B 120-254, glycinin G4 164-190 and the DISC1 interval split into the two sub-intervals its source tested. The deposited v1.1.0 copy of THIS FILE also carries the pre-1.1.0 title, which deposited files being frozen made uncorrectable; see release/RELEASE_CHECKLIST.md."
   - type: doi
     value: "10.5281/zenodo.24290698"
     description: "Version DOI of v1.0.0. It has no cpad_status / cpad_basis / cpad_checked columns and therefore cannot tell a reader which rows are training-set contaminated. Do not use it in preference to a later version."
-date-released: 2026-11-18
-# THE DOI IS NOT YET RESERVED FOR v1.2.0, AND THE ORDER MATTERS.
+date-released: 2026-11-20
+# THE DOI IS NOT YET RESERVED FOR v1.5.0, AND THE ORDER MATTERS.
 # RELEASE_CHECKLIST.md requires: reserve -> write the number into this file and into
 # release/DATA_DESCRIPTOR.md -> upload -> publish. Not publish-then-patch, because
 # deposited files are FROZEN: a DOI added afterwards reaches the repository copy only
 # and leaves the deposited copy permanently inconsistent. That is what happened to
 # v1.0.0's DATA_DESCRIPTOR.md.
 #
-# Replace the placeholder below with the number Zenodo reserves for the v1.2.0 draft,
+# Replace the placeholder below with the number Zenodo reserves for the v1.5.0 draft,
 # then run `python3 scripts/preflight_deposit.py`, which refuses while it is present.
 #
 # CONDITION ON A RESERVED DOI: it belongs to ONE draft. If that draft is discarded
 # rather than published, Zenodo reserves a DIFFERENT number for the next attempt and
 # this line and the descriptor must both be updated again.
-doi: "10.5281/zenodo.24342313"
+doi: "DOI-RESERVE-PENDING"

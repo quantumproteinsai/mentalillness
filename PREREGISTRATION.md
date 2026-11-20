@@ -103,9 +103,52 @@ directly comparable, with no tuning.
 nobody computed it, and fixes a recruitment criterion so the bound stops being violated.**
 
 **The bound.** Under H0 the chain's top-ranked window falls inside the region with
-probability **exactly m/M**. The smallest p any rank-based statistic can return for that
-row is therefore **m/M**. Not this statistic — *any* of them. Amending §3.1 cannot move
-it, because it is a property of the data, not of the transformation applied to them.
+probability **exactly m/M**. The smallest p obtainable from the region's **best window
+rank** is therefore **m/M**, and amending §3.1 cannot move it, because it is a property of
+the data and not of the transformation applied to them.
+
+> #### CORRECTION, 20 Nov 2026 — the clause above said *any* rank-based statistic, and that is false
+>
+> **This corrects a claim about mathematics. It changes no formula, no threshold, no
+> eligibility rule and no row's label, and it rescues nothing.** The bar registered below
+> is unchanged, and the thirteen ineligible rows stay ineligible.
+>
+> The sentence as written on 18 Nov read: *"The smallest p any rank-based statistic can
+> return for that row is therefore m/M. Not this statistic — any of them."* **m/M is the
+> floor only for the min-rank family** — statistics that are a function of the region's
+> best window rank alone, which is what §3.1 is. It is not a floor for every rank-based
+> statistic.
+>
+> **The counterexample is in this project's own data.** A rank-sum over the m in-region
+> against the M−m out-of-region window scores has minimum attainable one-sided p =
+> 1/C(M,m). On β2-microglobulin 22–85, where m = 10 and M = 16, that is **1/C(16,10) =
+> 1/8008 = 1.25×10⁻⁴**, against m/M = 0.625. And that row is exactly where it bites: the
+> predictor's single best window **in the entire chain** lies inside the mapped region,
+> ranked 1 of 16, on **both** arms — and §3.1 returns v = 0.2720 and §7 reads DISCORDANT,
+> because the statistic uses the minimum rank and discards the other nine.
+>
+> **Why this is a limit on the wording and not a licence to switch statistics.** A rank-sum
+> answers a different question; the tiled windows are not independent, so its null is not
+> the one quoted; and changing the statistic after unblinding is precisely what this
+> document exists to forbid. The correct registered wording is **"no amendment within the
+> min-rank family can rescue an ineligible row"**. A rank-sum is hereby recorded as a
+> candidate **pre-registered secondary** statistic for *future* rows only, to be specified
+> in full before any such row is scored — not applied to any row now in the dataset.
+>
+> **And the general result is published and named: cite it rather than presenting it as
+> ours.** Minimum attainable p under discreteness, used to exclude untestable hypotheses,
+> is **Tarone's rule** — Tarone RE (1990), "A modified Bonferroni method for discrete
+> data", *Biometrics* **46**:515–522. A literature search on 19 Nov 2026 found **no**
+> application of it to aggregation-predictor benchmarking, so the application is this
+> project's contribution and the bound is not.
+>
+> **An unrecorded consequence of our own arithmetic, found in the same audit.** floor_v ≈
+> m/2M, so floor_v ≤ 0.05 ⟺ m/M ≲ 0.103. **The admission bar of m/M ≤ 0.05 is therefore
+> about twice as strict as §3.1's own statistic requires**, and rows with 0.05 < m/M ≤
+> 0.103 are refused although v < 0.05 is attainable for them. **This is recorded as a fact
+> about the rule and is explicitly NOT a licence to relax the bar** — relaxing a
+> recruitment criterion after seeing scores is the post-hoc selection this amendment was
+> written to prevent. The bar stays at 0.05.
 
 **What it implies for §4.** Where **m/M > 0.05**, §4's recovery criterion (v < 0.05)
 **cannot fire**. "The predictor missed this region" is then true by arithmetic before any
@@ -115,16 +158,20 @@ software runs, and it is true in the direction of this project's own H1.
 
 - **13 of 23 scored rows have m/M > 0.05.** TMEM106B 120–254 is 0.489, serum amyloid A
   2–55 is 0.471, CHCHD10 42–75 is 0.217.
-- **Only 10 of the 23 scored rows can ever reach p < 0.05 under any rank-based test**
+- **Only 10 of the 23 scored rows can ever reach p < 0.05 under a min-rank statistic**
   (11 of all 24, counting the row excluded from scoring). *Corrected 18 Nov 2026: this
   first read 7 of 20, before the §3.1a short-region rows were given their sliding-pool
-  m = 1 instead of a tiling m = 0.*
+  m = 1 instead of a tiling m = 0. Wording corrected 20 Nov 2026: it read "under any
+  rank-based test" — see the correction above.*
 - A weaker, formula-specific consequence: v cannot fall below
   **1 − ((M−0.5)/M)^m**, which exceeds 0.05 for **9 of 23** rows, and where that floor is
   attained v is **anti-conservative by 2.1×** (CHCHD10 reports v = 0.104 where the
   calibrated p is 0.218 = 5/23).
-- **Both founding confirmatory rows pass**, narrowly: DISC1 384–415 at **0.0352** and
-  TRIOBP-1 324–348 at **0.0370**. The project's own question remains answerable.
+- **Both founding confirmatory rows pass**, narrowly: DISC1 384–414 at **0.0352** and
+  TRIOBP-1 324–348 at **0.0370**. The project's own question remains answerable. *The
+  DISC1 range read 384–415 here until 20 Nov 2026; the corresponding author settled it at
+  384–414 from plasmid sequencing on 19 Nov. m/M is unchanged at this precision — 31
+  residues against 32 in an 854-residue chain — so no eligibility verdict moves.*
 
 **That this was never computed is the finding, not the bound.** m/M needs the chain length
 and the region length and nothing else. It was available on day one, it is available from

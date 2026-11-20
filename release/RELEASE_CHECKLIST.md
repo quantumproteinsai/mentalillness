@@ -32,36 +32,96 @@ A corrected claim, a changed `stratum`, a new row, a retraction → **yes, depos
 commentary on a row, a tightened caveat, a note that only matters to someone auditing the
 project → **no, it waits.**
 
-**Currently owed:** the glycinin row's `source_version_note` and `notes` (the Supporting
-Information, read 18 Nov, which **corrected one of the row's own claims** — S5 shows
-Val165–Asp172 belongs to an adjacent chain, where the row had recorded an alternative
-conformation), plus one project note. **A corrected claim is on the "yes" side** — but it
-is one row, so it waits for the next substantive change rather than minting v1.4.0 alone.
+**Currently owed: nothing.** The batch that was accumulating became v1.5.0 on 20 Nov 2026.
+Run `python3 scripts/deposit_status.py` to see what has piled up since.
 
 ---
 
-## v1.4.0 READY TO UPLOAD — DOI reserved 18 Nov 2026 — **NOT YET PUBLISHED**
+## v1.5.0 PREPARED — awaiting a reserved DOI — **NOT YET UPLOADED**
 
-**Reserved version DOI: `10.5281/zenodo.24342313`**, written into `CITATION.cff` and
-`release/DATA_DESCRIPTOR.md` before upload. **`preflight_deposit.py` exits 0.** Tagged
-`v1.4.0` and `deposited-v1.4.0` at the same commit.
+**`preflight_deposit.py` refuses on exactly two checks, and they are the right two**: the
+`DOI-RESERVE-PENDING` placeholder in `CITATION.cff` and in `release/DATA_DESCRIPTOR.md`
+(**two** occurrences there). Everything else passes — title in all four places, version
+strings, 27 regions claimed in three files and found in the artefact, all five previously
+deposited versions byte-unchanged, snippet in step with `.zenodo.json`.
 
-Verified reserved-but-not-live, with controls: `doi.org/10.5281/zenodo.24342313` → **404**
-and `api/records/24342313` → **404**, while the concept DOI still resolves to record
-24339193 (v1.3.0) and that record returns 200.
+### THE REMAINING STEPS ARE YOURS, AT THE FORM
 
-1. <https://zenodo.org/records/24339193> (v1.3.0) → **New version**
+1. <https://zenodo.org/records/24342313> (v1.4.0) → **New version**
 2. **Reserve DOI**, give me the number — it replaces `DOI-RESERVE-PENDING` in
    `CITATION.cff` (the `doi:` key) and `release/DATA_DESCRIPTOR.md` (**two** occurrences)
 3. `python3 scripts/preflight_deposit.py` → must exit 0
-4. Commit; tag `v1.4.0` **and** `deposited-v1.4.0` at the same commit
-5. Delete the five copied files, upload the v1.4.0 five, set **Version** to `1.4.0`,
+4. Commit; tag `v1.5.0` **and** `deposited-v1.5.0` at the same commit
+5. Delete the five copied files, upload the v1.5.0 five, set **Version** to `1.5.0`,
    **leave Additional Description empty**, paste
-   `release/zenodo_description_v1.4.0.snippet.html` into the Description **source view**
+   `release/zenodo_description_v1.5.0.snippet.html` into the Description **source view**
 6. Publish → verify the concept DOI resolves to the new record
-7. **Add `1.4.0` to `release/deposited.json` in the commit that records the deposit.**
+7. **Verify the new VERSION DOI resolves too** — `curl -o /dev/null -w '%{http_code}'
+   -I https://doi.org/10.5281/zenodo.<new>` must not be 404. **This step is new and v1.4.0
+   is why**: the concept DOI check passed there while the version DOI never registered.
+8. **Add `1.5.0` to `release/deposited.json` in the commit that records the deposit.**
 
 ### What changed, and why it warrants a version
+
+**A residue range is corrected, and that alone decides it.** DISC1's deleted region is
+**384-414**, not 384-415 — settled 19 Nov 2026 by the corresponding author from sequencing
+of the actual plasmids. **Every deposited version, v1.0.0 through v1.4.0, carries the wrong
+value.** By this file's own test — *would a reader who found the DOI and not the repository
+be misled by what is missing?* — a wrong residue range is the strongest possible yes.
+
+Also: **six new rows** (CHCHD10, CHCHD2, TAF15, Orb2, β2-microglobulin, SOD1 — 21 → 27),
+**`power_eligible` and `power_limit` promoted to core columns** after being on every row and
+documented nowhere, `power_limit` normalised from a two-shape field to an object, and the
+undocumented `cpad_status` token `CPAD_PRESENT` normalised to `CPAD_MEMBER` on three rows.
+
+**The confirmatory cell did not move: still 2 rows.** That is in the descriptor as a funnel
+table, because six new rows moving it by zero is the most useful thing this release says.
+
+---
+
+## v1.4.0 DEPOSITED 18 Nov 2026 — PUBLISHED, BUT ITS VERSION DOI NEVER REGISTERED
+
+**Version DOI `10.5281/zenodo.24342313` does not resolve, and as of 20 Nov 2026 it still
+does not.** This section said "READY TO UPLOAD — NOT YET PUBLISHED" until 20 Nov, which was
+stale: `release/deposited.json` had recorded the deposit on 18 Nov, in the same commit, as
+step 7 requires. **Two files in this repository disagreed about whether a DOI had been
+minted.**
+
+### What is actually true, checked 20 Nov 2026
+
+| check | result |
+|---|---|
+| `zenodo.org/api/records/24342313` | **200** — `state: done`, `status: published`, all five files present, `version: 1.4.0` |
+| concept DOI `…24290697` → | **`zenodo.org/records/24342313`** — v1.4.0 *is* the current version |
+| `doi.org/10.5281/zenodo.24342313` | **404** |
+| `api.datacite.org/dois/10.5281/zenodo.24342313` | **404** |
+| `doi.org/10.5281/zenodo.24339193` *(v1.3.0, control)* | **302 → record** |
+| `api.datacite.org/dois/…24339193` *(control)* | **200** |
+
+**The record is fine; the DOI registration is what failed.** And the control makes the
+diagnosis decisive: **v1.3.0's DOI was minted 2 h 26 min earlier the same day**
+(10:54:21 UTC against 13:20:37 UTC), from the same account by the same workflow, and it
+registered correctly. So do v1.1.0, v1.2.0 and the concept DOI. **v1.4.0 is the only one
+that failed**, which rules out an account-level or workflow-level cause.
+
+**This cannot be fixed from this repository.** Registration is Zenodo's action.
+`correspondence/2026-11-20_zenodo_support_request.md` is the request to send, carrying the
+table above.
+
+**What to do about citations meanwhile:** cite the **record URL**
+<https://zenodo.org/records/24342313>, or the concept DOI. `CITATION.cff`,
+`release/DATA_DESCRIPTOR.md` and `README.md` all now say so explicitly rather than listing
+a DOI that 404s — which is how an external correspondent found this in the first place.
+
+### The lesson, and it is already a step in the v1.5.0 procedure above
+
+**The concept-DOI check was passed and the version DOI was never checked.** The procedure
+said *"Publish → verify the concept DOI resolves to the new record"*, and that check is
+sound — it is the cheapest proof that a new version really went live — but **it does not
+test the version DOI**, which is the one that goes into a citation and the one that was
+sent to an external correspondent. Step 7 of the v1.5.0 procedure now tests it explicitly.
+
+### What v1.4.0 changed
 
 **No rows added or removed. A new core column, `structure`**, on the seven rows whose
 region is the ordered core of a deposited fibril — PDB entry, chain, modelled range,

@@ -30,7 +30,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '1.4.0'
+VERSION = '1.5.0'
 
 PAGE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8">

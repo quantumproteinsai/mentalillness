@@ -3,9 +3,13 @@
 **Status: DRAFT, NOT SENT.** Written by Claude for the author. Intended as an addition to
 the next message to N. Bradshaw (with B. Zaharija), not as a separate email.
 
-**Why this is worth one paragraph of his time.** Measured 19 Nov 2026: **not one of the
-thirteen structural rows in the dataset is `power_eligible`**, and all four rows in the
-benchmark's scarce cell have no structure at all. §10b recruits deposited fibril cores,
+**Why this is worth one paragraph of his time.** Measured 19 Nov 2026 and corrected
+20 Nov: **exactly one of the thirteen structural rows in the dataset is `power_eligible`,
+and that one is a CPAD member** and so is excluded from the confirmatory statistic on a
+separate ground. All four rows in the benchmark's scarce cell have no structure at all.
+*(The 19 Nov version of this file said "not one of thirteen". The Orb2 row's flag was
+`null` while its own recorded arithmetic put it below the bar; it is now `true`. The
+paragraph sent to Bradshaw contains no number that this changes.)* §10b recruits deposited fibril cores,
 which are long regions in short chains, and cannot produce a benchmark row. The scarce
 cell holds **4 rows across 2 proteins** — both of them his — and §4 needs **5 proteins**.
 A literature screen of five queries on 19 Nov returned **zero candidates**, and the reason

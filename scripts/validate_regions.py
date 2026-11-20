@@ -33,6 +33,17 @@ STRAT_OK = {'DISCORDANT', 'DISCORDANT_DERIVED', 'DISCORDANT_PROVISIONAL',
             'CONCORDANT', 'PENDING'}
 SRCVER_OK = {'version_of_record', 'author_manuscript', 'pmc_full_text',
              'preprint', 'source_not_opened', 'UNRECORDED'}
+# ADDED 20 Nov 2026. cpad_status had no controlled vocabulary here, and three rows
+# added on 19 Nov were written with `CPAD_PRESENT` -- a token `_columns` never defined.
+# Every documented exclusion of contaminated rows is phrased `cpad_status ==
+# 'CPAD_MEMBER'`, so those three rows would have been READMITTED by a consumer doing
+# exactly what the documentation says, which is the error the column exists to prevent.
+# The values below are the ones `_columns.cpad_status` defines, and nothing else.
+#
+# `UNCHECKED` is DELIBERATELY NOT HERE. A row whose contamination status is unknown is
+# not releasable, and on 19 Nov a predictor was run on a row carrying it, so the failure
+# mode is demonstrated rather than hypothetical. It gets its own message below.
+CPAD_OK = {'CPAD_MEMBER', 'CPAD_ABSENT_ORTHOLOGY_CHECKED', 'TRAINING_SET_UNCERTAIN'}
 AA = set('ACDEFGHIKLMNPQRSTVWY')
 
 
@@ -58,6 +69,18 @@ def main():
             err(r, f'stratum {r.get("stratum")!r} not in {sorted(STRAT_OK)}')
         if r.get('source_version') not in SRCVER_OK:
             err(r, f'source_version {r.get("source_version")!r} not in {sorted(SRCVER_OK)}')
+        cs = r.get('cpad_status')
+        if cs == 'UNCHECKED':
+            err(r, 'cpad_status is UNCHECKED -- the training-set contamination of this row '
+                   'is unknown, so it cannot be released and no modern predictor result on '
+                   'it can be read as prediction. Run the check against ALL THREE CPAD 2.0 '
+                   'tables (the APR list, the peptide table and the structures table); '
+                   'checking one would have cleared hnRNPA1, LECT2 and Orb2 wrongly.')
+        elif cs not in CPAD_OK:
+            err(r, f'cpad_status {cs!r} is not a value _columns defines: {sorted(CPAD_OK)}. '
+                   f'A synonym is worse than a wrong value here, because every documented '
+                   f'exclusion of contaminated rows is written '
+                   f'`cpad_status == "CPAD_MEMBER"` and a synonym passes through it.')
 
     # ---- 2. sequence must match the stated range, and be real amino acids
     #
@@ -159,8 +182,34 @@ def main():
     singletons = sorted(f for f, n in field_counts.items() if n == 1 and f not in CORE)
 
     # ---- 7. documented columns vs actual
-    documented = set((d.get('_columns') or {}).keys())
+    cols = d.get('_columns') or {}
+    documented = set(cols) | set(cols.get('_optional_but_common') or {})
     undocumented = [f for f in CORE if f not in documented]
+
+    # ---- 7a. A FIELD ON EVERY ROW IS SCHEMA, WHATEVER IT IS CALLED
+    #
+    # ADDED 20 Nov 2026. Section 6 above reports fields on exactly ONE row as commentary;
+    # section 7 checks that the CORE list is documented. Nothing looked at the gap between
+    # them, and two fields were living in it: `power_eligible` on 26 of 27 rows and
+    # `power_limit` on all 27, neither documented anywhere. `power_eligible` is the flag
+    # that decides the confirmatory cell -- the builder's own comment argues exactly this
+    # for `stratum_assignment`: "a consumer who cannot see that flag cannot reproduce the
+    # confirmatory set."
+    #
+    # A field on EVERY row is schema by definition, so that is an error. A field on some
+    # rows may legitimately be commentary that happens to repeat, so that is a warning.
+    for f, n in sorted(field_counts.items()):
+        if f in documented or n < 2:
+            continue
+        if n == len(rows):
+            errors.append(f'UNDOCUMENTED SCHEMA: {f!r} is on ALL {n} rows and is not in '
+                          f'_columns. A field every row carries is schema, not commentary, '
+                          f'and a consumer cannot be asked to infer it. Document it in '
+                          f'_columns (or in _columns._optional_but_common if it is '
+                          f'genuinely optional).')
+        else:
+            warnings.append(f'{f!r} is on {n} of {len(rows)} rows and is not in _columns -- '
+                            f'per-row commentary, or a column that was never written up?')
 
     # ---- report
     print('VALIDATION OF data/regions.json')

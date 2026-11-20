@@ -7,9 +7,12 @@ the §3.1b pause, before any of today's work:
 > residues**, found by **deletion, truncation, alanine scan or peptide-array**, **post-2015**,
 > **CPAD-absent**.
 
+> **CORRECTED 20 Nov 2026.** This read *"not one of the thirteen structural rows is `power_eligible`"*. It is **one of thirteen**: the Orb2 row carried `power_eligible: null` on 19 Nov while its own `power_limit` already recorded *m*/*M* = 0.0342, below the 0.05 bar. The flag was resolved to `true` for v1.5.0 from the *m* and *M* already on the row. **The argument below is unaffected, and that is worth stating rather than assuming: the one eligible structural row is a CPAD member**, so it is excluded from the primary confirmatory statistic on a separate ground and still cannot move the scarce cell.
+
 **Why this is now the only route that can move the confirmatory cell.** Measured today:
-*not one of the thirteen structural rows in the dataset is `power_eligible`*, and all four
-rows in the benchmark's scarce cell have no structure at all. §10b selects for long ordered
+*exactly one of the thirteen structural rows in the dataset is `power_eligible`, and it is
+a CPAD member*, and all four rows in the benchmark's scarce cell have no structure at
+all. §10b selects for long ordered
 cores and cannot produce a benchmark row. The scarce cell holds **4 rows across 2
 proteins**; §4 needs **5 proteins**. **Three new proteins are required.**
 
@@ -91,5 +94,7 @@ rather than absorbed as an unmet target.
   would manufacture rows that cannot be recovered in principle, which is the opposite of
   more power.
 - **Rows must not be drawn from the structural pool to make up the number.** They are
-  benchmark-ineligible by construction, as the thirteen already here demonstrate.
+  benchmark-ineligible by construction, as twelve of the thirteen already here
+  demonstrate — and the thirteenth is CPAD-contaminated, so it is ineligible on the other
+  ground.
 - **Nothing in this file is a row.** Nothing here has been read past a search snippet.

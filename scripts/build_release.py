@@ -31,7 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / 'data' / 'regions.json'
 OUT = ROOT / 'release'
-VERSION = '1.4.0'
+VERSION = '1.5.0'
 
 CORE = [
     'protein', 'residues', 'frame', 'sequence', 'evidence', 'construct',
@@ -53,6 +53,18 @@ CORE = [
     # deposited fibril structure exists for that row, which is the case for every DISC1
     # and TRIOBP-1 row.
     'structure',
+    # Added 20 Nov 2026 for v1.5.0. CORE by exactly the argument made for
+    # `stratum_assignment` four lines up, and found by the new undocumented-schema check
+    # in validate_regions.py: `power_eligible` decides whether a rank-based statistic can
+    # return a significant result for the row AT ALL, independently of any predictor, and
+    # it is the reason the confirmatory set is 2 rows rather than 11. A consumer who
+    # cannot see it cannot reproduce the confirmatory set, and -- worse -- cannot tell a
+    # row the predictors failed from a row no predictor could ever have passed.
+    # `power_limit` carries the m, M and chain length behind it, so the flag can be
+    # recomputed rather than trusted, which is why `circularity_basis` and `cpad_basis`
+    # are core too. `region_contiguous` is on two rows and decides whether a statistic
+    # exists for the row at all (PREREGISTRATION 10c C3).
+    'power_eligible', 'power_limit', 'region_contiguous',
     'sequence_provenance', 'range_provenance', 'note',
 ]
 
@@ -177,7 +189,15 @@ def build(version=None):
                 'Check `source_version` before citing: not every row rests on a version of '
                 'record. Check `frame` before using a residue number: numbering frames in this '
                 'literature differ by isoform, by allele and by constant offset. Check '
-                '`construct` before treating a region as a property of the protein.',
+                '`construct` before treating a region as a property of the protein. '
+                'AND CHECK `power_eligible` BEFORE CONCLUDING THAT A PREDICTOR FAILED ON A '
+                'ROW -- added as a core column in v1.5.0 because without it a reader cannot '
+                'tell a row the predictors missed from a row NO rank-based statistic could '
+                'ever have passed. It is a property of the geometry (region length against '
+                'chain length), fixed before any score exists, and it is false on 15 of the '
+                '27 rows -- including all but one of the rows that describe a deposited '
+                'fibril core, because an ordered core is a large fraction of a short '
+                'construct and eligibility requires the opposite.',
         },
         'dataset_documentation': doc,
         'regions': clean,

@@ -78,4 +78,4 @@ date-released: 2026-11-20
 # CONDITION ON A RESERVED DOI: it belongs to ONE draft. If that draft is discarded
 # rather than published, Zenodo reserves a DIFFERENT number for the next attempt and
 # this line and the descriptor must both be updated again.
-doi: "DOI-RESERVE-PENDING"
+doi: "10.5281/zenodo.24394773"

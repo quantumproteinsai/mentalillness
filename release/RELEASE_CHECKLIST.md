@@ -37,13 +37,23 @@ Run `python3 scripts/deposit_status.py` to see what has piled up since.
 
 ---
 
-## v1.5.0 PREPARED — awaiting a reserved DOI — **NOT YET UPLOADED**
+## v1.5.0 READY TO UPLOAD — DOI reserved 20 Nov 2026 — **NOT YET PUBLISHED**
 
-**`preflight_deposit.py` refuses on exactly two checks, and they are the right two**: the
-`DOI-RESERVE-PENDING` placeholder in `CITATION.cff` and in `release/DATA_DESCRIPTOR.md`
-(**two** occurrences there). Everything else passes — title in all four places, version
-strings, 27 regions claimed in three files and found in the artefact, all five previously
-deposited versions byte-unchanged, snippet in step with `.zenodo.json`.
+**Reserved version DOI: `10.5281/zenodo.24394773`**, written into `CITATION.cff` (1
+occurrence) and `release/DATA_DESCRIPTOR.md` (2 occurrences) before upload — the counts the
+procedure predicts, and they were checked rather than assumed. **`preflight_deposit.py`
+exits 0.**
+
+**Verified reserved-but-not-live, with controls, 20 Nov 2026:**
+
+| check | result |
+|---|---|
+| `doi.org/10.5281/zenodo.24394773` | **404** — reserved, unpublished |
+| `api.datacite.org/dois/…24394773` | **404** |
+| `zenodo.org/api/records/24394773` | **404** — the draft is not a record yet |
+| concept DOI `…24290697` | **302** — still resolves to 24342313 (v1.4.0) |
+| `doi.org/…24339193` *(v1.3.0, control)* | **302** |
+| `doi.org/…24342313` *(v1.4.0, the known-broken one)* | **404**, record API **200** |
 
 ### THE REMAINING STEPS ARE YOURS, AT THE FORM
 

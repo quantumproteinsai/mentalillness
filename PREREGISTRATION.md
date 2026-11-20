@@ -551,6 +551,31 @@ is the strongest claim public sources support, and it is not a certificate.
    from the confirmatory claim, with the date of receipt stated. **A pending email does not
    delay the freeze.**
 
+#### 3.1b's choice of statistic is justified externally — RECORDED 20 Nov 2026
+
+The 20 Nov prior-art audit set a stop condition: the information limit is a property of
+the **min-rank family**, so unless the max-statistic can be justified on grounds
+**independent of the result**, the surviving contribution is only a limitation of a
+statistic we chose. **That paragraph can be written, and the stop case does not fire.**
+
+Two published witnesses, both read from publisher PDFs on 20 Nov 2026, neither aware of
+this project:
+
+1. **Bradshaw et al. 2017** — the paper that mapped TRIOBP-1 324-348 — judges the
+   predictors by rank from the top, verbatim: *"at least four sites elsewhere in the
+   protein were more strongly predicted."* Nine years before this project.
+2. **Singh, Jangid & Srivastava 2026 (AmyloCore-ML)** — benchmarking our own confirmatory
+   arm — assesses *"localization ... using distance of the highest-scoring region from
+   the experimental core"*, reporting mean peak distance beside AUROC as a separate axis.
+
+**This is a justification of a frozen choice, not an amendment. Nothing is re-scored and
+§3.1 is unchanged.** It does **not** relax §3.1b's dated restriction to the min-rank
+family, and the manuscript must keep the qualifier: the limit holds *for the min-rank
+reading*, not for rank-based benchmarks in general. Full argument and the scope it
+licenses: `reports/max_statistic_justification_2026-11-20.md`.
+
+---
+
 ### 5.2a A no-call is not a low score — REGISTERED 16 Nov 2026
 
 Murray 2017's Figure S7 legend states that for ZipperDB **"dotted red lines span segments

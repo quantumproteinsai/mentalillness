@@ -28,6 +28,15 @@ unverified. Entries in `data/references_to_check.json` carry
 the claim. Never cite across that line. When reporting a number found by search,
 say whether it was READ, a SNIPPET, or an EMPTY query result.
 
+**The same rule applies to claims about documents, including this project's own.**
+Verify them by opening the passage, not by grepping for the words the claim uses.
+On 20 Nov 2026 a literal grep for "Wilcoxon" and "confirmatory" in the explainer
+script returned zero and nearly produced a confident correction of a `CLAUDE.md`
+sentence that was in fact right — the explainers state those numbers in other words.
+Reading the passage instead found the real defect: a false sentence about the
+project's own data, in a public document, in both languages. **A grep that misses is
+indistinguishable from an absence, and both read as evidence.**
+
 **2. Check the margin against the error bar before spending anything.** If the
 difference to be reported is smaller than the uncertainty of the method
 reporting it, no further work rescues it. Say so and stop. This retired four

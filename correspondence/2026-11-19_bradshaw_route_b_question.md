@@ -1,6 +1,9 @@
 # Draft paragraph: asking Bradshaw for other fragment-level mapped regions
 
-**Status: DRAFT, NOT SENT. Updated 20 Nov 2026** — the recruitment rationale is
+**Status: SUPERSEDED — its content was SENT 20 Nov 2026** inside
+`2026-11-20_bradshaw_second_message.md`, which is the record of what actually went. This
+file is kept for the reasoning behind the question and for the correction of the wrong
+"zero candidates" figure, which must not be revived. Previously: DRAFT, NOT SENT. Updated 20 Nov 2026** — the recruitment rationale is
 re-derived from a measured screen (the 19 Nov "zero" was wrongly obtained), and a second,
 much shorter question about amyloid-dye status has been added to the sent text.
 Written by Claude for the author. Intended as an addition to

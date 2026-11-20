@@ -1,7 +1,19 @@
 # Draft: second message to Bradshaw — 20 Nov 2026
 
-**Status: DRAFT, NOT SENT.** Assembled by Claude at the author's request, from the pending
-route (b) question plus two loop-closings.
+**Status: SENT 20 Nov 2026** by the author, as a reply-all inside the 17 Nov thread, subject
+unchanged. To `nicholas.b@biotech.uniri.hr`, cc `beti.zaharija@biotech.uniri.hr`. Two
+autocapitalisation artifacts were corrected at the author's end before it went
+("Registered", "Simply"). The author's signature now carries **ORCID 0000-0002-1145-1881**,
+which was not in the draft and is an improvement — it is the credential the AggreProt
+exchange was circling, supplied without an institutional address.
+
+Assembled by Claude at the author's request, from the pending route (b) question plus two
+loop-closings.
+
+**Two questions are now outstanding with him.** Neither blocks anything: §4 is already known
+to be unreachable from deposited cores, and TRIOBP-1's dye status is recorded as an absence
+of measurement either way. **Do not chase.** He answered the 17 Nov question in two days
+unprompted.
 
 ## Why sending one day after the last message is appropriate here
 

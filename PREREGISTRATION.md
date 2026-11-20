@@ -861,6 +861,23 @@ is dead, and one requires reimplementation. Reported regardless of outcome.
 
 ### 10a Core polarity — REGISTERED 18 Nov 2026, POST-UNBLINDING AND PERMANENTLY EXPLORATORY
 
+> #### OUTCOME, 20 Nov 2026: the result this section registered was obtained, and then WITHDRAWN by §10d
+>
+> §10a's test passed on 19 Nov — ρ = +0.821, exact one-sided *p* = 0.0171, *n* = 7. **§10d,
+> registered 20 Nov before its variable existed, then returned `COLLAPSED` at both burial
+> cutoffs:** the mapped region's own *sequence* polar fraction predicts *v* better
+> (ρ = +0.8929, *p* = 0.0062), the two are collinear at ρ = +0.9643, and the partial
+> correlation of Φ with *v* given sequence polarity is **negative**.
+>
+> **The specification below is not amended and not withdrawn — it was executed correctly
+> and its measurements stand.** What is withdrawn is the structural *interpretation*. The
+> finding is compositional and is Louros et al. (2020), *Nat Commun* **11**:3314.
+>
+> **And one thing this section should have required and did not: reporting ρ at BOTH
+> registered burial cutoffs.** At 5 Å² the result is ρ = +0.6786, *p* = **0.0548** — it
+> fails this document's own α at its own alternative setting. Registering two cutoffs and
+> reporting one is a defect in §10a, found by §10d rather than by reading.
+
 **Full specification: `reports/core_polarity_metric_2026-11-18.md`, committed before any
 number was computed from it.** Registered here in summary so the decision rules are in
 this document with the others.

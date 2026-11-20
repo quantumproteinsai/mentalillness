@@ -86,8 +86,28 @@ them.
 
 **Its absence carries information.** A row without `structure` has no deposited fibril
 structure at all — true of every DISC1 and TRIOBP-1 row, which is why those rows cannot
-take part in any structure-based analysis, including the core-polarity result reported with
-1.4.0.
+take part in any structure-based analysis.
+
+> ### The core-polarity result reported with 1.4.0 is WITHDRAWN as of 1.5.0
+>
+> Version 1.4.0's description reported that across seven rows with a deposited structure,
+> **the more polar the buried fibril core, the worse a modern predictor recovered the
+> region** — Spearman ρ = +0.82, exact one-sided *p* = 0.017.
+>
+> **A pre-registered control, run 20 November 2026, withdrew the structural reading.** The
+> polar fraction of the region's own **sequence**, which needs no structure at all,
+> predicts the same outcome **better**: ρ = **+0.89**, *p* = **0.0062**. The two are
+> collinear at ρ = +0.96, and controlling for sequence composition leaves the structural
+> measure's residual association **negative**.
+>
+> **The association is real. It is compositional, not structural, and it is not new** —
+> Louros et al. (2020), *Nat Commun* **11**:3314, established it five years earlier at far
+> larger *n*, without a single deposited structure.
+>
+> **This changes no row and no column in this dataset.** The `structure` column records
+> which fibril a row's core comes from and is unaffected. What is withdrawn is an
+> interpretation that was published alongside, and it is stated here because a reader who
+> found v1.4.0's DOI would otherwise carry the withdrawn version.
 
 > ### The structural rows and the benchmark rows are almost disjoint, and that is a fact about the field
 >

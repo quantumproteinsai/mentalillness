@@ -47,6 +47,17 @@ analysis; read `data/regions.json` for the current position.
 **Start with [`STATE.md`](STATE.md).** It is the current position, and parts of
 the original plan did not survive contact with the primary sources.
 
+> **The project's one positive finding was withdrawn on 20 November 2026, by a control
+> it had registered against itself.** Across seven structurally characterised proteins,
+> the more polar the buried fibril core, the worse a modern predictor recovered the
+> region — ρ = +0.82, *p* = 0.017. A pre-registered control then showed the region's own
+> **sequence** polar fraction predicts the same outcome **better** (ρ = +0.89,
+> *p* = 0.0062), that the two are collinear at ρ = +0.96, and that the structural
+> measure's residual association is **negative** once sequence is controlled for. The
+> association is real, compositional rather than structural, and already published —
+> Louros et al. (2020) *Nat Commun* **11**:3314. See
+> [`results/seq_polarity_control_2026-11-20/`](results/seq_polarity_control_2026-11-20/).
+
 ## The question
 
 Do modern aggregation predictors recover the experimentally mapped regions of
@@ -65,11 +76,11 @@ rather than a result to establish.
 | `PREREGISTRATION.md` | the statistic, the thresholds and the eligibility rule, frozen at `freeze-2026-11-17`, with every amendment dated and marked for whether scores had been seen |
 | `data/regions.json` | **the validation set: 27 rows** (deposit v1.4.0 has 21), with construct, circularity, stratum, power-eligibility and source-version columns. The working file |
 | `release/` | what was deposited at 10.5281/zenodo.24290697, derived from it by `scripts/build_release.py` |
-| `manuscript/benchmark_draft.md` | the write-up: a null benchmark, an information limit, a polar-core association, and five named defects. **Draft, not submitted** |
+| `manuscript/benchmark_draft.md` | the write-up: a null benchmark, an information limit, a **withdrawn** polar-core association, and five named defects. **Draft, not submitted** |
 | `data/references_to_check.json` | sources nobody has opened. A lead is not a fact |
 | `scripts/score_rows.py` | the §3.1 statistic, and the floor and information-limit warnings it prints on every run |
 | `scripts/gatekeeper_density.py` | reproduces the gatekeeper separation (`python3 scripts/gatekeeper_density.py`) |
-| `data/phi_spec.json`, `data/coordinate_manifest.json` | every input to the core-polarity metric, and the SHA-256 of all 22 deposited coordinate files analysed |
+| `data/phi_spec.json`, `data/coordinate_manifest.json` | every input to the core-polarity metric, and the SHA-256 of all 22 deposited coordinate files analysed. **The metric's structural interpretation was withdrawn on 20 Nov 2026** — see `results/seq_polarity_control_2026-11-20/` |
 | `scripts/fetch_coordinates.py` | fetches those coordinates from RCSB and verifies each checksum; a mismatch exits non-zero rather than warning |
 | `reports/PDFs_to_obtain.md` | papers behind paywalls, ranked by what changes if you read one |
 

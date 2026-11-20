@@ -1,5 +1,22 @@
 # Core polarity (Φ) — computed, 18 November 2026
 
+> # ⛔ THE STRUCTURAL READING OF Φ IS WITHDRAWN — 20 November 2026
+>
+> **A control registered under PREREGISTRATION §10d, committed before the variable was
+> computed, returned `COLLAPSED` at both pre-registered burial cutoffs.** The polar
+> fraction of the mapped region's own **sequence** predicts *v* **better** than buried-core
+> polarity does (ρ = +0.89, *p* = 0.0062, against +0.82, *p* = 0.0171); the two are
+> collinear at ρ = +0.96; and the partial correlation of Φ with *v* given sequence polarity
+> is **negative**.
+>
+> **Every measurement in this document stands exactly as recorded. The interpretation
+> placed on them does not.** The association is real, compositional rather than structural,
+> and already published — Louros et al. (2020) *Nat Commun* **11**:3314.
+>
+> This document is left as written rather than rewritten, because what it claimed before
+> the control is the evidence for why the control was worth registering.
+> See `results/seq_polarity_control_2026-11-20/`.
+
 **Specification registered first** (`reports/core_polarity_metric_2026-11-18.md`,
 PREREGISTRATION §10a), **structures committed second** (`9afee85`), **Φ computed here.**
 

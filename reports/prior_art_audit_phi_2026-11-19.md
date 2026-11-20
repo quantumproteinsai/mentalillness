@@ -61,6 +61,23 @@ Not the metric. The **operationalisation**, and only if it is presented as that:
 
 ## Claim 2 — the Φ–predictor association: **NOVEL, and narrower than it looked**
 
+> ### SETTLED 20 Nov 2026: the survival condition below was tested, and the claim did not survive.
+>
+> This section identified the risk precisely and prescribed the test. **The test was
+> registered as §10d and run on 20 Nov: verdict `COLLAPSED`, at both burial cutoffs.**
+> ρ(Φ_seq, *v*) = **+0.8929** (*p* = 0.0062) against ρ(Φ, *v*) = +0.8214 (*p* = 0.0171);
+> collinearity ρ = +0.9643; partial ρ(Φ, *v* │ Φ_seq) = **−0.3315**.
+>
+> **The sequence-only covariate did not merely do as well. It did better, and the partial
+> reversed sign.** The structural claim is withdrawn and the finding is Louros 2020, as
+> this section warned. **This audit paid for itself here**: the risk was named in writing
+> before the compute, and the test it specified cost about ten minutes.
+>
+> One correction to this section's own arithmetic, found by running it: the rule-2 check
+> below took Φ's error bar from the cut-5/cut-10 difference. That was right, and it
+> understated the problem — **at cut 5 the headline ρ is +0.6786, *p* = 0.0548, failing the
+> project's own α.** See `results/seq_polarity_control_2026-11-20/`.
+
 Nobody has computed a property from deposited fibril coordinates and correlated it with a
 per-region predictor-recovery statistic. **But the boundary is thin and two papers press
 on it:**

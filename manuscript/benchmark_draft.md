@@ -31,12 +31,16 @@ of our statistic; it is a constraint on the design, and it disqualifies most of 
 published region-mapping literature as benchmark material. We screened nine further
 candidate proteins in one day and admitted none.
 
-One positive association survives. Across seven structurally characterised proteins — the
-only analysis here whose units are independent — fibril cores with a higher buried polar
-fraction Φ are recovered less well (Spearman ρ = +0.82, exact *p* = 0.017, direction
-registered in advance). It is not robust to leave-one-out and is partly tautological for a
-hydrophobicity-based predictor; the part that is not tautological is that these polar-core
-regions are genuine, experimentally mapped aggregation determinants.
+**No positive association survives.** Across seven structurally characterised proteins,
+fibril cores with a higher buried polar fraction Φ are recovered less well (Spearman
+ρ = +0.82, exact *p* = 0.017, direction registered in advance) — **but a control
+registered before it was computed withdrew the structural reading.** The polar fraction of
+the region's own *sequence* predicts recovery better (ρ = +0.89, *p* = 0.0062), the two are
+collinear at ρ = +0.96, and the partial correlation of Φ with recovery given sequence
+polarity is negative. The association is compositional, not structural, and is already
+established at far larger *n* by Louros et al. (2020). **What this study contributes there
+is a replication on experimentally mapped regions of large proteins rather than on peptide
+libraries, and it is reported as a replication.**
 
 ---
 
@@ -243,6 +247,34 @@ The registered test passes:
 > advance (higher Φ → higher *v* → worse recovery). *p* is exact over all 5040
 > permutations; the smallest attainable value at *n* = 7 is 0.0002, so this is not a floor.
 
+> ### §4a The structural reading of that number is WITHDRAWN
+>
+> **A control registered under §10d on 20 Nov 2026, committed before the variable was
+> computed, returned the verdict `COLLAPSED` at both pre-registered burial cutoffs.**
+>
+> | | cut 5 Å² | cut 10 Å² |
+> |---|---|---|
+> | ρ(Φ, *v*) | +0.6786 (*p* = 0.0548) | +0.8214 (*p* = 0.0171) |
+> | **ρ(Φ_seq, *v*)** | **+0.8929 (*p* = 0.0062)** | **+0.8929 (*p* = 0.0062)** |
+> | ρ(Φ, Φ_seq) | +0.8929 | **+0.9643** |
+> | **partial ρ(Φ, *v* │ Φ_seq)** | **−0.5849** | **−0.3315** |
+>
+> where **Φ_seq** is the polar fraction of the whole mapped region's sequence, on the same
+> POLAR set, over the same residues, needing no structure at all.
+>
+> **The sequence-only covariate does not tie with Φ. It beats it**, and the partial
+> correlation reverses sign. At ρ(Φ, Φ_seq) = +0.96 the two are barely distinguishable and
+> burial is subtracting information rather than adding it.
+>
+> **Note also the first row of that table.** At the 5 Å² burial cutoff — a registered
+> variant, not a post-hoc one — the headline result gives *p* = 0.0548 and **fails this
+> study's own α**. That number had never been computed before the control.
+>
+> **So §4's finding is not new and not structural**, and those are two separate
+> retractions. See Louros et al. (2020) *Nat Commun* **11**:3314, who report a 20% increase
+> in polar and charged side chains in APRs missed by sequence predictors, at far larger *n*
+> and five years earlier.
+
 **These are seven distinct proteins** — the only analysis in this study whose independence
 assumption is actually satisfied. It is not a CPAD artefact: ρ(CPAD, *v*) = +0.000 and
 ρ(CPAD, Φ) = +0.144, and the two factors are not collinear here.
@@ -254,11 +286,14 @@ carries a known, unrelated transmembrane-helix confound and is also the second-h
 The correct reading is **"significant at the registered α on seven rows, and not robust to
 the loss of any one of four of them."**
 
-**And the tautology, registered in advance, still applies.** A predictor built on
-hydrophobicity scoring polar cores lower is partly a restatement of how it works. The part
-that is not tautological is the experimental half: these polar-core regions are genuine,
-experimentally mapped aggregation determinants. **The finding is not that the tools
-dislike polar cores. It is that nature does not, and the tools have not noticed.**
+**And the tautology, registered in advance, still applies** — now with more force than
+when it was written. A predictor built on hydrophobicity scoring polar regions lower is
+partly a restatement of how it works, and the control above shows the *sequence* is where
+that restatement lives. The part that is not tautological is the experimental half: these
+polar regions are genuine, experimentally mapped aggregation determinants. **The surviving
+claim is not that the tools dislike polar cores. It is that nature does not, and the tools
+have not noticed — and that this holds on mapped regions of large proteins, not only on
+peptide libraries.** Stated as a replication of Louros et al. (2020), not as a discovery.
 
 ## 5. What this does not show
 

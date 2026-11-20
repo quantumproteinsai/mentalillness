@@ -1,5 +1,9 @@
 # In silico aggregation in mental illness — state as of 20 Nov 2026
 
+> **20 Nov 2026 — the one positive result was withdrawn by a control registered against
+> it.** See the final section. The core-polarity association is compositional, not
+> structural, and is already published. Of four audited claims, one survives.
+
 > **17 Nov 2026 — the project crossed from preparation into result.** The
 > pre-registration is frozen (`freeze-2026-11-17`), the first predictor has been run,
 > the dataset is published at **10.5281/zenodo.24306057**, and the headline question
@@ -3181,3 +3185,79 @@ Three defects, all found by computing the descriptor's numbers rather than by re
 
 **A fourth, in README.md:** it claimed the deposit held *"24 regions across 14 proteins"*.
 The deposited artefact says **21 and 11**. Neither number had ever been true.
+
+---
+
+## 20 November 2026, later — the project's one positive finding is withdrawn, by a control it registered against itself
+
+**§10a's core-polarity result is dead as a structural claim.** It was the only positive
+finding in the project, it was in the manuscript draft, it was in a deposited dataset's
+description, and it had already survived one prior-art audit.
+
+### What was run, and in what order
+
+The 19 Nov audit left Claim 2 standing but named its survival condition in writing: **Φ may
+be a proxy for the mapped region's own sequence polar fraction.** That condition was
+registered as **§10d in commit `414b139`** — variable, statistics, row set, both burial
+cutoffs and all four possible verdicts — **before the variable was computed**. Then it was
+run.
+
+| | cut 5 Å² | cut 10 Å² |
+|---|---|---|
+| ρ(Φ, *v*) | +0.6786 (*p* = 0.0548) | +0.8214 (*p* = 0.0171) |
+| **ρ(Φ_seq, *v*)** | **+0.8929 (*p* = 0.0062)** | **+0.8929 (*p* = 0.0062)** |
+| ρ(Φ, Φ_seq) | +0.8929 | **+0.9643** |
+| **partial ρ(Φ, *v* │ Φ_seq)** | **−0.5849** | **−0.3315** |
+
+**Registered verdict: `COLLAPSED`, at both cutoffs.**
+
+### Three things, in order of what they cost
+
+**1. The sequence-only covariate does not tie with Φ — it beats it.** +0.8929 against
++0.8214. You do not need a deposited fibril structure for this association. You need the
+region's sequence, which every row in the dataset has, **including the DISC1 and TRIOBP-1
+rows that have no structure at all.**
+
+**2. The partial correlation is negative at both cutoffs.** Φ is not adding structural
+information to a compositional signal; at ρ(Φ, Φ_seq) = +0.96 it is a noisier measurement
+of the same thing, and burial is subtracting information rather than adding it.
+
+**3. The headline was never stable across its own registered cutoffs.** At 5 Å² — a
+registered variant, not a post-hoc one — ρ = +0.6786, *p* = **0.0548**. **The result fails
+this project's own α at its own alternative setting**, and that number had never been
+computed. §10a registered two cutoffs and reported one.
+
+### What this does to the position
+
+**It collapses into Louros et al. (2020), *Nat Commun* 11:3314** — APRs missed by sequence
+predictors carry a 20% increase in polar and charged side chains, five years earlier, at far
+larger *n*, without a single structure. **Two retractions, not one: the finding is not new,
+and it is not structural.**
+
+**Of the four audited claims, one survives: §3.1b's information limit applied to
+aggregation benchmarking.** It is arithmetic on chain lengths and region lengths — the
+cheapest thing in the project, no compute at all — and it is now the only part of this
+strand that is both true and new.
+
+**And the answer to `CLAUDE.md`'s headline question changes shape.** *What structural
+feature are the predictors all missing?* On this evidence: **not a structural feature.** A
+compositional one — polar sequence — which is measurable on every row including the two
+proteins the project was built around, and which is already in print.
+
+### What is NOT withdrawn
+
+The 22 structures, the checksummed coordinate manifest, the edge-free 11-layer replication,
+the per-structure Φ values, the calibration. **Those are correct measurements and they
+stand.** The Φ set is still a usable dataset. What is withdrawn is an interpretation.
+
+### The process note, which is the thing to keep
+
+**A rule written down before the number existed fired against the hypothesis it was written
+to protect, and it cost about ten minutes of compute.** The alternative was publishing a
+structural claim that a referee with `DEKRHNQSTYC` and a text editor could have falsified
+in an afternoon. Rule 3 of `CLAUDE.md` says to audit the premises of the task, not only the
+literature; this is that, turned on the project's own most attractive result.
+
+**v1.5.0 was prepared earlier today with the Φ claim in its description and must not be
+deposited in that state.** The description, the data descriptor and the dataset's own
+project note are corrected in the same commit as this entry.

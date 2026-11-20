@@ -1418,3 +1418,99 @@ on three internal checks and the thesis agrees, so this is a formality, not a do
 - Pre-registration ratified by: ____________________  date: __________
 - `data/regions.json` SHA-256 at freeze: ____________________
 - Tier A rows at freeze: ____  Tier B rows at freeze: ____
+
+---
+
+## 10d The sequence-polarity control on the Φ–*v* association — REGISTERED 20 Nov 2026, BEFORE THE CONTROL VARIABLE WAS COMPUTED
+
+**This registers a control that can only weaken or kill an already-reported result. It
+cannot promote one, and that asymmetry is registered too.** §10a's Φ–*v* association
+(ρ = +0.821, exact one-sided *p* = 0.017, *n* = 7) is reported in the repository and in the
+deposited dataset's description. A prior-art audit on 19 Nov 2026 found it has a survival
+condition that §10a never tested.
+
+### The threat, stated precisely
+
+**Φ may be a proxy for the mapped region's own sequence composition.** Φ is the polar
+fraction of the *buried* residues of a fibril core. Where a region is almost entirely
+buried, Φ approaches the polar fraction of its *sequence*, which requires no structure at
+all. If the sequence-only quantity explains *v* as well as Φ does, then §10a's result is
+not a structural finding: it is
+
+> **Louros N, Orlando G, De Vleeschouwer M, Rousseau F, Schymkowitz J (2020),
+> *Nat Commun* 11:3314** — APRs missed by sequence predictors carry *a 20% increase in
+> polar and charged side chains* —
+
+reached by a more expensive route, on seven points instead of their hundreds.
+
+**Our own Orb2 row shows how little room there is**: core sequence
+`QLHQQQHQQQHQQHQQHQQQQQLHQHQQQLS`, Φ = 0.897. For a region like that, "buried and polar"
+and "polar" are nearly the same statement.
+
+### The control variable, defined before it is computed
+
+> **Φ_seq** = the fraction of residues in the **whole mapped region** that are in the
+> **same POLAR set §10a uses**, `DEKRHNQSTYC`. Not the buried subset — all of them.
+
+**It is computed from the same coordinate files Φ was computed from**, over the residues of
+the registered range, so that Φ and Φ_seq are functions of the identical residue set and
+differ *only* by the burial restriction. **It is then cross-checked against the `sequence`
+field of `data/regions.json` for the same row, and a disagreement is a hard failure, not a
+warning** — the two must describe the same residues, and if they do not, that is a frame
+defect and the control stops until it is resolved.
+
+### The rows: the frozen seven, and no others
+
+FUS 39-95, hnRNPA1 251-295, SAA 2-55, LECT2 55-75, TMEM106B 120-254, ANXA11 39-74,
+glycinin 164-190. **Orb2, β2-microglobulin and SOD1 are excluded**, as they are from §10a's
+primary — they were recruited after the freeze (§10b S3).
+
+**THIS DOES NOT CONSUME THE §10b S2 RECOMPUTATION.** S2 allows the Φ–*v* test to be
+recomputed once, at the final *n*. This is a different test on the already-unblinded seven,
+and running it leaves that allowance untouched. **It also may not be re-run at a larger *n*
+under this registration**; that would need its own.
+
+### The statistics, fixed now
+
+1. **ρ(Φ_seq, *v*)** — Spearman, one-sided in the same direction as §10a (more polar →
+   worse recovery → larger *v*), exact permutation *p* over all 7! = 5040 orderings.
+2. **ρ(Φ, Φ_seq)** — the collinearity, reported whatever it is. At *n* = 7 a high value
+   means the two cannot be separated, and saying so is the result.
+3. **partial ρ(Φ, *v* │ Φ_seq)** — on ranks, by the standard formula, with an exact
+   permutation *p* obtained by permuting *v* across the 5040 orderings and recomputing the
+   partial each time.
+
+**All three are reported whatever they show.** No variant of Φ_seq may be tried: the POLAR
+set is §10a's, unaltered, and `phi_no_gly` and `phi_YC_nonpolar` have no counterpart here.
+
+### Rule 2 applies, and it has teeth here
+
+The audit supplied Φ's error bar from this project's own files: **two of the seven
+structures already reverse order between the two registered burial cutoffs** (hnRNPA1 and
+SAA, by 0.0036, against SAA's own cut-5-to-cut-10 sensitivity of 0.0090).
+
+> **So every statistic above is computed at BOTH registered cutoffs, 5 Å² and 10 Å². If the
+> verdict differs between them, the registered verdict is `UNRESOLVED_AT_THIS_N`** — not
+> the cut-10 answer with the cut-5 answer in a footnote.
+
+### The decision rule, registered before the numbers exist
+
+| outcome | verdict |
+|---|---|
+| ρ(Φ_seq, *v*) **≥** ρ(Φ, *v*) | **`COLLAPSED`** — the structural claim is withdrawn. Φ adds nothing over sequence composition, and §10a is Louros 2020 by a more expensive route. |
+| partial ρ(Φ, *v* │ Φ_seq) **< 0.5** | **`NOT_SEPARABLE`** — the structural reading is withdrawn as unsupported and the association is reported as compositional. |
+| partial ρ **≥ 0.7** *and* ρ(Φ, *v*) **>** ρ(Φ_seq, *v*) | **`SURVIVES`** — and see below, because this word is weaker than it looks. |
+| anything else | **`INCONCLUSIVE`** — reported as such, with all three statistics. |
+
+**`SURVIVES` DOES NOT PROMOTE THE CLAIM.** It means one specific way of being wrong has
+been excluded at *n* = 7. The claim remains what §10a said it was: not robust, not
+established, and silent on this project's headline question because the two proteins it was
+built around have no deposited fibril structures. **No wording anywhere may be strengthened
+on the strength of a `SURVIVES`.**
+
+### What is already known to be true of this test, and must be stated with its result
+
+**It has almost no power.** At *n* = 7 with two collinear predictors, a partial correlation
+is a descriptive quantity. The permutation *p* is reported because it is exact and cheap,
+**not because a significant one would establish anything.** The point estimates and the
+collinearity are the result; the *p* is a formality and will be labelled as one.

@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="470" height="250" viewBox="0 0 470 250" font-family="Helvetica,Arial,sans-serif">
-<text x="0" y="12" font-size="10" fill="#1a1a1c" text-anchor="start" font-weight="bold">Figure 6. Le résultat sur la polarité, pour sept protéines dont la structure est résolue</text>
-<rect x="86" y="32" width="300" height="160" rx="0" fill="#fbfbfc" stroke="none" stroke-width="1"/>
-<line x1="86" y1="192" x2="386" y2="192" stroke="#1a1a1c" stroke-width="1" stroke-linecap="round"/>
-<line x1="86" y1="32" x2="86" y2="192" stroke="#1a1a1c" stroke-width="1" stroke-linecap="round"/>
-<line x1="86" y1="184" x2="386" y2="184" stroke="#ba121c" stroke-width="1" stroke-dasharray="3,2" stroke-linecap="round"/>
-<text x="389" y="187" font-size="7" fill="#ba121c" text-anchor="start" font-weight="bold">v = 0.05</text>
-<circle cx="359.214" cy="38.688" r="4.2" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
-<text x="359.214" y="30.688" font-size="7" fill="#6b707a" text-anchor="middle">FUS</text>
-<circle cx="254.214" cy="33.6" r="4.2" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
-<text x="254.214" y="25.6" font-size="7" fill="#6b707a" text-anchor="middle">TMEM106B</text>
-<circle cx="199.571" cy="127.136" r="4.2" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
-<text x="199.571" y="119.136" font-size="7" fill="#6b707a" text-anchor="middle">LECT2</text>
-<circle cx="150.286" cy="129.856" r="4.2" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
-<text x="150.286" y="121.856" font-size="7" fill="#6b707a" text-anchor="middle">glycinin</text>
-<circle cx="134.214" cy="117.984" r="4.2" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
-<text x="134.214" y="109.984" font-size="7" fill="#6b707a" text-anchor="middle">hnRNPA1</text>
-<circle cx="131" cy="158.016" r="4.2" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
-<text x="131" y="150.016" font-size="7" fill="#6b707a" text-anchor="middle">SAA</text>
-<circle cx="108.5" cy="138.96" r="4.2" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
-<text x="108.5" y="130.96" font-size="7" fill="#6b707a" text-anchor="middle">ANXA11</text>
-<text x="236" y="209" font-size="8.5" fill="#6b707a" text-anchor="middle">polarité du coeur enfoui  (0 = tout hydrophobe, 1 = tout hydrophile)</text>
-<text x="78" y="38" font-size="7.5" fill="#6b707a" text-anchor="end">1.0</text>
-<text x="78" y="192" font-size="7.5" fill="#6b707a" text-anchor="end">0</text>
-<text x="74" y="102" font-size="8" fill="#6b707a" text-anchor="end">v (plus bas = le</text>
-<text x="74" y="112" font-size="8" fill="#6b707a" text-anchor="end">prédicteur l'a</text>
-<text x="74" y="122" font-size="8" fill="#6b707a" text-anchor="end">trouvée)</text>
-<text x="92" y="44" font-size="9" fill="#14803d" text-anchor="start" font-weight="bold">rho = +0,82,  p = 0,017</text>
-<text x="0" y="226" font-size="8" fill="#6b707a" text-anchor="start">Chaque point est une protéine dont la structure de la fibrille est résolue : son coeur peut donc être mesuré et non supposé. Plus le</text>
-<text x="0" y="236.5" font-size="8" fill="#6b707a" text-anchor="start">coeur est polaire, moins le prédicteur réussit. Données réelles ; la statistique a été fixée avant d'être calculée.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="268" viewBox="0 0 470 268" font-family="Helvetica,Arial,sans-serif">
+<text x="0" y="12" font-size="10" fill="#1a1a1c" text-anchor="start" font-weight="bold">Figure 6. Pourquoi nous avons retiré notre seul résultat positif</text>
+<rect x="64" y="40" width="186" height="150" rx="0" fill="#fbfbfc" stroke="none" stroke-width="1"/>
+<line x1="64" y1="190" x2="250" y2="190" stroke="#1a1a1c" stroke-width="1" stroke-linecap="round"/>
+<line x1="64" y1="40" x2="64" y2="190" stroke="#1a1a1c" stroke-width="1" stroke-linecap="round"/>
+<line x1="64" y1="182.5" x2="250" y2="182.5" stroke="#ba121c" stroke-width="1" stroke-dasharray="3,2" stroke-linecap="round"/>
+<circle cx="188.816" cy="46.27" r="4" fill="#6b707a" stroke="#ffffff" stroke-width="1"/>
+<text x="188.816" y="57.77" font-size="6.5" fill="#6b707a" text-anchor="middle">FUS</text>
+<circle cx="140.847" cy="41.5" r="4" fill="#6b707a" stroke="#ffffff" stroke-width="1"/>
+<text x="140.847" y="53" font-size="6.5" fill="#6b707a" text-anchor="middle">TMEM106B</text>
+<circle cx="115.884" cy="129.19" r="4" fill="#6b707a" stroke="#ffffff" stroke-width="1"/>
+<text x="122.884" y="131.69" font-size="6.5" fill="#6b707a" text-anchor="start">LECT2</text>
+<circle cx="93.3684" cy="131.74" r="4" fill="#6b707a" stroke="#ffffff" stroke-width="1"/>
+<text x="86.3684" y="134.24" font-size="6.5" fill="#6b707a" text-anchor="end">glycinin</text>
+<circle cx="86.0263" cy="120.61" r="4" fill="#6b707a" stroke="#ffffff" stroke-width="1"/>
+<text x="86.0263" y="112.61" font-size="6.5" fill="#6b707a" text-anchor="middle">hnRNPA1</text>
+<circle cx="84.5579" cy="158.14" r="4" fill="#6b707a" stroke="#ffffff" stroke-width="1"/>
+<text x="84.5579" y="169.64" font-size="6.5" fill="#6b707a" text-anchor="middle">SAA</text>
+<circle cx="74.2789" cy="140.275" r="4" fill="#6b707a" stroke="#ffffff" stroke-width="1"/>
+<text x="64.7789" y="142.775" font-size="6.5" fill="#6b707a" text-anchor="end">ANXA11</text>
+<text x="64" y="34" font-size="8.5" fill="#1a1a1c" text-anchor="start" font-weight="bold">la mesure coûteuse</text>
+<text x="69" y="52" font-size="8.5" fill="#6b707a" text-anchor="start" font-weight="bold">rho = +0,82</text>
+<text x="157" y="205" font-size="7.5" fill="#6b707a" text-anchor="middle">polarité du COEUR ENFOUI  (exige une structure résolue)</text>
+<rect x="284" y="40" width="186" height="150" rx="0" fill="#fbfbfc" stroke="none" stroke-width="1"/>
+<line x1="284" y1="190" x2="470" y2="190" stroke="#1a1a1c" stroke-width="1" stroke-linecap="round"/>
+<line x1="284" y1="40" x2="284" y2="190" stroke="#1a1a1c" stroke-width="1" stroke-linecap="round"/>
+<line x1="284" y1="182.5" x2="470" y2="182.5" stroke="#ba121c" stroke-width="1" stroke-dasharray="3,2" stroke-linecap="round"/>
+<circle cx="456.295" cy="46.27" r="4" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
+<text x="456.295" y="57.77" font-size="6.5" fill="#6b707a" text-anchor="middle">FUS</text>
+<circle cx="364.763" cy="41.5" r="4" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
+<text x="364.763" y="53" font-size="6.5" fill="#6b707a" text-anchor="middle">TMEM106B</text>
+<circle cx="334.905" cy="129.19" r="4" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
+<text x="341.905" y="131.69" font-size="6.5" fill="#6b707a" text-anchor="start">LECT2</text>
+<circle cx="314.347" cy="131.74" r="4" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
+<text x="307.347" y="134.24" font-size="6.5" fill="#6b707a" text-anchor="end">glycinin</text>
+<circle cx="317.774" cy="120.61" r="4" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
+<text x="317.774" y="112.61" font-size="6.5" fill="#6b707a" text-anchor="middle">hnRNPA1</text>
+<circle cx="305.047" cy="158.14" r="4" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
+<text x="305.047" y="169.64" font-size="6.5" fill="#6b707a" text-anchor="middle">SAA</text>
+<circle cx="295.747" cy="140.275" r="4" fill="#2663eb" stroke="#ffffff" stroke-width="1"/>
+<text x="286.247" y="142.775" font-size="6.5" fill="#6b707a" text-anchor="end">ANXA11</text>
+<text x="284" y="34" font-size="8.5" fill="#1a1a1c" text-anchor="start" font-weight="bold">la mesure gratuite</text>
+<text x="289" y="52" font-size="8.5" fill="#2663eb" text-anchor="start" font-weight="bold">rho = +0,89</text>
+<text x="377" y="205" font-size="7.5" fill="#6b707a" text-anchor="middle">polarité de la SÉQUENCE de la région  (n'exige rien)</text>
+<text x="56" y="46" font-size="7.5" fill="#6b707a" text-anchor="end">1.0</text>
+<text x="56" y="190" font-size="7.5" fill="#6b707a" text-anchor="end">0</text>
+<text x="56" y="101" font-size="7.5" fill="#6b707a" text-anchor="end">v (plus bas = le</text>
+<text x="56" y="110" font-size="7.5" fill="#6b707a" text-anchor="end">prédicteur l'a</text>
+<text x="56" y="119" font-size="7.5" fill="#6b707a" text-anchor="end">trouvée)</text>
+<text x="0" y="222" font-size="8" fill="#6b707a" text-anchor="start">Les mêmes sept protéines et les mêmes sept valeurs de v dans les deux panneaux : seul l'axe horizontal change. À gauche, la</text>
+<text x="0" y="232.5" font-size="8" fill="#6b707a" text-anchor="start">polarité du coeur enfoui de la fibrille résolue - 22 structures téléchargées et un calcul de géométrie. À droite, la polarité de la</text>
+<text x="0" y="243" font-size="8" fill="#6b707a" text-anchor="start">séquence de la région - que l'on peut compter à la main sur les lettres. LA MESURE GRATUITE COLLE MIEUX. Le résultat ne</text>
+<text x="0" y="253.5" font-size="8" fill="#6b707a" text-anchor="start">portait donc pas sur la structure mais sur la composition, et cela avait déjà été publié en 2020 par d'autres, sur bien plus de</text>
+<text x="0" y="264" font-size="8" fill="#6b707a" text-anchor="start">données.</text>
 </svg>

@@ -1,6 +1,10 @@
 # AggreProt: their reply, and a draft response
 
-**Status: REPLY RECEIVED 20 Nov 2026. RESPONSE IS A DRAFT, NOT SENT.**
+**Status: REPLY RECEIVED 20 Nov 2026. RESPONSE SENT 20 Nov 2026** by the author, from
+`contact@quantum-proteins.ai` to `joan.planas@mail.muni.cz`, cc `peta.kabourek@seznam.cz`
+(the 'Petr' carried on their own reply). Sent substantially as drafted below. **Clock starts
+now.** A silent inbox is not a blocker: AggreProt is already recorded UNAVAILABLE under §5.2b
+and the confirmatory modern arm is AggrescanAI alone either way. Do not chase it.
 
 ---
 
@@ -47,7 +51,15 @@ verifiable, and it shows the request cannot buy an advantage.
 
 ---
 
-## ⚠ ONE THING THE AUTHOR MUST SETTLE BEFORE SENDING
+## ⚠ THE PRE-SEND QUESTION — ANSWERED BY THE AUTHOR, 20 Nov 2026
+
+**The letter went out stating the use is non-commercial. That is the author's representation,
+made knowingly, and it now binds the project: AggreProt must not be used for any commercial
+purpose, and if the surrounding activity ever becomes commercial the Loschmidt group must be
+told before the tool is run again.** The original caveat is kept below unedited, because the
+record should show what was asked and when, not only what was decided.
+
+### The caveat as written before sending
 
 **They wrote: "We expect that the use of AggreProt you make is not for commercial purposes."**
 
@@ -60,9 +72,11 @@ and let them decide; the draft below assumes it is not and must be edited if tha
 
 ---
 
-## DRAFT RESPONSE — not sent
+## RESPONSE AS SENT — 20 Nov 2026
 
-**To:** `joan.planas@mail.muni.cz` (cc Petr, as on their reply)
+**From:** `contact@quantum-proteins.ai`
+**To:** `joan.planas@mail.muni.cz`
+**Cc:** `peta.kabourek@seznam.cz`
 **Subject:** Re: AggreProt standalone — request for the model files (`nnap-data.zip`)
 
 ---

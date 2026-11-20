@@ -4,7 +4,7 @@
 
 Bertrand Mercier des Rochettes
 
-*Draft, 18 November 2026. Not submitted. Every number in this draft is traceable to a
+*Draft, 20 November 2026. Not submitted. Every number in this draft is traceable to a
 committed script or a source document opened in full; see §8.*
 
 ---
@@ -13,7 +13,7 @@ committed script or a source document opened in full; see §8.*
 
 Aggregation predictors are routinely validated against short peptides that form fibrils,
 and rarely against the regions that deletion and truncation experiments show to be
-*required* for a full-length protein to aggregate. We assembled 24 such regions across 14
+*required* for a full-length protein to aggregate. We assembled 27 such regions across 17
 proteins, each read from its source paper and labelled for three distinct forms of
 circularity, and pre-registered a benchmark before running any predictor.
 
@@ -22,11 +22,13 @@ outperform a 2004-generation biophysical predictor (TANGO): modern is worse on 6
 non-tied pairs, median Δ*v* = +0.09, exact one-sided Wilcoxon *p* = 0.19. On the
 pre-registered confirmatory set the test has *n* = 2 and returns *Z* = −0.79.
 
-The more useful result is why that null is so hard to improve. Under any rank-based
-statistic, the smallest attainable *p* for a region of *m* windows in a chain of *M* is
-exactly *m*/*M*. **Thirteen of our 23 scored rows exceed *m*/*M* > 0.05 and are therefore
-beyond the reach of any rank-based benchmark at α = 0.05**, no matter which statistic is
-chosen. This is computable from two integers before any predictor runs. It is not a defect
+The more useful result is why that null is so hard to improve. For a statistic read from
+the region's **best window rank**, the smallest attainable *p* for a region of *m* windows
+in a chain of *M* is exactly *m*/*M*. **Thirteen of our 23 scored rows exceed
+*m*/*M* > 0.05 and are therefore beyond the reach of any min-rank benchmark at α = 0.05**,
+whatever predictor is used. (A rank-sum has a different and lower floor, 1/C(*M*,*m*); that
+bounds how broadly the claim may be stated and rescues none of these rows. The general
+result — minimum attainable *p* under discreteness — is Tarone's rule, Tarone 1990.) This is computable from two integers before any predictor runs. It is not a defect
 of our statistic; it is a constraint on the design, and it disqualifies most of the
 published region-mapping literature as benchmark material. We screened nine further
 candidate proteins in one day and admitted none.
@@ -133,7 +135,7 @@ arms have run:
 | CHCHD10 42–75 | 0.10407 | 0.10407 | **0.000** (exact tie) |
 | CHCHD2 54–86 | 0.09608 | 0.09608 | **0.000** (exact tie) |
 | DISC1 748–769 | 0.9227 | 0.9955 | +0.073 |
-| DISC1 384–415 | 0.3189 | 0.4164 | +0.098 |
+| DISC1 384–414 | 0.3189 | 0.4164 | +0.098 |
 | TMEM106B 120–254 | 0.7156 | 0.9900 | +0.274 |
 | TRIOBP-1 333–340 | 0.0388 | 0.4240 | +0.385 |
 | TRIOBP-1 324–348 | 0.1235 | 0.9079 | +0.784 |
@@ -182,12 +184,23 @@ calibrated where *m* is small relative to *M* (0.99–1.08×) and **anti-conserv
 That is a defect in our statistic and could be repaired. The next one cannot be.
 
 > **Under the null, the chain's top-ranked window falls inside the region with probability
-> exactly *m*/*M*. No rank-based statistic — not this one, not a repaired one — can return
-> a *p* below *m*/*M*.**
+> exactly *m*/*M*. No statistic read from that rank — not this one, not a repaired one —
+> can return a *p* below *m*/*M*.**
+
+**That bound is exact for the min-rank family and not for every rank-based statistic**, and
+the distinction is worth stating because an earlier version of this manuscript overstated
+it. A rank-sum over the *m* in-region against the *M*−*m* out-of-region window scores has
+minimum attainable one-sided *p* = 1/C(*M*,*m*) — on β2-microglobulin 22–85 (*m* = 10,
+*M* = 16) that is 1.25 × 10⁻⁴ against *m*/*M* = 0.625. **It is a limit on the wording, not
+a rescue**: a rank-sum answers a different question, the tiled windows are not independent,
+and changing statistics after unblinding is what pre-registration forbids. The general
+result — minimum attainable *p* under discreteness, used to exclude untestable hypotheses —
+is **Tarone's rule** (Tarone 1990, *Biometrics* **46**:515–522); what is new here is its
+application to aggregation benchmarking, for which a literature search returned nothing.
 
 **Thirteen of 23 scored rows exceed *m*/*M* > 0.05**, from TMEM106B at 0.489 and SAA at
 0.471 down to ANXA11 at 0.060. **Ten can ever reach *p* < 0.05.** The two founding
-confirmatory rows are among them, narrowly: DISC1 384–415 at 0.0352 and TRIOBP-1 324–348
+confirmatory rows are among them, narrowly: DISC1 384–414 at 0.0352 and TRIOBP-1 324–348
 at 0.0370.
 
 **This needs only the chain length and the region length.** It costs nothing, requires no
@@ -228,10 +241,10 @@ are both easy to rank and over-represented in peptide databases. Disentangling t
 would need CPAD-absent rows at comparable *m*/*M*, which is exactly the row type §3.1b
 says is scarce.
 
-### 4.4 Polar cores: the one positive association
+### 4.4 Polar cores: a positive association, and its withdrawal
 
 For the seven rows with a deposited fibril structure, we registered a metric — Φ, the
-fraction of buried residues (SASA < 10 Å² in a 13-layer assembly) that are polar — and its
+fraction of buried residues (SASA < 10 Å² in an 11-layer assembly) that are polar — and its
 abandonment condition (AUROC < 0.80 against twelve independently classified structures)
 **before computing it on any row**, and committed Φ before joining it to *v*.
 
@@ -270,7 +283,7 @@ The registered test passes:
 > variant, not a post-hoc one — the headline result gives *p* = 0.0548 and **fails this
 > study's own α**. That number had never been computed before the control.
 >
-> **So §4's finding is not new and not structural**, and those are two separate
+> **So §4.4's finding is not new and not structural**, and those are two separate
 > retractions. See Louros et al. (2020) *Nat Commun* **11**:3314, who report a 20% increase
 > in polar and charged side chains in APRs missed by sequence predictors, at far larger *n*
 > and five years earlier.
@@ -299,7 +312,12 @@ peptide libraries.** Stated as a replication of Louros et al. (2020), not as a d
 
 - **Nothing about DISC1 or TRIOBP-1 and polarity.** Neither protein has a deposited
   structure; neither is in the Φ analysis. The confirmatory stratum is untouched by §4.4
-  and the headline question is unmoved by it.
+  and the headline question is unmoved by it — **before or after §4a's withdrawal.** The
+  withdrawal costs the manuscript a positive finding and costs the headline question
+  nothing, because §4.4 could never have spoken to it.
+- **No claim that a fibril core's *structure* predicts anything here.** §4a withdrew that
+  reading. What survives is compositional and is Louros et al. (2020); the structural
+  apparatus bought a weaker version of it.
 - **No claim that any predictor "failed" on the nine floor-bound rows.** For them that
   sentence is true by arithmetic before any predictor runs, and it points in the direction
   of our own hypothesis. Such claims elsewhere in the literature deserve the same check.
@@ -347,8 +365,13 @@ the FoldAmyloid reimplementation did not pass its registered validation.
 **Ensemble spread across the five CV models is large** (max 0.893, 0.899, 0.867 on the
 three most recent runs) and is a standing caveat on every AggrescanAI number here.
 
-**Φ.** 13-layer assembly (−6…+6) along *z* from the deposited helical rise and twist, with
-the stacking axis verified rather than assumed; Shrake–Rupley SASA, probe 1.4 Å, 92 points.
+**Φ.** **11-layer** assembly (−5…+5) along *z* from the deposited helical rise and twist,
+with the stacking axis verified rather than assumed; Shrake–Rupley SASA, probe 1.4 Å, 92
+points. *The 18 Nov run executed 13 layers, which is a deviation from the registered 11;
+it was found and closed on 19 Nov by recomputing every row and all twelve calibration
+structures at 11. Every number reported here is the 11-layer one. The deviation changed no
+calibration value and did not move the headline ρ, but it did reorder two of the seven
+rows, so it is reported as a measured deviation rather than as an equivalence.*
 
 **Scripts.** `scripts/score_rows.py` (statistic, floor and limit warnings),
 `calibrate_v.py` (exact calibration), `v_floor_simulation.py` (null simulation),
@@ -356,28 +379,49 @@ the stacking axis verified rather than assumed; Shrake–Rupley SASA, probe 1.4 
 
 ## 8. Data, code and provenance
 
-Dataset: 10.5281/zenodo.24290697 (concept DOI), CC BY 4.0. Code and the full research
+Dataset: **10.5281/zenodo.24394773** (v1.5.0, the version these numbers were computed
+against) or 10.5281/zenodo.24290697 (concept DOI, always the latest), CC BY 4.0. *Note for
+anyone citing an earlier version: the v1.4.0 version DOI, 10.5281/zenodo.24342313, does not
+resolve — the record is published but was never registered with DataCite, and a request is
+with Zenodo. Cite its record URL if you need it.* Code and the full research
 record, including the pre-registration and every amendment with the date and whether
 scores had been seen: `github.com/quantumproteinsai/mentalillness`.
 
 **Provenance rule applied throughout.** A number is quoted from a source somebody opened,
 or it is declared unmeasured. Claims reached by search are graded READ, SNIPPET or EMPTY.
 Rows whose source is a preprint or thesis rather than a version of record are marked by
-`source_version`, which governs over any boolean flag; **DISC1 384–415 is such a row** and
+`source_version`, which governs over any boolean flag; **DISC1 384–414 is such a row** and
 is flagged here rather than silently cited.
+
+**That row's boundary was corrected during this work, and the correction is not cosmetic.**
+It read 384–415 in every version of this draft and in every deposited version of the
+dataset up to v1.4.0. The corresponding author of the source settled it at **384–414** from
+sequencing of the actual plasmids (personal communication, 19 Nov 2026): the construct
+joins DISC1 1–383 to 415–854, so Ala415 was never deleted. The value we had carried came
+from plasmid *names* in a thesis table, which disagree with the sequencing of those same
+plasmids. **No number in this manuscript moves** — under §3.1 the two readings select the
+same five tiles, since residue 415 falls in no scored tile — but the range as published was
+wrong by one residue.
 
 ## 9. Known defects in this work
 
-Five, all recorded in the project history rather than discovered by reviewers:
+Six, all recorded in the project history rather than discovered by reviewers:
 
 1. **§4's contrast was unreachable at the confirmatory *n*** (min *p* = 0.25 at *n* = 2) —
    a threshold the design could not reach.
 2. **§3.1's *v* is anti-conservative at small *M* with large *m*** (2.1× at the floor), and
    its nominal 5 % criterion runs 0.0–9.1 % across this dataset.
 3. **Nine rows cannot reach the recovery bar**, and thirteen cannot reach α = 0.05 under
-   any rank statistic.
+   any min-rank statistic. *An earlier draft wrote "any rank statistic"; see §4.2.*
 4. **Six rows have a stratum assigned after the modern arm had run on them**, breaching the
    §7 ordering; they are held out of the confirmatory set and reported separately.
 5. **CHCHD10 and CHCHD2 are 84.8 % identical over the scored span** and are one measurement
    for any sequence-based predictor, not two. They were admitted knowingly and the
    non-independence is recorded on both rows.
+6. **§10a registered two burial cutoffs and reported one.** At the unreported one, 5 Å²,
+   the headline correlation is ρ = +0.6786, *p* = 0.0548 — **it fails this study's own α at
+   its own alternative setting.** That number did not exist until the §10d control computed
+   it on 20 Nov, two days after the result was written up and one day after it survived a
+   prior-art audit. **Registering a sensitivity analysis and then reporting only the
+   favourable arm of it is the defect**, and it is a more dangerous one than the other five
+   here, because nothing fails when it happens.

@@ -1,6 +1,9 @@
 # Draft paragraph: asking Bradshaw for other fragment-level mapped regions
 
-**Status: DRAFT, NOT SENT.** Written by Claude for the author. Intended as an addition to
+**Status: DRAFT, NOT SENT. Updated 20 Nov 2026** — the recruitment rationale is
+re-derived from a measured screen (the 19 Nov "zero" was wrongly obtained), and a second,
+much shorter question about amyloid-dye status has been added to the sent text.
+Written by Claude for the author. Intended as an addition to
 the next message to N. Bradshaw (with B. Zaharija), not as a separate email.
 
 **Why this is worth one paragraph of his time.** Measured 19 Nov 2026 and corrected
@@ -12,10 +15,16 @@ separate ground. All four rows in the benchmark's scarce cell have no structure 
 paragraph sent to Bradshaw contains no number that this changes.)* §10b recruits deposited fibril cores,
 which are long regions in short chains, and cannot produce a benchmark row. The scarce
 cell holds **4 rows across 2 proteins** — both of them his — and §4 needs **5 proteins**.
-A literature screen of five queries on 19 Nov returned **zero candidates**, and the reason
-looks structural: two of the four registered search branches (alanine scan, peptide array)
-are used almost exclusively on short peptides already known to aggregate, which leaves
-deletion and truncation mapping in cells — a literature his group largely *is*.
+**The 19 Nov screen's "zero candidates" is superseded — its method was wrong and its
+conclusion survives anyway. [20 Nov 2026]** It screened per-PROTEIN; eligibility is per-REGION,
+and a protein with a long core may also have a short one. Screening an independently curated
+set instead (AmyloCore-ML, 82 deposited fibril cores from 69 proteins) gives the real numbers:
+**10 of 82 are power-eligible (12%), and 1 of those 10 survives the CPAD training-set check —
+a joint yield of 1 in 82.** Scaling fails for a structural reason: the Amyloid Atlas is
+redundant by protein (797 entries collapsed to 69 proteins; tau alone is 200 entries), so the
+rest of it is worth roughly one further candidate. **Do not send him the "zero" figure.** The
+honest statement, and the one the paragraph below makes, is that the geometry is rare — now
+measured at about one usable row in eighty deposited cores.
 
 **What he can do that a search cannot.** Name proteins. He has spent a decade doing this
 exact experiment and will know in one sentence what weeks of querying will not find.
@@ -49,6 +58,18 @@ exact experiment and will know in one sentence what weeks of querying will not f
 > would rather hear it than keep searching.** It would mean this type of mapping is rare
 > enough to be worth saying so in print, which is itself a point about how the field
 > measures aggregation.
+>
+> **And a much smaller question, if you have a moment for it.** Has TRIOBP-1 aggregation
+> ever been probed with an amyloid dye — thioflavin T or S, Congo red — or with a
+> conformation-specific antibody such as A11 or OC? I ask because every tool I am
+> benchmarking was trained on amyloid-forming peptides, and I have just been reading
+> Trossbach et al. 2016, where the DISC1 aggregates in the transgenic rat come out ThS-,
+> ThT- and A11-negative. If TRIOBP-1 aggregates are likewise not amyloid in the strict
+> sense, then I think that *strengthens* the point your 2017 paper makes rather than
+> weakening it: the predictors would have been missing 324-348 partly because they were
+> being asked about the wrong physical object, which is a more interesting reason than
+> simply getting it wrong. I would want to describe the benchmark accordingly, and I would
+> rather ask you than guess from the absence of the experiment in the literature.
 
 ---
 

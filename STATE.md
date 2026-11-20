@@ -393,6 +393,30 @@ hold. It rests on **Korth 2012 alone, still unread**, or it is a mis-citation.
 read.** I inferred it from a citation instead of reading it, which is precisely
 the line rule 1 draws.
 
+> **UPDATE 20 Nov 2026 — the dependency on Korth 2012 is broken, by a different and
+> better experiment.** Trossbach 2016 was read in full from the publisher PDF today and
+> reports its own dye result, in vivo, in the tgDISC1 rat: the perinuclear DISC1
+> aggregates are **ThS-negative**, and the cellular aggresomes co-localise with
+> γ-tubulin but with **neither HSP70, nor the oligomer-specific marker A11, nor the
+> amyloid marker ThT**. Verbatim: *"DISC1 or its fragments are principally able to form
+> amyloid, but not when endogenously expressed in adult or aged tgDISC1 rats."* **So the
+> project may now lean on a READ dye negative** — Trossbach's — and must still not lean
+> on the one Cukkemane 2025 attributes to "Leliveld 2009 and Korth 2012", whose Leliveld
+> half does not hold and whose Korth half is still unopened. **Two different claims; only
+> one is now supported.** Taken with Leliveld 2008's CD evidence above, three independent
+> lines now say the DISC1 disease species is not an ordered amyloid, and the originating
+> group said so first and most firmly.
+>
+> **AND THE SAME QUESTION IS UNASKED FOR TRIOBP-1.** Searching the whole reference
+> register for `ThT`, `ThS`, `thioflavin`, `Congo` and `A11` returns **nothing on any
+> Zaharija or Samardžija entry**. `Bradshaw 2017` and `Samardžija 2023`, both read in
+> full on 20 Nov, contain **no amyloid-dye experiment of any kind** — the first uses
+> insoluble-fraction purification and immunofluorescence, the second Western blot only.
+> **So TRIOBP-1 has never been tested with an amyloid dye in anything this project has
+> read, and we do not know whether its aggregates are amyloid.** That is an absence of
+> measurement, not a negative result, and it must not be written as one. It is a
+> one-sentence question for Bradshaw and has been added to the pending route (b) draft.
+
 **The question it was being used for is substantially answered anyway, by a
 better measurement.** Leliveld 2008 reports that the rDISC598 dimer has
 "essentially the same far-UV circular dichroism spectrum as the combined

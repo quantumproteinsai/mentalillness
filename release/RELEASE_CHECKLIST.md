@@ -37,7 +37,19 @@ Run `python3 scripts/deposit_status.py` to see what has piled up since.
 
 ---
 
-## v1.5.0 READY TO UPLOAD — DOI reserved 20 Nov 2026 — **NOT YET PUBLISHED**
+## v1.5.0 DEPOSITED — 20 Nov 2026 — published, and **both** DOIs verified
+
+**<https://zenodo.org/records/24394773> · `10.5281/zenodo.24394773`**
+
+**The version DOI registered.** 302 at doi.org *and* 200 at DataCite — the check v1.4.0
+failed, run here as step 7 for the first time. Concept DOI resolves to the new record;
+record `state: done`, `version: 1.5.0`, five files, all five md5s matching the local
+artefacts; stored description is real HTML with **zero** escaped tags and matches the
+snippet; **`additional_descriptions` empty**; 10 keywords agreeing with `CITATION.cff` and
+`.zenodo.json` exactly.
+
+*The reservation record, kept because the controls are what make the verification mean
+something:*
 
 **Reserved version DOI: `10.5281/zenodo.24394773`**, written into `CITATION.cff` (1
 occurrence) and `release/DATA_DESCRIPTOR.md` (2 occurrences) before upload — the counts the

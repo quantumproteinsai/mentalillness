@@ -29,16 +29,23 @@ a DOI we had sent him**, and it is the second instance of the rule already in
 was caught before anything was published; this one was not, and it reached a
 third party.
 
-**The deposited version v1.4.0 holds 21 regions across 11 proteins** — this line
-said 24 and 14 until 20 Nov 2026, and both were wrong; the deposited artefact
-itself says 21 and 11. Every row read from its source paper. CC BY 4.0. The
-analysis built on it is **not** published and is not finished; the dataset stands
-on its own and was deposited first deliberately.
+**The current deposit is v1.5.0**, `10.5281/zenodo.24394773`
+(<https://zenodo.org/records/24394773>), published 20 Nov 2026: **27 regions
+across 17 proteins**, every row read from its source paper. CC BY 4.0. **Its
+version DOI resolves** — 302 at doi.org and 200 at DataCite, checked after
+publishing, which is the check v1.4.0 failed. The analysis built on it is
+**not** published and is not finished; the dataset stands on its own and was
+deposited first deliberately.
 
-**v1.5.0 is prepared and awaiting its reserved DOI**: 27 regions across 17
-proteins. It corrects DISC1's deleted region from 384-415 to **384-414**, settled
-from plasmid sequencing by the corresponding author — **every deposited version
-so far carries the wrong value**. It also adds CHCHD10, CHCHD2, TAF15, Orb2,
+*(The previous deposit, v1.4.0, holds 21 regions across 11 proteins — this line
+said 24 and 14 until 20 Nov 2026, and both were wrong; the deposited artefact
+itself says 21 and 11.)*
+
+**What v1.5.0 changed.** It corrects DISC1's deleted region from 384-415 to
+**384-414**, settled from plasmid sequencing by the corresponding author —
+**every earlier deposited version, v1.0.0 through v1.4.0, carries the wrong
+value**, and deposited files are frozen, so the correction lives here and in
+v1.5.0's own descriptor. It also adds CHCHD10, CHCHD2, TAF15, Orb2,
 β2-microglobulin and SOD1, admitted 18–19 November 2026 under the
 structural-recruitment rule ([`PREREGISTRATION.md`](PREREGISTRATION.md) §10b),
 and promotes `power_eligible` to a core column. Cite the deposit for a specific

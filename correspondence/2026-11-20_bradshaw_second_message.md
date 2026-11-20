@@ -104,6 +104,14 @@ Bertrand
 
 ## Notes for the author before sending
 
+- **Send it as a REPLY inside the existing thread, with Reply All — not as a new message.**
+  The thread is `DISC1 384-415 boundary in Zaharija & Bradshaw 2024 — and a figure legend
+  query`, opened 17 Nov. Reply-all is what keeps **Beti Zaharija** on it; *he* added her on
+  19 Nov, and silently dropping her would read as deliberate.
+- **Leave the subject line alone, even though it carries the superseded 384-415.** Editing a
+  subject mid-thread breaks threading in many clients and reads as a new topic. The
+  correction belongs in the first paragraph, which is where it is.
+
 - **Do not add a third question.** Two is already the limit of what one message should ask
   of someone who answered the last one inside two days.
 - **Do not quote the "zero candidates" figure** from the 19 Nov route (b) draft. It was

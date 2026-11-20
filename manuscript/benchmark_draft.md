@@ -1,6 +1,6 @@
 # What a predictor benchmark can learn from experimentally mapped aggregation regions — and what it cannot
 
-**A pre-registered test, a null result, and an information limit**
+**An information limit, a pre-registered null, and a finding this study withdrew**
 
 Bertrand Mercier des Rochettes
 
@@ -17,32 +17,43 @@ and rarely against the regions that deletion and truncation experiments show to 
 proteins, each read from its source paper and labelled for three distinct forms of
 circularity, and pre-registered a benchmark before running any predictor.
 
-The benchmark returns a null. A protein-language-model predictor (AggrescanAI) does not
-outperform a 2004-generation biophysical predictor (TANGO): modern is worse on 6 of 8
-non-tied pairs, median Δ*v* = +0.09, exact one-sided Wilcoxon *p* = 0.19. On the
-pre-registered confirmatory set the test has *n* = 2 and returns *Z* = −0.79.
+**The main result is a constraint, not a comparison, and it is computable before any
+software runs.** For a statistic read from the region's **best window rank**, the smallest
+attainable *p* for a region of *m* windows in a chain of *M* is exactly *m*/*M*.
+**Thirteen of our 23 scored rows exceed *m*/*M* > 0.05 and are therefore beyond the reach
+of any min-rank benchmark at α = 0.05**, whatever predictor is used — a verdict that needs
+two integers and no predictor. (A rank-sum has a different and lower floor, 1/C(*M*,*m*);
+that bounds how broadly the claim may be stated and rescues none of these rows. The general
+result — minimum attainable *p* under discreteness — is Tarone's rule, Tarone 1990, whose
+application to aggregation benchmarking we believe to be new.)
 
-The more useful result is why that null is so hard to improve. For a statistic read from
-the region's **best window rank**, the smallest attainable *p* for a region of *m* windows
-in a chain of *M* is exactly *m*/*M*. **Thirteen of our 23 scored rows exceed
-*m*/*M* > 0.05 and are therefore beyond the reach of any min-rank benchmark at α = 0.05**,
-whatever predictor is used. (A rank-sum has a different and lower floor, 1/C(*M*,*m*); that
-bounds how broadly the claim may be stated and rescues none of these rows. The general
-result — minimum attainable *p* under discreteness — is Tarone's rule, Tarone 1990.) This is computable from two integers before any predictor runs. It is not a defect
-of our statistic; it is a constraint on the design, and it disqualifies most of the
-published region-mapping literature as benchmark material. We screened nine further
-candidate proteins in one day and admitted none.
+**This is not a defect of our statistic; it is a constraint on the design**, and it
+disqualifies most of the published region-mapping literature as benchmark material. Applied
+prospectively it rejects rows at the moment a candidate paper is identified, for the cost
+of reading two numbers out of an abstract. We screened nine further candidate proteins in
+one day and admitted none.
 
-**No positive association survives.** Across seven structurally characterised proteins,
-fibril cores with a higher buried polar fraction Φ are recovered less well (Spearman
-ρ = +0.82, exact *p* = 0.017, direction registered in advance) — **but a control
-registered before it was computed withdrew the structural reading.** The polar fraction of
-the region's own *sequence* predicts recovery better (ρ = +0.89, *p* = 0.0062), the two are
-collinear at ρ = +0.96, and the partial correlation of Φ with recovery given sequence
-polarity is negative. The association is compositional, not structural, and is already
-established at far larger *n* by Louros et al. (2020). **What this study contributes there
-is a replication on experimentally mapped regions of large proteins rather than on peptide
-libraries, and it is reported as a replication.**
+**The benchmark itself returns a null, and that null is the constraint's evidence.** A
+protein-language-model predictor (AggrescanAI) does not outperform a 2004-generation
+biophysical predictor (TANGO): modern is worse on 6 of 8 non-tied pairs, median
+Δ*v* = +0.09, exact one-sided Wilcoxon *p* = 0.19. On the pre-registered confirmatory set
+the test has *n* = 2 and returns *Z* = −0.79 — and at *n* = 2 the smallest attainable *p*
+is 0.25, so **no data could have made that contrast significant.** Two tools eighteen years
+apart return bit-identical *v* on two rows, because the scores drop out of the statistic
+entirely.
+
+**No positive association survives, and how it died is reported as a result.** Across
+seven structurally characterised proteins, fibril cores with a higher buried polar fraction
+Φ are recovered less well (Spearman ρ = +0.82, exact *p* = 0.017, direction registered in
+advance). **A control registered before its variable was computed then withdrew the
+structural reading.** The polar fraction of the region's own *sequence* predicts recovery
+better (ρ = +0.89, *p* = 0.0062), the two are collinear at ρ = +0.96, and the partial
+correlation of Φ with recovery given sequence polarity is negative. The association is
+compositional, not structural, and is already established at far larger *n* by Louros
+et al. (2020); what we add there is a replication on experimentally mapped regions of large
+proteins rather than on peptide libraries, reported as a replication. **We report the
+retraction in full rather than the finding**, because a pre-registration that never costs
+its author anything is not evidence that pre-registration works.
 
 ---
 
@@ -65,12 +76,12 @@ evidence here, not a result we set out to re-establish.
 The question we pre-registered is narrower and newer: **do modern predictors recover what
 the 2004–2010 generation missed, and if not, what feature do they all miss?**
 
-## 2. The dataset, and the two columns that make it a benchmark
+## 2. The dataset, and the four columns that decide what it can test
 
-`data/regions.json` holds 24 rows across 14 proteins (v1.4.0; concept DOI
-10.5281/zenodo.24290697, CC BY 4.0). Each row records the residue range, the exact
-sequence, the frame it is numbered in, and the source paper. Two columns carry most of
-the curatorial weight:
+`data/regions.json` holds 27 rows across 17 proteins (v1.5.0,
+10.5281/zenodo.24394773; concept DOI 10.5281/zenodo.24290697, CC BY 4.0). Each row records the residue range, the exact
+sequence, the frame it is numbered in, and the source paper. Two columns carry most of the
+*curatorial* weight, and two more decide what the dataset can be used to test:
 
 **`construct`.** A region can be necessary in one construct and dispensable in another,
 and both results can be correct. TRIOBP-1 1–59 is a second aggregation route that only
@@ -85,6 +96,15 @@ Three independent forms of circularity are tracked and must not be conflated:
 `circularity_status` (was the region found by a predictor?), `stratum` (do experiment and
 prediction agree on this row?), and `cpad_status` (is the region in a predictor training
 database?). A row can be clean on one and contaminated on another.
+
+**A fourth column is not about circularity at all and decides more than the other three
+together.** `power_eligible` records whether *m*/*M* ≤ 0.05 — whether a min-rank statistic
+could return a significant result for the row **at all**, before any predictor is chosen.
+It is false on 15 of the 27 rows. Its companion `power_limit` carries the *m*, the *M* and
+the chain length, so the verdict can be recomputed rather than trusted. **Without this
+column a reader cannot distinguish a row the predictors missed from a row no predictor
+could ever have passed**, and §4.2 is the argument that this distinction is the most
+consequential one in the dataset.
 
 **Frames are a live hazard, not a formality.** TRIOBP-1 requires the 652-residue frame of
 NP_008963.3; papers on the older 593-residue frame need 59 added, and one paper gives the
@@ -243,6 +263,11 @@ says is scarce.
 
 ### 4.4 Polar cores: a positive association, and its withdrawal
 
+> **Reported here as a methods result, not as a finding.** This subsection registered a
+> metric, obtained a significant association with it, and then withdrew the reading on the
+> strength of a second control registered before its variable existed. The sequence is the
+> contribution; the association is not.
+
 For the seven rows with a deposited fibril structure, we registered a metric — Φ, the
 fraction of buried residues (SASA < 10 Å² in an 11-layer assembly) that are polar — and its
 abandonment condition (AUROC < 0.80 against twelve independently classified structures)
@@ -347,9 +372,27 @@ without reporting *m*/*M* per row is reporting a number whose null distribution 
 across its own rows by an order of magnitude.
 
 Our own benchmark is underpowered and we state it plainly: the decisive subset holds two
-rows. What we offer with more confidence is the curated dataset, the three-way circularity
-labelling, and the eligibility criterion that tells the next group which rows are worth
-their compute.
+rows. **Three things here do not depend on that *n*.**
+
+**The eligibility criterion**, which tells the next group which rows are worth their
+compute and costs two integers to apply. **The dataset**, curated row by row from source
+papers, with three-way circularity labelling and a published DOI. And **the withdrawal in
+§4a**, which we regard as the third contribution rather than an embarrassment attached to
+the other two.
+
+That last claim deserves its reason. The polar-core association was this study's only
+positive result; it was registered in advance, it passed its own abandonment condition, it
+survived a prior-art audit, and it had already been written into a deposited dataset's
+description. **It was withdrawn by a control that cost about ten minutes of computation and
+was committed before the variable it tested existed.** A pre-registration that never costs
+its author a result is not evidence that pre-registration works — it is evidence that
+nothing was at stake. Readers of benchmark papers are entitled to ask how many unreported
+controls of this kind were available and not run.
+
+**And the defect that control exposed is the one we would most want others to look for in
+their own work** (§9, defect 6): a sensitivity analysis registered with two settings and
+reported at one. Nothing fails when that happens. No test errors, no reviewer objects, and
+the published number is the favourable arm of a comparison the author never shows.
 
 ## 7. Methods (summary)
 

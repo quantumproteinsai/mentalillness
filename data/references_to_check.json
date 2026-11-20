@@ -320,5 +320,25 @@
   "THE_DESIGN_DIFFERENCE_THAT_MAKES_3.1b_INVISIBLE_TO_THEM": "Their statistic is PER-RESIDUE (core vs matched non-core from the SAME protein, AUROC/AUPRC), so the region-to-chain length ratio m/M never enters and no region is ever untestable. That is why a dataset in which 90% of regions are power-ineligible for a min-rank benchmark is a perfectly good dataset for them. THE TWO RESULTS DO NOT CONFLICT; they measure different things. Our screen reports what their rows would do under OUR statistic, not a defect in theirs.",
   "DEFECTS_FOUND_ON_READING_V3": "(1) SUPPLEMENTARY: the cruciferin-3 row of media-2.csv gives Protein_length = 12 for a core at 12-26, impossible. UniProt Q96318 is 524 aa [verified at rest.uniprot.org, 20 Nov 2026]. (2) METHODS, unseen-evaluation paragraph: 'we used four proteins' and then names FIVE (P68082, P02070, Q38779, P14812, Q9Y287). (3) CRediT lists contributions for 'AK', which matches no author initial on the paper. None of these affects the screen, which uses only Protein_length and Core_ranges; the first was corrected before use and reported, not patched.",
   "CPAD_RELEVANCE": "Their 82 regions are NOT training-set-clean for AggrescanAI, and the overlap is not small. Of the ten regions our 3.1b screen found power-eligible, the 20 Nov CPAD screen (results/cpad_screen_ten_2026-11-20/) records the per-protein verdicts; see that report for the count, which is not restated here so the two cannot drift apart. Their own AggrescanAI benchmark therefore mixes in-sample and out-of-sample proteins, which the preprint does not discuss. THIS IS NOT A CRITICISM WE HAVE EARNED THE RIGHT TO PRINT: it would require checking all 69 of their proteins against all three CPAD tables, and we have checked ten. Recorded as a question to them, not as a finding about them."
+ },
+ "malekpouri2026_conformal_crispr": {
+  "citation": "Malekpouri M, Lotfi S (2026). What Conformal Selection Can Certify in CRISPR Off-Target Design: Benchmark Leakage, Free Baselines, and a Finite-Sample Cohort Requirement. arXiv:2611.15555 [cs.LG], submitted 11 Nov 2026.",
+  "provenance": "[READ] full text, arXiv HTML, 20 Nov 2026. The 20 Nov prior-art audit had read the abstract plus extracted passages only.",
+  "read_in_full": true,
+  "verified_against_publisher_pdf": true,
+  "source_version": "arxiv_v1_html",
+  "WHY_IT_MATTERS": "THE CLOSEST PRIOR ART TO THIS PROJECT'S ONE SURVIVING CLAIM, and it is nine days older than the audit that found it. Same move: a minimum-attainable-p floor from a couple of integers, shown to make the target result impossible for the data that exist, converted into a pre-run design calculation. It uses the word 'arithmetic' for the same rhetorical purpose we do.",
+  "THE_DISTINCTION_VERIFIED_AT_SOURCE": "Proposition 2, verbatim: 'Conformal p-values satisfy p_j >= 1/(n_cal + 1) FOR EVERY CANDIDATE.' THE BOUND IS IDENTICAL FOR EVERY CANDIDATE -- it depends on the calibration cohort, not on the candidate -- so it supports a go/no-go on the study and no per-instance exclusion. Their remedy is to grow the cohort to n ~ 200. Ours varies per row (measured 0.0102 to 1.0000) and supports admitting or rejecting each instance. Full argument: reports/row_level_vs_dataset_level_2026-11-20.md.",
+  "A_GREP_TRAP_IN_THIS_PAPER": "A substring search for 'Gart' returns FOUR hits and none is Gart JJ -- every one is ListGARTen (Jennifer Listgarten, CRISPR). The paper does not cite Gart/Chu/Tarone or Mantel at all. Recorded because a careless search would have concluded the exclusion literature was already cited here.",
+  "WHAT_IT_COSTS_US": "The 'arithmetic, computable before the run, design-calculation' FRAMING is not novel and must not be presented as such. Only the per-instance application survives."
+ },
+ "zhuang2026_paired_mde": {
+  "citation": "Zhuang Z, Li Y, Fan Z (2026). Pre-Registering the Detectable Effect: A Paired-MDE Budget for 4-bit Quantization Benchmarks, with a Pilot Audit. arXiv:2605.28873, submitted 25 May 2026.",
+  "provenance": "[READ] full text, arXiv HTML, 20 Nov 2026. Previously abstract-only.",
+  "read_in_full": true,
+  "verified_against_publisher_pdf": true,
+  "source_version": "arxiv_html",
+  "VERDICT": "DATASET-LEVEL, like B1, and therefore does not pre-empt the per-instance application. The paired MDE delta* is derived from (m, rho_d, alpha, 1-beta); the per-item differences D_i are INPUTS to one aggregate bound, not per-item bounds -- 'the mean over m items has variance (rho_d - delta^2)/m'. It contains no 'per-instance', 'untestable' or 'admit', and performs no exclusion of individual hypotheses.",
+  "WHAT_IT_SHARES_WITH_US": "The ex-ante, pre-registered framing: 'The bound turns \"how reliable is my quantization claim?\" into a one-line budget a benchmark designer can commit to before running.' Same reason the framing cannot be claimed as new."
  }
 }

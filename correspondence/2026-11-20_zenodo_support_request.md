@@ -1,6 +1,8 @@
 # Zenodo support request: a published record whose version DOI never registered
 
-**Status: DRAFT, NOT SENT.** Written by Claude for the author, 20 November 2026.
+**Status: SENT, 20 November 2026**, by the author, through <https://zenodo.org/support> under category *Report bug or problem*. Drafted by Claude. **Awaiting a reply.**
+
+**What was sent is the plain-text body below**, with the browser-and-OS parenthesis added to the re-check paragraph. Every number in it was verified against Zenodo's and DataCite's own API responses on the day of sending, from two machines on two networks.
 
 **Why this cannot be done from the repository.** DOI registration with DataCite is an
 action Zenodo performs on publication. Nothing in this repository, and no unauthenticated

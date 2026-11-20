@@ -18,9 +18,12 @@ files* is for changing the files on a published record, which is not what is bei
 A DOI that was never registered at publication is a failure in their pipeline, so it is a
 bug report.
 
-**"Browser & OS" field.** Say that the problem is server-side and browser-independent: it
-reproduces from `curl` on both Linux and Windows, on two networks. That answers the first
-question a support desk asks and saves a round trip.
+**"Browser & OS" is a TOGGLE, not a text field** -- checked on the live form, 20 Nov 2026.
+It attaches the browser and OS automatically ("Browser: Chrome 157, Operating System:
+Windows") and nothing can be typed into it. **Leave it on and change nothing.** But say in
+the BODY that the fault is server-side, because the attached browser string otherwise
+invites support to chase a browser problem that does not exist: every check in this
+request was made with `curl`, not a browser. That line is in the plain-text body below.
 
 **"How can we help?" is a plain textarea.** Paste the plain-text version below, not the
 markdown one -- tables written with pipes will arrive as unreadable pipe soup.
@@ -134,6 +137,8 @@ DOIs that does not.
 Re-checked on 2026-11-20, two days after publication, in case registration was simply
 slow. Unchanged. Checked from two machines on two different networks (Linux and
 Windows), with identical results, so it is not a local resolver or a cached response.
+(The browser and OS this form attaches are not relevant: every check above was made
+with curl, not a browser.)
 
 Could you re-trigger the DataCite registration for 10.5281/zenodo.24342313? The DOI has
 been cited externally, so I would rather it were registered than replaced -- but if
@@ -146,9 +151,11 @@ Bertrand Mercier des Rochettes
 ORCID 0000-0002-1145-1881
 ```
 
-**Browser & OS field:** `Server-side, not browser-dependent: reproduces from curl on both Linux and Windows, on two separate networks.`
+**Browser & OS:** a toggle. Leave it on; nothing can be typed there, and the body already
+says the fault is server-side.
 
-**Files field:** nothing to attach. Everything above is checkable from the public API.
+**Files:** nothing to attach. Everything above is checkable from the public API, which is
+better evidence than a screenshot of it.
 
 ---
 
